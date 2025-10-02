@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
@@ -67,7 +68,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         } else if (state is AuthError) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(state.message),
+              content: Text(
+                  ErrorHandler.getLocalizedErrorMessage(state.message, l10n)),
               backgroundColor: Colors.red,
             ),
           );
@@ -110,8 +112,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   Text(
                     l10n.resetPasswordDescription,
                     style: theme.textTheme.bodyMedium?.copyWith(
-                      color:
-                          theme.textTheme.bodyMedium?.color?.withOpacity(0.7),
+                      color: theme.textTheme.bodyMedium?.color
+                          ?.withValues(alpha: 0.7),
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -147,10 +149,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     Container(
                       padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
-                        color: Colors.green.withOpacity(0.1),
+                        color: Colors.green.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Colors.green.withOpacity(0.3),
+                          color: Colors.green.withValues(alpha: 0.3),
                         ),
                       ),
                       child: Column(
@@ -174,7 +176,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             'Please check your email and follow the instructions to reset your password.',
                             style: theme.textTheme.bodyMedium?.copyWith(
                               color: theme.textTheme.bodyMedium?.color
-                                  ?.withOpacity(0.7),
+                                  ?.withValues(alpha: 0.7),
                             ),
                             textAlign: TextAlign.center,
                           ),

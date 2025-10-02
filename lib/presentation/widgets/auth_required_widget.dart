@@ -53,7 +53,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
             Icon(
               Icons.lock_outline,
               size: 80,
-              color: theme.primaryColor.withOpacity(0.6),
+              color: theme.primaryColor.withValues(alpha: 0.6),
             ),
             const SizedBox(height: 24),
             Text(
@@ -67,7 +67,8 @@ class _AuthRequiredPrompt extends StatelessWidget {
             Text(
               message ?? l10n.authenticationRequiredDescription,
               style: theme.textTheme.bodyMedium?.copyWith(
-                color: theme.textTheme.bodyMedium?.color?.withOpacity(0.7),
+                color:
+                    theme.textTheme.bodyMedium?.color?.withValues(alpha: 0.7),
               ),
               textAlign: TextAlign.center,
             ),

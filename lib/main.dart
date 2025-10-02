@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hymnes/firebase_options.dart';
 
 import 'core/providers/language_provider.dart';
+import 'core/providers/theme_provider.dart';
 import 'core/services/auth_service.dart';
 import 'core/services/storage_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
@@ -45,6 +46,9 @@ class HymnesApp extends StatelessWidget {
           create: (context) => LanguageBloc()..add(LoadLanguage()),
         ),
         BlocProvider(
+          create: (context) => ThemeBloc()..add(LoadTheme()),
+        ),
+        BlocProvider(
           create: (context) => MidiBloc()..add(InitializeMidi()),
         ),
         BlocProvider(
@@ -61,21 +65,29 @@ class HymnesApp extends StatelessWidget {
               ? languageState.locale
               : const Locale('fr', 'FR');
 
-          return MaterialApp(
-            title: 'Hymnes',
-            debugShowCheckedModeBanner: false,
-            theme: AppTheme.lightTheme,
-            darkTheme: AppTheme.darkTheme,
-            themeMode: ThemeMode.system,
-            locale: locale,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: LanguageBloc.supportedLocales,
-            home: const SplashScreen(),
+          return BlocBuilder<ThemeBloc, ThemeState>(
+            builder: (context, themeState) {
+              final themeMode = themeState is ThemeLoaded
+                  ? themeState.themeMode
+                  : ThemeMode.system;
+
+              return MaterialApp(
+                title: 'Hymnes',
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                themeMode: themeMode,
+                locale: locale,
+                localizationsDelegates: const [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: LanguageBloc.supportedLocales,
+                home: const SplashScreen(),
+              );
+            },
           );
         },
       ),

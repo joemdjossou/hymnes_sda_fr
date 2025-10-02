@@ -35,7 +35,7 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -53,7 +53,7 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -82,7 +82,7 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -110,20 +110,20 @@ class AuthService {
         case AuthorizationErrorCode.canceled:
           return null; // User cancelled the sign-in
         case AuthorizationErrorCode.failed:
-          throw 'Apple Sign In failed. Please try again.';
+          throw 'APPLE_SIGN_IN_FAILED';
         case AuthorizationErrorCode.invalidResponse:
-          throw 'Invalid response from Apple. Please try again.';
+          throw 'INVALID_APPLE_RESPONSE';
         case AuthorizationErrorCode.notHandled:
-          throw 'Apple Sign In not handled. Please try again.';
+          throw 'APPLE_SIGN_IN_NOT_HANDLED';
         case AuthorizationErrorCode.unknown:
-          throw 'Unknown error occurred during Apple Sign In.';
+          throw 'UNKNOWN_APPLE_ERROR';
         default:
-          throw 'Apple Sign In failed. Please try again.';
+          throw 'APPLE_SIGN_IN_FAILED';
       }
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -134,7 +134,7 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -146,7 +146,7 @@ class AuthService {
         _googleSignIn.signOut(),
       ]);
     } catch (e) {
-      throw 'An error occurred while signing out. Please try again.';
+      throw 'SIGN_OUT_ERROR';
     }
   }
 
@@ -157,7 +157,7 @@ class AuthService {
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
     } catch (e) {
-      throw 'An unexpected error occurred. Please try again.';
+      throw 'UNEXPECTED_ERROR';
     }
   }
 
@@ -165,29 +165,29 @@ class AuthService {
   String _handleAuthException(FirebaseAuthException e) {
     switch (e.code) {
       case 'user-not-found':
-        return 'No user found for that email address.';
+        return 'USER_NOT_FOUND';
       case 'wrong-password':
-        return 'Wrong password provided for that user.';
+        return 'WRONG_PASSWORD';
       case 'email-already-in-use':
-        return 'The account already exists for that email.';
+        return 'EMAIL_ALREADY_IN_USE';
       case 'weak-password':
-        return 'The password provided is too weak.';
+        return 'WEAK_PASSWORD';
       case 'invalid-email':
-        return 'The email address is not valid.';
+        return 'INVALID_EMAIL';
       case 'user-disabled':
-        return 'This user account has been disabled.';
+        return 'USER_DISABLED';
       case 'too-many-requests':
-        return 'Too many attempts. Please try again later.';
+        return 'TOO_MANY_REQUESTS';
       case 'operation-not-allowed':
-        return 'Signing in with this method is not allowed.';
+        return 'OPERATION_NOT_ALLOWED';
       case 'invalid-credential':
-        return 'The credential is invalid or has expired.';
+        return 'INVALID_CREDENTIAL';
       case 'account-exists-with-different-credential':
-        return 'An account already exists with the same email address but different sign-in credentials.';
+        return 'ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL';
       case 'network-request-failed':
-        return 'Network error. Please check your internet connection.';
+        return 'NETWORK_REQUEST_FAILED';
       default:
-        return e.message ?? 'An authentication error occurred.';
+        return e.message ?? 'AUTHENTICATION_ERROR';
     }
   }
 }

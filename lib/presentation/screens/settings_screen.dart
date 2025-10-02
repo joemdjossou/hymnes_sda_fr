@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/providers/language_provider.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
 import '../widgets/custom_button.dart';
+import '../widgets/theme_selection_widget.dart';
 import 'login_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -30,14 +32,17 @@ class SettingsScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            _buildAccountSection(context, l10n),
+            const SizedBox(height: 24),
             _buildLanguageSection(context, l10n),
             const SizedBox(height: 24),
-            _buildAccountSection(context, l10n),
+            const ThemeSelectionWidget(),
+            const Gap(100), // Extra padding at bottom for better scrolling
             // Add more settings sections here in the future
           ],
         ),
@@ -253,7 +258,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     Text(
-                      'Account',
+                      l10n.account,
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -311,7 +316,7 @@ class SettingsScreen extends StatelessWidget {
                       context: context,
                       builder: (context) => AlertDialog(
                         title: Text(l10n.signOut),
-                        content: Text('Are you sure you want to sign out?'),
+                        content: Text(l10n.signOutConfirmation),
                         actions: [
                           TextButton(
                             onPressed: () => Navigator.of(context).pop(),
@@ -377,7 +382,7 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     Text(
-                      'Account',
+                      l10n.account,
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -388,7 +393,7 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Sign in to save your favorite hymns and access your personal collection.',
+                  l10n.signInToSaveFavorites,
                   style: TextStyle(
                     fontSize: 14,
                     color: AppColors.textSecondary.withValues(alpha: 0.8),

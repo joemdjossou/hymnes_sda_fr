@@ -24,6 +24,7 @@ dependencies:
   path_provider: ^2.1.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  gap:
   # Audio playback (for when MIDI files are converted to audio)
   just_audio: ^0.9.36
   audio_session: ^0.1.18
