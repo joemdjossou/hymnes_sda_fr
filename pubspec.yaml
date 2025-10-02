@@ -29,11 +29,18 @@ dependencies:
   audio_session: ^0.1.18
   # Audio synthesis for MIDI playback
   flutter_sound: ^9.2.13
-  file_picker: ^5.2.5
   # Web view for PDF display
   webview_flutter: ^4.4.2
   http: ^1.1.0
   url_launcher: ^6.2.2
+  # For firebase authentication
+  firebase_auth: ^6.1.0
+  # For firebase core
+  firebase_core: ^4.1.1
+  # For Google Sign-In
+  google_sign_in: ^6.2.0
+  # For Apple Sign-In
+  sign_in_with_apple: ^5.0.0
 
 dev_dependencies:
   flutter_test:

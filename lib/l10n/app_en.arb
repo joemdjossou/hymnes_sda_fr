@@ -134,5 +134,57 @@
         "type": "String"
       }
     }
-  }
+  },
+  "login": "Login",
+  "signUp": "Sign Up",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "forgotPassword": "Forgot Password?",
+  "signInWithGoogle": "Sign in with Google",
+  "signInWithApple": "Sign in with Apple",
+  "signInWithEmail": "Sign in with Email",
+  "createAccount": "Create Account",
+  "alreadyHaveAccount": "Already have an account?",
+  "dontHaveAccount": "Don't have an account?",
+  "signIn": "Sign In",
+  "signOut": "Sign Out",
+  "welcomeBack": "Welcome Back",
+  "welcomeBackDescription": "Sign in to save your favorite hymns and access your personal collection.",
+  "createAccountDescription": "Create an account to save your favorite hymns and access your personal collection.",
+  "enterEmail": "Enter your email",
+  "enterPassword": "Enter your password",
+  "enterConfirmPassword": "Confirm your password",
+  "passwordTooShort": "Password must be at least 6 characters",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "invalidEmail": "Please enter a valid email address",
+  "emailRequired": "Email is required",
+  "passwordRequired": "Password is required",
+  "confirmPasswordRequired": "Please confirm your password",
+  "signInSuccess": "Successfully signed in",
+  "signUpSuccess": "Account created successfully",
+  "signOutSuccess": "Successfully signed out",
+  "passwordResetSent": "Password reset email sent to {email}",
+  "@passwordResetSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "resetPassword": "Reset Password",
+  "resetPasswordDescription": "Enter your email address and we'll send you a link to reset your password.",
+  "sendResetEmail": "Send Reset Email",
+  "backToSignIn": "Back to Sign In",
+  "accountCreated": "Account Created",
+  "accountCreatedDescription": "Your account has been created successfully. You can now save your favorite hymns.",
+  "continueToApp": "Continue to App",
+  "authenticationRequired": "Authentication Required",
+  "authenticationRequiredDescription": "Please sign in to save hymns to your favorites.",
+  "signInToContinue": "Sign In to Continue",
+  "cancel": "Cancel",
+  "error": "Error",
+  "success": "Success",
+  "loading": "Loading...",
+  "tryAgain": "Try Again"
 }

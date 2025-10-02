@@ -134,5 +134,57 @@
         "type": "String"
       }
     }
-  }
+  },
+  "login": "Connexion",
+  "signUp": "S'inscrire",
+  "email": "Email",
+  "password": "Mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "forgotPassword": "Mot de passe oublié ?",
+  "signInWithGoogle": "Se connecter avec Google",
+  "signInWithApple": "Se connecter avec Apple",
+  "signInWithEmail": "Se connecter avec l'email",
+  "createAccount": "Créer un compte",
+  "alreadyHaveAccount": "Vous avez déjà un compte ?",
+  "dontHaveAccount": "Vous n'avez pas de compte ?",
+  "signIn": "Se connecter",
+  "signOut": "Se déconnecter",
+  "welcomeBack": "Bon retour",
+  "welcomeBackDescription": "Connectez-vous pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.",
+  "createAccountDescription": "Créez un compte pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.",
+  "enterEmail": "Entrez votre email",
+  "enterPassword": "Entrez votre mot de passe",
+  "enterConfirmPassword": "Confirmez votre mot de passe",
+  "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+  "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+  "invalidEmail": "Veuillez entrer une adresse email valide",
+  "emailRequired": "L'email est requis",
+  "passwordRequired": "Le mot de passe est requis",
+  "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
+  "signInSuccess": "Connexion réussie",
+  "signUpSuccess": "Compte créé avec succès",
+  "signOutSuccess": "Déconnexion réussie",
+  "passwordResetSent": "Email de réinitialisation envoyé à {email}",
+  "@passwordResetSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "resetPassword": "Réinitialiser le mot de passe",
+  "resetPasswordDescription": "Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+  "sendResetEmail": "Envoyer l'email de réinitialisation",
+  "backToSignIn": "Retour à la connexion",
+  "accountCreated": "Compte créé",
+  "accountCreatedDescription": "Votre compte a été créé avec succès. Vous pouvez maintenant sauvegarder vos cantiques favoris.",
+  "continueToApp": "Continuer vers l'application",
+  "authenticationRequired": "Authentification requise",
+  "authenticationRequiredDescription": "Veuillez vous connecter pour sauvegarder des cantiques dans vos favoris.",
+  "signInToContinue": "Se connecter pour continuer",
+  "cancel": "Annuler",
+  "error": "Erreur",
+  "success": "Succès",
+  "loading": "Chargement...",
+  "tryAgain": "Réessayer"
 }
