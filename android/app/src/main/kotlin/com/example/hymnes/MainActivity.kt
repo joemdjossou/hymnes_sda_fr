@@ -1,4 +1,4 @@
-package com.example.hymnes
+package com.joemdjossou.hymnes
 
 import io.flutter.embedding.android.FlutterActivity
 

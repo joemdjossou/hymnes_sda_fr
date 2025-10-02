@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../shared/constants/app_colors.dart';
+import '../widgets/auth_required_widget.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
@@ -9,7 +10,7 @@ class FavoritesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
@@ -25,12 +26,15 @@ class FavoritesScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          l10n.favoritesToBe,
-          style: const TextStyle(
-            color: AppColors.textSecondary,
-            fontSize: 16,
+      body: AuthRequiredWidget(
+        message: l10n.authenticationRequiredDescription,
+        child: Center(
+          child: Text(
+            l10n.favoritesToBe,
+            style: const TextStyle(
+              color: AppColors.textSecondary,
+              fontSize: 16,
+            ),
           ),
         ),
       ),

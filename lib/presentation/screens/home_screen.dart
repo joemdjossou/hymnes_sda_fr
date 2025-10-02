@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
+import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import 'hymn_detail_screen.dart';
+import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -83,6 +86,56 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         automaticallyImplyLeading: true,
         centerTitle: true,
+        actions: [
+          BlocBuilder<AuthBloc, AuthState>(
+            builder: (context, state) {
+              if (state is Authenticated) {
+                return PopupMenuButton<String>(
+                  icon: CircleAvatar(
+                    radius: 16,
+                    backgroundColor: AppColors.primary.withValues(alpha: 0.1),
+                    child: Text(
+                      state.user.initials,
+                      style: const TextStyle(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                  onSelected: (value) {
+                    if (value == 'signout') {
+                      context.read<AuthBloc>().add(SignOutRequested());
+                    }
+                  },
+                  itemBuilder: (context) => [
+                    PopupMenuItem(
+                      value: 'signout',
+                      child: Row(
+                        children: [
+                          const Icon(Icons.logout, size: 20),
+                          const SizedBox(width: 8),
+                          Text(l10n.signOut),
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return IconButton(
+                  icon: const Icon(Icons.login),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                );
+              }
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [

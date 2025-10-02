@@ -1,18 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hymnes/firebase_options.dart';
 
 import 'core/providers/language_provider.dart';
+import 'core/services/auth_service.dart';
 import 'core/services/storage_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
+import 'features/auth/bloc/auth_bloc.dart';
 import 'features/midi/bloc/midi_bloc.dart';
 import 'presentation/screens/splash_screen.dart';
 import 'shared/constants/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   // Set preferred orientations
   await SystemChrome.setPreferredOrientations([
@@ -41,6 +49,10 @@ class HymnesApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => AudioBloc(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              AuthBloc(authService: AuthService())..add(AuthCheckRequested()),
         ),
       ],
       child: BlocBuilder<LanguageBloc, LanguageState>(
