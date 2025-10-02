@@ -1,0 +1,138 @@
+{
+  "@@locale": "en",
+  "appTitle": "Hymns",
+  "appSubtitle": "French Adventist Hymns",
+  "settings": "Settings",
+  "language": "Language",
+  "english": "English",
+  "french": "French",
+  "selectLanguage": "Select Language",
+  "hymnHistory": "Hymn History",
+  "discoverStory": "Discover the story behind this hymn",
+  "hymnInformation": "Hymn Information",
+  "hymnStory": "Hymn Story",
+  "number": "Number",
+  "title": "Title",
+  "author": "Author",
+  "composer": "Composer",
+  "style": "Style",
+  "midiFile": "MIDI File",
+  "lyrics": "Lyrics",
+  "loading": "Loading...",
+  "hymnNotFound": "Hymn not found",
+  "errorLoadingHymn": "Error loading hymn",
+  "close": "Close",
+  "unknown": "Unknown",
+  "home": "Home",
+  "search": "Search",
+  "favorites": "Favorites",
+  "searchHymns": "Search hymns...",
+  "clear": "Clear",
+  "hymnsFound": "{count} hymns found",
+  "@hymnsFound": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "noHymnsAvailable": "No hymns available",
+  "noHymnsFound": "No hymns found",
+  "advancedSearchToBe": "Advanced search - to be implemented",
+  "favoritesToBe": "Favorites screen - to be implemented",
+  "skip": "Skip",
+  "continue_": "Continue",
+  "getStarted": "Get Started",
+  "welcomeToHymnes": "Welcome to Hymnes",
+  "discoverSacredMusic": "Discover Sacred Music",
+  "welcomeDescription": "Explore a vast collection of Adventist hymns and songs of praise. Experience worship through beautiful melodies and inspiring lyrics.",
+  "searchAndDiscover": "Search & Discover",
+  "findYourFavorites": "Find Your Favorites",
+  "searchDescription": "Easily find your favorite hymns by title, author, or lyrics. Our powerful search helps you discover new songs for worship.",
+  "midiPlayback": "MIDI Playback",
+  "highQualityAudio": "High-Quality Audio",
+  "midiDescription": "Listen to hymns with crystal-clear MIDI playback. Choose different voice tracks and enjoy the full musical arrangement.",
+  "favoritesAndHistory": "Favorites & History",
+  "personalCollection": "Personal Collection",
+  "favoritesDescription": "Save your favorite hymns and explore their rich history. Learn about the authors and the stories behind each song.",
+  "hymnStoryTemplate": "This beloved hymn \"{title}\" was written by {author}{composer}.\n\nThe hymn has been a source of comfort and inspiration for countless believers throughout the years. Its timeless message continues to resonate with congregations around the world.\n\nThe {style} style of this hymn makes it particularly suitable for worship services and personal devotion. The melody and lyrics work together to create a powerful expression of faith and devotion.\n\nThis hymn stands as a testament to the enduring power of sacred music to touch hearts and lift spirits in worship and praise.",
+  "@hymnStoryTemplate": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "author": {
+        "type": "String"
+      },
+      "composer": {
+        "type": "String"
+      },
+      "style": {
+        "type": "String"
+      }
+    }
+  },
+  "unknownAuthor": "an unknown author",
+  "withMusicComposedBy": " with music composed by {composer}",
+  "@withMusicComposedBy": {
+    "placeholders": {
+      "composer": {
+        "type": "String"
+      }
+    }
+  },
+  "hymnNumber": "Hymn {number}",
+  "@hymnNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "hymnTitleWithNumber": "{number}. {title}",
+  "@hymnTitleWithNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "comingSoon": "Coming Soon!!!",
+  "allVoices": "All Voices",
+  "soprano": "Soprano",
+  "alto": "Alto",
+  "tenor": "Tenor",
+  "bass": "Bass",
+  "musicSheet": "Music Sheet",
+  "viewMusicSheet": "View music sheet (PDF)",
+  "viewMusicSheets": "View {count} music sheets (PDF)",
+  "@viewMusicSheets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "checkingAvailability": "Checking availability...",
+  "errorCheckingMusicSheets": "Error checking music sheets",
+  "noMusicSheetsAvailable": "No music sheets available",
+  "loadingMusicSheet": "Loading music sheet...",
+  "unableToDisplayPdf": "Unable to display PDF",
+  "webViewFailedToLoad": "WebView failed to load",
+  "pdfLoadingTimeout": "PDF loading timeout. Tap to open in browser.",
+  "failedToLoadPdf": "Failed to load PDF. Tap to open in browser.",
+  "openInBrowser": "Open in Browser",
+  "retry": "Retry",
+  "cannotOpenPdfInBrowser": "Cannot open PDF in browser",
+  "errorOpeningPdf": "Error opening PDF: {error}",
+  "@errorOpeningPdf": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
+}
