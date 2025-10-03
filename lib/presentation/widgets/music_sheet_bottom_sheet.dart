@@ -193,9 +193,9 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.9,
-      decoration: const BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: AppColors.surface(context),
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(25),
           topRight: Radius.circular(25),
         ),
@@ -208,7 +208,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: AppColors.textSecondary.withValues(alpha: 0.3),
+              color: AppColors.textSecondary(context).withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -235,7 +235,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              gradient: AppColors.primaryGradient,
+              gradient: AppColors.primaryGradient(context),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(
@@ -251,18 +251,18 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
               children: [
                 Text(
                   '${l10n.hymnNumber(widget.hymnNumber)} - Music Sheet',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
-                    color: AppColors.textSecondary,
+                    color: AppColors.textSecondary(context),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Text(
                   widget.hymnTitle,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                    color: AppColors.textPrimary(context),
                   ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -272,9 +272,9 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
           ),
           IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: const Icon(
+            icon: Icon(
               Icons.close,
-              color: AppColors.textSecondary,
+              color: AppColors.textSecondary(context),
             ),
           ),
         ],
@@ -286,7 +286,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
       ),
       child: TabBar(
@@ -299,7 +299,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
           ),
         ),
         labelColor: AppColors.primary,
-        unselectedLabelColor: AppColors.textSecondary,
+        unselectedLabelColor: AppColors.textSecondary(context),
         indicatorColor: AppColors.primary,
         indicatorSize: TabBarIndicatorSize.tab,
         dividerColor: Colors.transparent,
@@ -324,10 +324,10 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
     return Container(
       margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.border.withValues(alpha: 0.3),
+          color: AppColors.border(context).withValues(alpha: 0.3),
         ),
       ),
       child: ClipRRect(
@@ -337,10 +337,10 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
             if (!_hasWebViewError && _controllers.isNotEmpty)
               WebViewWidget(controller: _controllers[index])
             else
-              _buildErrorState(currentUrl),
+              _buildErrorState(context, currentUrl),
             if (_isLoading && !_hasWebViewError)
               Container(
-                color: AppColors.cardBackground,
+                color: AppColors.cardBackground(context),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -351,8 +351,8 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                       const SizedBox(height: 16),
                       Text(
                         l10n.loadingMusicSheet,
-                        style: const TextStyle(
-                          color: AppColors.textSecondary,
+                        style: TextStyle(
+                          color: AppColors.textSecondary(context),
                           fontSize: 16,
                         ),
                       ),
@@ -366,10 +366,10 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
     );
   }
 
-  Widget _buildErrorState(String url) {
+  Widget _buildErrorState(BuildContext context, String url) {
     final l10n = AppLocalizations.of(context)!;
     return Container(
-      color: AppColors.cardBackground,
+      color: AppColors.cardBackground(context),
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -384,10 +384,10 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
               const SizedBox(height: 16),
               Text(
                 l10n.unableToDisplayPdf,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+                  color: AppColors.textPrimary(context),
                 ),
               ),
               const SizedBox(height: 8),
@@ -395,7 +395,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                 _errorMessage ?? l10n.webViewFailedToLoad,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: AppColors.textSecondary,
+                  color: AppColors.textSecondary(context),
                   fontSize: 14,
                 ),
               ),

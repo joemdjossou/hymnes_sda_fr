@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../shared/constants/app_colors.dart';
@@ -19,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController _scaleController;
   late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
+  String _appVersion = 'v1.0.0';
 
   @override
   void initState() {
@@ -50,7 +52,19 @@ class _SplashScreenState extends State<SplashScreen>
       curve: Curves.elasticOut,
     ));
 
+    _loadAppVersion();
     _startAnimations();
+  }
+
+  Future<void> _loadAppVersion() async {
+    try {
+      final packageInfo = await PackageInfo.fromPlatform();
+      setState(() {
+        _appVersion = 'v${packageInfo.version}';
+      });
+    } catch (e) {
+      // Keep default version if there's an error
+    }
   }
 
   void _startAnimations() async {
@@ -168,7 +182,7 @@ class _SplashScreenState extends State<SplashScreen>
 
                   // App version
                   Text(
-                    'v1.0.0',
+                    _appVersion,
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.white.withValues(alpha: 0.6),

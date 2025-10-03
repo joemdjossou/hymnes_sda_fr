@@ -68,21 +68,21 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Colors.white.withValues(alpha: 0.25),
-                  Colors.white.withValues(alpha: 0.15),
-                  Colors.blue.withValues(alpha: 0.05),
+                  AppColors.cardBackground(context).withValues(alpha: 0.25),
+                  AppColors.cardBackground(context).withValues(alpha: 0.15),
+                  AppColors.primary.withValues(alpha: 0.05),
                 ],
               ),
               // Subtle border for definition
               border: Border.all(
-                color: Colors.white.withValues(alpha: 0.3),
+                color: AppColors.border(context).withValues(alpha: 0.3),
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(28),
               // Subtle shadow for depth
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
+                  color: AppColors.textPrimary(context).withValues(alpha: 0.1),
                   blurRadius: 20,
                   offset: const Offset(0, 8),
                 ),
@@ -175,7 +175,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 child: Icon(
                   isActive ? activeIcon : icon,
                   key: ValueKey(isActive),
-                  color: isActive ? AppColors.primary : AppColors.textSecondary,
+                  color: isActive
+                      ? AppColors.primary
+                      : AppColors.textSecondary(context),
                   size: 24,
                 ),
               ),
@@ -183,7 +185,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               AnimatedDefaultTextStyle(
                 duration: const Duration(milliseconds: 200),
                 style: TextStyle(
-                  color: isActive ? AppColors.primary : AppColors.textSecondary,
+                  color: isActive
+                      ? AppColors.primary
+                      : AppColors.textSecondary(context),
                   fontSize: 11,
                   fontWeight: isActive ? FontWeight.w600 : FontWeight.w500,
                 ),

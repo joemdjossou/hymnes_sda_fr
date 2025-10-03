@@ -72,17 +72,17 @@ class _HomeScreenState extends State<HomeScreen> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.background(context),
       appBar: AppBar(
         title: Text(
           l10n.appTitle,
-          style: const TextStyle(
-            color: AppColors.textPrimary,
+          style: TextStyle(
+            color: AppColors.textPrimary(context),
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: AppColors.surface,
-        surfaceTintColor: AppColors.surface,
+        backgroundColor: AppColors.surface(context),
+        surfaceTintColor: AppColors.surface(context),
         elevation: 0,
         automaticallyImplyLeading: true,
         centerTitle: true,
@@ -157,14 +157,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     : null,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: const BorderSide(color: AppColors.border),
+                  borderSide: BorderSide(color: AppColors.border(context)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: const BorderSide(color: AppColors.primary),
                 ),
                 filled: true,
-                fillColor: AppColors.cardBackground,
+                fillColor: AppColors.cardBackground(context),
               ),
             ),
           ),
@@ -176,8 +176,8 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   l10n.hymnsFound(_filteredHymns.length),
-                  style: const TextStyle(
-                    color: AppColors.textSecondary,
+                  style: TextStyle(
+                    color: AppColors.textSecondary(context),
                     fontSize: 14,
                   ),
                 ),
@@ -203,15 +203,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.music_note,
                           size: 64,
-                          color: AppColors.textSecondary.withValues(alpha: 0.5),
+                          color: AppColors.textSecondary(context)
+                              .withValues(alpha: 0.5),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           _searchController.text.isEmpty
                               ? l10n.noHymnsAvailable
                               : l10n.noHymnsFound,
-                          style: const TextStyle(
-                            color: AppColors.textSecondary,
+                          style: TextStyle(
+                            color: AppColors.textSecondary(context),
                             fontSize: 18,
                           ),
                         ),
@@ -219,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   )
                 : ListView.builder(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 116),
                     itemCount: _filteredHymns.length,
                     itemBuilder: (context, index) {
                       final hymn = _filteredHymns[index];
@@ -227,11 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.only(bottom: 12),
                         child: HymnCard(
                           hymn: hymn,
-                          isFavorite: false, // TODO: Implement favorites
                           onTap: () => _onHymnTap(hymn),
-                          onFavoriteToggle: () {
-                            // TODO: Implement favorites
-                          },
                         ),
                       );
                     },

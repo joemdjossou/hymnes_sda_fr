@@ -53,7 +53,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
             Icon(
               Icons.lock_outline,
               size: 80,
-              color: theme.primaryColor.withValues(alpha: 0.6),
+              color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.6),
             ),
             const SizedBox(height: 24),
             Text(

@@ -12,6 +12,8 @@ class Hymn extends Equatable {
   final String tenorFile;
   final String bassFile;
   final String midiFile;
+  final String theme;
+  final String subtheme;
 
   const Hymn({
     required this.number,
@@ -25,6 +27,8 @@ class Hymn extends Equatable {
     required this.tenorFile,
     required this.bassFile,
     required this.midiFile,
+    required this.theme,
+    required this.subtheme,
   });
 
   @override
@@ -40,6 +44,8 @@ class Hymn extends Equatable {
         tenorFile,
         bassFile,
         midiFile,
+        theme,
+        subtheme,
       ];
 
   Hymn copyWith({
@@ -54,6 +60,8 @@ class Hymn extends Equatable {
     String? tenorFile,
     String? bassFile,
     String? midiFile,
+    String? theme,
+    String? subtheme,
   }) {
     return Hymn(
       number: number ?? this.number,
@@ -67,6 +75,8 @@ class Hymn extends Equatable {
       tenorFile: tenorFile ?? this.tenorFile,
       bassFile: bassFile ?? this.bassFile,
       midiFile: midiFile ?? this.midiFile,
+      theme: theme ?? this.theme,
+      subtheme: subtheme ?? this.subtheme,
     );
   }
 
@@ -83,6 +93,8 @@ class Hymn extends Equatable {
       'tenorFile': tenorFile,
       'bassFile': bassFile,
       'midiFile': midiFile,
+      'theme': theme,
+      'subtheme': subtheme,
     };
   }
 
@@ -99,6 +111,8 @@ class Hymn extends Equatable {
       tenorFile: json['tenorFile'] ?? '',
       bassFile: json['bassFile'] ?? '',
       midiFile: json['midiFile'] ?? '',
+      theme: json['theme'] ?? '',
+      subtheme: json['subtheme'] ?? '',
     );
   }
 }

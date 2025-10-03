@@ -51,7 +51,7 @@ class HymnHistoryWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                gradient: AppColors.primaryGradient,
+                gradient: AppColors.primaryGradient(context),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -74,10 +74,10 @@ class HymnHistoryWidget extends StatelessWidget {
                 children: [
                   Text(
                     l10n.hymnHistory,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.textPrimary,
+                      color: AppColors.textPrimary(context),
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -85,7 +85,8 @@ class HymnHistoryWidget extends StatelessWidget {
                     l10n.discoverStory,
                     style: TextStyle(
                       fontSize: 14,
-                      color: AppColors.textSecondary.withValues(alpha: 0.8),
+                      color: AppColors.textSecondary(context)
+                          .withValues(alpha: 0.8),
                       fontStyle: FontStyle.italic,
                     ),
                   ),

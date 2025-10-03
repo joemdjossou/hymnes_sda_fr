@@ -42,7 +42,10 @@ dependencies:
   google_sign_in: ^6.2.0
   # For Apple Sign-In
   sign_in_with_apple: ^5.0.0
-
+  # For logging
+  logger: ^2.3.0
+  # For getting app version info
+  package_info_plus: ^4.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

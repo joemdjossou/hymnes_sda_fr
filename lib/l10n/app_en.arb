@@ -40,6 +40,8 @@
   "noHymnsFound": "No hymns found",
   "advancedSearchToBe": "Advanced search - to be implemented",
   "favoritesToBe": "Favorites screen - to be implemented",
+  "noFavoritesYet": "No favorites yet",
+  "addFavoritesDescription": "Tap the heart icon on your favorite hymns to add them to your favorites.",
   "skip": "Skip",
   "continue_": "Continue",
   "getStarted": "Get Started",
@@ -218,5 +220,8 @@
   "invalidCredential": "The credential is invalid or has expired.",
   "accountExistsWithDifferentCredential": "An account already exists with the same email address but different sign-in credentials.",
   "networkRequestFailed": "Network error. Please check your internet connection.",
-  "authenticationError": "An authentication error occurred."
+  "authenticationError": "An authentication error occurred.",
+  "appInfo": "App Info",
+  "version": "Version",
+  "buildNumber": "Build"
 }

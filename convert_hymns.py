@@ -104,9 +104,15 @@ def convert_hymne_to_json(hymne_text):
     else:
         composer = ""
     
-    # Extract style
-    style_match = re.search(r"style:\s*'([^']*)'", hymne_text)
-    style = style_match.group(1) if style_match else ""
+    # Extract style - handle escaped quotes properly
+    style_match = re.search(r"style:\s*'((?:[^'\\]|\\.)*)'", hymne_text)
+    if style_match:
+        style = style_match.group(1).strip()
+        # Replace escaped quotes with regular quotes
+        style = style.replace("\\'", "'")
+        style = style.strip()
+    else:
+        style = ""
     
     # Extract audio files
     soprano_match = re.search(r"soprano:\s*'([^']*)'", hymne_text)

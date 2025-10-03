@@ -33,7 +33,7 @@ class MidiPlayerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    
+
     return BlocBuilder<MidiBloc, MidiState>(
       builder: (context, state) {
         String? currentMidiFile;
@@ -57,10 +57,11 @@ class MidiPlayerWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: isCurrentHymn
                 ? AppColors.primary.withValues(alpha: 0.1)
-                : AppColors.cardBackground,
+                : AppColors.cardBackground(context),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: isCurrentHymn ? AppColors.primary : AppColors.border,
+              color:
+                  isCurrentHymn ? AppColors.primary : AppColors.border(context),
               width: 1,
             ),
           ),
@@ -91,7 +92,7 @@ class MidiPlayerWidget extends StatelessWidget {
                         Text(
                           hymnTitle,
                           style: TextStyle(
-                            color: AppColors.textSecondary,
+                            color: AppColors.textSecondary(context),
                             fontSize: 14,
                           ),
                           maxLines: 1,
@@ -132,7 +133,8 @@ class MidiPlayerWidget extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        onPressed: () => context.read<MidiBloc>().add(ClearMidiError()),
+                        onPressed: () =>
+                            context.read<MidiBloc>().add(ClearMidiError()),
                         icon: Icon(
                           Icons.close,
                           color: AppColors.error,
@@ -147,7 +149,6 @@ class MidiPlayerWidget extends StatelessWidget {
                 const SizedBox(height: 16),
               ],
 
-
               // Progress bar
               if (isCurrentHymn && duration > Duration.zero) ...[
                 Column(
@@ -156,10 +157,11 @@ class MidiPlayerWidget extends StatelessWidget {
                       value: position.inMilliseconds.toDouble(),
                       max: duration.inMilliseconds.toDouble(),
                       onChanged: (value) {
-                        context.read<MidiBloc>().add(SeekMidi(Duration(milliseconds: value.toInt())));
+                        context.read<MidiBloc>().add(
+                            SeekMidi(Duration(milliseconds: value.toInt())));
                       },
                       activeColor: AppColors.primary,
-                      inactiveColor: AppColors.border,
+                      inactiveColor: AppColors.border(context),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,14 +169,14 @@ class MidiPlayerWidget extends StatelessWidget {
                         Text(
                           _formatDuration(position),
                           style: TextStyle(
-                            color: AppColors.textSecondary,
+                            color: AppColors.textSecondary(context),
                             fontSize: 12,
                           ),
                         ),
                         Text(
                           _formatDuration(duration),
                           style: TextStyle(
-                            color: AppColors.textSecondary,
+                            color: AppColors.textSecondary(context),
                             fontSize: 12,
                           ),
                         ),
@@ -194,7 +196,8 @@ class MidiPlayerWidget extends StatelessWidget {
                     context,
                     icon: Icons.play_arrow,
                     label: l10n.allVoices,
-                    onTap: () => context.read<MidiBloc>().add(PlayMidi('h$hymnNumber')),
+                    onTap: () =>
+                        context.read<MidiBloc>().add(PlayMidi('h$hymnNumber')),
                     isActive: isCurrentHymn && isPlaying,
                   ),
 
@@ -283,10 +286,11 @@ class MidiPlayerWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
-          color: isActive ? AppColors.primary : AppColors.cardBackground,
+          color:
+              isActive ? AppColors.primary : AppColors.cardBackground(context),
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isActive ? AppColors.primary : AppColors.border,
+            color: isActive ? AppColors.primary : AppColors.border(context),
           ),
         ),
         child: Column(
@@ -294,14 +298,15 @@ class MidiPlayerWidget extends StatelessWidget {
           children: [
             Icon(
               icon,
-              color: isActive ? Colors.white : AppColors.textSecondary,
+              color: isActive ? Colors.white : AppColors.textSecondary(context),
               size: 20,
             ),
             const SizedBox(height: 4),
             Text(
               label,
               style: TextStyle(
-                color: isActive ? Colors.white : AppColors.textSecondary,
+                color:
+                    isActive ? Colors.white : AppColors.textSecondary(context),
                 fontSize: 10,
                 fontWeight: FontWeight.w500,
               ),

@@ -8,10 +8,12 @@ import 'package:hymnes/firebase_options.dart';
 
 import 'core/providers/language_provider.dart';
 import 'core/providers/theme_provider.dart';
+import 'core/repositories/hymn_repository.dart';
 import 'core/services/auth_service.dart';
 import 'core/services/storage_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
 import 'features/auth/bloc/auth_bloc.dart';
+import 'features/favorites/bloc/favorites_bloc.dart';
 import 'features/midi/bloc/midi_bloc.dart';
 import 'presentation/screens/splash_screen.dart';
 import 'shared/constants/app_theme.dart';
@@ -31,6 +33,8 @@ void main() async {
 
   // Initialize services
   await StorageService().initialize();
+  // Uncomment the line below to clear all data if you encounter type errors
+  // await StorageService().clearAllData();
 
   runApp(const HymnesApp());
 }
@@ -57,6 +61,11 @@ class HymnesApp extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               AuthBloc(authService: AuthService())..add(AuthCheckRequested()),
+        ),
+        BlocProvider(
+          create: (context) => FavoritesBloc(
+            favoriteRepository: HymnRepository(),
+          )..add(LoadFavorites()),
         ),
       ],
       child: BlocBuilder<LanguageBloc, LanguageState>(

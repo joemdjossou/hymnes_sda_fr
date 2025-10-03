@@ -40,6 +40,8 @@
   "noHymnsFound": "Aucun cantique trouvé",
   "advancedSearchToBe": "Recherche avancée - à implémenter",
   "favoritesToBe": "Écran des favoris - à implémenter",
+  "noFavoritesYet": "Aucun favori pour le moment",
+  "addFavoritesDescription": "Appuyez sur l'icône cœur sur vos cantiques préférés pour les ajouter à vos favoris.",
   "skip": "Passer",
   "continue_": "Continuer",
   "getStarted": "Commencer",
@@ -218,5 +220,8 @@
   "invalidCredential": "Les identifiants sont invalides ou ont expiré.",
   "accountExistsWithDifferentCredential": "Un compte existe déjà avec la même adresse e-mail mais des identifiants de connexion différents.",
   "networkRequestFailed": "Erreur réseau. Veuillez vérifier votre connexion internet.",
-  "authenticationError": "Une erreur d'authentification s'est produite."
+  "authenticationError": "Une erreur d'authentification s'est produite.",
+  "appInfo": "Informations de l'application",
+  "version": "Version",
+  "buildNumber": "Build"
 }

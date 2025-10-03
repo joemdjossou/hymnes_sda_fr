@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared/constants/app_colors.dart';
+
 enum ButtonVariant {
   filled,
   outlined,
@@ -30,6 +32,10 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
+    // Get theme-aware colors
+    final primaryColor = AppColors.primary;
+    final onPrimaryColor = Colors.white;
+
     Widget buttonChild = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -41,9 +47,7 @@ class CustomButton extends StatelessWidget {
             child: CircularProgressIndicator(
               strokeWidth: 2,
               valueColor: AlwaysStoppedAnimation<Color>(
-                variant == ButtonVariant.filled
-                    ? theme.colorScheme.onPrimary
-                    : theme.primaryColor,
+                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
               ),
             ),
           ),
@@ -52,19 +56,18 @@ class CustomButton extends StatelessWidget {
           Icon(
             icon,
             size: 20,
-            color: variant == ButtonVariant.filled
-                ? theme.colorScheme.onPrimary
-                : theme.primaryColor,
+            color:
+                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
           ),
           const SizedBox(width: 8),
         ],
         Text(
           text,
           style: theme.textTheme.labelLarge?.copyWith(
-            color: variant == ButtonVariant.filled
-                ? theme.colorScheme.onPrimary
-                : theme.primaryColor,
+            color:
+                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
             fontWeight: FontWeight.w600,
+            fontFamily: 'Raleway',
           ),
         ),
       ],
@@ -78,12 +81,16 @@ class CustomButton extends StatelessWidget {
           child: ElevatedButton(
             onPressed: isLoading ? null : onPressed,
             style: ElevatedButton.styleFrom(
-              backgroundColor: theme.primaryColor,
-              foregroundColor: theme.colorScheme.onPrimary,
-              elevation: 0,
-              shadowColor: Colors.transparent,
+              backgroundColor: primaryColor,
+              foregroundColor: onPrimaryColor,
+              elevation: 2,
+              shadowColor: Colors.black26,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 12,
               ),
             ),
             child: buttonChild,
@@ -97,13 +104,17 @@ class CustomButton extends StatelessWidget {
           child: OutlinedButton(
             onPressed: isLoading ? null : onPressed,
             style: OutlinedButton.styleFrom(
-              foregroundColor: theme.primaryColor,
+              foregroundColor: primaryColor,
               side: BorderSide(
-                color: theme.primaryColor,
+                color: primaryColor,
                 width: 1.5,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 12,
               ),
             ),
             child: buttonChild,
@@ -117,9 +128,13 @@ class CustomButton extends StatelessWidget {
           child: TextButton(
             onPressed: isLoading ? null : onPressed,
             style: TextButton.styleFrom(
-              foregroundColor: theme.primaryColor,
+              foregroundColor: primaryColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 24,
+                vertical: 12,
               ),
             ),
             child: buttonChild,

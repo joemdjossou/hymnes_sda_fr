@@ -10,7 +10,9 @@
     "altoFile": "A001",
     "tenorFile": "T001",
     "bassFile": "B001",
-    "midiFile": "h1"
+    "midiFile": "h1",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "2",
@@ -23,7 +25,9 @@
     "altoFile": "A002",
     "tenorFile": "T002",
     "bassFile": "B002",
-    "midiFile": "h2"
+    "midiFile": "h2",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "3",
@@ -36,7 +40,9 @@
     "altoFile": "A003",
     "tenorFile": "T003",
     "bassFile": "B003",
-    "midiFile": "h3"
+    "midiFile": "h3",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "4",
@@ -49,7 +55,9 @@
     "altoFile": "A004",
     "tenorFile": "T004",
     "bassFile": "B004",
-    "midiFile": "h4"
+    "midiFile": "h4",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "5",
@@ -62,7 +70,9 @@
     "altoFile": "A005",
     "tenorFile": "T005",
     "bassFile": "B005",
-    "midiFile": "h5"
+    "midiFile": "h5",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "6",
@@ -75,7 +85,9 @@
     "altoFile": "A006",
     "tenorFile": "T006",
     "bassFile": "B006",
-    "midiFile": "h6"
+    "midiFile": "h6",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "7",
@@ -88,7 +100,9 @@
     "altoFile": "A007",
     "tenorFile": "T007",
     "bassFile": "B007",
-    "midiFile": "h7"
+    "midiFile": "h7",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "8",
@@ -101,7 +115,9 @@
     "altoFile": "A008",
     "tenorFile": "T008",
     "bassFile": "B008",
-    "midiFile": "h8"
+    "midiFile": "h8",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "9",
@@ -114,7 +130,9 @@
     "altoFile": "A009",
     "tenorFile": "T009",
     "bassFile": "B009",
-    "midiFile": "h9"
+    "midiFile": "h9",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "10",
@@ -127,7 +145,9 @@
     "altoFile": "A010",
     "tenorFile": "T010",
     "bassFile": "B010",
-    "midiFile": "h10"
+    "midiFile": "h10",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "11",
@@ -140,7 +160,9 @@
     "altoFile": "A011",
     "tenorFile": "T011",
     "bassFile": "B011",
-    "midiFile": "h11"
+    "midiFile": "h11",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "12",
@@ -153,7 +175,9 @@
     "altoFile": "A012",
     "tenorFile": "T012",
     "bassFile": "B012",
-    "midiFile": "h12"
+    "midiFile": "h12",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "13",
@@ -166,7 +190,9 @@
     "altoFile": "A013",
     "tenorFile": "T013",
     "bassFile": "B013",
-    "midiFile": "h13"
+    "midiFile": "h13",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "14",
@@ -179,7 +205,9 @@
     "altoFile": "A014",
     "tenorFile": "T014",
     "bassFile": "B014",
-    "midiFile": "h14"
+    "midiFile": "h14",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "15",
@@ -192,7 +220,9 @@
     "altoFile": "A015",
     "tenorFile": "T015",
     "bassFile": "B015",
-    "midiFile": "h15"
+    "midiFile": "h15",
+    "theme": "PSAUMES",
+    "subtheme": "Psaumes"
   },
   {
     "number": "16",
@@ -205,7 +235,9 @@
     "altoFile": "A016",
     "tenorFile": "T016",
     "bassFile": "B016",
-    "midiFile": "h16"
+    "midiFile": "h16",
+    "theme": "DIEU",
+    "subtheme": "Le Créateur"
   },
   {
     "number": "17",
@@ -218,7 +250,9 @@
     "altoFile": "A017",
     "tenorFile": "T017",
     "bassFile": "B017",
-    "midiFile": "h17"
+    "midiFile": "h17",
+    "theme": "DIEU",
+    "subtheme": "Le Créateur"
   },
   {
     "number": "18",
@@ -231,7 +265,9 @@
     "altoFile": "A018",
     "tenorFile": "T018",
     "bassFile": "B018",
-    "midiFile": "h18"
+    "midiFile": "h18",
+    "theme": "DIEU",
+    "subtheme": "Le Créateur"
   },
   {
     "number": "19",
@@ -244,7 +280,9 @@
     "altoFile": "A019",
     "tenorFile": "T019",
     "bassFile": "B019",
-    "midiFile": "h19"
+    "midiFile": "h19",
+    "theme": "DIEU",
+    "subtheme": "Le Créateur"
   },
   {
     "number": "20",
@@ -257,7 +295,9 @@
     "altoFile": "A020",
     "tenorFile": "T020",
     "bassFile": "B020",
-    "midiFile": "h20"
+    "midiFile": "h20",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "21",
@@ -270,7 +310,9 @@
     "altoFile": "A021",
     "tenorFile": "T021",
     "bassFile": "B021",
-    "midiFile": "h21"
+    "midiFile": "h21",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "22",
@@ -283,7 +325,9 @@
     "altoFile": "A022",
     "tenorFile": "T022",
     "bassFile": "B022",
-    "midiFile": "h22"
+    "midiFile": "h22",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "23",
@@ -296,7 +340,9 @@
     "altoFile": "A023",
     "tenorFile": "T023",
     "bassFile": "B023",
-    "midiFile": "h23"
+    "midiFile": "h23",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "24",
@@ -309,7 +355,9 @@
     "altoFile": "A024",
     "tenorFile": "T024",
     "bassFile": "B024",
-    "midiFile": "h24"
+    "midiFile": "h24",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "25",
@@ -322,7 +370,9 @@
     "altoFile": "A025",
     "tenorFile": "T025",
     "bassFile": "B025",
-    "midiFile": "h25"
+    "midiFile": "h25",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "26",
@@ -335,7 +385,9 @@
     "altoFile": "A026",
     "tenorFile": "T026",
     "bassFile": "B026",
-    "midiFile": "h26"
+    "midiFile": "h26",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "27",
@@ -348,7 +400,9 @@
     "altoFile": "A027",
     "tenorFile": "T027",
     "bassFile": "B027",
-    "midiFile": "h27"
+    "midiFile": "h27",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "28",
@@ -361,7 +415,9 @@
     "altoFile": "A028",
     "tenorFile": "T028",
     "bassFile": "B028",
-    "midiFile": "h28"
+    "midiFile": "h28",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "29",
@@ -374,7 +430,9 @@
     "altoFile": "A029",
     "tenorFile": "T029",
     "bassFile": "B029",
-    "midiFile": "h29"
+    "midiFile": "h29",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "30",
@@ -387,7 +445,9 @@
     "altoFile": "A030",
     "tenorFile": "T030",
     "bassFile": "B030",
-    "midiFile": "h30"
+    "midiFile": "h30",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "31",
@@ -400,7 +460,9 @@
     "altoFile": "A031",
     "tenorFile": "T031",
     "bassFile": "B031",
-    "midiFile": "h31"
+    "midiFile": "h31",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "32",
@@ -413,7 +475,9 @@
     "altoFile": "A032",
     "tenorFile": "T032",
     "bassFile": "B032",
-    "midiFile": "h32"
+    "midiFile": "h32",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "33",
@@ -426,7 +490,9 @@
     "altoFile": "A033",
     "tenorFile": "T033",
     "bassFile": "B033",
-    "midiFile": "h33"
+    "midiFile": "h33",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "34",
@@ -439,7 +505,9 @@
     "altoFile": "A034",
     "tenorFile": "T034",
     "bassFile": "B034",
-    "midiFile": "h34"
+    "midiFile": "h34",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "35",
@@ -452,7 +520,9 @@
     "altoFile": "A035",
     "tenorFile": "T035",
     "bassFile": "B035",
-    "midiFile": "h35"
+    "midiFile": "h35",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "36",
@@ -465,7 +535,9 @@
     "altoFile": "A036",
     "tenorFile": "T036",
     "bassFile": "B036",
-    "midiFile": "h36"
+    "midiFile": "h36",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "37",
@@ -478,7 +550,9 @@
     "altoFile": "A037",
     "tenorFile": "T037",
     "bassFile": "B037",
-    "midiFile": "h37"
+    "midiFile": "h37",
+    "theme": "DIEU",
+    "subtheme": "Adoration et louanges"
   },
   {
     "number": "38",
@@ -491,7 +565,9 @@
     "altoFile": "A038",
     "tenorFile": "T038",
     "bassFile": "B038",
-    "midiFile": "h38"
+    "midiFile": "h38",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "39",
@@ -504,7 +580,9 @@
     "altoFile": "A039",
     "tenorFile": "T039",
     "bassFile": "B039",
-    "midiFile": "h39"
+    "midiFile": "h39",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "40",
@@ -517,7 +595,9 @@
     "altoFile": "A040",
     "tenorFile": "T040",
     "bassFile": "B040",
-    "midiFile": "h40"
+    "midiFile": "h40",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "41",
@@ -530,7 +610,9 @@
     "altoFile": "A041",
     "tenorFile": "T041",
     "bassFile": "B041",
-    "midiFile": "h41"
+    "midiFile": "h41",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "42",
@@ -543,7 +625,9 @@
     "altoFile": "A042",
     "tenorFile": "T042",
     "bassFile": "B042",
-    "midiFile": "h42"
+    "midiFile": "h42",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "43",
@@ -556,7 +640,9 @@
     "altoFile": "A043",
     "tenorFile": "T043",
     "bassFile": "B043",
-    "midiFile": "h43"
+    "midiFile": "h43",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "44",
@@ -569,7 +655,9 @@
     "altoFile": "A044",
     "tenorFile": "T044",
     "bassFile": "B044",
-    "midiFile": "h44"
+    "midiFile": "h44",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "45",
@@ -582,7 +670,9 @@
     "altoFile": "A045",
     "tenorFile": "T045",
     "bassFile": "B045",
-    "midiFile": "h45"
+    "midiFile": "h45",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "46",
@@ -595,7 +685,9 @@
     "altoFile": "A046",
     "tenorFile": "T046",
     "bassFile": "B046",
-    "midiFile": "h46"
+    "midiFile": "h46",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "47",
@@ -608,7 +700,9 @@
     "altoFile": "A047",
     "tenorFile": "T047",
     "bassFile": "B047",
-    "midiFile": "h47"
+    "midiFile": "h47",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "48",
@@ -621,7 +715,9 @@
     "altoFile": "A048",
     "tenorFile": "T048",
     "bassFile": "B048",
-    "midiFile": "h48"
+    "midiFile": "h48",
+    "theme": "DIEU",
+    "subtheme": "L'amour de Dieu"
   },
   {
     "number": "49",
@@ -634,7 +730,9 @@
     "altoFile": "A049",
     "tenorFile": "T049",
     "bassFile": "B049",
-    "midiFile": "h49"
+    "midiFile": "h49",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "50",
@@ -647,7 +745,9 @@
     "altoFile": "A050",
     "tenorFile": "T050",
     "bassFile": "B050",
-    "midiFile": "h50"
+    "midiFile": "h50",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "51",
@@ -660,7 +760,9 @@
     "altoFile": "A051",
     "tenorFile": "T051",
     "bassFile": "B051",
-    "midiFile": "h51"
+    "midiFile": "h51",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "52",
@@ -673,7 +775,9 @@
     "altoFile": "A052",
     "tenorFile": "T052",
     "bassFile": "B052",
-    "midiFile": "h52"
+    "midiFile": "h52",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "53",
@@ -686,7 +790,9 @@
     "altoFile": "A053",
     "tenorFile": "T053",
     "bassFile": "B053",
-    "midiFile": "h53"
+    "midiFile": "h53",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "54",
@@ -699,7 +805,9 @@
     "altoFile": "A054",
     "tenorFile": "T054",
     "bassFile": "B054",
-    "midiFile": "h54"
+    "midiFile": "h54",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "55",
@@ -712,7 +820,9 @@
     "altoFile": "A055",
     "tenorFile": "T055",
     "bassFile": "B055",
-    "midiFile": "h55"
+    "midiFile": "h55",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "56",
@@ -725,7 +835,9 @@
     "altoFile": "A056",
     "tenorFile": "T056",
     "bassFile": "B056",
-    "midiFile": "h56"
+    "midiFile": "h56",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa naissance"
   },
   {
     "number": "57",
@@ -738,7 +850,9 @@
     "altoFile": "A057",
     "tenorFile": "T057",
     "bassFile": "B057",
-    "midiFile": "h57"
+    "midiFile": "h57",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "58",
@@ -751,7 +865,9 @@
     "altoFile": "A058",
     "tenorFile": "T058",
     "bassFile": "B058",
-    "midiFile": "h58"
+    "midiFile": "h58",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "59",
@@ -764,7 +880,9 @@
     "altoFile": "A059",
     "tenorFile": "T059",
     "bassFile": "B059",
-    "midiFile": "h59"
+    "midiFile": "h59",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "60",
@@ -777,7 +895,9 @@
     "altoFile": "A060",
     "tenorFile": "T060",
     "bassFile": "B060",
-    "midiFile": "h60"
+    "midiFile": "h60",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "61",
@@ -790,7 +910,9 @@
     "altoFile": "A061",
     "tenorFile": "T061",
     "bassFile": "B061",
-    "midiFile": "h61"
+    "midiFile": "h61",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "62",
@@ -803,7 +925,9 @@
     "altoFile": "A062",
     "tenorFile": "T062",
     "bassFile": "B062",
-    "midiFile": "h62"
+    "midiFile": "h62",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "63",
@@ -816,7 +940,9 @@
     "altoFile": "A063",
     "tenorFile": "T063",
     "bassFile": "B063",
-    "midiFile": "h63"
+    "midiFile": "h63",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "64",
@@ -829,7 +955,9 @@
     "altoFile": "A064",
     "tenorFile": "T064",
     "bassFile": "B064",
-    "midiFile": "h64"
+    "midiFile": "h64",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son ministère"
   },
   {
     "number": "65",
@@ -842,7 +970,9 @@
     "altoFile": "A065",
     "tenorFile": "T065",
     "bassFile": "B065",
-    "midiFile": "h65"
+    "midiFile": "h65",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "66",
@@ -855,7 +985,9 @@
     "altoFile": "A066",
     "tenorFile": "T066",
     "bassFile": "B066",
-    "midiFile": "h66"
+    "midiFile": "h66",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "67",
@@ -868,7 +1000,9 @@
     "altoFile": "A067",
     "tenorFile": "T067",
     "bassFile": "B067",
-    "midiFile": "h67"
+    "midiFile": "h67",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "68",
@@ -881,7 +1015,9 @@
     "altoFile": "A068",
     "tenorFile": "T068",
     "bassFile": "B068",
-    "midiFile": "h68"
+    "midiFile": "h68",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "69",
@@ -894,7 +1030,9 @@
     "altoFile": "A069",
     "tenorFile": "T069",
     "bassFile": "B069",
-    "midiFile": "h69"
+    "midiFile": "h69",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "70",
@@ -907,7 +1045,9 @@
     "altoFile": "A070",
     "tenorFile": "T070",
     "bassFile": "B070",
-    "midiFile": "h70"
+    "midiFile": "h70",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "71",
@@ -920,7 +1060,9 @@
     "altoFile": "A071",
     "tenorFile": "T071",
     "bassFile": "B071",
-    "midiFile": "h71"
+    "midiFile": "h71",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "72",
@@ -933,7 +1075,9 @@
     "altoFile": "A072",
     "tenorFile": "T072",
     "bassFile": "B072",
-    "midiFile": "h72"
+    "midiFile": "h72",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "73",
@@ -946,7 +1090,9 @@
     "altoFile": "A073",
     "tenorFile": "T073",
     "bassFile": "B073",
-    "midiFile": "h73"
+    "midiFile": "h73",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "74",
@@ -959,7 +1105,9 @@
     "altoFile": "A074",
     "tenorFile": "T074",
     "bassFile": "B074",
-    "midiFile": "h74"
+    "midiFile": "h74",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "75",
@@ -972,7 +1120,9 @@
     "altoFile": "A075",
     "tenorFile": "T075",
     "bassFile": "B075",
-    "midiFile": "h75"
+    "midiFile": "h75",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "76",
@@ -985,7 +1135,9 @@
     "altoFile": "A076",
     "tenorFile": "T076",
     "bassFile": "B076",
-    "midiFile": "h76"
+    "midiFile": "h76",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "77",
@@ -998,7 +1150,9 @@
     "altoFile": "A077",
     "tenorFile": "T077",
     "bassFile": "B077",
-    "midiFile": "h77"
+    "midiFile": "h77",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "78",
@@ -1011,7 +1165,9 @@
     "altoFile": "A078",
     "tenorFile": "T078",
     "bassFile": "B078",
-    "midiFile": "h78"
+    "midiFile": "h78",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa mort"
   },
   {
     "number": "79",
@@ -1024,7 +1180,9 @@
     "altoFile": "A079",
     "tenorFile": "T079",
     "bassFile": "B079",
-    "midiFile": "h79"
+    "midiFile": "h79",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "80",
@@ -1037,7 +1195,9 @@
     "altoFile": "A080",
     "tenorFile": "T080",
     "bassFile": "B080",
-    "midiFile": "h80"
+    "midiFile": "h80",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "81",
@@ -1050,7 +1210,9 @@
     "altoFile": "A081",
     "tenorFile": "T081",
     "bassFile": "B081",
-    "midiFile": "h81"
+    "midiFile": "h81",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "82",
@@ -1063,7 +1225,9 @@
     "altoFile": "A082",
     "tenorFile": "T082",
     "bassFile": "B082",
-    "midiFile": "h82"
+    "midiFile": "h82",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "83",
@@ -1076,7 +1240,9 @@
     "altoFile": "A083",
     "tenorFile": "T083",
     "bassFile": "B083",
-    "midiFile": "h83"
+    "midiFile": "h83",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "84",
@@ -1089,7 +1255,9 @@
     "altoFile": "A084",
     "tenorFile": "T084",
     "bassFile": "B084",
-    "midiFile": "h84"
+    "midiFile": "h84",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Sa résurrection et son ascension"
   },
   {
     "number": "85",
@@ -1102,7 +1270,9 @@
     "altoFile": "A085",
     "tenorFile": "T085",
     "bassFile": "B085",
-    "midiFile": "h85"
+    "midiFile": "h85",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "86",
@@ -1115,7 +1285,9 @@
     "altoFile": "A086",
     "tenorFile": "T086",
     "bassFile": "B086",
-    "midiFile": "h86"
+    "midiFile": "h86",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "87",
@@ -1128,7 +1300,9 @@
     "altoFile": "A087",
     "tenorFile": "T087",
     "bassFile": "B087",
-    "midiFile": "h87"
+    "midiFile": "h87",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "88",
@@ -1141,7 +1315,9 @@
     "altoFile": "A088",
     "tenorFile": "T088",
     "bassFile": "B088",
-    "midiFile": "h88"
+    "midiFile": "h88",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "89",
@@ -1154,7 +1330,9 @@
     "altoFile": "A089",
     "tenorFile": "T089",
     "bassFile": "B089",
-    "midiFile": "h89"
+    "midiFile": "h89",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "90",
@@ -1167,7 +1345,9 @@
     "altoFile": "A090",
     "tenorFile": "T090",
     "bassFile": "B090",
-    "midiFile": "h90"
+    "midiFile": "h90",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "91",
@@ -1180,7 +1360,9 @@
     "altoFile": "A091",
     "tenorFile": "T091",
     "bassFile": "B091",
-    "midiFile": "h91"
+    "midiFile": "h91",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son sacerdoce"
   },
   {
     "number": "92",
@@ -1193,7 +1375,9 @@
     "altoFile": "A092",
     "tenorFile": "T092",
     "bassFile": "B092",
-    "midiFile": "h92"
+    "midiFile": "h92",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "93",
@@ -1206,7 +1390,9 @@
     "altoFile": "A093",
     "tenorFile": "T093",
     "bassFile": "B093",
-    "midiFile": "h93"
+    "midiFile": "h93",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "94",
@@ -1219,7 +1405,9 @@
     "altoFile": "A094",
     "tenorFile": "T094",
     "bassFile": "B094",
-    "midiFile": "h94"
+    "midiFile": "h94",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "95",
@@ -1232,7 +1420,9 @@
     "altoFile": "A095",
     "tenorFile": "T095",
     "bassFile": "B095",
-    "midiFile": "h95"
+    "midiFile": "h95",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "96",
@@ -1245,7 +1435,9 @@
     "altoFile": "A096",
     "tenorFile": "T096",
     "bassFile": "B096",
-    "midiFile": "h96"
+    "midiFile": "h96",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "97",
@@ -1258,7 +1450,9 @@
     "altoFile": "A097",
     "tenorFile": "T097",
     "bassFile": "B097",
-    "midiFile": "h97"
+    "midiFile": "h97",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "98",
@@ -1271,7 +1465,9 @@
     "altoFile": "A098",
     "tenorFile": "T098",
     "bassFile": "B098",
-    "midiFile": "h98"
+    "midiFile": "h98",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "99",
@@ -1284,7 +1480,9 @@
     "altoFile": "A099",
     "tenorFile": "T099",
     "bassFile": "B099",
-    "midiFile": "h99"
+    "midiFile": "h99",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "100",
@@ -1297,7 +1495,9 @@
     "altoFile": "A100",
     "tenorFile": "T100",
     "bassFile": "B100",
-    "midiFile": "h100"
+    "midiFile": "h100",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "101",
@@ -1310,7 +1510,9 @@
     "altoFile": "A101",
     "tenorFile": "T101",
     "bassFile": "B101",
-    "midiFile": "h101"
+    "midiFile": "h101",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "102",
@@ -1323,7 +1525,9 @@
     "altoFile": "A102",
     "tenorFile": "T102",
     "bassFile": "B102",
-    "midiFile": "h102"
+    "midiFile": "h102",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "103",
@@ -1336,7 +1540,9 @@
     "altoFile": "A103",
     "tenorFile": "T103",
     "bassFile": "B103",
-    "midiFile": "h103"
+    "midiFile": "h103",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "104",
@@ -1349,7 +1555,9 @@
     "altoFile": "A104",
     "tenorFile": "T104",
     "bassFile": "B104",
-    "midiFile": "h104"
+    "midiFile": "h104",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "105",
@@ -1362,7 +1570,9 @@
     "altoFile": "A105",
     "tenorFile": "T105",
     "bassFile": "B105",
-    "midiFile": "h105"
+    "midiFile": "h105",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "106",
@@ -1375,7 +1585,9 @@
     "altoFile": "A106",
     "tenorFile": "T106",
     "bassFile": "B106",
-    "midiFile": "h106"
+    "midiFile": "h106",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son amour"
   },
   {
     "number": "107",
@@ -1388,7 +1600,9 @@
     "altoFile": "A107",
     "tenorFile": "T107",
     "bassFile": "B107",
-    "midiFile": "h107"
+    "midiFile": "h107",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "108",
@@ -1401,7 +1615,9 @@
     "altoFile": "A108",
     "tenorFile": "T108",
     "bassFile": "B108",
-    "midiFile": "h108"
+    "midiFile": "h108",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "109",
@@ -1414,7 +1630,9 @@
     "altoFile": "A109",
     "tenorFile": "T109",
     "bassFile": "B109",
-    "midiFile": "h109"
+    "midiFile": "h109",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "110",
@@ -1427,7 +1645,9 @@
     "altoFile": "A110",
     "tenorFile": "T110",
     "bassFile": "B110",
-    "midiFile": "h110"
+    "midiFile": "h110",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "111",
@@ -1440,7 +1660,9 @@
     "altoFile": "A111",
     "tenorFile": "T111",
     "bassFile": "B111",
-    "midiFile": "h111"
+    "midiFile": "h111",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "112",
@@ -1453,7 +1675,9 @@
     "altoFile": "A112",
     "tenorFile": "T112",
     "bassFile": "B112",
-    "midiFile": "h112"
+    "midiFile": "h112",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "113",
@@ -1466,7 +1690,9 @@
     "altoFile": "A113",
     "tenorFile": "T113",
     "bassFile": "B113",
-    "midiFile": "h113"
+    "midiFile": "h113",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "114",
@@ -1479,7 +1705,9 @@
     "altoFile": "A114",
     "tenorFile": "T114",
     "bassFile": "B114",
-    "midiFile": "h114"
+    "midiFile": "h114",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "115",
@@ -1492,7 +1720,9 @@
     "altoFile": "A115",
     "tenorFile": "T115",
     "bassFile": "B115",
-    "midiFile": "h115"
+    "midiFile": "h115",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "116",
@@ -1505,7 +1735,9 @@
     "altoFile": "A116",
     "tenorFile": "T116",
     "bassFile": "B116",
-    "midiFile": "h116"
+    "midiFile": "h116",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "117",
@@ -1518,7 +1750,9 @@
     "altoFile": "A117",
     "tenorFile": "T117",
     "bassFile": "B117",
-    "midiFile": "h117"
+    "midiFile": "h117",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "118",
@@ -1531,7 +1765,9 @@
     "altoFile": "A118",
     "tenorFile": "T118",
     "bassFile": "B118",
-    "midiFile": "h118"
+    "midiFile": "h118",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "119",
@@ -1544,7 +1780,9 @@
     "altoFile": "A119",
     "tenorFile": "T119",
     "bassFile": "B119",
-    "midiFile": "h119"
+    "midiFile": "h119",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "120",
@@ -1557,7 +1795,9 @@
     "altoFile": "A120",
     "tenorFile": "T120",
     "bassFile": "B120",
-    "midiFile": "h120"
+    "midiFile": "h120",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "121",
@@ -1570,7 +1810,9 @@
     "altoFile": "A121",
     "tenorFile": "T121",
     "bassFile": "B121",
-    "midiFile": "h121"
+    "midiFile": "h121",
+    "theme": "JÉSUS-CHRIST",
+    "subtheme": "Son retour et son règne"
   },
   {
     "number": "122",
@@ -1583,7 +1825,9 @@
     "altoFile": "A122",
     "tenorFile": "T122",
     "bassFile": "B122",
-    "midiFile": "h122"
+    "midiFile": "h122",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "123",
@@ -1596,7 +1840,9 @@
     "altoFile": "A123",
     "tenorFile": "T123",
     "bassFile": "B123",
-    "midiFile": "h123"
+    "midiFile": "h123",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "124",
@@ -1609,7 +1855,9 @@
     "altoFile": "A124",
     "tenorFile": "T124",
     "bassFile": "B124",
-    "midiFile": "h124"
+    "midiFile": "h124",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "125",
@@ -1622,7 +1870,9 @@
     "altoFile": "A125",
     "tenorFile": "T125",
     "bassFile": "B125",
-    "midiFile": "h125"
+    "midiFile": "h125",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "126",
@@ -1635,7 +1885,9 @@
     "altoFile": "A126",
     "tenorFile": "T126",
     "bassFile": "B126",
-    "midiFile": "h126"
+    "midiFile": "h126",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "127",
@@ -1648,7 +1900,9 @@
     "altoFile": "A127",
     "tenorFile": "T127",
     "bassFile": "B127",
-    "midiFile": "h127"
+    "midiFile": "h127",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "128",
@@ -1661,7 +1915,9 @@
     "altoFile": "A128",
     "tenorFile": "T128",
     "bassFile": "B128",
-    "midiFile": "h128"
+    "midiFile": "h128",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "129",
@@ -1674,7 +1930,9 @@
     "altoFile": "A129",
     "tenorFile": "T129",
     "bassFile": "B129",
-    "midiFile": "h129"
+    "midiFile": "h129",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "130",
@@ -1687,7 +1945,9 @@
     "altoFile": "A130",
     "tenorFile": "T130",
     "bassFile": "B130",
-    "midiFile": "h130"
+    "midiFile": "h130",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "131",
@@ -1700,7 +1960,9 @@
     "altoFile": "A131",
     "tenorFile": "T131",
     "bassFile": "B131",
-    "midiFile": "h131"
+    "midiFile": "h131",
+    "theme": "LE SAINT-ESPRIT",
+    "subtheme": "Le Saint-Esprit"
   },
   {
     "number": "132",
@@ -1713,7 +1975,9 @@
     "altoFile": "A132",
     "tenorFile": "T132",
     "bassFile": "B132",
-    "midiFile": "h132"
+    "midiFile": "h132",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "133",
@@ -1726,7 +1990,9 @@
     "altoFile": "A133",
     "tenorFile": "T133",
     "bassFile": "B133",
-    "midiFile": "h133"
+    "midiFile": "h133",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "134",
@@ -1739,7 +2005,9 @@
     "altoFile": "A134",
     "tenorFile": "T134",
     "bassFile": "B134",
-    "midiFile": "h134"
+    "midiFile": "h134",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "135",
@@ -1752,7 +2020,9 @@
     "altoFile": "A135",
     "tenorFile": "T135",
     "bassFile": "B135",
-    "midiFile": "h135"
+    "midiFile": "h135",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "136",
@@ -1765,7 +2035,9 @@
     "altoFile": "A136",
     "tenorFile": "T136",
     "bassFile": "B136",
-    "midiFile": "h136"
+    "midiFile": "h136",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "137",
@@ -1778,7 +2050,9 @@
     "altoFile": "A137",
     "tenorFile": "T137",
     "bassFile": "B137",
-    "midiFile": "h137"
+    "midiFile": "h137",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "138",
@@ -1791,7 +2065,9 @@
     "altoFile": "A138",
     "tenorFile": "T138",
     "bassFile": "B138",
-    "midiFile": "h138"
+    "midiFile": "h138",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "139",
@@ -1804,7 +2080,9 @@
     "altoFile": "A139",
     "tenorFile": "T139",
     "bassFile": "B139",
-    "midiFile": "h139"
+    "midiFile": "h139",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "140",
@@ -1817,7 +2095,9 @@
     "altoFile": "A140",
     "tenorFile": "T140",
     "bassFile": "B140",
-    "midiFile": "h140"
+    "midiFile": "h140",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "141",
@@ -1830,7 +2110,9 @@
     "altoFile": "A141",
     "tenorFile": "T141",
     "bassFile": "B141",
-    "midiFile": "h141"
+    "midiFile": "h141",
+    "theme": "LA PAROLE DE DIEU, SA LOI",
+    "subtheme": "La parole de Dieu, Sa loi"
   },
   {
     "number": "142",
@@ -1843,7 +2125,9 @@
     "altoFile": "A142",
     "tenorFile": "T142",
     "bassFile": "B142",
-    "midiFile": "h142"
+    "midiFile": "h142",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Promesses"
   },
   {
     "number": "143",
@@ -1856,7 +2140,9 @@
     "altoFile": "A143",
     "tenorFile": "T143",
     "bassFile": "B143",
-    "midiFile": "h143"
+    "midiFile": "h143",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Promesses"
   },
   {
     "number": "144",
@@ -1869,7 +2155,9 @@
     "altoFile": "A144",
     "tenorFile": "T144",
     "bassFile": "B144",
-    "midiFile": "h144"
+    "midiFile": "h144",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Promesses"
   },
   {
     "number": "145",
@@ -1882,7 +2170,9 @@
     "altoFile": "A145",
     "tenorFile": "T145",
     "bassFile": "B145",
-    "midiFile": "h145"
+    "midiFile": "h145",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Promesses"
   },
   {
     "number": "146",
@@ -1895,7 +2185,9 @@
     "altoFile": "A146",
     "tenorFile": "T146",
     "bassFile": "B146",
-    "midiFile": "h146"
+    "midiFile": "h146",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "147",
@@ -1908,7 +2200,9 @@
     "altoFile": "A147",
     "tenorFile": "T147",
     "bassFile": "B147",
-    "midiFile": "h147"
+    "midiFile": "h147",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "148",
@@ -1921,7 +2215,9 @@
     "altoFile": "A148",
     "tenorFile": "T148",
     "bassFile": "B148",
-    "midiFile": "h148"
+    "midiFile": "h148",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "149",
@@ -1934,7 +2230,9 @@
     "altoFile": "A149",
     "tenorFile": "T149",
     "bassFile": "B149",
-    "midiFile": "h149"
+    "midiFile": "h149",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "150",
@@ -1947,7 +2245,9 @@
     "altoFile": "A150",
     "tenorFile": "T150",
     "bassFile": "B150",
-    "midiFile": "h150"
+    "midiFile": "h150",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "151",
@@ -1960,7 +2260,9 @@
     "altoFile": "A151",
     "tenorFile": "T151",
     "bassFile": "B151",
-    "midiFile": "h151"
+    "midiFile": "h151",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "152",
@@ -1973,7 +2275,9 @@
     "altoFile": "A152",
     "tenorFile": "T152",
     "bassFile": "B152",
-    "midiFile": "h152"
+    "midiFile": "h152",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "153",
@@ -1986,7 +2290,9 @@
     "altoFile": "A153",
     "tenorFile": "T153",
     "bassFile": "B153",
-    "midiFile": "h153"
+    "midiFile": "h153",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "154",
@@ -1999,7 +2305,9 @@
     "altoFile": "A154",
     "tenorFile": "T154",
     "bassFile": "B154",
-    "midiFile": "h154"
+    "midiFile": "h154",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "155",
@@ -2012,7 +2320,9 @@
     "altoFile": "A155",
     "tenorFile": "T155",
     "bassFile": "B155",
-    "midiFile": "h155"
+    "midiFile": "h155",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Communion fraternelle"
   },
   {
     "number": "156",
@@ -2025,7 +2335,9 @@
     "altoFile": "A156",
     "tenorFile": "T156",
     "bassFile": "B156",
-    "midiFile": "h156"
+    "midiFile": "h156",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "157",
@@ -2038,7 +2350,9 @@
     "altoFile": "A157",
     "tenorFile": "T157",
     "bassFile": "B157",
-    "midiFile": "h157"
+    "midiFile": "h157",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "158",
@@ -2051,7 +2365,9 @@
     "altoFile": "A158",
     "tenorFile": "T158",
     "bassFile": "B158",
-    "midiFile": "h158"
+    "midiFile": "h158",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "159",
@@ -2064,7 +2380,9 @@
     "altoFile": "A159",
     "tenorFile": "T159",
     "bassFile": "B159",
-    "midiFile": "h159"
+    "midiFile": "h159",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "160",
@@ -2077,7 +2395,9 @@
     "altoFile": "A160",
     "tenorFile": "T160",
     "bassFile": "B160",
-    "midiFile": "h160"
+    "midiFile": "h160",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "161",
@@ -2090,7 +2410,9 @@
     "altoFile": "A161",
     "tenorFile": "T161",
     "bassFile": "B161",
-    "midiFile": "h161"
+    "midiFile": "h161",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "162",
@@ -2103,7 +2425,9 @@
     "altoFile": "A162",
     "tenorFile": "T162",
     "bassFile": "B162",
-    "midiFile": "h162"
+    "midiFile": "h162",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "163",
@@ -2116,7 +2440,9 @@
     "altoFile": "A163",
     "tenorFile": "T163",
     "bassFile": "B163",
-    "midiFile": "h163"
+    "midiFile": "h163",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le culte"
   },
   {
     "number": "164",
@@ -2129,7 +2455,9 @@
     "altoFile": "A164",
     "tenorFile": "T164",
     "bassFile": "B164",
-    "midiFile": "h164"
+    "midiFile": "h164",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "165",
@@ -2142,7 +2470,9 @@
     "altoFile": "A165",
     "tenorFile": "T165",
     "bassFile": "B165",
-    "midiFile": "h165"
+    "midiFile": "h165",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "166",
@@ -2155,7 +2485,9 @@
     "altoFile": "A166",
     "tenorFile": "T166",
     "bassFile": "B166",
-    "midiFile": "h166"
+    "midiFile": "h166",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "167",
@@ -2168,7 +2500,9 @@
     "altoFile": "A167",
     "tenorFile": "T167",
     "bassFile": "B167",
-    "midiFile": "h167"
+    "midiFile": "h167",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "168",
@@ -2181,7 +2515,9 @@
     "altoFile": "A168",
     "tenorFile": "T168",
     "bassFile": "B168",
-    "midiFile": "h168"
+    "midiFile": "h168",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "169",
@@ -2194,7 +2530,9 @@
     "altoFile": "A169",
     "tenorFile": "T169",
     "bassFile": "B169",
-    "midiFile": "h169"
+    "midiFile": "h169",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "170",
@@ -2207,7 +2545,9 @@
     "altoFile": "A170",
     "tenorFile": "T170",
     "bassFile": "B170",
-    "midiFile": "h170"
+    "midiFile": "h170",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "171",
@@ -2220,7 +2560,9 @@
     "altoFile": "A171",
     "tenorFile": "T171",
     "bassFile": "B171",
-    "midiFile": "h171"
+    "midiFile": "h171",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "172",
@@ -2233,7 +2575,9 @@
     "altoFile": "A172",
     "tenorFile": "T172",
     "bassFile": "B172",
-    "midiFile": "h172"
+    "midiFile": "h172",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "173",
@@ -2246,7 +2590,9 @@
     "altoFile": "A173",
     "tenorFile": "T173",
     "bassFile": "B173",
-    "midiFile": "h173"
+    "midiFile": "h173",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "174",
@@ -2259,7 +2605,9 @@
     "altoFile": "A174",
     "tenorFile": "T174",
     "bassFile": "B174",
-    "midiFile": "h174"
+    "midiFile": "h174",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "175",
@@ -2272,7 +2620,9 @@
     "altoFile": "A175",
     "tenorFile": "T175",
     "bassFile": "B175",
-    "midiFile": "h175"
+    "midiFile": "h175",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Le sabbat"
   },
   {
     "number": "176",
@@ -2285,7 +2635,9 @@
     "altoFile": "A176",
     "tenorFile": "T176",
     "bassFile": "B176",
-    "midiFile": "h176"
+    "midiFile": "h176",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "177",
@@ -2298,7 +2650,9 @@
     "altoFile": "A177",
     "tenorFile": "T177",
     "bassFile": "B177",
-    "midiFile": "h177"
+    "midiFile": "h177",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "178",
@@ -2311,7 +2665,9 @@
     "altoFile": "A178",
     "tenorFile": "T178",
     "bassFile": "B178",
-    "midiFile": "h178"
+    "midiFile": "h178",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "179",
@@ -2324,7 +2680,9 @@
     "altoFile": "A179",
     "tenorFile": "T179",
     "bassFile": "B179",
-    "midiFile": "h179"
+    "midiFile": "h179",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "180",
@@ -2337,7 +2695,9 @@
     "altoFile": "A180",
     "tenorFile": "T180",
     "bassFile": "B180",
-    "midiFile": "h180"
+    "midiFile": "h180",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "181",
@@ -2350,7 +2710,9 @@
     "altoFile": "A181",
     "tenorFile": "T181",
     "bassFile": "B181",
-    "midiFile": "h181"
+    "midiFile": "h181",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "182",
@@ -2363,7 +2725,9 @@
     "altoFile": "A182",
     "tenorFile": "T182",
     "bassFile": "B182",
-    "midiFile": "h182"
+    "midiFile": "h182",
+    "theme": "L'ÉGLISE",
+    "subtheme": "L'école du sabbat"
   },
   {
     "number": "183",
@@ -2376,7 +2740,9 @@
     "altoFile": "A183",
     "tenorFile": "T183",
     "bassFile": "B183",
-    "midiFile": "h183"
+    "midiFile": "h183",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "184",
@@ -2389,7 +2755,9 @@
     "altoFile": "A184",
     "tenorFile": "T184",
     "bassFile": "B184",
-    "midiFile": "h184"
+    "midiFile": "h184",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "185",
@@ -2402,7 +2770,9 @@
     "altoFile": "A185",
     "tenorFile": "T185",
     "bassFile": "B185",
-    "midiFile": "h185"
+    "midiFile": "h185",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "186",
@@ -2415,7 +2785,9 @@
     "altoFile": "A186",
     "tenorFile": "T186",
     "bassFile": "B186",
-    "midiFile": "h186"
+    "midiFile": "h186",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "187",
@@ -2428,7 +2800,9 @@
     "altoFile": "A187",
     "tenorFile": "T187",
     "bassFile": "B187",
-    "midiFile": "h187"
+    "midiFile": "h187",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "188",
@@ -2441,7 +2815,9 @@
     "altoFile": "A188",
     "tenorFile": "T188",
     "bassFile": "B188",
-    "midiFile": "h188"
+    "midiFile": "h188",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "189",
@@ -2454,7 +2830,9 @@
     "altoFile": "A189",
     "tenorFile": "T189",
     "bassFile": "B189",
-    "midiFile": "h189"
+    "midiFile": "h189",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "190",
@@ -2467,7 +2845,9 @@
     "altoFile": "A190",
     "tenorFile": "T190",
     "bassFile": "B190",
-    "midiFile": "h190"
+    "midiFile": "h190",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "191",
@@ -2480,7 +2860,9 @@
     "altoFile": "A191",
     "tenorFile": "T191",
     "bassFile": "B191",
-    "midiFile": "h191"
+    "midiFile": "h191",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "192",
@@ -2493,7 +2875,9 @@
     "altoFile": "A192",
     "tenorFile": "T192",
     "bassFile": "B192",
-    "midiFile": "h192"
+    "midiFile": "h192",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "193",
@@ -2506,7 +2890,9 @@
     "altoFile": "A193",
     "tenorFile": "T193",
     "bassFile": "B193",
-    "midiFile": "h193"
+    "midiFile": "h193",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Prière"
   },
   {
     "number": "194",
@@ -2519,7 +2905,9 @@
     "altoFile": "A194",
     "tenorFile": "T194",
     "bassFile": "B194",
-    "midiFile": "h194"
+    "midiFile": "h194",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "195",
@@ -2532,7 +2920,9 @@
     "altoFile": "A195",
     "tenorFile": "T195",
     "bassFile": "B195",
-    "midiFile": "h195"
+    "midiFile": "h195",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "196",
@@ -2545,7 +2935,9 @@
     "altoFile": "A196",
     "tenorFile": "T196",
     "bassFile": "B196",
-    "midiFile": "h196"
+    "midiFile": "h196",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "197",
@@ -2558,7 +2950,9 @@
     "altoFile": "A197",
     "tenorFile": "T197",
     "bassFile": "B197",
-    "midiFile": "h197"
+    "midiFile": "h197",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "198",
@@ -2571,7 +2965,9 @@
     "altoFile": "A198",
     "tenorFile": "T198",
     "bassFile": "B198",
-    "midiFile": "h198"
+    "midiFile": "h198",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "199",
@@ -2584,7 +2980,9 @@
     "altoFile": "A199",
     "tenorFile": "T199",
     "bassFile": "B199",
-    "midiFile": "h199"
+    "midiFile": "h199",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Clôture et bénédiction"
   },
   {
     "number": "200",
@@ -2597,7 +2995,9 @@
     "altoFile": "A200",
     "tenorFile": "T200",
     "bassFile": "B200",
-    "midiFile": "h200"
+    "midiFile": "h200",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "201",
@@ -2610,7 +3010,9 @@
     "altoFile": "A201",
     "tenorFile": "T201",
     "bassFile": "B201",
-    "midiFile": "h201"
+    "midiFile": "h201",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "202",
@@ -2623,7 +3025,9 @@
     "altoFile": "A202",
     "tenorFile": "T202",
     "bassFile": "B202",
-    "midiFile": "h202"
+    "midiFile": "h202",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "203",
@@ -2636,7 +3040,9 @@
     "altoFile": "A203",
     "tenorFile": "T203",
     "bassFile": "B203",
-    "midiFile": "h203"
+    "midiFile": "h203",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "204",
@@ -2649,7 +3055,9 @@
     "altoFile": "A204",
     "tenorFile": "T204",
     "bassFile": "B204",
-    "midiFile": "h204"
+    "midiFile": "h204",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "205",
@@ -2662,7 +3070,9 @@
     "altoFile": "A205",
     "tenorFile": "T205",
     "bassFile": "B205",
-    "midiFile": "h205"
+    "midiFile": "h205",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "206",
@@ -2675,7 +3085,9 @@
     "altoFile": "A206",
     "tenorFile": "T206",
     "bassFile": "B206",
-    "midiFile": "h206"
+    "midiFile": "h206",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "207",
@@ -2688,7 +3100,9 @@
     "altoFile": "A207",
     "tenorFile": "T207",
     "bassFile": "B207",
-    "midiFile": "h207"
+    "midiFile": "h207",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "208",
@@ -2701,7 +3115,9 @@
     "altoFile": "A208",
     "tenorFile": "T208",
     "bassFile": "B208",
-    "midiFile": "h208"
+    "midiFile": "h208",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "209",
@@ -2714,7 +3130,9 @@
     "altoFile": "A209",
     "tenorFile": "T209",
     "bassFile": "B209",
-    "midiFile": "h209"
+    "midiFile": "h209",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "210",
@@ -2727,7 +3145,9 @@
     "altoFile": "A210",
     "tenorFile": "T210",
     "bassFile": "B210",
-    "midiFile": "h210"
+    "midiFile": "h210",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "211",
@@ -2740,7 +3160,9 @@
     "altoFile": "A211",
     "tenorFile": "T211",
     "bassFile": "B211",
-    "midiFile": "h211"
+    "midiFile": "h211",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Missions"
   },
   {
     "number": "212",
@@ -2753,7 +3175,9 @@
     "altoFile": "A212",
     "tenorFile": "T212",
     "bassFile": "B212",
-    "midiFile": "h212"
+    "midiFile": "h212",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "213",
@@ -2766,7 +3190,9 @@
     "altoFile": "A213",
     "tenorFile": "T213",
     "bassFile": "B213",
-    "midiFile": "h213"
+    "midiFile": "h213",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "214",
@@ -2779,7 +3205,9 @@
     "altoFile": "A214",
     "tenorFile": "T214",
     "bassFile": "B214",
-    "midiFile": "h214"
+    "midiFile": "h214",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "215",
@@ -2792,7 +3220,9 @@
     "altoFile": "A215",
     "tenorFile": "T215",
     "bassFile": "B215",
-    "midiFile": "h215"
+    "midiFile": "h215",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "216",
@@ -2805,7 +3235,9 @@
     "altoFile": "A216",
     "tenorFile": "T216",
     "bassFile": "B216",
-    "midiFile": "h216"
+    "midiFile": "h216",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "217",
@@ -2818,7 +3250,9 @@
     "altoFile": "A217",
     "tenorFile": "T217",
     "bassFile": "B217",
-    "midiFile": "h217"
+    "midiFile": "h217",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Dernier message"
   },
   {
     "number": "218",
@@ -2831,7 +3265,9 @@
     "altoFile": "A218",
     "tenorFile": "T218",
     "bassFile": "B218",
-    "midiFile": "h218"
+    "midiFile": "h218",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "219",
@@ -2844,7 +3280,9 @@
     "altoFile": "A219",
     "tenorFile": "T219",
     "bassFile": "B219",
-    "midiFile": "h219"
+    "midiFile": "h219",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "220",
@@ -2857,7 +3295,9 @@
     "altoFile": "A220",
     "tenorFile": "T220",
     "bassFile": "B220",
-    "midiFile": "h220"
+    "midiFile": "h220",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "221",
@@ -2870,7 +3310,9 @@
     "altoFile": "A221",
     "tenorFile": "T221",
     "bassFile": "B221",
-    "midiFile": "h221"
+    "midiFile": "h221",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "222",
@@ -2883,7 +3325,9 @@
     "altoFile": "A222",
     "tenorFile": "T222",
     "bassFile": "B222",
-    "midiFile": "h222"
+    "midiFile": "h222",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "223",
@@ -2896,7 +3340,9 @@
     "altoFile": "A223",
     "tenorFile": "T223",
     "bassFile": "B223",
-    "midiFile": "h223"
+    "midiFile": "h223",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "224",
@@ -2909,7 +3355,9 @@
     "altoFile": "A224",
     "tenorFile": "T224",
     "bassFile": "B224",
-    "midiFile": "h224"
+    "midiFile": "h224",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "225",
@@ -2922,7 +3370,9 @@
     "altoFile": "A225",
     "tenorFile": "T225",
     "bassFile": "B225",
-    "midiFile": "h225"
+    "midiFile": "h225",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Baptêmes"
   },
   {
     "number": "226",
@@ -2935,7 +3385,9 @@
     "altoFile": "A226",
     "tenorFile": "T226",
     "bassFile": "B226",
-    "midiFile": "h226"
+    "midiFile": "h226",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "227",
@@ -2948,7 +3400,9 @@
     "altoFile": "A227",
     "tenorFile": "T227",
     "bassFile": "B227",
-    "midiFile": "h227"
+    "midiFile": "h227",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "228",
@@ -2961,7 +3415,9 @@
     "altoFile": "A228",
     "tenorFile": "T228",
     "bassFile": "B228",
-    "midiFile": "h228"
+    "midiFile": "h228",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "229",
@@ -2974,7 +3430,9 @@
     "altoFile": "A229",
     "tenorFile": "T229",
     "bassFile": "B229",
-    "midiFile": "h229"
+    "midiFile": "h229",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "230",
@@ -2987,7 +3445,9 @@
     "altoFile": "A230",
     "tenorFile": "T230",
     "bassFile": "B230",
-    "midiFile": "h230"
+    "midiFile": "h230",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "231",
@@ -3000,7 +3460,9 @@
     "altoFile": "A231",
     "tenorFile": "T231",
     "bassFile": "B231",
-    "midiFile": "h231"
+    "midiFile": "h231",
+    "theme": "L'ÉGLISE",
+    "subtheme": "Sainte Cène"
   },
   {
     "number": "232",
@@ -3013,7 +3475,9 @@
     "altoFile": "A232",
     "tenorFile": "T232",
     "bassFile": "B232",
-    "midiFile": "h232"
+    "midiFile": "h232",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "233",
@@ -3026,7 +3490,9 @@
     "altoFile": "A233",
     "tenorFile": "T233",
     "bassFile": "B233",
-    "midiFile": "h233"
+    "midiFile": "h233",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "234",
@@ -3039,7 +3505,9 @@
     "altoFile": "A234",
     "tenorFile": "T234",
     "bassFile": "B234",
-    "midiFile": "h234"
+    "midiFile": "h234",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "235",
@@ -3052,7 +3520,9 @@
     "altoFile": "A235",
     "tenorFile": "T235",
     "bassFile": "B235",
-    "midiFile": "h235"
+    "midiFile": "h235",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "236",
@@ -3065,7 +3535,9 @@
     "altoFile": "A236",
     "tenorFile": "T236",
     "bassFile": "B236",
-    "midiFile": "h236"
+    "midiFile": "h236",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "237",
@@ -3078,7 +3550,9 @@
     "altoFile": "A237",
     "tenorFile": "T237",
     "bassFile": "B237",
-    "midiFile": "h237"
+    "midiFile": "h237",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "238",
@@ -3091,7 +3565,9 @@
     "altoFile": "A238",
     "tenorFile": "T238",
     "bassFile": "B238",
-    "midiFile": "h238"
+    "midiFile": "h238",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "239",
@@ -3104,7 +3580,9 @@
     "altoFile": "A239",
     "tenorFile": "T239",
     "bassFile": "B239",
-    "midiFile": "h239"
+    "midiFile": "h239",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "240",
@@ -3117,7 +3595,9 @@
     "altoFile": "A240",
     "tenorFile": "T240",
     "bassFile": "B240",
-    "midiFile": "h240"
+    "midiFile": "h240",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "241",
@@ -3130,7 +3610,9 @@
     "altoFile": "A241",
     "tenorFile": "T241",
     "bassFile": "B241",
-    "midiFile": "h241"
+    "midiFile": "h241",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "242",
@@ -3143,7 +3625,9 @@
     "altoFile": "A242",
     "tenorFile": "T242",
     "bassFile": "B242",
-    "midiFile": "h242"
+    "midiFile": "h242",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "243",
@@ -3156,7 +3640,9 @@
     "altoFile": "A243",
     "tenorFile": "T243",
     "bassFile": "B243",
-    "midiFile": "h243"
+    "midiFile": "h243",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "244",
@@ -3169,7 +3655,9 @@
     "altoFile": "A244",
     "tenorFile": "T244",
     "bassFile": "B244",
-    "midiFile": "h244"
+    "midiFile": "h244",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "245",
@@ -3182,7 +3670,9 @@
     "altoFile": "A245",
     "tenorFile": "T245",
     "bassFile": "B245",
-    "midiFile": "h245"
+    "midiFile": "h245",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "246",
@@ -3195,7 +3685,9 @@
     "altoFile": "A246",
     "tenorFile": "T246",
     "bassFile": "B246",
-    "midiFile": "h246"
+    "midiFile": "h246",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "247",
@@ -3208,7 +3700,9 @@
     "altoFile": "A247",
     "tenorFile": "T247",
     "bassFile": "B247",
-    "midiFile": "h247"
+    "midiFile": "h247",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "248",
@@ -3221,7 +3715,9 @@
     "altoFile": "A248",
     "tenorFile": "T248",
     "bassFile": "B248",
-    "midiFile": "h248"
+    "midiFile": "h248",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "249",
@@ -3234,7 +3730,9 @@
     "altoFile": "A249",
     "tenorFile": "T249",
     "bassFile": "B249",
-    "midiFile": "h249"
+    "midiFile": "h249",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "250",
@@ -3247,7 +3745,9 @@
     "altoFile": "A250",
     "tenorFile": "T250",
     "bassFile": "B250",
-    "midiFile": "h250"
+    "midiFile": "h250",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "251",
@@ -3260,7 +3760,9 @@
     "altoFile": "A251",
     "tenorFile": "T251",
     "bassFile": "B251",
-    "midiFile": "h251"
+    "midiFile": "h251",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "252",
@@ -3273,7 +3775,9 @@
     "altoFile": "A252",
     "tenorFile": "T252",
     "bassFile": "B252",
-    "midiFile": "h252"
+    "midiFile": "h252",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "253",
@@ -3286,7 +3790,9 @@
     "altoFile": "A253",
     "tenorFile": "T253",
     "bassFile": "B253",
-    "midiFile": "h253"
+    "midiFile": "h253",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "254",
@@ -3299,7 +3805,9 @@
     "altoFile": "A254",
     "tenorFile": "T254",
     "bassFile": "B254",
-    "midiFile": "h254"
+    "midiFile": "h254",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "255",
@@ -3312,7 +3820,9 @@
     "altoFile": "A255",
     "tenorFile": "T255",
     "bassFile": "B255",
-    "midiFile": "h255"
+    "midiFile": "h255",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "256",
@@ -3325,7 +3835,9 @@
     "altoFile": "A256",
     "tenorFile": "T256",
     "bassFile": "B256",
-    "midiFile": "h256"
+    "midiFile": "h256",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "257",
@@ -3338,7 +3850,9 @@
     "altoFile": "A257",
     "tenorFile": "T257",
     "bassFile": "B257",
-    "midiFile": "h257"
+    "midiFile": "h257",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "258",
@@ -3351,7 +3865,9 @@
     "altoFile": "A258",
     "tenorFile": "T258",
     "bassFile": "B258",
-    "midiFile": "h258"
+    "midiFile": "h258",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "259",
@@ -3364,7 +3880,9 @@
     "altoFile": "A259",
     "tenorFile": "T259",
     "bassFile": "B259",
-    "midiFile": "h259"
+    "midiFile": "h259",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "260",
@@ -3377,7 +3895,9 @@
     "altoFile": "A260",
     "tenorFile": "T260",
     "bassFile": "B260",
-    "midiFile": "h260"
+    "midiFile": "h260",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "261",
@@ -3390,7 +3910,9 @@
     "altoFile": "A261",
     "tenorFile": "T261",
     "bassFile": "B261",
-    "midiFile": "h261"
+    "midiFile": "h261",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Appel au salut"
   },
   {
     "number": "262",
@@ -3403,7 +3925,9 @@
     "altoFile": "A262",
     "tenorFile": "T262",
     "bassFile": "B262",
-    "midiFile": "h262"
+    "midiFile": "h262",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "263",
@@ -3416,7 +3940,9 @@
     "altoFile": "A263",
     "tenorFile": "T263",
     "bassFile": "B263",
-    "midiFile": "h263"
+    "midiFile": "h263",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "264",
@@ -3429,7 +3955,9 @@
     "altoFile": "A264",
     "tenorFile": "T264",
     "bassFile": "B264",
-    "midiFile": "h264"
+    "midiFile": "h264",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "265",
@@ -3442,7 +3970,9 @@
     "altoFile": "A265",
     "tenorFile": "T265",
     "bassFile": "B265",
-    "midiFile": "h265"
+    "midiFile": "h265",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "266",
@@ -3455,7 +3985,9 @@
     "altoFile": "A266",
     "tenorFile": "T266",
     "bassFile": "B266",
-    "midiFile": "h266"
+    "midiFile": "h266",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "267",
@@ -3468,7 +4000,9 @@
     "altoFile": "A267",
     "tenorFile": "T267",
     "bassFile": "B267",
-    "midiFile": "h267"
+    "midiFile": "h267",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "268",
@@ -3481,7 +4015,9 @@
     "altoFile": "A268",
     "tenorFile": "T268",
     "bassFile": "B268",
-    "midiFile": "h268"
+    "midiFile": "h268",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "269",
@@ -3494,7 +4030,9 @@
     "altoFile": "A269",
     "tenorFile": "T269",
     "bassFile": "B269",
-    "midiFile": "h269"
+    "midiFile": "h269",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "270",
@@ -3507,7 +4045,9 @@
     "altoFile": "A270",
     "tenorFile": "T270",
     "bassFile": "B270",
-    "midiFile": "h270"
+    "midiFile": "h270",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "271",
@@ -3520,7 +4060,9 @@
     "altoFile": "A271",
     "tenorFile": "T271",
     "bassFile": "B271",
-    "midiFile": "h271"
+    "midiFile": "h271",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "272",
@@ -3533,7 +4075,9 @@
     "altoFile": "A272",
     "tenorFile": "T272",
     "bassFile": "B272",
-    "midiFile": "h272"
+    "midiFile": "h272",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "273",
@@ -3546,7 +4090,9 @@
     "altoFile": "A273",
     "tenorFile": "T273",
     "bassFile": "B273",
-    "midiFile": "h273"
+    "midiFile": "h273",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "274",
@@ -3559,7 +4105,9 @@
     "altoFile": "A274",
     "tenorFile": "T274",
     "bassFile": "B274",
-    "midiFile": "h274"
+    "midiFile": "h274",
+    "theme": "ÉVANGÉLISATION",
+    "subtheme": "Réponse à l'appel"
   },
   {
     "number": "275",
@@ -3572,7 +4120,9 @@
     "altoFile": "A275",
     "tenorFile": "T275",
     "bassFile": "B275",
-    "midiFile": "h275"
+    "midiFile": "h275",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "276",
@@ -3585,7 +4135,9 @@
     "altoFile": "A276",
     "tenorFile": "T276",
     "bassFile": "B276",
-    "midiFile": "h276"
+    "midiFile": "h276",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "277",
@@ -3598,7 +4150,9 @@
     "altoFile": "A277",
     "tenorFile": "T277",
     "bassFile": "B277",
-    "midiFile": "h277"
+    "midiFile": "h277",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "278",
@@ -3611,7 +4165,9 @@
     "altoFile": "A278",
     "tenorFile": "T278",
     "bassFile": "B278",
-    "midiFile": "h278"
+    "midiFile": "h278",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "279",
@@ -3624,7 +4180,9 @@
     "altoFile": "A279",
     "tenorFile": "T279",
     "bassFile": "B279",
-    "midiFile": "h279"
+    "midiFile": "h279",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "280",
@@ -3637,7 +4195,9 @@
     "altoFile": "A280",
     "tenorFile": "T280",
     "bassFile": "B280",
-    "midiFile": "h280"
+    "midiFile": "h280",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "281",
@@ -3650,7 +4210,9 @@
     "altoFile": "A281",
     "tenorFile": "T281",
     "bassFile": "B281",
-    "midiFile": "h281"
+    "midiFile": "h281",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "282",
@@ -3663,7 +4225,9 @@
     "altoFile": "A282",
     "tenorFile": "T282",
     "bassFile": "B282",
-    "midiFile": "h282"
+    "midiFile": "h282",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "283",
@@ -3676,7 +4240,9 @@
     "altoFile": "A283",
     "tenorFile": "T283",
     "bassFile": "B283",
-    "midiFile": "h283"
+    "midiFile": "h283",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "284",
@@ -3689,7 +4255,9 @@
     "altoFile": "A284",
     "tenorFile": "T284",
     "bassFile": "B284",
-    "midiFile": "h284"
+    "midiFile": "h284",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Repentance et conversion"
   },
   {
     "number": "285",
@@ -3702,7 +4270,9 @@
     "altoFile": "A285",
     "tenorFile": "T285",
     "bassFile": "B285",
-    "midiFile": "h285"
+    "midiFile": "h285",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "286",
@@ -3715,7 +4285,9 @@
     "altoFile": "A286",
     "tenorFile": "T286",
     "bassFile": "B286",
-    "midiFile": "h286"
+    "midiFile": "h286",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "287",
@@ -3728,7 +4300,9 @@
     "altoFile": "A287",
     "tenorFile": "T287",
     "bassFile": "B287",
-    "midiFile": "h287"
+    "midiFile": "h287",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "288",
@@ -3741,7 +4315,9 @@
     "altoFile": "A288",
     "tenorFile": "T288",
     "bassFile": "B288",
-    "midiFile": "h288"
+    "midiFile": "h288",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "289",
@@ -3754,7 +4330,9 @@
     "altoFile": "A289",
     "tenorFile": "T289",
     "bassFile": "B289",
-    "midiFile": "h289"
+    "midiFile": "h289",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "290",
@@ -3767,7 +4345,9 @@
     "altoFile": "A290",
     "tenorFile": "T290",
     "bassFile": "B290",
-    "midiFile": "h290"
+    "midiFile": "h290",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "291",
@@ -3780,7 +4360,9 @@
     "altoFile": "A291",
     "tenorFile": "T291",
     "bassFile": "B291",
-    "midiFile": "h291"
+    "midiFile": "h291",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "292",
@@ -3793,7 +4375,9 @@
     "altoFile": "A292",
     "tenorFile": "T292",
     "bassFile": "B292",
-    "midiFile": "h292"
+    "midiFile": "h292",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "293",
@@ -3806,7 +4390,9 @@
     "altoFile": "A293",
     "tenorFile": "T293",
     "bassFile": "B293",
-    "midiFile": "h293"
+    "midiFile": "h293",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "294",
@@ -3819,7 +4405,9 @@
     "altoFile": "A294",
     "tenorFile": "T294",
     "bassFile": "B294",
-    "midiFile": "h294"
+    "midiFile": "h294",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "295",
@@ -3832,7 +4420,9 @@
     "altoFile": "A295",
     "tenorFile": "T295",
     "bassFile": "B295",
-    "midiFile": "h295"
+    "midiFile": "h295",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "296",
@@ -3845,7 +4435,9 @@
     "altoFile": "A296",
     "tenorFile": "T296",
     "bassFile": "B296",
-    "midiFile": "h296"
+    "midiFile": "h296",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "297",
@@ -3858,7 +4450,9 @@
     "altoFile": "A297",
     "tenorFile": "T297",
     "bassFile": "B297",
-    "midiFile": "h297"
+    "midiFile": "h297",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "298",
@@ -3871,7 +4465,9 @@
     "altoFile": "A298",
     "tenorFile": "T298",
     "bassFile": "B298",
-    "midiFile": "h298"
+    "midiFile": "h298",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "299",
@@ -3884,7 +4480,9 @@
     "altoFile": "A299",
     "tenorFile": "T299",
     "bassFile": "B299",
-    "midiFile": "h299"
+    "midiFile": "h299",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "300",
@@ -3897,7 +4495,9 @@
     "altoFile": "A300",
     "tenorFile": "T300",
     "bassFile": "B300",
-    "midiFile": "h300"
+    "midiFile": "h300",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "301",
@@ -3910,7 +4510,9 @@
     "altoFile": "A301",
     "tenorFile": "T301",
     "bassFile": "B301",
-    "midiFile": "h301"
+    "midiFile": "h301",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "302",
@@ -3923,7 +4525,9 @@
     "altoFile": "A302",
     "tenorFile": "T302",
     "bassFile": "B302",
-    "midiFile": "h302"
+    "midiFile": "h302",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "303",
@@ -3936,7 +4540,9 @@
     "altoFile": "A303",
     "tenorFile": "T303",
     "bassFile": "B303",
-    "midiFile": "h303"
+    "midiFile": "h303",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Amour et foi"
   },
   {
     "number": "304",
@@ -3949,7 +4555,9 @@
     "altoFile": "A304",
     "tenorFile": "T304",
     "bassFile": "B304",
-    "midiFile": "h304"
+    "midiFile": "h304",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "305",
@@ -3962,7 +4570,9 @@
     "altoFile": "A305",
     "tenorFile": "T305",
     "bassFile": "B305",
-    "midiFile": "h305"
+    "midiFile": "h305",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "306",
@@ -3975,7 +4585,9 @@
     "altoFile": "A306",
     "tenorFile": "T306",
     "bassFile": "B306",
-    "midiFile": "h306"
+    "midiFile": "h306",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "307",
@@ -3988,7 +4600,9 @@
     "altoFile": "A307",
     "tenorFile": "T307",
     "bassFile": "B307",
-    "midiFile": "h307"
+    "midiFile": "h307",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "308",
@@ -4001,7 +4615,9 @@
     "altoFile": "A308",
     "tenorFile": "T308",
     "bassFile": "B308",
-    "midiFile": "h308"
+    "midiFile": "h308",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "309",
@@ -4014,7 +4630,9 @@
     "altoFile": "A309",
     "tenorFile": "T309",
     "bassFile": "B309",
-    "midiFile": "h309"
+    "midiFile": "h309",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "310",
@@ -4027,7 +4645,9 @@
     "altoFile": "A310",
     "tenorFile": "T310",
     "bassFile": "B310",
-    "midiFile": "h310"
+    "midiFile": "h310",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "311",
@@ -4040,7 +4660,9 @@
     "altoFile": "A311",
     "tenorFile": "T311",
     "bassFile": "B311",
-    "midiFile": "h311"
+    "midiFile": "h311",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "312",
@@ -4053,7 +4675,9 @@
     "altoFile": "A312",
     "tenorFile": "T312",
     "bassFile": "B312",
-    "midiFile": "h312"
+    "midiFile": "h312",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "313",
@@ -4066,7 +4690,9 @@
     "altoFile": "A313",
     "tenorFile": "T313",
     "bassFile": "B313",
-    "midiFile": "h313"
+    "midiFile": "h313",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "314",
@@ -4079,7 +4705,9 @@
     "altoFile": "A314",
     "tenorFile": "T314",
     "bassFile": "B314",
-    "midiFile": "h314"
+    "midiFile": "h314",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "315",
@@ -4092,7 +4720,9 @@
     "altoFile": "A315",
     "tenorFile": "T315",
     "bassFile": "B315",
-    "midiFile": "h315"
+    "midiFile": "h315",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "316",
@@ -4105,7 +4735,9 @@
     "altoFile": "A316",
     "tenorFile": "T316",
     "bassFile": "B316",
-    "midiFile": "h316"
+    "midiFile": "h316",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "317",
@@ -4118,7 +4750,9 @@
     "altoFile": "A317",
     "tenorFile": "T317",
     "bassFile": "B317",
-    "midiFile": "h317"
+    "midiFile": "h317",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "318",
@@ -4131,7 +4765,9 @@
     "altoFile": "A318",
     "tenorFile": "T318",
     "bassFile": "B318",
-    "midiFile": "h318"
+    "midiFile": "h318",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "319",
@@ -4144,7 +4780,9 @@
     "altoFile": "A319",
     "tenorFile": "T319",
     "bassFile": "B319",
-    "midiFile": "h319"
+    "midiFile": "h319",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "320",
@@ -4157,7 +4795,9 @@
     "altoFile": "A320",
     "tenorFile": "T320",
     "bassFile": "B320",
-    "midiFile": "h320"
+    "midiFile": "h320",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "321",
@@ -4170,7 +4810,9 @@
     "altoFile": "A321",
     "tenorFile": "T321",
     "bassFile": "B321",
-    "midiFile": "h321"
+    "midiFile": "h321",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "322",
@@ -4183,7 +4825,9 @@
     "altoFile": "A322",
     "tenorFile": "T322",
     "bassFile": "B322",
-    "midiFile": "h322"
+    "midiFile": "h322",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "323",
@@ -4196,7 +4840,9 @@
     "altoFile": "A323",
     "tenorFile": "T323",
     "bassFile": "B323",
-    "midiFile": "h323"
+    "midiFile": "h323",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "324",
@@ -4209,7 +4855,9 @@
     "altoFile": "A324",
     "tenorFile": "T324",
     "bassFile": "B324",
-    "midiFile": "h324"
+    "midiFile": "h324",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Joie et confiance"
   },
   {
     "number": "325",
@@ -4222,7 +4870,9 @@
     "altoFile": "A325",
     "tenorFile": "T325",
     "bassFile": "B325",
-    "midiFile": "h325"
+    "midiFile": "h325",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "326",
@@ -4235,7 +4885,9 @@
     "altoFile": "A326",
     "tenorFile": "T326",
     "bassFile": "B326",
-    "midiFile": "h326"
+    "midiFile": "h326",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "327",
@@ -4248,7 +4900,9 @@
     "altoFile": "A327",
     "tenorFile": "T327",
     "bassFile": "B327",
-    "midiFile": "h327"
+    "midiFile": "h327",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "328",
@@ -4261,7 +4915,9 @@
     "altoFile": "A328",
     "tenorFile": "T328",
     "bassFile": "B328",
-    "midiFile": "h328"
+    "midiFile": "h328",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "329",
@@ -4274,7 +4930,9 @@
     "altoFile": "A329",
     "tenorFile": "T329",
     "bassFile": "B329",
-    "midiFile": "h329"
+    "midiFile": "h329",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "330",
@@ -4287,7 +4945,9 @@
     "altoFile": "A330",
     "tenorFile": "T330",
     "bassFile": "B330",
-    "midiFile": "h330"
+    "midiFile": "h330",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "331",
@@ -4300,7 +4960,9 @@
     "altoFile": "A331",
     "tenorFile": "T331",
     "bassFile": "B331",
-    "midiFile": "h331"
+    "midiFile": "h331",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "332",
@@ -4313,7 +4975,9 @@
     "altoFile": "A332",
     "tenorFile": "T332",
     "bassFile": "B332",
-    "midiFile": "h332"
+    "midiFile": "h332",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "333",
@@ -4326,7 +4990,9 @@
     "altoFile": "A333",
     "tenorFile": "T333",
     "bassFile": "B333",
-    "midiFile": "h333"
+    "midiFile": "h333",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "334",
@@ -4339,7 +5005,9 @@
     "altoFile": "A334",
     "tenorFile": "T334",
     "bassFile": "B334",
-    "midiFile": "h334"
+    "midiFile": "h334",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "335",
@@ -4352,7 +5020,9 @@
     "altoFile": "A335",
     "tenorFile": "T335",
     "bassFile": "B335",
-    "midiFile": "h335"
+    "midiFile": "h335",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "336",
@@ -4365,7 +5035,9 @@
     "altoFile": "A336",
     "tenorFile": "T336",
     "bassFile": "B336",
-    "midiFile": "h336"
+    "midiFile": "h336",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "337",
@@ -4378,7 +5050,9 @@
     "altoFile": "A337",
     "tenorFile": "T337",
     "bassFile": "B337",
-    "midiFile": "h337"
+    "midiFile": "h337",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "338",
@@ -4391,7 +5065,9 @@
     "altoFile": "A338",
     "tenorFile": "T338",
     "bassFile": "B338",
-    "midiFile": "h338"
+    "midiFile": "h338",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "339",
@@ -4404,7 +5080,9 @@
     "altoFile": "A339",
     "tenorFile": "T339",
     "bassFile": "B339",
-    "midiFile": "h339"
+    "midiFile": "h339",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "340",
@@ -4417,7 +5095,9 @@
     "altoFile": "A340",
     "tenorFile": "T340",
     "bassFile": "B340",
-    "midiFile": "h340"
+    "midiFile": "h340",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "341",
@@ -4430,7 +5110,9 @@
     "altoFile": "A341",
     "tenorFile": "T341",
     "bassFile": "B341",
-    "midiFile": "h341"
+    "midiFile": "h341",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "342",
@@ -4443,7 +5125,9 @@
     "altoFile": "A342",
     "tenorFile": "T342",
     "bassFile": "B342",
-    "midiFile": "h342"
+    "midiFile": "h342",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "343",
@@ -4456,7 +5140,9 @@
     "altoFile": "A343",
     "tenorFile": "T343",
     "bassFile": "B343",
-    "midiFile": "h343"
+    "midiFile": "h343",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Consécration et sanctification"
   },
   {
     "number": "344",
@@ -4469,7 +5155,9 @@
     "altoFile": "A344",
     "tenorFile": "T344",
     "bassFile": "B344",
-    "midiFile": "h344"
+    "midiFile": "h344",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "345",
@@ -4482,7 +5170,9 @@
     "altoFile": "A345",
     "tenorFile": "T345",
     "bassFile": "B345",
-    "midiFile": "h345"
+    "midiFile": "h345",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "346",
@@ -4495,7 +5185,9 @@
     "altoFile": "A346",
     "tenorFile": "T346",
     "bassFile": "B346",
-    "midiFile": "h346"
+    "midiFile": "h346",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "347",
@@ -4508,7 +5200,9 @@
     "altoFile": "A347",
     "tenorFile": "T347",
     "bassFile": "B347",
-    "midiFile": "h347"
+    "midiFile": "h347",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "348",
@@ -4521,7 +5215,9 @@
     "altoFile": "A348",
     "tenorFile": "T348",
     "bassFile": "B348",
-    "midiFile": "h348"
+    "midiFile": "h348",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "349",
@@ -4534,7 +5230,9 @@
     "altoFile": "A349",
     "tenorFile": "T349",
     "bassFile": "B349",
-    "midiFile": "h349"
+    "midiFile": "h349",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "350",
@@ -4547,7 +5245,9 @@
     "altoFile": "A350",
     "tenorFile": "T350",
     "bassFile": "B350",
-    "midiFile": "h350"
+    "midiFile": "h350",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "351",
@@ -4560,7 +5260,9 @@
     "altoFile": "A351",
     "tenorFile": "T351",
     "bassFile": "B351",
-    "midiFile": "h351"
+    "midiFile": "h351",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "352",
@@ -4573,7 +5275,9 @@
     "altoFile": "A352",
     "tenorFile": "T352",
     "bassFile": "B352",
-    "midiFile": "h352"
+    "midiFile": "h352",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "353",
@@ -4586,7 +5290,9 @@
     "altoFile": "A353",
     "tenorFile": "T353",
     "bassFile": "B353",
-    "midiFile": "h353"
+    "midiFile": "h353",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "354",
@@ -4599,7 +5305,9 @@
     "altoFile": "A354",
     "tenorFile": "T354",
     "bassFile": "B354",
-    "midiFile": "h354"
+    "midiFile": "h354",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "355",
@@ -4612,7 +5320,9 @@
     "altoFile": "A355",
     "tenorFile": "T355",
     "bassFile": "B355",
-    "midiFile": "h355"
+    "midiFile": "h355",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "356",
@@ -4625,7 +5335,9 @@
     "altoFile": "A356",
     "tenorFile": "T356",
     "bassFile": "B356",
-    "midiFile": "h356"
+    "midiFile": "h356",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "357",
@@ -4638,7 +5350,9 @@
     "altoFile": "A357",
     "tenorFile": "T357",
     "bassFile": "B357",
-    "midiFile": "h357"
+    "midiFile": "h357",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "358",
@@ -4651,7 +5365,9 @@
     "altoFile": "A358",
     "tenorFile": "T358",
     "bassFile": "B358",
-    "midiFile": "h358"
+    "midiFile": "h358",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "359",
@@ -4664,7 +5380,9 @@
     "altoFile": "A359",
     "tenorFile": "T359",
     "bassFile": "B359",
-    "midiFile": "h359"
+    "midiFile": "h359",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "360",
@@ -4677,7 +5395,9 @@
     "altoFile": "A360",
     "tenorFile": "T360",
     "bassFile": "B360",
-    "midiFile": "h360"
+    "midiFile": "h360",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "361",
@@ -4690,7 +5410,9 @@
     "altoFile": "A361",
     "tenorFile": "T361",
     "bassFile": "B361",
-    "midiFile": "h361"
+    "midiFile": "h361",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "362",
@@ -4703,7 +5425,9 @@
     "altoFile": "A362",
     "tenorFile": "T362",
     "bassFile": "B362",
-    "midiFile": "h362"
+    "midiFile": "h362",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "363",
@@ -4716,7 +5440,9 @@
     "altoFile": "A363",
     "tenorFile": "T363",
     "bassFile": "B363",
-    "midiFile": "h363"
+    "midiFile": "h363",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "364",
@@ -4729,7 +5455,9 @@
     "altoFile": "A364",
     "tenorFile": "T364",
     "bassFile": "B364",
-    "midiFile": "h364"
+    "midiFile": "h364",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "365",
@@ -4742,7 +5470,9 @@
     "altoFile": "A365",
     "tenorFile": "T365",
     "bassFile": "B365",
-    "midiFile": "h365"
+    "midiFile": "h365",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "366",
@@ -4755,7 +5485,9 @@
     "altoFile": "A366",
     "tenorFile": "T366",
     "bassFile": "B366",
-    "midiFile": "h366"
+    "midiFile": "h366",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Combats et victoires"
   },
   {
     "number": "367",
@@ -4768,7 +5500,9 @@
     "altoFile": "A367",
     "tenorFile": "T367",
     "bassFile": "B367",
-    "midiFile": "h367"
+    "midiFile": "h367",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "368",
@@ -4781,7 +5515,9 @@
     "altoFile": "A368",
     "tenorFile": "T368",
     "bassFile": "B368",
-    "midiFile": "h368"
+    "midiFile": "h368",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "369",
@@ -4794,7 +5530,9 @@
     "altoFile": "A369",
     "tenorFile": "T369",
     "bassFile": "B369",
-    "midiFile": "h369"
+    "midiFile": "h369",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "370",
@@ -4807,7 +5545,9 @@
     "altoFile": "A370",
     "tenorFile": "T370",
     "bassFile": "B370",
-    "midiFile": "h370"
+    "midiFile": "h370",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "371",
@@ -4820,7 +5560,9 @@
     "altoFile": "A371",
     "tenorFile": "T371",
     "bassFile": "B371",
-    "midiFile": "h371"
+    "midiFile": "h371",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "372",
@@ -4833,7 +5575,9 @@
     "altoFile": "A372",
     "tenorFile": "T372",
     "bassFile": "B372",
-    "midiFile": "h372"
+    "midiFile": "h372",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "373",
@@ -4846,7 +5590,9 @@
     "altoFile": "A373",
     "tenorFile": "T373",
     "bassFile": "B373",
-    "midiFile": "h373"
+    "midiFile": "h373",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "374",
@@ -4859,7 +5605,9 @@
     "altoFile": "A374",
     "tenorFile": "T374",
     "bassFile": "B374",
-    "midiFile": "h374"
+    "midiFile": "h374",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "375",
@@ -4872,7 +5620,9 @@
     "altoFile": "A375",
     "tenorFile": "T375",
     "bassFile": "B375",
-    "midiFile": "h375"
+    "midiFile": "h375",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "376",
@@ -4885,7 +5635,9 @@
     "altoFile": "A376",
     "tenorFile": "T376",
     "bassFile": "B376",
-    "midiFile": "h376"
+    "midiFile": "h376",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "377",
@@ -4898,7 +5650,9 @@
     "altoFile": "A377",
     "tenorFile": "T377",
     "bassFile": "B377",
-    "midiFile": "h377"
+    "midiFile": "h377",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "378",
@@ -4911,7 +5665,9 @@
     "altoFile": "A378",
     "tenorFile": "T378",
     "bassFile": "B378",
-    "midiFile": "h378"
+    "midiFile": "h378",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "379",
@@ -4924,7 +5680,9 @@
     "altoFile": "A379",
     "tenorFile": "T379",
     "bassFile": "B379",
-    "midiFile": "h379"
+    "midiFile": "h379",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "380",
@@ -4937,7 +5695,9 @@
     "altoFile": "A380",
     "tenorFile": "T380",
     "bassFile": "B380",
-    "midiFile": "h380"
+    "midiFile": "h380",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "381",
@@ -4950,7 +5710,9 @@
     "altoFile": "A381",
     "tenorFile": "T381",
     "bassFile": "B381",
-    "midiFile": "h381"
+    "midiFile": "h381",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "382",
@@ -4963,7 +5725,9 @@
     "altoFile": "A382",
     "tenorFile": "T382",
     "bassFile": "B382",
-    "midiFile": "h382"
+    "midiFile": "h382",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "383",
@@ -4976,7 +5740,9 @@
     "altoFile": "A383",
     "tenorFile": "T383",
     "bassFile": "B383",
-    "midiFile": "h383"
+    "midiFile": "h383",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "384",
@@ -4989,7 +5755,9 @@
     "altoFile": "A384",
     "tenorFile": "T384",
     "bassFile": "B384",
-    "midiFile": "h384"
+    "midiFile": "h384",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "385",
@@ -5002,7 +5770,9 @@
     "altoFile": "A385",
     "tenorFile": "T385",
     "bassFile": "B385",
-    "midiFile": "h385"
+    "midiFile": "h385",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "386",
@@ -5015,7 +5785,9 @@
     "altoFile": "A386",
     "tenorFile": "T386",
     "bassFile": "B386",
-    "midiFile": "h386"
+    "midiFile": "h386",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "387",
@@ -5028,7 +5800,9 @@
     "altoFile": "A387",
     "tenorFile": "T387",
     "bassFile": "B387",
-    "midiFile": "h387"
+    "midiFile": "h387",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "388",
@@ -5041,7 +5815,9 @@
     "altoFile": "A388",
     "tenorFile": "T388",
     "bassFile": "B388",
-    "midiFile": "h388"
+    "midiFile": "h388",
+    "theme": "VIE CHRÉTIENNE",
+    "subtheme": "Secours et consolation"
   },
   {
     "number": "389",
@@ -5054,7 +5830,9 @@
     "altoFile": "A389",
     "tenorFile": "T389",
     "bassFile": "B389",
-    "midiFile": "h389"
+    "midiFile": "h389",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "390",
@@ -5067,7 +5845,9 @@
     "altoFile": "A390",
     "tenorFile": "T390",
     "bassFile": "B390",
-    "midiFile": "h390"
+    "midiFile": "h390",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "391",
@@ -5080,7 +5860,9 @@
     "altoFile": "A391",
     "tenorFile": "T391",
     "bassFile": "B391",
-    "midiFile": "h391"
+    "midiFile": "h391",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "392",
@@ -5093,7 +5875,9 @@
     "altoFile": "A392",
     "tenorFile": "T392",
     "bassFile": "B392",
-    "midiFile": "h392"
+    "midiFile": "h392",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "393",
@@ -5106,7 +5890,9 @@
     "altoFile": "A393",
     "tenorFile": "T393",
     "bassFile": "B393",
-    "midiFile": "h393"
+    "midiFile": "h393",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "394",
@@ -5119,7 +5905,9 @@
     "altoFile": "A394",
     "tenorFile": "T394",
     "bassFile": "B394",
-    "midiFile": "h394"
+    "midiFile": "h394",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "395",
@@ -5132,7 +5920,9 @@
     "altoFile": "A395",
     "tenorFile": "T395",
     "bassFile": "B395",
-    "midiFile": "h395"
+    "midiFile": "h395",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "396",
@@ -5145,7 +5935,9 @@
     "altoFile": "A396",
     "tenorFile": "T396",
     "bassFile": "B396",
-    "midiFile": "h396"
+    "midiFile": "h396",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "397",
@@ -5158,7 +5950,9 @@
     "altoFile": "A397",
     "tenorFile": "T397",
     "bassFile": "B397",
-    "midiFile": "h397"
+    "midiFile": "h397",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "398",
@@ -5171,7 +5965,9 @@
     "altoFile": "A398",
     "tenorFile": "T398",
     "bassFile": "B398",
-    "midiFile": "h398"
+    "midiFile": "h398",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "399",
@@ -5184,7 +5980,9 @@
     "altoFile": "A399",
     "tenorFile": "T399",
     "bassFile": "B399",
-    "midiFile": "h399"
+    "midiFile": "h399",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "400",
@@ -5197,7 +5995,9 @@
     "altoFile": "A400",
     "tenorFile": "T400",
     "bassFile": "B400",
-    "midiFile": "h400"
+    "midiFile": "h400",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "401",
@@ -5210,7 +6010,9 @@
     "altoFile": "A401",
     "tenorFile": "T401",
     "bassFile": "B401",
-    "midiFile": "h401"
+    "midiFile": "h401",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "402",
@@ -5223,7 +6025,9 @@
     "altoFile": "A402",
     "tenorFile": "T402",
     "bassFile": "B402",
-    "midiFile": "h402"
+    "midiFile": "h402",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "403",
@@ -5236,7 +6040,9 @@
     "altoFile": "A403",
     "tenorFile": "T403",
     "bassFile": "B403",
-    "midiFile": "h403"
+    "midiFile": "h403",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "404",
@@ -5249,7 +6055,9 @@
     "altoFile": "A404",
     "tenorFile": "T404",
     "bassFile": "B404",
-    "midiFile": "h404"
+    "midiFile": "h404",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "405",
@@ -5262,7 +6070,9 @@
     "altoFile": "A405",
     "tenorFile": "T405",
     "bassFile": "B405",
-    "midiFile": "h405"
+    "midiFile": "h405",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "406",
@@ -5275,7 +6085,9 @@
     "altoFile": "A406",
     "tenorFile": "T406",
     "bassFile": "B406",
-    "midiFile": "h406"
+    "midiFile": "h406",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "407",
@@ -5288,7 +6100,9 @@
     "altoFile": "A407",
     "tenorFile": "T407",
     "bassFile": "B407",
-    "midiFile": "h407"
+    "midiFile": "h407",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "408",
@@ -5301,7 +6115,9 @@
     "altoFile": "A408",
     "tenorFile": "T408",
     "bassFile": "B408",
-    "midiFile": "h408"
+    "midiFile": "h408",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "409",
@@ -5314,7 +6130,9 @@
     "altoFile": "A409",
     "tenorFile": "T409",
     "bassFile": "B409",
-    "midiFile": "h409"
+    "midiFile": "h409",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "410",
@@ -5327,7 +6145,9 @@
     "altoFile": "A410",
     "tenorFile": "T410",
     "bassFile": "B410",
-    "midiFile": "h410"
+    "midiFile": "h410",
+    "theme": "ESPÉRANCE CHRÉTIENNE",
+    "subtheme": "Espérance chrétienne"
   },
   {
     "number": "411",
@@ -5340,7 +6160,9 @@
     "altoFile": "A411",
     "tenorFile": "T411",
     "bassFile": "B411",
-    "midiFile": "h411"
+    "midiFile": "h411",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Matin"
   },
   {
     "number": "412",
@@ -5353,7 +6175,9 @@
     "altoFile": "A412",
     "tenorFile": "T412",
     "bassFile": "B412",
-    "midiFile": "h412"
+    "midiFile": "h412",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Matin"
   },
   {
     "number": "413",
@@ -5366,7 +6190,9 @@
     "altoFile": "A413",
     "tenorFile": "T413",
     "bassFile": "B413",
-    "midiFile": "h413"
+    "midiFile": "h413",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Matin"
   },
   {
     "number": "414",
@@ -5379,7 +6205,9 @@
     "altoFile": "A414",
     "tenorFile": "T414",
     "bassFile": "B414",
-    "midiFile": "h414"
+    "midiFile": "h414",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Matin"
   },
   {
     "number": "415",
@@ -5392,7 +6220,9 @@
     "altoFile": "A415",
     "tenorFile": "T415",
     "bassFile": "B415",
-    "midiFile": "h415"
+    "midiFile": "h415",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Matin"
   },
   {
     "number": "416",
@@ -5405,7 +6235,9 @@
     "altoFile": "A416",
     "tenorFile": "T416",
     "bassFile": "B416",
-    "midiFile": "h416"
+    "midiFile": "h416",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Soir"
   },
   {
     "number": "417",
@@ -5418,7 +6250,9 @@
     "altoFile": "A417",
     "tenorFile": "T417",
     "bassFile": "B417",
-    "midiFile": "h417"
+    "midiFile": "h417",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Soir"
   },
   {
     "number": "418",
@@ -5431,7 +6265,9 @@
     "altoFile": "A418",
     "tenorFile": "T418",
     "bassFile": "B418",
-    "midiFile": "h418"
+    "midiFile": "h418",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Soir"
   },
   {
     "number": "419",
@@ -5444,7 +6280,9 @@
     "altoFile": "A419",
     "tenorFile": "T419",
     "bassFile": "B419",
-    "midiFile": "h419"
+    "midiFile": "h419",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Soir"
   },
   {
     "number": "420",
@@ -5457,7 +6295,9 @@
     "altoFile": "A420",
     "tenorFile": "T420",
     "bassFile": "B420",
-    "midiFile": "h420"
+    "midiFile": "h420",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Soir"
   },
   {
     "number": "421",
@@ -5470,7 +6310,9 @@
     "altoFile": "A421",
     "tenorFile": "T421",
     "bassFile": "B421",
-    "midiFile": "h421"
+    "midiFile": "h421",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "422",
@@ -5483,7 +6325,9 @@
     "altoFile": "A422",
     "tenorFile": "T422",
     "bassFile": "B422",
-    "midiFile": "h422"
+    "midiFile": "h422",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "423",
@@ -5496,7 +6340,9 @@
     "altoFile": "A423",
     "tenorFile": "T423",
     "bassFile": "B423",
-    "midiFile": "h423"
+    "midiFile": "h423",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "424",
@@ -5509,7 +6355,9 @@
     "altoFile": "A424",
     "tenorFile": "T424",
     "bassFile": "B424",
-    "midiFile": "h424"
+    "midiFile": "h424",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "425",
@@ -5522,7 +6370,9 @@
     "altoFile": "A425",
     "tenorFile": "T425",
     "bassFile": "B425",
-    "midiFile": "h425"
+    "midiFile": "h425",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "426",
@@ -5535,7 +6385,9 @@
     "altoFile": "A426",
     "tenorFile": "T426",
     "bassFile": "B426",
-    "midiFile": "h426"
+    "midiFile": "h426",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Nouvelle année"
   },
   {
     "number": "427",
@@ -5548,7 +6400,9 @@
     "altoFile": "A427",
     "tenorFile": "T427",
     "bassFile": "B427",
-    "midiFile": "h427"
+    "midiFile": "h427",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Mariages"
   },
   {
     "number": "428",
@@ -5561,7 +6415,9 @@
     "altoFile": "A428",
     "tenorFile": "T428",
     "bassFile": "B428",
-    "midiFile": "h428"
+    "midiFile": "h428",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Mariages"
   },
   {
     "number": "429",
@@ -5574,7 +6430,9 @@
     "altoFile": "A429",
     "tenorFile": "T429",
     "bassFile": "B429",
-    "midiFile": "h429"
+    "midiFile": "h429",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Mariages"
   },
   {
     "number": "430",
@@ -5587,7 +6445,9 @@
     "altoFile": "A430",
     "tenorFile": "T430",
     "bassFile": "B430",
-    "midiFile": "h430"
+    "midiFile": "h430",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Mariages"
   },
   {
     "number": "431",
@@ -5600,7 +6460,9 @@
     "altoFile": "A431",
     "tenorFile": "T431",
     "bassFile": "B431",
-    "midiFile": "h431"
+    "midiFile": "h431",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "432",
@@ -5613,7 +6475,9 @@
     "altoFile": "A432",
     "tenorFile": "T432",
     "bassFile": "B432",
-    "midiFile": "h432"
+    "midiFile": "h432",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "433",
@@ -5626,7 +6490,9 @@
     "altoFile": "A433",
     "tenorFile": "T433",
     "bassFile": "B433",
-    "midiFile": "h433"
+    "midiFile": "h433",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "434",
@@ -5639,7 +6505,9 @@
     "altoFile": "A434",
     "tenorFile": "T434",
     "bassFile": "B434",
-    "midiFile": "h434"
+    "midiFile": "h434",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "435",
@@ -5652,7 +6520,9 @@
     "altoFile": "A435",
     "tenorFile": "T435",
     "bassFile": "B435",
-    "midiFile": "h435"
+    "midiFile": "h435",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "436",
@@ -5665,7 +6535,9 @@
     "altoFile": "A436",
     "tenorFile": "T436",
     "bassFile": "B436",
-    "midiFile": "h436"
+    "midiFile": "h436",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "La famille"
   },
   {
     "number": "437",
@@ -5678,7 +6550,9 @@
     "altoFile": "A437",
     "tenorFile": "T437",
     "bassFile": "B437",
-    "midiFile": "h437"
+    "midiFile": "h437",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Consécration de pasteurs"
   },
   {
     "number": "438",
@@ -5691,7 +6565,9 @@
     "altoFile": "A438",
     "tenorFile": "T438",
     "bassFile": "B438",
-    "midiFile": "h438"
+    "midiFile": "h438",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Consécration de pasteurs"
   },
   {
     "number": "439",
@@ -5704,7 +6580,9 @@
     "altoFile": "A439",
     "tenorFile": "T439",
     "bassFile": "B439",
-    "midiFile": "h439"
+    "midiFile": "h439",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Consécration de pasteurs"
   },
   {
     "number": "440",
@@ -5717,7 +6595,9 @@
     "altoFile": "A440",
     "tenorFile": "T440",
     "bassFile": "B440",
-    "midiFile": "h440"
+    "midiFile": "h440",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Consécration de pasteurs"
   },
   {
     "number": "441",
@@ -5730,7 +6610,9 @@
     "altoFile": "A441",
     "tenorFile": "T441",
     "bassFile": "B441",
-    "midiFile": "h441"
+    "midiFile": "h441",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Dédicace de temples"
   },
   {
     "number": "442",
@@ -5743,7 +6625,9 @@
     "altoFile": "A442",
     "tenorFile": "T442",
     "bassFile": "B442",
-    "midiFile": "h442"
+    "midiFile": "h442",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Dédicace de temples"
   },
   {
     "number": "443",
@@ -5756,7 +6640,9 @@
     "altoFile": "A443",
     "tenorFile": "T443",
     "bassFile": "B443",
-    "midiFile": "h443"
+    "midiFile": "h443",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Dédicace de temples"
   },
   {
     "number": "444",
@@ -5769,7 +6655,9 @@
     "altoFile": "A444",
     "tenorFile": "T444",
     "bassFile": "B444",
-    "midiFile": "h444"
+    "midiFile": "h444",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Dédicace de temples"
   },
   {
     "number": "445",
@@ -5782,7 +6670,9 @@
     "altoFile": "A445",
     "tenorFile": "T445",
     "bassFile": "B445",
-    "midiFile": "h445"
+    "midiFile": "h445",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Chants d'adieu"
   },
   {
     "number": "446",
@@ -5795,7 +6685,9 @@
     "altoFile": "A446",
     "tenorFile": "T446",
     "bassFile": "B446",
-    "midiFile": "h446"
+    "midiFile": "h446",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Chants d'adieu"
   },
   {
     "number": "447",
@@ -5808,7 +6700,9 @@
     "altoFile": "A447",
     "tenorFile": "T447",
     "bassFile": "B447",
-    "midiFile": "h447"
+    "midiFile": "h447",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Chants d'adieu"
   },
   {
     "number": "448",
@@ -5821,7 +6715,9 @@
     "altoFile": "A448",
     "tenorFile": "T448",
     "bassFile": "B448",
-    "midiFile": "h448"
+    "midiFile": "h448",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "449",
@@ -5834,7 +6730,9 @@
     "altoFile": "A449",
     "tenorFile": "T449",
     "bassFile": "B449",
-    "midiFile": "h449"
+    "midiFile": "h449",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "450",
@@ -5847,7 +6745,9 @@
     "altoFile": "A450",
     "tenorFile": "T450",
     "bassFile": "B450",
-    "midiFile": "h450"
+    "midiFile": "h450",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "451",
@@ -5860,7 +6760,9 @@
     "altoFile": "A451",
     "tenorFile": "T451",
     "bassFile": "B451",
-    "midiFile": "h451"
+    "midiFile": "h451",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "452",
@@ -5873,7 +6775,9 @@
     "altoFile": "A452",
     "tenorFile": "T452",
     "bassFile": "B452",
-    "midiFile": "h452"
+    "midiFile": "h452",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "453",
@@ -5886,7 +6790,9 @@
     "altoFile": "A453",
     "tenorFile": "T453",
     "bassFile": "B453",
-    "midiFile": "h453"
+    "midiFile": "h453",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Deuil"
   },
   {
     "number": "454",
@@ -5899,7 +6805,9 @@
     "altoFile": "A454",
     "tenorFile": "T454",
     "bassFile": "B454",
-    "midiFile": "h454"
+    "midiFile": "h454",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "455",
@@ -5912,7 +6820,9 @@
     "altoFile": "A455",
     "tenorFile": "T455",
     "bassFile": "B455",
-    "midiFile": "h455"
+    "midiFile": "h455",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "456",
@@ -5925,7 +6835,9 @@
     "altoFile": "A456",
     "tenorFile": "T456",
     "bassFile": "B456",
-    "midiFile": "h456"
+    "midiFile": "h456",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "457",
@@ -5938,7 +6850,9 @@
     "altoFile": "A457",
     "tenorFile": "T457",
     "bassFile": "B457",
-    "midiFile": "h457"
+    "midiFile": "h457",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "458",
@@ -5951,7 +6865,9 @@
     "altoFile": "A458",
     "tenorFile": "T458",
     "bassFile": "B458",
-    "midiFile": "h458"
+    "midiFile": "h458",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "459",
@@ -5964,7 +6880,9 @@
     "altoFile": "A459",
     "tenorFile": "T459",
     "bassFile": "B459",
-    "midiFile": "h459"
+    "midiFile": "h459",
+    "theme": "CHANTS DIVERS",
+    "subtheme": "Tempérance"
   },
   {
     "number": "460",
@@ -5977,7 +6895,9 @@
     "altoFile": "A460",
     "tenorFile": "T460",
     "bassFile": "B460",
-    "midiFile": "h460"
+    "midiFile": "h460",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "461",
@@ -5990,7 +6910,9 @@
     "altoFile": "A461",
     "tenorFile": "T461",
     "bassFile": "B461",
-    "midiFile": "h461"
+    "midiFile": "h461",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "462",
@@ -6003,7 +6925,9 @@
     "altoFile": "A462",
     "tenorFile": "T462",
     "bassFile": "B462",
-    "midiFile": "h462"
+    "midiFile": "h462",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "463",
@@ -6016,7 +6940,9 @@
     "altoFile": "A463",
     "tenorFile": "T463",
     "bassFile": "B463",
-    "midiFile": "h463"
+    "midiFile": "h463",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "464",
@@ -6029,7 +6955,9 @@
     "altoFile": "A464",
     "tenorFile": "T464",
     "bassFile": "B464",
-    "midiFile": "h464"
+    "midiFile": "h464",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "465",
@@ -6042,7 +6970,9 @@
     "altoFile": "A465",
     "tenorFile": "T465",
     "bassFile": "B465",
-    "midiFile": "h465"
+    "midiFile": "h465",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "466",
@@ -6055,7 +6985,9 @@
     "altoFile": "A466",
     "tenorFile": "T466",
     "bassFile": "B466",
-    "midiFile": "h466"
+    "midiFile": "h466",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "467",
@@ -6068,7 +7000,9 @@
     "altoFile": "A467",
     "tenorFile": "T467",
     "bassFile": "B467",
-    "midiFile": "h467"
+    "midiFile": "h467",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "468",
@@ -6081,7 +7015,9 @@
     "altoFile": "A468",
     "tenorFile": "T468",
     "bassFile": "B468",
-    "midiFile": "h468"
+    "midiFile": "h468",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "469",
@@ -6094,7 +7030,9 @@
     "altoFile": "A469",
     "tenorFile": "T469",
     "bassFile": "B469",
-    "midiFile": "h469"
+    "midiFile": "h469",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "470",
@@ -6107,7 +7045,9 @@
     "altoFile": "A470",
     "tenorFile": "T470",
     "bassFile": "B470",
-    "midiFile": "h470"
+    "midiFile": "h470",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "471",
@@ -6120,7 +7060,9 @@
     "altoFile": "A471",
     "tenorFile": "T471",
     "bassFile": "B471",
-    "midiFile": "h471"
+    "midiFile": "h471",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "472",
@@ -6133,7 +7075,9 @@
     "altoFile": "A472",
     "tenorFile": "T472",
     "bassFile": "B472",
-    "midiFile": "h472"
+    "midiFile": "h472",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "473",
@@ -6146,7 +7090,9 @@
     "altoFile": "A473",
     "tenorFile": "T473",
     "bassFile": "B473",
-    "midiFile": "h473"
+    "midiFile": "h473",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "474",
@@ -6159,7 +7105,9 @@
     "altoFile": "A474",
     "tenorFile": "T474",
     "bassFile": "B474",
-    "midiFile": "h474"
+    "midiFile": "h474",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "475",
@@ -6172,7 +7120,9 @@
     "altoFile": "A475",
     "tenorFile": "T475",
     "bassFile": "B475",
-    "midiFile": "h475"
+    "midiFile": "h475",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "476",
@@ -6185,7 +7135,9 @@
     "altoFile": "A476",
     "tenorFile": "T476",
     "bassFile": "B476",
-    "midiFile": "h476"
+    "midiFile": "h476",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "477",
@@ -6198,7 +7150,9 @@
     "altoFile": "A477",
     "tenorFile": "T477",
     "bassFile": "B477",
-    "midiFile": "h477"
+    "midiFile": "h477",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "478",
@@ -6211,7 +7165,9 @@
     "altoFile": "A478",
     "tenorFile": "T478",
     "bassFile": "B478",
-    "midiFile": "h478"
+    "midiFile": "h478",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "479",
@@ -6224,7 +7180,9 @@
     "altoFile": "A479",
     "tenorFile": "T479",
     "bassFile": "B479",
-    "midiFile": "h479"
+    "midiFile": "h479",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "480",
@@ -6237,7 +7195,9 @@
     "altoFile": "A480",
     "tenorFile": "T480",
     "bassFile": "B480",
-    "midiFile": "h480"
+    "midiFile": "h480",
+    "theme": "JEUNESSE",
+    "subtheme": "Appel"
   },
   {
     "number": "481",
@@ -6250,7 +7210,9 @@
     "altoFile": "A481",
     "tenorFile": "T481",
     "bassFile": "B481",
-    "midiFile": "h481"
+    "midiFile": "h481",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "482",
@@ -6263,7 +7225,9 @@
     "altoFile": "A482",
     "tenorFile": "T482",
     "bassFile": "B482",
-    "midiFile": "h482"
+    "midiFile": "h482",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "483",
@@ -6276,7 +7240,9 @@
     "altoFile": "A483",
     "tenorFile": "T483",
     "bassFile": "B483",
-    "midiFile": "h483"
+    "midiFile": "h483",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "484",
@@ -6289,7 +7255,9 @@
     "altoFile": "A484",
     "tenorFile": "T484",
     "bassFile": "B484",
-    "midiFile": "h484"
+    "midiFile": "h484",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "485",
@@ -6302,7 +7270,9 @@
     "altoFile": "A485",
     "tenorFile": "T485",
     "bassFile": "B485",
-    "midiFile": "h485"
+    "midiFile": "h485",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "486",
@@ -6315,7 +7285,9 @@
     "altoFile": "A486",
     "tenorFile": "T486",
     "bassFile": "B486",
-    "midiFile": "h486"
+    "midiFile": "h486",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "487",
@@ -6328,7 +7300,9 @@
     "altoFile": "A487",
     "tenorFile": "T487",
     "bassFile": "B487",
-    "midiFile": "h487"
+    "midiFile": "h487",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "488",
@@ -6341,7 +7315,9 @@
     "altoFile": "A488",
     "tenorFile": "T488",
     "bassFile": "B488",
-    "midiFile": "h488"
+    "midiFile": "h488",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "489",
@@ -6354,7 +7330,9 @@
     "altoFile": "A489",
     "tenorFile": "T489",
     "bassFile": "B489",
-    "midiFile": "h489"
+    "midiFile": "h489",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "490",
@@ -6367,7 +7345,9 @@
     "altoFile": "A490",
     "tenorFile": "T490",
     "bassFile": "B490",
-    "midiFile": "h490"
+    "midiFile": "h490",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "491",
@@ -6380,7 +7360,9 @@
     "altoFile": "A491",
     "tenorFile": "T491",
     "bassFile": "B491",
-    "midiFile": "h491"
+    "midiFile": "h491",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "492",
@@ -6393,7 +7375,9 @@
     "altoFile": "A492",
     "tenorFile": "T492",
     "bassFile": "B492",
-    "midiFile": "h492"
+    "midiFile": "h492",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "493",
@@ -6406,7 +7390,9 @@
     "altoFile": "A493",
     "tenorFile": "T493",
     "bassFile": "B493",
-    "midiFile": "h493"
+    "midiFile": "h493",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "494",
@@ -6419,7 +7405,9 @@
     "altoFile": "A494",
     "tenorFile": "T494",
     "bassFile": "B494",
-    "midiFile": "h494"
+    "midiFile": "h494",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "495",
@@ -6432,7 +7420,9 @@
     "altoFile": "A495",
     "tenorFile": "T495",
     "bassFile": "B495",
-    "midiFile": "h495"
+    "midiFile": "h495",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "496",
@@ -6445,7 +7435,9 @@
     "altoFile": "A496",
     "tenorFile": "T496",
     "bassFile": "B496",
-    "midiFile": "h496"
+    "midiFile": "h496",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "497",
@@ -6458,7 +7450,9 @@
     "altoFile": "A497",
     "tenorFile": "T497",
     "bassFile": "B497",
-    "midiFile": "h497"
+    "midiFile": "h497",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "498",
@@ -6471,7 +7465,9 @@
     "altoFile": "A498",
     "tenorFile": "T498",
     "bassFile": "B498",
-    "midiFile": "h498"
+    "midiFile": "h498",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "499",
@@ -6484,7 +7480,9 @@
     "altoFile": "A499",
     "tenorFile": "T499",
     "bassFile": "B499",
-    "midiFile": "h499"
+    "midiFile": "h499",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "500",
@@ -6497,7 +7495,9 @@
     "altoFile": "A500",
     "tenorFile": "T500",
     "bassFile": "B500",
-    "midiFile": "h500"
+    "midiFile": "h500",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "501",
@@ -6510,7 +7510,9 @@
     "altoFile": "A501",
     "tenorFile": "T501",
     "bassFile": "B501",
-    "midiFile": "h501"
+    "midiFile": "h501",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "502",
@@ -6523,7 +7525,9 @@
     "altoFile": "A502",
     "tenorFile": "T502",
     "bassFile": "B502",
-    "midiFile": "h502"
+    "midiFile": "h502",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "503",
@@ -6536,7 +7540,9 @@
     "altoFile": "A503",
     "tenorFile": "T503",
     "bassFile": "B503",
-    "midiFile": "h503"
+    "midiFile": "h503",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "504",
@@ -6549,7 +7555,9 @@
     "altoFile": "A504",
     "tenorFile": "T504",
     "bassFile": "B504",
-    "midiFile": "h504"
+    "midiFile": "h504",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "505",
@@ -6562,7 +7570,9 @@
     "altoFile": "A505",
     "tenorFile": "T505",
     "bassFile": "B505",
-    "midiFile": "h505"
+    "midiFile": "h505",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "506",
@@ -6575,7 +7585,9 @@
     "altoFile": "A506",
     "tenorFile": "T506",
     "bassFile": "B506",
-    "midiFile": "h506"
+    "midiFile": "h506",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "507",
@@ -6588,7 +7600,9 @@
     "altoFile": "A507",
     "tenorFile": "T507",
     "bassFile": "B507",
-    "midiFile": "h507"
+    "midiFile": "h507",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "508",
@@ -6601,7 +7615,9 @@
     "altoFile": "A508",
     "tenorFile": "T508",
     "bassFile": "B508",
-    "midiFile": "h508"
+    "midiFile": "h508",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "509",
@@ -6614,7 +7630,9 @@
     "altoFile": "A509",
     "tenorFile": "T509",
     "bassFile": "B509",
-    "midiFile": "h509"
+    "midiFile": "h509",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "510",
@@ -6627,7 +7645,9 @@
     "altoFile": "A510",
     "tenorFile": "T510",
     "bassFile": "B510",
-    "midiFile": "h510"
+    "midiFile": "h510",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "511",
@@ -6640,7 +7660,9 @@
     "altoFile": "A511",
     "tenorFile": "T511",
     "bassFile": "B511",
-    "midiFile": "h511"
+    "midiFile": "h511",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "512",
@@ -6653,7 +7675,9 @@
     "altoFile": "A512",
     "tenorFile": "T512",
     "bassFile": "B512",
-    "midiFile": "h512"
+    "midiFile": "h512",
+    "theme": "JEUNESSE",
+    "subtheme": "Consécration et aspiration"
   },
   {
     "number": "513",
@@ -6666,7 +7690,9 @@
     "altoFile": "A513",
     "tenorFile": "T513",
     "bassFile": "B513",
-    "midiFile": "h513"
+    "midiFile": "h513",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "514",
@@ -6679,7 +7705,9 @@
     "altoFile": "A514",
     "tenorFile": "T514",
     "bassFile": "B514",
-    "midiFile": "h514"
+    "midiFile": "h514",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "515",
@@ -6692,7 +7720,9 @@
     "altoFile": "A515",
     "tenorFile": "T515",
     "bassFile": "B515",
-    "midiFile": "h515"
+    "midiFile": "h515",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "516",
@@ -6705,7 +7735,9 @@
     "altoFile": "A516",
     "tenorFile": "T516",
     "bassFile": "B516",
-    "midiFile": "h516"
+    "midiFile": "h516",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "517",
@@ -6718,7 +7750,9 @@
     "altoFile": "A517",
     "tenorFile": "T517",
     "bassFile": "B517",
-    "midiFile": "h517"
+    "midiFile": "h517",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "518",
@@ -6731,7 +7765,9 @@
     "altoFile": "A518",
     "tenorFile": "T518",
     "bassFile": "B518",
-    "midiFile": "h518"
+    "midiFile": "h518",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "519",
@@ -6744,7 +7780,9 @@
     "altoFile": "A519",
     "tenorFile": "T519",
     "bassFile": "B519",
-    "midiFile": "h519"
+    "midiFile": "h519",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "520",
@@ -6757,7 +7795,9 @@
     "altoFile": "A520",
     "tenorFile": "T520",
     "bassFile": "B520",
-    "midiFile": "h520"
+    "midiFile": "h520",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "521",
@@ -6770,7 +7810,9 @@
     "altoFile": "A521",
     "tenorFile": "T521",
     "bassFile": "B521",
-    "midiFile": "h521"
+    "midiFile": "h521",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "522",
@@ -6783,7 +7825,9 @@
     "altoFile": "A522",
     "tenorFile": "T522",
     "bassFile": "B522",
-    "midiFile": "h522"
+    "midiFile": "h522",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "523",
@@ -6796,7 +7840,9 @@
     "altoFile": "A523",
     "tenorFile": "T523",
     "bassFile": "B523",
-    "midiFile": "h523"
+    "midiFile": "h523",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "524",
@@ -6809,7 +7855,9 @@
     "altoFile": "A524",
     "tenorFile": "T524",
     "bassFile": "B524",
-    "midiFile": "h524"
+    "midiFile": "h524",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "525",
@@ -6822,7 +7870,9 @@
     "altoFile": "A525",
     "tenorFile": "T525",
     "bassFile": "B525",
-    "midiFile": "h525"
+    "midiFile": "h525",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "526",
@@ -6835,7 +7885,9 @@
     "altoFile": "A526",
     "tenorFile": "T526",
     "bassFile": "B526",
-    "midiFile": "h526"
+    "midiFile": "h526",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "527",
@@ -6848,7 +7900,9 @@
     "altoFile": "A527",
     "tenorFile": "T527",
     "bassFile": "B527",
-    "midiFile": "h527"
+    "midiFile": "h527",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "528",
@@ -6861,7 +7915,9 @@
     "altoFile": "A528",
     "tenorFile": "T528",
     "bassFile": "B528",
-    "midiFile": "h528"
+    "midiFile": "h528",
+    "theme": "JEUNESSE",
+    "subtheme": "Victoire en Christ"
   },
   {
     "number": "529",
@@ -6874,7 +7930,9 @@
     "altoFile": "A529",
     "tenorFile": "T529",
     "bassFile": "B529",
-    "midiFile": "h529"
+    "midiFile": "h529",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "530",
@@ -6887,7 +7945,9 @@
     "altoFile": "A530",
     "tenorFile": "T530",
     "bassFile": "B530",
-    "midiFile": "h530"
+    "midiFile": "h530",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "531",
@@ -6900,7 +7960,9 @@
     "altoFile": "A531",
     "tenorFile": "T531",
     "bassFile": "B531",
-    "midiFile": "h531"
+    "midiFile": "h531",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "532",
@@ -6913,7 +7975,9 @@
     "altoFile": "A532",
     "tenorFile": "T532",
     "bassFile": "B532",
-    "midiFile": "h532"
+    "midiFile": "h532",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "533",
@@ -6926,7 +7990,9 @@
     "altoFile": "A533",
     "tenorFile": "T533",
     "bassFile": "B533",
-    "midiFile": "h533"
+    "midiFile": "h533",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "534",
@@ -6939,7 +8005,9 @@
     "altoFile": "A534",
     "tenorFile": "T534",
     "bassFile": "B534",
-    "midiFile": "h534"
+    "midiFile": "h534",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "535",
@@ -6952,7 +8020,9 @@
     "altoFile": "A535",
     "tenorFile": "T535",
     "bassFile": "B535",
-    "midiFile": "h535"
+    "midiFile": "h535",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "536",
@@ -6965,7 +8035,9 @@
     "altoFile": "A536",
     "tenorFile": "T536",
     "bassFile": "B536",
-    "midiFile": "h536"
+    "midiFile": "h536",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "537",
@@ -6978,7 +8050,9 @@
     "altoFile": "A537",
     "tenorFile": "T537",
     "bassFile": "B537",
-    "midiFile": "h537"
+    "midiFile": "h537",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "538",
@@ -6991,7 +8065,9 @@
     "altoFile": "A538",
     "tenorFile": "T538",
     "bassFile": "B538",
-    "midiFile": "h538"
+    "midiFile": "h538",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "539",
@@ -7004,7 +8080,9 @@
     "altoFile": "A539",
     "tenorFile": "T539",
     "bassFile": "B539",
-    "midiFile": "h539"
+    "midiFile": "h539",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "540",
@@ -7017,7 +8095,9 @@
     "altoFile": "A540",
     "tenorFile": "T540",
     "bassFile": "B540",
-    "midiFile": "h540"
+    "midiFile": "h540",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "541",
@@ -7030,7 +8110,9 @@
     "altoFile": "A541",
     "tenorFile": "T541",
     "bassFile": "B541",
-    "midiFile": "h541"
+    "midiFile": "h541",
+    "theme": "JEUNESSE",
+    "subtheme": "Activité missionnaire"
   },
   {
     "number": "542",
@@ -7043,7 +8125,9 @@
     "altoFile": "A542",
     "tenorFile": "T542",
     "bassFile": "B542",
-    "midiFile": "h542"
+    "midiFile": "h542",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "543",
@@ -7056,7 +8140,9 @@
     "altoFile": "A543",
     "tenorFile": "T543",
     "bassFile": "B543",
-    "midiFile": "h543"
+    "midiFile": "h543",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "544",
@@ -7069,7 +8155,9 @@
     "altoFile": "A544",
     "tenorFile": "T544",
     "bassFile": "B544",
-    "midiFile": "h544"
+    "midiFile": "h544",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "545",
@@ -7082,7 +8170,9 @@
     "altoFile": "A545",
     "tenorFile": "T545",
     "bassFile": "B545",
-    "midiFile": "h545"
+    "midiFile": "h545",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "546",
@@ -7095,7 +8185,9 @@
     "altoFile": "A546",
     "tenorFile": "T546",
     "bassFile": "B546",
-    "midiFile": "h546"
+    "midiFile": "h546",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "547",
@@ -7108,7 +8200,9 @@
     "altoFile": "A547",
     "tenorFile": "T547",
     "bassFile": "B547",
-    "midiFile": "h547"
+    "midiFile": "h547",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "548",
@@ -7121,7 +8215,9 @@
     "altoFile": "A548",
     "tenorFile": "T548",
     "bassFile": "B548",
-    "midiFile": "h548"
+    "midiFile": "h548",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "549",
@@ -7134,7 +8230,9 @@
     "altoFile": "A549",
     "tenorFile": "T549",
     "bassFile": "B549",
-    "midiFile": "h549"
+    "midiFile": "h549",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "550",
@@ -7147,7 +8245,9 @@
     "altoFile": "A550",
     "tenorFile": "T550",
     "bassFile": "B550",
-    "midiFile": "h550"
+    "midiFile": "h550",
+    "theme": "JEUNESSE",
+    "subtheme": "Récréation"
   },
   {
     "number": "551",
@@ -7160,7 +8260,9 @@
     "altoFile": "A551",
     "tenorFile": "T551",
     "bassFile": "B551",
-    "midiFile": "h551"
+    "midiFile": "h551",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "552",
@@ -7173,7 +8275,9 @@
     "altoFile": "A552",
     "tenorFile": "T552",
     "bassFile": "B552",
-    "midiFile": "h552"
+    "midiFile": "h552",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "553",
@@ -7186,7 +8290,9 @@
     "altoFile": "A553",
     "tenorFile": "T553",
     "bassFile": "B553",
-    "midiFile": "h553"
+    "midiFile": "h553",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "554",
@@ -7199,7 +8305,9 @@
     "altoFile": "A554",
     "tenorFile": "T554",
     "bassFile": "B554",
-    "midiFile": "h554"
+    "midiFile": "h554",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "555",
@@ -7212,7 +8320,9 @@
     "altoFile": "A555",
     "tenorFile": "T555",
     "bassFile": "B555",
-    "midiFile": "h555"
+    "midiFile": "h555",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "556",
@@ -7225,7 +8335,9 @@
     "altoFile": "A556",
     "tenorFile": "T556",
     "bassFile": "B556",
-    "midiFile": "h556"
+    "midiFile": "h556",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "557",
@@ -7238,7 +8350,9 @@
     "altoFile": "A557",
     "tenorFile": "T557",
     "bassFile": "B557",
-    "midiFile": "h557"
+    "midiFile": "h557",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "558",
@@ -7251,7 +8365,9 @@
     "altoFile": "A558",
     "tenorFile": "T558",
     "bassFile": "B558",
-    "midiFile": "h558"
+    "midiFile": "h558",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "559",
@@ -7264,7 +8380,9 @@
     "altoFile": "A559",
     "tenorFile": "T559",
     "bassFile": "B559",
-    "midiFile": "h559"
+    "midiFile": "h559",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "560",
@@ -7277,7 +8395,9 @@
     "altoFile": "A560",
     "tenorFile": "T560",
     "bassFile": "B560",
-    "midiFile": "h560"
+    "midiFile": "h560",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "561",
@@ -7290,7 +8410,9 @@
     "altoFile": "A561",
     "tenorFile": "T561",
     "bassFile": "B561",
-    "midiFile": "h561"
+    "midiFile": "h561",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "562",
@@ -7303,7 +8425,9 @@
     "altoFile": "A562",
     "tenorFile": "T562",
     "bassFile": "B562",
-    "midiFile": "h562"
+    "midiFile": "h562",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "563",
@@ -7316,7 +8440,9 @@
     "altoFile": "A563",
     "tenorFile": "T563",
     "bassFile": "B563",
-    "midiFile": "h563"
+    "midiFile": "h563",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "564",
@@ -7324,12 +8450,14 @@
     "lyrics": "1.\nLe Seigneur Jésus est mon frère,\nBonne maman me l'a dit.\nC'est l'ami que je préfère,\nLui qui toujours compatit.\nÔ bonheur! Ô bonheur!\nJésus, tu fus l'ami des enfants.\nÔ bonheur! Ô bonheur!\nJésus, je le sais, tu me comprends.\n\n2.\nTout petit enfant sur la terre,\nLe doux Jésus s'amusait,\nMais il aimait bien sa mère\nEt toujours obéissait.\nÔ bonheur! Ô bonheur!\nJésus, tu me rends obéissant,\nÔ bonheur! Ô bonheur!\nJésus, par ton Esprit tout-puissant.\n\n3.\nAprès l'enfance, le Calvaire...\nJésus au ciel est monté.\nSe chargeant de ma misère\nEt m'offrant l'éternité.\nÔ bonheur! Ô bonheur!\nJésus, tu versas ton sang pour moi.\nÔ bonheur! Ô bonheur!\nJésus, je veux me donner à toi.",
     "author": "",
     "composer": "",
-    "style": "Voix à l\\",
+    "style": "Voix à l'unisson",
     "sopranoFile": "S564",
     "altoFile": "A564",
     "tenorFile": "T564",
     "bassFile": "B564",
-    "midiFile": "h564"
+    "midiFile": "h564",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "565",
@@ -7342,7 +8470,9 @@
     "altoFile": "A565",
     "tenorFile": "T565",
     "bassFile": "B565",
-    "midiFile": "h565"
+    "midiFile": "h565",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "566",
@@ -7355,7 +8485,9 @@
     "altoFile": "A566",
     "tenorFile": "T566",
     "bassFile": "B566",
-    "midiFile": "h566"
+    "midiFile": "h566",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "567",
@@ -7368,7 +8500,9 @@
     "altoFile": "A567",
     "tenorFile": "T567",
     "bassFile": "B567",
-    "midiFile": "h567"
+    "midiFile": "h567",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "568",
@@ -7381,7 +8515,9 @@
     "altoFile": "A568",
     "tenorFile": "T568",
     "bassFile": "B568",
-    "midiFile": "h568"
+    "midiFile": "h568",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "569",
@@ -7394,7 +8530,9 @@
     "altoFile": "A569",
     "tenorFile": "T569",
     "bassFile": "B569",
-    "midiFile": "h569"
+    "midiFile": "h569",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "570",
@@ -7407,7 +8545,9 @@
     "altoFile": "A570",
     "tenorFile": "T570",
     "bassFile": "B570",
-    "midiFile": "h570"
+    "midiFile": "h570",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "571",
@@ -7420,7 +8560,9 @@
     "altoFile": "A571",
     "tenorFile": "T571",
     "bassFile": "B571",
-    "midiFile": "h571"
+    "midiFile": "h571",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "572",
@@ -7433,7 +8575,9 @@
     "altoFile": "A572",
     "tenorFile": "T572",
     "bassFile": "B572",
-    "midiFile": "h572"
+    "midiFile": "h572",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "573",
@@ -7446,7 +8590,9 @@
     "altoFile": "A573",
     "tenorFile": "T573",
     "bassFile": "B573",
-    "midiFile": "h573"
+    "midiFile": "h573",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "574",
@@ -7459,7 +8605,9 @@
     "altoFile": "A574",
     "tenorFile": "T574",
     "bassFile": "B574",
-    "midiFile": "h574"
+    "midiFile": "h574",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "575",
@@ -7472,7 +8620,9 @@
     "altoFile": "A575",
     "tenorFile": "T575",
     "bassFile": "B575",
-    "midiFile": "h575"
+    "midiFile": "h575",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "576",
@@ -7485,7 +8635,9 @@
     "altoFile": "A576",
     "tenorFile": "T576",
     "bassFile": "B576",
-    "midiFile": "h576"
+    "midiFile": "h576",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "577",
@@ -7498,7 +8650,9 @@
     "altoFile": "A577",
     "tenorFile": "T577",
     "bassFile": "B577",
-    "midiFile": "h577"
+    "midiFile": "h577",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "578",
@@ -7511,7 +8665,9 @@
     "altoFile": "A578",
     "tenorFile": "T578",
     "bassFile": "B578",
-    "midiFile": "h578"
+    "midiFile": "h578",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "579",
@@ -7524,7 +8680,9 @@
     "altoFile": "A579",
     "tenorFile": "T579",
     "bassFile": "B579",
-    "midiFile": "h579"
+    "midiFile": "h579",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "580",
@@ -7537,7 +8695,9 @@
     "altoFile": "A580",
     "tenorFile": "T580",
     "bassFile": "B580",
-    "midiFile": "h580"
+    "midiFile": "h580",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "581",
@@ -7550,7 +8710,9 @@
     "altoFile": "A581",
     "tenorFile": "T581",
     "bassFile": "B581",
-    "midiFile": "h581"
+    "midiFile": "h581",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "582",
@@ -7563,7 +8725,9 @@
     "altoFile": "A582",
     "tenorFile": "T582",
     "bassFile": "B582",
-    "midiFile": "h582"
+    "midiFile": "h582",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "583",
@@ -7576,7 +8740,9 @@
     "altoFile": "A583",
     "tenorFile": "T583",
     "bassFile": "B583",
-    "midiFile": "h583"
+    "midiFile": "h583",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "584",
@@ -7589,7 +8755,9 @@
     "altoFile": "A584",
     "tenorFile": "T584",
     "bassFile": "B584",
-    "midiFile": "h584"
+    "midiFile": "h584",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "585",
@@ -7602,7 +8770,9 @@
     "altoFile": "A585",
     "tenorFile": "T585",
     "bassFile": "B585",
-    "midiFile": "h585"
+    "midiFile": "h585",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "586",
@@ -7615,7 +8785,9 @@
     "altoFile": "A586",
     "tenorFile": "T586",
     "bassFile": "B586",
-    "midiFile": "h586"
+    "midiFile": "h586",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "587",
@@ -7628,7 +8800,9 @@
     "altoFile": "A587",
     "tenorFile": "T587",
     "bassFile": "B587",
-    "midiFile": "h587"
+    "midiFile": "h587",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "588",
@@ -7641,7 +8815,9 @@
     "altoFile": "A588",
     "tenorFile": "T588",
     "bassFile": "B588",
-    "midiFile": "h588"
+    "midiFile": "h588",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "589",
@@ -7654,7 +8830,9 @@
     "altoFile": "A589",
     "tenorFile": "T589",
     "bassFile": "B589",
-    "midiFile": "h589"
+    "midiFile": "h589",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "590",
@@ -7667,7 +8845,9 @@
     "altoFile": "A590",
     "tenorFile": "T590",
     "bassFile": "B590",
-    "midiFile": "h590"
+    "midiFile": "h590",
+    "theme": "LES ENFANTS",
+    "subtheme": "Les enfants"
   },
   {
     "number": "591",
@@ -7680,7 +8860,9 @@
     "altoFile": "A591",
     "tenorFile": "T591",
     "bassFile": "B591",
-    "midiFile": "h591"
+    "midiFile": "h591",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "592",
@@ -7693,7 +8875,9 @@
     "altoFile": "A592",
     "tenorFile": "T592",
     "bassFile": "B592",
-    "midiFile": "h592"
+    "midiFile": "h592",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "593",
@@ -7706,7 +8890,9 @@
     "altoFile": "A593",
     "tenorFile": "T593",
     "bassFile": "B593",
-    "midiFile": "h593"
+    "midiFile": "h593",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "594",
@@ -7719,7 +8905,9 @@
     "altoFile": "A594",
     "tenorFile": "T594",
     "bassFile": "B594",
-    "midiFile": "h594"
+    "midiFile": "h594",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "595",
@@ -7732,7 +8920,9 @@
     "altoFile": "A595",
     "tenorFile": "T595",
     "bassFile": "B595",
-    "midiFile": "h595"
+    "midiFile": "h595",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "596",
@@ -7745,7 +8935,9 @@
     "altoFile": "A596",
     "tenorFile": "T596",
     "bassFile": "B596",
-    "midiFile": "h596"
+    "midiFile": "h596",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "597",
@@ -7758,7 +8950,9 @@
     "altoFile": "A597",
     "tenorFile": "T597",
     "bassFile": "B597",
-    "midiFile": "h597"
+    "midiFile": "h597",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "598",
@@ -7771,7 +8965,9 @@
     "altoFile": "A598",
     "tenorFile": "T598",
     "bassFile": "B598",
-    "midiFile": "h598"
+    "midiFile": "h598",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "599",
@@ -7784,7 +8980,9 @@
     "altoFile": "A599",
     "tenorFile": "T599",
     "bassFile": "B599",
-    "midiFile": "h599"
+    "midiFile": "h599",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "600",
@@ -7797,7 +8995,9 @@
     "altoFile": "A600",
     "tenorFile": "T600",
     "bassFile": "B600",
-    "midiFile": "h600"
+    "midiFile": "h600",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "601",
@@ -7810,7 +9010,9 @@
     "altoFile": "A601",
     "tenorFile": "T601",
     "bassFile": "B601",
-    "midiFile": "h601"
+    "midiFile": "h601",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "602",
@@ -7823,7 +9025,9 @@
     "altoFile": "A602",
     "tenorFile": "T602",
     "bassFile": "B602",
-    "midiFile": "h602"
+    "midiFile": "h602",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "603",
@@ -7836,7 +9040,9 @@
     "altoFile": "A603",
     "tenorFile": "T603",
     "bassFile": "B603",
-    "midiFile": "h603"
+    "midiFile": "h603",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "604",
@@ -7844,12 +9050,14 @@
     "lyrics": "1.\nJe m'approche de toi,\nSource de vie;\nMon Sauveur et mon Roi,\nAccepte-moi.\nViens et parle à mon coeur,\nÔ voix bénie,\nEsprit consolateur,\nParle, Seigneur!\nRefrain\nParle, Seigneur, (bis)\nFais silence en mon coeur,\nParle Seigneur!\n\n2.\nOh! garde dans ta paix\nL'âme meurtrie\nQui faiblit sous le faix\nAux jour mauvais.\nTiens-la bien près de toi,\nEt fortifie\nSa vacillante foi,\nÔ puissant Roi!\nRefrain\nBien près de toi, (bis)\nGarde-la, divin Roi,\nTout près de toi.\n\n3.\nQue dans ton grand amour\nJe me confie,\nJusqu'au glorieux jour\nDe ton retour.\nEt que sur mon chemin,\nAinsi qu'Élie,\nJ'entende : « Ne crains rien,\nJe tiens ta main. »\nRefrain\n« Je tiens ta main, (bis)\nVa, reprends ton chemin,\nVa, ne crains rien. »",
     "author": "",
     "composer": "L.-E. FROOM",
-    "style": "Duo ou Solo pour Alto et Ténor avec accompagnement de violon. (L\\",
+    "style": "Duo ou Solo pour Alto et Ténor avec accompagnement de violon. (L'alto tient la mélodie)",
     "sopranoFile": "S604",
     "altoFile": "A604",
     "tenorFile": "T604",
     "bassFile": "B604",
-    "midiFile": "h604"
+    "midiFile": "h604",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "605",
@@ -7862,7 +9070,9 @@
     "altoFile": "A605",
     "tenorFile": "T605",
     "bassFile": "B605",
-    "midiFile": "h605"
+    "midiFile": "h605",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "606",
@@ -7875,7 +9085,9 @@
     "altoFile": "A606",
     "tenorFile": "T606",
     "bassFile": "B606",
-    "midiFile": "h606"
+    "midiFile": "h606",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "607",
@@ -7888,7 +9100,9 @@
     "altoFile": "A607",
     "tenorFile": "T607",
     "bassFile": "B607",
-    "midiFile": "h607"
+    "midiFile": "h607",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "608",
@@ -7901,7 +9115,9 @@
     "altoFile": "A608",
     "tenorFile": "T608",
     "bassFile": "B608",
-    "midiFile": "h608"
+    "midiFile": "h608",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "609",
@@ -7914,7 +9130,9 @@
     "altoFile": "A609",
     "tenorFile": "T609",
     "bassFile": "B609",
-    "midiFile": "h609"
+    "midiFile": "h609",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "610",
@@ -7927,7 +9145,9 @@
     "altoFile": "A610",
     "tenorFile": "T610",
     "bassFile": "B610",
-    "midiFile": "h610"
+    "midiFile": "h610",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "611",
@@ -7940,7 +9160,9 @@
     "altoFile": "A611",
     "tenorFile": "T611",
     "bassFile": "B611",
-    "midiFile": "h611"
+    "midiFile": "h611",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "612",
@@ -7953,7 +9175,9 @@
     "altoFile": "A612",
     "tenorFile": "T612",
     "bassFile": "B612",
-    "midiFile": "h612"
+    "midiFile": "h612",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "613",
@@ -7966,7 +9190,9 @@
     "altoFile": "A613",
     "tenorFile": "T613",
     "bassFile": "B613",
-    "midiFile": "h613"
+    "midiFile": "h613",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "614",
@@ -7979,7 +9205,9 @@
     "altoFile": "A614",
     "tenorFile": "T614",
     "bassFile": "B614",
-    "midiFile": "h614"
+    "midiFile": "h614",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "615",
@@ -7992,7 +9220,9 @@
     "altoFile": "A615",
     "tenorFile": "T615",
     "bassFile": "B615",
-    "midiFile": "h615"
+    "midiFile": "h615",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "616",
@@ -8005,7 +9235,9 @@
     "altoFile": "A616",
     "tenorFile": "T616",
     "bassFile": "B616",
-    "midiFile": "h616"
+    "midiFile": "h616",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "617",
@@ -8018,7 +9250,9 @@
     "altoFile": "A617",
     "tenorFile": "T617",
     "bassFile": "B617",
-    "midiFile": "h617"
+    "midiFile": "h617",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "618",
@@ -8031,7 +9265,9 @@
     "altoFile": "A618",
     "tenorFile": "T618",
     "bassFile": "B618",
-    "midiFile": "h618"
+    "midiFile": "h618",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "619",
@@ -8044,7 +9280,9 @@
     "altoFile": "A619",
     "tenorFile": "T619",
     "bassFile": "B619",
-    "midiFile": "h619"
+    "midiFile": "h619",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "620",
@@ -8057,7 +9295,9 @@
     "altoFile": "A620",
     "tenorFile": "T620",
     "bassFile": "B620",
-    "midiFile": "h620"
+    "midiFile": "h620",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "621",
@@ -8070,7 +9310,9 @@
     "altoFile": "A621",
     "tenorFile": "T621",
     "bassFile": "B621",
-    "midiFile": "h621"
+    "midiFile": "h621",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "622",
@@ -8083,7 +9325,9 @@
     "altoFile": "A622",
     "tenorFile": "T622",
     "bassFile": "B622",
-    "midiFile": "h622"
+    "midiFile": "h622",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "623",
@@ -8096,7 +9340,9 @@
     "altoFile": "A623",
     "tenorFile": "T623",
     "bassFile": "B623",
-    "midiFile": "h623"
+    "midiFile": "h623",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "624",
@@ -8109,7 +9355,9 @@
     "altoFile": "A624",
     "tenorFile": "T624",
     "bassFile": "B624",
-    "midiFile": "h624"
+    "midiFile": "h624",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "625",
@@ -8122,7 +9370,9 @@
     "altoFile": "A625",
     "tenorFile": "T625",
     "bassFile": "B625",
-    "midiFile": "h625"
+    "midiFile": "h625",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "626",
@@ -8135,7 +9385,9 @@
     "altoFile": "A626",
     "tenorFile": "T626",
     "bassFile": "B626",
-    "midiFile": "h626"
+    "midiFile": "h626",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "627",
@@ -8148,7 +9400,9 @@
     "altoFile": "A627",
     "tenorFile": "T627",
     "bassFile": "B627",
-    "midiFile": "h627"
+    "midiFile": "h627",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "628",
@@ -8161,7 +9415,9 @@
     "altoFile": "A628",
     "tenorFile": "T628",
     "bassFile": "B628",
-    "midiFile": "h628"
+    "midiFile": "h628",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "629",
@@ -8174,7 +9430,9 @@
     "altoFile": "A629",
     "tenorFile": "T629",
     "bassFile": "B629",
-    "midiFile": "h629"
+    "midiFile": "h629",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "630",
@@ -8187,7 +9445,9 @@
     "altoFile": "A630",
     "tenorFile": "T630",
     "bassFile": "B630",
-    "midiFile": "h630"
+    "midiFile": "h630",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "631",
@@ -8200,7 +9460,9 @@
     "altoFile": "A631",
     "tenorFile": "T631",
     "bassFile": "B631",
-    "midiFile": "h631"
+    "midiFile": "h631",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "632",
@@ -8213,7 +9475,9 @@
     "altoFile": "A632",
     "tenorFile": "T632",
     "bassFile": "B632",
-    "midiFile": "h632"
+    "midiFile": "h632",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "633",
@@ -8226,7 +9490,9 @@
     "altoFile": "A633",
     "tenorFile": "T633",
     "bassFile": "B633",
-    "midiFile": "h633"
+    "midiFile": "h633",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "634",
@@ -8239,7 +9505,9 @@
     "altoFile": "A634",
     "tenorFile": "T634",
     "bassFile": "B634",
-    "midiFile": "h634"
+    "midiFile": "h634",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "635",
@@ -8252,7 +9520,9 @@
     "altoFile": "A635",
     "tenorFile": "T635",
     "bassFile": "B635",
-    "midiFile": "h635"
+    "midiFile": "h635",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "636",
@@ -8265,7 +9535,9 @@
     "altoFile": "A636",
     "tenorFile": "T636",
     "bassFile": "B636",
-    "midiFile": "h636"
+    "midiFile": "h636",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "637",
@@ -8278,7 +9550,9 @@
     "altoFile": "A637",
     "tenorFile": "T637",
     "bassFile": "B637",
-    "midiFile": "h637"
+    "midiFile": "h637",
+    "theme": "DUOS ET CHOEURS",
+    "subtheme": "Duos et choeurs"
   },
   {
     "number": "638",
@@ -8291,7 +9565,9 @@
     "altoFile": "A638",
     "tenorFile": "T638",
     "bassFile": "B638",
-    "midiFile": "h638"
+    "midiFile": "h638",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "639",
@@ -8304,7 +9580,9 @@
     "altoFile": "A639",
     "tenorFile": "T639",
     "bassFile": "B639",
-    "midiFile": "h639"
+    "midiFile": "h639",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "640",
@@ -8317,7 +9595,9 @@
     "altoFile": "A640",
     "tenorFile": "T640",
     "bassFile": "B640",
-    "midiFile": "h640"
+    "midiFile": "h640",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "641",
@@ -8330,7 +9610,9 @@
     "altoFile": "A641",
     "tenorFile": "T641",
     "bassFile": "B641",
-    "midiFile": "h641"
+    "midiFile": "h641",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "642",
@@ -8343,7 +9625,9 @@
     "altoFile": "A642",
     "tenorFile": "T642",
     "bassFile": "B642",
-    "midiFile": "h642"
+    "midiFile": "h642",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "643",
@@ -8356,7 +9640,9 @@
     "altoFile": "A643",
     "tenorFile": "T643",
     "bassFile": "B643",
-    "midiFile": "h643"
+    "midiFile": "h643",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "644",
@@ -8369,7 +9655,9 @@
     "altoFile": "A644",
     "tenorFile": "T644",
     "bassFile": "B644",
-    "midiFile": "h644"
+    "midiFile": "h644",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "645",
@@ -8382,7 +9670,9 @@
     "altoFile": "A645",
     "tenorFile": "T645",
     "bassFile": "B645",
-    "midiFile": "h645"
+    "midiFile": "h645",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "646",
@@ -8395,7 +9685,9 @@
     "altoFile": "A646",
     "tenorFile": "T646",
     "bassFile": "B646",
-    "midiFile": "h646"
+    "midiFile": "h646",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "647",
@@ -8408,7 +9700,9 @@
     "altoFile": "A647",
     "tenorFile": "T647",
     "bassFile": "B647",
-    "midiFile": "h647"
+    "midiFile": "h647",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "648",
@@ -8421,7 +9715,9 @@
     "altoFile": "A648",
     "tenorFile": "T648",
     "bassFile": "B648",
-    "midiFile": "h648"
+    "midiFile": "h648",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "649",
@@ -8434,7 +9730,9 @@
     "altoFile": "A649",
     "tenorFile": "T649",
     "bassFile": "B649",
-    "midiFile": "h649"
+    "midiFile": "h649",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "650",
@@ -8447,7 +9745,9 @@
     "altoFile": "A650",
     "tenorFile": "T650",
     "bassFile": "B650",
-    "midiFile": "h650"
+    "midiFile": "h650",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "651",
@@ -8460,7 +9760,9 @@
     "altoFile": "A651",
     "tenorFile": "T651",
     "bassFile": "B651",
-    "midiFile": "h651"
+    "midiFile": "h651",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "652",
@@ -8473,7 +9775,9 @@
     "altoFile": "A652",
     "tenorFile": "T652",
     "bassFile": "B652",
-    "midiFile": "h652"
+    "midiFile": "h652",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "653",
@@ -8486,7 +9790,9 @@
     "altoFile": "A653",
     "tenorFile": "T653",
     "bassFile": "B653",
-    "midiFile": "h653"
+    "midiFile": "h653",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   },
   {
     "number": "654",
@@ -8499,6 +9805,8 @@
     "altoFile": "A654",
     "tenorFile": "T654",
     "bassFile": "B654",
-    "midiFile": "h654"
+    "midiFile": "h654",
+    "theme": "CHOEURS D'HOMMES",
+    "subtheme": "Choeurs d'hommes"
   }
 ]

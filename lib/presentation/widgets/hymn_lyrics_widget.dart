@@ -21,9 +21,9 @@ class HymnLyricsWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.border),
+        border: Border.all(color: AppColors.border(context)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,10 +38,10 @@ class HymnLyricsWidget extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 l10n.lyrics,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+                  color: AppColors.textPrimary(context),
                 ),
               ),
             ],
@@ -51,8 +51,8 @@ class HymnLyricsWidget extends StatelessWidget {
             child: Text(
               hymn.lyrics,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: AppColors.textPrimary,
+              style: TextStyle(
+                color: AppColors.textPrimary(context),
                 fontSize: 16,
                 height: 1.6,
               ),

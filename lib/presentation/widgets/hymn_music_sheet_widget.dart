@@ -109,7 +109,7 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                gradient: AppColors.primaryGradient,
+                gradient: AppColors.primaryGradient(context),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -132,10 +132,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
                 children: [
                   Text(
                     l10n.musicSheet,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.textPrimary,
+                      color: AppColors.textPrimary(context),
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -143,7 +143,8 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
                     _getSubtitleText(l10n),
                     style: TextStyle(
                       fontSize: 14,
-                      color: AppColors.textSecondary.withValues(alpha: 0.8),
+                      color: AppColors.textSecondary(context)
+                          .withValues(alpha: 0.8),
                       fontStyle: FontStyle.italic,
                     ),
                   ),
@@ -210,12 +211,12 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
       return Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: AppColors.textSecondary.withValues(alpha: 0.1),
+          color: AppColors.textSecondary(context).withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Icon(
           Icons.music_off,
-          color: AppColors.textSecondary.withValues(alpha: 0.5),
+          color: AppColors.textSecondary(context).withValues(alpha: 0.5),
           size: 16,
         ),
       );

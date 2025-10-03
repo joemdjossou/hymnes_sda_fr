@@ -31,9 +31,9 @@ class HymnHistoryBottomSheet extends StatelessWidget {
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.75,
-      decoration: const BoxDecoration(
-        color: AppColors.surface,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: AppColors.surface(context),
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(25),
           topRight: Radius.circular(25),
         ),
@@ -46,7 +46,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
             width: 40,
             height: 4,
             decoration: BoxDecoration(
-              color: AppColors.textSecondary.withValues(alpha: 0.3),
+              color: AppColors.textSecondary(context).withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
           ),
@@ -61,16 +61,18 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                 children: [
                   // Hymn Details Section
                   _buildHistorySection(
+                    context,
                     l10n.hymnInformation,
                     Icons.info_outline,
-                    [_buildInformationCard(l10n)],
+                    [_buildInformationCard(context, l10n)],
                   ),
                   const SizedBox(height: 24),
                   // Story Section
                   _buildHistorySection(
+                    context,
                     l10n.hymnStory,
                     Icons.auto_stories,
-                    [_buildStoryCard(l10n)],
+                    [_buildStoryCard(context, l10n)],
                   ),
                   const SizedBox(height: 20),
                 ],
@@ -90,7 +92,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              gradient: AppColors.primaryGradient,
+              gradient: AppColors.primaryGradient(context),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Icon(
@@ -106,18 +108,18 @@ class HymnHistoryBottomSheet extends StatelessWidget {
               children: [
                 Text(
                   l10n.hymnNumber(hymn.number),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
-                    color: AppColors.textSecondary,
+                    color: AppColors.textSecondary(context),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Text(
                   hymn.title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                    color: AppColors.textPrimary(context),
                   ),
                 ),
               ],
@@ -125,9 +127,9 @@ class HymnHistoryBottomSheet extends StatelessWidget {
           ),
           IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: const Icon(
+            icon: Icon(
               Icons.close,
-              color: AppColors.textSecondary,
+              color: AppColors.textSecondary(context),
             ),
           ),
         ],
@@ -135,8 +137,8 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildHistorySection(
-      String title, IconData icon, List<Widget> children) {
+  Widget _buildHistorySection(BuildContext context, String title, IconData icon,
+      List<Widget> children) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -150,10 +152,10 @@ class HymnHistoryBottomSheet extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary,
+                color: AppColors.textPrimary(context),
               ),
             ),
           ],
@@ -164,44 +166,45 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildInformationCard(AppLocalizations l10n) {
+  Widget _buildInformationCard(BuildContext context, AppLocalizations l10n) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.border.withValues(alpha: 0.3),
+          color: AppColors.border(context).withValues(alpha: 0.3),
         ),
       ),
       child: Column(
         children: [
-          _buildDetailRow(l10n.number, hymn.number),
-          _buildDetailRow(l10n.title, hymn.title),
-          if (hymn.author.isNotEmpty) _buildDetailRow(l10n.author, hymn.author),
+          _buildDetailRow(context, l10n.number, hymn.number),
+          _buildDetailRow(context, l10n.title, hymn.title),
+          if (hymn.author.isNotEmpty)
+            _buildDetailRow(context, l10n.author, hymn.author),
           if (hymn.composer.isNotEmpty)
-            _buildDetailRow(l10n.composer, hymn.composer),
-          _buildDetailRow(l10n.style, hymn.style),
-          _buildDetailRow(l10n.midiFile, hymn.midiFile),
+            _buildDetailRow(context, l10n.composer, hymn.composer),
+          _buildDetailRow(context, l10n.style, hymn.style),
+          _buildDetailRow(context, l10n.midiFile, hymn.midiFile),
         ],
       ),
     );
   }
 
-  Widget _buildStoryCard(AppLocalizations l10n) {
+  Widget _buildStoryCard(BuildContext context, AppLocalizations l10n) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: AppColors.cardBackground,
+        color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.border.withValues(alpha: 0.3),
+          color: AppColors.border(context).withValues(alpha: 0.3),
         ),
       ),
       child: Text(
         _getHymnStory(l10n),
-        style: const TextStyle(
-          color: AppColors.textPrimary,
+        style: TextStyle(
+          color: AppColors.textPrimary(context),
           fontSize: 16,
           height: 1.6,
         ),
@@ -209,7 +212,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildDetailRow(String label, String value) {
+  Widget _buildDetailRow(BuildContext context, String label, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
@@ -219,9 +222,9 @@ class HymnHistoryBottomSheet extends StatelessWidget {
             width: 80,
             child: Text(
               '$label:',
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.w600,
-                color: AppColors.textSecondary,
+                color: AppColors.textSecondary(context),
                 fontSize: 14,
               ),
             ),
@@ -229,8 +232,8 @@ class HymnHistoryBottomSheet extends StatelessWidget {
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(
-                color: AppColors.textPrimary,
+              style: TextStyle(
+                color: AppColors.textPrimary(context),
                 fontSize: 14,
               ),
             ),

@@ -38,14 +38,24 @@ class StorageService {
     return _favoritesBoxInstance.containsKey(hymnNumber);
   }
 
-  List<Hymn> getFavorites() {
-    final jsonList = _favoritesBoxInstance.values.toList();
-    return jsonList.map((json) => Hymn.fromJson(json)).toList();
+  Future<List<Hymn>> getFavorites() async {
+    try {
+      final jsonList = _favoritesBoxInstance.values.toList();
+      return jsonList.map((json) {
+        // Convert Map<dynamic, dynamic> to Map<String, dynamic>
+        final Map<String, dynamic> hymnJson = Map<String, dynamic>.from(json);
+        return Hymn.fromJson(hymnJson);
+      }).toList();
+    } catch (e) {
+      print('Error loading favorites: $e');
+      // Return empty list if there's an error
+      return [];
+    }
   }
 
   // Recently Played Management
   Future<void> addToRecentlyPlayed(Hymn hymn) async {
-    final recentlyPlayed = getRecentlyPlayed();
+    final recentlyPlayed = await getRecentlyPlayed();
 
     // Remove if already exists
     recentlyPlayed.removeWhere((h) => h.number == hymn.number);
@@ -63,10 +73,20 @@ class StorageService {
     await _recentlyPlayedBoxInstance.put('recently_played', jsonList);
   }
 
-  List<Hymn> getRecentlyPlayed() {
-    final jsonList = _recentlyPlayedBoxInstance
-        .get('recently_played', defaultValue: <Map<String, dynamic>>[]);
-    return jsonList.map((json) => Hymn.fromJson(json)).toList();
+  Future<List<Hymn>> getRecentlyPlayed() async {
+    try {
+      final jsonList = _recentlyPlayedBoxInstance
+          .get('recently_played', defaultValue: <Map<String, dynamic>>[]);
+      return jsonList.map((json) {
+        // Convert Map<dynamic, dynamic> to Map<String, dynamic>
+        final Map<String, dynamic> hymnJson = Map<String, dynamic>.from(json);
+        return Hymn.fromJson(hymnJson);
+      }).toList();
+    } catch (e) {
+      print('Error loading recently played: $e');
+      // Return empty list if there's an error
+      return [];
+    }
   }
 
   // Settings Management
@@ -106,10 +126,13 @@ class StorageService {
   }
 
   // Export data
-  Map<String, dynamic> exportData() {
+  Future<Map<String, dynamic>> exportData() async {
+    final favorites = await getFavorites();
+    final recentlyPlayed = await getRecentlyPlayed();
+
     return {
-      'favorites': getFavorites().map((h) => h.toJson()).toList(),
-      'recently_played': getRecentlyPlayed().map((h) => h.toJson()).toList(),
+      'favorites': favorites.map((h) => h.toJson()).toList(),
+      'recently_played': recentlyPlayed.map((h) => h.toJson()).toList(),
       'settings': Map<String, dynamic>.from(_settingsBoxInstance.toMap()),
     };
   }
@@ -117,20 +140,24 @@ class StorageService {
   // Import data
   Future<void> importData(Map<String, dynamic> data) async {
     if (data['favorites'] != null) {
-      final favorites = (data['favorites'] as List)
-          .map((json) => Hymn.fromJson(json))
-          .toList();
+      final favorites = (data['favorites'] as List).map((json) {
+        // Convert Map<dynamic, dynamic> to Map<String, dynamic>
+        final Map<String, dynamic> hymnJson = Map<String, dynamic>.from(json);
+        return Hymn.fromJson(hymnJson);
+      }).toList();
 
       await _favoritesBoxInstance.clear();
       for (final hymn in favorites) {
-        await _favoritesBoxInstance.put(hymn.number, hymn);
+        await _favoritesBoxInstance.put(hymn.number, hymn.toJson());
       }
     }
 
     if (data['recently_played'] != null) {
-      final recentlyPlayed = (data['recently_played'] as List)
-          .map((json) => Hymn.fromJson(json))
-          .toList();
+      final recentlyPlayed = (data['recently_played'] as List).map((json) {
+        // Convert Map<dynamic, dynamic> to Map<String, dynamic>
+        final Map<String, dynamic> hymnJson = Map<String, dynamic>.from(json);
+        return Hymn.fromJson(hymnJson);
+      }).toList();
 
       final jsonList = recentlyPlayed.map((h) => h.toJson()).toList();
       await _recentlyPlayedBoxInstance.put('recently_played', jsonList);

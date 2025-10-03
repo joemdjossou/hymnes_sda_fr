@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../core/repositories/hymn_repository.dart';
+import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../../features/hymns/hymn_detail_controller.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/midi_player_widget.dart';
@@ -63,7 +65,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen> {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.background(context),
       appBar: AppBar(
         title: Text(
           _controller.isLoading
@@ -71,23 +73,34 @@ class _HymnDetailScreenState extends State<HymnDetailScreen> {
               : l10n.hymnTitleWithNumber(
                   _controller.hymn?.number ?? widget.hymnId,
                   _controller.hymn?.title ?? l10n.unknown),
-          style: const TextStyle(
-            color: AppColors.textPrimary,
+          style: TextStyle(
+            color: AppColors.textPrimary(context),
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: AppColors.surface,
-        surfaceTintColor: AppColors.surface,
+        backgroundColor: AppColors.surface(context),
+        surfaceTintColor: AppColors.surface(context),
         elevation: 0,
-        iconTheme: const IconThemeData(color: AppColors.textPrimary),
+        iconTheme: IconThemeData(color: AppColors.textPrimary(context)),
         actions: [
-          IconButton(
-            icon: Icon(_controller.isFavorite
-                ? Icons.favorite
-                : Icons.favorite_border),
-            color: _controller.isFavorite ? AppColors.primary : null,
-            onPressed:
-                _controller.hymn != null ? _controller.toggleFavorite : null,
+          BlocBuilder<FavoritesBloc, FavoritesState>(
+            builder: (context, state) {
+              final isFavorite = state is FavoritesLoaded
+                  ? state.favoriteStatus[widget.hymnId] ?? false
+                  : false;
+
+              return IconButton(
+                icon: Icon(isFavorite ? Icons.favorite : Icons.favorite_border),
+                color: isFavorite ? AppColors.primary : null,
+                onPressed: _controller.hymn != null
+                    ? () {
+                        context
+                            .read<FavoritesBloc>()
+                            .add(ToggleFavorite(_controller.hymn!));
+                      }
+                    : null,
+              );
+            },
           ),
         ],
       ),
@@ -101,8 +114,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen> {
               ? Center(
                   child: Text(
                     l10n.hymnNotFound,
-                    style: const TextStyle(
-                      color: AppColors.textSecondary,
+                    style: TextStyle(
+                      color: AppColors.textSecondary(context),
                       fontSize: 18,
                     ),
                   ),

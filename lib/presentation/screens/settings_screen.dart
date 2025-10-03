@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../core/providers/language_provider.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -10,24 +11,50 @@ import '../widgets/custom_button.dart';
 import '../widgets/theme_selection_widget.dart';
 import 'login_screen.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  String _appVersion = 'v1.0.0';
+  String _buildNumber = '1';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAppVersion();
+  }
+
+  Future<void> _loadAppVersion() async {
+    try {
+      final packageInfo = await PackageInfo.fromPlatform();
+      setState(() {
+        _appVersion = 'v${packageInfo.version}';
+        _buildNumber = packageInfo.buildNumber;
+      });
+    } catch (e) {
+      // Keep default values if there's an error
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.background(context),
       appBar: AppBar(
         title: Text(
           l10n.settings,
-          style: const TextStyle(
-            color: AppColors.textPrimary,
+          style: TextStyle(
+            color: AppColors.textPrimary(context),
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: AppColors.surface,
+        backgroundColor: AppColors.surface(context),
         elevation: 0,
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -42,6 +69,8 @@ class SettingsScreen extends StatelessWidget {
             _buildLanguageSection(context, l10n),
             const SizedBox(height: 24),
             const ThemeSelectionWidget(),
+            const SizedBox(height: 24),
+            _buildAppInfoSection(context, l10n),
             const Gap(100), // Extra padding at bottom for better scrolling
             // Add more settings sections here in the future
           ],
@@ -58,8 +87,8 @@ class SettingsScreen extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColors.cardBackground,
-            AppColors.cardBackground.withValues(alpha: 0.8),
+            AppColors.cardBackground(context),
+            AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
@@ -83,7 +112,7 @@ class SettingsScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  gradient: AppColors.primaryGradient,
+                  gradient: AppColors.primaryGradient(context),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(
@@ -95,10 +124,10 @@ class SettingsScreen extends StatelessWidget {
               const SizedBox(width: 12),
               Text(
                 l10n.language,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+                  color: AppColors.textPrimary(context),
                 ),
               ),
             ],
@@ -108,7 +137,7 @@ class SettingsScreen extends StatelessWidget {
             l10n.selectLanguage,
             style: TextStyle(
               fontSize: 14,
-              color: AppColors.textSecondary.withValues(alpha: 0.8),
+              color: AppColors.textSecondary(context).withValues(alpha: 0.8),
               fontStyle: FontStyle.italic,
             ),
           ),
@@ -140,12 +169,14 @@ class SettingsScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
-                                : AppColors.surface.withValues(alpha: 0.3),
+                                : AppColors.surface(context)
+                                    .withValues(alpha: 0.3),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.primary.withValues(alpha: 0.3)
-                                  : AppColors.border.withValues(alpha: 0.2),
+                                  : AppColors.border(context)
+                                      .withValues(alpha: 0.2),
                               width: isSelected ? 2 : 1,
                             ),
                           ),
@@ -167,7 +198,7 @@ class SettingsScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                         color: isSelected
                                             ? AppColors.primary
-                                            : AppColors.textPrimary,
+                                            : AppColors.textPrimary(context),
                                       ),
                                     ),
                                     Text(
@@ -176,7 +207,7 @@ class SettingsScreen extends StatelessWidget {
                                           : l10n.french,
                                       style: TextStyle(
                                         fontSize: 14,
-                                        color: AppColors.textSecondary
+                                        color: AppColors.textSecondary(context)
                                             .withValues(alpha: 0.7),
                                       ),
                                     ),
@@ -222,8 +253,8 @@ class SettingsScreen extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  AppColors.cardBackground,
-                  AppColors.cardBackground.withValues(alpha: 0.8),
+                  AppColors.cardBackground(context),
+                  AppColors.cardBackground(context).withValues(alpha: 0.8),
                 ],
               ),
               borderRadius: BorderRadius.circular(16),
@@ -247,7 +278,7 @@ class SettingsScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        gradient: AppColors.primaryGradient,
+                        gradient: AppColors.primaryGradient(context),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Icon(
@@ -259,10 +290,10 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(width: 12),
                     Text(
                       l10n.account,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
+                        color: AppColors.textPrimary(context),
                       ),
                     ),
                   ],
@@ -289,17 +320,17 @@ class SettingsScreen extends StatelessWidget {
                         children: [
                           Text(
                             state.user.displayNameOrEmail,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.textPrimary,
+                              color: AppColors.textPrimary(context),
                             ),
                           ),
                           Text(
                             state.user.email ?? '',
                             style: TextStyle(
                               fontSize: 14,
-                              color: AppColors.textSecondary
+                              color: AppColors.textSecondary(context)
                                   .withValues(alpha: 0.7),
                             ),
                           ),
@@ -346,8 +377,8 @@ class SettingsScreen extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  AppColors.cardBackground,
-                  AppColors.cardBackground.withValues(alpha: 0.8),
+                  AppColors.cardBackground(context),
+                  AppColors.cardBackground(context).withValues(alpha: 0.8),
                 ],
               ),
               borderRadius: BorderRadius.circular(16),
@@ -371,7 +402,7 @@ class SettingsScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                        gradient: AppColors.primaryGradient,
+                        gradient: AppColors.primaryGradient(context),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Icon(
@@ -383,10 +414,10 @@ class SettingsScreen extends StatelessWidget {
                     const SizedBox(width: 12),
                     Text(
                       l10n.account,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
+                        color: AppColors.textPrimary(context),
                       ),
                     ),
                   ],
@@ -396,7 +427,8 @@ class SettingsScreen extends StatelessWidget {
                   l10n.signInToSaveFavorites,
                   style: TextStyle(
                     fontSize: 14,
-                    color: AppColors.textSecondary.withValues(alpha: 0.8),
+                    color:
+                        AppColors.textSecondary(context).withValues(alpha: 0.8),
                     fontStyle: FontStyle.italic,
                   ),
                 ),
@@ -416,6 +448,112 @@ class SettingsScreen extends StatelessWidget {
           );
         }
       },
+    );
+  }
+
+  Widget _buildAppInfoSection(BuildContext context, AppLocalizations l10n) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.cardBackground(context),
+            AppColors.cardBackground(context).withValues(alpha: 0.8),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppColors.primary.withValues(alpha: 0.2),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primary.withValues(alpha: 0.1),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  gradient: AppColors.primaryGradient(context),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(
+                  Icons.info_outline,
+                  color: Colors.white,
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  l10n.appInfo,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary(context),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                l10n.version,
+                style: TextStyle(
+                  fontSize: 14,
+                  color:
+                      AppColors.textSecondary(context).withValues(alpha: 0.8),
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              Text(
+                _appVersion,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary(context),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                l10n.buildNumber,
+                style: TextStyle(
+                  fontSize: 14,
+                  color:
+                      AppColors.textSecondary(context).withValues(alpha: 0.8),
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+              Text(
+                _buildNumber,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary(context),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

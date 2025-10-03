@@ -19,8 +19,8 @@ class ThemeSelectionWidget extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColors.cardBackground,
-            AppColors.cardBackground.withValues(alpha: 0.8),
+            AppColors.cardBackground(context),
+            AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
@@ -44,7 +44,7 @@ class ThemeSelectionWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  gradient: AppColors.primaryGradient,
+                  gradient: AppColors.primaryGradient(context),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Icon(
@@ -56,10 +56,10 @@ class ThemeSelectionWidget extends StatelessWidget {
               const SizedBox(width: 12),
               Text(
                 l10n.theme,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
+                  color: AppColors.textPrimary(context),
                 ),
               ),
             ],
@@ -69,7 +69,7 @@ class ThemeSelectionWidget extends StatelessWidget {
             l10n.selectTheme,
             style: TextStyle(
               fontSize: 14,
-              color: AppColors.textSecondary.withValues(alpha: 0.8),
+              color: AppColors.textSecondary(context).withValues(alpha: 0.8),
               fontStyle: FontStyle.italic,
             ),
           ),
@@ -97,12 +97,14 @@ class ThemeSelectionWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
-                                : AppColors.surface.withValues(alpha: 0.3),
+                                : AppColors.surface(context)
+                                    .withValues(alpha: 0.3),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.primary.withValues(alpha: 0.3)
-                                  : AppColors.border.withValues(alpha: 0.2),
+                                  : AppColors.border(context)
+                                      .withValues(alpha: 0.2),
                               width: isSelected ? 2 : 1,
                             ),
                           ),
@@ -112,7 +114,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                                 ThemeBloc.getThemeIcon(themeMode),
                                 color: isSelected
                                     ? AppColors.primary
-                                    : AppColors.textSecondary,
+                                    : AppColors.textSecondary(context),
                                 size: 24,
                               ),
                               const SizedBox(width: 12),
@@ -127,7 +129,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                         color: isSelected
                                             ? AppColors.primary
-                                            : AppColors.textPrimary,
+                                            : AppColors.textPrimary(context),
                                       ),
                                     ),
                                     Text(
@@ -135,7 +137,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                                           themeMode, l10n),
                                       style: TextStyle(
                                         fontSize: 14,
-                                        color: AppColors.textSecondary
+                                        color: AppColors.textSecondary(context)
                                             .withValues(alpha: 0.7),
                                       ),
                                     ),

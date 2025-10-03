@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Icon(
                     Icons.music_note,
                     size: 80,
-                    color: theme.primaryColor,
+                    color: theme.iconTheme.color,
                   ),
                   const SizedBox(height: 24),
                   // Title
