@@ -24,6 +24,8 @@
   "close": "Fermer",
   "unknown": "Inconnu",
   "home": "Accueil",
+  "welcome": "Bienvenue",
+  "hymns": "Hymnes",
   "search": "Recherche",
   "favorites": "Favoris",
   "searchHymns": "Rechercher des cantiques...",
@@ -38,6 +40,8 @@
   },
   "noHymnsAvailable": "Aucun cantique disponible",
   "noHymnsFound": "Aucun cantique trouvé",
+  "noHymnsAvailableAtMoment": "Aucun hymne disponible pour le moment",
+  "tryModifyingSearchCriteria": "Essayez de modifier vos critères de recherche",
   "advancedSearchToBe": "Recherche avancée - à implémenter",
   "favoritesToBe": "Écran des favoris - à implémenter",
   "noFavoritesYet": "Aucun favori pour le moment",
@@ -190,6 +194,18 @@
   "loading": "Chargement...",
   "tryAgain": "Réessayer",
   "theme": "Thème",
+  "subtheme": "Sous-thème",
+  "filters": "Filtres",
+  "clearAllFilters": "Effacer tous les filtres",
+  "clearFilters": "Effacer les filtres",
+  "all": "Tous les {label}",
+  "@all": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
   "selectTheme": "Choisissez l'apparence de votre thème préféré",
   "systemTheme": "Système",
   "lightTheme": "Clair",
@@ -223,5 +239,34 @@
   "authenticationError": "Une erreur d'authentification s'est produite.",
   "appInfo": "Informations de l'application",
   "version": "Version",
-  "buildNumber": "Build"
+  "buildNumber": "Build",
+  "customizeExperience": "Personnalisez votre expérience",
+  "choosePreferredLanguage": "Choisissez votre langue préférée",
+  "manageUserAccount": "Gérez votre compte utilisateur",
+  "signInToSaveFavorites": "Connectez-vous pour sauvegarder vos favoris",
+  "appInformation": "Informations sur l'application",
+  "hymnSaved": "hymne sauvegardé",
+  "hymnsSaved": "hymnes sauvegardés",
+  "loading": "Chargement...",
+  "yourFavoriteHymns": "Vos hymnes préférés",
+  "oopsErrorOccurred": "Oups! Une erreur s'est produite",
+  "discoverHymns": "Découvrir des hymnes",
+  "searchAmongHymns": "Recherchez parmi {count} hymnes",
+  "@searchAmongHymns": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "theme": "Thème",
+  "customizeAppAppearance": "Personnalisez l'apparence de l'application",
+  "clearFilters": "Effacer les filtres",
+  "hymn": "hymne",
+  "hymns": "hymnes",
+  "hymnNotFoundDescription": "La description de l'hymne que vous recherchez n'a pas été trouvée",
+  "back": "Retour",
+  "favorite": "Favori",
+  "favoriteAdded": "Ajouté aux favoris",
+  "favoriteRemoved": "Retiré des favoris"
 }

@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
+import '../../shared/widgets/custom_toast.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 import 'main_navigation_screen.dart';
@@ -83,11 +84,10 @@ class _SignupScreenState extends State<SignupScreen> {
         }
 
         if (state is Authenticated) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.signUpSuccess),
-              backgroundColor: Colors.green,
-            ),
+          ToastService.showSuccess(
+            context,
+            title: l10n.success,
+            message: l10n.signUpSuccess,
           );
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
@@ -96,12 +96,10 @@ class _SignupScreenState extends State<SignupScreen> {
             (route) => false,
           );
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                  ErrorHandler.getLocalizedErrorMessage(state.message, l10n)),
-              backgroundColor: Colors.red,
-            ),
+          ToastService.showError(
+            context,
+            title: l10n.error,
+            message: ErrorHandler.getLocalizedErrorMessage(state.message, l10n),
           );
         }
       },

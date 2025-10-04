@@ -24,6 +24,8 @@
   "close": "Close",
   "unknown": "Unknown",
   "home": "Home",
+  "welcome": "Welcome",
+  "hymns": "Hymns",
   "search": "Search",
   "favorites": "Favorites",
   "searchHymns": "Search hymns...",
@@ -38,6 +40,8 @@
   },
   "noHymnsAvailable": "No hymns available",
   "noHymnsFound": "No hymns found",
+  "noHymnsAvailableAtMoment": "No hymns available at the moment",
+  "tryModifyingSearchCriteria": "Try modifying your search criteria",
   "advancedSearchToBe": "Advanced search - to be implemented",
   "favoritesToBe": "Favorites screen - to be implemented",
   "noFavoritesYet": "No favorites yet",
@@ -190,6 +194,18 @@
   "loading": "Loading...",
   "tryAgain": "Try Again",
   "theme": "Theme",
+  "subtheme": "Subtheme",
+  "filters": "Filters",
+  "clearAllFilters": "Clear all filters",
+  "clearFilters": "Clear filters",
+  "all": "All {label}",
+  "@all": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
   "selectTheme": "Choose your preferred theme appearance",
   "systemTheme": "System",
   "lightTheme": "Light",
@@ -223,5 +239,34 @@
   "authenticationError": "An authentication error occurred.",
   "appInfo": "App Info",
   "version": "Version",
-  "buildNumber": "Build"
+  "buildNumber": "Build",
+  "customizeExperience": "Customize your experience",
+  "choosePreferredLanguage": "Choose your preferred language",
+  "manageUserAccount": "Manage your user account",
+  "signInToSaveFavorites": "Sign in to save your favorites",
+  "appInformation": "Application information",
+  "hymnSaved": "hymn saved",
+  "hymnsSaved": "hymns saved",
+  "loading": "Loading...",
+  "yourFavoriteHymns": "Your favorite hymns",
+  "oopsErrorOccurred": "Oops! An error occurred",
+  "discoverHymns": "Discover hymns",
+  "searchAmongHymns": "Search among {count} hymns",
+  "@searchAmongHymns": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "theme": "Theme",
+  "customizeAppAppearance": "Customize the app appearance",
+  "clearFilters": "Clear filters",
+  "hymn": "hymn",
+  "hymns": "hymns",
+  "hymnNotFoundDescription": "The requested hymn could not be found",
+  "back": "Back",
+  "favorite": "Favorite",
+  "favoriteAdded": "Added to favorites",
+  "favoriteRemoved": "Removed from favorites"
 }

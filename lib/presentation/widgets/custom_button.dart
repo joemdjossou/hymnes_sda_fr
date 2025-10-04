@@ -68,6 +68,7 @@ class CustomButton extends StatelessWidget {
                 variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
             fontWeight: FontWeight.w600,
             fontFamily: 'Raleway',
+            letterSpacing: 0.5,
           ),
         ),
       ],
@@ -75,69 +76,97 @@ class CustomButton extends StatelessWidget {
 
     switch (variant) {
       case ButtonVariant.filled:
-        return SizedBox(
+        return Container(
           width: width,
-          height: height ?? 48,
-          child: ElevatedButton(
-            onPressed: isLoading ? null : onPressed,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: primaryColor,
-              foregroundColor: onPrimaryColor,
-              elevation: 2,
-              shadowColor: Colors.black26,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+          height: height ?? 52,
+          decoration: BoxDecoration(
+            gradient: AppColors.primaryGradient(context),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.3),
+                blurRadius: 12,
+                offset: const Offset(0, 6),
               ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 12,
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.1),
+                blurRadius: 4,
+                offset: const Offset(0, 2),
+              ),
+            ],
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16),
+              onTap: isLoading ? null : onPressed,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
+                ),
+                child: buttonChild,
               ),
             ),
-            child: buttonChild,
           ),
         );
 
       case ButtonVariant.outlined:
-        return SizedBox(
+        return Container(
           width: width,
-          height: height ?? 48,
-          child: OutlinedButton(
-            onPressed: isLoading ? null : onPressed,
-            style: OutlinedButton.styleFrom(
-              foregroundColor: primaryColor,
-              side: BorderSide(
-                color: primaryColor,
-                width: 1.5,
+          height: height ?? 52,
+          decoration: BoxDecoration(
+            color: primaryColor.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.1),
+                blurRadius: 8,
+                offset: const Offset(0, 4),
               ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 12,
+            ],
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16),
+              onTap: isLoading ? null : onPressed,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
+                ),
+                child: buttonChild,
               ),
             ),
-            child: buttonChild,
           ),
         );
 
       case ButtonVariant.text:
-        return SizedBox(
+        return Container(
           width: width,
-          height: height ?? 48,
-          child: TextButton(
-            onPressed: isLoading ? null : onPressed,
-            style: TextButton.styleFrom(
-              foregroundColor: primaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-                vertical: 12,
+          height: height ?? 52,
+          decoration: BoxDecoration(
+            color: primaryColor.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(16),
+              onTap: isLoading ? null : onPressed,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
+                ),
+                child: buttonChild,
               ),
             ),
-            child: buttonChild,
           ),
         );
     }

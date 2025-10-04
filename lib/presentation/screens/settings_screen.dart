@@ -7,6 +7,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import '../../core/providers/language_provider.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
+import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/theme_selection_widget.dart';
 import 'login_screen.dart';
@@ -18,14 +19,65 @@ class SettingsScreen extends StatefulWidget {
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsScreenState extends State<SettingsScreen>
+    with TickerProviderStateMixin {
   String _appVersion = 'v1.0.0';
   String _buildNumber = '1';
+  final ScrollController _scrollController = ScrollController();
+  bool _showCollapsedAppBar = false;
+
+  late AnimationController _heroAnimationController;
+  late Animation<double> _heroFadeAnimation;
+  late Animation<Offset> _heroSlideAnimation;
 
   @override
   void initState() {
     super.initState();
+    _initializeAnimations();
     _loadAppVersion();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _initializeAnimations() {
+    _heroAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 800),
+      vsync: this,
+    );
+
+    _heroFadeAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _heroAnimationController,
+      curve: Curves.easeOut,
+    ));
+
+    _heroSlideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.3),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(
+      parent: _heroAnimationController,
+      curve: Curves.easeOut,
+    ));
+
+    _heroAnimationController.forward();
+  }
+
+  void _onScroll() {
+    // Show collapsed app bar when scrolled past the hero section (around 80px)
+    final shouldShow = _scrollController.offset > 80;
+    if (shouldShow != _showCollapsedAppBar) {
+      setState(() {
+        _showCollapsedAppBar = shouldShow;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _heroAnimationController.dispose();
+    super.dispose();
   }
 
   Future<void> _loadAppVersion() async {
@@ -46,42 +98,45 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     return Scaffold(
       backgroundColor: AppColors.background(context),
-      appBar: AppBar(
-        title: Text(
-          l10n.settings,
-          style: TextStyle(
-            color: AppColors.textPrimary(context),
-            fontWeight: FontWeight.bold,
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          // Modern App Bar
+          ModernSliverAppBar(
+            title: l10n.settings,
+            subtitle: l10n.customizeExperience,
+            icon: Icons.settings_rounded,
+            expandedHeight: 120,
+            showCollapsedAppBar: _showCollapsedAppBar,
+            animationController: _heroAnimationController,
+            fadeAnimation: _heroFadeAnimation,
+            slideAnimation: _heroSlideAnimation,
           ),
-        ),
-        backgroundColor: AppColors.surface(context),
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildAccountSection(context, l10n),
-            const SizedBox(height: 24),
-            _buildLanguageSection(context, l10n),
-            const SizedBox(height: 24),
-            const ThemeSelectionWidget(),
-            const SizedBox(height: 24),
-            _buildAppInfoSection(context, l10n),
-            const Gap(100), // Extra padding at bottom for better scrolling
-            // Add more settings sections here in the future
-          ],
-        ),
+
+          // Settings Content
+          SliverPadding(
+            padding: const EdgeInsets.all(20),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate([
+                _buildAccountSection(context, l10n),
+                const SizedBox(height: 20),
+                _buildLanguageSection(context, l10n),
+                const SizedBox(height: 20),
+                const ThemeSelectionWidget(),
+                const SizedBox(height: 20),
+                _buildAppInfoSection(context, l10n),
+                const Gap(100), // Extra padding at bottom for better scrolling
+              ]),
+            ),
+          ),
+        ],
       ),
     );
   }
 
   Widget _buildLanguageSection(BuildContext context, AppLocalizations l10n) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -91,15 +146,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
             AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: AppColors.primary.withValues(alpha: 0.2),
-          width: 1.5,
+          color: AppColors.primary.withValues(alpha: 0.15),
+          width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.1),
-            blurRadius: 12,
+            color: AppColors.primary.withValues(alpha: 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+          BoxShadow(
+            color: AppColors.textPrimary(context).withValues(alpha: 0.05),
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
@@ -110,38 +170,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.primary.withValues(alpha: 0.3),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
                 ),
                 child: const Icon(
-                  Icons.language,
+                  Icons.language_rounded,
                   color: Colors.white,
-                  size: 22,
+                  size: 24,
                 ),
               ),
-              const SizedBox(width: 12),
-              Text(
-                l10n.language,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary(context),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.language,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary(context),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      l10n.choosePreferredLanguage,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.textSecondary(context)
+                            .withValues(alpha: 0.8),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          Text(
-            l10n.selectLanguage,
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.textSecondary(context).withValues(alpha: 0.8),
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           BlocBuilder<LanguageBloc, LanguageState>(
             builder: (context, state) {
               final currentLocale = state is LanguageLoaded
@@ -154,31 +229,41 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       currentLocale.languageCode == locale.languageCode;
 
                   return Container(
-                    margin: const EdgeInsets.only(bottom: 8),
+                    margin: const EdgeInsets.only(bottom: 12),
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(16),
                         onTap: () {
                           context
                               .read<LanguageBloc>()
                               .add(ChangeLanguage(locale));
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
                                 : AppColors.surface(context)
-                                    .withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(12),
+                                    .withValues(alpha: 0.5),
+                            borderRadius: BorderRadius.circular(16),
                             border: Border.all(
                               color: isSelected
-                                  ? AppColors.primary.withValues(alpha: 0.3)
+                                  ? AppColors.primary.withValues(alpha: 0.4)
                                   : AppColors.border(context)
                                       .withValues(alpha: 0.2),
                               width: isSelected ? 2 : 1,
                             ),
+                            boxShadow: isSelected
+                                ? [
+                                    BoxShadow(
+                                      color: AppColors.primary
+                                          .withValues(alpha: 0.1),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ]
+                                : null,
                           ),
                           child: Row(
                             children: [
@@ -247,7 +332,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       builder: (context, state) {
         if (state is Authenticated) {
           return Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -257,15 +342,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   AppColors.cardBackground(context).withValues(alpha: 0.8),
                 ],
               ),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: AppColors.primary.withValues(alpha: 0.2),
-                width: 1.5,
+                color: AppColors.primary.withValues(alpha: 0.15),
+                width: 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withValues(alpha: 0.1),
-                  blurRadius: 12,
+                  color: AppColors.primary.withValues(alpha: 0.08),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
+                ),
+                BoxShadow(
+                  color: AppColors.textPrimary(context).withValues(alpha: 0.05),
+                  blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
               ],
@@ -276,24 +366,48 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         gradient: AppColors.primaryGradient(context),
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: const Icon(
-                        Icons.person,
+                        Icons.person_rounded,
                         color: Colors.white,
-                        size: 22,
+                        size: 24,
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    Text(
-                      l10n.account,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary(context),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.account,
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.textPrimary(context),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.manageUserAccount,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.textSecondary(context)
+                                  .withValues(alpha: 0.8),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -371,7 +485,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           );
         } else {
           return Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -381,15 +495,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   AppColors.cardBackground(context).withValues(alpha: 0.8),
                 ],
               ),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: AppColors.primary.withValues(alpha: 0.2),
-                width: 1.5,
+                color: AppColors.primary.withValues(alpha: 0.15),
+                width: 1,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primary.withValues(alpha: 0.1),
-                  blurRadius: 12,
+                  color: AppColors.primary.withValues(alpha: 0.08),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
+                ),
+                BoxShadow(
+                  color: AppColors.textPrimary(context).withValues(alpha: 0.05),
+                  blurRadius: 10,
                   offset: const Offset(0, 4),
                 ),
               ],
@@ -400,39 +519,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         gradient: AppColors.primaryGradient(context),
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
                       ),
                       child: const Icon(
-                        Icons.person_outline,
+                        Icons.person_outline_rounded,
                         color: Colors.white,
-                        size: 22,
+                        size: 24,
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    Text(
-                      l10n.account,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary(context),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l10n.account,
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.textPrimary(context),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            l10n.signInToSaveFavorites,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: AppColors.textSecondary(context)
+                                  .withValues(alpha: 0.8),
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
-                Text(
-                  l10n.signInToSaveFavorites,
-                  style: TextStyle(
-                    fontSize: 14,
-                    color:
-                        AppColors.textSecondary(context).withValues(alpha: 0.8),
-                    fontStyle: FontStyle.italic,
-                  ),
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 20),
                 CustomButton(
                   text: l10n.signIn,
                   onPressed: () {
@@ -453,7 +586,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget _buildAppInfoSection(BuildContext context, AppLocalizations l10n) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -463,15 +596,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
             AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: AppColors.primary.withValues(alpha: 0.2),
-          width: 1.5,
+          color: AppColors.primary.withValues(alpha: 0.15),
+          width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.1),
-            blurRadius: 12,
+            color: AppColors.primary.withValues(alpha: 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+          BoxShadow(
+            color: AppColors.textPrimary(context).withValues(alpha: 0.05),
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
@@ -482,31 +620,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.primary.withValues(alpha: 0.3),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
                 ),
                 child: const Icon(
-                  Icons.info_outline,
+                  Icons.info_outline_rounded,
                   color: Colors.white,
-                  size: 22,
+                  size: 24,
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 16),
               Expanded(
-                child: Text(
-                  l10n.appInfo,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary(context),
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.appInfo,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary(context),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      l10n.appInformation,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.textSecondary(context)
+                            .withValues(alpha: 0.8),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const Gap(16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -529,7 +689,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          const Gap(8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -173,7 +173,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
-                  isActive ? activeIcon : icon,
+                  activeIcon,
                   key: ValueKey(isActive),
                   color: isActive
                       ? AppColors.primary

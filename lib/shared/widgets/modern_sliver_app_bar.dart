@@ -1,0 +1,225 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../shared/constants/app_colors.dart';
+
+class ModernSliverAppBar extends StatelessWidget {
+  final String title;
+  final String? subtitle;
+  final IconData icon;
+  final double expandedHeight;
+  final bool showCollapsedAppBar;
+  final List<Widget>? actions;
+  final Widget? heroContent;
+  final AnimationController? animationController;
+  final Animation<double>? fadeAnimation;
+  final Animation<Offset>? slideAnimation;
+
+  const ModernSliverAppBar({
+    super.key,
+    required this.title,
+    this.subtitle,
+    required this.icon,
+    this.expandedHeight = 140,
+    required this.showCollapsedAppBar,
+    this.actions,
+    this.heroContent,
+    this.animationController,
+    this.fadeAnimation,
+    this.slideAnimation,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+
+    return SliverAppBar(
+      expandedHeight: expandedHeight,
+      floating: false,
+      pinned: true,
+      backgroundColor:
+          showCollapsedAppBar ? AppColors.surface(context) : Colors.transparent,
+      surfaceTintColor:
+          showCollapsedAppBar ? AppColors.surface(context) : Colors.transparent,
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Theme.of(context).brightness == Brightness.dark
+            ? Brightness.light
+            : Brightness.dark,
+        statusBarBrightness: Theme.of(context).brightness == Brightness.dark
+            ? Brightness.dark
+            : Brightness.light,
+      ),
+      title: showCollapsedAppBar
+          ? Container(
+              decoration: BoxDecoration(
+                color: AppColors.surface(context),
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
+                ),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        gradient: AppColors.primaryGradient(context),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        icon,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            title,
+                            style: theme.textTheme.titleLarge?.copyWith(
+                              color: AppColors.textPrimary(context),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          if (subtitle != null)
+                            Text(
+                              subtitle!,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: AppColors.textSecondary(context),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : null,
+      actions: showCollapsedAppBar ? actions : null,
+      flexibleSpace: FlexibleSpaceBar(
+        background: animationController != null
+            ? AnimatedBuilder(
+                animation: animationController!,
+                builder: (context, child) {
+                  return FadeTransition(
+                    opacity: fadeAnimation ?? const AlwaysStoppedAnimation(1.0),
+                    child: SlideTransition(
+                      position: slideAnimation ??
+                          const AlwaysStoppedAnimation(Offset.zero),
+                      child: _buildHeroContent(context, l10n, theme),
+                    ),
+                  );
+                },
+              )
+            : _buildHeroContent(context, l10n, theme),
+      ),
+    );
+  }
+
+  Widget _buildHeroContent(
+      BuildContext context, AppLocalizations l10n, ThemeData theme) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            AppColors.primary.withValues(alpha: 0.1),
+            AppColors.secondary.withValues(alpha: 0.05),
+            AppColors.surface(context),
+          ],
+        ),
+        borderRadius: const BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20),
+        ),
+      ),
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              if (heroContent != null)
+                heroContent!
+              else
+                _buildDefaultHeroContent(context, l10n, theme),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDefaultHeroContent(
+      BuildContext context, AppLocalizations l10n, ThemeData theme) {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            gradient: AppColors.primaryGradient(context),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.primary.withValues(alpha: 0.3),
+                blurRadius: 12,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: 28,
+          ),
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: theme.textTheme.headlineMedium?.copyWith(
+                  color: AppColors.textPrimary(context),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              if (subtitle != null) ...[
+                const SizedBox(height: 4),
+                Text(
+                  subtitle!,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: AppColors.textSecondary(context),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

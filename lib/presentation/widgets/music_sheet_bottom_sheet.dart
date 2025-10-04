@@ -6,6 +6,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../shared/constants/app_colors.dart';
+import '../../shared/widgets/custom_toast.dart';
+import '../../shared/widgets/shimmer_loading.dart';
 
 /// Widget responsible for displaying music sheet PDFs in a web view
 /// Follows Single Responsibility Principle and Open/Closed Principle
@@ -167,21 +169,19 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
         await launchUrl(uri, mode: LaunchMode.externalApplication);
       } else {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.cannotOpenPdfInBrowser),
-              backgroundColor: AppColors.error,
-            ),
+          ToastService.showError(
+            context,
+            title: l10n.error,
+            message: l10n.cannotOpenPdfInBrowser,
           );
         }
       }
     } catch (e) {
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(l10n.errorOpeningPdf(e.toString())),
-            backgroundColor: AppColors.error,
-          ),
+        ToastService.showError(
+          context,
+          title: l10n.error,
+          message: l10n.errorOpeningPdf(e.toString()),
         );
       }
     }
@@ -319,7 +319,6 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
 
   Widget _buildSingleWebView(int index) {
     final currentUrl = widget.pdfUrls[index];
-    final l10n = AppLocalizations.of(context)!;
 
     return Container(
       margin: const EdgeInsets.all(20),
@@ -341,19 +340,30 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
             if (_isLoading && !_hasWebViewError)
               Container(
                 color: AppColors.cardBackground(context),
-                child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const CircularProgressIndicator(
-                        color: AppColors.primary,
+                      ShimmerLoading(
+                        child: Container(
+                          height: 200,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: AppColors.textSecondary(context),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 16),
-                      Text(
-                        l10n.loadingMusicSheet,
-                        style: TextStyle(
-                          color: AppColors.textSecondary(context),
-                          fontSize: 16,
+                      ShimmerLoading(
+                        child: Container(
+                          height: 20,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            color: AppColors.textSecondary(context),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
                         ),
                       ),
                     ],

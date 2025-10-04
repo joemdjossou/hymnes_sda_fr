@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../features/auth/bloc/auth_bloc.dart';
+import '../../shared/constants/app_colors.dart';
 import '../screens/login_screen.dart';
 import '../widgets/custom_button.dart';
 
@@ -46,50 +47,101 @@ class _AuthRequiredPrompt extends StatelessWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(40.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.lock_outline,
-              size: 80,
-              color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.6),
+            Container(
+              padding: const EdgeInsets.all(32),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    AppColors.primary.withValues(alpha: 0.1),
+                    AppColors.secondary.withValues(alpha: 0.05),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    blurRadius: 20,
+                    offset: const Offset(0, 8),
+                  ),
+                ],
+              ),
+              child: Icon(
+                Icons.lock_outline_rounded,
+                size: 80,
+                color: AppColors.textSecondary(context),
+              ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 32),
             Text(
               l10n.authenticationRequired,
               style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary(context),
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             Text(
               message ?? l10n.authenticationRequiredDescription,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color:
-                    theme.textTheme.bodyMedium?.color?.withValues(alpha: 0.7),
+              style: theme.textTheme.bodyLarge?.copyWith(
+                color: AppColors.textSecondary(context),
+                height: 1.5,
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 32),
-            CustomButton(
-              text: l10n.signInToContinue,
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const LoginScreen(),
+            const SizedBox(height: 40),
+            Container(
+              decoration: BoxDecoration(
+                gradient: AppColors.primaryGradient(context),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withValues(alpha: 0.3),
+                    blurRadius: 12,
+                    offset: const Offset(0, 6),
                   ),
-                );
-              },
+                ],
+              ),
+              child: CustomButton(
+                text: l10n.signInToContinue,
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                },
+                variant: ButtonVariant.filled,
+              ),
             ),
-            const SizedBox(height: 16),
-            //TextButton(
-            //onPressed: () {
-            //Navigator.of(context).pop();
-            //},
-            //child: Text(l10n.cancel),
-            //),
+            const SizedBox(height: 20),
+            if (Navigator.canPop(context))
+              TextButton(
+                onPressed: () {
+                  if (Navigator.canPop(context)) {
+                    Navigator.of(context).pop();
+                  }
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: AppColors.textSecondary(context),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 12,
+                  ),
+                ),
+                child: Text(
+                  l10n.cancel,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
           ],
         ),
       ),

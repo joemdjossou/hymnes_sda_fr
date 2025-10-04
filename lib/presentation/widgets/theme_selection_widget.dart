@@ -13,7 +13,7 @@ class ThemeSelectionWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -23,15 +23,20 @@ class ThemeSelectionWidget extends StatelessWidget {
             AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: AppColors.primary.withValues(alpha: 0.2),
-          width: 1.5,
+          color: AppColors.primary.withValues(alpha: 0.15),
+          width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withValues(alpha: 0.1),
-            blurRadius: 12,
+            color: AppColors.primary.withValues(alpha: 0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 8),
+          ),
+          BoxShadow(
+            color: AppColors.textPrimary(context).withValues(alpha: 0.05),
+            blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
@@ -42,38 +47,53 @@ class ThemeSelectionWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.primary.withValues(alpha: 0.3),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
                 ),
                 child: const Icon(
-                  Icons.palette,
+                  Icons.palette_rounded,
                   color: Colors.white,
-                  size: 22,
+                  size: 24,
                 ),
               ),
-              const SizedBox(width: 12),
-              Text(
-                l10n.theme,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary(context),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.theme,
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary(context),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      l10n.customizeAppAppearance,
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: AppColors.textSecondary(context)
+                            .withValues(alpha: 0.8),
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 16),
-          Text(
-            l10n.selectTheme,
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.textSecondary(context).withValues(alpha: 0.8),
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
               final currentThemeMode =
@@ -84,29 +104,39 @@ class ThemeSelectionWidget extends StatelessWidget {
                   final isSelected = currentThemeMode == themeMode;
 
                   return Container(
-                    margin: const EdgeInsets.only(bottom: 8),
+                    margin: const EdgeInsets.only(bottom: 12),
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(16),
                         onTap: () {
                           context.read<ThemeBloc>().add(ChangeTheme(themeMode));
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
                                 : AppColors.surface(context)
-                                    .withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(12),
+                                    .withValues(alpha: 0.5),
+                            borderRadius: BorderRadius.circular(16),
                             border: Border.all(
                               color: isSelected
-                                  ? AppColors.primary.withValues(alpha: 0.3)
+                                  ? AppColors.primary.withValues(alpha: 0.4)
                                   : AppColors.border(context)
                                       .withValues(alpha: 0.2),
                               width: isSelected ? 2 : 1,
                             ),
+                            boxShadow: isSelected
+                                ? [
+                                    BoxShadow(
+                                      color: AppColors.primary
+                                          .withValues(alpha: 0.1),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ]
+                                : null,
                           ),
                           child: Row(
                             children: [

@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logger/logger.dart';
 
-import '../../../core/models/hymn.dart';
 import '../../../core/services/audio_service.dart';
 
 // Events
@@ -14,14 +14,13 @@ abstract class AudioEvent extends Equatable {
 
 class InitializeAudio extends AudioEvent {}
 
-class PlayHymn extends AudioEvent {
-  final Hymn hymn;
-  final String? voiceType;
+class PlayAudio extends AudioEvent {
+  final String hymnNumber;
 
-  const PlayHymn(this.hymn, {this.voiceType});
+  const PlayAudio(this.hymnNumber);
 
   @override
-  List<Object?> get props => [hymn, voiceType];
+  List<Object?> get props => [hymnNumber];
 }
 
 class PauseAudio extends AudioEvent {}
@@ -48,37 +47,23 @@ class SetAudioVolume extends AudioEvent {
   List<Object?> get props => [volume];
 }
 
-class ToggleAudioLoop extends AudioEvent {}
+class ClearAudioError extends AudioEvent {}
+
+class RetryAudio extends AudioEvent {}
 
 class UpdateAudioPosition extends AudioEvent {
   final Duration position;
   final Duration duration;
   final bool isPlaying;
-  final bool isPaused;
-  final bool isLoading;
-  final double volume;
-  final bool isLooping;
 
   const UpdateAudioPosition({
     required this.position,
     required this.duration,
     required this.isPlaying,
-    required this.isPaused,
-    required this.isLoading,
-    required this.volume,
-    required this.isLooping,
   });
 
   @override
-  List<Object?> get props => [
-        position,
-        duration,
-        isPlaying,
-        isPaused,
-        isLoading,
-        volume,
-        isLooping,
-      ];
+  List<Object?> get props => [position, duration, isPlaying];
 }
 
 // States
@@ -92,62 +77,67 @@ abstract class AudioState extends Equatable {
 class AudioInitial extends AudioState {}
 
 class AudioLoaded extends AudioState {
-  final Hymn? currentHymn;
+  final AudioPlayerState playerState;
+  final String? currentHymnNumber;
+  final Duration position;
+  final Duration duration;
   final bool isPlaying;
   final bool isPaused;
   final bool isLoading;
-  final Duration position;
-  final Duration duration;
-  final double volume;
-  final bool isLooping;
-  final double progress;
+  final bool isRetrying;
+  final String? lastError;
+  final int retryCount;
 
   const AudioLoaded({
-    this.currentHymn,
+    required this.playerState,
+    this.currentHymnNumber,
+    required this.position,
+    required this.duration,
     required this.isPlaying,
     required this.isPaused,
     required this.isLoading,
-    required this.position,
-    required this.duration,
-    required this.volume,
-    required this.isLooping,
-    required this.progress,
+    required this.isRetrying,
+    this.lastError,
+    required this.retryCount,
   });
 
   @override
   List<Object?> get props => [
-        currentHymn,
+        playerState,
+        currentHymnNumber,
+        position,
+        duration,
         isPlaying,
         isPaused,
         isLoading,
-        position,
-        duration,
-        volume,
-        isLooping,
-        progress,
+        isRetrying,
+        lastError,
+        retryCount,
       ];
 
   AudioLoaded copyWith({
-    Hymn? currentHymn,
+    AudioPlayerState? playerState,
+    String? currentHymnNumber,
+    Duration? position,
+    Duration? duration,
     bool? isPlaying,
     bool? isPaused,
     bool? isLoading,
-    Duration? position,
-    Duration? duration,
-    double? volume,
-    bool? isLooping,
-    double? progress,
+    bool? isRetrying,
+    String? lastError,
+    int? retryCount,
   }) {
     return AudioLoaded(
-      currentHymn: currentHymn ?? this.currentHymn,
+      playerState: playerState ?? this.playerState,
+      currentHymnNumber: currentHymnNumber ?? this.currentHymnNumber,
+      position: position ?? this.position,
+      duration: duration ?? this.duration,
       isPlaying: isPlaying ?? this.isPlaying,
       isPaused: isPaused ?? this.isPaused,
       isLoading: isLoading ?? this.isLoading,
-      position: position ?? this.position,
-      duration: duration ?? this.duration,
-      volume: volume ?? this.volume,
-      isLooping: isLooping ?? this.isLooping,
-      progress: progress ?? this.progress,
+      isRetrying: isRetrying ?? this.isRetrying,
+      lastError: lastError ?? this.lastError,
+      retryCount: retryCount ?? this.retryCount,
     );
   }
 }
@@ -167,28 +157,27 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
   AudioBloc() : super(AudioInitial()) {
     on<InitializeAudio>(_onInitializeAudio);
-    on<PlayHymn>(_onPlayHymn);
+    on<PlayAudio>(_onPlayAudio);
     on<PauseAudio>(_onPauseAudio);
     on<ResumeAudio>(_onResumeAudio);
     on<StopAudio>(_onStopAudio);
     on<SeekAudio>(_onSeekAudio);
     on<SetAudioVolume>(_onSetAudioVolume);
-    on<ToggleAudioLoop>(_onToggleAudioLoop);
+    on<ClearAudioError>(_onClearAudioError);
+    on<RetryAudio>(_onRetryAudio);
     on<UpdateAudioPosition>(_onUpdateAudioPosition);
 
-    // Initialize audio service
-    add(InitializeAudio());
+    // Listen to audio service changes
+    _audioService.addListener(_onAudioServiceChanged);
   }
 
   void _onAudioServiceChanged() {
+    Logger().d(
+        'AudioService changed - State: ${_audioService.state}, isPlaying: ${_audioService.isPlaying}, isLoading: ${_audioService.isLoading}');
     add(UpdateAudioPosition(
       position: _audioService.position,
       duration: _audioService.duration,
       isPlaying: _audioService.isPlaying,
-      isPaused: _audioService.isPaused,
-      isLoading: _audioService.isLoading,
-      volume: _audioService.volume,
-      isLooping: _audioService.isLooping,
     ));
   }
 
@@ -196,64 +185,39 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       InitializeAudio event, Emitter<AudioState> emit) async {
     try {
       await _audioService.initialize();
-      
-      // Listen to audio service changes
-      _audioService.addListener(_onAudioServiceChanged);
-
       emit(AudioLoaded(
-        currentHymn: null,
+        playerState: _audioService.state,
+        currentHymnNumber: _audioService.currentHymnNumber,
+        position: _audioService.position,
+        duration: _audioService.duration,
         isPlaying: _audioService.isPlaying,
         isPaused: _audioService.isPaused,
         isLoading: _audioService.isLoading,
-        position: _audioService.position,
-        duration: _audioService.duration,
-        volume: _audioService.volume,
-        isLooping: _audioService.isLooping,
-        progress: _audioService.progress,
+        isRetrying: _audioService.isRetrying,
+        lastError: _audioService.lastError,
+        retryCount: _audioService.retryCount,
       ));
     } catch (e) {
       emit(AudioError(e.toString()));
     }
   }
 
-  Future<void> _onPlayHymn(PlayHymn event, Emitter<AudioState> emit) async {
+  Future<void> _onPlayAudio(PlayAudio event, Emitter<AudioState> emit) async {
     try {
       final currentState = state;
       if (currentState is AudioLoaded) {
+        // Immediately update UI to show loading state
         emit(currentState.copyWith(
-          currentHymn: event.hymn,
           isLoading: true,
+          currentHymnNumber: event.hymnNumber,
+          playerState: AudioPlayerState.loading,
         ));
       }
 
-      String audioFile;
-      switch (event.voiceType) {
-        case 'soprano':
-          audioFile = event.hymn.sopranoFile;
-          break;
-        case 'alto':
-          audioFile = event.hymn.altoFile;
-          break;
-        case 'tenor':
-          audioFile = event.hymn.tenorFile;
-          break;
-        case 'bass':
-          audioFile = event.hymn.bassFile;
-          break;
-        default:
-          audioFile = event.hymn.sopranoFile; // Default to soprano
-      }
+      await _audioService.playHymn(event.hymnNumber);
 
-      await _audioService.play(audioFile);
-
-      if (state is AudioLoaded) {
-        final loadedState = state as AudioLoaded;
-        emit(loadedState.copyWith(
-          currentHymn: event.hymn,
-          isPlaying: _audioService.isPlaying,
-          isLoading: _audioService.isLoading,
-        ));
-      }
+      // The audio service will trigger _onAudioServiceChanged
+      // which will emit the final state with correct values
     } catch (e) {
       emit(AudioError(e.toString()));
     }
@@ -265,6 +229,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       final currentState = state;
       if (currentState is AudioLoaded) {
         emit(currentState.copyWith(
+          playerState: _audioService.state,
           isPlaying: _audioService.isPlaying,
           isPaused: _audioService.isPaused,
         ));
@@ -281,6 +246,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       final currentState = state;
       if (currentState is AudioLoaded) {
         emit(currentState.copyWith(
+          playerState: _audioService.state,
           isPlaying: _audioService.isPlaying,
           isPaused: _audioService.isPaused,
         ));
@@ -296,10 +262,11 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       final currentState = state;
       if (currentState is AudioLoaded) {
         emit(currentState.copyWith(
-          currentHymn: null,
+          playerState: _audioService.state,
+          currentHymnNumber: null,
+          position: Duration.zero,
           isPlaying: false,
           isPaused: false,
-          position: Duration.zero,
         ));
       }
     } catch (e) {
@@ -323,23 +290,23 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       SetAudioVolume event, Emitter<AudioState> emit) async {
     try {
       await _audioService.setVolume(event.volume);
-      final currentState = state;
-      if (currentState is AudioLoaded) {
-        emit(currentState.copyWith(volume: event.volume));
-      }
     } catch (e) {
       emit(AudioError(e.toString()));
     }
   }
 
-  Future<void> _onToggleAudioLoop(
-      ToggleAudioLoop event, Emitter<AudioState> emit) async {
+  Future<void> _onClearAudioError(
+      ClearAudioError event, Emitter<AudioState> emit) async {
+    _audioService.clearError();
+    final currentState = state;
+    if (currentState is AudioLoaded) {
+      emit(currentState.copyWith(lastError: null));
+    }
+  }
+
+  Future<void> _onRetryAudio(RetryAudio event, Emitter<AudioState> emit) async {
     try {
-      await _audioService.toggleLoop();
-      final currentState = state;
-      if (currentState is AudioLoaded) {
-        emit(currentState.copyWith(isLooping: _audioService.isLooping));
-      }
+      await _audioService.retryPlay();
     } catch (e) {
       emit(AudioError(e.toString()));
     }
@@ -349,27 +316,24 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       UpdateAudioPosition event, Emitter<AudioState> emit) async {
     final currentState = state;
     if (currentState is AudioLoaded) {
+      Logger().d(
+          'Updating audio position - Service state: ${_audioService.state}, isLoading: ${_audioService.isLoading}, isPlaying: ${_audioService.isPlaying}');
       emit(currentState.copyWith(
         position: event.position,
         duration: event.duration,
         isPlaying: event.isPlaying,
-        isPaused: event.isPaused,
-        isLoading: event.isLoading,
-        volume: event.volume,
-        isLooping: event.isLooping,
-        progress: _audioService.progress,
+        playerState: _audioService.state,
+        isLoading: _audioService.isLoading,
+        isRetrying: _audioService.isRetrying,
+        lastError: _audioService.lastError,
+        retryCount: _audioService.retryCount,
       ));
     }
-  }
-
-  String formatDuration(Duration duration) {
-    return _audioService.formatDuration(duration);
   }
 
   @override
   Future<void> close() {
     _audioService.removeListener(_onAudioServiceChanged);
-    _audioService.dispose();
     return super.close();
   }
 }

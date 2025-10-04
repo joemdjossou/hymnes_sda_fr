@@ -1,8 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:just_audio/just_audio.dart';
 
-enum AudioPlayerState { stopped, playing, paused, loading }
+enum AudioPlayerState {
+  stopped,
+  loading,
+  playing,
+  paused,
+  error,
+  retrying,
+}
 
 class AudioService extends ChangeNotifier {
   static final AudioService _instance = AudioService._internal();
@@ -10,72 +18,209 @@ class AudioService extends ChangeNotifier {
   AudioService._internal();
 
   AudioPlayerState _state = AudioPlayerState.stopped;
+  String? _currentHymnNumber;
   Duration _position = Duration.zero;
   Duration _duration = Duration.zero;
-  String? _currentTrack;
-  double _volume = 1.0;
-  bool _isLooping = false;
-  Timer? _positionTimer;
+  bool _isInitialized = false;
+  String? _lastError;
+  bool _isPlaying = false;
+  int _retryCount = 0;
+  static const int _maxRetries = 3;
+
+  // Audio player for online MP3 playback
+  AudioPlayer? _audioPlayer;
+  StreamSubscription<Duration>? _positionSubscription;
+  StreamSubscription<Duration?>? _durationSubscription;
+  StreamSubscription<PlayerState>? _playerStateSubscription;
 
   // Getters
   AudioPlayerState get state => _state;
+  String? get currentHymnNumber => _currentHymnNumber;
   Duration get position => _position;
   Duration get duration => _duration;
-  String? get currentTrack => _currentTrack;
-  double get volume => _volume;
-  bool get isLooping => _isLooping;
-  bool get isPlaying => _state == AudioPlayerState.playing;
+  bool get isPlaying => _isPlaying;
   bool get isPaused => _state == AudioPlayerState.paused;
-  bool get isStopped => _state == AudioPlayerState.stopped;
   bool get isLoading => _state == AudioPlayerState.loading;
-
-  @override
-  void dispose() {
-    _positionTimer?.cancel();
-    super.dispose();
-  }
+  bool get isRetrying => _state == AudioPlayerState.retrying;
+  String? get lastError => _lastError;
+  int get retryCount => _retryCount;
 
   Future<void> initialize() async {
+    if (_isInitialized) return;
+
     try {
-      // Initialize audio service
-      debugPrint('Audio service initialized');
+      _audioPlayer = AudioPlayer();
+
+      // Listen to position changes
+      _positionSubscription = _audioPlayer!.positionStream.listen((position) {
+        _position = position;
+        notifyListeners();
+      });
+
+      // Listen to duration changes
+      _durationSubscription = _audioPlayer!.durationStream.listen((duration) {
+        if (duration != null) {
+          _duration = duration;
+          notifyListeners();
+        }
+      });
+
+      // Listen to player state changes
+      _playerStateSubscription =
+          _audioPlayer!.playerStateStream.listen((state) {
+        debugPrint(
+            'Player state changed: ${state.processingState}, playing: ${state.playing}');
+
+        switch (state.processingState) {
+          case ProcessingState.loading:
+          case ProcessingState.buffering:
+            // Only set loading if we're not already playing
+            if (_state != AudioPlayerState.playing) {
+              _state = AudioPlayerState.loading;
+            }
+            _isPlaying = false;
+            break;
+          case ProcessingState.ready:
+            if (state.playing) {
+              _state = AudioPlayerState.playing;
+              _isPlaying = true;
+            } else {
+              _state = AudioPlayerState.paused;
+              _isPlaying = false;
+            }
+            break;
+          case ProcessingState.completed:
+            _state = AudioPlayerState.stopped;
+            _isPlaying = false;
+            _position = Duration.zero;
+            break;
+          case ProcessingState.idle:
+            _state = AudioPlayerState.stopped;
+            _isPlaying = false;
+            break;
+        }
+        debugPrint('Updated state: $_state, isPlaying: $_isPlaying');
+        notifyListeners();
+      });
+
+      _isInitialized = true;
+      debugPrint('Audio Service initialized successfully');
     } catch (e) {
-      debugPrint('Error initializing audio service: $e');
+      debugPrint('Error initializing Audio Service: $e');
+      _state = AudioPlayerState.error;
+      _lastError = e.toString();
+      notifyListeners();
     }
   }
 
-  Future<void> play(String audioPath) async {
+  Future<void> playHymn(String hymnNumber) async {
+    if (!_isInitialized) await initialize();
+
     try {
       _state = AudioPlayerState.loading;
-      _currentTrack = audioPath;
+      _currentHymnNumber = hymnNumber;
+      _lastError = null;
+      _retryCount = 0;
       notifyListeners();
 
-      // Simulate audio loading
-      await Future.delayed(const Duration(milliseconds: 500));
+      await _loadAndPlayHymn(hymnNumber);
 
-      _state = AudioPlayerState.playing;
-      _duration = const Duration(minutes: 3, seconds: 30); // Simulated duration
-      _position = Duration.zero;
-
-      // Start position timer
-      _startPositionTimer();
-
-      notifyListeners();
-
-      debugPrint('Playing audio: $audioPath');
+      // Add a timeout to ensure loading state is cleared
+      Future.delayed(Duration(seconds: 2), () {
+        if (_state == AudioPlayerState.loading && _isPlaying) {
+          debugPrint('Timeout: Clearing loading state, audio is playing');
+          _state = AudioPlayerState.playing;
+          notifyListeners();
+        }
+      });
     } catch (e) {
       debugPrint('Error playing audio: $e');
-      _state = AudioPlayerState.stopped;
+      _handlePlayError(e);
+    }
+  }
+
+  Future<void> _loadAndPlayHymn(String hymnNumber) async {
+    // Construct the MP3 URL
+    final paddedNumber = hymnNumber.padLeft(3, '0');
+    final mp3Url =
+        'https://troisanges.org/Musique/HymnesEtLouanges/MP3/H$paddedNumber.mp3';
+
+    debugPrint('Attempting to play audio: $mp3Url');
+
+    try {
+      // Load the MP3 file
+      await _audioPlayer!.setUrl(mp3Url);
+
+      // Start playing
+      await _audioPlayer!.play();
+
+      // Wait a bit for the player to actually start
+      await Future.delayed(Duration(milliseconds: 500));
+
+      // Check if the player is actually playing and update state accordingly
+      if (_audioPlayer!.playing) {
+        _state = AudioPlayerState.playing;
+        _isPlaying = true;
+        debugPrint('Audio confirmed playing, updating state');
+      } else {
+        _state = AudioPlayerState.paused;
+        _isPlaying = false;
+        debugPrint('Audio not playing yet, setting to paused');
+      }
+      notifyListeners();
+
+      debugPrint('Playing audio: $mp3Url');
+    } catch (e) {
+      debugPrint('Error in _loadAndPlayHymn: $e');
+      _state = AudioPlayerState.error;
+      _lastError = 'Failed to play audio: $e';
+      notifyListeners();
+      rethrow;
+    }
+  }
+
+  void _handlePlayError(dynamic error) {
+    if (_retryCount < _maxRetries) {
+      _retryCount++;
+      _state = AudioPlayerState.retrying;
+      _lastError =
+          'Connection failed. Retrying... (${_retryCount}/$_maxRetries)';
+      notifyListeners();
+
+      // Retry after a delay
+      Future.delayed(Duration(seconds: 2 * _retryCount), () {
+        if (_state == AudioPlayerState.retrying) {
+          _loadAndPlayHymn(_currentHymnNumber!).catchError(_handlePlayError);
+        }
+      });
+    } else {
+      _state = AudioPlayerState.error;
+      _lastError =
+          'Unable to play audio. Please check your internet connection and try again.';
       notifyListeners();
     }
+  }
+
+  Future<void> retryPlay() async {
+    if (_currentHymnNumber != null) {
+      _retryCount = 0;
+      await playHymn(_currentHymnNumber!);
+    }
+  }
+
+  bool isPlayingHymn(String hymnNumber) {
+    return _currentHymnNumber == hymnNumber && _isPlaying;
   }
 
   Future<void> pause() async {
     try {
-      _state = AudioPlayerState.paused;
-      _positionTimer?.cancel();
-      notifyListeners();
-      debugPrint('Audio paused');
+      if (_audioPlayer != null) {
+        await _audioPlayer!.pause();
+        _state = AudioPlayerState.paused;
+        _isPlaying = false;
+        notifyListeners();
+        debugPrint('Audio playback paused');
+      }
     } catch (e) {
       debugPrint('Error pausing audio: $e');
     }
@@ -83,10 +228,13 @@ class AudioService extends ChangeNotifier {
 
   Future<void> resume() async {
     try {
-      _state = AudioPlayerState.playing;
-      _startPositionTimer();
-      notifyListeners();
-      debugPrint('Audio resumed');
+      if (_audioPlayer != null) {
+        await _audioPlayer!.play();
+        _state = AudioPlayerState.playing;
+        _isPlaying = true;
+        notifyListeners();
+        debugPrint('Audio playback resumed');
+      }
     } catch (e) {
       debugPrint('Error resuming audio: $e');
     }
@@ -94,12 +242,16 @@ class AudioService extends ChangeNotifier {
 
   Future<void> stop() async {
     try {
-      _state = AudioPlayerState.stopped;
-      _position = Duration.zero;
-      _currentTrack = null;
-      _positionTimer?.cancel();
-      notifyListeners();
-      debugPrint('Audio stopped');
+      if (_audioPlayer != null) {
+        await _audioPlayer!.stop();
+        _state = AudioPlayerState.stopped;
+        _isPlaying = false;
+        _position = Duration.zero;
+        _currentHymnNumber = null;
+        _lastError = null;
+        notifyListeners();
+        debugPrint('Audio playback stopped');
+      }
     } catch (e) {
       debugPrint('Error stopping audio: $e');
     }
@@ -107,9 +259,10 @@ class AudioService extends ChangeNotifier {
 
   Future<void> seekTo(Duration position) async {
     try {
-      _position = position;
-      notifyListeners();
-      debugPrint('Audio seeked to: ${position.inSeconds}s');
+      if (_audioPlayer != null) {
+        await _audioPlayer!.seek(position);
+        debugPrint('Audio playback seeked to: ${position.inSeconds} seconds');
+      }
     } catch (e) {
       debugPrint('Error seeking audio: $e');
     }
@@ -117,54 +270,32 @@ class AudioService extends ChangeNotifier {
 
   Future<void> setVolume(double volume) async {
     try {
-      _volume = volume.clamp(0.0, 1.0);
-      notifyListeners();
-      debugPrint('Volume set to: $_volume');
+      if (_audioPlayer != null) {
+        await _audioPlayer!.setVolume(volume.clamp(0.0, 1.0));
+        debugPrint('Audio volume set to: ${(volume * 100).toInt()}%');
+      }
     } catch (e) {
       debugPrint('Error setting volume: $e');
     }
   }
 
-  Future<void> toggleLoop() async {
-    try {
-      _isLooping = !_isLooping;
-      notifyListeners();
-      debugPrint('Loop toggled: $_isLooping');
-    } catch (e) {
-      debugPrint('Error toggling loop: $e');
+  void clearError() {
+    _lastError = null;
+    notifyListeners();
+  }
+
+  Future<void> stopIfPlaying(String hymnNumber) async {
+    if (_currentHymnNumber == hymnNumber && _isPlaying) {
+      await stop();
     }
   }
 
-  void _startPositionTimer() {
-    _positionTimer?.cancel();
-    _positionTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
-      if (_state == AudioPlayerState.playing) {
-        _position += const Duration(milliseconds: 100);
-
-        // Check if audio finished
-        if (_position >= _duration) {
-          if (_isLooping) {
-            _position = Duration.zero;
-          } else {
-            stop();
-            return;
-          }
-        }
-
-        notifyListeners();
-      }
-    });
-  }
-
-  String formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final minutes = twoDigits(duration.inMinutes.remainder(60));
-    final seconds = twoDigits(duration.inSeconds.remainder(60));
-    return '$minutes:$seconds';
-  }
-
-  double get progress {
-    if (_duration.inMilliseconds == 0) return 0.0;
-    return _position.inMilliseconds / _duration.inMilliseconds;
+  @override
+  void dispose() {
+    _positionSubscription?.cancel();
+    _durationSubscription?.cancel();
+    _playerStateSubscription?.cancel();
+    _audioPlayer?.dispose();
+    super.dispose();
   }
 }

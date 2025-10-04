@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
+import '../../shared/widgets/custom_toast.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
@@ -59,19 +60,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           setState(() {
             _emailSent = true;
           });
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(l10n.passwordResetSent(state.email)),
-              backgroundColor: Colors.green,
-            ),
+          ToastService.showSuccess(
+            context,
+            title: l10n.success,
+            message: l10n.passwordResetSent(state.email),
           );
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                  ErrorHandler.getLocalizedErrorMessage(state.message, l10n)),
-              backgroundColor: Colors.red,
-            ),
+          ToastService.showError(
+            context,
+            title: l10n.error,
+            message: ErrorHandler.getLocalizedErrorMessage(state.message, l10n),
           );
         }
       },

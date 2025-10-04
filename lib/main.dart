@@ -2,10 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hymnes/firebase_options.dart';
-
+import 'package:hymnes_sda_fr/firebase_options.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'core/providers/language_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/repositories/hymn_repository.dart';
@@ -14,7 +13,6 @@ import 'core/services/storage_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
 import 'features/auth/bloc/auth_bloc.dart';
 import 'features/favorites/bloc/favorites_bloc.dart';
-import 'features/midi/bloc/midi_bloc.dart';
 import 'presentation/screens/splash_screen.dart';
 import 'shared/constants/app_theme.dart';
 
@@ -53,10 +51,7 @@ class HymnesApp extends StatelessWidget {
           create: (context) => ThemeBloc()..add(LoadTheme()),
         ),
         BlocProvider(
-          create: (context) => MidiBloc()..add(InitializeMidi()),
-        ),
-        BlocProvider(
-          create: (context) => AudioBloc(),
+          create: (context) => AudioBloc()..add(InitializeAudio()),
         ),
         BlocProvider(
           create: (context) =>
@@ -81,7 +76,7 @@ class HymnesApp extends StatelessWidget {
                   : ThemeMode.system;
 
               return MaterialApp(
-                title: 'Hymnes',
+                title: 'Hymnes & Louanges Adventistes',
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.lightTheme,
                 darkTheme: AppTheme.darkTheme,

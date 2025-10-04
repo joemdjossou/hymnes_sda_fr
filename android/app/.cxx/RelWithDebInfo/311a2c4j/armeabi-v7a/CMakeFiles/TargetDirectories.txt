@@ -1,0 +1,2 @@
+/Users/joemdjossou/Documents/GitHub/hymnes_sda_fr/android/app/.cxx/RelWithDebInfo/311a2c4j/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/joemdjossou/Documents/GitHub/hymnes_sda_fr/android/app/.cxx/RelWithDebInfo/311a2c4j/armeabi-v7a/CMakeFiles/rebuild_cache.dir
