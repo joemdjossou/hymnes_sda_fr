@@ -143,6 +143,11 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                       },
                     ),
                   ),
+
+                if (state is FavoritesLoaded && state.favorites.isNotEmpty)
+                  SliverToBoxAdapter(
+                    child: Gap(20),
+                  ),
                 // Content Section
                 if (state is FavoritesLoading)
                   SliverPadding(
