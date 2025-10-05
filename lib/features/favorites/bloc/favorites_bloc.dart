@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../core/models/hymn.dart';
+import '../../../core/repositories/hybrid_favorites_repository.dart';
 import '../../../core/repositories/i_hymn_repository.dart';
 import '../models/favorite_hymn.dart';
 import '../models/favorites_sort_option.dart';
@@ -63,6 +64,23 @@ class SortFavorites extends FavoritesEvent {
   List<Object?> get props => [sortOption];
 }
 
+class SyncFavorites extends FavoritesEvent {
+  const SyncFavorites();
+}
+
+class ForceSyncFavorites extends FavoritesEvent {
+  const ForceSyncFavorites();
+}
+
+class SetOnlineStatus extends FavoritesEvent {
+  final bool isOnline;
+
+  const SetOnlineStatus(this.isOnline);
+
+  @override
+  List<Object?> get props => [isOnline];
+}
+
 // States
 abstract class FavoritesState extends Equatable {
   const FavoritesState();
@@ -79,25 +97,44 @@ class FavoritesLoaded extends FavoritesState {
   final List<Hymn> favorites;
   final Map<String, bool> favoriteStatus;
   final FavoritesSortOption currentSortOption;
+  final bool isOnline;
+  final bool isAuthenticated;
+  final bool isSynced;
 
   const FavoritesLoaded({
     required this.favorites,
     required this.favoriteStatus,
     this.currentSortOption = FavoritesSortOption.dateAddedNewestFirst,
+    this.isOnline = true,
+    this.isAuthenticated = false,
+    this.isSynced = true,
   });
 
   @override
-  List<Object?> get props => [favorites, favoriteStatus, currentSortOption];
+  List<Object?> get props => [
+        favorites,
+        favoriteStatus,
+        currentSortOption,
+        isOnline,
+        isAuthenticated,
+        isSynced,
+      ];
 
   FavoritesLoaded copyWith({
     List<Hymn>? favorites,
     Map<String, bool>? favoriteStatus,
     FavoritesSortOption? currentSortOption,
+    bool? isOnline,
+    bool? isAuthenticated,
+    bool? isSynced,
   }) {
     return FavoritesLoaded(
       favorites: favorites ?? this.favorites,
       favoriteStatus: favoriteStatus ?? this.favoriteStatus,
       currentSortOption: currentSortOption ?? this.currentSortOption,
+      isOnline: isOnline ?? this.isOnline,
+      isAuthenticated: isAuthenticated ?? this.isAuthenticated,
+      isSynced: isSynced ?? this.isSynced,
     );
   }
 }
@@ -113,11 +150,12 @@ class FavoritesError extends FavoritesState {
 
 // BLoC
 class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
-  final IFavoriteRepository _favoriteRepository;
+  final HybridFavoritesRepository _hybridRepository;
 
   FavoritesBloc({
     required IFavoriteRepository favoriteRepository,
-  })  : _favoriteRepository = favoriteRepository,
+    HybridFavoritesRepository? hybridRepository,
+  })  : _hybridRepository = hybridRepository ?? HybridFavoritesRepository(),
         super(FavoritesInitial()) {
     on<LoadFavorites>(_onLoadFavorites);
     on<ToggleFavorite>(_onToggleFavorite);
@@ -125,6 +163,9 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     on<RemoveFromFavorites>(_onRemoveFromFavorites);
     on<CheckFavoriteStatus>(_onCheckFavoriteStatus);
     on<SortFavorites>(_onSortFavorites);
+    on<SyncFavorites>(_onSyncFavorites);
+    on<ForceSyncFavorites>(_onForceSyncFavorites);
+    on<SetOnlineStatus>(_onSetOnlineStatus);
   }
 
   Future<void> _onLoadFavorites(
@@ -134,7 +175,10 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     try {
       emit(FavoritesLoading());
 
-      final favoriteHymns = await _favoriteRepository.getFavorites();
+      // Initialize hybrid repository if needed
+      await _hybridRepository.initialize();
+
+      final favoriteHymns = await _hybridRepository.getFavorites();
       final favoriteStatus = <String, bool>{};
       final favorites = <Hymn>[];
 
@@ -148,10 +192,16 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       final sortedFavorites = _sortFavorites(
           favoriteHymns, FavoritesSortOption.dateAddedNewestFirst);
 
+      // Get sync status
+      final syncStatus = await _hybridRepository.getSyncStatus();
+
       emit(FavoritesLoaded(
         favorites: sortedFavorites,
         favoriteStatus: favoriteStatus,
         currentSortOption: FavoritesSortOption.dateAddedNewestFirst,
+        isOnline: syncStatus['isOnline'] ?? true,
+        isAuthenticated: syncStatus['isAuthenticated'] ?? false,
+        isSynced: syncStatus['isSynced'] ?? true,
       ));
     } catch (e) {
       emit(FavoritesError('Failed to load favorites: $e'));
@@ -171,7 +221,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
           currentState.favoriteStatus[hymn.number] ?? false;
 
       if (isCurrentlyFavorite) {
-        await _favoriteRepository.removeFromFavorites(hymn.number);
+        await _hybridRepository.removeFromFavorites(hymn.number);
 
         // Update state
         final updatedFavorites = currentState.favorites
@@ -181,12 +231,16 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
             Map<String, bool>.from(currentState.favoriteStatus);
         updatedStatus[hymn.number] = false;
 
+        // Get updated sync status
+        final syncStatus = await _hybridRepository.getSyncStatus();
+
         emit(currentState.copyWith(
           favorites: updatedFavorites,
           favoriteStatus: updatedStatus,
+          isSynced: syncStatus['isSynced'] ?? true,
         ));
       } else {
-        await _favoriteRepository.addToFavorites(hymn);
+        await _hybridRepository.addToFavorites(hymn);
 
         // Reload favorites to get the updated list with proper sorting
         add(const LoadFavorites());
@@ -209,7 +263,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
           currentState.favoriteStatus[hymn.number] ?? false;
 
       if (!isAlreadyFavorite) {
-        await _favoriteRepository.addToFavorites(hymn);
+        await _hybridRepository.addToFavorites(hymn);
 
         // Reload favorites to get the updated list with proper sorting
         add(const LoadFavorites());
@@ -232,7 +286,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
           currentState.favoriteStatus[hymnNumber] ?? false;
 
       if (isCurrentlyFavorite) {
-        await _favoriteRepository.removeFromFavorites(hymnNumber);
+        await _hybridRepository.removeFromFavorites(hymnNumber);
 
         // Update state
         final updatedFavorites = currentState.favorites
@@ -242,9 +296,13 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
             Map<String, bool>.from(currentState.favoriteStatus);
         updatedStatus[hymnNumber] = false;
 
+        // Get updated sync status
+        final syncStatus = await _hybridRepository.getSyncStatus();
+
         emit(currentState.copyWith(
           favorites: updatedFavorites,
           favoriteStatus: updatedStatus,
+          isSynced: syncStatus['isSynced'] ?? true,
         ));
       }
     } catch (e) {
@@ -261,7 +319,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       if (currentState is! FavoritesLoaded) return;
 
       final hymnNumber = event.hymnNumber;
-      final isFavorite = _favoriteRepository.isFavorite(hymnNumber);
+      final isFavorite = _hybridRepository.isFavorite(hymnNumber);
 
       // Update favorite status without changing the favorites list
       final updatedStatus = Map<String, bool>.from(currentState.favoriteStatus);
@@ -281,7 +339,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       final currentState = state;
       if (currentState is! FavoritesLoaded) return;
 
-      final favoriteHymns = await _favoriteRepository.getFavorites();
+      final favoriteHymns = await _hybridRepository.getFavorites();
       final sortedFavorites = _sortFavorites(favoriteHymns, event.sortOption);
 
       emit(currentState.copyWith(
@@ -337,12 +395,69 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     return sortedHymns;
   }
 
+  // New event handlers for sync operations
+  Future<void> _onSyncFavorites(
+    SyncFavorites event,
+    Emitter<FavoritesState> emit,
+  ) async {
+    try {
+      final currentState = state;
+      if (currentState is! FavoritesLoaded) return;
+
+      await _hybridRepository.forceSync();
+
+      // Reload favorites after sync
+      add(const LoadFavorites());
+    } catch (e) {
+      emit(FavoritesError('Failed to sync favorites: $e'));
+    }
+  }
+
+  Future<void> _onForceSyncFavorites(
+    ForceSyncFavorites event,
+    Emitter<FavoritesState> emit,
+  ) async {
+    try {
+      final currentState = state;
+      if (currentState is! FavoritesLoaded) return;
+
+      await _hybridRepository.forceSync();
+
+      // Reload favorites after sync
+      add(const LoadFavorites());
+    } catch (e) {
+      emit(FavoritesError('Failed to force sync favorites: $e'));
+    }
+  }
+
+  Future<void> _onSetOnlineStatus(
+    SetOnlineStatus event,
+    Emitter<FavoritesState> emit,
+  ) async {
+    try {
+      final currentState = state;
+      if (currentState is! FavoritesLoaded) return;
+
+      _hybridRepository.setOnlineStatus(event.isOnline);
+
+      // Get updated sync status
+      final syncStatus = await _hybridRepository.getSyncStatus();
+
+      emit(currentState.copyWith(
+        isOnline: event.isOnline,
+        isSynced: syncStatus['isSynced'] ?? true,
+      ));
+    } catch (e) {
+      emit(FavoritesError('Failed to set online status: $e'));
+    }
+  }
+
   // Helper method to check if a hymn is favorite
   bool isFavorite(String hymnNumber) {
     final currentState = state;
     if (currentState is FavoritesLoaded) {
       return currentState.favoriteStatus[hymnNumber] ?? false;
     }
-    return _favoriteRepository.isFavorite(hymnNumber);
+    return _hybridRepository.isFavorite(hymnNumber);
   }
 }
