@@ -188,6 +188,15 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
+
+      // PopupMenuButton style
+      popupMenuTheme: PopupMenuThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            8,
+          ),
+        ),
+      ),
     );
   }
 
@@ -375,6 +384,15 @@ class AppTheme {
         unselectedItemColor: AppColors.darkTextSecondary,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
+      ),
+
+      // PopupMenuButton style
+      popupMenuTheme: PopupMenuThemeData(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            8,
+          ),
+        ),
       ),
     );
   }

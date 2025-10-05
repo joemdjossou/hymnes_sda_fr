@@ -7,6 +7,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import '../../core/providers/language_provider.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
+import '../../shared/widgets/modern_dialog.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/theme_selection_widget.dart';
@@ -457,25 +458,18 @@ class _SettingsScreenState extends State<SettingsScreen>
                 CustomButton(
                   text: l10n.signOut,
                   onPressed: () {
-                    showDialog(
+                    ModernDialog.showConfirmation(
                       context: context,
-                      builder: (context) => AlertDialog(
-                        title: Text(l10n.signOut),
-                        content: Text(l10n.signOutConfirmation),
-                        actions: [
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(),
-                            child: Text(l10n.cancel),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                              context.read<AuthBloc>().add(SignOutRequested());
-                            },
-                            child: Text(l10n.signOut),
-                          ),
-                        ],
-                      ),
+                      title: l10n.signOut,
+                      description: l10n.signOutConfirmation,
+                      primaryButtonText: l10n.signOut,
+                      secondaryButtonText: l10n.cancel,
+                      isDestructive: true,
+                      onPrimaryPressed: () {
+                        Navigator.of(context).pop();
+                        context.read<AuthBloc>().add(SignOutRequested());
+                      },
+                      onSecondaryPressed: () => Navigator.of(context).pop(),
                     );
                   },
                   variant: ButtonVariant.outlined,
