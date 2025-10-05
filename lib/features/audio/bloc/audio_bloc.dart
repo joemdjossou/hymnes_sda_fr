@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/services/audio_service.dart';
+import '../../../core/services/posthog_service.dart';
 
 // Events
 abstract class AudioEvent extends Equatable {
@@ -177,6 +178,7 @@ class AudioError extends AudioState {
 // BLoC
 class AudioBloc extends Bloc<AudioEvent, AudioState> {
   final AudioService _audioService;
+  final PostHogService _posthog = PostHogService();
   bool _isDisposed = false;
 
   AudioBloc({AudioService? audioService})
@@ -271,6 +273,13 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       await _audioService.playHymn(event.hymnNumber,
           voiceType: event.voiceType, voiceFile: event.voiceFile);
 
+      // Track PostHog event
+      await _posthog.trackAudioEvent(
+        eventType: 'play',
+        hymnNumber: event.hymnNumber,
+        duration: _audioService.duration.inSeconds.toDouble(),
+      );
+
       // The audio service will trigger _onAudioServiceChanged
       // which will emit the final state with correct values
     } catch (e) {
@@ -295,9 +304,19 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     try {
       await _audioService.pause();
 
+      // Track PostHog event
+      final currentState = state;
+      if (currentState is AudioLoaded) {
+        await _posthog.trackAudioEvent(
+          eventType: 'pause',
+          hymnNumber: currentState.currentHymnNumber,
+          position: _audioService.position.inSeconds.toDouble(),
+          duration: _audioService.duration.inSeconds.toDouble(),
+        );
+      }
+
       if (_isDisposed) return;
 
-      final currentState = state;
       if (currentState is AudioLoaded) {
         emit(currentState.copyWith(
           playerState: _audioService.state,

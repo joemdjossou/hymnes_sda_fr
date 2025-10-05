@@ -33,5 +33,8 @@ void main() async {
   // Uncomment the line below to clear all data if you encounter type errors
   // await StorageService().clearAllData();
 
+  // Track app launch
+  await PostHogService().trackAppLaunch();
+
   runApp(const HymnesApp());
 }
