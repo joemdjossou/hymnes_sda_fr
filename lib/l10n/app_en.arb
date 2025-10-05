@@ -61,7 +61,7 @@
   "favoritesAndHistory": "Favorites & History",
   "personalCollection": "Personal Collection",
   "favoritesDescription": "Save your favorite hymns and explore their rich history. Learn about the authors and the stories behind each song.",
-  "hymnStoryTemplate": "This beloved hymn \"{title}\" was written by {author}{composer}.\n\nThe hymn has been a source of comfort and inspiration for countless believers throughout the years. Its timeless message continues to resonate with congregations around the world.\n\nThe {style} style of this hymn makes it particularly suitable for worship services and personal devotion. The melody and lyrics work together to create a powerful expression of faith and devotion.\n\nThis hymn stands as a testament to the enduring power of sacred music to touch hearts and lift spirits in worship and praise.",
+  "hymnStoryTemplate": "This beloved hymn \"{title}\" was written by {author}{composer}. The {style} style makes it perfect for worship and personal devotion. Its timeless message continues to inspire believers worldwide.",
   "@hymnStoryTemplate": {
     "placeholders": {
       "title": {
@@ -268,5 +268,17 @@
   "back": "Back",
   "favorite": "Favorite",
   "favoriteAdded": "Added to favorites",
-  "favoriteRemoved": "Removed from favorites"
+  "favoriteRemoved": "Removed from favorites",
+  "templateStory": "Template Story",
+  "fullHymnStoryComingSoon": "Full hymn story coming soon!",
+  "tapForMoreInfo": "Tap for more information",
+  "sortBy": "Sort by",
+  "sortByNumber": "Number",
+  "sortByDateAdded": "Date added",
+  "sortByTitle": "Title",
+  "sortByAuthor": "Author",
+  "sortOldestFirst": "Oldest first",
+  "sortNewestFirst": "Newest first",
+  "sortAscending": "Ascending",
+  "sortDescending": "Descending"
 }

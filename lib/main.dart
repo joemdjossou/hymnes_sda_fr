@@ -2,9 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hymnes_sda_fr/firebase_options.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'core/providers/language_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/repositories/hymn_repository.dart';
@@ -76,7 +77,7 @@ class HymnesApp extends StatelessWidget {
                   : ThemeMode.system;
 
               return MaterialApp(
-                title: 'Hymnes & Louanges Adventistes',
+                title: 'Hymnes & Louanges Adventiste',
                 debugShowCheckedModeBanner: false,
                 theme: AppTheme.lightTheme,
                 darkTheme: AppTheme.darkTheme,

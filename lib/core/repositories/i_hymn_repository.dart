@@ -1,3 +1,4 @@
+import '../../features/favorites/models/favorite_hymn.dart';
 import '../models/hymn.dart';
 
 /// Abstract interface for hymn repository operations
@@ -10,7 +11,8 @@ abstract class IHymnRepository {
 
 /// Abstract interface for favorite operations
 abstract class IFavoriteRepository {
-  Future<List<Hymn>> getFavorites();
+  Future<List<FavoriteHymn>> getFavorites();
+  Future<List<Hymn>> getFavoritesAsHymns();
   Future<void> addToFavorites(Hymn hymn);
   Future<void> removeFromFavorites(String hymnNumber);
   bool isFavorite(String hymnNumber);

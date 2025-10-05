@@ -1,5 +1,5 @@
 name: hymnes_sda_fr
-description: "A Flutter app for French Seventh-day Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities."
+description: "An app for French Seventh-day Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities."
 publish_to: "none"
 
 version: 1.0.0+1

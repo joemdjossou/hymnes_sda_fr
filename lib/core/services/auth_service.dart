@@ -43,12 +43,25 @@ class AuthService {
   Future<UserCredential?> createUserWithEmailAndPassword({
     required String email,
     required String password,
+    String? firstName,
+    String? lastName,
+    String? phoneNumber,
   }) async {
     try {
       final credential = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+
+      // Update user profile with additional information
+      if (credential.user != null) {
+        await _updateUserProfile(
+          firstName: firstName,
+          lastName: lastName,
+          phoneNumber: phoneNumber,
+        );
+      }
+
       return credential;
     } on FirebaseAuthException catch (e) {
       throw _handleAuthException(e);
@@ -159,6 +172,110 @@ class AuthService {
     } catch (e) {
       throw 'UNEXPECTED_ERROR';
     }
+  }
+
+  // Update user profile
+  Future<void> updateUserProfile({
+    String? firstName,
+    String? lastName,
+    String? phoneNumber,
+    String? photoURL,
+  }) async {
+    try {
+      final user = currentUser;
+      if (user == null) {
+        throw 'USER_NOT_LOGGED_IN';
+      }
+
+      await _updateUserProfile(
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        photoURL: photoURL,
+      );
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'UNEXPECTED_ERROR';
+    }
+  }
+
+  // Link phone number to current user
+  Future<void> linkPhoneNumber(String phoneNumber) async {
+    try {
+      final user = currentUser;
+      if (user == null) {
+        throw 'USER_NOT_LOGGED_IN';
+      }
+
+      // Note: Phone authentication requires additional setup
+      // This is a placeholder for phone number linking
+      // Phone number linking requires PhoneAuthCredential which needs SMS verification
+      // For now, we'll just store the phone number in user metadata
+      // await user.updatePhoneNumber(phoneAuthCredential);
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'UNEXPECTED_ERROR';
+    }
+  }
+
+  // Send email verification
+  Future<void> sendEmailVerification() async {
+    try {
+      final user = currentUser;
+      if (user == null) {
+        throw 'USER_NOT_LOGGED_IN';
+      }
+
+      await user.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'UNEXPECTED_ERROR';
+    }
+  }
+
+  // Reload user data
+  Future<void> reloadUser() async {
+    try {
+      final user = currentUser;
+      if (user != null) {
+        await user.reload();
+      }
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    } catch (e) {
+      throw 'UNEXPECTED_ERROR';
+    }
+  }
+
+  // Private helper method to update user profile
+  Future<void> _updateUserProfile({
+    String? firstName,
+    String? lastName,
+    String? phoneNumber,
+    String? photoURL,
+  }) async {
+    final user = currentUser;
+    if (user == null) return;
+
+    // Build display name from first and last name
+    String? displayName;
+    if (firstName != null && lastName != null) {
+      displayName = '$firstName $lastName';
+    } else if (firstName != null) {
+      displayName = firstName;
+    }
+
+    // Update user profile
+    await user.updateDisplayName(displayName);
+    if (photoURL != null) {
+      await user.updatePhotoURL(photoURL);
+    }
+
+    // Reload user to get updated data
+    await user.reload();
   }
 
   // Handle Firebase Auth exceptions

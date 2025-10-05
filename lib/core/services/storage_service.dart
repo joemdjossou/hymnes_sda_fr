@@ -1,6 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../features/favorites/models/favorite_hymn.dart';
 import '../models/hymn.dart';
 
 class StorageService {
@@ -27,7 +28,9 @@ class StorageService {
 
   // Favorites Management
   Future<void> addToFavorites(Hymn hymn) async {
-    await _favoritesBoxInstance.put(hymn.number, hymn.toJson());
+    final hymnData = hymn.toJson();
+    hymnData['dateAdded'] = DateTime.now().millisecondsSinceEpoch;
+    await _favoritesBoxInstance.put(hymn.number, hymnData);
   }
 
   Future<void> removeFromFavorites(String hymnNumber) async {
@@ -38,19 +41,24 @@ class StorageService {
     return _favoritesBoxInstance.containsKey(hymnNumber);
   }
 
-  Future<List<Hymn>> getFavorites() async {
+  Future<List<FavoriteHymn>> getFavorites() async {
     try {
       final jsonList = _favoritesBoxInstance.values.toList();
       return jsonList.map((json) {
         // Convert Map<dynamic, dynamic> to Map<String, dynamic>
         final Map<String, dynamic> hymnJson = Map<String, dynamic>.from(json);
-        return Hymn.fromJson(hymnJson);
+        return FavoriteHymn.fromJson(hymnJson);
       }).toList();
     } catch (e) {
       print('Error loading favorites: $e');
       // Return empty list if there's an error
       return [];
     }
+  }
+
+  Future<List<Hymn>> getFavoritesAsHymns() async {
+    final favorites = await getFavorites();
+    return favorites.map((favorite) => favorite.hymn).toList();
   }
 
   // Recently Played Management

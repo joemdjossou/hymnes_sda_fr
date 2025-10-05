@@ -132,7 +132,7 @@ class HymnsBloc extends Bloc<HymnsEvent, HymnsState> {
       emit(HymnsLoading());
 
       final hymns = await _hymnRepository.getAllHymns();
-      final favorites = await _hymnRepository.getFavorites();
+      final favorites = await _hymnRepository.getFavoritesAsHymns();
       final recentlyPlayed = await _hymnRepository.getRecentlyPlayed();
 
       emit(HymnsLoaded(
@@ -168,7 +168,7 @@ class HymnsBloc extends Bloc<HymnsEvent, HymnsState> {
     try {
       final currentState = state;
       if (currentState is HymnsLoaded) {
-        final favorites = await _hymnRepository.getFavorites();
+        final favorites = await _hymnRepository.getFavoritesAsHymns();
 
         emit(currentState.copyWith(favorites: favorites));
       }
@@ -184,7 +184,7 @@ class HymnsBloc extends Bloc<HymnsEvent, HymnsState> {
 
       final currentState = state;
       if (currentState is HymnsLoaded) {
-        final updatedFavorites = await _hymnRepository.getFavorites();
+        final updatedFavorites = await _hymnRepository.getFavoritesAsHymns();
 
         emit(currentState.copyWith(favorites: updatedFavorites));
       }
@@ -200,7 +200,7 @@ class HymnsBloc extends Bloc<HymnsEvent, HymnsState> {
 
       final currentState = state;
       if (currentState is HymnsLoaded) {
-        final updatedFavorites = await _hymnRepository.getFavorites();
+        final updatedFavorites = await _hymnRepository.getFavoritesAsHymns();
 
         emit(currentState.copyWith(favorites: updatedFavorites));
       }

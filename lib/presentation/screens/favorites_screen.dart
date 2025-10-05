@@ -11,6 +11,7 @@ import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../../shared/widgets/shimmer_loading.dart';
 import '../widgets/auth_required_widget.dart';
+import '../widgets/favorites_widgets/favorites_sort_controls.dart';
 import 'hymn_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
@@ -129,6 +130,19 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                 const SliverToBoxAdapter(
                   child: Gap(20),
                 ),
+
+                // Sort Controls
+                if (state is FavoritesLoaded && state.favorites.isNotEmpty)
+                  SliverToBoxAdapter(
+                    child: FavoritesSortControls(
+                      currentSortOption: state.currentSortOption,
+                      onSortChanged: (sortOption) {
+                        context
+                            .read<FavoritesBloc>()
+                            .add(SortFavorites(sortOption));
+                      },
+                    ),
+                  ),
                 // Content Section
                 if (state is FavoritesLoading)
                   SliverPadding(

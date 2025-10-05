@@ -16,8 +16,10 @@ class MainNavigationScreen extends StatefulWidget {
   State<MainNavigationScreen> createState() => _MainNavigationScreenState();
 }
 
-class _MainNavigationScreenState extends State<MainNavigationScreen> {
+class _MainNavigationScreenState extends State<MainNavigationScreen>
+    with WidgetsBindingObserver {
   int _currentIndex = 0;
+  bool _isKeyboardVisible = false;
 
   late final List<Widget> _screens;
 
@@ -30,6 +32,29 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       const FavoritesScreen(),
       const SettingsScreen(),
     ];
+
+    // Add observer for keyboard visibility changes
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeMetrics() {
+    super.didChangeMetrics();
+    final bottomInset = WidgetsBinding
+        .instance.platformDispatcher.views.first.viewInsets.bottom;
+    final newKeyboardVisible = bottomInset > 0;
+
+    if (newKeyboardVisible != _isKeyboardVisible) {
+      setState(() {
+        _isKeyboardVisible = newKeyboardVisible;
+      });
+    }
   }
 
   @override
@@ -43,11 +68,23 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             index: _currentIndex,
             children: _screens,
           ),
-          Positioned(
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeInOutCubic,
             left: 20,
             right: 20,
-            bottom: 8,
-            child: _buildGlassNavBar(l10n),
+            bottom: _isKeyboardVisible ? -120 : 8,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeInOut,
+              opacity: _isKeyboardVisible ? 0.0 : 1.0,
+              child: AnimatedScale(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOutBack,
+                scale: _isKeyboardVisible ? 0.8 : 1.0,
+                child: _buildGlassNavBar(l10n),
+              ),
+            ),
           ),
         ],
       ),
@@ -143,8 +180,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           });
         },
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeInOutCubic,
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 13),
           margin: const EdgeInsets.symmetric(horizontal: 4),
           decoration: BoxDecoration(
@@ -171,7 +208,16 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AnimatedSwitcher(
-                duration: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return ScaleTransition(
+                    scale: animation,
+                    child: FadeTransition(
+                      opacity: animation,
+                      child: child,
+                    ),
+                  );
+                },
                 child: Icon(
                   activeIcon,
                   key: ValueKey(isActive),
@@ -183,7 +229,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               ),
               const SizedBox(height: 2),
               AnimatedDefaultTextStyle(
-                duration: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 300),
                 style: TextStyle(
                   color: isActive
                       ? AppColors.primary

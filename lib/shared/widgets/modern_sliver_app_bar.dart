@@ -7,11 +7,15 @@ import '../../shared/constants/app_colors.dart';
 class ModernSliverAppBar extends StatelessWidget {
   final String title;
   final String? subtitle;
+  final String? style;
+  final String? author;
+  final String? composer;
   final IconData icon;
   final double expandedHeight;
   final bool showCollapsedAppBar;
   final List<Widget>? actions;
   final Widget? heroContent;
+  final Widget? leading;
   final AnimationController? animationController;
   final Animation<double>? fadeAnimation;
   final Animation<Offset>? slideAnimation;
@@ -20,11 +24,15 @@ class ModernSliverAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.subtitle,
+    this.style,
+    this.author,
+    this.composer,
     required this.icon,
     this.expandedHeight = 140,
     required this.showCollapsedAppBar,
     this.actions,
     this.heroContent,
+    this.leading,
     this.animationController,
     this.fadeAnimation,
     this.slideAnimation,
@@ -45,6 +53,7 @@ class ModernSliverAppBar extends StatelessWidget {
           showCollapsedAppBar ? AppColors.surface(context) : Colors.transparent,
       elevation: 0,
       automaticallyImplyLeading: false,
+      leading: leading,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Theme.of(context).brightness == Brightness.dark
@@ -100,11 +109,23 @@ class ModernSliverAppBar extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          if (subtitle != null)
-                            Text(
-                              subtitle!,
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: AppColors.textSecondary(context),
+                          if (style != null)
+                            Container(
+                              margin: const EdgeInsets.only(top: 4),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: AppColors.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                style!,
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                         ],
@@ -115,7 +136,7 @@ class ModernSliverAppBar extends StatelessWidget {
               ),
             )
           : null,
-      actions: showCollapsedAppBar ? actions : null,
+      actions: actions,
       flexibleSpace: FlexibleSpaceBar(
         background: animationController != null
             ? AnimatedBuilder(
@@ -174,51 +195,101 @@ class ModernSliverAppBar extends StatelessWidget {
 
   Widget _buildDefaultHeroContent(
       BuildContext context, AppLocalizations l10n, ThemeData theme) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            gradient: AppColors.primaryGradient(context),
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.primary.withValues(alpha: 0.3),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
+        Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                gradient: AppColors.primaryGradient(context),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primary.withValues(alpha: 0.3),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
               ),
-            ],
-          ),
-          child: Icon(
-            icon,
-            color: Colors.white,
-            size: 28,
-          ),
+              child: Icon(
+                icon,
+                color: Colors.white,
+                size: 28,
+              ),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.headlineMedium?.copyWith(
+                      color: AppColors.textPrimary(context),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  if (subtitle != null) ...[
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle!,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: AppColors.textSecondary(context),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ],
         ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        if (author != null || composer != null || style != null) ...[
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 12,
+            runSpacing: 8,
             children: [
-              Text(
-                title,
-                style: theme.textTheme.headlineMedium?.copyWith(
-                  color: AppColors.textPrimary(context),
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              if (subtitle != null) ...[
-                const SizedBox(height: 4),
-                Text(
-                  subtitle!,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.textSecondary(context),
+              if (style != null)
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    style!,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ],
+              if (composer != null && composer!.isNotEmpty)
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    color:
+                        AppColors.textSecondary(context).withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    '${l10n.composer}: $composer',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: AppColors.textSecondary(context),
+                    ),
+                  ),
+                ),
             ],
           ),
-        ),
+        ],
       ],
     );
   }

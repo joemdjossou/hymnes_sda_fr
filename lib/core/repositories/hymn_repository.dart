@@ -1,3 +1,4 @@
+import '../../features/favorites/models/favorite_hymn.dart';
 import '../models/hymn.dart';
 import '../services/hymn_data_service.dart';
 import '../services/storage_service.dart';
@@ -55,8 +56,13 @@ class HymnRepository
 
   // Get favorites
   @override
-  Future<List<Hymn>> getFavorites() async {
+  Future<List<FavoriteHymn>> getFavorites() async {
     return _storageService.getFavorites();
+  }
+
+  @override
+  Future<List<Hymn>> getFavoritesAsHymns() async {
+    return _storageService.getFavoritesAsHymns();
   }
 
   // Add to favorites

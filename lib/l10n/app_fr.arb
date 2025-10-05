@@ -61,7 +61,7 @@
   "favoritesAndHistory": "Favoris et Histoire",
   "personalCollection": "Collection Personnelle",
   "favoritesDescription": "Sauvegardez vos cantiques préférés et explorez leur riche histoire. Apprenez sur les auteurs et les histoires derrière chaque chant.",
-  "hymnStoryTemplate": "Ce cantique bien-aimé \"{title}\" a été écrit par {author}{composer}.\n\nLe cantique a été une source de réconfort et d'inspiration pour d'innombrables croyants au fil des années. Son message intemporel continue de résonner avec les congrégations du monde entier.\n\nLe style {style} de ce cantique le rend particulièrement adapté aux services d'adoration et à la dévotion personnelle. La mélodie et les paroles travaillent ensemble pour créer une expression puissante de foi et de dévotion.\n\nCe cantique témoigne du pouvoir durable de la musique sacrée à toucher les cœurs et élever les esprits dans l'adoration et la louange.",
+  "hymnStoryTemplate": "Ce cantique bien-aimé \"{title}\" a été écrit par {author}{composer}. Le style {style} le rend parfait pour l'adoration et la dévotion personnelle. Son message intemporel continue d'inspirer les croyants du monde entier.",
   "@hymnStoryTemplate": {
     "placeholders": {
       "title": {
@@ -268,5 +268,17 @@
   "back": "Retour",
   "favorite": "Favori",
   "favoriteAdded": "Ajouté aux favoris",
-  "favoriteRemoved": "Retiré des favoris"
+  "favoriteRemoved": "Retiré des favoris",
+  "templateStory": "Histoire Modèle",
+  "fullHymnStoryComingSoon": "L'histoire complète du cantique arrive bientôt !",
+  "tapForMoreInfo": "Appuyez pour plus d'informations",
+  "sortBy": "Trier par",
+  "sortByNumber": "Numéro",
+  "sortByDateAdded": "Date d'ajout",
+  "sortByTitle": "Titre",
+  "sortByAuthor": "Auteur",
+  "sortOldestFirst": "Plus ancien en premier",
+  "sortNewestFirst": "Plus récent en premier",
+  "sortAscending": "Croissant",
+  "sortDescending": "Décroissant"
 }

@@ -31,14 +31,21 @@ class SignInRequested extends AuthEvent {
 class SignUpRequested extends AuthEvent {
   final String email;
   final String password;
+  final String? firstName;
+  final String? lastName;
+  final String? phoneNumber;
 
   const SignUpRequested({
     required this.email,
     required this.password,
+    this.firstName,
+    this.lastName,
+    this.phoneNumber,
   });
 
   @override
-  List<Object> get props => [email, password];
+  List<Object?> get props =>
+      [email, password, firstName, lastName, phoneNumber];
 }
 
 class GoogleSignInRequested extends AuthEvent {}
@@ -57,6 +64,36 @@ class PasswordResetRequested extends AuthEvent {
 class SignOutRequested extends AuthEvent {}
 
 class DeleteAccountRequested extends AuthEvent {}
+
+class UpdateProfileRequested extends AuthEvent {
+  final String? firstName;
+  final String? lastName;
+  final String? phoneNumber;
+  final String? photoURL;
+
+  const UpdateProfileRequested({
+    this.firstName,
+    this.lastName,
+    this.phoneNumber,
+    this.photoURL,
+  });
+
+  @override
+  List<Object?> get props => [firstName, lastName, phoneNumber, photoURL];
+}
+
+class SendEmailVerificationRequested extends AuthEvent {}
+
+class LinkPhoneNumberRequested extends AuthEvent {
+  final String phoneNumber;
+
+  const LinkPhoneNumberRequested(this.phoneNumber);
+
+  @override
+  List<Object> get props => [phoneNumber];
+}
+
+class ReloadUserRequested extends AuthEvent {}
 
 // States
 abstract class AuthState extends Equatable {
@@ -99,6 +136,35 @@ class PasswordResetSent extends AuthState {
   List<Object> get props => [email];
 }
 
+class ProfileUpdated extends AuthState {
+  final UserModel user;
+
+  const ProfileUpdated(this.user);
+
+  @override
+  List<Object> get props => [user];
+}
+
+class EmailVerificationSent extends AuthState {}
+
+class PhoneNumberLinked extends AuthState {
+  final String phoneNumber;
+
+  const PhoneNumberLinked(this.phoneNumber);
+
+  @override
+  List<Object> get props => [phoneNumber];
+}
+
+class UserReloaded extends AuthState {
+  final UserModel user;
+
+  const UserReloaded(this.user);
+
+  @override
+  List<Object> get props => [user];
+}
+
 // BLoC
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthService _authService;
@@ -114,6 +180,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<PasswordResetRequested>(_onPasswordResetRequested);
     on<SignOutRequested>(_onSignOutRequested);
     on<DeleteAccountRequested>(_onDeleteAccountRequested);
+    on<UpdateProfileRequested>(_onUpdateProfileRequested);
+    on<SendEmailVerificationRequested>(_onSendEmailVerificationRequested);
+    on<LinkPhoneNumberRequested>(_onLinkPhoneNumberRequested);
+    on<ReloadUserRequested>(_onReloadUserRequested);
 
     // Listen to auth state changes
     _authService.authStateChanges.listen((User? user) {
@@ -172,6 +242,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final credential = await _authService.createUserWithEmailAndPassword(
         email: event.email,
         password: event.password,
+        firstName: event.firstName,
+        lastName: event.lastName,
+        phoneNumber: event.phoneNumber,
       );
 
       if (credential?.user != null) {
@@ -254,6 +327,75 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     try {
       await _authService.deleteAccount();
       emit(Unauthenticated());
+    } catch (e) {
+      emit(AuthError(e.toString()));
+    }
+  }
+
+  Future<void> _onUpdateProfileRequested(
+    UpdateProfileRequested event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(AuthLoading());
+    try {
+      await _authService.updateUserProfile(
+        firstName: event.firstName,
+        lastName: event.lastName,
+        phoneNumber: event.phoneNumber,
+        photoURL: event.photoURL,
+      );
+
+      // Reload user data to get updated information
+      await _authService.reloadUser();
+      final user = _authService.currentUser;
+      if (user != null) {
+        emit(ProfileUpdated(UserModel.fromFirebaseUser(user)));
+      } else {
+        emit(const AuthError('Failed to update profile'));
+      }
+    } catch (e) {
+      emit(AuthError(e.toString()));
+    }
+  }
+
+  Future<void> _onSendEmailVerificationRequested(
+    SendEmailVerificationRequested event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(AuthLoading());
+    try {
+      await _authService.sendEmailVerification();
+      emit(EmailVerificationSent());
+    } catch (e) {
+      emit(AuthError(e.toString()));
+    }
+  }
+
+  Future<void> _onLinkPhoneNumberRequested(
+    LinkPhoneNumberRequested event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(AuthLoading());
+    try {
+      await _authService.linkPhoneNumber(event.phoneNumber);
+      emit(PhoneNumberLinked(event.phoneNumber));
+    } catch (e) {
+      emit(AuthError(e.toString()));
+    }
+  }
+
+  Future<void> _onReloadUserRequested(
+    ReloadUserRequested event,
+    Emitter<AuthState> emit,
+  ) async {
+    try {
+      await _authService.reloadUser();
+      final user = _authService.currentUser;
+      if (user != null) {
+        emit(UserReloaded(UserModel.fromFirebaseUser(user)));
+      } else {
+        emit(Unauthenticated());
+      }
     } catch (e) {
       emit(AuthError(e.toString()));
     }

@@ -80,44 +80,6 @@ class AudioPlayerWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header with hymn info
-                Row(
-                  children: [
-                    Icon(
-                      Icons.music_note,
-                      color: AppColors.primary,
-                      size: 24,
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Hymn $hymnNumber',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primary,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            hymnTitle,
-                            style: TextStyle(
-                              color: AppColors.textSecondary(context),
-                              fontSize: 14,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 16),
-
                 // Loading indicator
                 if (isCurrentHymn && isLoading) ...[
                   Container(

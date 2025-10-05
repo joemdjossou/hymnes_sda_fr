@@ -72,87 +72,83 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
 
     // Don't show the widget if no PDFs are available and not loading
     if (!_isLoading && (_availablePdfs?.isEmpty ?? true) && !_hasError) {
       return const SizedBox.shrink();
     }
 
-    return GestureDetector(
-      onTap: _availablePdfs?.isNotEmpty == true ? _showMusicSheets : null,
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              AppColors.primary.withValues(alpha: 0.1),
-              AppColors.primary.withValues(alpha: 0.05),
-            ],
-          ),
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: AppColors.primary.withValues(alpha: 0.3),
-            width: 2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.primary.withValues(alpha: 0.15),
-              blurRadius: 15,
-              offset: const Offset(0, 5),
-            ),
-          ],
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.cardBackground(context),
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          color: AppColors.border(context).withValues(alpha: 0.5),
         ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                gradient: AppColors.primaryGradient(context),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.primary.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.textPrimary(context).withValues(alpha: 0.08),
+            blurRadius: 12,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: _availablePdfs?.isNotEmpty == true ? _showMusicSheets : null,
+          borderRadius: BorderRadius.circular(16),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    gradient: AppColors.primaryGradient(context),
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.primary.withValues(alpha: 0.3),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              child: const Icon(
-                Icons.music_note,
-                color: Colors.white,
-                size: 24,
-              ),
+                  child: const Icon(
+                    Icons.music_note_rounded,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        l10n.musicSheet,
+                        style: theme.textTheme.titleLarge?.copyWith(
+                          color: AppColors.textPrimary(context),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        _getSubtitleText(l10n),
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: AppColors.textSecondary(context),
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                _buildTrailingWidget(),
+              ],
             ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    l10n.musicSheet,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.textPrimary(context),
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    _getSubtitleText(l10n),
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.textSecondary(context)
-                          .withValues(alpha: 0.8),
-                      fontStyle: FontStyle.italic,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            _buildTrailingWidget(),
-          ],
+          ),
         ),
       ),
     );
@@ -173,12 +169,19 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
 
   Widget _buildTrailingWidget() {
     if (_isLoading) {
-      return const SizedBox(
-        width: 20,
-        height: 20,
-        child: CircularProgressIndicator(
-          strokeWidth: 2,
-          color: AppColors.primary,
+      return Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: AppColors.primary.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: const SizedBox(
+          width: 16,
+          height: 16,
+          child: CircularProgressIndicator(
+            strokeWidth: 2,
+            color: AppColors.primary,
+          ),
         ),
       );
     } else if (_hasError) {
@@ -186,10 +189,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: AppColors.error.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: const Icon(
-          Icons.error_outline,
+          Icons.error_outline_rounded,
           color: AppColors.error,
           size: 16,
         ),
@@ -199,10 +202,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: const Icon(
-          Icons.arrow_forward_ios,
+          Icons.arrow_forward_ios_rounded,
           color: AppColors.primary,
           size: 16,
         ),
@@ -212,10 +215,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: AppColors.textSecondary(context).withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Icon(
-          Icons.music_off,
+          Icons.music_off_rounded,
           color: AppColors.textSecondary(context).withValues(alpha: 0.5),
           size: 16,
         ),

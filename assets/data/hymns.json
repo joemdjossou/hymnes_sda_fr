@@ -12,7 +12,8 @@
     "bassFile": "B001",
     "midiFile": "h1",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "2",
@@ -27,7 +28,8 @@
     "bassFile": "B002",
     "midiFile": "h2",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "3",
@@ -42,7 +44,8 @@
     "bassFile": "B003",
     "midiFile": "h3",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "4",
@@ -57,7 +60,8 @@
     "bassFile": "B004",
     "midiFile": "h4",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "5",
@@ -72,7 +76,8 @@
     "bassFile": "B005",
     "midiFile": "h5",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "6",
@@ -87,7 +92,8 @@
     "bassFile": "B006",
     "midiFile": "h6",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "7",
@@ -102,7 +108,8 @@
     "bassFile": "B007",
     "midiFile": "h7",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "8",
@@ -117,7 +124,8 @@
     "bassFile": "B008",
     "midiFile": "h8",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "9",
@@ -132,7 +140,8 @@
     "bassFile": "B009",
     "midiFile": "h9",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "10",
@@ -147,7 +156,8 @@
     "bassFile": "B010",
     "midiFile": "h10",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "11",
@@ -162,7 +172,8 @@
     "bassFile": "B011",
     "midiFile": "h11",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "12",
@@ -177,7 +188,8 @@
     "bassFile": "B012",
     "midiFile": "h12",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "13",
@@ -192,7 +204,8 @@
     "bassFile": "B013",
     "midiFile": "h13",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "14",
@@ -207,7 +220,8 @@
     "bassFile": "B014",
     "midiFile": "h14",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "15",
@@ -222,7 +236,8 @@
     "bassFile": "B015",
     "midiFile": "h15",
     "theme": "PSAUMES",
-    "subtheme": "Psaumes"
+    "subtheme": "Psaumes",
+    "story": ""
   },
   {
     "number": "16",
@@ -237,7 +252,8 @@
     "bassFile": "B016",
     "midiFile": "h16",
     "theme": "DIEU",
-    "subtheme": "Le Créateur"
+    "subtheme": "Le Créateur",
+    "story": ""
   },
   {
     "number": "17",
@@ -252,7 +268,8 @@
     "bassFile": "B017",
     "midiFile": "h17",
     "theme": "DIEU",
-    "subtheme": "Le Créateur"
+    "subtheme": "Le Créateur",
+    "story": ""
   },
   {
     "number": "18",
@@ -267,7 +284,8 @@
     "bassFile": "B018",
     "midiFile": "h18",
     "theme": "DIEU",
-    "subtheme": "Le Créateur"
+    "subtheme": "Le Créateur",
+    "story": ""
   },
   {
     "number": "19",
@@ -282,7 +300,8 @@
     "bassFile": "B019",
     "midiFile": "h19",
     "theme": "DIEU",
-    "subtheme": "Le Créateur"
+    "subtheme": "Le Créateur",
+    "story": ""
   },
   {
     "number": "20",
@@ -297,7 +316,8 @@
     "bassFile": "B020",
     "midiFile": "h20",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "21",
@@ -312,7 +332,8 @@
     "bassFile": "B021",
     "midiFile": "h21",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "22",
@@ -327,7 +348,8 @@
     "bassFile": "B022",
     "midiFile": "h22",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "23",
@@ -342,7 +364,8 @@
     "bassFile": "B023",
     "midiFile": "h23",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "24",
@@ -357,7 +380,8 @@
     "bassFile": "B024",
     "midiFile": "h24",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "25",
@@ -372,7 +396,8 @@
     "bassFile": "B025",
     "midiFile": "h25",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "26",
@@ -387,7 +412,8 @@
     "bassFile": "B026",
     "midiFile": "h26",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "27",
@@ -402,7 +428,8 @@
     "bassFile": "B027",
     "midiFile": "h27",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "28",
@@ -417,7 +444,8 @@
     "bassFile": "B028",
     "midiFile": "h28",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "29",
@@ -432,7 +460,8 @@
     "bassFile": "B029",
     "midiFile": "h29",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "30",
@@ -447,7 +476,8 @@
     "bassFile": "B030",
     "midiFile": "h30",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "31",
@@ -462,7 +492,8 @@
     "bassFile": "B031",
     "midiFile": "h31",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "32",
@@ -477,7 +508,8 @@
     "bassFile": "B032",
     "midiFile": "h32",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "33",
@@ -492,7 +524,8 @@
     "bassFile": "B033",
     "midiFile": "h33",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "34",
@@ -507,7 +540,8 @@
     "bassFile": "B034",
     "midiFile": "h34",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "35",
@@ -522,7 +556,8 @@
     "bassFile": "B035",
     "midiFile": "h35",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "36",
@@ -537,7 +572,8 @@
     "bassFile": "B036",
     "midiFile": "h36",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "37",
@@ -552,7 +588,8 @@
     "bassFile": "B037",
     "midiFile": "h37",
     "theme": "DIEU",
-    "subtheme": "Adoration et louanges"
+    "subtheme": "Adoration et louanges",
+    "story": ""
   },
   {
     "number": "38",
@@ -567,7 +604,8 @@
     "bassFile": "B038",
     "midiFile": "h38",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "39",
@@ -582,7 +620,8 @@
     "bassFile": "B039",
     "midiFile": "h39",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "40",
@@ -597,7 +636,8 @@
     "bassFile": "B040",
     "midiFile": "h40",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "41",
@@ -612,7 +652,8 @@
     "bassFile": "B041",
     "midiFile": "h41",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "42",
@@ -627,7 +668,8 @@
     "bassFile": "B042",
     "midiFile": "h42",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "43",
@@ -642,7 +684,8 @@
     "bassFile": "B043",
     "midiFile": "h43",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "44",
@@ -657,7 +700,8 @@
     "bassFile": "B044",
     "midiFile": "h44",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "45",
@@ -672,7 +716,8 @@
     "bassFile": "B045",
     "midiFile": "h45",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "46",
@@ -687,7 +732,8 @@
     "bassFile": "B046",
     "midiFile": "h46",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "47",
@@ -702,7 +748,8 @@
     "bassFile": "B047",
     "midiFile": "h47",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "48",
@@ -717,7 +764,8 @@
     "bassFile": "B048",
     "midiFile": "h48",
     "theme": "DIEU",
-    "subtheme": "L'amour de Dieu"
+    "subtheme": "L'amour de Dieu",
+    "story": ""
   },
   {
     "number": "49",
@@ -732,7 +780,8 @@
     "bassFile": "B049",
     "midiFile": "h49",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "50",
@@ -747,7 +796,8 @@
     "bassFile": "B050",
     "midiFile": "h50",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "51",
@@ -762,7 +812,8 @@
     "bassFile": "B051",
     "midiFile": "h51",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "52",
@@ -777,7 +828,8 @@
     "bassFile": "B052",
     "midiFile": "h52",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "53",
@@ -792,7 +844,8 @@
     "bassFile": "B053",
     "midiFile": "h53",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "54",
@@ -807,7 +860,8 @@
     "bassFile": "B054",
     "midiFile": "h54",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "55",
@@ -822,7 +876,8 @@
     "bassFile": "B055",
     "midiFile": "h55",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "56",
@@ -837,7 +892,8 @@
     "bassFile": "B056",
     "midiFile": "h56",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa naissance"
+    "subtheme": "Sa naissance",
+    "story": ""
   },
   {
     "number": "57",
@@ -852,7 +908,8 @@
     "bassFile": "B057",
     "midiFile": "h57",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "58",
@@ -867,7 +924,8 @@
     "bassFile": "B058",
     "midiFile": "h58",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "59",
@@ -882,7 +940,8 @@
     "bassFile": "B059",
     "midiFile": "h59",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "60",
@@ -897,7 +956,8 @@
     "bassFile": "B060",
     "midiFile": "h60",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "61",
@@ -912,7 +972,8 @@
     "bassFile": "B061",
     "midiFile": "h61",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "62",
@@ -927,7 +988,8 @@
     "bassFile": "B062",
     "midiFile": "h62",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "63",
@@ -942,7 +1004,8 @@
     "bassFile": "B063",
     "midiFile": "h63",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "64",
@@ -957,7 +1020,8 @@
     "bassFile": "B064",
     "midiFile": "h64",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son ministère"
+    "subtheme": "Son ministère",
+    "story": ""
   },
   {
     "number": "65",
@@ -972,7 +1036,8 @@
     "bassFile": "B065",
     "midiFile": "h65",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "66",
@@ -987,7 +1052,8 @@
     "bassFile": "B066",
     "midiFile": "h66",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "67",
@@ -1002,7 +1068,8 @@
     "bassFile": "B067",
     "midiFile": "h67",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "68",
@@ -1017,7 +1084,8 @@
     "bassFile": "B068",
     "midiFile": "h68",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "69",
@@ -1032,7 +1100,8 @@
     "bassFile": "B069",
     "midiFile": "h69",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "70",
@@ -1047,7 +1116,8 @@
     "bassFile": "B070",
     "midiFile": "h70",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "71",
@@ -1062,7 +1132,8 @@
     "bassFile": "B071",
     "midiFile": "h71",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "72",
@@ -1077,7 +1148,8 @@
     "bassFile": "B072",
     "midiFile": "h72",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "73",
@@ -1092,7 +1164,8 @@
     "bassFile": "B073",
     "midiFile": "h73",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "74",
@@ -1107,7 +1180,8 @@
     "bassFile": "B074",
     "midiFile": "h74",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "75",
@@ -1122,7 +1196,8 @@
     "bassFile": "B075",
     "midiFile": "h75",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "76",
@@ -1137,7 +1212,8 @@
     "bassFile": "B076",
     "midiFile": "h76",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "77",
@@ -1152,7 +1228,8 @@
     "bassFile": "B077",
     "midiFile": "h77",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "78",
@@ -1167,7 +1244,8 @@
     "bassFile": "B078",
     "midiFile": "h78",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa mort"
+    "subtheme": "Sa mort",
+    "story": ""
   },
   {
     "number": "79",
@@ -1182,7 +1260,8 @@
     "bassFile": "B079",
     "midiFile": "h79",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "80",
@@ -1197,7 +1276,8 @@
     "bassFile": "B080",
     "midiFile": "h80",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "81",
@@ -1212,7 +1292,8 @@
     "bassFile": "B081",
     "midiFile": "h81",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "82",
@@ -1227,7 +1308,8 @@
     "bassFile": "B082",
     "midiFile": "h82",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "83",
@@ -1242,7 +1324,8 @@
     "bassFile": "B083",
     "midiFile": "h83",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "84",
@@ -1257,7 +1340,8 @@
     "bassFile": "B084",
     "midiFile": "h84",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Sa résurrection et son ascension"
+    "subtheme": "Sa résurrection et son ascension",
+    "story": ""
   },
   {
     "number": "85",
@@ -1272,7 +1356,8 @@
     "bassFile": "B085",
     "midiFile": "h85",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "86",
@@ -1287,7 +1372,8 @@
     "bassFile": "B086",
     "midiFile": "h86",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "87",
@@ -1302,7 +1388,8 @@
     "bassFile": "B087",
     "midiFile": "h87",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "88",
@@ -1317,7 +1404,8 @@
     "bassFile": "B088",
     "midiFile": "h88",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "89",
@@ -1332,7 +1420,8 @@
     "bassFile": "B089",
     "midiFile": "h89",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "90",
@@ -1347,7 +1436,8 @@
     "bassFile": "B090",
     "midiFile": "h90",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "91",
@@ -1362,7 +1452,8 @@
     "bassFile": "B091",
     "midiFile": "h91",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son sacerdoce"
+    "subtheme": "Son sacerdoce",
+    "story": ""
   },
   {
     "number": "92",
@@ -1377,7 +1468,8 @@
     "bassFile": "B092",
     "midiFile": "h92",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "93",
@@ -1392,7 +1484,8 @@
     "bassFile": "B093",
     "midiFile": "h93",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "94",
@@ -1407,7 +1500,8 @@
     "bassFile": "B094",
     "midiFile": "h94",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "95",
@@ -1422,7 +1516,8 @@
     "bassFile": "B095",
     "midiFile": "h95",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "96",
@@ -1437,7 +1532,8 @@
     "bassFile": "B096",
     "midiFile": "h96",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "97",
@@ -1452,7 +1548,8 @@
     "bassFile": "B097",
     "midiFile": "h97",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "98",
@@ -1467,7 +1564,8 @@
     "bassFile": "B098",
     "midiFile": "h98",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "99",
@@ -1482,7 +1580,8 @@
     "bassFile": "B099",
     "midiFile": "h99",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "100",
@@ -1497,7 +1596,8 @@
     "bassFile": "B100",
     "midiFile": "h100",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "101",
@@ -1512,7 +1612,8 @@
     "bassFile": "B101",
     "midiFile": "h101",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "102",
@@ -1527,7 +1628,8 @@
     "bassFile": "B102",
     "midiFile": "h102",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "103",
@@ -1542,7 +1644,8 @@
     "bassFile": "B103",
     "midiFile": "h103",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "104",
@@ -1557,7 +1660,8 @@
     "bassFile": "B104",
     "midiFile": "h104",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "105",
@@ -1572,7 +1676,8 @@
     "bassFile": "B105",
     "midiFile": "h105",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "106",
@@ -1587,7 +1692,8 @@
     "bassFile": "B106",
     "midiFile": "h106",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son amour"
+    "subtheme": "Son amour",
+    "story": ""
   },
   {
     "number": "107",
@@ -1602,7 +1708,8 @@
     "bassFile": "B107",
     "midiFile": "h107",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "108",
@@ -1617,7 +1724,8 @@
     "bassFile": "B108",
     "midiFile": "h108",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "109",
@@ -1632,7 +1740,8 @@
     "bassFile": "B109",
     "midiFile": "h109",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "110",
@@ -1647,7 +1756,8 @@
     "bassFile": "B110",
     "midiFile": "h110",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "111",
@@ -1662,7 +1772,8 @@
     "bassFile": "B111",
     "midiFile": "h111",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "112",
@@ -1677,7 +1788,8 @@
     "bassFile": "B112",
     "midiFile": "h112",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "113",
@@ -1692,7 +1804,8 @@
     "bassFile": "B113",
     "midiFile": "h113",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "114",
@@ -1707,7 +1820,8 @@
     "bassFile": "B114",
     "midiFile": "h114",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "115",
@@ -1722,7 +1836,8 @@
     "bassFile": "B115",
     "midiFile": "h115",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "116",
@@ -1737,7 +1852,8 @@
     "bassFile": "B116",
     "midiFile": "h116",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "117",
@@ -1752,7 +1868,8 @@
     "bassFile": "B117",
     "midiFile": "h117",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "118",
@@ -1767,7 +1884,8 @@
     "bassFile": "B118",
     "midiFile": "h118",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "119",
@@ -1782,7 +1900,8 @@
     "bassFile": "B119",
     "midiFile": "h119",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "120",
@@ -1797,7 +1916,8 @@
     "bassFile": "B120",
     "midiFile": "h120",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "121",
@@ -1812,7 +1932,8 @@
     "bassFile": "B121",
     "midiFile": "h121",
     "theme": "JÉSUS-CHRIST",
-    "subtheme": "Son retour et son règne"
+    "subtheme": "Son retour et son règne",
+    "story": ""
   },
   {
     "number": "122",
@@ -1827,7 +1948,8 @@
     "bassFile": "B122",
     "midiFile": "h122",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "123",
@@ -1842,7 +1964,8 @@
     "bassFile": "B123",
     "midiFile": "h123",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "124",
@@ -1857,7 +1980,8 @@
     "bassFile": "B124",
     "midiFile": "h124",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "125",
@@ -1872,7 +1996,8 @@
     "bassFile": "B125",
     "midiFile": "h125",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "126",
@@ -1887,7 +2012,8 @@
     "bassFile": "B126",
     "midiFile": "h126",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "127",
@@ -1902,7 +2028,8 @@
     "bassFile": "B127",
     "midiFile": "h127",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "128",
@@ -1917,7 +2044,8 @@
     "bassFile": "B128",
     "midiFile": "h128",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "129",
@@ -1932,7 +2060,8 @@
     "bassFile": "B129",
     "midiFile": "h129",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "130",
@@ -1947,7 +2076,8 @@
     "bassFile": "B130",
     "midiFile": "h130",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "131",
@@ -1962,7 +2092,8 @@
     "bassFile": "B131",
     "midiFile": "h131",
     "theme": "LE SAINT-ESPRIT",
-    "subtheme": "Le Saint-Esprit"
+    "subtheme": "Le Saint-Esprit",
+    "story": ""
   },
   {
     "number": "132",
@@ -1977,7 +2108,8 @@
     "bassFile": "B132",
     "midiFile": "h132",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "133",
@@ -1992,7 +2124,8 @@
     "bassFile": "B133",
     "midiFile": "h133",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "134",
@@ -2007,7 +2140,8 @@
     "bassFile": "B134",
     "midiFile": "h134",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "135",
@@ -2022,7 +2156,8 @@
     "bassFile": "B135",
     "midiFile": "h135",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "136",
@@ -2037,7 +2172,8 @@
     "bassFile": "B136",
     "midiFile": "h136",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "137",
@@ -2052,7 +2188,8 @@
     "bassFile": "B137",
     "midiFile": "h137",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "138",
@@ -2067,7 +2204,8 @@
     "bassFile": "B138",
     "midiFile": "h138",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "139",
@@ -2082,7 +2220,8 @@
     "bassFile": "B139",
     "midiFile": "h139",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "140",
@@ -2097,7 +2236,8 @@
     "bassFile": "B140",
     "midiFile": "h140",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "141",
@@ -2112,7 +2252,8 @@
     "bassFile": "B141",
     "midiFile": "h141",
     "theme": "LA PAROLE DE DIEU, SA LOI",
-    "subtheme": "La parole de Dieu, Sa loi"
+    "subtheme": "La parole de Dieu, Sa loi",
+    "story": ""
   },
   {
     "number": "142",
@@ -2127,7 +2268,8 @@
     "bassFile": "B142",
     "midiFile": "h142",
     "theme": "L'ÉGLISE",
-    "subtheme": "Promesses"
+    "subtheme": "Promesses",
+    "story": ""
   },
   {
     "number": "143",
@@ -2142,7 +2284,8 @@
     "bassFile": "B143",
     "midiFile": "h143",
     "theme": "L'ÉGLISE",
-    "subtheme": "Promesses"
+    "subtheme": "Promesses",
+    "story": ""
   },
   {
     "number": "144",
@@ -2157,7 +2300,8 @@
     "bassFile": "B144",
     "midiFile": "h144",
     "theme": "L'ÉGLISE",
-    "subtheme": "Promesses"
+    "subtheme": "Promesses",
+    "story": ""
   },
   {
     "number": "145",
@@ -2172,7 +2316,8 @@
     "bassFile": "B145",
     "midiFile": "h145",
     "theme": "L'ÉGLISE",
-    "subtheme": "Promesses"
+    "subtheme": "Promesses",
+    "story": ""
   },
   {
     "number": "146",
@@ -2187,7 +2332,8 @@
     "bassFile": "B146",
     "midiFile": "h146",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "147",
@@ -2202,7 +2348,8 @@
     "bassFile": "B147",
     "midiFile": "h147",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "148",
@@ -2217,7 +2364,8 @@
     "bassFile": "B148",
     "midiFile": "h148",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "149",
@@ -2232,7 +2380,8 @@
     "bassFile": "B149",
     "midiFile": "h149",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "150",
@@ -2247,7 +2396,8 @@
     "bassFile": "B150",
     "midiFile": "h150",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "151",
@@ -2262,7 +2412,8 @@
     "bassFile": "B151",
     "midiFile": "h151",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "152",
@@ -2277,7 +2428,8 @@
     "bassFile": "B152",
     "midiFile": "h152",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "153",
@@ -2292,7 +2444,8 @@
     "bassFile": "B153",
     "midiFile": "h153",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "154",
@@ -2307,7 +2460,8 @@
     "bassFile": "B154",
     "midiFile": "h154",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "155",
@@ -2322,7 +2476,8 @@
     "bassFile": "B155",
     "midiFile": "h155",
     "theme": "L'ÉGLISE",
-    "subtheme": "Communion fraternelle"
+    "subtheme": "Communion fraternelle",
+    "story": ""
   },
   {
     "number": "156",
@@ -2337,7 +2492,8 @@
     "bassFile": "B156",
     "midiFile": "h156",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "157",
@@ -2352,7 +2508,8 @@
     "bassFile": "B157",
     "midiFile": "h157",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "158",
@@ -2367,7 +2524,8 @@
     "bassFile": "B158",
     "midiFile": "h158",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "159",
@@ -2382,7 +2540,8 @@
     "bassFile": "B159",
     "midiFile": "h159",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "160",
@@ -2397,7 +2556,8 @@
     "bassFile": "B160",
     "midiFile": "h160",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "161",
@@ -2412,7 +2572,8 @@
     "bassFile": "B161",
     "midiFile": "h161",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "162",
@@ -2427,7 +2588,8 @@
     "bassFile": "B162",
     "midiFile": "h162",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "163",
@@ -2442,7 +2604,8 @@
     "bassFile": "B163",
     "midiFile": "h163",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le culte"
+    "subtheme": "Le culte",
+    "story": ""
   },
   {
     "number": "164",
@@ -2457,7 +2620,8 @@
     "bassFile": "B164",
     "midiFile": "h164",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "165",
@@ -2472,7 +2636,8 @@
     "bassFile": "B165",
     "midiFile": "h165",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "166",
@@ -2487,7 +2652,8 @@
     "bassFile": "B166",
     "midiFile": "h166",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "167",
@@ -2502,7 +2668,8 @@
     "bassFile": "B167",
     "midiFile": "h167",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "168",
@@ -2517,7 +2684,8 @@
     "bassFile": "B168",
     "midiFile": "h168",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "169",
@@ -2532,7 +2700,8 @@
     "bassFile": "B169",
     "midiFile": "h169",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "170",
@@ -2547,7 +2716,8 @@
     "bassFile": "B170",
     "midiFile": "h170",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "171",
@@ -2562,7 +2732,8 @@
     "bassFile": "B171",
     "midiFile": "h171",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "172",
@@ -2577,7 +2748,8 @@
     "bassFile": "B172",
     "midiFile": "h172",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "173",
@@ -2592,7 +2764,8 @@
     "bassFile": "B173",
     "midiFile": "h173",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "174",
@@ -2607,7 +2780,8 @@
     "bassFile": "B174",
     "midiFile": "h174",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "175",
@@ -2622,7 +2796,8 @@
     "bassFile": "B175",
     "midiFile": "h175",
     "theme": "L'ÉGLISE",
-    "subtheme": "Le sabbat"
+    "subtheme": "Le sabbat",
+    "story": ""
   },
   {
     "number": "176",
@@ -2637,7 +2812,8 @@
     "bassFile": "B176",
     "midiFile": "h176",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "177",
@@ -2652,7 +2828,8 @@
     "bassFile": "B177",
     "midiFile": "h177",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "178",
@@ -2667,7 +2844,8 @@
     "bassFile": "B178",
     "midiFile": "h178",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "179",
@@ -2682,7 +2860,8 @@
     "bassFile": "B179",
     "midiFile": "h179",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "180",
@@ -2697,7 +2876,8 @@
     "bassFile": "B180",
     "midiFile": "h180",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "181",
@@ -2712,7 +2892,8 @@
     "bassFile": "B181",
     "midiFile": "h181",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "182",
@@ -2727,7 +2908,8 @@
     "bassFile": "B182",
     "midiFile": "h182",
     "theme": "L'ÉGLISE",
-    "subtheme": "L'école du sabbat"
+    "subtheme": "L'école du sabbat",
+    "story": ""
   },
   {
     "number": "183",
@@ -2742,7 +2924,8 @@
     "bassFile": "B183",
     "midiFile": "h183",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "184",
@@ -2757,7 +2940,8 @@
     "bassFile": "B184",
     "midiFile": "h184",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "185",
@@ -2772,7 +2956,8 @@
     "bassFile": "B185",
     "midiFile": "h185",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "186",
@@ -2787,7 +2972,8 @@
     "bassFile": "B186",
     "midiFile": "h186",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "187",
@@ -2802,7 +2988,8 @@
     "bassFile": "B187",
     "midiFile": "h187",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "188",
@@ -2817,7 +3004,8 @@
     "bassFile": "B188",
     "midiFile": "h188",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "189",
@@ -2832,7 +3020,8 @@
     "bassFile": "B189",
     "midiFile": "h189",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "190",
@@ -2847,7 +3036,8 @@
     "bassFile": "B190",
     "midiFile": "h190",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "191",
@@ -2862,7 +3052,8 @@
     "bassFile": "B191",
     "midiFile": "h191",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "192",
@@ -2877,7 +3068,8 @@
     "bassFile": "B192",
     "midiFile": "h192",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "193",
@@ -2892,7 +3084,8 @@
     "bassFile": "B193",
     "midiFile": "h193",
     "theme": "L'ÉGLISE",
-    "subtheme": "Prière"
+    "subtheme": "Prière",
+    "story": ""
   },
   {
     "number": "194",
@@ -2907,7 +3100,8 @@
     "bassFile": "B194",
     "midiFile": "h194",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "195",
@@ -2922,7 +3116,8 @@
     "bassFile": "B195",
     "midiFile": "h195",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "196",
@@ -2937,7 +3132,8 @@
     "bassFile": "B196",
     "midiFile": "h196",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "197",
@@ -2952,7 +3148,8 @@
     "bassFile": "B197",
     "midiFile": "h197",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "198",
@@ -2967,7 +3164,8 @@
     "bassFile": "B198",
     "midiFile": "h198",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "199",
@@ -2982,7 +3180,8 @@
     "bassFile": "B199",
     "midiFile": "h199",
     "theme": "L'ÉGLISE",
-    "subtheme": "Clôture et bénédiction"
+    "subtheme": "Clôture et bénédiction",
+    "story": ""
   },
   {
     "number": "200",
@@ -2997,7 +3196,8 @@
     "bassFile": "B200",
     "midiFile": "h200",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "201",
@@ -3012,7 +3212,8 @@
     "bassFile": "B201",
     "midiFile": "h201",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "202",
@@ -3027,7 +3228,8 @@
     "bassFile": "B202",
     "midiFile": "h202",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "203",
@@ -3042,7 +3244,8 @@
     "bassFile": "B203",
     "midiFile": "h203",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "204",
@@ -3057,7 +3260,8 @@
     "bassFile": "B204",
     "midiFile": "h204",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "205",
@@ -3072,7 +3276,8 @@
     "bassFile": "B205",
     "midiFile": "h205",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "206",
@@ -3087,7 +3292,8 @@
     "bassFile": "B206",
     "midiFile": "h206",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "207",
@@ -3102,7 +3308,8 @@
     "bassFile": "B207",
     "midiFile": "h207",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "208",
@@ -3117,7 +3324,8 @@
     "bassFile": "B208",
     "midiFile": "h208",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "209",
@@ -3132,7 +3340,8 @@
     "bassFile": "B209",
     "midiFile": "h209",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "210",
@@ -3147,7 +3356,8 @@
     "bassFile": "B210",
     "midiFile": "h210",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "211",
@@ -3162,7 +3372,8 @@
     "bassFile": "B211",
     "midiFile": "h211",
     "theme": "L'ÉGLISE",
-    "subtheme": "Missions"
+    "subtheme": "Missions",
+    "story": ""
   },
   {
     "number": "212",
@@ -3177,7 +3388,8 @@
     "bassFile": "B212",
     "midiFile": "h212",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "213",
@@ -3192,7 +3404,8 @@
     "bassFile": "B213",
     "midiFile": "h213",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "214",
@@ -3207,7 +3420,8 @@
     "bassFile": "B214",
     "midiFile": "h214",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "215",
@@ -3222,7 +3436,8 @@
     "bassFile": "B215",
     "midiFile": "h215",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "216",
@@ -3237,7 +3452,8 @@
     "bassFile": "B216",
     "midiFile": "h216",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "217",
@@ -3252,7 +3468,8 @@
     "bassFile": "B217",
     "midiFile": "h217",
     "theme": "L'ÉGLISE",
-    "subtheme": "Dernier message"
+    "subtheme": "Dernier message",
+    "story": ""
   },
   {
     "number": "218",
@@ -3267,7 +3484,8 @@
     "bassFile": "B218",
     "midiFile": "h218",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "219",
@@ -3282,7 +3500,8 @@
     "bassFile": "B219",
     "midiFile": "h219",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "220",
@@ -3297,7 +3516,8 @@
     "bassFile": "B220",
     "midiFile": "h220",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "221",
@@ -3312,7 +3532,8 @@
     "bassFile": "B221",
     "midiFile": "h221",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "222",
@@ -3327,7 +3548,8 @@
     "bassFile": "B222",
     "midiFile": "h222",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "223",
@@ -3342,7 +3564,8 @@
     "bassFile": "B223",
     "midiFile": "h223",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "224",
@@ -3357,7 +3580,8 @@
     "bassFile": "B224",
     "midiFile": "h224",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "225",
@@ -3372,7 +3596,8 @@
     "bassFile": "B225",
     "midiFile": "h225",
     "theme": "L'ÉGLISE",
-    "subtheme": "Baptêmes"
+    "subtheme": "Baptêmes",
+    "story": ""
   },
   {
     "number": "226",
@@ -3387,7 +3612,8 @@
     "bassFile": "B226",
     "midiFile": "h226",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "227",
@@ -3402,7 +3628,8 @@
     "bassFile": "B227",
     "midiFile": "h227",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "228",
@@ -3417,7 +3644,8 @@
     "bassFile": "B228",
     "midiFile": "h228",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "229",
@@ -3432,12 +3660,13 @@
     "bassFile": "B229",
     "midiFile": "h229",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "230",
     "title": "Roi des rois, victime sainte",
-    "lyrics": "1.\nRoi des rois, victime sainte\nQui mourus pour mes péchés,\nDes disciples dans la crainte\nTu daignas laver les pieds,\nLeur montrant dans ta bonté\nLa parfaite charité.\n\n2.\nSaint repas! Sainte veillée\nOù l'on vit le Rédempteur\nDonner à l'âme souillée\nL'espérance et le bonheur,\nEt le Maître et le Seigneur\nDevenir un serviteur!\n\n3.\nCraindrais-tu donc, ô mon âme!\nD'imiter en vérité\nCelui qui de toi réclame\nUne même humilité?\nLa volonté de ton Roi,\nC'est le vrai bonheur pour toi.\n\n4.\nJe voudrais, ô divin Maître!\nPosséder ton grand amour;\nComme toi je voudrais être\nVraiment humble chaque jour.\nÔ Jésus, que mon plaisir\nSoit daimer et de servir!",
+    "lyrics": "1.\nRoi des rois, victime sainte\nQui mourus pour mes péchés,\nDes disciples dans la crainte\nTu daignas laver les pieds,\nLeur montrant dans ta bonté\nLa parfaite charité.\n\n2.\nSaint repas! Sainte veillée\nOù l'on vit le Rédempteur\nDonner à l'âme souillée\nL'espérance et le bonheur,\nEt le Maître et le Seigneur\nDevenir un serviteur!\n\n3.\nCraindrais-tu donc, ô mon âme!\nD'imiter en vérité\nCelui qui de toi réclame\nUne même humilité?\nLa volonté de ton Roi,\nC'est le vrai bonheur pour toi.\n\n4.\nJe voudrais, ô divin Maître!\nPosséder ton grand amour;\nComme toi je voudrais être\nVraiment humble chaque jour.\nÔ Jésus, que mon plaisir\nSoit d'aimer et de servir!",
     "author": "",
     "composer": "",
     "style": "",
@@ -3447,7 +3676,8 @@
     "bassFile": "B230",
     "midiFile": "h230",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "231",
@@ -3462,7 +3692,8 @@
     "bassFile": "B231",
     "midiFile": "h231",
     "theme": "L'ÉGLISE",
-    "subtheme": "Sainte Cène"
+    "subtheme": "Sainte Cène",
+    "story": ""
   },
   {
     "number": "232",
@@ -3477,7 +3708,8 @@
     "bassFile": "B232",
     "midiFile": "h232",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "233",
@@ -3492,7 +3724,8 @@
     "bassFile": "B233",
     "midiFile": "h233",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "234",
@@ -3507,7 +3740,8 @@
     "bassFile": "B234",
     "midiFile": "h234",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "235",
@@ -3522,7 +3756,8 @@
     "bassFile": "B235",
     "midiFile": "h235",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "236",
@@ -3537,7 +3772,8 @@
     "bassFile": "B236",
     "midiFile": "h236",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "237",
@@ -3552,7 +3788,8 @@
     "bassFile": "B237",
     "midiFile": "h237",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "238",
@@ -3567,7 +3804,8 @@
     "bassFile": "B238",
     "midiFile": "h238",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "239",
@@ -3582,7 +3820,8 @@
     "bassFile": "B239",
     "midiFile": "h239",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "240",
@@ -3597,7 +3836,8 @@
     "bassFile": "B240",
     "midiFile": "h240",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "241",
@@ -3612,7 +3852,8 @@
     "bassFile": "B241",
     "midiFile": "h241",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "242",
@@ -3627,7 +3868,8 @@
     "bassFile": "B242",
     "midiFile": "h242",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "243",
@@ -3642,7 +3884,8 @@
     "bassFile": "B243",
     "midiFile": "h243",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "244",
@@ -3657,7 +3900,8 @@
     "bassFile": "B244",
     "midiFile": "h244",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "245",
@@ -3672,7 +3916,8 @@
     "bassFile": "B245",
     "midiFile": "h245",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "246",
@@ -3687,7 +3932,8 @@
     "bassFile": "B246",
     "midiFile": "h246",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "247",
@@ -3702,7 +3948,8 @@
     "bassFile": "B247",
     "midiFile": "h247",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "248",
@@ -3717,7 +3964,8 @@
     "bassFile": "B248",
     "midiFile": "h248",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "249",
@@ -3732,7 +3980,8 @@
     "bassFile": "B249",
     "midiFile": "h249",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "250",
@@ -3747,7 +3996,8 @@
     "bassFile": "B250",
     "midiFile": "h250",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "251",
@@ -3762,7 +4012,8 @@
     "bassFile": "B251",
     "midiFile": "h251",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "252",
@@ -3777,7 +4028,8 @@
     "bassFile": "B252",
     "midiFile": "h252",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "253",
@@ -3792,7 +4044,8 @@
     "bassFile": "B253",
     "midiFile": "h253",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "254",
@@ -3807,7 +4060,8 @@
     "bassFile": "B254",
     "midiFile": "h254",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "255",
@@ -3822,7 +4076,8 @@
     "bassFile": "B255",
     "midiFile": "h255",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "256",
@@ -3837,7 +4092,8 @@
     "bassFile": "B256",
     "midiFile": "h256",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "257",
@@ -3852,7 +4108,8 @@
     "bassFile": "B257",
     "midiFile": "h257",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "258",
@@ -3867,7 +4124,8 @@
     "bassFile": "B258",
     "midiFile": "h258",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "259",
@@ -3882,7 +4140,8 @@
     "bassFile": "B259",
     "midiFile": "h259",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "260",
@@ -3897,7 +4156,8 @@
     "bassFile": "B260",
     "midiFile": "h260",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "261",
@@ -3912,7 +4172,8 @@
     "bassFile": "B261",
     "midiFile": "h261",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Appel au salut"
+    "subtheme": "Appel au salut",
+    "story": ""
   },
   {
     "number": "262",
@@ -3927,7 +4188,8 @@
     "bassFile": "B262",
     "midiFile": "h262",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "263",
@@ -3942,7 +4204,8 @@
     "bassFile": "B263",
     "midiFile": "h263",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "264",
@@ -3957,7 +4220,8 @@
     "bassFile": "B264",
     "midiFile": "h264",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "265",
@@ -3972,7 +4236,8 @@
     "bassFile": "B265",
     "midiFile": "h265",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "266",
@@ -3987,7 +4252,8 @@
     "bassFile": "B266",
     "midiFile": "h266",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "267",
@@ -4002,7 +4268,8 @@
     "bassFile": "B267",
     "midiFile": "h267",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "268",
@@ -4017,7 +4284,8 @@
     "bassFile": "B268",
     "midiFile": "h268",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "269",
@@ -4032,7 +4300,8 @@
     "bassFile": "B269",
     "midiFile": "h269",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "270",
@@ -4047,7 +4316,8 @@
     "bassFile": "B270",
     "midiFile": "h270",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "271",
@@ -4062,7 +4332,8 @@
     "bassFile": "B271",
     "midiFile": "h271",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "272",
@@ -4077,7 +4348,8 @@
     "bassFile": "B272",
     "midiFile": "h272",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "273",
@@ -4092,7 +4364,8 @@
     "bassFile": "B273",
     "midiFile": "h273",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "274",
@@ -4107,7 +4380,8 @@
     "bassFile": "B274",
     "midiFile": "h274",
     "theme": "ÉVANGÉLISATION",
-    "subtheme": "Réponse à l'appel"
+    "subtheme": "Réponse à l'appel",
+    "story": ""
   },
   {
     "number": "275",
@@ -4122,7 +4396,8 @@
     "bassFile": "B275",
     "midiFile": "h275",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "276",
@@ -4137,7 +4412,8 @@
     "bassFile": "B276",
     "midiFile": "h276",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "277",
@@ -4152,7 +4428,8 @@
     "bassFile": "B277",
     "midiFile": "h277",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "278",
@@ -4167,7 +4444,8 @@
     "bassFile": "B278",
     "midiFile": "h278",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "279",
@@ -4182,7 +4460,8 @@
     "bassFile": "B279",
     "midiFile": "h279",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "280",
@@ -4197,7 +4476,8 @@
     "bassFile": "B280",
     "midiFile": "h280",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "281",
@@ -4212,7 +4492,8 @@
     "bassFile": "B281",
     "midiFile": "h281",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "282",
@@ -4227,7 +4508,8 @@
     "bassFile": "B282",
     "midiFile": "h282",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "283",
@@ -4242,7 +4524,8 @@
     "bassFile": "B283",
     "midiFile": "h283",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "284",
@@ -4257,7 +4540,8 @@
     "bassFile": "B284",
     "midiFile": "h284",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Repentance et conversion"
+    "subtheme": "Repentance et conversion",
+    "story": ""
   },
   {
     "number": "285",
@@ -4272,7 +4556,8 @@
     "bassFile": "B285",
     "midiFile": "h285",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "286",
@@ -4287,7 +4572,8 @@
     "bassFile": "B286",
     "midiFile": "h286",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "287",
@@ -4302,7 +4588,8 @@
     "bassFile": "B287",
     "midiFile": "h287",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "288",
@@ -4317,7 +4604,8 @@
     "bassFile": "B288",
     "midiFile": "h288",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "289",
@@ -4332,7 +4620,8 @@
     "bassFile": "B289",
     "midiFile": "h289",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "290",
@@ -4347,7 +4636,8 @@
     "bassFile": "B290",
     "midiFile": "h290",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "291",
@@ -4362,7 +4652,8 @@
     "bassFile": "B291",
     "midiFile": "h291",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "292",
@@ -4377,7 +4668,8 @@
     "bassFile": "B292",
     "midiFile": "h292",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "293",
@@ -4392,7 +4684,8 @@
     "bassFile": "B293",
     "midiFile": "h293",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "294",
@@ -4407,7 +4700,8 @@
     "bassFile": "B294",
     "midiFile": "h294",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "295",
@@ -4422,7 +4716,8 @@
     "bassFile": "B295",
     "midiFile": "h295",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "296",
@@ -4437,7 +4732,8 @@
     "bassFile": "B296",
     "midiFile": "h296",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "297",
@@ -4452,7 +4748,8 @@
     "bassFile": "B297",
     "midiFile": "h297",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "298",
@@ -4467,7 +4764,8 @@
     "bassFile": "B298",
     "midiFile": "h298",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "299",
@@ -4482,7 +4780,8 @@
     "bassFile": "B299",
     "midiFile": "h299",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "300",
@@ -4497,7 +4796,8 @@
     "bassFile": "B300",
     "midiFile": "h300",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "301",
@@ -4512,7 +4812,8 @@
     "bassFile": "B301",
     "midiFile": "h301",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "302",
@@ -4527,7 +4828,8 @@
     "bassFile": "B302",
     "midiFile": "h302",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "303",
@@ -4542,7 +4844,8 @@
     "bassFile": "B303",
     "midiFile": "h303",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Amour et foi"
+    "subtheme": "Amour et foi",
+    "story": ""
   },
   {
     "number": "304",
@@ -4557,7 +4860,8 @@
     "bassFile": "B304",
     "midiFile": "h304",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "305",
@@ -4572,7 +4876,8 @@
     "bassFile": "B305",
     "midiFile": "h305",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "306",
@@ -4587,7 +4892,8 @@
     "bassFile": "B306",
     "midiFile": "h306",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "307",
@@ -4602,7 +4908,8 @@
     "bassFile": "B307",
     "midiFile": "h307",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "308",
@@ -4617,7 +4924,8 @@
     "bassFile": "B308",
     "midiFile": "h308",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "309",
@@ -4632,7 +4940,8 @@
     "bassFile": "B309",
     "midiFile": "h309",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "310",
@@ -4647,7 +4956,8 @@
     "bassFile": "B310",
     "midiFile": "h310",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "311",
@@ -4662,7 +4972,8 @@
     "bassFile": "B311",
     "midiFile": "h311",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "312",
@@ -4677,7 +4988,8 @@
     "bassFile": "B312",
     "midiFile": "h312",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "313",
@@ -4692,7 +5004,8 @@
     "bassFile": "B313",
     "midiFile": "h313",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "314",
@@ -4707,7 +5020,8 @@
     "bassFile": "B314",
     "midiFile": "h314",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "315",
@@ -4722,7 +5036,8 @@
     "bassFile": "B315",
     "midiFile": "h315",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "316",
@@ -4737,7 +5052,8 @@
     "bassFile": "B316",
     "midiFile": "h316",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "317",
@@ -4752,7 +5068,8 @@
     "bassFile": "B317",
     "midiFile": "h317",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "318",
@@ -4767,7 +5084,8 @@
     "bassFile": "B318",
     "midiFile": "h318",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "319",
@@ -4782,7 +5100,8 @@
     "bassFile": "B319",
     "midiFile": "h319",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "320",
@@ -4797,22 +5116,24 @@
     "bassFile": "B320",
     "midiFile": "h320",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "321",
     "title": "Quel repos céleste",
     "lyrics": "1.\nQuel repos céleste,\nJésus, d'être à Toi!\nÀ Toi pour la mort et la vie.\nDans les jours mauvais\nDe chanter avec foi :\nTout est bien, ma paix est infinie!\n\nRefrain\nQuel repos, quel repos,\nQuel repos, quel céleste repos!\n\n2.\nQuel repos céleste,\nMon fardeau n'est plus!\nLibre par le sang du calvaire,\nTous mes ennemis,\nJésus les a vaincus,\nGloire et louange à Dieu, notre Père!\n\n3.\nQuel repos céleste!\nTu conduis mes pas,\nTu me combles de tes richesses,\nDans ton grand amour,\nChaque jour tu sauras\nDéployer envers moi tes tendresses.\n\n4.\nQuel repos céleste,\nQuand enfin, Seigneur,\nAuprès de Toi j'aurais ma place,\nAprès les travaux,\nLes combats, la douleur,\nÀ jamais je pourrais voir ta face!",
-    "author": "",
-    "composer": "",
-    "style": "",
+    "author": "Horatio Spafford, traduction par Mlle Amélie Humbert",
+    "composer": "Philip Bliss",
+    "style": "Tranquille et doux",
     "sopranoFile": "S321",
     "altoFile": "A321",
     "tenorFile": "T321",
     "bassFile": "B321",
     "midiFile": "h321",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": "Ce cantique a été écrit après une suite d'évènements tragiques dans la vie de Spafford. Le premier a été la mort de son seul fils des suites d'une scarlatine en 1870. Le second a été le grand incendie de Chicago en 1871 qui le ruine (c'était un avocat prospère qui avait beaucoup investi dans des biens immobiliers de la zone détruite). Ses affaires pâtirent un peu plus avec la crise bancaire de mai 1873, période à laquelle il avait prévu de voyager avec sa famille en Europe à bord du bateau Ville-du-Havre. Dans un changement de dernière minute, il laissa sa famille partir avant lui le temps qu'il règle des problèmes liés au grand incendie de Chicago. Pendant la traversée de l'Atlantique, le bateau coula subitement à la suite d'une collision avec le navire Loch Earn, entrainant la mort de ses quatre filles. Sa femme Anna survécu à ce drame et lui envoya le désormais célèbre télégramme « Sauvée seule… ». Peu après, alors que Spafford voyageait pour rejoindre sa femme endeuillée, il eut l'inspiration d'écrire ces mots lorsque son bateau passa près de là où ses filles avaient péri. Bliss appela cette mélodie Ville du Havre, du nom du navire coulé. Après cela, les Spafford eurent trois autres enfants. En 1881, ils partirent pour la Palestine, actuellement Israël. À Jérusalem, ils aidèrent à la fondation d'une communauté religieuse appelée « American Colony » dont la mission était de servir les pauvres. Cette communauté devint plus tard le sujet du roman Jérusalem de l'écrivain suédois Selma Lagerlöf qui lui vaudra le prix Nobel de littérature en 1909. Source: https://fr.wikipedia.org/wiki/It_Is_Well_with_My_Soul"
   },
   {
     "number": "322",
@@ -4827,7 +5148,8 @@
     "bassFile": "B322",
     "midiFile": "h322",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "323",
@@ -4842,7 +5164,8 @@
     "bassFile": "B323",
     "midiFile": "h323",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "324",
@@ -4857,7 +5180,8 @@
     "bassFile": "B324",
     "midiFile": "h324",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Joie et confiance"
+    "subtheme": "Joie et confiance",
+    "story": ""
   },
   {
     "number": "325",
@@ -4872,7 +5196,8 @@
     "bassFile": "B325",
     "midiFile": "h325",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "326",
@@ -4887,7 +5212,8 @@
     "bassFile": "B326",
     "midiFile": "h326",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "327",
@@ -4902,7 +5228,8 @@
     "bassFile": "B327",
     "midiFile": "h327",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "328",
@@ -4917,7 +5244,8 @@
     "bassFile": "B328",
     "midiFile": "h328",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "329",
@@ -4932,7 +5260,8 @@
     "bassFile": "B329",
     "midiFile": "h329",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "330",
@@ -4947,7 +5276,8 @@
     "bassFile": "B330",
     "midiFile": "h330",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "331",
@@ -4962,7 +5292,8 @@
     "bassFile": "B331",
     "midiFile": "h331",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "332",
@@ -4977,7 +5308,8 @@
     "bassFile": "B332",
     "midiFile": "h332",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "333",
@@ -4992,7 +5324,8 @@
     "bassFile": "B333",
     "midiFile": "h333",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "334",
@@ -5007,7 +5340,8 @@
     "bassFile": "B334",
     "midiFile": "h334",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "335",
@@ -5022,7 +5356,8 @@
     "bassFile": "B335",
     "midiFile": "h335",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "336",
@@ -5037,7 +5372,8 @@
     "bassFile": "B336",
     "midiFile": "h336",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "337",
@@ -5052,7 +5388,8 @@
     "bassFile": "B337",
     "midiFile": "h337",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "338",
@@ -5067,7 +5404,8 @@
     "bassFile": "B338",
     "midiFile": "h338",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "339",
@@ -5082,7 +5420,8 @@
     "bassFile": "B339",
     "midiFile": "h339",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "340",
@@ -5097,7 +5436,8 @@
     "bassFile": "B340",
     "midiFile": "h340",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "341",
@@ -5112,7 +5452,8 @@
     "bassFile": "B341",
     "midiFile": "h341",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "342",
@@ -5127,7 +5468,8 @@
     "bassFile": "B342",
     "midiFile": "h342",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "343",
@@ -5142,7 +5484,8 @@
     "bassFile": "B343",
     "midiFile": "h343",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Consécration et sanctification"
+    "subtheme": "Consécration et sanctification",
+    "story": ""
   },
   {
     "number": "344",
@@ -5157,7 +5500,8 @@
     "bassFile": "B344",
     "midiFile": "h344",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "345",
@@ -5172,7 +5516,8 @@
     "bassFile": "B345",
     "midiFile": "h345",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "346",
@@ -5187,7 +5532,8 @@
     "bassFile": "B346",
     "midiFile": "h346",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "347",
@@ -5202,7 +5548,8 @@
     "bassFile": "B347",
     "midiFile": "h347",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "348",
@@ -5217,7 +5564,8 @@
     "bassFile": "B348",
     "midiFile": "h348",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "349",
@@ -5232,7 +5580,8 @@
     "bassFile": "B349",
     "midiFile": "h349",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "350",
@@ -5247,7 +5596,8 @@
     "bassFile": "B350",
     "midiFile": "h350",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "351",
@@ -5262,7 +5612,8 @@
     "bassFile": "B351",
     "midiFile": "h351",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "352",
@@ -5277,7 +5628,8 @@
     "bassFile": "B352",
     "midiFile": "h352",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "353",
@@ -5292,7 +5644,8 @@
     "bassFile": "B353",
     "midiFile": "h353",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "354",
@@ -5307,7 +5660,8 @@
     "bassFile": "B354",
     "midiFile": "h354",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "355",
@@ -5322,7 +5676,8 @@
     "bassFile": "B355",
     "midiFile": "h355",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "356",
@@ -5337,7 +5692,8 @@
     "bassFile": "B356",
     "midiFile": "h356",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "357",
@@ -5352,7 +5708,8 @@
     "bassFile": "B357",
     "midiFile": "h357",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "358",
@@ -5367,22 +5724,24 @@
     "bassFile": "B358",
     "midiFile": "h358",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "359",
     "title": "J'ai soif de ta présence",
     "lyrics": "1.\nJ'ai soif de ta présence\nDivin chef de ma foi;\nDans ma faiblesse immense\nQue ferais-je sans toi?\n\nRefrain\nChaque jour, à chaque heure,\nOh! j'ai besoin de toi!\nViens, Jésus et demeure\nAuprès de moi.\n\n2.\nDes ennemis, dans l'ombre,\nRodent autour de moi;\nAccablé par le nombre,\nQue ferais-je sans toi?\n\n3.\nPendant les jours d'orage,\nD'obscurité, d'effroi,\nQuand faiblit mon courage,\nQue ferais-je sans toi?\n\n4.\nO Jésus! ta présence\nC'est la vie et la paix;\nLa paix dans la souffrance,\nEt la vie à jamais.",
-    "author": "",
-    "composer": "",
-    "style": "",
+    "author": "Annie S. Hawks, traduction par d'Auguste Glardon",
+    "composer": "R. Lowry",
+    "style": "Doux",
     "sopranoFile": "S359",
     "altoFile": "A359",
     "tenorFile": "T359",
     "bassFile": "B359",
     "midiFile": "h359",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": "En 1872, le cantique qui a rendu Hawks célèbre, « J'ai soif de ta présence en anglais I Need Thee Every Hour », fut composé. On dit qu'il fut traduit dans plus de langues étrangères que tout autre cantique moderne à sa mort. Hawks déclara : « Pour moi, ce cantique était prophétique plutôt qu'il n'exprimait mes propres expériences, car il était porté au monde par l'amour et la joie, plutôt que par le poids d'un chagrin personnel. » Lowry, qui en composa la musique, poursuivit : « I Need Thee Every Hour » a été écrit par Mme Annie S. Hawks en 1872, à Brooklyn, New York. Je crois qu'il exprimait sa propre expérience. Il m'est venu sous la forme de cinq strophes simples, auxquelles j'ai ajouté le refrain pour le rendre plus pertinent. Il m'a inspiré dès sa première lecture. Elle est apparue pour la première fois dans un petit recueil de chansons originales préparées pour la National Baptist Sunday-school Association, tenue à Cincinnati, Ohio en novembre 1872, et a été chantée à cette occasion. Source: https://en.wikipedia.org/wiki/Annie_Hawks#%22I_Need_Thee_Every_Hour%22"
   },
   {
     "number": "360",
@@ -5397,7 +5756,8 @@
     "bassFile": "B360",
     "midiFile": "h360",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "361",
@@ -5412,7 +5772,8 @@
     "bassFile": "B361",
     "midiFile": "h361",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "362",
@@ -5427,7 +5788,8 @@
     "bassFile": "B362",
     "midiFile": "h362",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "363",
@@ -5442,7 +5804,8 @@
     "bassFile": "B363",
     "midiFile": "h363",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "364",
@@ -5457,7 +5820,8 @@
     "bassFile": "B364",
     "midiFile": "h364",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "365",
@@ -5472,7 +5836,8 @@
     "bassFile": "B365",
     "midiFile": "h365",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "366",
@@ -5487,7 +5852,8 @@
     "bassFile": "B366",
     "midiFile": "h366",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Combats et victoires"
+    "subtheme": "Combats et victoires",
+    "story": ""
   },
   {
     "number": "367",
@@ -5502,7 +5868,8 @@
     "bassFile": "B367",
     "midiFile": "h367",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "368",
@@ -5517,7 +5884,8 @@
     "bassFile": "B368",
     "midiFile": "h368",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "369",
@@ -5532,7 +5900,8 @@
     "bassFile": "B369",
     "midiFile": "h369",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "370",
@@ -5547,7 +5916,8 @@
     "bassFile": "B370",
     "midiFile": "h370",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "371",
@@ -5562,7 +5932,8 @@
     "bassFile": "B371",
     "midiFile": "h371",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "372",
@@ -5577,7 +5948,8 @@
     "bassFile": "B372",
     "midiFile": "h372",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "373",
@@ -5592,7 +5964,8 @@
     "bassFile": "B373",
     "midiFile": "h373",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "374",
@@ -5607,7 +5980,8 @@
     "bassFile": "B374",
     "midiFile": "h374",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "375",
@@ -5622,7 +5996,8 @@
     "bassFile": "B375",
     "midiFile": "h375",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "376",
@@ -5637,7 +6012,8 @@
     "bassFile": "B376",
     "midiFile": "h376",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "377",
@@ -5652,7 +6028,8 @@
     "bassFile": "B377",
     "midiFile": "h377",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "378",
@@ -5667,7 +6044,8 @@
     "bassFile": "B378",
     "midiFile": "h378",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "379",
@@ -5682,7 +6060,8 @@
     "bassFile": "B379",
     "midiFile": "h379",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "380",
@@ -5697,7 +6076,8 @@
     "bassFile": "B380",
     "midiFile": "h380",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "381",
@@ -5712,7 +6092,8 @@
     "bassFile": "B381",
     "midiFile": "h381",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "382",
@@ -5727,7 +6108,8 @@
     "bassFile": "B382",
     "midiFile": "h382",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "383",
@@ -5742,7 +6124,8 @@
     "bassFile": "B383",
     "midiFile": "h383",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "384",
@@ -5757,7 +6140,8 @@
     "bassFile": "B384",
     "midiFile": "h384",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "385",
@@ -5772,7 +6156,8 @@
     "bassFile": "B385",
     "midiFile": "h385",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "386",
@@ -5787,7 +6172,8 @@
     "bassFile": "B386",
     "midiFile": "h386",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "387",
@@ -5802,7 +6188,8 @@
     "bassFile": "B387",
     "midiFile": "h387",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "388",
@@ -5817,7 +6204,8 @@
     "bassFile": "B388",
     "midiFile": "h388",
     "theme": "VIE CHRÉTIENNE",
-    "subtheme": "Secours et consolation"
+    "subtheme": "Secours et consolation",
+    "story": ""
   },
   {
     "number": "389",
@@ -5832,7 +6220,8 @@
     "bassFile": "B389",
     "midiFile": "h389",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "390",
@@ -5847,7 +6236,8 @@
     "bassFile": "B390",
     "midiFile": "h390",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "391",
@@ -5862,7 +6252,8 @@
     "bassFile": "B391",
     "midiFile": "h391",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "392",
@@ -5877,7 +6268,8 @@
     "bassFile": "B392",
     "midiFile": "h392",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "393",
@@ -5892,7 +6284,8 @@
     "bassFile": "B393",
     "midiFile": "h393",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "394",
@@ -5907,7 +6300,8 @@
     "bassFile": "B394",
     "midiFile": "h394",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "395",
@@ -5922,7 +6316,8 @@
     "bassFile": "B395",
     "midiFile": "h395",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "396",
@@ -5937,7 +6332,8 @@
     "bassFile": "B396",
     "midiFile": "h396",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "397",
@@ -5952,7 +6348,8 @@
     "bassFile": "B397",
     "midiFile": "h397",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "398",
@@ -5967,7 +6364,8 @@
     "bassFile": "B398",
     "midiFile": "h398",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "399",
@@ -5982,7 +6380,8 @@
     "bassFile": "B399",
     "midiFile": "h399",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "400",
@@ -5997,7 +6396,8 @@
     "bassFile": "B400",
     "midiFile": "h400",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "401",
@@ -6012,7 +6412,8 @@
     "bassFile": "B401",
     "midiFile": "h401",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "402",
@@ -6027,12 +6428,13 @@
     "bassFile": "B402",
     "midiFile": "h402",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "403",
     "title": "Marchons, frères, bon courage",
-    "lyrics": "1.\nMarchons, frères, bon courage!\n De Jésus suivons les pas!\n Bravons les coups de l'orage,\n Du ciel il nous tend les bras.\n \n \t Refrain\n Ne bâtissons plus sur le sable;\n Laissons le terre et ses douleurs;\n Ici-bas rien n'est durable;\n Espérons, vivons ailleurs!\n \n \t 2.\nLe Seigneur nous encourage,\nCar nous voguons vers les cieux.\nAidons-nous dans le voyage,\nPar Jésus victorieux.\n\n3.\nLà-haut règne la lumière, Dans la ville aux portes dor.\nNotre âme, dans la prière,\nVers le ciel prend son essor.\n\n4.\nVoici le port! cest la vie\nQui nous attend dans les cieux :\nVers Sion, vers la patrie,\nVole encor mon chant pieux.\n\nRefrain\nAu ciel, au ciel est notre Père.\nVers lui cesseront nos douleurs;\nLaissons les chants de la terre :\nNotre espérance est ailleurs.",
+    "lyrics": "1.\nMarchons, frères, bon courage!\n De Jésus suivons les pas!\n Bravons les coups de l'orage,\n Du ciel il nous tend les bras.\n \n \t Refrain\n Ne bâtissons plus sur le sable;\n Laissons le terre et ses douleurs;\n Ici-bas rien n'est durable;\n Espérons, vivons ailleurs!\n \n \t 2.\nLe Seigneur nous encourage,\nCar nous voguons vers les cieux.\nAidons-nous dans le voyage,\nPar Jésus victorieux.\n\n3.\nLà-haut règne la lumière, Dans la ville aux portes d'or.\nNotre âme, dans la prière,\nVers le ciel prend son essor.\n\n4.\nVoici le port! c'est la vie\nQui nous attend dans les cieux :\nVers Sion, vers la patrie,\nVole encor mon chant pieux.\n\nRefrain\nAu ciel, au ciel est notre Père.\nVers lui cesseront nos douleurs;\nLaissons les chants de la terre :\nNotre espérance est ailleurs.",
     "author": "",
     "composer": "W.-B. BRADBURY",
     "style": "Moderato",
@@ -6042,7 +6444,8 @@
     "bassFile": "B403",
     "midiFile": "h403",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "404",
@@ -6057,7 +6460,8 @@
     "bassFile": "B404",
     "midiFile": "h404",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "405",
@@ -6072,7 +6476,8 @@
     "bassFile": "B405",
     "midiFile": "h405",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "406",
@@ -6087,7 +6492,8 @@
     "bassFile": "B406",
     "midiFile": "h406",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "407",
@@ -6102,7 +6508,8 @@
     "bassFile": "B407",
     "midiFile": "h407",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "408",
@@ -6117,7 +6524,8 @@
     "bassFile": "B408",
     "midiFile": "h408",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "409",
@@ -6132,7 +6540,8 @@
     "bassFile": "B409",
     "midiFile": "h409",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "410",
@@ -6147,7 +6556,8 @@
     "bassFile": "B410",
     "midiFile": "h410",
     "theme": "ESPÉRANCE CHRÉTIENNE",
-    "subtheme": "Espérance chrétienne"
+    "subtheme": "Espérance chrétienne",
+    "story": ""
   },
   {
     "number": "411",
@@ -6162,7 +6572,8 @@
     "bassFile": "B411",
     "midiFile": "h411",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Matin"
+    "subtheme": "Matin",
+    "story": ""
   },
   {
     "number": "412",
@@ -6177,7 +6588,8 @@
     "bassFile": "B412",
     "midiFile": "h412",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Matin"
+    "subtheme": "Matin",
+    "story": ""
   },
   {
     "number": "413",
@@ -6192,7 +6604,8 @@
     "bassFile": "B413",
     "midiFile": "h413",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Matin"
+    "subtheme": "Matin",
+    "story": ""
   },
   {
     "number": "414",
@@ -6207,7 +6620,8 @@
     "bassFile": "B414",
     "midiFile": "h414",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Matin"
+    "subtheme": "Matin",
+    "story": ""
   },
   {
     "number": "415",
@@ -6222,7 +6636,8 @@
     "bassFile": "B415",
     "midiFile": "h415",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Matin"
+    "subtheme": "Matin",
+    "story": ""
   },
   {
     "number": "416",
@@ -6237,7 +6652,8 @@
     "bassFile": "B416",
     "midiFile": "h416",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Soir"
+    "subtheme": "Soir",
+    "story": ""
   },
   {
     "number": "417",
@@ -6252,7 +6668,8 @@
     "bassFile": "B417",
     "midiFile": "h417",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Soir"
+    "subtheme": "Soir",
+    "story": ""
   },
   {
     "number": "418",
@@ -6267,7 +6684,8 @@
     "bassFile": "B418",
     "midiFile": "h418",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Soir"
+    "subtheme": "Soir",
+    "story": ""
   },
   {
     "number": "419",
@@ -6282,7 +6700,8 @@
     "bassFile": "B419",
     "midiFile": "h419",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Soir"
+    "subtheme": "Soir",
+    "story": ""
   },
   {
     "number": "420",
@@ -6297,7 +6716,8 @@
     "bassFile": "B420",
     "midiFile": "h420",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Soir"
+    "subtheme": "Soir",
+    "story": ""
   },
   {
     "number": "421",
@@ -6312,7 +6732,8 @@
     "bassFile": "B421",
     "midiFile": "h421",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "422",
@@ -6327,7 +6748,8 @@
     "bassFile": "B422",
     "midiFile": "h422",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "423",
@@ -6342,7 +6764,8 @@
     "bassFile": "B423",
     "midiFile": "h423",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "424",
@@ -6357,7 +6780,8 @@
     "bassFile": "B424",
     "midiFile": "h424",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "425",
@@ -6372,7 +6796,8 @@
     "bassFile": "B425",
     "midiFile": "h425",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "426",
@@ -6387,7 +6812,8 @@
     "bassFile": "B426",
     "midiFile": "h426",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Nouvelle année"
+    "subtheme": "Nouvelle année",
+    "story": ""
   },
   {
     "number": "427",
@@ -6402,7 +6828,8 @@
     "bassFile": "B427",
     "midiFile": "h427",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Mariages"
+    "subtheme": "Mariages",
+    "story": ""
   },
   {
     "number": "428",
@@ -6417,7 +6844,8 @@
     "bassFile": "B428",
     "midiFile": "h428",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Mariages"
+    "subtheme": "Mariages",
+    "story": ""
   },
   {
     "number": "429",
@@ -6432,7 +6860,8 @@
     "bassFile": "B429",
     "midiFile": "h429",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Mariages"
+    "subtheme": "Mariages",
+    "story": ""
   },
   {
     "number": "430",
@@ -6447,7 +6876,8 @@
     "bassFile": "B430",
     "midiFile": "h430",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Mariages"
+    "subtheme": "Mariages",
+    "story": ""
   },
   {
     "number": "431",
@@ -6462,7 +6892,8 @@
     "bassFile": "B431",
     "midiFile": "h431",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "432",
@@ -6477,7 +6908,8 @@
     "bassFile": "B432",
     "midiFile": "h432",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "433",
@@ -6492,7 +6924,8 @@
     "bassFile": "B433",
     "midiFile": "h433",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "434",
@@ -6507,7 +6940,8 @@
     "bassFile": "B434",
     "midiFile": "h434",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "435",
@@ -6522,7 +6956,8 @@
     "bassFile": "B435",
     "midiFile": "h435",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "436",
@@ -6537,7 +6972,8 @@
     "bassFile": "B436",
     "midiFile": "h436",
     "theme": "CHANTS DIVERS",
-    "subtheme": "La famille"
+    "subtheme": "La famille",
+    "story": ""
   },
   {
     "number": "437",
@@ -6552,7 +6988,8 @@
     "bassFile": "B437",
     "midiFile": "h437",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Consécration de pasteurs"
+    "subtheme": "Consécration de pasteurs",
+    "story": ""
   },
   {
     "number": "438",
@@ -6567,7 +7004,8 @@
     "bassFile": "B438",
     "midiFile": "h438",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Consécration de pasteurs"
+    "subtheme": "Consécration de pasteurs",
+    "story": ""
   },
   {
     "number": "439",
@@ -6582,7 +7020,8 @@
     "bassFile": "B439",
     "midiFile": "h439",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Consécration de pasteurs"
+    "subtheme": "Consécration de pasteurs",
+    "story": ""
   },
   {
     "number": "440",
@@ -6597,7 +7036,8 @@
     "bassFile": "B440",
     "midiFile": "h440",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Consécration de pasteurs"
+    "subtheme": "Consécration de pasteurs",
+    "story": ""
   },
   {
     "number": "441",
@@ -6612,7 +7052,8 @@
     "bassFile": "B441",
     "midiFile": "h441",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Dédicace de temples"
+    "subtheme": "Dédicace de temples",
+    "story": ""
   },
   {
     "number": "442",
@@ -6627,7 +7068,8 @@
     "bassFile": "B442",
     "midiFile": "h442",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Dédicace de temples"
+    "subtheme": "Dédicace de temples",
+    "story": ""
   },
   {
     "number": "443",
@@ -6642,7 +7084,8 @@
     "bassFile": "B443",
     "midiFile": "h443",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Dédicace de temples"
+    "subtheme": "Dédicace de temples",
+    "story": ""
   },
   {
     "number": "444",
@@ -6657,7 +7100,8 @@
     "bassFile": "B444",
     "midiFile": "h444",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Dédicace de temples"
+    "subtheme": "Dédicace de temples",
+    "story": ""
   },
   {
     "number": "445",
@@ -6672,7 +7116,8 @@
     "bassFile": "B445",
     "midiFile": "h445",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Chants d'adieu"
+    "subtheme": "Chants d'adieu",
+    "story": ""
   },
   {
     "number": "446",
@@ -6687,7 +7132,8 @@
     "bassFile": "B446",
     "midiFile": "h446",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Chants d'adieu"
+    "subtheme": "Chants d'adieu",
+    "story": ""
   },
   {
     "number": "447",
@@ -6702,7 +7148,8 @@
     "bassFile": "B447",
     "midiFile": "h447",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Chants d'adieu"
+    "subtheme": "Chants d'adieu",
+    "story": ""
   },
   {
     "number": "448",
@@ -6717,7 +7164,8 @@
     "bassFile": "B448",
     "midiFile": "h448",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "449",
@@ -6732,7 +7180,8 @@
     "bassFile": "B449",
     "midiFile": "h449",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "450",
@@ -6747,7 +7196,8 @@
     "bassFile": "B450",
     "midiFile": "h450",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "451",
@@ -6762,7 +7212,8 @@
     "bassFile": "B451",
     "midiFile": "h451",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "452",
@@ -6777,7 +7228,8 @@
     "bassFile": "B452",
     "midiFile": "h452",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "453",
@@ -6792,7 +7244,8 @@
     "bassFile": "B453",
     "midiFile": "h453",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Deuil"
+    "subtheme": "Deuil",
+    "story": ""
   },
   {
     "number": "454",
@@ -6807,7 +7260,8 @@
     "bassFile": "B454",
     "midiFile": "h454",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "455",
@@ -6822,7 +7276,8 @@
     "bassFile": "B455",
     "midiFile": "h455",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "456",
@@ -6837,7 +7292,8 @@
     "bassFile": "B456",
     "midiFile": "h456",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "457",
@@ -6852,7 +7308,8 @@
     "bassFile": "B457",
     "midiFile": "h457",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "458",
@@ -6867,7 +7324,8 @@
     "bassFile": "B458",
     "midiFile": "h458",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "459",
@@ -6882,7 +7340,8 @@
     "bassFile": "B459",
     "midiFile": "h459",
     "theme": "CHANTS DIVERS",
-    "subtheme": "Tempérance"
+    "subtheme": "Tempérance",
+    "story": ""
   },
   {
     "number": "460",
@@ -6897,7 +7356,8 @@
     "bassFile": "B460",
     "midiFile": "h460",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "461",
@@ -6912,7 +7372,8 @@
     "bassFile": "B461",
     "midiFile": "h461",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "462",
@@ -6927,7 +7388,8 @@
     "bassFile": "B462",
     "midiFile": "h462",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "463",
@@ -6942,7 +7404,8 @@
     "bassFile": "B463",
     "midiFile": "h463",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "464",
@@ -6957,7 +7420,8 @@
     "bassFile": "B464",
     "midiFile": "h464",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "465",
@@ -6972,7 +7436,8 @@
     "bassFile": "B465",
     "midiFile": "h465",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "466",
@@ -6987,7 +7452,8 @@
     "bassFile": "B466",
     "midiFile": "h466",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "467",
@@ -7002,7 +7468,8 @@
     "bassFile": "B467",
     "midiFile": "h467",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "468",
@@ -7017,7 +7484,8 @@
     "bassFile": "B468",
     "midiFile": "h468",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "469",
@@ -7032,7 +7500,8 @@
     "bassFile": "B469",
     "midiFile": "h469",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "470",
@@ -7047,7 +7516,8 @@
     "bassFile": "B470",
     "midiFile": "h470",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "471",
@@ -7062,7 +7532,8 @@
     "bassFile": "B471",
     "midiFile": "h471",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "472",
@@ -7077,7 +7548,8 @@
     "bassFile": "B472",
     "midiFile": "h472",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "473",
@@ -7092,7 +7564,8 @@
     "bassFile": "B473",
     "midiFile": "h473",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "474",
@@ -7107,7 +7580,8 @@
     "bassFile": "B474",
     "midiFile": "h474",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "475",
@@ -7122,7 +7596,8 @@
     "bassFile": "B475",
     "midiFile": "h475",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "476",
@@ -7137,7 +7612,8 @@
     "bassFile": "B476",
     "midiFile": "h476",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "477",
@@ -7152,7 +7628,8 @@
     "bassFile": "B477",
     "midiFile": "h477",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "478",
@@ -7167,7 +7644,8 @@
     "bassFile": "B478",
     "midiFile": "h478",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "479",
@@ -7182,7 +7660,8 @@
     "bassFile": "B479",
     "midiFile": "h479",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "480",
@@ -7197,7 +7676,8 @@
     "bassFile": "B480",
     "midiFile": "h480",
     "theme": "JEUNESSE",
-    "subtheme": "Appel"
+    "subtheme": "Appel",
+    "story": ""
   },
   {
     "number": "481",
@@ -7212,7 +7692,8 @@
     "bassFile": "B481",
     "midiFile": "h481",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "482",
@@ -7227,7 +7708,8 @@
     "bassFile": "B482",
     "midiFile": "h482",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "483",
@@ -7242,7 +7724,8 @@
     "bassFile": "B483",
     "midiFile": "h483",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "484",
@@ -7257,7 +7740,8 @@
     "bassFile": "B484",
     "midiFile": "h484",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "485",
@@ -7272,7 +7756,8 @@
     "bassFile": "B485",
     "midiFile": "h485",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "486",
@@ -7287,7 +7772,8 @@
     "bassFile": "B486",
     "midiFile": "h486",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "487",
@@ -7302,7 +7788,8 @@
     "bassFile": "B487",
     "midiFile": "h487",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "488",
@@ -7317,22 +7804,24 @@
     "bassFile": "B488",
     "midiFile": "h488",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "489",
     "title": "Entre tes mains j'abandonne",
     "lyrics": "1.\nEntre tes mains, j'abandonne\nTout ce que j'appelle mien,\nOh, ne permets à personne\nSeigneur d'en reprendre rien.\nOui, prends tout, Seigneur!\nOui, prends tout, Seigneur!\nEntre tes mains, j'abandonne\nTout avec bonheur.\n\n2.\nJe n'ai pas peur de te suivre\nSur le chemin de la croix.\nC'est pour Toi que je veux vivre\nJe connais, j'aime ta voix.\nOui, prends tout, Seigneur!\nOui, prends tout, Seigneur!\nSans rien garder, je te livre\nTout avec bonheur.\n\n3.\nTu connais mieux que moi-même\nTous les besoins de mon coeur ;\nEt, pour mon bonheur suprême,\nTu peux me rendre vainqueur.\nOui, prends tout, Seigneur !\nOui, prends tout, Seigneur !\nJe ne vis plus pour moi-même,\nMais pour mon Sauveur.\n\n4.\nPrends mon corps\nEt prends mon âme,\nQue tout en moi soit à Toi!\nQue par ta divine flamme\nTout mal soit détruit en moi!\nOui, prends tout, Seigneur!\nOui, prends tout, Seigneur!\nPrends mon corps\nEt prends mon âme,\nRègne sur mon coeur.",
-    "author": "",
-    "composer": "",
-    "style": "",
+    "author": "Judson W. Van De Venter traduction par Charles Rochedieu",
+    "composer": "Winfield S. Weeden",
+    "style": "Doux",
     "sopranoFile": "S489",
     "altoFile": "A489",
     "tenorFile": "T489",
     "bassFile": "B489",
     "midiFile": "h489",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": "Le cantique «Entre tes mains j'abandonne en anglais All to Jesus I Surrender», aussi connu sous le nom de «I Surrender All», a été écrit par Judson Van De Venter, ancien professeur d'art devenu évangéliste, et composé par Winfield Weeden. Il figure dans les recueils de cantiques depuis 1896. Inspiré par le dilemme personnel de Van De Venter entre l'art et l'évangélisation à temps plein, ce cantique l'a finalement conduit à consacrer sa vie à Christ. Le texte met l'accent sur un engagement total envers Christ, exigeant humilité, obéissance et désir d'une relation intime avec Dieu. Billy Graham, évangéliste populaire, a également contribué à populariser ce cantique lors de ses croisades à partir de la fin des années 1940. \nSource: https://en.wikipedia.org/wiki/I_Surrender_All"
   },
   {
     "number": "490",
@@ -7347,7 +7836,8 @@
     "bassFile": "B490",
     "midiFile": "h490",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "491",
@@ -7362,7 +7852,8 @@
     "bassFile": "B491",
     "midiFile": "h491",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "492",
@@ -7377,7 +7868,8 @@
     "bassFile": "B492",
     "midiFile": "h492",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "493",
@@ -7392,7 +7884,8 @@
     "bassFile": "B493",
     "midiFile": "h493",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "494",
@@ -7407,7 +7900,8 @@
     "bassFile": "B494",
     "midiFile": "h494",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "495",
@@ -7422,7 +7916,8 @@
     "bassFile": "B495",
     "midiFile": "h495",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "496",
@@ -7437,7 +7932,8 @@
     "bassFile": "B496",
     "midiFile": "h496",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "497",
@@ -7452,7 +7948,8 @@
     "bassFile": "B497",
     "midiFile": "h497",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "498",
@@ -7467,7 +7964,8 @@
     "bassFile": "B498",
     "midiFile": "h498",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "499",
@@ -7482,7 +7980,8 @@
     "bassFile": "B499",
     "midiFile": "h499",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "500",
@@ -7497,7 +7996,8 @@
     "bassFile": "B500",
     "midiFile": "h500",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "501",
@@ -7512,7 +8012,8 @@
     "bassFile": "B501",
     "midiFile": "h501",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "502",
@@ -7527,7 +8028,8 @@
     "bassFile": "B502",
     "midiFile": "h502",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "503",
@@ -7542,7 +8044,8 @@
     "bassFile": "B503",
     "midiFile": "h503",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "504",
@@ -7557,7 +8060,8 @@
     "bassFile": "B504",
     "midiFile": "h504",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "505",
@@ -7572,7 +8076,8 @@
     "bassFile": "B505",
     "midiFile": "h505",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "506",
@@ -7587,7 +8092,8 @@
     "bassFile": "B506",
     "midiFile": "h506",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "507",
@@ -7602,7 +8108,8 @@
     "bassFile": "B507",
     "midiFile": "h507",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "508",
@@ -7617,7 +8124,8 @@
     "bassFile": "B508",
     "midiFile": "h508",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "509",
@@ -7632,7 +8140,8 @@
     "bassFile": "B509",
     "midiFile": "h509",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "510",
@@ -7647,7 +8156,8 @@
     "bassFile": "B510",
     "midiFile": "h510",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "511",
@@ -7662,7 +8172,8 @@
     "bassFile": "B511",
     "midiFile": "h511",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "512",
@@ -7677,7 +8188,8 @@
     "bassFile": "B512",
     "midiFile": "h512",
     "theme": "JEUNESSE",
-    "subtheme": "Consécration et aspiration"
+    "subtheme": "Consécration et aspiration",
+    "story": ""
   },
   {
     "number": "513",
@@ -7692,7 +8204,8 @@
     "bassFile": "B513",
     "midiFile": "h513",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "514",
@@ -7707,7 +8220,8 @@
     "bassFile": "B514",
     "midiFile": "h514",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "515",
@@ -7722,7 +8236,8 @@
     "bassFile": "B515",
     "midiFile": "h515",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "516",
@@ -7737,7 +8252,8 @@
     "bassFile": "B516",
     "midiFile": "h516",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "517",
@@ -7752,7 +8268,8 @@
     "bassFile": "B517",
     "midiFile": "h517",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "518",
@@ -7767,7 +8284,8 @@
     "bassFile": "B518",
     "midiFile": "h518",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "519",
@@ -7782,7 +8300,8 @@
     "bassFile": "B519",
     "midiFile": "h519",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "520",
@@ -7797,7 +8316,8 @@
     "bassFile": "B520",
     "midiFile": "h520",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "521",
@@ -7812,7 +8332,8 @@
     "bassFile": "B521",
     "midiFile": "h521",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "522",
@@ -7827,7 +8348,8 @@
     "bassFile": "B522",
     "midiFile": "h522",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "523",
@@ -7842,7 +8364,8 @@
     "bassFile": "B523",
     "midiFile": "h523",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "524",
@@ -7857,7 +8380,8 @@
     "bassFile": "B524",
     "midiFile": "h524",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "525",
@@ -7872,7 +8396,8 @@
     "bassFile": "B525",
     "midiFile": "h525",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "526",
@@ -7887,7 +8412,8 @@
     "bassFile": "B526",
     "midiFile": "h526",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "527",
@@ -7902,7 +8428,8 @@
     "bassFile": "B527",
     "midiFile": "h527",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "528",
@@ -7917,7 +8444,8 @@
     "bassFile": "B528",
     "midiFile": "h528",
     "theme": "JEUNESSE",
-    "subtheme": "Victoire en Christ"
+    "subtheme": "Victoire en Christ",
+    "story": ""
   },
   {
     "number": "529",
@@ -7932,7 +8460,8 @@
     "bassFile": "B529",
     "midiFile": "h529",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "530",
@@ -7947,7 +8476,8 @@
     "bassFile": "B530",
     "midiFile": "h530",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "531",
@@ -7962,7 +8492,8 @@
     "bassFile": "B531",
     "midiFile": "h531",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "532",
@@ -7977,7 +8508,8 @@
     "bassFile": "B532",
     "midiFile": "h532",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "533",
@@ -7992,7 +8524,8 @@
     "bassFile": "B533",
     "midiFile": "h533",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "534",
@@ -8007,7 +8540,8 @@
     "bassFile": "B534",
     "midiFile": "h534",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "535",
@@ -8022,7 +8556,8 @@
     "bassFile": "B535",
     "midiFile": "h535",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "536",
@@ -8037,7 +8572,8 @@
     "bassFile": "B536",
     "midiFile": "h536",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "537",
@@ -8052,7 +8588,8 @@
     "bassFile": "B537",
     "midiFile": "h537",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "538",
@@ -8067,7 +8604,8 @@
     "bassFile": "B538",
     "midiFile": "h538",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "539",
@@ -8082,7 +8620,8 @@
     "bassFile": "B539",
     "midiFile": "h539",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "540",
@@ -8097,7 +8636,8 @@
     "bassFile": "B540",
     "midiFile": "h540",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "541",
@@ -8112,7 +8652,8 @@
     "bassFile": "B541",
     "midiFile": "h541",
     "theme": "JEUNESSE",
-    "subtheme": "Activité missionnaire"
+    "subtheme": "Activité missionnaire",
+    "story": ""
   },
   {
     "number": "542",
@@ -8127,7 +8668,8 @@
     "bassFile": "B542",
     "midiFile": "h542",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "543",
@@ -8142,7 +8684,8 @@
     "bassFile": "B543",
     "midiFile": "h543",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "544",
@@ -8157,7 +8700,8 @@
     "bassFile": "B544",
     "midiFile": "h544",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "545",
@@ -8172,7 +8716,8 @@
     "bassFile": "B545",
     "midiFile": "h545",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "546",
@@ -8187,7 +8732,8 @@
     "bassFile": "B546",
     "midiFile": "h546",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "547",
@@ -8202,7 +8748,8 @@
     "bassFile": "B547",
     "midiFile": "h547",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "548",
@@ -8217,7 +8764,8 @@
     "bassFile": "B548",
     "midiFile": "h548",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "549",
@@ -8232,7 +8780,8 @@
     "bassFile": "B549",
     "midiFile": "h549",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "550",
@@ -8247,7 +8796,8 @@
     "bassFile": "B550",
     "midiFile": "h550",
     "theme": "JEUNESSE",
-    "subtheme": "Récréation"
+    "subtheme": "Récréation",
+    "story": ""
   },
   {
     "number": "551",
@@ -8262,7 +8812,8 @@
     "bassFile": "B551",
     "midiFile": "h551",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "552",
@@ -8277,7 +8828,8 @@
     "bassFile": "B552",
     "midiFile": "h552",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "553",
@@ -8292,7 +8844,8 @@
     "bassFile": "B553",
     "midiFile": "h553",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "554",
@@ -8307,7 +8860,8 @@
     "bassFile": "B554",
     "midiFile": "h554",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "555",
@@ -8322,7 +8876,8 @@
     "bassFile": "B555",
     "midiFile": "h555",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "556",
@@ -8337,7 +8892,8 @@
     "bassFile": "B556",
     "midiFile": "h556",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "557",
@@ -8352,7 +8908,8 @@
     "bassFile": "B557",
     "midiFile": "h557",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "558",
@@ -8367,7 +8924,8 @@
     "bassFile": "B558",
     "midiFile": "h558",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "559",
@@ -8382,7 +8940,8 @@
     "bassFile": "B559",
     "midiFile": "h559",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "560",
@@ -8397,7 +8956,8 @@
     "bassFile": "B560",
     "midiFile": "h560",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "561",
@@ -8412,7 +8972,8 @@
     "bassFile": "B561",
     "midiFile": "h561",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "562",
@@ -8427,7 +8988,8 @@
     "bassFile": "B562",
     "midiFile": "h562",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "563",
@@ -8442,7 +9004,8 @@
     "bassFile": "B563",
     "midiFile": "h563",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "564",
@@ -8457,7 +9020,8 @@
     "bassFile": "B564",
     "midiFile": "h564",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "565",
@@ -8472,7 +9036,8 @@
     "bassFile": "B565",
     "midiFile": "h565",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "566",
@@ -8487,7 +9052,8 @@
     "bassFile": "B566",
     "midiFile": "h566",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "567",
@@ -8502,7 +9068,8 @@
     "bassFile": "B567",
     "midiFile": "h567",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "568",
@@ -8517,7 +9084,8 @@
     "bassFile": "B568",
     "midiFile": "h568",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "569",
@@ -8532,7 +9100,8 @@
     "bassFile": "B569",
     "midiFile": "h569",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "570",
@@ -8547,7 +9116,8 @@
     "bassFile": "B570",
     "midiFile": "h570",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "571",
@@ -8562,7 +9132,8 @@
     "bassFile": "B571",
     "midiFile": "h571",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "572",
@@ -8577,7 +9148,8 @@
     "bassFile": "B572",
     "midiFile": "h572",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "573",
@@ -8592,7 +9164,8 @@
     "bassFile": "B573",
     "midiFile": "h573",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "574",
@@ -8607,7 +9180,8 @@
     "bassFile": "B574",
     "midiFile": "h574",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "575",
@@ -8622,7 +9196,8 @@
     "bassFile": "B575",
     "midiFile": "h575",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "576",
@@ -8637,7 +9212,8 @@
     "bassFile": "B576",
     "midiFile": "h576",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "577",
@@ -8652,7 +9228,8 @@
     "bassFile": "B577",
     "midiFile": "h577",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "578",
@@ -8667,7 +9244,8 @@
     "bassFile": "B578",
     "midiFile": "h578",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "579",
@@ -8682,7 +9260,8 @@
     "bassFile": "B579",
     "midiFile": "h579",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "580",
@@ -8697,7 +9276,8 @@
     "bassFile": "B580",
     "midiFile": "h580",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "581",
@@ -8712,7 +9292,8 @@
     "bassFile": "B581",
     "midiFile": "h581",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "582",
@@ -8727,7 +9308,8 @@
     "bassFile": "B582",
     "midiFile": "h582",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "583",
@@ -8742,7 +9324,8 @@
     "bassFile": "B583",
     "midiFile": "h583",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "584",
@@ -8757,7 +9340,8 @@
     "bassFile": "B584",
     "midiFile": "h584",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "585",
@@ -8772,7 +9356,8 @@
     "bassFile": "B585",
     "midiFile": "h585",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "586",
@@ -8787,7 +9372,8 @@
     "bassFile": "B586",
     "midiFile": "h586",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "587",
@@ -8802,7 +9388,8 @@
     "bassFile": "B587",
     "midiFile": "h587",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "588",
@@ -8817,7 +9404,8 @@
     "bassFile": "B588",
     "midiFile": "h588",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "589",
@@ -8832,7 +9420,8 @@
     "bassFile": "B589",
     "midiFile": "h589",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "590",
@@ -8847,7 +9436,8 @@
     "bassFile": "B590",
     "midiFile": "h590",
     "theme": "LES ENFANTS",
-    "subtheme": "Les enfants"
+    "subtheme": "Les enfants",
+    "story": ""
   },
   {
     "number": "591",
@@ -8862,7 +9452,8 @@
     "bassFile": "B591",
     "midiFile": "h591",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "592",
@@ -8877,7 +9468,8 @@
     "bassFile": "B592",
     "midiFile": "h592",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "593",
@@ -8892,7 +9484,8 @@
     "bassFile": "B593",
     "midiFile": "h593",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "594",
@@ -8907,7 +9500,8 @@
     "bassFile": "B594",
     "midiFile": "h594",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "595",
@@ -8922,7 +9516,8 @@
     "bassFile": "B595",
     "midiFile": "h595",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "596",
@@ -8937,7 +9532,8 @@
     "bassFile": "B596",
     "midiFile": "h596",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "597",
@@ -8952,7 +9548,8 @@
     "bassFile": "B597",
     "midiFile": "h597",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "598",
@@ -8967,7 +9564,8 @@
     "bassFile": "B598",
     "midiFile": "h598",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "599",
@@ -8982,7 +9580,8 @@
     "bassFile": "B599",
     "midiFile": "h599",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "600",
@@ -8997,7 +9596,8 @@
     "bassFile": "B600",
     "midiFile": "h600",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "601",
@@ -9012,7 +9612,8 @@
     "bassFile": "B601",
     "midiFile": "h601",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "602",
@@ -9027,7 +9628,8 @@
     "bassFile": "B602",
     "midiFile": "h602",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "603",
@@ -9042,7 +9644,8 @@
     "bassFile": "B603",
     "midiFile": "h603",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "604",
@@ -9057,7 +9660,8 @@
     "bassFile": "B604",
     "midiFile": "h604",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "605",
@@ -9072,7 +9676,8 @@
     "bassFile": "B605",
     "midiFile": "h605",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "606",
@@ -9087,7 +9692,8 @@
     "bassFile": "B606",
     "midiFile": "h606",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "607",
@@ -9102,7 +9708,8 @@
     "bassFile": "B607",
     "midiFile": "h607",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "608",
@@ -9117,7 +9724,8 @@
     "bassFile": "B608",
     "midiFile": "h608",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "609",
@@ -9132,7 +9740,8 @@
     "bassFile": "B609",
     "midiFile": "h609",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "610",
@@ -9147,7 +9756,8 @@
     "bassFile": "B610",
     "midiFile": "h610",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "611",
@@ -9162,7 +9772,8 @@
     "bassFile": "B611",
     "midiFile": "h611",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "612",
@@ -9177,7 +9788,8 @@
     "bassFile": "B612",
     "midiFile": "h612",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "613",
@@ -9192,7 +9804,8 @@
     "bassFile": "B613",
     "midiFile": "h613",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "614",
@@ -9207,7 +9820,8 @@
     "bassFile": "B614",
     "midiFile": "h614",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "615",
@@ -9222,7 +9836,8 @@
     "bassFile": "B615",
     "midiFile": "h615",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "616",
@@ -9237,7 +9852,8 @@
     "bassFile": "B616",
     "midiFile": "h616",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "617",
@@ -9252,7 +9868,8 @@
     "bassFile": "B617",
     "midiFile": "h617",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "618",
@@ -9267,7 +9884,8 @@
     "bassFile": "B618",
     "midiFile": "h618",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "619",
@@ -9282,7 +9900,8 @@
     "bassFile": "B619",
     "midiFile": "h619",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "620",
@@ -9297,7 +9916,8 @@
     "bassFile": "B620",
     "midiFile": "h620",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "621",
@@ -9312,7 +9932,8 @@
     "bassFile": "B621",
     "midiFile": "h621",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "622",
@@ -9327,7 +9948,8 @@
     "bassFile": "B622",
     "midiFile": "h622",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "623",
@@ -9342,7 +9964,8 @@
     "bassFile": "B623",
     "midiFile": "h623",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "624",
@@ -9357,7 +9980,8 @@
     "bassFile": "B624",
     "midiFile": "h624",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "625",
@@ -9372,7 +9996,8 @@
     "bassFile": "B625",
     "midiFile": "h625",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "626",
@@ -9387,7 +10012,8 @@
     "bassFile": "B626",
     "midiFile": "h626",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "627",
@@ -9402,7 +10028,8 @@
     "bassFile": "B627",
     "midiFile": "h627",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "628",
@@ -9417,7 +10044,8 @@
     "bassFile": "B628",
     "midiFile": "h628",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "629",
@@ -9432,7 +10060,8 @@
     "bassFile": "B629",
     "midiFile": "h629",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "630",
@@ -9447,7 +10076,8 @@
     "bassFile": "B630",
     "midiFile": "h630",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "631",
@@ -9462,7 +10092,8 @@
     "bassFile": "B631",
     "midiFile": "h631",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "632",
@@ -9477,7 +10108,8 @@
     "bassFile": "B632",
     "midiFile": "h632",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "633",
@@ -9492,7 +10124,8 @@
     "bassFile": "B633",
     "midiFile": "h633",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "634",
@@ -9507,7 +10140,8 @@
     "bassFile": "B634",
     "midiFile": "h634",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "635",
@@ -9522,7 +10156,8 @@
     "bassFile": "B635",
     "midiFile": "h635",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "636",
@@ -9537,7 +10172,8 @@
     "bassFile": "B636",
     "midiFile": "h636",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "637",
@@ -9552,7 +10188,8 @@
     "bassFile": "B637",
     "midiFile": "h637",
     "theme": "DUOS ET CHOEURS",
-    "subtheme": "Duos et choeurs"
+    "subtheme": "Duos et choeurs",
+    "story": ""
   },
   {
     "number": "638",
@@ -9567,7 +10204,8 @@
     "bassFile": "B638",
     "midiFile": "h638",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "639",
@@ -9582,7 +10220,8 @@
     "bassFile": "B639",
     "midiFile": "h639",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "640",
@@ -9597,7 +10236,8 @@
     "bassFile": "B640",
     "midiFile": "h640",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "641",
@@ -9612,7 +10252,8 @@
     "bassFile": "B641",
     "midiFile": "h641",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "642",
@@ -9627,7 +10268,8 @@
     "bassFile": "B642",
     "midiFile": "h642",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "643",
@@ -9642,7 +10284,8 @@
     "bassFile": "B643",
     "midiFile": "h643",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "644",
@@ -9657,7 +10300,8 @@
     "bassFile": "B644",
     "midiFile": "h644",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "645",
@@ -9672,7 +10316,8 @@
     "bassFile": "B645",
     "midiFile": "h645",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "646",
@@ -9687,7 +10332,8 @@
     "bassFile": "B646",
     "midiFile": "h646",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "647",
@@ -9702,7 +10348,8 @@
     "bassFile": "B647",
     "midiFile": "h647",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "648",
@@ -9717,7 +10364,8 @@
     "bassFile": "B648",
     "midiFile": "h648",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "649",
@@ -9732,7 +10380,8 @@
     "bassFile": "B649",
     "midiFile": "h649",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "650",
@@ -9747,7 +10396,8 @@
     "bassFile": "B650",
     "midiFile": "h650",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "651",
@@ -9762,7 +10412,8 @@
     "bassFile": "B651",
     "midiFile": "h651",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "652",
@@ -9777,7 +10428,8 @@
     "bassFile": "B652",
     "midiFile": "h652",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "653",
@@ -9792,7 +10444,8 @@
     "bassFile": "B653",
     "midiFile": "h653",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   },
   {
     "number": "654",
@@ -9807,6 +10460,7 @@
     "bassFile": "B654",
     "midiFile": "h654",
     "theme": "CHOEURS D'HOMMES",
-    "subtheme": "Choeurs d'hommes"
+    "subtheme": "Choeurs d'hommes",
+    "story": ""
   }
 ]
