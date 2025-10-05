@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -196,6 +197,7 @@ class HymnCard extends StatelessWidget {
                           ),
                           child: IconButton(
                             onPressed: () {
+                              testFirebase();
                               context
                                   .read<FavoritesBloc>()
                                   .add(ToggleFavorite(hymn));
@@ -231,5 +233,18 @@ class HymnCard extends StatelessWidget {
         );
       },
     );
+  }
+
+  // Add this to any existing screen to test Firebase
+  void testFirebase() async {
+    try {
+      final firestore = FirebaseFirestore.instance;
+      print('🔥 Testing Firestore...');
+      await firestore.collection('_test').limit(1).get();
+      print('✅ Firestore is working!');
+    } catch (e) {
+      print('❌ Firestore error: $e');
+      print('💡 Enable Firestore in Firebase Console!');
+    }
   }
 }

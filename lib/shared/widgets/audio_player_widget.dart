@@ -485,8 +485,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
             voiceFile = widget.baritoneFile;
             break;
           case VoiceType.allVoices:
-          default:
-            voiceFile = null; // Use default hymn file
+            voiceFile = widget.hymnNumber;
+            // Use default hymn file
             break;
         }
 
