@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hymnes_sda_fr/main.dart';
+import 'package:hymnes_sda_fr/hymnes.dart';
 
 void main() {
   group('App Widget Tests', () {

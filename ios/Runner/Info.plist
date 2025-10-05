@@ -66,5 +66,7 @@
 			<string>googlechrome</string>
 			<string>googlechrome-x-callback</string>
 		</array>
+		<key>com.posthog.posthog.AUTO_INIT</key>
+		<false />
 	</dict>
 </plist>

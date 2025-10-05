@@ -3,11 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i3;
-import 'dart:ui' as _i4;
+import 'dart:async' as _i4;
+import 'dart:ui' as _i5;
 
 import 'package:hymnes_sda_fr/core/services/audio_service.dart' as _i2;
-import 'package:hymnes_sda_fr/features/audio/bloc/audio_bloc.dart' as _i5;
+import 'package:hymnes_sda_fr/features/audio/bloc/audio_bloc.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -47,6 +47,12 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
         Invocation.getter(#state),
         returnValue: _i2.AudioPlayerState.stopped,
       ) as _i2.AudioPlayerState);
+
+  @override
+  _i3.VoiceType get currentVoiceType => (super.noSuchMethod(
+        Invocation.getter(#currentVoiceType),
+        returnValue: _i3.VoiceType.allVoices,
+      ) as _i3.VoiceType);
 
   @override
   Duration get position => (super.noSuchMethod(
@@ -103,38 +109,43 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       ) as bool);
 
   @override
-  _i3.Future<void> initialize() => (super.noSuchMethod(
+  _i4.Future<void> initialize() => (super.noSuchMethod(
         Invocation.method(
           #initialize,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> playHymn(String hymnNumber,
-          {String? voiceFile,
-          _i5.VoiceType voiceType = _i5.VoiceType.allVoices}) =>
+  _i4.Future<void> playHymn(
+    String? hymnNumber, {
+    _i3.VoiceType? voiceType = _i3.VoiceType.allVoices,
+    String? voiceFile,
+  }) =>
       (super.noSuchMethod(
         Invocation.method(
           #playHymn,
           [hymnNumber],
-          {#voiceFile: voiceFile, #voiceType: voiceType},
+          {
+            #voiceType: voiceType,
+            #voiceFile: voiceFile,
+          },
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> retryPlay() => (super.noSuchMethod(
+  _i4.Future<void> retryPlay() => (super.noSuchMethod(
         Invocation.method(
           #retryPlay,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
   bool isPlayingHymn(String? hymnNumber) => (super.noSuchMethod(
@@ -146,54 +157,54 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       ) as bool);
 
   @override
-  _i3.Future<void> pause() => (super.noSuchMethod(
+  _i4.Future<void> pause() => (super.noSuchMethod(
         Invocation.method(
           #pause,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> resume() => (super.noSuchMethod(
+  _i4.Future<void> resume() => (super.noSuchMethod(
         Invocation.method(
           #resume,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> stop() => (super.noSuchMethod(
+  _i4.Future<void> stop() => (super.noSuchMethod(
         Invocation.method(
           #stop,
           [],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> seekTo(Duration? position) => (super.noSuchMethod(
+  _i4.Future<void> seekTo(Duration? position) => (super.noSuchMethod(
         Invocation.method(
           #seekTo,
           [position],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
-  _i3.Future<void> setVolume(double? volume) => (super.noSuchMethod(
+  _i4.Future<void> setVolume(double? volume) => (super.noSuchMethod(
         Invocation.method(
           #setVolume,
           [volume],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
   void clearError() => super.noSuchMethod(
@@ -205,14 +216,24 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       );
 
   @override
-  _i3.Future<void> stopIfPlaying(String? hymnNumber) => (super.noSuchMethod(
+  _i4.Future<void> stopIfPlaying(String? hymnNumber) => (super.noSuchMethod(
         Invocation.method(
           #stopIfPlaying,
           [hymnNumber],
         ),
-        returnValue: _i3.Future<void>.value(),
-        returnValueForMissingStub: _i3.Future<void>.value(),
-      ) as _i3.Future<void>);
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+
+  @override
+  _i4.Future<void> disposeAsync() => (super.noSuchMethod(
+        Invocation.method(
+          #disposeAsync,
+          [],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
 
   @override
   void dispose() => super.noSuchMethod(
@@ -224,7 +245,7 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       );
 
   @override
-  void addListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -233,7 +254,7 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       );
 
   @override
-  void removeListener(_i4.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i5.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
