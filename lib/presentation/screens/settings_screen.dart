@@ -66,7 +66,7 @@ class _SettingsScreenState extends State<SettingsScreen>
 
   void _onScroll() {
     // Show collapsed app bar when scrolled past the hero section (around 80px)
-    final shouldShow = _scrollController.offset > 80;
+    final shouldShow = _scrollController.offset > 70;
     if (shouldShow != _showCollapsedAppBar) {
       setState(() {
         _showCollapsedAppBar = shouldShow;

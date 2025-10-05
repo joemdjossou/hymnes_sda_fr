@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
+import '../../features/audio/bloc/audio_bloc.dart';
+
 enum AudioPlayerState {
   stopped,
   loading,
@@ -19,6 +21,7 @@ class AudioService extends ChangeNotifier {
 
   AudioPlayerState _state = AudioPlayerState.stopped;
   String? _currentHymnNumber;
+  VoiceType _currentVoiceType = VoiceType.allVoices;
   Duration _position = Duration.zero;
   Duration _duration = Duration.zero;
   bool _isInitialized = false;
@@ -36,6 +39,7 @@ class AudioService extends ChangeNotifier {
   // Getters
   AudioPlayerState get state => _state;
   String? get currentHymnNumber => _currentHymnNumber;
+  VoiceType get currentVoiceType => _currentVoiceType;
   Duration get position => _position;
   Duration get duration => _duration;
   bool get isPlaying => _isPlaying;
@@ -113,17 +117,20 @@ class AudioService extends ChangeNotifier {
     }
   }
 
-  Future<void> playHymn(String hymnNumber) async {
+  Future<void> playHymn(String hymnNumber,
+      {VoiceType voiceType = VoiceType.allVoices, String? voiceFile}) async {
     if (!_isInitialized) await initialize();
 
     try {
       _state = AudioPlayerState.loading;
       _currentHymnNumber = hymnNumber;
+      _currentVoiceType = voiceType;
       _lastError = null;
       _retryCount = 0;
       notifyListeners();
 
-      await _loadAndPlayHymn(hymnNumber);
+      await _loadAndPlayHymn(hymnNumber,
+          voiceType: voiceType, voiceFile: voiceFile);
 
       // Add a timeout to ensure loading state is cleared
       Future.delayed(Duration(seconds: 2), () {
@@ -139,13 +146,24 @@ class AudioService extends ChangeNotifier {
     }
   }
 
-  Future<void> _loadAndPlayHymn(String hymnNumber) async {
-    // Construct the MP3 URL
-    final paddedNumber = hymnNumber.padLeft(3, '0');
-    final mp3Url =
-        'https://troisanges.org/Musique/HymnesEtLouanges/MP3/H$paddedNumber.mp3';
+  Future<void> _loadAndPlayHymn(String hymnNumber,
+      {VoiceType voiceType = VoiceType.allVoices, String? voiceFile}) async {
+    String mp3Url;
 
-    debugPrint('Attempting to play audio: $mp3Url');
+    if (voiceType == VoiceType.allVoices) {
+      // Use the original URL for all voices
+      final paddedNumber = hymnNumber.padLeft(3, '0');
+      mp3Url =
+          'https://troisanges.org/Musique/HymnesEtLouanges/MP3/H$paddedNumber.mp3';
+    } else {
+      // Use the new voice-specific URL
+      if (voiceFile == null || voiceFile.isEmpty) {
+        throw Exception('Voice file is required for individual voice playback');
+      }
+      mp3Url = 'https://joemdjossou.github.io/hymnes_voices/output$voiceFile';
+    }
+
+    debugPrint('Attempting to play audio: $mp3Url (Voice: $voiceType)');
 
     try {
       // Load the MP3 file
@@ -190,7 +208,8 @@ class AudioService extends ChangeNotifier {
       // Retry after a delay
       Future.delayed(Duration(seconds: 2 * _retryCount), () {
         if (_state == AudioPlayerState.retrying) {
-          _loadAndPlayHymn(_currentHymnNumber!).catchError(_handlePlayError);
+          _loadAndPlayHymn(_currentHymnNumber!, voiceType: _currentVoiceType)
+              .catchError(_handlePlayError);
         }
       });
     } else {
@@ -204,7 +223,7 @@ class AudioService extends ChangeNotifier {
   Future<void> retryPlay() async {
     if (_currentHymnNumber != null) {
       _retryCount = 0;
-      await playHymn(_currentHymnNumber!);
+      await playHymn(_currentHymnNumber!, voiceType: _currentVoiceType);
     }
   }
 
@@ -248,6 +267,7 @@ class AudioService extends ChangeNotifier {
         _isPlaying = false;
         _position = Duration.zero;
         _currentHymnNumber = null;
+        _currentVoiceType = VoiceType.allVoices;
         _lastError = null;
         notifyListeners();
         debugPrint('Audio playback stopped');
@@ -290,12 +310,48 @@ class AudioService extends ChangeNotifier {
     }
   }
 
+  Future<void> disposeAsync() async {
+    try {
+      await _audioPlayer?.stop();
+      _positionSubscription?.cancel();
+      _durationSubscription?.cancel();
+      _playerStateSubscription?.cancel();
+      await _audioPlayer?.dispose();
+      _audioPlayer = null;
+      _isInitialized = false;
+      _state = AudioPlayerState.stopped;
+      _currentHymnNumber = null;
+      _currentVoiceType = VoiceType.allVoices;
+      _position = Duration.zero;
+      _duration = Duration.zero;
+      _isPlaying = false;
+      _lastError = null;
+      _retryCount = 0;
+    } catch (e) {
+      debugPrint('Error disposing AudioService: $e');
+    }
+  }
+
   @override
   void dispose() {
-    _positionSubscription?.cancel();
-    _durationSubscription?.cancel();
-    _playerStateSubscription?.cancel();
-    _audioPlayer?.dispose();
+    try {
+      _positionSubscription?.cancel();
+      _durationSubscription?.cancel();
+      _playerStateSubscription?.cancel();
+      _audioPlayer?.dispose();
+      _audioPlayer = null;
+      _isInitialized = false;
+      _state = AudioPlayerState.stopped;
+      _currentHymnNumber = null;
+      _currentVoiceType = VoiceType.allVoices;
+      _position = Duration.zero;
+      _duration = Duration.zero;
+      _isPlaying = false;
+      _lastError = null;
+      _retryCount = 0;
+    } catch (e) {
+      debugPrint('Error disposing AudioService: $e');
+    }
     super.dispose();
   }
 }

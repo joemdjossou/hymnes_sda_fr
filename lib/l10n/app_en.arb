@@ -112,6 +112,8 @@
   "alto": "Alto",
   "tenor": "Tenor",
   "bass": "Bass",
+  "countertenor": "Countertenor",
+  "baritone": "Baritone",
   "musicSheet": "Music Sheet",
   "viewMusicSheet": "View music sheet (PDF)",
   "viewMusicSheets": "View {count} music sheets (PDF)",
@@ -290,5 +292,15 @@
   "justSoYouKnow": "Just so you know",
   "loggedInOverHour": "You've been logged in for over an hour. Don't forget to save your progress.",
   "lyricsCopied": "Lyrics copied",
-  "storyCopied": "Story copied"
+  "storyCopied": "Story copied",
+  "loadingAudio": "Loading audio...",
+  "retrying": "Retrying... ({count}/3)",
+  "@retrying": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unableToPlayAudio": "Unable to play audio"
 }

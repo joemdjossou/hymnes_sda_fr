@@ -89,7 +89,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
 
   void _onScroll() {
     // Show collapsed app bar when scrolled past the hero section (around 100px)
-    final shouldShow = _scrollController.offset > 100;
+    final shouldShow = _scrollController.offset > 150;
     if (shouldShow != _showCollapsedAppBar) {
       setState(() {
         _showCollapsedAppBar = shouldShow;
@@ -234,9 +234,17 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                           delegate: SliverChildListDelegate([
                             // Audio Player
                             AudioPlayerWidget(
-                              hymnNumber: _controller.hymn!.number,
-                              hymnTitle: _controller.hymn!.title,
+                              hymnNumber: _controller.hymn?.number ?? '',
+                              hymnTitle: _controller.hymn?.title ?? '',
+                              sopranoFile: _controller.hymn?.sopranoFile,
+                              altoFile: _controller.hymn?.altoFile,
+                              tenorFile: _controller.hymn?.tenorFile,
+                              bassFile: _controller.hymn?.bassFile,
+                              countertenorFile:
+                                  _controller.hymn?.countertenorFile,
+                              baritoneFile: _controller.hymn?.baritoneFile,
                             ),
+
                             const Gap(24),
 
                             // Lyrics - using extracted widget
