@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -40,7 +41,7 @@ class EmptySearchState extends StatelessWidget {
                 color: AppColors.textSecondary(context),
               ),
             ),
-            const SizedBox(height: 24),
+            const Gap(24),
             Text(
               l10n.noHymnsAvailableAtMoment,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -49,7 +50,7 @@ class EmptySearchState extends StatelessWidget {
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               l10n.tryModifyingSearchCriteria,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -57,7 +58,7 @@ class EmptySearchState extends StatelessWidget {
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 32),
+            const Gap(32),
             ElevatedButton.icon(
               onPressed: onClearFilters,
               icon: const Icon(Icons.refresh_rounded),

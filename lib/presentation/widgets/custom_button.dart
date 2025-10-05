@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../../shared/constants/app_colors.dart';
 
@@ -41,7 +42,7 @@ class CustomButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (isLoading) ...[
-          SizedBox(
+          Container(
             width: 20,
             height: 20,
             child: CircularProgressIndicator(
@@ -51,7 +52,7 @@ class CustomButton extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(width: 12),
+          const Gap(12),
         ] else if (icon != null) ...[
           Icon(
             icon,
@@ -59,7 +60,7 @@ class CustomButton extends StatelessWidget {
             color:
                 variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
           ),
-          const SizedBox(width: 8),
+          const Gap(8),
         ],
         Text(
           text,

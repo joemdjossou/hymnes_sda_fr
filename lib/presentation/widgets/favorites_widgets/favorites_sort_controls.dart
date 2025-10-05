@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../../features/favorites/models/favorites_sort_option.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -97,7 +98,7 @@ class FavoritesSortControls extends StatelessWidget {
                   color: AppColors.primary,
                   size: 16,
                 ),
-                const SizedBox(width: 8),
+                const Gap(8),
                 Text(
                   currentLabel,
                   style: TextStyle(
@@ -106,7 +107,7 @@ class FavoritesSortControls extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
-                const SizedBox(width: 4),
+                const Gap(4),
                 Icon(
                   Icons.arrow_drop_down,
                   color: AppColors.primary,
@@ -200,7 +201,7 @@ class FavoritesSortControls extends StatelessWidget {
                 },
               );
             }).toList(),
-            const SizedBox(height: 20),
+            const Gap(20),
           ],
         ),
       ),

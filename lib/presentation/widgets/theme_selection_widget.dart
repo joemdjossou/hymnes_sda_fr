@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/providers/theme_provider.dart';
 import '../../shared/constants/app_colors.dart';
@@ -65,7 +66,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                   size: 24,
                 ),
               ),
-              const SizedBox(width: 16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +79,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                         color: AppColors.textPrimary(context),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const Gap(4),
                     Text(
                       l10n.customizeAppAppearance,
                       style: TextStyle(
@@ -93,7 +94,7 @@ class ThemeSelectionWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const Gap(20),
           BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
               final currentThemeMode =
@@ -147,7 +148,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                                     : AppColors.textSecondary(context),
                                 size: 24,
                               ),
-                              const SizedBox(width: 12),
+                              const Gap(12),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -89,14 +90,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 40),
+                  const Gap(40),
                   // Icon
                   Icon(
                     Icons.lock_reset,
                     size: 80,
                     color: theme.iconTheme.color,
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Title
                   Text(
                     l10n.resetPassword,
@@ -105,7 +106,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 8),
+                  const Gap(8),
                   // Subtitle
                   Text(
                     l10n.resetPasswordDescription,
@@ -115,7 +116,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 40),
+                  const Gap(40),
                   if (!_emailSent) ...[
                     // Email Field
                     CustomTextField(
@@ -135,7 +136,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 24),
+                    const Gap(24),
                     // Send Reset Email Button
                     CustomButton(
                       text: l10n.sendResetEmail,
@@ -160,7 +161,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             size: 64,
                             color: Colors.green,
                           ),
-                          const SizedBox(height: 16),
+                          const Gap(16),
                           Text(
                             l10n.passwordResetSent(
                                 _emailController.text.trim()),
@@ -169,7 +170,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 8),
+                          const Gap(8),
                           Text(
                             'Please check your email and follow the instructions to reset your password.',
                             style: theme.textTheme.bodyMedium?.copyWith(
@@ -181,7 +182,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    const Gap(24),
                     // Back to Sign In Button
                     CustomButton(
                       text: l10n.backToSignIn,
@@ -189,7 +190,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       variant: ButtonVariant.outlined,
                     ),
                   ],
-                  const SizedBox(height: 40),
+                  const Gap(40),
                 ],
               ),
             ),

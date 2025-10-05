@@ -233,7 +233,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                 color: AppColors.textSecondary(context),
               ),
             ),
-            const SizedBox(height: 24),
+            const Gap(24),
             Text(
               l10n.oopsErrorOccurred,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -242,7 +242,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               message,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -250,7 +250,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 32),
+            const Gap(32),
             ElevatedButton.icon(
               onPressed: () {
                 Logger().d('🔔🚀 $message');
@@ -302,7 +302,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                 color: AppColors.textSecondary(context),
               ),
             ),
-            const SizedBox(height: 24),
+            const Gap(24),
             Text(
               l10n.noFavoritesYet,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
@@ -311,7 +311,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               l10n.addFavoritesDescription,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -319,7 +319,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 32),
+            const Gap(32),
             Container(
               decoration: BoxDecoration(
                 gradient: AppColors.primaryGradient(context),

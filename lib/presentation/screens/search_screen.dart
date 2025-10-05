@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
@@ -237,7 +238,7 @@ class _SearchScreenState extends State<SearchScreen>
                                 onClear: () => _searchController.clear(),
                               ),
 
-                              const SizedBox(height: 16),
+                              const Gap(16),
 
                               // Filter Controls Row
                               FilterControls(
@@ -249,7 +250,7 @@ class _SearchScreenState extends State<SearchScreen>
                                 onClearFilters: _clearFilters,
                               ),
 
-                              const SizedBox(height: 16),
+                              const Gap(16),
                             ],
                           ),
                         ),

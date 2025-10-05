@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../shared/constants/app_colors.dart';
 
@@ -96,7 +97,7 @@ class ModernSliverAppBar extends StatelessWidget {
                         size: 20,
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const Gap(12),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -219,7 +220,7 @@ class ModernSliverAppBar extends StatelessWidget {
                 size: 28,
               ),
             ),
-            const SizedBox(width: 16),
+            const Gap(16),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -232,7 +233,7 @@ class ModernSliverAppBar extends StatelessWidget {
                     ),
                   ),
                   if (subtitle != null) ...[
-                    const SizedBox(height: 4),
+                    const Gap(4),
                     Text(
                       subtitle!,
                       style: theme.textTheme.bodyMedium?.copyWith(
@@ -246,7 +247,7 @@ class ModernSliverAppBar extends StatelessWidget {
           ],
         ),
         if (author != null || composer != null || style != null) ...[
-          const SizedBox(height: 16),
+          const Gap(16),
           Wrap(
             spacing: 12,
             runSpacing: 8,

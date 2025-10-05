@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../shared/constants/app_colors.dart';
 import 'favorites_screen.dart';
@@ -227,7 +228,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
                   size: 24,
                 ),
               ),
-              const SizedBox(height: 2),
+              const Gap(2),
               AnimatedDefaultTextStyle(
                 duration: const Duration(milliseconds: 300),
                 style: TextStyle(

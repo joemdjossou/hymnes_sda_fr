@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/shared/widgets/custom_toast.dart';
 
 import '../../core/models/hymn.dart';
@@ -89,7 +90,7 @@ class HymnCard extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(width: 16),
+                    const Gap(16),
 
                     // Hymn Details
                     Expanded(
@@ -108,7 +109,7 @@ class HymnCard extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 6),
+                          const Gap(6),
                           Text(
                             hymn.author,
                             style: Theme.of(context)
@@ -121,7 +122,7 @@ class HymnCard extends StatelessWidget {
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 4),
+                          const Gap(4),
                           Wrap(
                             spacing: 8,
                             runSpacing: 4,
@@ -179,7 +180,7 @@ class HymnCard extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(width: 12),
+                    const Gap(12),
 
                     // Action Buttons
                     Column(
@@ -219,7 +220,7 @@ class HymnCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const Gap(8),
                       ],
                     ),
                   ],

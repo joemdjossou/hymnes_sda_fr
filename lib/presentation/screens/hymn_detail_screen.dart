@@ -318,7 +318,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                 color: AppColors.textSecondary(context),
               ),
             ),
-            const SizedBox(height: 24),
+            const Gap(24),
             Text(
               l10n.hymnNotFound,
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(

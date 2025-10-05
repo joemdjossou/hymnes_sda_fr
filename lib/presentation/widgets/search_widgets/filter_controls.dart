@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -62,7 +63,7 @@ class FilterControls extends StatelessWidget {
                       size: 20,
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const Gap(8),
                   Text(
                     l10n.filters,
                     style: TextStyle(
@@ -77,7 +78,7 @@ class FilterControls extends StatelessWidget {
           ),
         ),
 
-        const SizedBox(width: 12),
+        const Gap(12),
 
         // Clear All Filters Button
         if (hasActiveFilters)
@@ -116,7 +117,7 @@ class FilterControls extends StatelessWidget {
                           color: AppColors.error,
                           size: 20,
                         ),
-                        const SizedBox(width: 8),
+                        const Gap(8),
                         Text(
                           l10n.clearAllFilters,
                           style: TextStyle(

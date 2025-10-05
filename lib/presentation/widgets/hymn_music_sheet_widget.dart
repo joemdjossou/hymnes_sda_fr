@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/music_sheet_service.dart';
@@ -122,7 +123,7 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
                     size: 24,
                   ),
                 ),
-                const SizedBox(width: 16),
+                const Gap(16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +135,7 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      const Gap(4),
                       Text(
                         _getSubtitleText(l10n),
                         style: theme.textTheme.bodyMedium?.copyWith(
@@ -175,7 +176,7 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
           color: AppColors.primary.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
         ),
-        child: const SizedBox(
+        child: Container(
           width: 16,
           height: 16,
           child: CircularProgressIndicator(

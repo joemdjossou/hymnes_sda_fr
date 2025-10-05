@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'main_navigation_screen.dart';
@@ -341,7 +342,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                         textAlign: TextAlign.center,
                       ),
 
-                      const SizedBox(height: 16),
+                      const Gap(16),
 
                       // Title
                       Text(
@@ -355,7 +356,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                         textAlign: TextAlign.center,
                       ),
 
-                      const SizedBox(height: 24),
+                      const Gap(24),
 
                       // Description
                       Text(
@@ -419,7 +420,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  const Gap(8),
                   Icon(
                     _currentPage < _totalPages - 1
                         ? Icons.arrow_forward

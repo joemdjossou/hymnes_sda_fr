@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -244,7 +245,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
               size: 24,
             ),
           ),
-          const SizedBox(width: 16),
+          const Gap(16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -340,33 +341,24 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
             if (_isLoading && !_hasWebViewError)
               Container(
                 color: AppColors.cardBackground(context),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ShimmerLoading(
-                        child: Container(
-                          height: 200,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: AppColors.textSecondary(context),
-                            borderRadius: BorderRadius.circular(12),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ShimmerLoading(
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.5,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              color: AppColors.textSecondary(context),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 16),
-                      ShimmerLoading(
-                        child: Container(
-                          height: 20,
-                          width: 200,
-                          decoration: BoxDecoration(
-                            color: AppColors.textSecondary(context),
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -391,7 +383,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                 size: 64,
                 color: AppColors.error.withValues(alpha: 0.7),
               ),
-              const SizedBox(height: 16),
+              const Gap(16),
               Text(
                 l10n.unableToDisplayPdf,
                 style: TextStyle(
@@ -400,7 +392,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                   color: AppColors.textPrimary(context),
                 ),
               ),
-              const SizedBox(height: 8),
+              const Gap(8),
               Text(
                 _errorMessage ?? l10n.webViewFailedToLoad,
                 textAlign: TextAlign.center,
@@ -409,7 +401,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                   fontSize: 14,
                 ),
               ),
-              const SizedBox(height: 24),
+              const Gap(24),
               ElevatedButton.icon(
                 onPressed: () => _openInBrowser(url),
                 icon: const Icon(Icons.open_in_browser),
@@ -423,7 +415,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
+              const Gap(12),
               TextButton.icon(
                 onPressed: () {
                   setState(() {

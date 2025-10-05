@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -118,14 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 40),
+                  const Gap(40),
                   // App Logo/Icon
                   Icon(
                     Icons.music_note,
                     size: 80,
                     color: theme.iconTheme.color,
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Title
                   Text(
                     l10n.welcomeBack,
@@ -134,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 8),
+                  const Gap(8),
                   // Subtitle
                   Text(
                     l10n.welcomeBackDescription,
@@ -144,7 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 40),
+                  const Gap(40),
                   // Email Field
                   CustomTextField(
                     controller: _emailController,
@@ -163,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Password Field
                   CustomTextField(
                     controller: _passwordController,
@@ -186,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 8),
+                  const Gap(8),
                   // Forgot Password
                   Align(
                     alignment: Alignment.centerRight,
@@ -195,14 +196,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(l10n.forgotPassword),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Sign In Button
                   CustomButton(
                     text: l10n.signIn,
                     onPressed: _isLoading ? null : _signInWithEmail,
                     isLoading: _isLoading,
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Divider
                   Row(
                     children: [
@@ -220,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Expanded(child: Divider(color: theme.dividerColor)),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Google Sign In Button
                   CustomButton(
                     text: l10n.signInWithGoogle,
@@ -228,7 +229,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     variant: ButtonVariant.outlined,
                     icon: Icons.g_mobiledata,
                   ),
-                  const SizedBox(height: 12),
+                  const Gap(12),
                   // Apple Sign In Button
                   CustomButton(
                     text: l10n.signInWithApple,
@@ -236,7 +237,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     variant: ButtonVariant.outlined,
                     icon: Icons.apple,
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Sign Up Link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -251,7 +252,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const Gap(40),
                 ],
               ),
             ),

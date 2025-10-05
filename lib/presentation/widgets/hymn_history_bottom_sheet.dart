@@ -68,7 +68,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                     Icons.info_outline_rounded,
                     [_buildInformationCard(context, l10n)],
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Story Section
                   _buildHistorySection(
                     context,
@@ -76,7 +76,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                     Icons.auto_stories_rounded,
                     [_buildStoryCard(context, l10n)],
                   ),
-                  const SizedBox(height: 20),
+                  const Gap(20),
                 ],
               ),
             ),
@@ -112,7 +112,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
               size: 24,
             ),
           ),
-          const SizedBox(width: 16),
+          const Gap(16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +173,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                 size: 20,
               ),
             ),
-            const SizedBox(width: 12),
+            const Gap(12),
             Text(
               title,
               style: theme.textTheme.titleLarge?.copyWith(
@@ -183,7 +183,7 @@ class HymnHistoryBottomSheet extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 16),
+        const Gap(16),
         ...children,
       ],
     );

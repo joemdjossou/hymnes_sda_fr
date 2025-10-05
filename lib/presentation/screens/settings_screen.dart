@@ -119,11 +119,11 @@ class _SettingsScreenState extends State<SettingsScreen>
             sliver: SliverList(
               delegate: SliverChildListDelegate([
                 _buildAccountSection(context, l10n),
-                const SizedBox(height: 20),
+                const Gap(20),
                 _buildLanguageSection(context, l10n),
-                const SizedBox(height: 20),
+                const Gap(20),
                 const ThemeSelectionWidget(),
-                const SizedBox(height: 20),
+                const Gap(20),
                 _buildAppInfoSection(context, l10n),
                 const Gap(100), // Extra padding at bottom for better scrolling
               ]),
@@ -188,7 +188,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   size: 24,
                 ),
               ),
-              const SizedBox(width: 16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,7 +201,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                         color: AppColors.textPrimary(context),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const Gap(4),
                     Text(
                       l10n.choosePreferredLanguage,
                       style: TextStyle(
@@ -216,7 +216,7 @@ class _SettingsScreenState extends State<SettingsScreen>
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const Gap(20),
           BlocBuilder<LanguageBloc, LanguageState>(
             builder: (context, state) {
               final currentLocale = state is LanguageLoaded
@@ -271,7 +271,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                                 LanguageBloc.getLanguageFlag(locale),
                                 style: const TextStyle(fontSize: 24),
                               ),
-                              const SizedBox(width: 12),
+                              const Gap(12),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -384,7 +384,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                         size: 24,
                       ),
                     ),
-                    const SizedBox(width: 16),
+                    const Gap(16),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -397,7 +397,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                               color: AppColors.textPrimary(context),
                             ),
                           ),
-                          const SizedBox(height: 4),
+                          const Gap(4),
                           Text(
                             l10n.manageUserAccount,
                             style: TextStyle(
@@ -412,7 +412,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const Gap(16),
                 Row(
                   children: [
                     CircleAvatar(
@@ -427,7 +427,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                         ),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const Gap(12),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -453,7 +453,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                     ),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const Gap(16),
                 CustomButton(
                   text: l10n.signOut,
                   onPressed: () {
@@ -537,7 +537,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                         size: 24,
                       ),
                     ),
-                    const SizedBox(width: 16),
+                    const Gap(16),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -550,7 +550,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                               color: AppColors.textPrimary(context),
                             ),
                           ),
-                          const SizedBox(height: 4),
+                          const Gap(4),
                           Text(
                             l10n.signInToSaveFavorites,
                             style: TextStyle(
@@ -565,7 +565,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const Gap(20),
                 CustomButton(
                   text: l10n.signIn,
                   onPressed: () {
@@ -638,7 +638,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   size: 24,
                 ),
               ),
-              const SizedBox(width: 16),
+              const Gap(16),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -651,7 +651,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                         color: AppColors.textPrimary(context),
                       ),
                     ),
-                    const SizedBox(height: 4),
+                    const Gap(4),
                     Text(
                       l10n.appInformation,
                       style: TextStyle(

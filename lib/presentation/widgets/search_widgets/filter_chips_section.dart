@@ -61,7 +61,7 @@ class FilterChipsSection extends StatelessWidget {
                             options: themes,
                             onChanged: onThemeChanged,
                           ),
-                          const SizedBox(width: 8),
+                          const Gap(8),
                           // Subtheme Filter
                           _buildFilterChip(
                             context: context,
@@ -141,7 +141,7 @@ class FilterChipsSection extends StatelessWidget {
                         value != null ? FontWeight.bold : FontWeight.normal,
                   ),
                 ),
-                const SizedBox(width: 4),
+                const Gap(4),
                 Icon(
                   Icons.arrow_drop_down,
                   color: value != null
