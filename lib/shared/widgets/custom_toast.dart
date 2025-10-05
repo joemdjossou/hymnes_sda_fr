@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 
 import '../constants/app_colors.dart';
@@ -344,11 +345,13 @@ class ToastService {
 
   /// Demo method to showcase all toast types with animated progress bars
   static void showDemoToasts(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     // Show error toast
     showError(
       context,
-      title: "Something went wrong",
-      message: "We couldn't process your request. Please try again later.",
+      title: l10n.somethingWentWrong,
+      message: l10n.couldNotProcessRequest,
       duration: const Duration(seconds: 5),
     );
 
@@ -356,9 +359,8 @@ class ToastService {
     Future.delayed(const Duration(milliseconds: 500), () {
       showWarning(
         context,
-        title: "Action required",
-        message:
-            "Please check your settings before proceeding to avoid potential issues.",
+        title: l10n.actionRequired,
+        message: l10n.checkSettingsBeforeProceeding,
         duration: const Duration(seconds: 4),
       );
     });
@@ -367,8 +369,8 @@ class ToastService {
     Future.delayed(const Duration(milliseconds: 1000), () {
       showSuccess(
         context,
-        title: "Action completed",
-        message: "Your changes have been saved successfully.",
+        title: l10n.actionCompleted,
+        message: l10n.changesSavedSuccessfully,
         duration: const Duration(seconds: 3),
       );
     });
@@ -377,9 +379,8 @@ class ToastService {
     Future.delayed(const Duration(milliseconds: 1500), () {
       showInfo(
         context,
-        title: "Just so you know",
-        message:
-            "You've been logged in for over an hour. Don't forget to save your progress.",
+        title: l10n.justSoYouKnow,
+        message: l10n.loggedInOverHour,
         duration: const Duration(seconds: 4),
       );
     });

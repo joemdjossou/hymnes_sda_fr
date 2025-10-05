@@ -1,4 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/favorites/models/favorite_hymn.dart';
@@ -50,7 +51,7 @@ class StorageService {
         return FavoriteHymn.fromJson(hymnJson);
       }).toList();
     } catch (e) {
-      print('Error loading favorites: $e');
+      Logger().d('Error loading favorites: $e');
       // Return empty list if there's an error
       return [];
     }
@@ -91,7 +92,7 @@ class StorageService {
         return Hymn.fromJson(hymnJson);
       }).toList();
     } catch (e) {
-      print('Error loading recently played: $e');
+      Logger().d('Error loading recently played: $e');
       // Return empty list if there's an error
       return [];
     }

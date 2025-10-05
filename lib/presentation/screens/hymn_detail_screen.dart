@@ -33,6 +33,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   late final HymnDetailController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _showCollapsedAppBar = false;
+  AudioBloc? _audioBloc; // Store reference to AudioBloc
 
   late AnimationController _heroAnimationController;
   late Animation<double> _heroFadeAnimation;
@@ -52,6 +53,13 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
     );
     _controller.addListener(_onControllerChanged);
     _controller.loadHymn(widget.hymnId);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Safely get the AudioBloc reference when dependencies are available
+    _audioBloc ??= context.read<AudioBloc>();
   }
 
   void _initializeAnimations() {
@@ -96,9 +104,9 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
     _scrollController.dispose();
     _heroAnimationController.dispose();
 
-    // Stop audio when leaving the page
-    if (_controller.hymn != null) {
-      context.read<AudioBloc>().add(StopAudio());
+    // Stop audio when leaving the page - use stored reference to avoid context issues
+    if (_controller.hymn != null && _audioBloc != null) {
+      _audioBloc!.add(StopAudio());
     }
 
     super.dispose();
@@ -168,9 +176,9 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
 
     return PopScope(
       onPopInvokedWithResult: (didPop, result) {
-        if (didPop) {
+        if (didPop && _audioBloc != null) {
           // Stop audio when navigating back
-          context.read<AudioBloc>().add(StopAudio());
+          _audioBloc!.add(StopAudio());
         }
       },
       child: Scaffold(
@@ -329,7 +337,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
             ),
             const Gap(12),
             Text(
-              "Le cantique demandé n'a pas pu être trouvé",
+              AppLocalizations.of(context)!.hymnNotFoundDescription,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: AppColors.textSecondary(context),
                   ),
@@ -339,7 +347,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
             ElevatedButton.icon(
               onPressed: () => Navigator.of(context).pop(),
               icon: const Icon(Icons.arrow_back_rounded),
-              label: Text("Retour"),
+              label: Text(AppLocalizations.of(context)!.back),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: Colors.white,

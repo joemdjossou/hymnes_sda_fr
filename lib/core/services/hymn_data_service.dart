@@ -1,5 +1,8 @@
 import 'dart:convert';
+
 import 'package:flutter/services.dart';
+import 'package:logger/logger.dart';
+
 import '../models/hymn.dart';
 
 class HymnDataService {
@@ -29,7 +32,7 @@ class HymnDataService {
 
       return _hymnsCache!;
     } catch (e) {
-      print('Error loading hymns from JSON: $e');
+      Logger().d('Error loading hymns from JSON: $e');
       // Return empty list if loading fails
       return [];
     }
