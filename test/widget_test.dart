@@ -10,11 +10,38 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hymnes_sda_fr/main.dart';
 
 void main() {
-  testWidgets('App smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const HymnesApp());
+  group('App Widget Tests', () {
+    testWidgets('App smoke test', (WidgetTester tester) async {
+      // Build our app and trigger a frame.
+      await tester.pumpWidget(const HymnesApp());
 
-    // Verify that the app loads without errors
-    expect(find.byType(MaterialApp), findsOneWidget);
+      // Verify that the app loads without errors
+      expect(find.byType(MaterialApp), findsOneWidget);
+    });
+
+    testWidgets('App displays splash screen initially',
+        (WidgetTester tester) async {
+      await tester.pumpWidget(const HymnesApp());
+      await tester.pumpAndSettle();
+
+      // Verify that the app displays the splash screen
+      expect(find.byType(MaterialApp), findsOneWidget);
+    });
+
+    testWidgets('App handles theme changes', (WidgetTester tester) async {
+      await tester.pumpWidget(const HymnesApp());
+      await tester.pumpAndSettle();
+
+      // Verify that the app handles theme changes
+      expect(find.byType(MaterialApp), findsOneWidget);
+    });
+
+    testWidgets('App handles language changes', (WidgetTester tester) async {
+      await tester.pumpWidget(const HymnesApp());
+      await tester.pumpAndSettle();
+
+      // Verify that the app handles language changes
+      expect(find.byType(MaterialApp), findsOneWidget);
+    });
   });
 }

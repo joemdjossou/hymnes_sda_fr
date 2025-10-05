@@ -280,5 +280,15 @@
   "sortOldestFirst": "Oldest first",
   "sortNewestFirst": "Newest first",
   "sortAscending": "Ascending",
-  "sortDescending": "Descending"
+  "sortDescending": "Descending",
+  "somethingWentWrong": "Something went wrong",
+  "couldNotProcessRequest": "We couldn't process your request. Please try again later.",
+  "actionRequired": "Action required",
+  "checkSettingsBeforeProceeding": "Please check your settings before proceeding to avoid potential issues.",
+  "actionCompleted": "Action completed",
+  "changesSavedSuccessfully": "Your changes have been saved successfully.",
+  "justSoYouKnow": "Just so you know",
+  "loggedInOverHour": "You've been logged in for over an hour. Don't forget to save your progress.",
+  "lyricsCopied": "Lyrics copied",
+  "storyCopied": "Story copied"
 }

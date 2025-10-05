@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../shared/constants/app_colors.dart';
+import '../../shared/widgets/custom_toast.dart';
 
 /// Widget responsible only for displaying hymn lyrics
 /// Follows Single Responsibility Principle
@@ -45,11 +47,27 @@ class HymnLyricsWidget extends StatelessWidget {
                   color: AppColors.textPrimary(context),
                 ),
               ),
+              const Spacer(),
+              GestureDetector(
+                onTap: () => _copyLyrics(context),
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.copy,
+                    color: AppColors.primary,
+                    size: 18,
+                  ),
+                ),
+              ),
             ],
           ),
           const Gap(16),
           Center(
-            child: Text(
+            child: SelectableText(
               hymn.lyrics,
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -57,10 +75,23 @@ class HymnLyricsWidget extends StatelessWidget {
                 fontSize: 16,
                 height: 1.6,
               ),
+              showCursor: true,
+              cursorColor: AppColors.primary,
+              cursorWidth: 2.0,
+              cursorRadius: const Radius.circular(1.0),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  void _copyLyrics(BuildContext context) {
+    Clipboard.setData(ClipboardData(text: hymn.lyrics));
+    ToastService.showSuccess(
+      context,
+      title: AppLocalizations.of(context)!.success,
+      message: AppLocalizations.of(context)!.lyricsCopied,
     );
   }
 }

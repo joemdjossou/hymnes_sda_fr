@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:logger/logger.dart';
 
 import '../../../core/services/audio_service.dart';
 
@@ -166,14 +165,11 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     on<ClearAudioError>(_onClearAudioError);
     on<RetryAudio>(_onRetryAudio);
     on<UpdateAudioPosition>(_onUpdateAudioPosition);
-
-    // Listen to audio service changes
-    _audioService.addListener(_onAudioServiceChanged);
   }
 
   void _onAudioServiceChanged() {
-    Logger().d(
-        'AudioService changed - State: ${_audioService.state}, isPlaying: ${_audioService.isPlaying}, isLoading: ${_audioService.isLoading}');
+    // Logger().d(
+    //     'AudioService changed - State: ${_audioService.state}, isPlaying: ${_audioService.isPlaying}, isLoading: ${_audioService.isLoading}');
     add(UpdateAudioPosition(
       position: _audioService.position,
       duration: _audioService.duration,
@@ -185,6 +181,10 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       InitializeAudio event, Emitter<AudioState> emit) async {
     try {
       await _audioService.initialize();
+
+      // Add listener after initialization
+      _audioService.addListener(_onAudioServiceChanged);
+
       emit(AudioLoaded(
         playerState: _audioService.state,
         currentHymnNumber: _audioService.currentHymnNumber,
@@ -316,8 +316,8 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       UpdateAudioPosition event, Emitter<AudioState> emit) async {
     final currentState = state;
     if (currentState is AudioLoaded) {
-      Logger().d(
-          'Updating audio position - Service state: ${_audioService.state}, isLoading: ${_audioService.isLoading}, isPlaying: ${_audioService.isPlaying}');
+      // Logger().d(
+      //     'Updating audio position - Service state: ${_audioService.state}, isLoading: ${_audioService.isLoading}, isPlaying: ${_audioService.isPlaying}');
       emit(currentState.copyWith(
         position: event.position,
         duration: event.duration,
@@ -333,7 +333,11 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
 
   @override
   Future<void> close() {
-    _audioService.removeListener(_onAudioServiceChanged);
+    try {
+      _audioService.removeListener(_onAudioServiceChanged);
+    } catch (e) {
+      // Listener might not have been added yet, ignore the error
+    }
     return super.close();
   }
 }

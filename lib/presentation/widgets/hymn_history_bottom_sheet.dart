@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 
@@ -75,6 +76,10 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                     l10n.hymnStory,
                     Icons.auto_stories_rounded,
                     [_buildStoryCard(context, l10n)],
+                    showCopyButton: true,
+                    copyText: hymn.story.isNotEmpty
+                        ? hymn.story
+                        : _getHymnStory(l10n),
                   ),
                   const Gap(20),
                 ],
@@ -152,8 +157,9 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     );
   }
 
-  Widget _buildHistorySection(BuildContext context, String title, IconData icon,
-      List<Widget> children) {
+  Widget _buildHistorySection(
+      BuildContext context, String title, IconData icon, List<Widget> children,
+      {bool showCopyButton = false, String? copyText}) {
     final theme = Theme.of(context);
 
     return Column(
@@ -181,6 +187,24 @@ class HymnHistoryBottomSheet extends StatelessWidget {
                 color: AppColors.textPrimary(context),
               ),
             ),
+            if (showCopyButton && copyText != null) ...[
+              const Spacer(),
+              GestureDetector(
+                onTap: () => _copyText(context, copyText),
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.copy,
+                    color: AppColors.primary,
+                    size: 18,
+                  ),
+                ),
+              ),
+            ],
           ],
         ),
         const Gap(16),
@@ -332,6 +356,15 @@ class HymnHistoryBottomSheet extends StatelessWidget {
       author,
       composer,
       hymn.style,
+    );
+  }
+
+  void _copyText(BuildContext context, String text) {
+    Clipboard.setData(ClipboardData(text: text));
+    ToastService.showSuccess(
+      context,
+      title: AppLocalizations.of(context)!.success,
+      message: AppLocalizations.of(context)!.storyCopied,
     );
   }
 }

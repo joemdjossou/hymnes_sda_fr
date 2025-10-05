@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import '../../features/audio/bloc/audio_bloc.dart';
 import '../constants/app_colors.dart';
 import 'custom_toast.dart';
+import 'shimmer_loading.dart';
 
 class AudioPlayerWidget extends StatelessWidget {
   final String hymnNumber;
@@ -34,9 +35,13 @@ class AudioPlayerWidget extends StatelessWidget {
     return BlocListener<AudioBloc, AudioState>(
       listener: (context, state) {
         // Force rebuild on any state change
-        debugPrint('AudioPlayerWidget - State changed: ${state.runtimeType}');
+        // debugPrint('AudioPlayerWidget - State changed: ${state.runtimeType}');
       },
       child: BlocBuilder<AudioBloc, AudioState>(
+        buildWhen: (previous, current) {
+          // Only rebuild if the state actually changed
+          return previous != current;
+        },
         builder: (context, state) {
           String? currentHymnNumber;
           bool isPlaying = false;
@@ -58,8 +63,8 @@ class AudioPlayerWidget extends StatelessWidget {
             retryCount = state.retryCount;
 
             // Debug logging
-            debugPrint(
-                'AudioPlayerWidget - State: ${state.playerState}, isPlaying: $isPlaying, isLoading: $isLoading, currentHymn: $currentHymnNumber, thisHymn: $hymnNumber');
+            // debugPrint(
+            //     'AudioPlayerWidget - State: ${state.playerState}, isPlaying: $isPlaying, isLoading: $isLoading, currentHymn: $currentHymnNumber, thisHymn: $hymnNumber');
           }
 
           final isCurrentHymn = currentHymnNumber == hymnNumber;
@@ -92,13 +97,14 @@ class AudioPlayerWidget extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Container(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                                AppColors.primary),
+                        ShimmerLoading(
+                          child: Container(
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              color: AppColors.primary,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
                         ),
                         const Gap(8),
@@ -128,13 +134,14 @@ class AudioPlayerWidget extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Container(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                                AppColors.primary),
+                        ShimmerLoading(
+                          child: Container(
+                            width: 20,
+                            height: 20,
+                            decoration: BoxDecoration(
+                              color: AppColors.primary,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                           ),
                         ),
                         const Gap(8),
@@ -182,9 +189,16 @@ class AudioPlayerWidget extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: () => context
-                                  .read<AudioBloc>()
-                                  .add(ClearAudioError()),
+                              onPressed: () {
+                                try {
+                                  context
+                                      .read<AudioBloc>()
+                                      .add(ClearAudioError());
+                                } catch (e) {
+                                  debugPrint(
+                                      'Error accessing AudioBloc for clear error: $e');
+                                }
+                              },
                               icon: Icon(
                                 Icons.close,
                                 color: AppColors.error,
@@ -200,8 +214,14 @@ class AudioPlayerWidget extends StatelessWidget {
                           Container(
                             width: double.infinity,
                             child: ElevatedButton.icon(
-                              onPressed: () =>
-                                  context.read<AudioBloc>().add(RetryAudio()),
+                              onPressed: () {
+                                try {
+                                  context.read<AudioBloc>().add(RetryAudio());
+                                } catch (e) {
+                                  debugPrint(
+                                      'Error accessing AudioBloc for retry: $e');
+                                }
+                              },
                               icon: Icon(Icons.refresh, size: 16),
                               label: Text('Retry'),
                               style: ElevatedButton.styleFrom(
@@ -226,8 +246,13 @@ class AudioPlayerWidget extends StatelessWidget {
                         value: position.inMilliseconds.toDouble(),
                         max: duration.inMilliseconds.toDouble(),
                         onChanged: (value) {
-                          context.read<AudioBloc>().add(
-                              SeekAudio(Duration(milliseconds: value.toInt())));
+                          try {
+                            context.read<AudioBloc>().add(SeekAudio(
+                                Duration(milliseconds: value.toInt())));
+                          } catch (e) {
+                            debugPrint(
+                                'Error accessing AudioBloc for seek: $e');
+                          }
                         },
                         activeColor: AppColors.primary,
                         inactiveColor: AppColors.border(context),
@@ -268,9 +293,15 @@ class AudioPlayerWidget extends StatelessWidget {
                       label: l10n.allVoices,
                       onTap: isLoading
                           ? null
-                          : () => context
-                              .read<AudioBloc>()
-                              .add(PlayAudio(hymnNumber)),
+                          : () {
+                              try {
+                                context
+                                    .read<AudioBloc>()
+                                    .add(PlayAudio(hymnNumber));
+                              } catch (e) {
+                                debugPrint('Error accessing AudioBloc: $e');
+                              }
+                            },
                       isActive: isCurrentHymn && isPlaying,
                       isLoading: isLoading,
                     ),
@@ -321,9 +352,22 @@ class AudioPlayerWidget extends StatelessWidget {
                     children: [
                       IconButton(
                         onPressed: isPlaying
-                            ? () => context.read<AudioBloc>().add(PauseAudio())
-                            : () =>
-                                context.read<AudioBloc>().add(ResumeAudio()),
+                            ? () {
+                                try {
+                                  context.read<AudioBloc>().add(PauseAudio());
+                                } catch (e) {
+                                  debugPrint(
+                                      'Error accessing AudioBloc for pause: $e');
+                                }
+                              }
+                            : () {
+                                try {
+                                  context.read<AudioBloc>().add(ResumeAudio());
+                                } catch (e) {
+                                  debugPrint(
+                                      'Error accessing AudioBloc for resume: $e');
+                                }
+                              },
                         icon: Icon(
                           isPlaying ? Icons.pause : Icons.play_arrow,
                           color: AppColors.primary,
@@ -332,8 +376,14 @@ class AudioPlayerWidget extends StatelessWidget {
                       ),
                       const Gap(16),
                       IconButton(
-                        onPressed: () =>
-                            context.read<AudioBloc>().add(StopAudio()),
+                        onPressed: () {
+                          try {
+                            context.read<AudioBloc>().add(StopAudio());
+                          } catch (e) {
+                            debugPrint(
+                                'Error accessing AudioBloc for stop: $e');
+                          }
+                        },
                         icon: Icon(
                           Icons.stop,
                           color: AppColors.error,
@@ -375,13 +425,13 @@ class AudioPlayerWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (isLoading)
-              Container(
-                width: 20,
-                height: 20,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    isActive ? Colors.white : AppColors.primary,
+              ShimmerLoading(
+                child: Container(
+                  width: 20,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: isActive ? Colors.white : AppColors.primary,
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               )

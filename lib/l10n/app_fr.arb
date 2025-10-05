@@ -280,5 +280,15 @@
   "sortOldestFirst": "Plus ancien en premier",
   "sortNewestFirst": "Plus récent en premier",
   "sortAscending": "Croissant",
-  "sortDescending": "Décroissant"
+  "sortDescending": "Décroissant",
+  "somethingWentWrong": "Quelque chose s'est mal passé",
+  "couldNotProcessRequest": "Nous n'avons pas pu traiter votre demande. Veuillez réessayer plus tard.",
+  "actionRequired": "Action requise",
+  "checkSettingsBeforeProceeding": "Veuillez vérifier vos paramètres avant de continuer pour éviter les problèmes potentiels.",
+  "actionCompleted": "Action terminée",
+  "changesSavedSuccessfully": "Vos modifications ont été sauvegardées avec succès.",
+  "justSoYouKnow": "Juste pour votre information",
+  "loggedInOverHour": "Vous êtes connecté depuis plus d'une heure. N'oubliez pas de sauvegarder vos progrès.",
+  "lyricsCopied": "Paroles copiées",
+  "storyCopied": "Histoire copiée"
 }
