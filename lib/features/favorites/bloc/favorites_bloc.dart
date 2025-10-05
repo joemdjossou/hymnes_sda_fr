@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import '../../../core/models/hymn.dart';
 import '../../../core/repositories/hybrid_favorites_repository.dart';
 import '../../../core/repositories/i_hymn_repository.dart';
+import '../../../core/services/posthog_service.dart';
 import '../models/favorite_hymn.dart';
 import '../models/favorites_sort_option.dart';
 
@@ -151,6 +152,7 @@ class FavoritesError extends FavoritesState {
 // BLoC
 class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
   final HybridFavoritesRepository _hybridRepository;
+  final PostHogService _posthog = PostHogService();
 
   FavoritesBloc({
     required IFavoriteRepository favoriteRepository,
@@ -223,6 +225,13 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       if (isCurrentlyFavorite) {
         await _hybridRepository.removeFromFavorites(hymn.number);
 
+        // Track PostHog event
+        await _posthog.trackFavoritesEvent(
+          eventType: 'removed',
+          hymnNumber: hymn.number,
+          hymnTitle: hymn.title,
+        );
+
         // Update state
         final updatedFavorites = currentState.favorites
             .where((h) => h.number != hymn.number)
@@ -241,6 +250,13 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         ));
       } else {
         await _hybridRepository.addToFavorites(hymn);
+
+        // Track PostHog event
+        await _posthog.trackFavoritesEvent(
+          eventType: 'added',
+          hymnNumber: hymn.number,
+          hymnTitle: hymn.title,
+        );
 
         // Reload favorites to get the updated list with proper sorting
         add(const LoadFavorites());

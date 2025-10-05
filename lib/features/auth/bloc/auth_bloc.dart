@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/models/user_model.dart';
 import '../../../core/services/auth_service.dart';
+import '../../../core/services/posthog_service.dart';
 
 // Events
 abstract class AuthEvent extends Equatable {
@@ -168,6 +169,7 @@ class UserReloaded extends AuthState {
 // BLoC
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthService _authService;
+  final PostHogService _posthog = PostHogService();
 
   AuthBloc({required AuthService authService})
       : _authService = authService,
@@ -224,7 +226,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
 
       if (credential?.user != null) {
-        emit(Authenticated(UserModel.fromFirebaseUser(credential!.user!)));
+        final user = UserModel.fromFirebaseUser(credential!.user!);
+
+        // Track PostHog event
+        await _posthog.identifyUser(
+          userId: user.uid,
+          email: user.email,
+          name: user.displayName,
+        );
+        await _posthog.trackAuthEvent(
+          eventType: 'login',
+          method: 'email',
+        );
+
+        emit(Authenticated(user));
       } else {
         emit(const AuthError('Sign in failed'));
       }
@@ -313,6 +328,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     try {
       await _authService.signOut();
+
+      // Track PostHog event
+      await _posthog.trackAuthEvent(eventType: 'logout');
+      await _posthog.resetUser();
+
       emit(Unauthenticated());
     } catch (e) {
       emit(AuthError(e.toString()));
