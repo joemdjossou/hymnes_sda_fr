@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
@@ -190,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           size: 20,
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      const Gap(12),
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 child: Row(
                                   children: [
                                     const Icon(Icons.logout, size: 20),
-                                    const SizedBox(width: 8),
+                                    const Gap(8),
                                     Text(l10n.signOut),
                                   ],
                                 ),
@@ -339,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                               fontWeight: FontWeight.w300,
                                             ),
                                           ),
-                                          const SizedBox(height: 4),
+                                          const Gap(4),
                                           BlocBuilder<AuthBloc, AuthState>(
                                             builder: (context, state) {
                                               String title = l10n.appTitle;
@@ -406,7 +407,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                   children: [
                                                     const Icon(Icons.logout,
                                                         size: 20),
-                                                    const SizedBox(width: 8),
+                                                    const Gap(8),
                                                     Text(l10n.signOut),
                                                   ],
                                                 ),
@@ -442,7 +443,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 16),
+                                const Gap(16),
                                 // Quick Stats
                                 Row(
                                   children: [
@@ -454,7 +455,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             label: l10n.hymns,
                                             context: context,
                                           ),
-                                    const SizedBox(width: 12),
+                                    const Gap(12),
                                     _isLoading
                                         ? const ShimmerStatCard()
                                         : BlocBuilder<FavoritesBloc,
@@ -615,7 +616,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ),
                         ),
 
-                        const SizedBox(height: 16),
+                        const Gap(16),
 
                         // Results Header
                         Row(
@@ -734,7 +735,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 size: 20,
               ),
             ),
-            const SizedBox(width: 12),
+            const Gap(12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -782,7 +783,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 color: AppColors.primary.withValues(alpha: 0.6),
               ),
             ),
-            const SizedBox(height: 24),
+            const Gap(24),
             Text(
               _searchController.text.isEmpty
                   ? l10n.noHymnsAvailable
@@ -793,7 +794,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 8),
+            const Gap(8),
             Text(
               _searchController.text.isEmpty
                   ? l10n.noHymnsAvailableAtMoment
@@ -804,7 +805,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               textAlign: TextAlign.center,
             ),
             if (_searchController.text.isNotEmpty) ...[
-              const SizedBox(height: 24),
+              const Gap(24),
               ElevatedButton.icon(
                 onPressed: () {
                   _searchController.clear();

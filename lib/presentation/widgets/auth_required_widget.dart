@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
@@ -77,7 +78,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
                 color: AppColors.textSecondary(context),
               ),
             ),
-            const SizedBox(height: 32),
+            const Gap(32),
             Text(
               l10n.authenticationRequired,
               style: theme.textTheme.headlineSmall?.copyWith(
@@ -86,7 +87,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 12),
+            const Gap(12),
             Text(
               message ?? l10n.authenticationRequiredDescription,
               style: theme.textTheme.bodyLarge?.copyWith(
@@ -95,7 +96,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 40),
+            const Gap(40),
             Container(
               decoration: BoxDecoration(
                 gradient: AppColors.primaryGradient(context),
@@ -120,7 +121,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
                 variant: ButtonVariant.filled,
               ),
             ),
-            const SizedBox(height: 20),
+            const Gap(20),
             if (Navigator.canPop(context))
               TextButton(
                 onPressed: () {

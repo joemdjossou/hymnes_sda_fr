@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../shared/constants/app_colors.dart';
@@ -35,7 +36,7 @@ class HymnLyricsWidget extends StatelessWidget {
                 color: AppColors.primary,
                 size: 20,
               ),
-              const SizedBox(width: 8),
+              const Gap(8),
               Text(
                 l10n.lyrics,
                 style: TextStyle(
@@ -46,7 +47,7 @@ class HymnLyricsWidget extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const Gap(16),
           Center(
             child: Text(
               hymn.lyrics,

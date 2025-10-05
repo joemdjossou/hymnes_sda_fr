@@ -206,7 +206,7 @@ class FilterSelectorBottomSheet extends StatelessWidget {
           ),
 
           // Bottom padding for safe area
-          SizedBox(height: MediaQuery.of(context).padding.bottom + 16),
+          Gap(MediaQuery.of(context).padding.bottom + 16),
         ],
       ),
     );

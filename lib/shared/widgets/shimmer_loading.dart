@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../constants/app_colors.dart';
@@ -53,7 +54,7 @@ class ShimmerHymnCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 16),
+            const Gap(16),
             // Content Shimmer
             Expanded(
               child: Column(
@@ -70,7 +71,7 @@ class ShimmerHymnCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 6),
+                  const Gap(6),
                   // Author shimmer
                   ShimmerLoading(
                     child: Container(
@@ -82,7 +83,7 @@ class ShimmerHymnCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const Gap(8),
                   // Tags shimmer
                   Wrap(
                     spacing: 8,
@@ -113,7 +114,7 @@ class ShimmerHymnCard extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 12),
+            const Gap(12),
             // Action buttons shimmer
             Column(
               children: [
@@ -127,7 +128,7 @@ class ShimmerHymnCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                const Gap(8),
                 ShimmerLoading(
                   child: Container(
                     width: 40,
@@ -174,7 +175,7 @@ class ShimmerStatCard extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 12),
+            const Gap(12),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,7 +190,7 @@ class ShimmerStatCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 4),
+                  const Gap(4),
                   ShimmerLoading(
                     child: Container(
                       height: 14,

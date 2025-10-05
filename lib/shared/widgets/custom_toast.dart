@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import '../constants/app_colors.dart';
 
@@ -116,7 +117,7 @@ class _CustomToastState extends State<CustomToast>
                             size: 16,
                           ),
                         ),
-                        const SizedBox(width: 12),
+                        const Gap(12),
                         // Text content
                         Expanded(
                           child: Column(
@@ -133,7 +134,7 @@ class _CustomToastState extends State<CustomToast>
                                       : AppColors.lightTextPrimary,
                                 ),
                               ),
-                              const SizedBox(height: 4),
+                              const Gap(4),
                               Text(
                                 widget.message,
                                 style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -119,14 +120,14 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const SizedBox(height: 20),
+                  const Gap(20),
                   // App Logo/Icon
                   Icon(
                     Icons.music_note,
                     size: 80,
                     color: theme.primaryColor,
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Title
                   Text(
                     l10n.createAccount,
@@ -135,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 8),
+                  const Gap(8),
                   // Subtitle
                   Text(
                     l10n.createAccountDescription,
@@ -145,7 +146,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 40),
+                  const Gap(40),
                   // Email Field
                   CustomTextField(
                     controller: _emailController,
@@ -164,7 +165,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Password Field
                   CustomTextField(
                     controller: _passwordController,
@@ -190,7 +191,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Confirm Password Field
                   CustomTextField(
                     controller: _confirmPasswordController,
@@ -216,20 +217,20 @@ class _SignupScreenState extends State<SignupScreen> {
                       return null;
                     },
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Sign Up Button
                   CustomButton(
                     text: l10n.createAccount,
                     onPressed: _isLoading ? null : _signUpWithEmail,
                     isLoading: _isLoading,
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Divider
                   Row(
                     children: [
                       Expanded(child: Divider(color: theme.dividerColor)),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(
                           l10n.or,
                           style: theme.textTheme.bodySmall?.copyWith(
@@ -241,7 +242,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       Expanded(child: Divider(color: theme.dividerColor)),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   // Google Sign Up Button
                   CustomButton(
                     text: l10n.signInWithGoogle,
@@ -249,7 +250,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     variant: ButtonVariant.outlined,
                     icon: Icons.g_mobiledata,
                   ),
-                  const SizedBox(height: 12),
+                  const Gap(12),
                   // Apple Sign Up Button
                   CustomButton(
                     text: l10n.signInWithApple,
@@ -257,7 +258,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     variant: ButtonVariant.outlined,
                     icon: Icons.apple,
                   ),
-                  const SizedBox(height: 24),
+                  const Gap(24),
                   // Sign In Link
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -272,7 +273,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 40),
+                  const Gap(40),
                 ],
               ),
             ),

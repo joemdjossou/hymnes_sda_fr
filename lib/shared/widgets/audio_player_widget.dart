@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../features/audio/bloc/audio_bloc.dart';
 import '../constants/app_colors.dart';
@@ -91,7 +92,7 @@ class AudioPlayerWidget extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        SizedBox(
+                        Container(
                           width: 20,
                           height: 20,
                           child: CircularProgressIndicator(
@@ -100,7 +101,7 @@ class AudioPlayerWidget extends StatelessWidget {
                                 AppColors.primary),
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const Gap(8),
                         Expanded(
                           child: Text(
                             'Loading audio...',
@@ -113,7 +114,7 @@ class AudioPlayerWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                 ],
 
                 // Retrying indicator
@@ -127,7 +128,7 @@ class AudioPlayerWidget extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        SizedBox(
+                        Container(
                           width: 20,
                           height: 20,
                           child: CircularProgressIndicator(
@@ -136,7 +137,7 @@ class AudioPlayerWidget extends StatelessWidget {
                                 AppColors.primary),
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const Gap(8),
                         Expanded(
                           child: Text(
                             'Retrying... (${retryCount}/3)',
@@ -149,7 +150,7 @@ class AudioPlayerWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                 ],
 
                 // Error message display
@@ -170,7 +171,7 @@ class AudioPlayerWidget extends StatelessWidget {
                               color: AppColors.error,
                               size: 20,
                             ),
-                            const SizedBox(width: 8),
+                            const Gap(8),
                             Expanded(
                               child: Text(
                                 lastError,
@@ -195,8 +196,8 @@ class AudioPlayerWidget extends StatelessWidget {
                           ],
                         ),
                         if (lastError.contains('Unable to play audio')) ...[
-                          const SizedBox(height: 8),
-                          SizedBox(
+                          const Gap(8),
+                          Container(
                             width: double.infinity,
                             child: ElevatedButton.icon(
                               onPressed: () =>
@@ -214,7 +215,7 @@ class AudioPlayerWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                 ],
 
                 // Progress bar
@@ -252,7 +253,7 @@ class AudioPlayerWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 16),
+                  const Gap(16),
                 ],
 
                 // Control buttons
@@ -314,7 +315,7 @@ class AudioPlayerWidget extends StatelessWidget {
 
                 // Play/Pause/Stop controls
                 if (isCurrentHymn) ...[
-                  const SizedBox(height: 16),
+                  const Gap(16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -329,7 +330,7 @@ class AudioPlayerWidget extends StatelessWidget {
                           size: 32,
                         ),
                       ),
-                      const SizedBox(width: 16),
+                      const Gap(16),
                       IconButton(
                         onPressed: () =>
                             context.read<AudioBloc>().add(StopAudio()),
@@ -374,7 +375,7 @@ class AudioPlayerWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (isLoading)
-              SizedBox(
+              Container(
                 width: 20,
                 height: 20,
                 child: CircularProgressIndicator(
@@ -391,7 +392,7 @@ class AudioPlayerWidget extends StatelessWidget {
                     isActive ? Colors.white : AppColors.textSecondary(context),
                 size: 20,
               ),
-            const SizedBox(height: 4),
+            const Gap(4),
             Text(
               label,
               style: TextStyle(

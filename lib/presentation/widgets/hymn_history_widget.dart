@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
 import '../../shared/constants/app_colors.dart';
@@ -64,7 +65,7 @@ class HymnHistoryWidget extends StatelessWidget {
                     size: 24,
                   ),
                 ),
-                const SizedBox(width: 16),
+                const Gap(16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +77,7 @@ class HymnHistoryWidget extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      const Gap(4),
                       Text(
                         l10n.discoverStory,
                         style: theme.textTheme.bodyMedium?.copyWith(
