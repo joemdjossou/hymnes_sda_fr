@@ -2,7 +2,7 @@ name: hymnes_sda_fr
 description: "An app for French Seventh-day Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities."
 publish_to: "none"
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
@@ -46,6 +46,10 @@ dependencies:
   package_info_plus: ^4.2.0
   # For shimmer loading effects
   shimmer: ^3.0.0
+  # Firestore database cloud_firestore
+  cloud_firestore: ^6.0.2
+  # posthog analytics
+  posthog_flutter: ^5.0.0
 
 dev_dependencies:
   flutter_test:
