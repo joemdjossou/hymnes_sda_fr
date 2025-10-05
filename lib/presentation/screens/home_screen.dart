@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   void _onScroll() {
     // Show collapsed app bar when scrolled past the hero section (around 120px)
-    final shouldShow = _scrollController.offset > 120;
+    final shouldShow = _scrollController.offset > 150;
     if (shouldShow != _showCollapsedAppBar) {
       setState(() {
         _showCollapsedAppBar = shouldShow;

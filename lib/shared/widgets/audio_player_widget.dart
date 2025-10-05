@@ -8,39 +8,81 @@ import '../constants/app_colors.dart';
 import 'custom_toast.dart';
 import 'shimmer_loading.dart';
 
-class AudioPlayerWidget extends StatelessWidget {
+class AudioPlayerWidget extends StatefulWidget {
   final String hymnNumber;
   final String hymnTitle;
+  final String? sopranoFile;
+  final String? altoFile;
+  final String? tenorFile;
+  final String? bassFile;
+  final String? countertenorFile;
+  final String? baritoneFile;
 
   const AudioPlayerWidget({
     super.key,
     required this.hymnNumber,
     required this.hymnTitle,
+    this.sopranoFile,
+    this.altoFile,
+    this.tenorFile,
+    this.bassFile,
+    this.countertenorFile,
+    this.baritoneFile,
   });
 
-  void _showComingSoonToast(BuildContext context, String voiceName) {
-    final l10n = AppLocalizations.of(context)!;
+  @override
+  State<AudioPlayerWidget> createState() => _AudioPlayerWidgetState();
+}
+
+class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
+  late AppLocalizations _l10n;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _l10n = AppLocalizations.of(context)!;
+  }
+
+  void _showComingSoonToast(String voiceName) {
     ToastService.showInfo(
       context,
       title: voiceName,
-      message: l10n.comingSoon,
+      message: _l10n.comingSoon,
       duration: const Duration(seconds: 2),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-
     return BlocListener<AudioBloc, AudioState>(
       listener: (context, state) {
-        // Force rebuild on any state change
-        // debugPrint('AudioPlayerWidget - State changed: ${state.runtimeType}');
+        // Handle state changes if needed
       },
       child: BlocBuilder<AudioBloc, AudioState>(
         buildWhen: (previous, current) {
-          // Only rebuild if the state actually changed
-          return previous != current;
+          // Smart rebuild: only rebuild when relevant state changes
+          if (previous.runtimeType != current.runtimeType) return true;
+
+          if (previous is AudioLoaded && current is AudioLoaded) {
+            // Only rebuild if current hymn is affected or relevant properties changed
+            final isCurrentHymn =
+                current.currentHymnNumber == widget.hymnNumber;
+            final wasCurrentHymn =
+                previous.currentHymnNumber == widget.hymnNumber;
+
+            if (isCurrentHymn || wasCurrentHymn) {
+              return previous.currentHymnNumber != current.currentHymnNumber ||
+                  previous.currentVoiceType != current.currentVoiceType ||
+                  previous.isPlaying != current.isPlaying ||
+                  previous.isLoading != current.isLoading ||
+                  previous.isRetrying != current.isRetrying ||
+                  previous.lastError != current.lastError ||
+                  previous.position != current.position ||
+                  previous.duration != current.duration;
+            }
+          }
+
+          return false;
         },
         builder: (context, state) {
           String? currentHymnNumber;
@@ -51,6 +93,7 @@ class AudioPlayerWidget extends StatelessWidget {
           bool isLoading = false;
           bool isRetrying = false;
           int retryCount = 0;
+          VoiceType currentVoiceType = VoiceType.allVoices;
 
           if (state is AudioLoaded) {
             currentHymnNumber = state.currentHymnNumber;
@@ -61,13 +104,14 @@ class AudioPlayerWidget extends StatelessWidget {
             isLoading = state.isLoading;
             isRetrying = state.isRetrying;
             retryCount = state.retryCount;
+            currentVoiceType = state.currentVoiceType;
 
             // Debug logging
             // debugPrint(
             //     'AudioPlayerWidget - State: ${state.playerState}, isPlaying: $isPlaying, isLoading: $isLoading, currentHymn: $currentHymnNumber, thisHymn: $hymnNumber');
           }
 
-          final isCurrentHymn = currentHymnNumber == hymnNumber;
+          final isCurrentHymn = currentHymnNumber == widget.hymnNumber;
 
           return Container(
             padding: const EdgeInsets.all(16),
@@ -88,310 +132,36 @@ class AudioPlayerWidget extends StatelessWidget {
               children: [
                 // Loading indicator
                 if (isCurrentHymn && isLoading) ...[
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppColors.primary),
-                    ),
-                    child: Row(
-                      children: [
-                        ShimmerLoading(
-                          child: Container(
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                        const Gap(8),
-                        Expanded(
-                          child: Text(
-                            'Loading audio...',
-                            style: TextStyle(
-                              color: AppColors.primary,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  _buildLoadingIndicator(),
                   const Gap(16),
                 ],
 
                 // Retrying indicator
                 if (isCurrentHymn && isRetrying) ...[
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppColors.primary),
-                    ),
-                    child: Row(
-                      children: [
-                        ShimmerLoading(
-                          child: Container(
-                            width: 20,
-                            height: 20,
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                        const Gap(8),
-                        Expanded(
-                          child: Text(
-                            'Retrying... (${retryCount}/3)',
-                            style: TextStyle(
-                              color: AppColors.primary,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  _buildRetryingIndicator(retryCount),
                   const Gap(16),
                 ],
 
                 // Error message display
                 if (isCurrentHymn && lastError != null) ...[
-                  Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: AppColors.error.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: AppColors.error),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.error_outline,
-                              color: AppColors.error,
-                              size: 20,
-                            ),
-                            const Gap(8),
-                            Expanded(
-                              child: Text(
-                                lastError,
-                                style: TextStyle(
-                                  color: AppColors.error,
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                try {
-                                  context
-                                      .read<AudioBloc>()
-                                      .add(ClearAudioError());
-                                } catch (e) {
-                                  debugPrint(
-                                      'Error accessing AudioBloc for clear error: $e');
-                                }
-                              },
-                              icon: Icon(
-                                Icons.close,
-                                color: AppColors.error,
-                                size: 16,
-                              ),
-                              padding: EdgeInsets.zero,
-                              constraints: const BoxConstraints(),
-                            ),
-                          ],
-                        ),
-                        if (lastError.contains('Unable to play audio')) ...[
-                          const Gap(8),
-                          Container(
-                            width: double.infinity,
-                            child: ElevatedButton.icon(
-                              onPressed: () {
-                                try {
-                                  context.read<AudioBloc>().add(RetryAudio());
-                                } catch (e) {
-                                  debugPrint(
-                                      'Error accessing AudioBloc for retry: $e');
-                                }
-                              },
-                              icon: Icon(Icons.refresh, size: 16),
-                              label: Text('Retry'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.primary,
-                                foregroundColor: Colors.white,
-                                padding: EdgeInsets.symmetric(vertical: 8),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
+                  _buildErrorDisplay(lastError),
                   const Gap(16),
                 ],
 
                 // Progress bar
                 if (isCurrentHymn && duration > Duration.zero) ...[
-                  Column(
-                    children: [
-                      Slider(
-                        value: position.inMilliseconds.toDouble(),
-                        max: duration.inMilliseconds.toDouble(),
-                        onChanged: (value) {
-                          try {
-                            context.read<AudioBloc>().add(SeekAudio(
-                                Duration(milliseconds: value.toInt())));
-                          } catch (e) {
-                            debugPrint(
-                                'Error accessing AudioBloc for seek: $e');
-                          }
-                        },
-                        activeColor: AppColors.primary,
-                        inactiveColor: AppColors.border(context),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            _formatDuration(position),
-                            style: TextStyle(
-                              color: AppColors.textSecondary(context),
-                              fontSize: 12,
-                            ),
-                          ),
-                          Text(
-                            _formatDuration(duration),
-                            style: TextStyle(
-                              color: AppColors.textSecondary(context),
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  _buildProgressBar(position, duration),
                   const Gap(16),
                 ],
 
                 // Control buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    // Play/All Voices button
-                    _buildControlButton(
-                      context,
-                      icon:
-                          isLoading ? Icons.hourglass_empty : Icons.play_arrow,
-                      label: l10n.allVoices,
-                      onTap: isLoading
-                          ? null
-                          : () {
-                              try {
-                                context
-                                    .read<AudioBloc>()
-                                    .add(PlayAudio(hymnNumber));
-                              } catch (e) {
-                                debugPrint('Error accessing AudioBloc: $e');
-                              }
-                            },
-                      isActive: isCurrentHymn && isPlaying,
-                      isLoading: isLoading,
-                    ),
-
-                    // Soprano button
-                    _buildControlButton(
-                      context,
-                      icon: Icons.mic,
-                      label: l10n.soprano,
-                      onTap: () => _showComingSoonToast(context, l10n.soprano),
-                      isActive: false,
-                    ),
-
-                    // Alto button
-                    _buildControlButton(
-                      context,
-                      icon: Icons.music_note,
-                      label: l10n.alto,
-                      onTap: () => _showComingSoonToast(context, l10n.alto),
-                      isActive: false,
-                    ),
-
-                    // Tenor button
-                    _buildControlButton(
-                      context,
-                      icon: Icons.piano,
-                      label: l10n.tenor,
-                      onTap: () => _showComingSoonToast(context, l10n.tenor),
-                      isActive: false,
-                    ),
-
-                    // Bass button
-                    _buildControlButton(
-                      context,
-                      icon: Icons.music_note,
-                      label: l10n.bass,
-                      onTap: () => _showComingSoonToast(context, l10n.bass),
-                      isActive: false,
-                    ),
-                  ],
-                ),
+                _buildControlButtons(
+                    isCurrentHymn, isPlaying, isLoading, currentVoiceType),
 
                 // Play/Pause/Stop controls
                 if (isCurrentHymn) ...[
                   const Gap(16),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        onPressed: isPlaying
-                            ? () {
-                                try {
-                                  context.read<AudioBloc>().add(PauseAudio());
-                                } catch (e) {
-                                  debugPrint(
-                                      'Error accessing AudioBloc for pause: $e');
-                                }
-                              }
-                            : () {
-                                try {
-                                  context.read<AudioBloc>().add(ResumeAudio());
-                                } catch (e) {
-                                  debugPrint(
-                                      'Error accessing AudioBloc for resume: $e');
-                                }
-                              },
-                        icon: Icon(
-                          isPlaying ? Icons.pause : Icons.play_arrow,
-                          color: AppColors.primary,
-                          size: 32,
-                        ),
-                      ),
-                      const Gap(16),
-                      IconButton(
-                        onPressed: () {
-                          try {
-                            context.read<AudioBloc>().add(StopAudio());
-                          } catch (e) {
-                            debugPrint(
-                                'Error accessing AudioBloc for stop: $e');
-                          }
-                        },
-                        icon: Icon(
-                          Icons.stop,
-                          color: AppColors.error,
-                          size: 32,
-                        ),
-                      ),
-                    ],
-                  ),
+                  _buildPlaybackControls(isPlaying),
                 ],
               ],
             ),
@@ -401,8 +171,406 @@ class AudioPlayerWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildControlButton(
-    BuildContext context, {
+  Widget _buildLoadingIndicator() {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.primary.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppColors.primary),
+      ),
+      child: Row(
+        children: [
+          ShimmerLoading(
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+          const Gap(8),
+          Expanded(
+            child: Text(
+              _l10n.loadingAudio,
+              style: TextStyle(
+                color: AppColors.primary,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildRetryingIndicator(int retryCount) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.primary.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppColors.primary),
+      ),
+      child: Row(
+        children: [
+          ShimmerLoading(
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                color: AppColors.primary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+          const Gap(8),
+          Expanded(
+            child: Text(
+              _l10n.retrying(retryCount),
+              style: TextStyle(
+                color: AppColors.primary,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildErrorDisplay(String lastError) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.error.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: AppColors.error),
+      ),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Icon(
+                Icons.error_outline,
+                color: AppColors.error,
+                size: 20,
+              ),
+              const Gap(8),
+              Expanded(
+                child: Text(
+                  lastError,
+                  style: TextStyle(
+                    color: AppColors.error,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+              IconButton(
+                onPressed: _handleClearError,
+                icon: Icon(
+                  Icons.close,
+                  color: AppColors.error,
+                  size: 16,
+                ),
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+              ),
+            ],
+          ),
+          if (lastError.contains(_l10n.unableToPlayAudio)) ...[
+            const Gap(8),
+            Container(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: _handleRetry,
+                icon: Icon(Icons.refresh, size: 16),
+                label: Text(_l10n.retry),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                ),
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProgressBar(Duration position, Duration duration) {
+    return Column(
+      children: [
+        Slider(
+          value: position.inMilliseconds.toDouble(),
+          max: duration.inMilliseconds.toDouble(),
+          onChanged: _handleSeek,
+          activeColor: AppColors.primary,
+          inactiveColor: AppColors.border(context),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              _formatDuration(position),
+              style: TextStyle(
+                color: AppColors.textSecondary(context),
+                fontSize: 12,
+              ),
+            ),
+            Text(
+              _formatDuration(duration),
+              style: TextStyle(
+                color: AppColors.textSecondary(context),
+                fontSize: 12,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildControlButtons(bool isCurrentHymn, bool isPlaying,
+      bool isLoading, VoiceType currentVoiceType) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          // Play/All Voices button
+          _buildControlButton(
+            icon: isLoading ? Icons.hourglass_empty : Icons.play_arrow,
+            label: _l10n.allVoices,
+            onTap: isLoading ? null : _handlePlayAudio,
+            isActive: isCurrentHymn &&
+                currentVoiceType == VoiceType.allVoices &&
+                isPlaying,
+            isLoading: isLoading,
+          ),
+
+          // Soprano button
+          _buildControlButton(
+            icon: Icons.mic,
+            label: _l10n.soprano,
+            onTap: widget.sopranoFile != null && widget.sopranoFile!.isNotEmpty
+                ? () => _handlePlayVoice(VoiceType.soprano, widget.sopranoFile!)
+                : () => _showComingSoonToast(_l10n.soprano),
+            isActive: isCurrentHymn &&
+                currentVoiceType == VoiceType.soprano &&
+                isPlaying,
+          ),
+
+          // Alto button
+          _buildControlButton(
+            icon: Icons.music_note,
+            label: _l10n.alto,
+            onTap: widget.altoFile != null && widget.altoFile!.isNotEmpty
+                ? () => _handlePlayVoice(VoiceType.alto, widget.altoFile!)
+                : () => _showComingSoonToast(_l10n.alto),
+            isActive: isCurrentHymn &&
+                currentVoiceType == VoiceType.alto &&
+                isPlaying,
+          ),
+
+          // Tenor button
+          _buildControlButton(
+            icon: Icons.piano,
+            label: _l10n.tenor,
+            onTap: widget.tenorFile != null && widget.tenorFile!.isNotEmpty
+                ? () => _handlePlayVoice(VoiceType.tenor, widget.tenorFile!)
+                : () => _showComingSoonToast(_l10n.tenor),
+            isActive: isCurrentHymn &&
+                currentVoiceType == VoiceType.tenor &&
+                isPlaying,
+          ),
+
+          // Bass button
+          _buildControlButton(
+            icon: Icons.music_note,
+            label: _l10n.bass,
+            onTap: widget.bassFile != null && widget.bassFile!.isNotEmpty
+                ? () => _handlePlayVoice(VoiceType.bass, widget.bassFile!)
+                : () => _showComingSoonToast(_l10n.bass),
+            isActive: isCurrentHymn &&
+                currentVoiceType == VoiceType.bass &&
+                isPlaying,
+          ),
+
+          // Countertenor button (only show if file exists)
+          if (widget.countertenorFile != null &&
+              widget.countertenorFile!.isNotEmpty)
+            _buildControlButton(
+              icon: Icons.mic,
+              label: _l10n.countertenor,
+              onTap: () => _handlePlayVoice(
+                  VoiceType.countertenor, widget.countertenorFile!),
+              isActive: isCurrentHymn &&
+                  currentVoiceType == VoiceType.countertenor &&
+                  isPlaying,
+            ),
+
+          // Baritone button (only show if file exists)
+          if (widget.baritoneFile != null && widget.baritoneFile!.isNotEmpty)
+            _buildControlButton(
+              icon: Icons.music_note,
+              label: _l10n.baritone,
+              onTap: () =>
+                  _handlePlayVoice(VoiceType.baritone, widget.baritoneFile!),
+              isActive: isCurrentHymn &&
+                  currentVoiceType == VoiceType.baritone &&
+                  isPlaying,
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPlaybackControls(bool isPlaying) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        IconButton(
+          onPressed: isPlaying ? _handlePause : _handleResume,
+          icon: Icon(
+            isPlaying ? Icons.pause : Icons.play_arrow,
+            color: AppColors.primary,
+            size: 32,
+          ),
+        ),
+        const Gap(16),
+        IconButton(
+          onPressed: _handleStop,
+          icon: Icon(
+            Icons.stop,
+            color: AppColors.error,
+            size: 32,
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Event handlers with proper error handling
+  void _handlePlayAudio() {
+    if (!mounted) return;
+    try {
+      final audioState = context.read<AudioBloc>().state;
+      if (audioState is AudioLoaded) {
+        // Use the current voice type and corresponding file if available
+        final currentVoiceType = audioState.currentVoiceType;
+        String? voiceFile;
+
+        // Get the appropriate voice file based on current voice type
+        switch (currentVoiceType) {
+          case VoiceType.soprano:
+            voiceFile = widget.sopranoFile;
+            break;
+          case VoiceType.alto:
+            voiceFile = widget.altoFile;
+            break;
+          case VoiceType.tenor:
+            voiceFile = widget.tenorFile;
+            break;
+          case VoiceType.bass:
+            voiceFile = widget.bassFile;
+            break;
+          case VoiceType.countertenor:
+            voiceFile = widget.countertenorFile;
+            break;
+          case VoiceType.baritone:
+            voiceFile = widget.baritoneFile;
+            break;
+          case VoiceType.allVoices:
+          default:
+            voiceFile = null; // Use default hymn file
+            break;
+        }
+
+        context.read<AudioBloc>().add(PlayAudio(
+              widget.hymnNumber,
+              voiceType: currentVoiceType,
+              voiceFile: voiceFile,
+            ));
+      } else {
+        // Fallback to default behavior if no current state
+        context.read<AudioBloc>().add(PlayAudio(widget.hymnNumber));
+      }
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for play: $e');
+    }
+  }
+
+  void _handlePlayVoice(VoiceType voiceType, String voiceFile) {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(PlayAudio(widget.hymnNumber,
+          voiceType: voiceType, voiceFile: voiceFile));
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for voice play: $e');
+    }
+  }
+
+  void _handlePause() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(PauseAudio());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for pause: $e');
+    }
+  }
+
+  void _handleResume() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(ResumeAudio());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for resume: $e');
+    }
+  }
+
+  void _handleStop() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(StopAudio());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for stop: $e');
+    }
+  }
+
+  void _handleSeek(double value) {
+    if (!mounted) return;
+    try {
+      context
+          .read<AudioBloc>()
+          .add(SeekAudio(Duration(milliseconds: value.toInt())));
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for seek: $e');
+    }
+  }
+
+  void _handleClearError() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(ClearAudioError());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for clear error: $e');
+    }
+  }
+
+  void _handleRetry() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(RetryAudio());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for retry: $e');
+    }
+  }
+
+  Widget _buildControlButton({
     required IconData icon,
     required String label,
     required VoidCallback? onTap,

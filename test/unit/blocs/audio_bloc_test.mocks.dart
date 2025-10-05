@@ -7,6 +7,7 @@ import 'dart:async' as _i3;
 import 'dart:ui' as _i4;
 
 import 'package:hymnes_sda_fr/core/services/audio_service.dart' as _i2;
+import 'package:hymnes_sda_fr/features/audio/bloc/audio_bloc.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -112,10 +113,14 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
       ) as _i3.Future<void>);
 
   @override
-  _i3.Future<void> playHymn(String? hymnNumber) => (super.noSuchMethod(
+  _i3.Future<void> playHymn(String hymnNumber,
+          {String? voiceFile,
+          _i5.VoiceType voiceType = _i5.VoiceType.allVoices}) =>
+      (super.noSuchMethod(
         Invocation.method(
           #playHymn,
           [hymnNumber],
+          {#voiceFile: voiceFile, #voiceType: voiceType},
         ),
         returnValue: _i3.Future<void>.value(),
         returnValueForMissingStub: _i3.Future<void>.value(),

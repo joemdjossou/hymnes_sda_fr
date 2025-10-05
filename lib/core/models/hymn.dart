@@ -11,6 +11,8 @@ class Hymn extends Equatable {
   final String altoFile;
   final String tenorFile;
   final String bassFile;
+  final String? countertenorFile;
+  final String? baritoneFile;
   final String midiFile;
   final String theme;
   final String subtheme;
@@ -27,6 +29,8 @@ class Hymn extends Equatable {
     required this.altoFile,
     required this.tenorFile,
     required this.bassFile,
+    this.countertenorFile,
+    this.baritoneFile,
     required this.midiFile,
     required this.theme,
     required this.subtheme,
@@ -45,6 +49,8 @@ class Hymn extends Equatable {
         altoFile,
         tenorFile,
         bassFile,
+        countertenorFile,
+        baritoneFile,
         midiFile,
         theme,
         subtheme,
@@ -62,6 +68,8 @@ class Hymn extends Equatable {
     String? altoFile,
     String? tenorFile,
     String? bassFile,
+    String? countertenorFile,
+    String? baritoneFile,
     String? midiFile,
     String? theme,
     String? subtheme,
@@ -78,6 +86,8 @@ class Hymn extends Equatable {
       altoFile: altoFile ?? this.altoFile,
       tenorFile: tenorFile ?? this.tenorFile,
       bassFile: bassFile ?? this.bassFile,
+      countertenorFile: countertenorFile ?? this.countertenorFile,
+      baritoneFile: baritoneFile ?? this.baritoneFile,
       midiFile: midiFile ?? this.midiFile,
       theme: theme ?? this.theme,
       subtheme: subtheme ?? this.subtheme,
@@ -97,6 +107,8 @@ class Hymn extends Equatable {
       'altoFile': altoFile,
       'tenorFile': tenorFile,
       'bassFile': bassFile,
+      'countertenorFile': countertenorFile,
+      'baritoneFile': baritoneFile,
       'midiFile': midiFile,
       'theme': theme,
       'subtheme': subtheme,
@@ -116,6 +128,9 @@ class Hymn extends Equatable {
       altoFile: json['altoFile'] ?? '',
       tenorFile: json['tenorFile'] ?? '',
       bassFile: json['bassFile'] ?? '',
+      countertenorFile: json['countertenorFile'],
+      baritoneFile:
+          json['baritoneFile'] ?? json['barritoneFile'], // Handle typo in JSON
       midiFile: json['midiFile'] ?? '',
       theme: json['theme'] ?? '',
       subtheme: json['subtheme'] ?? '',

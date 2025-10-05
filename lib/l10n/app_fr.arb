@@ -112,6 +112,8 @@
   "alto": "Alto",
   "tenor": "Ténor",
   "bass": "Basse",
+  "countertenor": "Contre-ténor",
+  "baritone": "Baryton",
   "musicSheet": "Partition Musicale",
   "viewMusicSheet": "Voir la partition (PDF)",
   "viewMusicSheets": "Voir {count} partitions (PDF)",
@@ -290,5 +292,15 @@
   "justSoYouKnow": "Juste pour votre information",
   "loggedInOverHour": "Vous êtes connecté depuis plus d'une heure. N'oubliez pas de sauvegarder vos progrès.",
   "lyricsCopied": "Paroles copiées",
-  "storyCopied": "Histoire copiée"
+  "storyCopied": "Histoire copiée",
+  "loadingAudio": "Chargement de l'audio...",
+  "retrying": "Nouvelle tentative... ({count}/3)",
+  "@retrying": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "unableToPlayAudio": "Impossible de lire l'audio"
 }

@@ -87,7 +87,7 @@ class _SearchScreenState extends State<SearchScreen>
 
   void _onScroll() {
     // Show collapsed app bar when scrolled past the search section (around 100px)
-    final shouldShow = _scrollController.offset > 100;
+    final shouldShow = _scrollController.offset > 70;
     if (shouldShow != _showCollapsedAppBar) {
       setState(() {
         _showCollapsedAppBar = shouldShow;
