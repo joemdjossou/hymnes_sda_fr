@@ -355,7 +355,6 @@ void main() {
       test('should get distinct ID', () async {
         expect(() => service.getDistinctId(), returnsNormally);
       });
-
     });
   });
 

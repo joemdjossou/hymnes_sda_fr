@@ -1,5 +1,5 @@
-import 'package:posthog_flutter/posthog_flutter.dart';
 import 'package:logger/logger.dart';
+import 'package:posthog_flutter/posthog_flutter.dart';
 
 import '../../shared/constants/app_configs.dart';
 
@@ -21,10 +21,13 @@ class PostHogService {
       final config = PostHogConfig(AppConfigs.posthogApiKey);
       config.host = AppConfigs.posthogHost;
       config.debug = AppConfigs.posthogDebug;
-      config.captureApplicationLifecycleEvents = AppConfigs.posthogCaptureApplicationLifecycleEvents;
+      config.captureApplicationLifecycleEvents =
+          AppConfigs.posthogCaptureApplicationLifecycleEvents;
       config.sessionReplay = AppConfigs.posthogSessionReplay;
-      config.sessionReplayConfig.maskAllTexts = AppConfigs.posthogSessionReplayMaskAllTexts;
-      config.sessionReplayConfig.maskAllImages = AppConfigs.posthogSessionReplayMaskAllImages;
+      config.sessionReplayConfig.maskAllTexts =
+          AppConfigs.posthogSessionReplayMaskAllTexts;
+      config.sessionReplayConfig.maskAllImages =
+          AppConfigs.posthogSessionReplayMaskAllImages;
 
       await Posthog().setup(config);
       _isInitialized = true;
@@ -62,7 +65,8 @@ class PostHogService {
         ...?additionalProperties,
       };
 
-      await Posthog().identify(userId, properties: properties);
+      await Posthog().identify(
+          userId: userId, userProperties: properties.cast<String, Object>());
       _logger.d('User identified: $userId');
     } catch (e) {
       _logger.e('Failed to identify user: $e');
@@ -106,9 +110,8 @@ class PostHogService {
       };
 
       await Posthog().capture(
-        eventName,
-        properties: eventProperties,
-        distinctId: distinctId,
+        eventName: eventName,
+        properties: eventProperties.cast<String, Object>(),
       );
       _logger.d('Event tracked: $eventName');
     } catch (e) {

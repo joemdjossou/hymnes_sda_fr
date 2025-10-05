@@ -227,7 +227,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       if (credential?.user != null) {
         final user = UserModel.fromFirebaseUser(credential!.user!);
-        
+
         // Track PostHog event
         await _posthog.identifyUser(
           userId: user.uid,
@@ -328,11 +328,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     try {
       await _authService.signOut();
-      
+
       // Track PostHog event
       await _posthog.trackAuthEvent(eventType: 'logout');
       await _posthog.resetUser();
-      
+
       emit(Unauthenticated());
     } catch (e) {
       emit(AuthError(e.toString()));

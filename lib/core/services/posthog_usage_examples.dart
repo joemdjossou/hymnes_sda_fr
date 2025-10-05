@@ -362,7 +362,6 @@ class PostHogUsageExamples {
 
   /// Example: Start new session
   Future<void> startNewSession() async {
-    await _posthog.startSession();
     await _posthog.trackEvent(
       eventName: 'session_started',
       properties: {
@@ -379,6 +378,5 @@ class PostHogUsageExamples {
         'session_end_timestamp': DateTime.now().toIso8601String(),
       },
     );
-    await _posthog.endSession();
   }
 }

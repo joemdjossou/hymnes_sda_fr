@@ -63,10 +63,10 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
   void _onHymnTap(Hymn hymn, int index) {
     // Track search result click
     trackSearchResultClick(_searchController.text, hymn.number, index + 1);
-    
+
     // Track hymn view
     trackHymnView(hymn.number, hymn.title, source: 'search');
-    
+
     // Navigate to hymn detail (example)
     Navigator.pushNamed(context, '/hymn/${hymn.number}');
   }
@@ -74,7 +74,7 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
   void _onShareHymn(Hymn hymn) {
     // Track hymn share
     trackHymnShare(hymn.number, hymn.title, 'share_sheet');
-    
+
     // Show share dialog (example)
     showDialog(
       context: context,
@@ -101,7 +101,7 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
   void _onError() {
     // Track error event
     trackError('user_action_error', 'User triggered error for testing');
-    
+
     // Show error dialog
     showDialog(
       context: context,
@@ -124,7 +124,7 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
       'button_name': 'custom_event_button',
       'timestamp': DateTime.now().toIso8601String(),
     });
-    
+
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Custom event tracked!')),
     );
@@ -156,7 +156,7 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
               child: const Text('Search'),
             ),
             const SizedBox(height: 16),
-            
+
             // Action buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -176,7 +176,7 @@ class _ExampleTrackingScreenState extends State<ExampleTrackingScreen>
               ],
             ),
             const SizedBox(height: 16),
-            
+
             // Search results
             Expanded(
               child: ListView.builder(
