@@ -13,7 +13,7 @@ class AuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
   );
-  
+
   // Error logging service
   final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
@@ -36,7 +36,7 @@ class AuthService {
         email: email,
         password: password,
       );
-      
+
       await _errorLogger.logInfo(
         'AuthService',
         'User signed in successfully with email',
@@ -45,7 +45,7 @@ class AuthService {
           'userId': credential.user?.uid,
         },
       );
-      
+
       return credential;
     } on FirebaseAuthException catch (e) {
       await _errorLogger.logAuthError(
@@ -101,8 +101,30 @@ class AuthService {
 
       return credential;
     } on FirebaseAuthException catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'email_password',
+        'Email/password sign up failed',
+        error: e,
+        stackTrace: StackTrace.current,
+        authContext: {
+          'email': email,
+          'errorCode': e.code,
+          'errorMessage': e.message,
+        },
+      );
       throw _handleAuthException(e);
     } catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'email_password',
+        'Unexpected error during email/password sign up',
+        error: e,
+        stackTrace: StackTrace.current,
+        authContext: {
+          'email': email,
+        },
+      );
       throw 'UNEXPECTED_ERROR';
     }
   }
@@ -130,8 +152,26 @@ class AuthService {
       // Sign in to Firebase with the Google credential
       return await _auth.signInWithCredential(credential);
     } on FirebaseAuthException catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'google_sign_in',
+        'Google sign in failed',
+        error: e,
+        stackTrace: StackTrace.current,
+        authContext: {
+          'errorCode': e.code,
+          'errorMessage': e.message,
+        },
+      );
       throw _handleAuthException(e);
     } catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'google_sign_in',
+        'Unexpected error during Google sign in',
+        error: e,
+        stackTrace: StackTrace.current,
+      );
       throw 'UNEXPECTED_ERROR';
     }
   }
