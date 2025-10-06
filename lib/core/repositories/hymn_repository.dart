@@ -1,5 +1,6 @@
 import '../../features/favorites/models/favorite_hymn.dart';
 import '../models/hymn.dart';
+import '../services/error_logging_service.dart';
 import '../services/hymn_data_service.dart';
 import '../services/storage_service.dart';
 import 'i_hymn_repository.dart';
@@ -11,6 +12,7 @@ class HymnRepository
   HymnRepository._internal();
 
   final StorageService _storageService = StorageService();
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
   // In-memory cache for hymns
   List<Hymn>? _hymnsCache;
@@ -18,13 +20,34 @@ class HymnRepository
   // Get all hymns
   @override
   Future<List<Hymn>> getAllHymns() async {
-    if (_hymnsCache != null) {
-      return _hymnsCache!;
-    }
+    try {
+      if (_hymnsCache != null) {
+        return _hymnsCache!;
+      }
 
-    // Load hymns from the data source
-    _hymnsCache = await _loadHymnsFromDataSource();
-    return _hymnsCache!;
+      // Load hymns from the data source
+      _hymnsCache = await _loadHymnsFromDataSource();
+      
+      await _errorLogger.logInfo(
+        'HymnRepository',
+        'Hymns loaded successfully',
+        context: {
+          'hymnCount': _hymnsCache?.length ?? 0,
+          'fromCache': false,
+        },
+      );
+      
+      return _hymnsCache!;
+    } catch (e) {
+      await _errorLogger.logDatabaseError(
+        'HymnRepository',
+        'getAllHymns',
+        'Failed to load hymns',
+        error: e,
+        stackTrace: StackTrace.current,
+      );
+      rethrow;
+    }
   }
 
   // Get hymn by number

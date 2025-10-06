@@ -339,7 +339,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Play/All Voices button
           _buildControlButton(

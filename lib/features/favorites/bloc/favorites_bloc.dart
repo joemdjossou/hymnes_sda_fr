@@ -175,11 +175,10 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
     Emitter<FavoritesState> emit,
   ) async {
     try {
-      emit(FavoritesLoading());
-
       // Initialize hybrid repository if needed
       await _hybridRepository.initialize();
 
+      // Load local data first for immediate display
       final favoriteHymns = await _hybridRepository.getFavorites();
       final favoriteStatus = <String, bool>{};
       final favorites = <Hymn>[];
@@ -197,6 +196,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       // Get sync status
       final syncStatus = await _hybridRepository.getSyncStatus();
 
+      // Emit loaded state immediately with local data
       emit(FavoritesLoaded(
         favorites: sortedFavorites,
         favoriteStatus: favoriteStatus,
@@ -205,8 +205,25 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         isAuthenticated: syncStatus['isAuthenticated'] ?? false,
         isSynced: syncStatus['isSynced'] ?? true,
       ));
+
+      // Sync with online storage in background (no loading state)
+      _syncInBackground();
     } catch (e) {
       emit(FavoritesError('Failed to load favorites: $e'));
+    }
+  }
+
+  // Background sync method
+  Future<void> _syncInBackground() async {
+    try {
+      // Perform background sync without emitting loading states
+      await _hybridRepository.forceSync();
+
+      // Trigger a reload to update with synced data
+      add(const LoadFavorites());
+    } catch (e) {
+      // Background sync failed, but don't show error to user
+      // Local data is already displayed
     }
   }
 

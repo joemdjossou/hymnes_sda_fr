@@ -8,6 +8,8 @@ environment:
   sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
+  # sentry
+  sentry_flutter: ^9.6.0
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -52,6 +54,8 @@ dependencies:
   posthog_flutter: ^5.0.0
 
 dev_dependencies:
+  # sentry
+  sentry_dart_plugin: ^3.1.1
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
@@ -93,3 +97,10 @@ flutter_launcher_icons:
 flutter_gen:
   output: lib/gen/
   line_length: 80
+
+# sentry
+sentry:
+  upload_debug_symbols: true
+  upload_source_maps: true
+  project: flutter
+  org: joemdjossou

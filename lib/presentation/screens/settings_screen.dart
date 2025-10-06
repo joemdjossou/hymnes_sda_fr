@@ -126,6 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                 const ThemeSelectionWidget(),
                 const Gap(20),
                 _buildAppInfoSection(context, l10n),
+                const Gap(20),
                 const Gap(100), // Extra padding at bottom for better scrolling
               ]),
             ),

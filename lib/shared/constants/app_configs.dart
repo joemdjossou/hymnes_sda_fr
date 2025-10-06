@@ -7,4 +7,7 @@ class AppConfigs {
   static const bool posthogSessionReplay = true;
   static const bool posthogSessionReplayMaskAllTexts = false;
   static const bool posthogSessionReplayMaskAllImages = false;
+
+  static const String sentryDsn =
+      'https://31aedf28c923bcee6fa04c7f90de6d0d@o4510139708735488.ingest.us.sentry.io/4510139709652992';
 }
