@@ -3,14 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hymnes_sda_fr/firebase_options.dart';
 import 'package:hymnes_sda_fr/hymnes.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_configs.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
+import 'core/services/error_logging_service.dart';
 import 'core/services/favorites_sync_service.dart';
 import 'core/services/posthog_service.dart';
 import 'core/services/storage_service.dart';
+import 'core/utils/global_error_handler.dart';
 
 void main() async {
-  // init WidgetsFlutterBinding if not yet
-  WidgetsFlutterBinding.ensureInitialized();
+  // init SentryWidgetsFlutterBinding if not yet
+  SentryWidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -36,5 +40,35 @@ void main() async {
   // Track app launch
   await PostHogService().trackAppLaunch();
 
-  runApp(const HymnesApp());
+  await SentryFlutter.init(
+    (options) {
+      options.dsn = AppConfigs.sentryDsn;
+      // Adds request headers and IP for users, for more info visit:
+      // https://docs.sentry.io/platforms/dart/guides/flutter/data-management/data-collected/
+      options.sendDefaultPii = true;
+      options.enableLogs = true;
+      // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
+      // We recommend adjusting this value in production.
+      options.tracesSampleRate = 1.0;
+      // The sampling rate for profiling is relative to tracesSampleRate
+      // Setting to 1.0 will profile 100% of sampled transactions:
+      options.profilesSampleRate = 1.0;
+      // Configure Session Replay
+      options.replay.sessionSampleRate = 0.1;
+      options.replay.onErrorSampleRate = 1.0;
+    },
+    appRunner: () async {
+      // Initialize error logging system
+      await ErrorLoggingService().initialize();
+      await GlobalErrorHandler().initialize();
+
+      // Test Sentry integration
+      await ErrorLoggingService().logInfo(
+        'AppStartup',
+        'App started successfully with comprehensive error logging',
+      );
+
+      runApp(SentryWidget(child: const HymnesApp()));
+    },
+  );
 }

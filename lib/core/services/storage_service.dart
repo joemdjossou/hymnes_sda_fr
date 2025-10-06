@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/favorites/models/favorite_hymn.dart';
 import '../models/hymn.dart';
+import 'error_logging_service.dart';
 
 class StorageService {
   static final StorageService _instance = StorageService._internal();
@@ -18,20 +19,66 @@ class StorageService {
   late Box _settingsBoxInstance;
   late Box _recentlyPlayedBoxInstance;
 
-  Future<void> initialize() async {
-    await Hive.initFlutter();
+  // Error logging service
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
-    // Open boxes
-    _favoritesBoxInstance = await Hive.openBox(_favoritesBox);
-    _settingsBoxInstance = await Hive.openBox(_settingsBox);
-    _recentlyPlayedBoxInstance = await Hive.openBox(_recentlyPlayedBox);
+  Future<void> initialize() async {
+    try {
+      await Hive.initFlutter();
+
+      // Open boxes
+      _favoritesBoxInstance = await Hive.openBox(_favoritesBox);
+      _settingsBoxInstance = await Hive.openBox(_settingsBox);
+      _recentlyPlayedBoxInstance = await Hive.openBox(_recentlyPlayedBox);
+
+      await _errorLogger.logInfo(
+        'StorageService',
+        'Storage service initialized successfully',
+        context: {
+          'boxes': [_favoritesBox, _settingsBox, _recentlyPlayedBox],
+        },
+      );
+    } catch (e) {
+      await _errorLogger.logDatabaseError(
+        'StorageService',
+        'initialize',
+        'Failed to initialize storage service',
+        error: e,
+        stackTrace: StackTrace.current,
+      );
+      rethrow;
+    }
   }
 
   // Favorites Management
   Future<void> addToFavorites(Hymn hymn) async {
-    final hymnData = hymn.toJson();
-    hymnData['dateAdded'] = DateTime.now().millisecondsSinceEpoch;
-    await _favoritesBoxInstance.put(hymn.number, hymnData);
+    try {
+      final hymnData = hymn.toJson();
+      hymnData['dateAdded'] = DateTime.now().millisecondsSinceEpoch;
+      await _favoritesBoxInstance.put(hymn.number, hymnData);
+
+      await _errorLogger.logDebug(
+        'StorageService',
+        'Added hymn to favorites',
+        context: {
+          'hymnNumber': hymn.number,
+          'hymnTitle': hymn.title,
+        },
+      );
+    } catch (e) {
+      await _errorLogger.logDatabaseError(
+        'StorageService',
+        'addToFavorites',
+        'Failed to add hymn to favorites',
+        error: e,
+        stackTrace: StackTrace.current,
+        queryContext: {
+          'hymnNumber': hymn.number,
+          'hymnTitle': hymn.title,
+        },
+      );
+      rethrow;
+    }
   }
 
   Future<void> removeFromFavorites(String hymnNumber) async {

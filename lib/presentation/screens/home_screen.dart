@@ -5,13 +5,15 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 
 import '../../core/models/hymn.dart';
+import '../../core/services/error_logging_service.dart';
 import '../../core/services/hymn_data_service.dart';
+import '../../core/utils/global_error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/shimmer_loading.dart';
-import 'hymn_detail_screen.dart';
+import '../screens/hymn_detail_screen.dart';
 import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,6 +35,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late Animation<double> _heroFadeAnimation;
   late Animation<Offset> _heroSlideAnimation;
   late Animation<double> _searchFadeAnimation;
+
+  // Error logging service
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
   @override
   void initState() {
@@ -91,11 +96,39 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         _filteredHymns = hymns;
         _isLoading = false;
       });
+
+      await _errorLogger.logInfo(
+        'HomeScreen',
+        'Hymns loaded successfully',
+        context: {
+          'hymnCount': hymns.length,
+        },
+      );
     } catch (e) {
       setState(() {
         _isLoading = false;
       });
-      debugPrint('Error loading hymns: $e');
+
+      await _errorLogger.logUIError(
+        'HomeScreen',
+        'HomeScreen',
+        'Failed to load hymns',
+        error: e,
+        stackTrace: StackTrace.current,
+        uiContext: {
+          'screen': 'HomeScreen',
+          'operation': 'loadHymns',
+        },
+      );
+
+      // Show error to user
+      if (mounted) {
+        context.showErrorSnackBar(
+          'Failed to load hymns. Please try again.',
+          error: e,
+          stackTrace: StackTrace.current,
+        );
+      }
     }
   }
 
@@ -128,11 +161,43 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   void _onHymnTap(Hymn hymn) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => HymnDetailScreen(hymnId: hymn.number),
-      ),
-    );
+    try {
+      _errorLogger.logDebug(
+        'HomeScreen',
+        'User tapped on hymn',
+        context: {
+          'hymnNumber': hymn.number,
+          'hymnTitle': hymn.title,
+        },
+      );
+
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => HymnDetailScreen(hymnId: hymn.number),
+        ),
+      );
+    } catch (e) {
+      _errorLogger.logUIError(
+        'HomeScreen',
+        'HomeScreen',
+        'Failed to navigate to hymn detail',
+        error: e,
+        stackTrace: StackTrace.current,
+        uiContext: {
+          'hymnNumber': hymn.number,
+          'hymnTitle': hymn.title,
+          'operation': 'navigateToHymnDetail',
+        },
+      );
+
+      if (mounted) {
+        context.showErrorSnackBar(
+          'Failed to open hymn. Please try again.',
+          error: e,
+          stackTrace: StackTrace.current,
+        );
+      }
+    }
   }
 
   @override
@@ -456,26 +521,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             context: context,
                                           ),
                                     const Gap(12),
-                                    _isLoading
-                                        ? const ShimmerStatCard()
-                                        : BlocBuilder<FavoritesBloc,
-                                            FavoritesState>(
-                                            builder: (context, favoritesState) {
-                                              final favoritesCount =
-                                                  favoritesState
-                                                          is FavoritesLoaded
-                                                      ? favoritesState
-                                                          .favorites.length
-                                                      : 0;
-                                              return _buildStatCard(
-                                                icon: Icons.favorite,
-                                                value:
-                                                    favoritesCount.toString(),
-                                                label: l10n.favorites,
-                                                context: context,
-                                              );
-                                            },
-                                          ),
+                                    BlocBuilder<FavoritesBloc, FavoritesState>(
+                                      builder: (context, favoritesState) {
+                                        final favoritesCount = favoritesState
+                                                is FavoritesLoaded
+                                            ? favoritesState.favorites.length
+                                            : 0;
+                                        return _buildStatCard(
+                                          icon: Icons.favorite,
+                                          value: favoritesCount.toString(),
+                                          label: l10n.favorites,
+                                          context: context,
+                                        );
+                                      },
+                                    ),
                                   ],
                                 ),
                               ],

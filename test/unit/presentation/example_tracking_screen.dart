@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../core/mixins/posthog_tracking_mixin.dart';
-import '../../core/models/hymn.dart';
+import '../../../lib/core/mixins/posthog_tracking_mixin.dart';
+import '../../../lib/core/models/hymn.dart';
 
 /// Example screen showing how to use PostHog tracking in widgets
 class ExampleTrackingScreen extends StatefulWidget {

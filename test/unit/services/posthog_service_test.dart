@@ -3,17 +3,13 @@ import 'package:hymnes_sda_fr/core/services/posthog_service.dart';
 import 'package:mockito/annotations.dart';
 import 'package:posthog_flutter/posthog_flutter.dart';
 
-import 'posthog_service_test.mocks.dart';
-
 @GenerateMocks([Posthog])
 void main() {
   group('PostHogService Tests', () {
     late PostHogService service;
-    late MockPosthog mockPosthog;
 
     setUp(() {
       service = PostHogService();
-      mockPosthog = MockPosthog();
     });
 
     test('should be a singleton', () {

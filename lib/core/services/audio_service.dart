@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
 import '../../features/audio/bloc/audio_bloc.dart';
+import 'error_logging_service.dart';
 
 enum AudioPlayerState {
   stopped,
@@ -35,6 +36,9 @@ class AudioService extends ChangeNotifier {
   StreamSubscription<Duration>? _positionSubscription;
   StreamSubscription<Duration?>? _durationSubscription;
   StreamSubscription<PlayerState>? _playerStateSubscription;
+
+  // Error logging service
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
   // Getters
   AudioPlayerState get state => _state;
@@ -192,6 +196,21 @@ class AudioService extends ChangeNotifier {
       debugPrint('Error in _loadAndPlayHymn: $e');
       _state = AudioPlayerState.error;
       _lastError = 'Failed to play audio: $e';
+
+      // Log error to Sentry
+      _errorLogger.logAudioError(
+        'AudioService',
+        hymnNumber,
+        'Failed to load and play hymn',
+        error: e,
+        stackTrace: StackTrace.current,
+        audioContext: {
+          'mp3Url': mp3Url,
+          'voiceType': voiceType.toString(),
+          'voiceFile': voiceFile,
+        },
+      );
+
       notifyListeners();
       rethrow;
     }
@@ -203,6 +222,19 @@ class AudioService extends ChangeNotifier {
       _state = AudioPlayerState.retrying;
       _lastError =
           'Connection failed. Retrying... (${_retryCount}/$_maxRetries)';
+
+      // Log retry attempt
+      _errorLogger.logWarning(
+        'AudioService',
+        'Audio playback retry attempt ${_retryCount}/$_maxRetries',
+        context: {
+          'hymnNumber': _currentHymnNumber,
+          'voiceType': _currentVoiceType.toString(),
+          'retryCount': _retryCount,
+          'error': error.toString(),
+        },
+      );
+
       notifyListeners();
 
       // Retry after a delay
@@ -216,6 +248,21 @@ class AudioService extends ChangeNotifier {
       _state = AudioPlayerState.error;
       _lastError =
           'Unable to play audio. Please check your internet connection and try again.';
+
+      // Log final failure
+      _errorLogger.logAudioError(
+        'AudioService',
+        _currentHymnNumber ?? 'unknown',
+        'Audio playback failed after all retry attempts',
+        error: error,
+        stackTrace: StackTrace.current,
+        audioContext: {
+          'voiceType': _currentVoiceType.toString(),
+          'retryCount': _retryCount,
+          'maxRetries': _maxRetries,
+        },
+      );
+
       notifyListeners();
     }
   }

@@ -1,6 +1,7 @@
 import Flutter
 import UIKit
 import GoogleSignIn
+import Sentry
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
@@ -9,6 +10,14 @@ import GoogleSignIn
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
+    
+    // Configure Sentry
+    SentrySDK.start { options in
+        options.dsn = "https://31aedf28c923bcee6fa04c7f90de6d0d@o4510139708735488.ingest.us.sentry.io/4510139709652992"
+        options.debug = false
+        options.enableAutoSessionTracking = true
+        options.sessionTrackingIntervalMillis = 30000
+    }
     
     // Configure Google Sign-In
     guard let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),

@@ -1,11 +1,16 @@
 import 'package:http/http.dart' as http;
 
+import 'error_logging_service.dart';
+
 /// Service responsible for handling hymn music sheet PDF operations
 /// Follows Single Responsibility Principle
 class MusicSheetService {
   static const String _baseUrl =
       'https://troisanges.org/Musique/HymnesEtLouanges/PDF/';
   static const int _maxVariations = 4;
+
+  // Error logging service
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
   /// Generate all possible PDF URLs for a hymn number
   /// Returns a list of URLs that need to be validated
@@ -36,9 +41,32 @@ class MusicSheetService {
         },
       ).timeout(const Duration(seconds: 5));
 
-      return response.statusCode == 200 &&
+      final isAccessible = response.statusCode == 200 &&
           response.headers['content-type']?.contains('pdf') == true;
+
+      if (!isAccessible) {
+        await _errorLogger.logNetworkError(
+          'MusicSheetService',
+          url,
+          response.statusCode,
+          'PDF not accessible',
+          requestContext: {
+            'contentType': response.headers['content-type'],
+            'responseHeaders': response.headers,
+          },
+        );
+      }
+
+      return isAccessible;
     } catch (e) {
+      await _errorLogger.logNetworkError(
+        'MusicSheetService',
+        url,
+        null,
+        'Network error while checking PDF accessibility',
+        error: e,
+        stackTrace: StackTrace.current,
+      );
       return false;
     }
   }

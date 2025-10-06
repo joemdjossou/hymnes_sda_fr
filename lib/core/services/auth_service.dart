@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
+import 'error_logging_service.dart';
+
 class AuthService {
   static final AuthService _instance = AuthService._internal();
   factory AuthService() => _instance;
@@ -11,6 +13,9 @@ class AuthService {
   final GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: ['email', 'profile'],
   );
+  
+  // Error logging service
+  final ErrorLoggingService _errorLogger = ErrorLoggingService();
 
   // Get current user
   User? get currentUser => _auth.currentUser;
@@ -31,10 +36,42 @@ class AuthService {
         email: email,
         password: password,
       );
+      
+      await _errorLogger.logInfo(
+        'AuthService',
+        'User signed in successfully with email',
+        context: {
+          'email': email,
+          'userId': credential.user?.uid,
+        },
+      );
+      
       return credential;
     } on FirebaseAuthException catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'email_password',
+        'Email/password sign in failed',
+        error: e,
+        stackTrace: StackTrace.current,
+        authContext: {
+          'email': email,
+          'errorCode': e.code,
+          'errorMessage': e.message,
+        },
+      );
       throw _handleAuthException(e);
     } catch (e) {
+      await _errorLogger.logAuthError(
+        'AuthService',
+        'email_password',
+        'Unexpected error during email/password sign in',
+        error: e,
+        stackTrace: StackTrace.current,
+        authContext: {
+          'email': email,
+        },
+      );
       throw 'UNEXPECTED_ERROR';
     }
   }
