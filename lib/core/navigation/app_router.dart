@@ -168,7 +168,7 @@ class AppRouter {
   static Future<String?> _handleRedirect(
       BuildContext context, GoRouterState state) async {
     final location = state.uri.path;
-    
+
     // Skip redirect for splash screen
     if (location == AppRoutes.splash) {
       return null;
@@ -187,29 +187,26 @@ class AppRouter {
     final authBloc = context.read<AuthBloc>();
     final authState = authBloc.state;
 
-    // If user is not authenticated and trying to access protected routes
-    if (authState is! Authenticated && _isProtectedRoute(location)) {
-      return AppRoutes.login;
-    }
-
-    // If user is authenticated and trying to access auth routes
+    // If user is authenticated and trying to access auth routes, redirect to home
     if (authState is Authenticated && _isAuthRoute(location)) {
       return AppRoutes.home;
     }
+
+    // Note: Removed forced authentication requirement
+    // Users can now use the app without signing in
+    // Authentication is optional and only required for cloud sync features
 
     return null;
   }
 
   /// Check if a route is protected (requires authentication)
+  /// Note: Currently no routes require authentication as users can use the app without signing in
+  /// This method is kept for future use if specific routes need protection
+  // ignore: unused_element
   static bool _isProtectedRoute(String location) {
-    const protectedRoutes = [
-      AppRoutes.home,
-      AppRoutes.search,
-      AppRoutes.favorites,
-      AppRoutes.settings,
-    ];
-
-    return protectedRoutes.any((route) => location.startsWith(route));
+    // No routes are currently protected - users can access all features without authentication
+    // Authentication is optional and only provides cloud sync functionality
+    return false;
   }
 
   /// Check if a route is an authentication route

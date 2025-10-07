@@ -173,7 +173,11 @@ class NavigationService {
 
   /// Get current route location
   static String getCurrentLocation() {
-    return GoRouter.of(AppRouter.rootNavigatorKey.currentContext!).routerDelegate.currentConfiguration.uri.path;
+    return GoRouter.of(AppRouter.rootNavigatorKey.currentContext!)
+        .routerDelegate
+        .currentConfiguration
+        .uri
+        .path;
   }
 
   /// Get current route name
@@ -212,6 +216,7 @@ class NavigationService {
   }
 
   /// Clear navigation stack and go to login
+  /// Note: Login is optional - users can use the app without authentication
   static void clearStackAndGoLogin() {
     go(AppRoutes.login);
   }

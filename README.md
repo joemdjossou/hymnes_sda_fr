@@ -165,6 +165,7 @@ MIDI files should be placed in `assets/midi/` with the naming convention:
 ### Favorites Sync
 
 - **Offline-First**: Favorites are stored locally for instant access
+- **Optional Authentication**: Use the app without signing in - all features work offline
 - **Cloud Backup**: Automatic sync with Firebase Firestore when authenticated
 - **Smart Sync**: Only syncs when user adds/removes favorites or logs in
 - **Cross-Device**: Access your favorites on any device when signed in
@@ -172,7 +173,9 @@ MIDI files should be placed in `assets/midi/` with the naming convention:
 
 ### Authentication
 
-- **Firebase Auth**: Secure user authentication
+- **Optional Sign-In**: Authentication is completely optional
+- **Full App Access**: All features work without signing in
+- **Firebase Auth**: Secure user authentication when desired
 - **Multiple Providers**: Email/password and social login options
 - **Session Management**: Automatic session handling
 - **Privacy**: User data is encrypted and secure
