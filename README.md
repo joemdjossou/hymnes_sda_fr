@@ -4,13 +4,17 @@ A beautiful Flutter application for French Adventist hymns with MIDI audio playb
 
 ## ✨ Features
 
-- **📚 Hymn Library**: Browse through a collection of French Adventist hymns with full lyrics
-- **🎵 MIDI Audio Playback**: Listen to hymns with MIDI audio files
-- **🔍 Search**: Find hymns by title, lyrics, author, composer, or hymn number
-- **⭐ Favorites**: Save your favorite hymns (coming soon)
-- **🌐 Bilingual Support**: French and English interface
-- **📱 Modern UI**: Clean, responsive design with Material Design 3
-- **🎨 Elegant Theme**: Forest Green, Gold, and White color scheme
+- **🔍 Recherche Avancée**: Recherchez vos hymnes par numéro, titre, auteur ou paroles
+- **💾 Sauvegarde Intelligente**: Sauvegardez vos hymnes en local ou dans le cloud avec synchronisation automatique
+- **🎯 Filtrage par Thème**: Filtrez les hymnes par thème ou sous-thème pour une navigation facile
+- **🌓 Mode Sombre/Clair**: Choisissez entre mode clair et mode sombre selon vos préférences
+- **🌍 Multilingue**: Sélectionnez la langue de l'application (Français ou Anglais)
+- **🎵 Audio Complet**: Écoutez la musique complète ou chaque voix séparément : soprano, alto, ténor, basse
+- **📜 Partitions Musicales**: Visualisez la partition musicale pour chaque hymne
+- **📚 Histoire des Hymnes**: Découvrez l'histoire de certains hymnes
+- **⭐ Favoris**: Marquez vos hymnes préférés pour un accès rapide
+- **📱 Interface Moderne**: Design élégant et responsive avec Material Design 3
+- **🎨 Thème Élégant**: Palette de couleurs Forest Green, Gold et White
 
 ## 📱 Preview
 
@@ -87,7 +91,10 @@ Before you begin, ensure you have the following installed:
 - **Language**: Dart 3.0.0+
 - **State Management**: BLoC Pattern (flutter_bloc 8.1.3)
 - **Audio**: Just Audio 0.9.36 for MIDI playback
-- **Storage**: Hive 2.2.3 for local data persistence
+- **Storage**: Hive 2.2.3 for local data persistence + Firebase Firestore for cloud sync
+- **Authentication**: Firebase Auth for user management
+- **Analytics**: PostHog for user behavior tracking
+- **Error Tracking**: Sentry for crash reporting
 - **Navigation**: Go Router 12.1.3
 - **Internationalization**: Built-in Flutter i18n
 - **Architecture**: Clean Architecture with Repository Pattern
@@ -98,11 +105,16 @@ Before you begin, ensure you have the following installed:
 dependencies:
   flutter_bloc: ^8.1.3 # State management
   just_audio: ^0.9.36 # Audio playback
-  hive: ^2.2.3 # Local storage
-  go_router: ^12.1.3 # Navigation
-  equatable: ^2.0.5 # Value equality
+  hive_flutter: ^1.1.0 # Local storage
+  firebase_core: ^2.24.2 # Firebase core
+  cloud_firestore: ^4.13.6 # Cloud database
+  firebase_auth: ^4.15.3 # Authentication
+  posthog_flutter: ^3.0.0 # Analytics
+  sentry_flutter: ^7.13.2 # Error tracking
   shared_preferences: ^2.2.2 # Settings storage
-  showcaseview: ^2.0.3 # Feature highlights
+  equatable: ^2.0.5 # Value equality
+  gap: ^3.0.1 # Spacing widget
+  package_info_plus: ^4.2.0 # App info
 ```
 
 ## 🏗️ Project Structure
@@ -136,7 +148,7 @@ lib/
 ### MIDI Playback
 
 - **All Voices**: Play complete MIDI arrangements
-- **Individual Voices**: Soprano, Alto, Tenor, Bass (coming soon)
+- **Individual Voices**: Soprano, Alto, Tenor, Bass
 - **Playback Controls**: Play, pause, stop, seek
 - **Volume Control**: Adjustable audio levels
 
@@ -147,6 +159,23 @@ MIDI files should be placed in `assets/midi/` with the naming convention:
 - `h001.mid` for Hymn 1
 - `h002.mid` for Hymn 2
 - etc.
+
+## ☁️ Cloud Synchronization
+
+### Favorites Sync
+
+- **Offline-First**: Favorites are stored locally for instant access
+- **Cloud Backup**: Automatic sync with Firebase Firestore when authenticated
+- **Smart Sync**: Only syncs when user adds/removes favorites or logs in
+- **Cross-Device**: Access your favorites on any device when signed in
+- **Privacy**: Local favorites remain available even when offline
+
+### Authentication
+
+- **Firebase Auth**: Secure user authentication
+- **Multiple Providers**: Email/password and social login options
+- **Session Management**: Automatic session handling
+- **Privacy**: User data is encrypted and secure
 
 ## 🌐 Localization
 
