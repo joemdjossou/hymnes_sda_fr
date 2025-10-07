@@ -4,17 +4,17 @@ A beautiful Flutter application for French Adventist hymns with MIDI audio playb
 
 ## ✨ Features
 
-- **🔍 Recherche Avancée**: Recherchez vos hymnes par numéro, titre, auteur ou paroles
-- **💾 Sauvegarde Intelligente**: Sauvegardez vos hymnes en local ou dans le cloud avec synchronisation automatique
-- **🎯 Filtrage par Thème**: Filtrez les hymnes par thème ou sous-thème pour une navigation facile
-- **🌓 Mode Sombre/Clair**: Choisissez entre mode clair et mode sombre selon vos préférences
-- **🌍 Multilingue**: Sélectionnez la langue de l'application (Français ou Anglais)
-- **🎵 Audio Complet**: Écoutez la musique complète ou chaque voix séparément : soprano, alto, ténor, basse
-- **📜 Partitions Musicales**: Visualisez la partition musicale pour chaque hymne
-- **📚 Histoire des Hymnes**: Découvrez l'histoire de certains hymnes
-- **⭐ Favoris**: Marquez vos hymnes préférés pour un accès rapide
-- **📱 Interface Moderne**: Design élégant et responsive avec Material Design 3
-- **🎨 Thème Élégant**: Palette de couleurs Forest Green, Gold et White
+- **🔍 Advanced Search / Recherche Avancée**: Search hymns by number, title, author, or lyrics / Recherchez vos hymnes par numéro, titre, auteur ou paroles
+- **💾 Smart Storage / Sauvegarde Intelligente**: Save hymns locally or in the cloud with automatic sync / Sauvegardez vos hymnes en local ou dans le cloud avec synchronisation automatique
+- **🎯 Theme Filtering / Filtrage par Thème**: Filter hymns by theme or sub-theme for easy navigation / Filtrez les hymnes par thème ou sous-thème pour une navigation facile
+- **🌓 Dark/Light Mode / Mode Sombre/Clair**: Choose between light and dark mode according to your preferences / Choisissez entre mode clair et mode sombre selon vos préférences
+- **🌍 Multilingual / Multilingue**: Select app language (French or English) / Sélectionnez la langue de l'application (Français ou Anglais)
+- **🎵 Complete Audio / Audio Complet**: Listen to complete music or each voice separately: soprano, alto, tenor, bass / Écoutez la musique complète ou chaque voix séparément : soprano, alto, ténor, basse
+- **📜 Musical Scores / Partitions Musicales**: View the musical score for each hymn / Visualisez la partition musicale pour chaque hymne
+- **📚 Hymn History / Histoire des Hymnes**: Discover the history of certain hymns / Découvrez l'histoire de certains hymnes
+- **⭐ Favorites / Favoris**: Mark your favorite hymns for quick access / Marquez vos hymnes préférés pour un accès rapide
+- **📱 Modern Interface / Interface Moderne**: Elegant and responsive design with Material Design 3 / Design élégant et responsive avec Material Design 3
+- **🎨 Elegant Theme / Thème Élégant**: Forest Green, Gold, and White color palette / Palette de couleurs Forest Green, Gold et White
 
 ## 📱 Preview
 
