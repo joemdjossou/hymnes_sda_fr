@@ -8,6 +8,7 @@ import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../../shared/widgets/shimmer_loading.dart';
+import '../widgets/glass_navigation_bar.dart';
 import '../widgets/search_widgets/empty_search_state.dart';
 import '../widgets/search_widgets/filter_chips_section.dart';
 import '../widgets/search_widgets/filter_controls.dart';
@@ -179,149 +180,156 @@ class _SearchScreenState extends State<SearchScreen>
 
     return Scaffold(
       backgroundColor: AppColors.background(context),
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          // Modern App Bar
-          ModernSliverAppBar(
-            title: l10n.search,
-            subtitle: l10n.searchAmongHymns(_allHymns.length),
-            icon: Icons.search_rounded,
-            expandedHeight: 120,
-            showCollapsedAppBar: _showCollapsedAppBar,
-            actions: _showCollapsedAppBar
-                ? [
-                    if (_selectedTheme != null ||
-                        _selectedSubtheme != null ||
-                        _searchController.text.isNotEmpty)
-                      IconButton(
-                        onPressed: _clearFilters,
-                        icon: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            color: AppColors.error.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12),
+      body: Stack(
+        children: [
+          CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              // Modern App Bar
+              ModernSliverAppBar(
+                title: l10n.search,
+                subtitle: l10n.searchAmongHymns(_allHymns.length),
+                icon: Icons.search_rounded,
+                expandedHeight: 120,
+                showCollapsedAppBar: _showCollapsedAppBar,
+                actions: _showCollapsedAppBar
+                    ? [
+                        if (_selectedTheme != null ||
+                            _selectedSubtheme != null ||
+                            _searchController.text.isNotEmpty)
+                          IconButton(
+                            onPressed: _clearFilters,
+                            icon: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: AppColors.error.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Icon(
+                                Icons.clear_all_rounded,
+                                color: AppColors.error,
+                                size: 20,
+                              ),
+                            ),
                           ),
-                          child: Icon(
-                            Icons.clear_all_rounded,
-                            color: AppColors.error,
-                            size: 20,
-                          ),
+                      ]
+                    : null,
+                animationController: _searchAnimationController,
+                fadeAnimation: _searchFadeAnimation,
+              ),
+
+              // Search and Filter Section
+              SliverToBoxAdapter(
+                child: AnimatedBuilder(
+                  animation: _searchAnimationController,
+                  builder: (context, child) {
+                    return FadeTransition(
+                      opacity: _searchFadeAnimation,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: Column(
+                                children: [
+                                  // Modern Search Bar
+                                  CustomSearchBar(
+                                    controller: _searchController,
+                                    hintText: l10n.searchHymns,
+                                    onClear: () => _searchController.clear(),
+                                  ),
+
+                                  const Gap(16),
+
+                                  // Filter Controls Row
+                                  FilterControls(
+                                    showFilters: _showFilters,
+                                    hasActiveFilters: _selectedTheme != null ||
+                                        _selectedSubtheme != null ||
+                                        _searchController.text.isNotEmpty,
+                                    onToggleFilters: _toggleFilters,
+                                    onClearFilters: _clearFilters,
+                                  ),
+
+                                  const Gap(16),
+                                ],
+                              ),
+                            ),
+
+                            // Filter Chips with Animation
+                            FilterChipsSection(
+                              showFilters: _showFilters,
+                              filterSlideAnimation: _filterSlideAnimation,
+                              selectedTheme: _selectedTheme,
+                              selectedSubtheme: _selectedSubtheme,
+                              themes: _themes,
+                              allHymns: _allHymns,
+                              onThemeChanged: (value) {
+                                setState(() {
+                                  _selectedTheme = value;
+                                  _selectedSubtheme = null;
+                                });
+                                _performSearch();
+                              },
+                              onSubthemeChanged: (value) {
+                                setState(() {
+                                  _selectedSubtheme = value;
+                                });
+                                _performSearch();
+                              },
+                            ),
+                          ],
                         ),
                       ),
-                  ]
-                : null,
-            animationController: _searchAnimationController,
-            fadeAnimation: _searchFadeAnimation,
-          ),
+                    );
+                  },
+                ),
+              ),
 
-          // Search and Filter Section
-          SliverToBoxAdapter(
-            child: AnimatedBuilder(
-              animation: _searchAnimationController,
-              builder: (context, child) {
-                return FadeTransition(
-                  opacity: _searchFadeAnimation,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Column(
-                            children: [
-                              // Modern Search Bar
-                              CustomSearchBar(
-                                controller: _searchController,
-                                hintText: l10n.searchHymns,
-                                onClear: () => _searchController.clear(),
-                              ),
-
-                              const Gap(16),
-
-                              // Filter Controls Row
-                              FilterControls(
-                                showFilters: _showFilters,
-                                hasActiveFilters: _selectedTheme != null ||
-                                    _selectedSubtheme != null ||
-                                    _searchController.text.isNotEmpty,
-                                onToggleFilters: _toggleFilters,
-                                onClearFilters: _clearFilters,
-                              ),
-
-                              const Gap(16),
-                            ],
-                          ),
-                        ),
-
-                        // Filter Chips with Animation
-                        FilterChipsSection(
-                          showFilters: _showFilters,
-                          filterSlideAnimation: _filterSlideAnimation,
-                          selectedTheme: _selectedTheme,
-                          selectedSubtheme: _selectedSubtheme,
-                          themes: _themes,
-                          allHymns: _allHymns,
-                          onThemeChanged: (value) {
-                            setState(() {
-                              _selectedTheme = value;
-                              _selectedSubtheme = null;
-                            });
-                            _performSearch();
-                          },
-                          onSubthemeChanged: (value) {
-                            setState(() {
-                              _selectedSubtheme = value;
-                            });
-                            _performSearch();
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-
-          // Results Section
-          _isLoading
-              ? SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                  sliver: SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) {
-                        return const ShimmerHymnCard();
-                      },
-                      childCount: 8,
-                    ),
-                  ),
-                )
-              : _filteredHymns.isEmpty
-                  ? SliverFillRemaining(
-                      child: EmptySearchState(
-                        onClearFilters: _clearFilters,
-                      ),
-                    )
-                  : SliverPadding(
+              // Results Section
+              _isLoading
+                  ? SliverPadding(
                       padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
                       sliver: SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
-                            final hymn = _filteredHymns[index];
-                            return Padding(
-                              padding: const EdgeInsets.only(bottom: 16),
-                              child: HymnCard(
-                                hymn: hymn,
-                                onTap: () => _onHymnTap(hymn),
-                              ),
-                            );
+                            return const ShimmerHymnCard();
                           },
-                          childCount: _filteredHymns.length,
+                          childCount: 8,
                         ),
                       ),
-                    ),
+                    )
+                  : _filteredHymns.isEmpty
+                      ? SliverFillRemaining(
+                          child: EmptySearchState(
+                            onClearFilters: _clearFilters,
+                          ),
+                        )
+                      : SliverPadding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                          sliver: SliverList(
+                            delegate: SliverChildBuilderDelegate(
+                              (context, index) {
+                                final hymn = _filteredHymns[index];
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 16),
+                                  child: HymnCard(
+                                    hymn: hymn,
+                                    onTap: () => _onHymnTap(hymn),
+                                  ),
+                                );
+                              },
+                              childCount: _filteredHymns.length,
+                            ),
+                          ),
+                        ),
+            ],
+          ),
+          // Glass Navigation Bar
+          const GlassNavigationBar(),
         ],
       ),
     );
