@@ -113,36 +113,24 @@ class NavigationService {
     go(AppRoutes.settings);
   }
 
-  /// Navigate to hymn detail from home
+  /// Navigate to hymn detail using root navigator (bypasses shell)
+  static void toHymnDetail(String hymnNumber) {
+    push('/hymn/$hymnNumber');
+  }
+
+  /// Navigate to hymn detail from home (uses root navigator)
   static void toHymnDetailFromHome(String hymnNumber) {
-    go(AppRoutes.getHomeHymnDetailRoute(hymnNumber));
+    toHymnDetail(hymnNumber);
   }
 
-  /// Navigate to hymn detail from search
+  /// Navigate to hymn detail from search (uses root navigator)
   static void toHymnDetailFromSearch(String hymnNumber) {
-    go(AppRoutes.getSearchHymnDetailRoute(hymnNumber));
+    toHymnDetail(hymnNumber);
   }
 
-  /// Navigate to hymn detail from favorites
+  /// Navigate to hymn detail from favorites (uses root navigator)
   static void toHymnDetailFromFavorites(String hymnNumber) {
-    go(AppRoutes.getFavoritesHymnDetailRoute(hymnNumber));
-  }
-
-  /// Navigate to hymn detail (generic)
-  static void toHymnDetail(String hymnNumber, {String? from}) {
-    switch (from) {
-      case 'home':
-        toHymnDetailFromHome(hymnNumber);
-        break;
-      case 'search':
-        toHymnDetailFromSearch(hymnNumber);
-        break;
-      case 'favorites':
-        toHymnDetailFromFavorites(hymnNumber);
-        break;
-      default:
-        toHymnDetailFromHome(hymnNumber);
-    }
+    toHymnDetail(hymnNumber);
   }
 
   /// Navigate to main tab by index

@@ -112,28 +112,10 @@ class AppRouter {
         ],
       ),
 
-      // Hymn Detail Routes (outside shell - no navbar)
+      // Hymn Detail Route (outside shell - no navbar, uses root navigator)
       GoRoute(
-        path: '/home/hymn/:hymnNumber',
+        path: '/hymn/:hymnNumber',
         name: AppRoutes.hymnDetailName,
-        builder: (context, state) {
-          final hymnNumber = state.pathParameters['hymnNumber']!;
-          return HymnDetailScreen(hymnId: hymnNumber);
-        },
-      ),
-
-      GoRoute(
-        path: '/search/hymn/:hymnNumber',
-        name: AppRoutes.hymnDetailFromSearchName,
-        builder: (context, state) {
-          final hymnNumber = state.pathParameters['hymnNumber']!;
-          return HymnDetailScreen(hymnId: hymnNumber);
-        },
-      ),
-
-      GoRoute(
-        path: '/favorites/hymn/:hymnNumber',
-        name: AppRoutes.hymnDetailFromFavoritesName,
         builder: (context, state) {
           final hymnNumber = state.pathParameters['hymnNumber']!;
           return HymnDetailScreen(hymnId: hymnNumber);

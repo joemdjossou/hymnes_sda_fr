@@ -47,21 +47,6 @@ class AppRoutes {
     return '/search?q=${Uri.encodeComponent(query)}';
   }
 
-  /// Generate home route with hymn detail
-  static String getHomeHymnDetailRoute(String hymnNumber) {
-    return '/home/hymn/$hymnNumber';
-  }
-
-  /// Generate search route with hymn detail
-  static String getSearchHymnDetailRoute(String hymnNumber) {
-    return '/search/hymn/$hymnNumber';
-  }
-
-  /// Generate favorites route with hymn detail
-  static String getFavoritesHymnDetailRoute(String hymnNumber) {
-    return '/favorites/hymn/$hymnNumber';
-  }
-
   /// Check if a route is a main tab route
   static bool isMainTabRoute(String location) {
     const mainTabRoutes = [
@@ -75,10 +60,11 @@ class AppRoutes {
 
   /// Get the main tab index from route location
   static int getMainTabIndex(String location) {
-    if (location.startsWith(home)) return 0;
-    if (location.startsWith(search)) return 1;
-    if (location.startsWith(favorites)) return 2;
-    if (location.startsWith(settings)) return 3;
+    // Only match exact main tab routes, not nested routes
+    if (location == home) return 0;
+    if (location == search) return 1;
+    if (location == favorites) return 2;
+    if (location == settings) return 3;
     return 0; // Default to home
   }
 
