@@ -74,9 +74,12 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.home,
             name: AppRoutes.homeName,
-            builder: (context, state) => const HomeScreen(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const HomeScreen(),
+            ),
             routes: [
-              // Hymn Detail (nested under home)
+              // Hymn Detail (nested under home) - No navbar on this screen
               GoRoute(
                 path: AppRoutes.hymnDetail,
                 name: AppRoutes.hymnDetailName,
@@ -92,9 +95,12 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.search,
             name: AppRoutes.searchName,
-            builder: (context, state) => const SearchScreen(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const SearchScreen(),
+            ),
             routes: [
-              // Hymn Detail (nested under search)
+              // Hymn Detail (nested under search) - No navbar on this screen
               GoRoute(
                 path: AppRoutes.hymnDetail,
                 name: AppRoutes.hymnDetailFromSearchName,
@@ -110,9 +116,12 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.favorites,
             name: AppRoutes.favoritesName,
-            builder: (context, state) => const FavoritesScreen(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const FavoritesScreen(),
+            ),
             routes: [
-              // Hymn Detail (nested under favorites)
+              // Hymn Detail (nested under favorites) - No navbar on this screen
               GoRoute(
                 path: AppRoutes.hymnDetail,
                 name: AppRoutes.hymnDetailFromFavoritesName,
@@ -128,7 +137,10 @@ class AppRouter {
           GoRoute(
             path: AppRoutes.settings,
             name: AppRoutes.settingsName,
-            builder: (context, state) => const SettingsScreen(),
+            pageBuilder: (context, state) => NoTransitionPage(
+              key: state.pageKey,
+              child: const SettingsScreen(),
+            ),
           ),
         ],
       ),
@@ -218,5 +230,29 @@ class AppRouter {
     ];
 
     return authRoutes.contains(location);
+  }
+}
+
+/// Custom page that provides no transition animation for smooth tab navigation
+class NoTransitionPage<T> extends Page<T> {
+  final Widget child;
+
+  const NoTransitionPage({
+    required this.child,
+    super.key,
+    super.name,
+    super.arguments,
+    super.restorationId,
+  });
+
+  @override
+  Route<T> createRoute(BuildContext context) {
+    return PageRouteBuilder<T>(
+      settings: this,
+      pageBuilder: (context, animation, secondaryAnimation) => child,
+      transitionDuration: Duration.zero,
+      reverseTransitionDuration: Duration.zero,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) => child,
+    );
   }
 }
