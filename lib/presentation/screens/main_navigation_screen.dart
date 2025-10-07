@@ -100,6 +100,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
     ];
 
     // Check if current location exactly matches a main tab route
+    // This will return true for /home, /search, /favorites, /settings
+    // and false for nested routes like /home/hymn/123, /search/hymn/456, etc.
     return mainTabRoutes.contains(location);
   }
 
