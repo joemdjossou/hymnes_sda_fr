@@ -65,7 +65,7 @@ class AppRouter {
         builder: (context, state) => const ForgotPasswordScreen(),
       ),
 
-      // Main App Shell with Bottom Navigation (only for main tabs)
+      // Main App Shell - conditionally shows navbar based on route
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
         builder: (context, state, child) => MainNavigationScreen(child: child),
@@ -109,17 +109,17 @@ class AppRouter {
               child: const SettingsScreen(),
             ),
           ),
-        ],
-      ),
 
-      // Hymn Detail Route (outside shell - no navbar, uses root navigator)
-      GoRoute(
-        path: '/hymn/:hymnNumber',
-        name: AppRoutes.hymnDetailName,
-        builder: (context, state) {
-          final hymnNumber = state.pathParameters['hymnNumber']!;
-          return HymnDetailScreen(hymnId: hymnNumber);
-        },
+          // Hymn Detail Route (inside shell but no navbar)
+          GoRoute(
+            path: '/hymn/:hymnNumber',
+            name: AppRoutes.hymnDetailName,
+            builder: (context, state) {
+              final hymnNumber = state.pathParameters['hymnNumber']!;
+              return HymnDetailScreen(hymnId: hymnNumber);
+            },
+          ),
+        ],
       ),
     ],
     errorBuilder: (context, state) => Scaffold(
