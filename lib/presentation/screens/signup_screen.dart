@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 
+import '../../core/navigation/navigation_service.dart';
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/widgets/custom_toast.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
-import 'main_navigation_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -64,7 +64,7 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void _navigateToLogin() {
-    Navigator.of(context).pop();
+    NavigationService.back();
   }
 
   @override
@@ -90,12 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
             title: l10n.success,
             message: l10n.signUpSuccess,
           );
-          Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(
-              builder: (context) => const MainNavigationScreen(),
-            ),
-            (route) => false,
-          );
+          NavigationService.clearStackAndGoHome();
         } else if (state is AuthError) {
           ToastService.showError(
             context,

@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:posthog_flutter/posthog_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
+import 'core/navigation/app_router.dart';
 import 'core/providers/language_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/repositories/hybrid_favorites_repository.dart';
@@ -13,7 +14,6 @@ import 'core/services/auth_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
 import 'features/auth/bloc/auth_bloc.dart';
 import 'features/favorites/bloc/favorites_bloc.dart';
-import 'presentation/screens/splash_screen.dart';
 import 'shared/constants/app_theme.dart';
 
 class HymnesApp extends StatelessWidget {
@@ -58,9 +58,7 @@ class HymnesApp extends StatelessWidget {
 
                 return PostHogWidget(
                   // Wrapped the app with PostHogWidget
-                  child: MaterialApp(
-                    // Added PosthogObserver to navigatorObservers
-                    navigatorObservers: [PosthogObserver()],
+                  child: MaterialApp.router(
                     title: 'Hymnes & Louanges Adventiste',
                     debugShowCheckedModeBanner: false,
                     theme: AppTheme.lightTheme,
@@ -74,7 +72,7 @@ class HymnesApp extends StatelessWidget {
                       GlobalCupertinoLocalizations.delegate,
                     ],
                     supportedLocales: LanguageBloc.supportedLocales,
-                    home: const SplashScreen(),
+                    routerConfig: AppRouter.router,
                   ),
                 );
               },

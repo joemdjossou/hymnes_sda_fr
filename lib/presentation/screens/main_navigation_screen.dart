@@ -3,15 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../core/navigation/app_routes.dart';
 import '../../shared/constants/app_colors.dart';
-import 'favorites_screen.dart';
-import 'home_screen.dart';
-import 'search_screen.dart';
-import 'settings_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
-  const MainNavigationScreen({super.key});
+  final Widget child;
+  
+  const MainNavigationScreen({super.key, required this.child});
 
   @override
   State<MainNavigationScreen> createState() => _MainNavigationScreenState();
@@ -19,21 +19,11 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen>
     with WidgetsBindingObserver {
-  int _currentIndex = 0;
   bool _isKeyboardVisible = false;
-
-  late final List<Widget> _screens;
 
   @override
   void initState() {
     super.initState();
-    _screens = [
-      const HomeScreen(),
-      const SearchScreen(),
-      const FavoritesScreen(),
-      const SettingsScreen(),
-    ];
-
     // Add observer for keyboard visibility changes
     WidgetsBinding.instance.addObserver(this);
   }
@@ -61,14 +51,15 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final currentLocation = GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
+    final currentIndex = AppRoutes.getMainTabIndex(currentLocation);
 
     return Scaffold(
       body: Stack(
         children: [
-          IndexedStack(
-            index: _currentIndex,
-            children: _screens,
-          ),
+          // Main content area
+          widget.child,
+          // Bottom navigation bar
           AnimatedPositioned(
             duration: const Duration(milliseconds: 400),
             curve: Curves.easeInOutCubic,
@@ -83,7 +74,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.easeInOutBack,
                 scale: _isKeyboardVisible ? 0.8 : 1.0,
-                child: _buildGlassNavBar(l10n),
+                child: _buildGlassNavBar(l10n, currentIndex),
               ),
             ),
           ),
@@ -92,7 +83,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
     );
   }
 
-  Widget _buildGlassNavBar(AppLocalizations l10n) {
+  Widget _buildGlassNavBar(AppLocalizations l10n, int currentIndex) {
     return Container(
       padding: const EdgeInsets.only(bottom: 16, top: 10),
       child: ClipRRect(
@@ -171,14 +162,15 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
     required String label,
     required int index,
   }) {
-    final isActive = _currentIndex == index;
+    final currentLocation = GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
+    final currentIndex = AppRoutes.getMainTabIndex(currentLocation);
+    final isActive = currentIndex == index;
 
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          setState(() {
-            _currentIndex = index;
-          });
+          final route = AppRoutes.getMainTabRoute(index);
+          context.go(route);
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 400),

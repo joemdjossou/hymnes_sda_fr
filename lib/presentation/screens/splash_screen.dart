@@ -4,9 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../core/navigation/navigation_service.dart';
 import '../../shared/constants/app_colors.dart';
-import 'main_navigation_screen.dart';
-import 'onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -86,25 +85,13 @@ class _SplashScreenState extends State<SplashScreen>
           prefs.getBool('onboarding_complete') ?? false;
 
       if (isOnboardingComplete) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => const MainNavigationScreen(),
-          ),
-        );
+        NavigationService.toHome();
       } else {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => const OnboardingScreen(),
-          ),
-        );
+        NavigationService.toOnboarding();
       }
     } catch (e) {
       // If there's an error, default to onboarding
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const OnboardingScreen(),
-        ),
-      );
+      NavigationService.toOnboarding();
     }
   }
 
