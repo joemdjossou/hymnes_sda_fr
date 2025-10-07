@@ -64,6 +64,8 @@ class ClearAudioError extends AudioEvent {}
 
 class RetryAudio extends AudioEvent {}
 
+class ToggleLoop extends AudioEvent {}
+
 class DisposeAudio extends AudioEvent {}
 
 class UpdateAudioPosition extends AudioEvent {
@@ -103,6 +105,7 @@ class AudioLoaded extends AudioState {
   final bool isRetrying;
   final String? lastError;
   final int retryCount;
+  final bool isLooping;
 
   const AudioLoaded({
     required this.playerState,
@@ -116,6 +119,7 @@ class AudioLoaded extends AudioState {
     required this.isRetrying,
     this.lastError,
     required this.retryCount,
+    this.isLooping = true,
   });
 
   @override
@@ -131,6 +135,7 @@ class AudioLoaded extends AudioState {
         isRetrying,
         lastError,
         retryCount,
+        isLooping,
       ];
 
   AudioLoaded copyWith({
@@ -145,6 +150,7 @@ class AudioLoaded extends AudioState {
     bool? isRetrying,
     String? lastError,
     int? retryCount,
+    bool? isLooping,
     bool clearError = false,
     bool clearHymnNumber = false,
   }) {
@@ -162,6 +168,7 @@ class AudioLoaded extends AudioState {
       isRetrying: isRetrying ?? this.isRetrying,
       lastError: clearError ? null : (lastError ?? this.lastError),
       retryCount: retryCount ?? this.retryCount,
+      isLooping: isLooping ?? this.isLooping,
     );
   }
 }
@@ -193,6 +200,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     on<SetAudioVolume>(_onSetAudioVolume);
     on<ClearAudioError>(_onClearAudioError);
     on<RetryAudio>(_onRetryAudio);
+    on<ToggleLoop>(_onToggleLoop);
     on<DisposeAudio>(_onDisposeAudio);
     on<UpdateAudioPosition>(_onUpdateAudioPosition);
   }
@@ -244,6 +252,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         isRetrying: _audioService.isRetrying,
         lastError: _audioService.lastError,
         retryCount: _audioService.retryCount,
+        isLooping: _audioService.isLooping,
       ));
     } catch (e) {
       if (!_isDisposed) {
@@ -472,6 +481,28 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
     }
   }
 
+  Future<void> _onToggleLoop(ToggleLoop event, Emitter<AudioState> emit) async {
+    if (_isDisposed) return;
+
+    try {
+      await _audioService.toggleLoop();
+
+      final currentState = state;
+      if (currentState is AudioLoaded) {
+        emit(currentState.copyWith(isLooping: _audioService.isLooping));
+      }
+    } catch (e) {
+      if (!_isDisposed) {
+        final currentState = state;
+        if (currentState is AudioLoaded) {
+          emit(currentState.copyWith(lastError: e.toString()));
+        } else {
+          emit(AudioError(e.toString()));
+        }
+      }
+    }
+  }
+
   Future<void> _onDisposeAudio(
       DisposeAudio event, Emitter<AudioState> emit) async {
     await _cleanup();
@@ -493,6 +524,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
         isRetrying: _audioService.isRetrying,
         lastError: _audioService.lastError,
         retryCount: _audioService.retryCount,
+        isLooping: _audioService.isLooping,
       ));
     }
   }

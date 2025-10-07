@@ -29,6 +29,7 @@ class AudioService extends ChangeNotifier {
   String? _lastError;
   bool _isPlaying = false;
   int _retryCount = 0;
+  bool _isLooping = true;
   static const int _maxRetries = 3;
 
   // Audio player for online MP3 playback
@@ -52,6 +53,7 @@ class AudioService extends ChangeNotifier {
   bool get isRetrying => _state == AudioPlayerState.retrying;
   String? get lastError => _lastError;
   int get retryCount => _retryCount;
+  bool get isLooping => _isLooping;
 
   Future<void> initialize() async {
     if (_isInitialized) return;
@@ -98,9 +100,21 @@ class AudioService extends ChangeNotifier {
             }
             break;
           case ProcessingState.completed:
-            _state = AudioPlayerState.stopped;
-            _isPlaying = false;
-            _position = Duration.zero;
+            if (_isLooping && _currentHymnNumber != null) {
+              // Restart the same track if looping is enabled
+              _position = Duration.zero;
+              _audioPlayer!.seek(Duration.zero).then((_) {
+                _audioPlayer!.play().then((_) {
+                  _state = AudioPlayerState.playing;
+                  _isPlaying = true;
+                  notifyListeners();
+                });
+              });
+            } else {
+              _state = AudioPlayerState.stopped;
+              _isPlaying = false;
+              _position = Duration.zero;
+            }
             break;
           case ProcessingState.idle:
             _state = AudioPlayerState.stopped;
@@ -349,6 +363,12 @@ class AudioService extends ChangeNotifier {
   void clearError() {
     _lastError = null;
     notifyListeners();
+  }
+
+  Future<void> toggleLoop() async {
+    _isLooping = !_isLooping;
+    notifyListeners();
+    debugPrint('Loop mode ${_isLooping ? 'enabled' : 'disabled'}');
   }
 
   Future<void> stopIfPlaying(String hymnNumber) async {

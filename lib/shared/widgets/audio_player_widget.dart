@@ -94,6 +94,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
           bool isRetrying = false;
           int retryCount = 0;
           VoiceType currentVoiceType = VoiceType.allVoices;
+          bool isLooping = false;
 
           if (state is AudioLoaded) {
             currentHymnNumber = state.currentHymnNumber;
@@ -105,6 +106,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
             isRetrying = state.isRetrying;
             retryCount = state.retryCount;
             currentVoiceType = state.currentVoiceType;
+            isLooping = state.isLooping;
 
             // Debug logging
             // debugPrint(
@@ -161,7 +163,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 // Play/Pause/Stop controls
                 if (isCurrentHymn) ...[
                   const Gap(16),
-                  _buildPlaybackControls(isPlaying),
+                  _buildPlaybackControls(isPlaying, isLooping),
                 ],
               ],
             ),
@@ -302,11 +304,16 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
   }
 
   Widget _buildProgressBar(Duration position, Duration duration) {
+    // Ensure position never exceeds duration to prevent slider bounds error
+    final safePosition = position.inMilliseconds.toDouble();
+    final maxDuration = duration.inMilliseconds.toDouble();
+    final clampedPosition = safePosition.clamp(0.0, maxDuration);
+
     return Column(
       children: [
         Slider(
-          value: position.inMilliseconds.toDouble(),
-          max: duration.inMilliseconds.toDouble(),
+          value: clampedPosition,
+          max: maxDuration > 0 ? maxDuration : 1.0, // Ensure max is never 0
           onChanged: _handleSeek,
           activeColor: AppColors.primary,
           inactiveColor: AppColors.border(context),
@@ -339,7 +346,6 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Play/All Voices button
           _buildControlButton(
@@ -352,6 +358,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
             isLoading: isLoading,
           ),
 
+          Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Soprano button
           _buildControlButton(
             icon: Icons.mic,
@@ -363,7 +370,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 currentVoiceType == VoiceType.soprano &&
                 isPlaying,
           ),
-
+          Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Alto button
           _buildControlButton(
             icon: Icons.music_note,
@@ -376,6 +383,36 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 isPlaying,
           ),
 
+          // Countertenor button (only show if file exists)
+          if (widget.countertenorFile != null &&
+              widget.countertenorFile!.isNotEmpty) ...[
+            Gap(MediaQuery.sizeOf(context).width * 0.03),
+            _buildControlButton(
+              icon: Icons.speaker,
+              label: _l10n.countertenor,
+              onTap: () => _handlePlayVoice(
+                  VoiceType.countertenor, widget.countertenorFile!),
+              isActive: isCurrentHymn &&
+                  currentVoiceType == VoiceType.countertenor &&
+                  isPlaying,
+            ),
+          ],
+          // Baritone button (only show if file exists)
+          if (widget.baritoneFile != null &&
+              widget.baritoneFile!.isNotEmpty) ...[
+            Gap(MediaQuery.sizeOf(context).width * 0.03),
+            _buildControlButton(
+              icon: Icons.voice_chat,
+              label: _l10n.baritone,
+              onTap: () =>
+                  _handlePlayVoice(VoiceType.baritone, widget.baritoneFile!),
+              isActive: isCurrentHymn &&
+                  currentVoiceType == VoiceType.baritone &&
+                  isPlaying,
+            ),
+          ],
+
+          Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Tenor button
           _buildControlButton(
             icon: Icons.piano,
@@ -387,10 +424,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 currentVoiceType == VoiceType.tenor &&
                 isPlaying,
           ),
-
+          Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Bass button
           _buildControlButton(
-            icon: Icons.music_note,
+            icon: Icons.headphones,
             label: _l10n.bass,
             onTap: widget.bassFile != null && widget.bassFile!.isNotEmpty
                 ? () => _handlePlayVoice(VoiceType.bass, widget.bassFile!)
@@ -399,37 +436,12 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 currentVoiceType == VoiceType.bass &&
                 isPlaying,
           ),
-
-          // Countertenor button (only show if file exists)
-          if (widget.countertenorFile != null &&
-              widget.countertenorFile!.isNotEmpty)
-            _buildControlButton(
-              icon: Icons.mic,
-              label: _l10n.countertenor,
-              onTap: () => _handlePlayVoice(
-                  VoiceType.countertenor, widget.countertenorFile!),
-              isActive: isCurrentHymn &&
-                  currentVoiceType == VoiceType.countertenor &&
-                  isPlaying,
-            ),
-
-          // Baritone button (only show if file exists)
-          if (widget.baritoneFile != null && widget.baritoneFile!.isNotEmpty)
-            _buildControlButton(
-              icon: Icons.music_note,
-              label: _l10n.baritone,
-              onTap: () =>
-                  _handlePlayVoice(VoiceType.baritone, widget.baritoneFile!),
-              isActive: isCurrentHymn &&
-                  currentVoiceType == VoiceType.baritone &&
-                  isPlaying,
-            ),
         ],
       ),
     );
   }
 
-  Widget _buildPlaybackControls(bool isPlaying) {
+  Widget _buildPlaybackControls(bool isPlaying, bool isLooping) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -447,6 +459,17 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
           icon: Icon(
             Icons.stop,
             color: AppColors.error,
+            size: 32,
+          ),
+        ),
+        const Gap(16),
+        IconButton(
+          onPressed: _handleToggleLoop,
+          icon: Icon(
+            Icons.repeat_rounded,
+            color: isLooping
+                ? AppColors.primary
+                : AppColors.textSecondary(context),
             size: 32,
           ),
         ),
@@ -567,6 +590,15 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
       context.read<AudioBloc>().add(RetryAudio());
     } catch (e) {
       debugPrint('Error accessing AudioBloc for retry: $e');
+    }
+  }
+
+  void _handleToggleLoop() {
+    if (!mounted) return;
+    try {
+      context.read<AudioBloc>().add(ToggleLoop());
+    } catch (e) {
+      debugPrint('Error accessing AudioBloc for toggle loop: $e');
     }
   }
 
