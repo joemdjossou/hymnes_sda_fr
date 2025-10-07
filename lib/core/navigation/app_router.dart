@@ -78,17 +78,6 @@ class AppRouter {
               key: state.pageKey,
               child: const HomeScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under home) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Search Tab
@@ -99,17 +88,6 @@ class AppRouter {
               key: state.pageKey,
               child: const SearchScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under search) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailFromSearchName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Favorites Tab
@@ -120,17 +98,6 @@ class AppRouter {
               key: state.pageKey,
               child: const FavoritesScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under favorites) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailFromFavoritesName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Settings Tab
@@ -143,6 +110,16 @@ class AppRouter {
             ),
           ),
         ],
+      ),
+
+      // Hymn Detail Route (outside shell - no navbar)
+      GoRoute(
+        path: '/hymn/:hymnNumber',
+        name: AppRoutes.hymnDetailName,
+        builder: (context, state) {
+          final hymnNumber = state.pathParameters['hymnNumber']!;
+          return HymnDetailScreen(hymnId: hymnNumber);
+        },
       ),
     ],
     errorBuilder: (context, state) => Scaffold(
@@ -252,7 +229,8 @@ class NoTransitionPage<T> extends Page<T> {
       pageBuilder: (context, animation, secondaryAnimation) => child,
       transitionDuration: Duration.zero,
       reverseTransitionDuration: Duration.zero,
-      transitionsBuilder: (context, animation, secondaryAnimation, child) => child,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+          child,
     );
   }
 }

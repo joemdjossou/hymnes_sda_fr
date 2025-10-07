@@ -115,34 +115,23 @@ class NavigationService {
 
   /// Navigate to hymn detail from home
   static void toHymnDetailFromHome(String hymnNumber) {
-    go(AppRoutes.getHomeHymnDetailRoute(hymnNumber));
+    go(AppRoutes.getHymnDetailRoute(hymnNumber));
   }
 
   /// Navigate to hymn detail from search
   static void toHymnDetailFromSearch(String hymnNumber) {
-    go(AppRoutes.getSearchHymnDetailRoute(hymnNumber));
+    go(AppRoutes.getHymnDetailRoute(hymnNumber));
   }
 
   /// Navigate to hymn detail from favorites
   static void toHymnDetailFromFavorites(String hymnNumber) {
-    go(AppRoutes.getFavoritesHymnDetailRoute(hymnNumber));
+    go(AppRoutes.getHymnDetailRoute(hymnNumber));
   }
 
   /// Navigate to hymn detail (generic)
   static void toHymnDetail(String hymnNumber, {String? from}) {
-    switch (from) {
-      case 'home':
-        toHymnDetailFromHome(hymnNumber);
-        break;
-      case 'search':
-        toHymnDetailFromSearch(hymnNumber);
-        break;
-      case 'favorites':
-        toHymnDetailFromFavorites(hymnNumber);
-        break;
-      default:
-        toHymnDetailFromHome(hymnNumber);
-    }
+    // All hymn detail routes now use the same global route outside the shell
+    go(AppRoutes.getHymnDetailRoute(hymnNumber));
   }
 
   /// Navigate to main tab by index

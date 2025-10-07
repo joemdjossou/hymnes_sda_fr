@@ -26,8 +26,6 @@ class AppRoutes {
   static const String favoritesName = 'favorites';
   static const String settingsName = 'settings';
   static const String hymnDetailName = 'hymn-detail';
-  static const String hymnDetailFromSearchName = 'hymn-detail-search';
-  static const String hymnDetailFromFavoritesName = 'hymn-detail-favorites';
 
   // Route parameters
   static const String hymnNumberParam = 'hymnNumber';
@@ -48,18 +46,21 @@ class AppRoutes {
   }
 
   /// Generate home route with hymn detail
+  /// Note: Now uses the global hymn detail route outside shell
   static String getHomeHymnDetailRoute(String hymnNumber) {
-    return '/home/hymn/$hymnNumber';
+    return getHymnDetailRoute(hymnNumber);
   }
 
   /// Generate search route with hymn detail
+  /// Note: Now uses the global hymn detail route outside shell
   static String getSearchHymnDetailRoute(String hymnNumber) {
-    return '/search/hymn/$hymnNumber';
+    return getHymnDetailRoute(hymnNumber);
   }
 
   /// Generate favorites route with hymn detail
+  /// Note: Now uses the global hymn detail route outside shell
   static String getFavoritesHymnDetailRoute(String hymnNumber) {
-    return '/favorites/hymn/$hymnNumber';
+    return getHymnDetailRoute(hymnNumber);
   }
 
   /// Check if a route is a main tab route
@@ -75,11 +76,15 @@ class AppRoutes {
 
   /// Get the main tab index from route location
   static int getMainTabIndex(String location) {
-    if (location.startsWith(home)) return 0;
-    if (location.startsWith(search)) return 1;
-    if (location.startsWith(favorites)) return 2;
-    if (location.startsWith(settings)) return 3;
-    return 0; // Default to home
+    // Check for exact matches first (main tab routes)
+    if (location == home) return 0;
+    if (location == search) return 1;
+    if (location == favorites) return 2;
+    if (location == settings) return 3;
+
+    // For hymn detail routes, we can't determine the source tab
+    // Default to home tab
+    return 0;
   }
 
   /// Get the main tab route from index

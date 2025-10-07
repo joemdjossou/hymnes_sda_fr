@@ -10,7 +10,7 @@ import '../../shared/constants/app_colors.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   final Widget child;
-  
+
   const MainNavigationScreen({super.key, required this.child});
 
   @override
@@ -51,9 +51,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final currentLocation = GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
+    final currentLocation =
+        GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
     final currentIndex = AppRoutes.getMainTabIndex(currentLocation);
-    
+
     // Only show navbar on main tab screens, not on nested routes like hymn details
     final shouldShowNavBar = _shouldShowNavigationBar(currentLocation);
 
@@ -97,7 +98,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
       AppRoutes.favorites,
       AppRoutes.settings,
     ];
-    
+
     // Check if current location exactly matches a main tab route
     return mainTabRoutes.contains(location);
   }
@@ -181,7 +182,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
     required String label,
     required int index,
   }) {
-    final currentLocation = GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
+    final currentLocation =
+        GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
     final currentIndex = AppRoutes.getMainTabIndex(currentLocation);
     final isActive = currentIndex == index;
 
