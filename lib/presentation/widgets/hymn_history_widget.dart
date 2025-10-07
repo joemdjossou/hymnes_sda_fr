@@ -9,12 +9,12 @@ import '../../shared/constants/app_colors.dart';
 /// Follows Single Responsibility Principle
 class HymnHistoryWidget extends StatelessWidget {
   final Hymn hymn;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   const HymnHistoryWidget({
     super.key,
     required this.hymn,
-    required this.onTap,
+    this.onTap,
   });
 
   @override

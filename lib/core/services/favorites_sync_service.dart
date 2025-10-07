@@ -44,11 +44,12 @@ class FavoritesSyncService {
   Future<void> _onAuthStateChanged(User? user) async {
     try {
       if (user != null) {
-        // User signed in - sync favorites
-        _logger.d('User signed in, syncing favorites for user: ${user.uid}');
+        // User signed in - sync favorites only if there are local favorites
+        _logger.d(
+            'User signed in, checking if sync is needed for user: ${user.uid}');
         await _syncOnSignIn();
       } else {
-        // User signed out - clear cloud sync but keep local favorites
+        // User signed out - keep local favorites, no sync needed
         _logger.d('User signed out, keeping local favorites');
         await _handleSignOut();
       }
@@ -60,9 +61,16 @@ class FavoritesSyncService {
   /// Sync favorites when user signs in
   Future<void> _syncOnSignIn() async {
     try {
-      // Force sync to ensure local and cloud are in sync
-      await _hybridRepository.forceSync();
-      _logger.d('Favorites synced on sign in');
+      // Only sync if there are local favorites to sync
+      final localFavorites = await _hybridRepository.getFavorites();
+      if (localFavorites.isNotEmpty) {
+        _logger.d(
+            'Found ${localFavorites.length} local favorites, syncing to cloud');
+        await _hybridRepository.forceSync();
+        _logger.d('Favorites synced on sign in');
+      } else {
+        _logger.d('No local favorites found, skipping sync on sign in');
+      }
     } catch (e) {
       _logger.e('Error syncing favorites on sign in: $e');
     }

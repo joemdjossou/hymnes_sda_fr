@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hymnes_sda_fr/firebase_options.dart';
-import 'package:hymnes_sda_fr/hymnes.dart';
+import 'package:hymnes_sda_fr/hymnes_local.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_configs.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 

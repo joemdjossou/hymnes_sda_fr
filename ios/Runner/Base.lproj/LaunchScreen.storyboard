@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0"
-    toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none"
-    useAutolayout="YES" launchScreen="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_12" orientation="portrait" appearance="light" />
+    toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch"
+    propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES"
+    initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS" />
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505" />
-        <capability name="Safe area layout" minToolsVersion="9.0" />
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089" />
     </dependencies>
     <scenes>
         <!--View
@@ -14,63 +13,26 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ydg-fD-yQy" />
+                        <viewControllerLayoutGuide type="bottom" id="xbc-2k-c8Z" />
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
                         <autoresizingMask key="autoresizingMask" widthSizable="YES"
                             heightSizable="YES" />
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical"
-                                alignment="center" spacing="20"
-                                translatesAutoresizingMaskIntoConstraints="NO" id="stackView">
-                                <rect key="frame" x="20" y="376" width="353" height="100" />
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO"
-                                        contentMode="scaleAspectFit" horizontalHuggingPriority="251"
-                                        verticalHuggingPriority="251" image="AppIcon"
-                                        translatesAutoresizingMaskIntoConstraints="NO" id="appIcon">
-                                        <rect key="frame" x="126.66666666666666" y="0.0" width="100"
-                                            height="100" />
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="100"
-                                                id="widthConstraint" />
-                                            <constraint firstAttribute="height" constant="100"
-                                                id="heightConstraint" />
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO"
-                                        contentMode="left" horizontalHuggingPriority="251"
-                                        verticalHuggingPriority="251"
-                                        text="Hymnes et Louanges Adventiste" textAlignment="center"
-                                        lineBreakMode="tailTruncation"
-                                        baselineAdjustment="alignBaselines"
-                                        adjustsFontSizeToFit="NO"
-                                        translatesAutoresizingMaskIntoConstraints="NO" id="appName">
-                                        <rect key="frame" x="0.0" y="120" width="353" height="21" />
-                                        <fontDescription key="fontDescription" type="system"
-                                            weight="medium" pointSize="17" />
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0"
-                                            alpha="1" colorSpace="custom" customColorSpace="sRGB" />
-                                        <nil key="highlightedColor" />
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES"
+                                contentMode="center" image="LaunchImage"
+                                translatesAutoresizingMaskIntoConstraints="NO" id="YRO-k0-Ey4">
+                            </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" />
-                        <color key="backgroundColor" red="0.95" green="0.95" blue="0.95" alpha="1"
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1"
                             colorSpace="custom" customColorSpace="sRGB" />
                         <constraints>
-                            <constraint firstItem="stackView" firstAttribute="centerX"
-                                secondItem="Ze5-6b-2t3" secondAttribute="centerX"
-                                id="centerXConstraint" />
-                            <constraint firstItem="stackView" firstAttribute="centerY"
-                                secondItem="Ze5-6b-2t3" secondAttribute="centerY"
-                                id="centerYConstraint" />
-                            <constraint firstItem="stackView" firstAttribute="leading"
-                                secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20"
-                                id="leadingConstraint" />
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing"
-                                secondItem="stackView" secondAttribute="trailing" constant="20"
-                                id="trailingConstraint" />
+                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerX"
+                                secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1a2-6s-vTC" />
+                            <constraint firstItem="YRO-k0-Ey4" firstAttribute="centerY"
+                                secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4X2-HB-R7a" />
                         </constraints>
                     </view>
                 </viewController>
@@ -81,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppIcon" width="1024" height="1024" />
+        <image name="LaunchImage" width="168" height="185" />
     </resources>
 </document>

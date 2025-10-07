@@ -54,20 +54,8 @@ class HybridFavoritesRepository implements IFavoriteRepository {
       }
 
       // Always get from local storage first (offline-first approach)
-      final localFavorites = await _localStorage.getFavorites();
-
-      // If online and authenticated, try to sync with Firestore
-      if (_isOnline && isAuthenticated) {
-        try {
-          await _syncFavorites();
-          // Return the synced favorites
-          return await _localStorage.getFavorites();
-        } catch (e) {
-          _logger.w('Failed to sync with Firestore, using local favorites: $e');
-        }
-      }
-
-      return localFavorites;
+      // No automatic sync on read - sync only happens on user actions or login
+      return await _localStorage.getFavorites();
     } catch (e) {
       _logger.e('Error getting favorites: $e');
       return [];
@@ -91,13 +79,14 @@ class HybridFavoritesRepository implements IFavoriteRepository {
       await _localStorage.addToFavorites(hymn);
       _logger.d('Added hymn ${hymn.number} to local favorites');
 
-      // If online and authenticated, also add to Firestore
+      // If online and authenticated, also add to Firestore immediately
       if (_isOnline && isAuthenticated) {
         try {
           await _firestoreRepository.addToFavorites(hymn);
           _logger.d('Added hymn ${hymn.number} to Firestore favorites');
         } catch (e) {
           _logger.w('Failed to add to Firestore, will sync later: $e');
+          // Don't rethrow - local storage is updated, which is the primary concern
         }
       }
     } catch (e) {
@@ -117,13 +106,14 @@ class HybridFavoritesRepository implements IFavoriteRepository {
       await _localStorage.removeFromFavorites(hymnNumber);
       _logger.d('Removed hymn $hymnNumber from local favorites');
 
-      // If online and authenticated, also remove from Firestore
+      // If online and authenticated, also remove from Firestore immediately
       if (_isOnline && isAuthenticated) {
         try {
           await _firestoreRepository.removeFromFavorites(hymnNumber);
           _logger.d('Removed hymn $hymnNumber from Firestore favorites');
         } catch (e) {
           _logger.w('Failed to remove from Firestore, will sync later: $e');
+          // Don't rethrow - local storage is updated, which is the primary concern
         }
       }
     } catch (e) {
@@ -218,6 +208,11 @@ class HybridFavoritesRepository implements IFavoriteRepository {
   Future<void> forceSync() async {
     if (!isAuthenticated) {
       _logger.w('Cannot sync: user not authenticated');
+      return;
+    }
+
+    if (!_isOnline) {
+      _logger.w('Cannot sync: device is offline');
       return;
     }
 

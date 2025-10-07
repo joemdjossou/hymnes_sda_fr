@@ -206,24 +206,10 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         isSynced: syncStatus['isSynced'] ?? true,
       ));
 
-      // Sync with online storage in background (no loading state)
-      _syncInBackground();
+      // Note: Removed automatic background sync to prevent blocking app startup
+      // Sync will only happen on user actions (add/remove favorites) or when user logs in
     } catch (e) {
       emit(FavoritesError('Failed to load favorites: $e'));
-    }
-  }
-
-  // Background sync method
-  Future<void> _syncInBackground() async {
-    try {
-      // Perform background sync without emitting loading states
-      await _hybridRepository.forceSync();
-
-      // Trigger a reload to update with synced data
-      add(const LoadFavorites());
-    } catch (e) {
-      // Background sync failed, but don't show error to user
-      // Local data is already displayed
     }
   }
 

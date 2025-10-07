@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hymnes_sda_fr/presentation/screens/settings_screen.dart';
 import 'package:posthog_flutter/posthog_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -13,7 +14,6 @@ import 'core/services/auth_service.dart';
 import 'features/audio/bloc/audio_bloc.dart';
 import 'features/auth/bloc/auth_bloc.dart';
 import 'features/favorites/bloc/favorites_bloc.dart';
-import 'presentation/screens/splash_screen.dart';
 import 'shared/constants/app_theme.dart';
 
 class HymnesApp extends StatelessWidget {
@@ -74,7 +74,7 @@ class HymnesApp extends StatelessWidget {
                       GlobalCupertinoLocalizations.delegate,
                     ],
                     supportedLocales: LanguageBloc.supportedLocales,
-                    home: const SplashScreen(),
+                    home: const SettingsScreen(),
                   ),
                 );
               },
