@@ -65,7 +65,7 @@ class AppRouter {
         builder: (context, state) => const ForgotPasswordScreen(),
       ),
 
-      // Main App Shell with Bottom Navigation
+      // Main App Shell with Bottom Navigation (only for main tabs)
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
         builder: (context, state, child) => MainNavigationScreen(child: child),
@@ -78,17 +78,6 @@ class AppRouter {
               key: state.pageKey,
               child: const HomeScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under home) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Search Tab
@@ -99,17 +88,6 @@ class AppRouter {
               key: state.pageKey,
               child: const SearchScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under search) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailFromSearchName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Favorites Tab
@@ -120,17 +98,6 @@ class AppRouter {
               key: state.pageKey,
               child: const FavoritesScreen(),
             ),
-            routes: [
-              // Hymn Detail (nested under favorites) - No navbar on this screen
-              GoRoute(
-                path: AppRoutes.hymnDetail,
-                name: AppRoutes.hymnDetailFromFavoritesName,
-                builder: (context, state) {
-                  final hymnNumber = state.pathParameters['hymnNumber']!;
-                  return HymnDetailScreen(hymnId: hymnNumber);
-                },
-              ),
-            ],
           ),
 
           // Settings Tab
@@ -143,6 +110,34 @@ class AppRouter {
             ),
           ),
         ],
+      ),
+
+      // Hymn Detail Routes (outside shell - no navbar)
+      GoRoute(
+        path: '/home/hymn/:hymnNumber',
+        name: AppRoutes.hymnDetailName,
+        builder: (context, state) {
+          final hymnNumber = state.pathParameters['hymnNumber']!;
+          return HymnDetailScreen(hymnId: hymnNumber);
+        },
+      ),
+
+      GoRoute(
+        path: '/search/hymn/:hymnNumber',
+        name: AppRoutes.hymnDetailFromSearchName,
+        builder: (context, state) {
+          final hymnNumber = state.pathParameters['hymnNumber']!;
+          return HymnDetailScreen(hymnId: hymnNumber);
+        },
+      ),
+
+      GoRoute(
+        path: '/favorites/hymn/:hymnNumber',
+        name: AppRoutes.hymnDetailFromFavoritesName,
+        builder: (context, state) {
+          final hymnNumber = state.pathParameters['hymnNumber']!;
+          return HymnDetailScreen(hymnId: hymnNumber);
+        },
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

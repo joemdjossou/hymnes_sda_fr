@@ -55,54 +55,33 @@ class _MainNavigationScreenState extends State<MainNavigationScreen>
         GoRouter.of(context).routerDelegate.currentConfiguration.uri.path;
     final currentIndex = AppRoutes.getMainTabIndex(currentLocation);
 
-    // Only show navbar on main tab screens, not on nested routes like hymn details
-    final shouldShowNavBar = _shouldShowNavigationBar(currentLocation);
-
     return Scaffold(
       body: Stack(
         children: [
           // Main content area
           widget.child,
-          // Bottom navigation bar - only show on main tab screens
-          if (shouldShowNavBar)
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 400),
-              curve: Curves.easeInOutCubic,
-              left: 20,
-              right: 20,
-              bottom: _isKeyboardVisible ? -120 : 8,
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 350),
-                curve: Curves.easeInOut,
-                opacity: _isKeyboardVisible ? 0.0 : 1.0,
-                child: AnimatedScale(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOutBack,
-                  scale: _isKeyboardVisible ? 0.8 : 1.0,
-                  child: _buildGlassNavBar(l10n, currentIndex),
-                ),
+          // Bottom navigation bar - always visible since this screen is only used for main tabs
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeInOutCubic,
+            left: 20,
+            right: 20,
+            bottom: _isKeyboardVisible ? -120 : 8,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeInOut,
+              opacity: _isKeyboardVisible ? 0.0 : 1.0,
+              child: AnimatedScale(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOutBack,
+                scale: _isKeyboardVisible ? 0.8 : 1.0,
+                child: _buildGlassNavBar(l10n, currentIndex),
               ),
             ),
+          ),
         ],
       ),
     );
-  }
-
-  /// Check if navigation bar should be shown
-  /// Only show on main tab screens, not on nested routes
-  bool _shouldShowNavigationBar(String location) {
-    // Show navbar only on exact main tab routes
-    const mainTabRoutes = [
-      AppRoutes.home,
-      AppRoutes.search,
-      AppRoutes.favorites,
-      AppRoutes.settings,
-    ];
-
-    // Check if current location exactly matches a main tab route
-    // This will return true for /home, /search, /favorites, /settings
-    // and false for nested routes like /home/hymn/123, /search/hymn/456, etc.
-    return mainTabRoutes.contains(location);
   }
 
   Widget _buildGlassNavBar(AppLocalizations l10n, int currentIndex) {
