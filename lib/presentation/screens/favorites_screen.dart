@@ -12,6 +12,7 @@ import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../../shared/widgets/shimmer_loading.dart';
 import '../widgets/auth_required_widget.dart';
 import '../widgets/favorites_widgets/favorites_sort_controls.dart';
+import '../widgets/glass_navigation_bar.dart';
 import 'hymn_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
@@ -93,7 +94,9 @@ class _FavoritesScreenState extends State<FavoritesScreen>
 
     return Scaffold(
       backgroundColor: AppColors.background(context),
-      body: AuthRequiredWidget(
+      body: Stack(
+        children: [
+          AuthRequiredWidget(
         message: l10n.authenticationRequiredDescription,
         child: BlocBuilder<FavoritesBloc, FavoritesState>(
           builder: (context, state) {
@@ -207,6 +210,10 @@ class _FavoritesScreenState extends State<FavoritesScreen>
             );
           },
         ),
+          ),
+          // Glass Navigation Bar
+          const GlassNavigationBar(),
+        ],
       ),
     );
   }

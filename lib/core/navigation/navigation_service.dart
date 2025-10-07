@@ -113,22 +113,22 @@ class NavigationService {
     go(AppRoutes.settings);
   }
 
-  /// Navigate to hymn detail (inside shell but no navbar)
+  /// Navigate to hymn detail using root navigator (bypasses shell)
   static void toHymnDetail(String hymnNumber) {
-    go('/hymn/$hymnNumber');
+    push('/hymn/$hymnNumber');
   }
 
-  /// Navigate to hymn detail from home
+  /// Navigate to hymn detail from home (uses root navigator)
   static void toHymnDetailFromHome(String hymnNumber) {
     toHymnDetail(hymnNumber);
   }
 
-  /// Navigate to hymn detail from search
+  /// Navigate to hymn detail from search (uses root navigator)
   static void toHymnDetailFromSearch(String hymnNumber) {
     toHymnDetail(hymnNumber);
   }
 
-  /// Navigate to hymn detail from favorites
+  /// Navigate to hymn detail from favorites (uses root navigator)
   static void toHymnDetailFromFavorites(String hymnNumber) {
     toHymnDetail(hymnNumber);
   }

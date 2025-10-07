@@ -10,6 +10,7 @@ import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/modern_dialog.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../widgets/custom_button.dart';
+import '../widgets/glass_navigation_bar.dart';
 import '../widgets/theme_selection_widget.dart';
 import 'login_screen.dart';
 
@@ -99,38 +100,45 @@ class _SettingsScreenState extends State<SettingsScreen>
 
     return Scaffold(
       backgroundColor: AppColors.background(context),
-      body: CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          // Modern App Bar
-          ModernSliverAppBar(
-            title: l10n.settings,
-            subtitle: l10n.customizeExperience,
-            icon: Icons.settings_rounded,
-            expandedHeight: 120,
-            showCollapsedAppBar: _showCollapsedAppBar,
-            animationController: _heroAnimationController,
-            fadeAnimation: _heroFadeAnimation,
-            slideAnimation: _heroSlideAnimation,
-          ),
+      body: Stack(
+        children: [
+          CustomScrollView(
+            controller: _scrollController,
+            slivers: [
+              // Modern App Bar
+              ModernSliverAppBar(
+                title: l10n.settings,
+                subtitle: l10n.customizeExperience,
+                icon: Icons.settings_rounded,
+                expandedHeight: 120,
+                showCollapsedAppBar: _showCollapsedAppBar,
+                animationController: _heroAnimationController,
+                fadeAnimation: _heroFadeAnimation,
+                slideAnimation: _heroSlideAnimation,
+              ),
 
-          // Settings Content
-          SliverPadding(
-            padding: const EdgeInsets.all(20),
-            sliver: SliverList(
-              delegate: SliverChildListDelegate([
-                _buildAccountSection(context, l10n),
-                const Gap(20),
-                _buildLanguageSection(context, l10n),
-                const Gap(20),
-                const ThemeSelectionWidget(),
-                const Gap(20),
-                _buildAppInfoSection(context, l10n),
-                const Gap(20),
-                const Gap(100), // Extra padding at bottom for better scrolling
-              ]),
-            ),
+              // Settings Content
+              SliverPadding(
+                padding: const EdgeInsets.all(20),
+                sliver: SliverList(
+                  delegate: SliverChildListDelegate([
+                    _buildAccountSection(context, l10n),
+                    const Gap(20),
+                    _buildLanguageSection(context, l10n),
+                    const Gap(20),
+                    const ThemeSelectionWidget(),
+                    const Gap(20),
+                    _buildAppInfoSection(context, l10n),
+                    const Gap(20),
+                    const Gap(
+                        100), // Extra padding at bottom for better scrolling
+                  ]),
+                ),
+              ),
+            ],
           ),
+          // Glass Navigation Bar
+          const GlassNavigationBar(),
         ],
       ),
     );
