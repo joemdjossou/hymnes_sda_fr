@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../constants/app_colors.dart';
 
@@ -387,7 +388,7 @@ class _ModernDialogState extends State<ModernDialog>
       widget.onClosePressed!();
     } else {
       // Default behavior: close the dialog
-      Navigator.of(context).pop();
+      NavigationService.pop();
     }
   }
 

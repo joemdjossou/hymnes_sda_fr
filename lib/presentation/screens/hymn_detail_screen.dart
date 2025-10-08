@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../../core/repositories/hymn_repository.dart';
 import '../../features/audio/bloc/audio_bloc.dart';
@@ -217,7 +218,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                               size: 25,
                             ),
                           ),
-                          onPressed: () => Navigator.of(context).pop(),
+                          onPressed: () => NavigationService.pop(),
                         ),
                         actions: [
                           _buildFavoriteButton(context, l10n),
@@ -353,7 +354,7 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
             ),
             const Gap(32),
             ElevatedButton.icon(
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => NavigationService.pop(),
               icon: const Icon(Icons.arrow_back_rounded),
               label: Text(AppLocalizations.of(context)!.back),
               style: ElevatedButton.styleFrom(

@@ -1,6 +1,8 @@
 class AppConstants {
   // App Information
   static const String appName = 'Hymnes & Louanges Adventiste';
+  static const String musicSheetBaseUrl =
+      'https://troisanges.org/Musique/HymnesEtLouanges/PDF/';
 
   // Asset Paths
   static const String audioPath = 'assets/audio/';

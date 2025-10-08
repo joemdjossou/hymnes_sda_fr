@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
@@ -13,7 +14,6 @@ import '../widgets/search_widgets/empty_search_state.dart';
 import '../widgets/search_widgets/filter_chips_section.dart';
 import '../widgets/search_widgets/filter_controls.dart';
 import '../widgets/search_widgets/search_bar.dart';
-import 'hymn_detail_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -147,11 +147,7 @@ class _SearchScreenState extends State<SearchScreen>
   }
 
   void _onHymnTap(Hymn hymn) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => HymnDetailScreen(hymnId: hymn.number),
-      ),
-    );
+    NavigationService.toHymnDetail(hymn.number);
   }
 
   void _clearFilters() {

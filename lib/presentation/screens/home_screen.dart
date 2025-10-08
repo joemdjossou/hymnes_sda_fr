@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/error_logging_service.dart';
@@ -13,9 +14,7 @@ import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/shimmer_loading.dart';
-import '../screens/hymn_detail_screen.dart';
 import '../widgets/glass_navigation_bar.dart';
-import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -172,11 +171,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         },
       );
 
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => HymnDetailScreen(hymnId: hymn.number),
-        ),
-      );
+      NavigationService.toHymnDetail(hymn.number);
     } catch (e) {
       _errorLogger.logUIError(
         'HomeScreen',
@@ -349,12 +344,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 child: IconButton(
                                   icon: const Icon(Icons.login),
                                   onPressed: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            const LoginScreen(),
-                                      ),
-                                    );
+                                    NavigationService.toLogin();
                                   },
                                 ),
                               );
@@ -510,12 +500,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                                 child: IconButton(
                                                   icon: const Icon(Icons.login),
                                                   onPressed: () {
-                                                    Navigator.of(context).push(
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            const LoginScreen(),
-                                                      ),
-                                                    );
+                                                    NavigationService.toLogin();
                                                   },
                                                 ),
                                               );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -37,7 +38,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   }
 
   void _navigateBack() {
-    Navigator.of(context).pop();
+    NavigationService.pop();
   }
 
   @override

@@ -384,10 +384,10 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
             int.parse(b.hymn.number).compareTo(int.parse(a.hymn.number)));
         break;
       case FavoritesSortOption.dateAddedNewestFirst:
-        favoriteHymns.sort((a, b) => a.dateAdded.compareTo(b.dateAdded));
+        favoriteHymns.sort((a, b) => b.dateAdded.compareTo(a.dateAdded));
         break;
       case FavoritesSortOption.dateAddedOldestFirst:
-        favoriteHymns.sort((a, b) => b.dateAdded.compareTo(a.dateAdded));
+        favoriteHymns.sort((a, b) => a.dateAdded.compareTo(b.dateAdded));
         break;
       case FavoritesSortOption.titleAscending:
         favoriteHymns.sort((a, b) =>

@@ -120,13 +120,7 @@ class ErrorLoggingService {
     Map<String, dynamic>? context,
     String? userId,
   }) async {
-    await logError(
-      source,
-      message,
-      context: context,
-      userId: userId,
-      level: SentryLevel.info,
-    );
+    _logger.i('[$source] $message context: $context userId: $userId');
   }
 
   /// Log debug information
@@ -137,13 +131,7 @@ class ErrorLoggingService {
     String? userId,
   }) async {
     if (kDebugMode) {
-      await logError(
-        source,
-        message,
-        context: context,
-        userId: userId,
-        level: SentryLevel.debug,
-      );
+      _logger.d('[$source] $message context: $context userId: $userId');
     }
   }
 
@@ -168,6 +156,9 @@ class ErrorLoggingService {
       'requestContext': requestContext,
     };
 
+    _logger.d(
+        "Source: $source, Url: $url, StatusCode: $statusCode, Message: $message, Error: $error, StackTrace: $stackTrace, RequestContext: $requestContext, UserId: $userId");
+
     await logError(
       source,
       'Network error: $message',
@@ -176,6 +167,27 @@ class ErrorLoggingService {
       context: context,
       userId: userId,
     );
+  }
+
+  /// Log network-related errors
+  Future<void> logNetworkDebugforHymnPDF(
+    String source,
+    String url,
+    int? statusCode,
+    String message, {
+    dynamic error,
+    StackTrace? stackTrace,
+    Map<String, dynamic>? requestContext,
+    String? userId,
+  }) async {
+    final context = {
+      'url': url,
+      'statusCode': statusCode,
+      'requestContext': requestContext,
+    };
+
+    _logger.d(
+        "Source: $source, Url: $url, StatusCode: $statusCode, Message: $message, Error: $error, StackTrace: $stackTrace, RequestContext: $requestContext, UserId: $userId context: $context");
   }
 
   /// Log database-related errors

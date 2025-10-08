@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../core/providers/language_provider.dart';
@@ -12,7 +13,6 @@ import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/glass_navigation_bar.dart';
 import '../widgets/theme_selection_widget.dart';
-import 'login_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -475,10 +475,10 @@ class _SettingsScreenState extends State<SettingsScreen>
                       secondaryButtonText: l10n.cancel,
                       isDestructive: true,
                       onPrimaryPressed: () {
-                        Navigator.of(context).pop();
+                        NavigationService.pop();
                         context.read<AuthBloc>().add(SignOutRequested());
                       },
-                      onSecondaryPressed: () => Navigator.of(context).pop(),
+                      onSecondaryPressed: () => NavigationService.pop(),
                     );
                   },
                   variant: ButtonVariant.outlined,
@@ -572,11 +572,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                 CustomButton(
                   text: l10n.signIn,
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    );
+                    NavigationService.toLogin();
                   },
                 ),
               ],

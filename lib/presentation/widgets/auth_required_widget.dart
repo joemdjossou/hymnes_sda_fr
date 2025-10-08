@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 
 import '../../features/auth/bloc/auth_bloc.dart';
 import '../../shared/constants/app_colors.dart';
-import '../screens/login_screen.dart';
 import '../widgets/custom_button.dart';
 
 class AuthRequiredWidget extends StatelessWidget {
@@ -112,11 +112,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
               child: CustomButton(
                 text: l10n.signInToContinue,
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                  );
+                  NavigationService.toLogin();
                 },
                 variant: ButtonVariant.filled,
               ),
@@ -126,7 +122,7 @@ class _AuthRequiredPrompt extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   if (Navigator.canPop(context)) {
-                    Navigator.of(context).pop();
+                    NavigationService.pop();
                   }
                 },
                 style: TextButton.styleFrom(

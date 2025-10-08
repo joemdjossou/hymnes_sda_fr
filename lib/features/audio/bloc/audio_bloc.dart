@@ -329,6 +329,7 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       if (currentState is AudioLoaded) {
         emit(currentState.copyWith(
           playerState: _audioService.state,
+          currentVoiceType: _audioService.currentVoiceType,
           isPlaying: _audioService.isPlaying,
           isPaused: _audioService.isPaused,
         ));

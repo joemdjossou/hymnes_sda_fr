@@ -3,6 +3,7 @@ import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import '../services/error_logging_service.dart';
@@ -260,7 +261,7 @@ extension ErrorHandlingContext on BuildContext {
             content: Text(message),
             actions: [
               TextButton(
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () => NavigationService.pop(),
                 child: const Text('OK'),
               ),
             ],

@@ -87,6 +87,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
         builder: (context, state) {
           String? currentHymnNumber;
           bool isPlaying = false;
+          bool isPaused = false;
           Duration position = Duration.zero;
           Duration duration = Duration.zero;
           String? lastError;
@@ -99,6 +100,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
           if (state is AudioLoaded) {
             currentHymnNumber = state.currentHymnNumber;
             isPlaying = state.isPlaying;
+            isPaused = state.isPaused;
             position = state.position;
             duration = state.duration;
             lastError = state.lastError;
@@ -157,8 +159,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 ],
 
                 // Control buttons
-                _buildControlButtons(
-                    isCurrentHymn, isPlaying, isLoading, currentVoiceType),
+                _buildControlButtons(isCurrentHymn, isPlaying, isPaused,
+                    isLoading, currentVoiceType),
 
                 // Play/Pause/Stop controls
                 if (isCurrentHymn) ...[
@@ -341,7 +343,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     );
   }
 
-  Widget _buildControlButtons(bool isCurrentHymn, bool isPlaying,
+  Widget _buildControlButtons(bool isCurrentHymn, bool isPlaying, bool isPaused,
       bool isLoading, VoiceType currentVoiceType) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -351,10 +353,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
           _buildControlButton(
             icon: isLoading ? Icons.hourglass_empty : Icons.play_arrow,
             label: _l10n.allVoices,
-            onTap: isLoading ? null : _handlePlayAudio,
+            onTap: isLoading ? null : _handlePlayAllVoices,
             isActive: isCurrentHymn &&
                 currentVoiceType == VoiceType.allVoices &&
-                isPlaying,
+                (isPlaying || isPaused),
             isLoading: isLoading,
           ),
 
@@ -368,7 +370,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 : () => _showComingSoonToast(_l10n.soprano),
             isActive: isCurrentHymn &&
                 currentVoiceType == VoiceType.soprano &&
-                isPlaying,
+                (isPlaying || isPaused),
           ),
           Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Alto button
@@ -380,7 +382,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 : () => _showComingSoonToast(_l10n.alto),
             isActive: isCurrentHymn &&
                 currentVoiceType == VoiceType.alto &&
-                isPlaying,
+                (isPlaying || isPaused),
           ),
 
           // Countertenor button (only show if file exists)
@@ -394,7 +396,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                   VoiceType.countertenor, widget.countertenorFile!),
               isActive: isCurrentHymn &&
                   currentVoiceType == VoiceType.countertenor &&
-                  isPlaying,
+                  (isPlaying || isPaused),
             ),
           ],
           // Baritone button (only show if file exists)
@@ -408,7 +410,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                   _handlePlayVoice(VoiceType.baritone, widget.baritoneFile!),
               isActive: isCurrentHymn &&
                   currentVoiceType == VoiceType.baritone &&
-                  isPlaying,
+                  (isPlaying || isPaused),
             ),
           ],
 
@@ -422,7 +424,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 : () => _showComingSoonToast(_l10n.tenor),
             isActive: isCurrentHymn &&
                 currentVoiceType == VoiceType.tenor &&
-                isPlaying,
+                (isPlaying || isPaused),
           ),
           Gap(MediaQuery.sizeOf(context).width * 0.03),
           // Bass button
@@ -434,7 +436,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 : () => _showComingSoonToast(_l10n.bass),
             isActive: isCurrentHymn &&
                 currentVoiceType == VoiceType.bass &&
-                isPlaying,
+                (isPlaying || isPaused),
           ),
         ],
       ),
@@ -478,52 +480,15 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
   }
 
   // Event handlers with proper error handling
-  void _handlePlayAudio() {
+  void _handlePlayAllVoices() {
     if (!mounted) return;
     try {
-      final audioState = context.read<AudioBloc>().state;
-      if (audioState is AudioLoaded) {
-        // Use the current voice type and corresponding file if available
-        final currentVoiceType = audioState.currentVoiceType;
-        String? voiceFile;
-
-        // Get the appropriate voice file based on current voice type
-        switch (currentVoiceType) {
-          case VoiceType.soprano:
-            voiceFile = widget.sopranoFile;
-            break;
-          case VoiceType.alto:
-            voiceFile = widget.altoFile;
-            break;
-          case VoiceType.tenor:
-            voiceFile = widget.tenorFile;
-            break;
-          case VoiceType.bass:
-            voiceFile = widget.bassFile;
-            break;
-          case VoiceType.countertenor:
-            voiceFile = widget.countertenorFile;
-            break;
-          case VoiceType.baritone:
-            voiceFile = widget.baritoneFile;
-            break;
-          case VoiceType.allVoices:
-            voiceFile = widget.hymnNumber;
-            // Use default hymn file
-            break;
-        }
-
-        context.read<AudioBloc>().add(PlayAudio(
-              widget.hymnNumber,
-              voiceType: currentVoiceType,
-              voiceFile: voiceFile,
-            ));
-      } else {
-        // Fallback to default behavior if no current state
-        context.read<AudioBloc>().add(PlayAudio(widget.hymnNumber));
-      }
+      context.read<AudioBloc>().add(PlayAudio(
+            widget.hymnNumber,
+            voiceType: VoiceType.allVoices,
+          ));
     } catch (e) {
-      debugPrint('Error accessing AudioBloc for play: $e');
+      debugPrint('Error accessing AudioBloc for play all voices: $e');
     }
   }
 

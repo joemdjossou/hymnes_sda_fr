@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:logger/logger.dart';
 
 import '../../core/models/hymn.dart';
@@ -13,7 +14,6 @@ import '../../shared/widgets/shimmer_loading.dart';
 import '../widgets/auth_required_widget.dart';
 import '../widgets/favorites_widgets/favorites_sort_controls.dart';
 import '../widgets/glass_navigation_bar.dart';
-import 'hymn_detail_screen.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
@@ -81,11 +81,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
   }
 
   void _onHymnTap(BuildContext context, Hymn hymn) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => HymnDetailScreen(hymnId: hymn.number),
-      ),
-    );
+    NavigationService.toHymnDetail(hymn.number);
   }
 
   @override
@@ -97,119 +93,121 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       body: Stack(
         children: [
           AuthRequiredWidget(
-        message: l10n.authenticationRequiredDescription,
-        child: BlocBuilder<FavoritesBloc, FavoritesState>(
-          builder: (context, state) {
-            return CustomScrollView(
-              controller: _scrollController,
-              slivers: [
-                // Modern App Bar
-                BlocBuilder<FavoritesBloc, FavoritesState>(
-                  builder: (context, favoritesState) {
-                    String? subtitle;
-                    if (favoritesState is FavoritesLoaded) {
-                      subtitle =
-                          '${favoritesState.favorites.length} ${favoritesState.favorites.length == 1 ? l10n.hymnSaved : l10n.hymnsSaved}';
-                    } else if (favoritesState is FavoritesLoading) {
-                      subtitle = l10n.loading;
-                    } else {
-                      subtitle = l10n.yourFavoriteHymns;
-                    }
+            message: l10n.authenticationRequiredDescription,
+            child: BlocBuilder<FavoritesBloc, FavoritesState>(
+              builder: (context, state) {
+                return CustomScrollView(
+                  controller: _scrollController,
+                  slivers: [
+                    // Modern App Bar
+                    BlocBuilder<FavoritesBloc, FavoritesState>(
+                      builder: (context, favoritesState) {
+                        String? subtitle;
+                        if (favoritesState is FavoritesLoaded) {
+                          subtitle =
+                              '${favoritesState.favorites.length} ${favoritesState.favorites.length == 1 ? l10n.hymnSaved : l10n.hymnsSaved}';
+                        } else if (favoritesState is FavoritesLoading) {
+                          subtitle = l10n.loading;
+                        } else {
+                          subtitle = l10n.yourFavoriteHymns;
+                        }
 
-                    return ModernSliverAppBar(
-                      title: l10n.favorites,
-                      subtitle: subtitle,
-                      icon: Icons.favorite_rounded,
-                      expandedHeight: 120,
-                      showCollapsedAppBar: _showCollapsedAppBar,
-                      animationController: _heroAnimationController,
-                      fadeAnimation: _heroFadeAnimation,
-                      slideAnimation: _heroSlideAnimation,
-                    );
-                  },
-                ),
-
-                // Gap
-                const SliverToBoxAdapter(
-                  child: Gap(20),
-                ),
-
-                // Sort Controls
-                if (state is FavoritesLoaded && state.favorites.isNotEmpty)
-                  SliverToBoxAdapter(
-                    child: FavoritesSortControls(
-                      currentSortOption: state.currentSortOption,
-                      onSortChanged: (sortOption) {
-                        context
-                            .read<FavoritesBloc>()
-                            .add(SortFavorites(sortOption));
+                        return ModernSliverAppBar(
+                          title: l10n.favorites,
+                          subtitle: subtitle,
+                          icon: Icons.favorite_rounded,
+                          expandedHeight: 120,
+                          showCollapsedAppBar: _showCollapsedAppBar,
+                          animationController: _heroAnimationController,
+                          fadeAnimation: _heroFadeAnimation,
+                          slideAnimation: _heroSlideAnimation,
+                        );
                       },
                     ),
-                  ),
 
-                if (state is FavoritesLoaded && state.favorites.isNotEmpty)
-                  SliverToBoxAdapter(
-                    child: Gap(20),
-                  ),
-                // Content Section
-                if (state is FavoritesLoading)
-                  SliverPadding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                    sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          return const Padding(
-                            padding: EdgeInsets.only(bottom: 16),
-                            child: ShimmerHymnCard(),
-                          );
-                        },
-                        childCount: 6,
-                      ),
+                    // Gap
+                    const SliverToBoxAdapter(
+                      child: Gap(20),
                     ),
-                  )
-                else if (state is FavoritesError)
-                  SliverFillRemaining(
-                    child: _buildErrorState(context, l10n, state.message),
-                  )
-                else if (state is FavoritesLoaded)
-                  state.favorites.isEmpty
-                      ? SliverFillRemaining(
-                          child: _buildEmptyState(context, l10n),
-                        )
-                      : SliverPadding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                          sliver: SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (context, index) {
-                                final hymn = state.favorites[index];
-                                return Padding(
-                                  padding: const EdgeInsets.only(bottom: 16),
-                                  child: HymnCard(
-                                    hymn: hymn,
-                                    onTap: () => _onHymnTap(context, hymn),
-                                  ),
-                                );
-                              },
-                              childCount: state.favorites.length,
-                            ),
-                          ),
-                        )
-                else
-                  SliverFillRemaining(
-                    child: Center(
-                      child: Text(
-                        l10n.favoritesToBe,
-                        style: TextStyle(
-                          color: AppColors.textSecondary(context),
-                          fontSize: 16,
+
+                    // Sort Controls
+                    if (state is FavoritesLoaded && state.favorites.isNotEmpty)
+                      SliverToBoxAdapter(
+                        child: FavoritesSortControls(
+                          currentSortOption: state.currentSortOption,
+                          onSortChanged: (sortOption) {
+                            context
+                                .read<FavoritesBloc>()
+                                .add(SortFavorites(sortOption));
+                          },
                         ),
                       ),
-                    ),
-                  ),
-              ],
-            );
-          },
-        ),
+
+                    if (state is FavoritesLoaded && state.favorites.isNotEmpty)
+                      SliverToBoxAdapter(
+                        child: Gap(20),
+                      ),
+                    // Content Section
+                    if (state is FavoritesLoading)
+                      SliverPadding(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                        sliver: SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              return const Padding(
+                                padding: EdgeInsets.only(bottom: 16),
+                                child: ShimmerHymnCard(),
+                              );
+                            },
+                            childCount: 6,
+                          ),
+                        ),
+                      )
+                    else if (state is FavoritesError)
+                      SliverFillRemaining(
+                        child: _buildErrorState(context, l10n, state.message),
+                      )
+                    else if (state is FavoritesLoaded)
+                      state.favorites.isEmpty
+                          ? SliverFillRemaining(
+                              child: _buildEmptyState(context, l10n),
+                            )
+                          : SliverPadding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                              sliver: SliverList(
+                                delegate: SliverChildBuilderDelegate(
+                                  (context, index) {
+                                    final hymn = state.favorites[index];
+                                    return Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 16),
+                                      child: HymnCard(
+                                        hymn: hymn,
+                                        onTap: () => _onHymnTap(context, hymn),
+                                      ),
+                                    );
+                                  },
+                                  childCount: state.favorites.length,
+                                ),
+                              ),
+                            )
+                    else
+                      SliverFillRemaining(
+                        child: Center(
+                          child: Text(
+                            l10n.favoritesToBe,
+                            style: TextStyle(
+                              color: AppColors.textSecondary(context),
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                  ],
+                );
+              },
+            ),
           ),
           // Glass Navigation Bar
           const GlassNavigationBar(),
@@ -347,7 +345,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
               child: ElevatedButton.icon(
                 onPressed: () {
                   // Navigate to search or home screen
-                  Navigator.of(context).pop();
+                  NavigationService.pop();
                 },
                 icon: const Icon(Icons.search_rounded),
                 label: Text(l10n.discoverHymns),

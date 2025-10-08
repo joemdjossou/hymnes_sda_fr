@@ -1,12 +1,14 @@
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import 'error_logging_service.dart';
 
 /// Service responsible for handling hymn music sheet PDF operations
 /// Follows Single Responsibility Principle
 class MusicSheetService {
-  static const String _baseUrl =
-      'https://troisanges.org/Musique/HymnesEtLouanges/PDF/';
+  static const String _baseUrl = AppConstants.musicSheetBaseUrl;
   static const int _maxVariations = 4;
 
   // Error logging service
@@ -34,32 +36,40 @@ class MusicSheetService {
   /// Returns true if the PDF exists and is accessible
   Future<bool> isPdfAccessible(String url) async {
     try {
+      // Use iOS Safari user agent to match iOS behavior
       final response = await http.head(
         Uri.parse(url),
         headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; HymnesApp/1.0)',
+          'User-Agent':
+              'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
+          'Accept': 'application/pdf,application/octet-stream,*/*',
+          'Accept-Language': 'en-US,en;q=0.9',
         },
-      ).timeout(const Duration(seconds: 5));
+      ).timeout(const Duration(seconds: 10));
 
-      final isAccessible = response.statusCode == 200 &&
-          response.headers['content-type']?.contains('pdf') == true;
+      final contentType = response.headers['content-type']?.toLowerCase();
+      final isPdfContentType = contentType?.contains('pdf') == true ||
+          contentType == 'application/octet-stream';
+
+      final isAccessible = response.statusCode == 200 && isPdfContentType;
 
       if (!isAccessible) {
-        await _errorLogger.logNetworkError(
+        await _errorLogger.logNetworkDebugforHymnPDF(
           'MusicSheetService',
           url,
           response.statusCode,
-          'PDF not accessible',
+          'PDF not accessible - Status: ${response.statusCode}, ContentType: $contentType',
           requestContext: {
-            'contentType': response.headers['content-type'],
-            'responseHeaders': response.headers,
+            'contentType': contentType,
+            'allHeaders': response.headers,
+            'statusCode': response.statusCode,
           },
         );
       }
 
       return isAccessible;
     } catch (e) {
-      await _errorLogger.logNetworkError(
+      await _errorLogger.logNetworkDebugforHymnPDF(
         'MusicSheetService',
         url,
         null,
@@ -79,11 +89,20 @@ class MusicSheetService {
 
     for (final url in allUrls) {
       if (await isPdfAccessible(url)) {
-        availableUrls.add(url);
+        availableUrls.add(_getPlatformSpecificUrl(url));
       }
     }
 
     return availableUrls;
+  }
+
+  /// Get Platform Specific URL
+  /// Returns the URL for the platform specific PDF
+  String _getPlatformSpecificUrl(String pdfUrl) {
+    if (Platform.isAndroid) {
+      return 'https://docs.google.com/viewer?url=${Uri.encodeComponent(pdfUrl)}&embedded=true';
+    }
+    return pdfUrl;
   }
 
   /// Get the display name for a PDF URL
