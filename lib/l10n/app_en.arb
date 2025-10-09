@@ -302,5 +302,17 @@
       }
     }
   },
-  "unableToPlayAudio": "Unable to play audio"
+  "unableToPlayAudio": "Unable to play audio",
+  "notifications": "Notifications",
+  "manageNotificationPreferences": "Manage notification preferences",
+  "testNotification": "Test Notification",
+  "sendTestNotificationDescription": "Send a test notification to verify functionality",
+  "dailyReminder": "Daily Reminder",
+  "scheduleDailyReminderDescription": "Schedule a daily reminder to explore hymns",
+  "hymnOfTheDay": "Hymn of the Day",
+  "getNotifiedAboutFeaturedHymns": "Get notified about featured hymns",
+  "weeklySabbathReminder": "Weekly Sabbath Reminder",
+  "weeklySabbathReminderDescription": "Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord",
+  "sabbathReminderTitle": "Sabbath Preparation",
+  "sabbathReminderBody": "It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!"
 }

@@ -13,10 +13,10 @@ import '../../shared/widgets/audio_player_widget.dart';
 import '../../shared/widgets/custom_toast.dart';
 import '../../shared/widgets/favorite_button_shimmer.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
-import '../widgets/hymn_history_bottom_sheet.dart';
-import '../widgets/hymn_history_widget.dart';
-import '../widgets/hymn_lyrics_widget.dart';
-import '../widgets/hymn_music_sheet_widget.dart';
+import '../widgets/hymn_details_widgets/hymn_history_bottom_sheet.dart';
+import '../widgets/hymn_details_widgets/hymn_history_widget.dart';
+import '../widgets/hymn_details_widgets/hymn_lyrics_widget.dart';
+import '../widgets/hymn_details_widgets/hymn_music_sheet_widget.dart';
 
 class HymnDetailScreen extends StatefulWidget {
   final String hymnId;

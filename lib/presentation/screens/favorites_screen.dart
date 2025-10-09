@@ -13,7 +13,7 @@ import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../../shared/widgets/shimmer_loading.dart';
 import '../widgets/auth_required_widget.dart';
 import '../widgets/favorites_widgets/favorites_sort_controls.dart';
-import '../widgets/glass_navigation_bar.dart';
+import '../widgets/home_widgets/glass_navigation_bar.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});

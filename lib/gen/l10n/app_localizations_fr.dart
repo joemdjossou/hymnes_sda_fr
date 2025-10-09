@@ -647,4 +647,40 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get unableToPlayAudio => 'Impossible de lire l\'audio';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get manageNotificationPreferences => 'Gérer les préférences de notification';
+
+  @override
+  String get testNotification => 'Notification de Test';
+
+  @override
+  String get sendTestNotificationDescription => 'Envoyer une notification de test pour vérifier le fonctionnement';
+
+  @override
+  String get dailyReminder => 'Rappel Quotidien';
+
+  @override
+  String get scheduleDailyReminderDescription => 'Programmer un rappel quotidien pour explorer les cantiques';
+
+  @override
+  String get hymnOfTheDay => 'Cantique du Jour';
+
+  @override
+  String get getNotifiedAboutFeaturedHymns => 'Être notifié des cantiques en vedette';
+
+  @override
+  String get weeklySabbathReminder => 'Rappel Hebdomadaire du Sabbat';
+
+  @override
+  String get weeklySabbathReminderDescription => 'Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur';
+
+  @override
+  String get sabbathReminderTitle => 'Préparation du Sabbat';
+
+  @override
+  String get sabbathReminderBody => 'C\'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !';
 }

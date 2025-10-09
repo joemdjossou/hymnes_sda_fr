@@ -6,9 +6,9 @@ import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../shared/constants/app_colors.dart';
-import '../../shared/widgets/custom_toast.dart';
-import '../../shared/widgets/shimmer_loading.dart';
+import '../../../shared/constants/app_colors.dart';
+import '../../../shared/widgets/custom_toast.dart';
+import '../../../shared/widgets/shimmer_loading.dart';
 
 /// Widget responsible for displaying music sheet PDFs in a web view
 /// Follows Single Responsibility Principle and Open/Closed Principle

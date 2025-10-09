@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
-import '../../core/providers/theme_provider.dart';
-import '../../shared/constants/app_colors.dart';
+import '../../../core/providers/language_provider.dart';
+import '../../../shared/constants/app_colors.dart';
 
-class ThemeSelectionWidget extends StatelessWidget {
-  const ThemeSelectionWidget({super.key});
+class LanguageSectionWidget extends StatelessWidget {
+  const LanguageSectionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                   ],
                 ),
                 child: const Icon(
-                  Icons.palette_rounded,
+                  Icons.language_rounded,
                   color: Colors.white,
                   size: 24,
                 ),
@@ -72,7 +72,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l10n.theme,
+                      l10n.language,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                     ),
                     const Gap(4),
                     Text(
-                      l10n.customizeAppAppearance,
+                      l10n.choosePreferredLanguage,
                       style: TextStyle(
                         fontSize: 14,
                         color: AppColors.textSecondary(context)
@@ -95,14 +95,16 @@ class ThemeSelectionWidget extends StatelessWidget {
             ],
           ),
           const Gap(20),
-          BlocBuilder<ThemeBloc, ThemeState>(
+          BlocBuilder<LanguageBloc, LanguageState>(
             builder: (context, state) {
-              final currentThemeMode =
-                  state is ThemeLoaded ? state.themeMode : ThemeMode.system;
+              final currentLocale = state is LanguageLoaded
+                  ? state.locale
+                  : const Locale('en', 'US');
 
               return Column(
-                children: ThemeMode.values.map((themeMode) {
-                  final isSelected = currentThemeMode == themeMode;
+                children: LanguageBloc.supportedLocales.map((locale) {
+                  final isSelected =
+                      currentLocale.languageCode == locale.languageCode;
 
                   return Container(
                     margin: const EdgeInsets.only(bottom: 12),
@@ -111,7 +113,9 @@ class ThemeSelectionWidget extends StatelessWidget {
                       child: InkWell(
                         borderRadius: BorderRadius.circular(16),
                         onTap: () {
-                          context.read<ThemeBloc>().add(ChangeTheme(themeMode));
+                          context
+                              .read<LanguageBloc>()
+                              .add(ChangeLanguage(locale));
                         },
                         child: Container(
                           padding: const EdgeInsets.all(20),
@@ -141,12 +145,9 @@ class ThemeSelectionWidget extends StatelessWidget {
                           ),
                           child: Row(
                             children: [
-                              Icon(
-                                ThemeBloc.getThemeIcon(themeMode),
-                                color: isSelected
-                                    ? AppColors.primary
-                                    : AppColors.textSecondary(context),
-                                size: 24,
+                              Text(
+                                LanguageBloc.getLanguageFlag(locale),
+                                style: const TextStyle(fontSize: 24),
                               ),
                               const Gap(12),
                               Expanded(
@@ -154,7 +155,7 @@ class ThemeSelectionWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      _getLocalizedThemeName(themeMode, l10n),
+                                      LanguageBloc.getLanguageName(locale),
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
@@ -164,8 +165,9 @@ class ThemeSelectionWidget extends StatelessWidget {
                                       ),
                                     ),
                                     Text(
-                                      _getLocalizedThemeDescription(
-                                          themeMode, l10n),
+                                      locale.languageCode == 'en'
+                                          ? l10n.english
+                                          : l10n.french,
                                       style: TextStyle(
                                         fontSize: 14,
                                         color: AppColors.textSecondary(context)
@@ -201,28 +203,5 @@ class ThemeSelectionWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String _getLocalizedThemeName(ThemeMode themeMode, AppLocalizations l10n) {
-    switch (themeMode) {
-      case ThemeMode.system:
-        return l10n.systemTheme;
-      case ThemeMode.light:
-        return l10n.lightTheme;
-      case ThemeMode.dark:
-        return l10n.darkTheme;
-    }
-  }
-
-  String _getLocalizedThemeDescription(
-      ThemeMode themeMode, AppLocalizations l10n) {
-    switch (themeMode) {
-      case ThemeMode.system:
-        return l10n.systemThemeDescription;
-      case ThemeMode.light:
-        return l10n.lightThemeDescription;
-      case ThemeMode.dark:
-        return l10n.darkThemeDescription;
-    }
   }
 }

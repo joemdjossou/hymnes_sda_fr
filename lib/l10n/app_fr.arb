@@ -302,5 +302,17 @@
       }
     }
   },
-  "unableToPlayAudio": "Impossible de lire l'audio"
+  "unableToPlayAudio": "Impossible de lire l'audio",
+  "notifications": "Notifications",
+  "manageNotificationPreferences": "Gérer les préférences de notification",
+  "testNotification": "Notification de Test",
+  "sendTestNotificationDescription": "Envoyer une notification de test pour vérifier le fonctionnement",
+  "dailyReminder": "Rappel Quotidien",
+  "scheduleDailyReminderDescription": "Programmer un rappel quotidien pour explorer les cantiques",
+  "hymnOfTheDay": "Cantique du Jour",
+  "getNotifiedAboutFeaturedHymns": "Être notifié des cantiques en vedette",
+  "weeklySabbathReminder": "Rappel Hebdomadaire du Sabbat",
+  "weeklySabbathReminderDescription": "Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur",
+  "sabbathReminderTitle": "Préparation du Sabbat",
+  "sabbathReminderBody": "C'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !"
 }
