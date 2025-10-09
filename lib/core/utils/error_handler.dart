@@ -1,4 +1,4 @@
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
 class ErrorHandler {
   static String getLocalizedErrorMessage(

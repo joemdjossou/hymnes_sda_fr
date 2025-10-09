@@ -76,17 +76,17 @@ class NavigationService {
 
   /// Navigate to login
   static void toLogin() {
-    go(AppRoutes.login);
+    push(AppRoutes.login);
   }
 
   /// Navigate to signup
   static void toSignup() {
-    go(AppRoutes.signup);
+    push(AppRoutes.signup);
   }
 
   /// Navigate to forgot password
   static void toForgotPassword() {
-    go(AppRoutes.forgotPassword);
+    push(AppRoutes.forgotPassword);
   }
 
   /// Navigate to home
