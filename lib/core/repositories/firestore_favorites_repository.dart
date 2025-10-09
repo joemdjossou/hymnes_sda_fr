@@ -138,13 +138,19 @@ class FirestoreFavoritesRepository implements IFavoriteRepository {
 
       final firestoreFavorites = await getFavorites();
 
-      // Clear local favorites first
+      // Get existing local favorites to compare
       final localFavorites = await localRepository.getFavorites();
-      for (final favorite in localFavorites) {
-        await localRepository.removeFromFavorites(favorite.hymn.number);
+      final localHymnNumbers = localFavorites.map((f) => f.hymn.number).toSet();
+      final firestoreHymnNumbers =
+          firestoreFavorites.map((f) => f.hymn.number).toSet();
+
+      // Remove local favorites that are no longer in Firestore
+      final toRemove = localHymnNumbers.difference(firestoreHymnNumbers);
+      for (final hymnNumber in toRemove) {
+        await localRepository.removeFromFavorites(hymnNumber);
       }
 
-      // Add Firestore favorites to local storage
+      // Add or update Firestore favorites to local storage
       for (final favorite in firestoreFavorites) {
         await localRepository.addToFavorites(favorite.hymn);
       }
@@ -165,13 +171,19 @@ class FirestoreFavoritesRepository implements IFavoriteRepository {
 
       final localFavorites = await localRepository.getFavorites();
 
-      // Clear Firestore favorites first
+      // Get existing Firestore favorites to compare
       final firestoreFavorites = await getFavorites();
-      for (final favorite in firestoreFavorites) {
-        await removeFromFavorites(favorite.hymn.number);
+      final firestoreHymnNumbers =
+          firestoreFavorites.map((f) => f.hymn.number).toSet();
+      final localHymnNumbers = localFavorites.map((f) => f.hymn.number).toSet();
+
+      // Remove Firestore favorites that are no longer in local storage
+      final toRemove = firestoreHymnNumbers.difference(localHymnNumbers);
+      for (final hymnNumber in toRemove) {
+        await removeFromFavorites(hymnNumber);
       }
 
-      // Add local favorites to Firestore
+      // Add or update local favorites to Firestore
       for (final favorite in localFavorites) {
         await addToFavorites(favorite.hymn);
       }

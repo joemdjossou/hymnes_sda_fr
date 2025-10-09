@@ -188,13 +188,19 @@ class HybridFavoritesRepository implements IFavoriteRepository {
   Future<void> _syncFirestoreToLocal(
       List<FavoriteHymn> firestoreFavorites) async {
     try {
-      // Clear local favorites first
+      // Get existing local favorites to compare
       final localFavorites = await _localStorage.getFavorites();
-      for (final favorite in localFavorites) {
-        await _localStorage.removeFromFavorites(favorite.hymn.number);
+      final localHymnNumbers = localFavorites.map((f) => f.hymn.number).toSet();
+      final firestoreHymnNumbers =
+          firestoreFavorites.map((f) => f.hymn.number).toSet();
+
+      // Remove local favorites that are no longer in Firestore
+      final toRemove = localHymnNumbers.difference(firestoreHymnNumbers);
+      for (final hymnNumber in toRemove) {
+        await _localStorage.removeFromFavorites(hymnNumber);
       }
 
-      // Add Firestore favorites to local storage
+      // Add or update Firestore favorites to local storage
       for (final favorite in firestoreFavorites) {
         await _localStorage.addToFavorites(favorite.hymn);
       }
