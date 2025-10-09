@@ -5,6 +5,7 @@ import 'package:hymnes_sda_fr/firebase_options.dart';
 import 'package:hymnes_sda_fr/hymnes.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_configs.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 import 'core/services/error_logging_service.dart';
 import 'core/services/favorites_sync_service.dart';
@@ -48,14 +49,13 @@ void main() async {
       options.sendDefaultPii = true;
       options.enableLogs = true;
       // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
-      // We recommend adjusting this value in production.
       options.tracesSampleRate = 1.0;
       // The sampling rate for profiling is relative to tracesSampleRate
-      // Setting to 1.0 will profile 100% of sampled transactions:
       options.profilesSampleRate = 1.0;
       // Configure Session Replay
       options.replay.sessionSampleRate = 0.1;
       options.replay.onErrorSampleRate = 1.0;
+      options.privacy.unmask<WebViewWidget>();
     },
     appRunner: () async {
       // Initialize error logging system
