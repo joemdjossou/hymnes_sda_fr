@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:upgrader/upgrader.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/error_logging_service.dart';
@@ -201,419 +202,95 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
 
-    return Scaffold(
-      backgroundColor: AppColors.background(context),
-      body: Stack(
-        children: [
-          CustomScrollView(
-            controller: _scrollController,
-            slivers: [
-              // Modern App Bar with Hero Section
-              SliverAppBar(
-                expandedHeight: 200,
-                floating: false,
-                pinned: true,
-                backgroundColor: _showCollapsedAppBar
-                    ? AppColors.surface(context)
-                    : Colors.transparent,
-                surfaceTintColor: _showCollapsedAppBar
-                    ? AppColors.surface(context)
-                    : Colors.transparent,
-                elevation: 0,
-                automaticallyImplyLeading: false,
-                systemOverlayStyle: SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent,
-                  statusBarIconBrightness:
-                      Theme.of(context).brightness == Brightness.dark
-                          ? Brightness.light
-                          : Brightness.dark,
-                  statusBarBrightness:
-                      Theme.of(context).brightness == Brightness.dark
-                          ? Brightness.dark
-                          : Brightness.light,
-                ),
-                title: _showCollapsedAppBar
-                    ? Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              gradient: AppColors.primaryGradient(context),
-                              borderRadius: BorderRadius.circular(12),
-                              boxShadow: [
-                                BoxShadow(
-                                  color:
-                                      AppColors.primary.withValues(alpha: 0.3),
-                                  blurRadius: 8,
-                                  offset: const Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            child: Icon(
-                              Icons.music_note_rounded,
-                              color: Colors.white,
-                              size: 20,
-                            ),
-                          ),
-                          const Gap(12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  l10n.appTitle,
-                                  style: theme.textTheme.titleLarge?.copyWith(
-                                    color: AppColors.textPrimary(context),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Text(
-                                  '${_hymns.length} ${l10n.hymns.toLowerCase()}',
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                    color: AppColors.textSecondary(context),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    : null,
-                actions: _showCollapsedAppBar
-                    ? [
-                        BlocBuilder<AuthBloc, AuthState>(
-                          builder: (context, authState) {
-                            if (authState is Authenticated) {
-                              return PopupMenuButton<String>(
-                                icon: Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    gradient:
-                                        AppColors.primaryGradient(context),
-                                    borderRadius: BorderRadius.circular(20),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: AppColors.primary
-                                            .withValues(alpha: 0.3),
-                                        blurRadius: 8,
-                                        offset: const Offset(0, 2),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Text(
-                                    authState.user.initials,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ),
-                                onSelected: (value) {
-                                  if (value == 'signout') {
-                                    context
-                                        .read<AuthBloc>()
-                                        .add(SignOutRequested());
-                                  }
-                                },
-                                itemBuilder: (context) => [
-                                  PopupMenuItem(
-                                    value: 'signout',
-                                    child: Row(
-                                      children: [
-                                        const Icon(Icons.logout, size: 20),
-                                        const Gap(8),
-                                        Text(l10n.signOut),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              );
-                            } else {
-                              return Container(
-                                decoration: BoxDecoration(
-                                  color:
-                                      AppColors.primary.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: AppColors.primary
-                                        .withValues(alpha: 0.3),
-                                  ),
-                                ),
-                                child: IconButton(
-                                  icon: const Icon(Icons.login),
-                                  onPressed: () {
-                                    NavigationService.toLogin();
-                                  },
-                                ),
-                              );
-                            }
-                          },
-                        ),
-                      ]
-                    : null,
-                flexibleSpace: FlexibleSpaceBar(
-                  background: AnimatedBuilder(
-                    animation: _heroAnimationController,
-                    builder: (context, child) {
-                      return FadeTransition(
-                        opacity: _heroFadeAnimation,
-                        child: SlideTransition(
-                          position: _heroSlideAnimation,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment.bottomRight,
-                                colors: [
-                                  AppColors.primary.withValues(alpha: 0.1),
-                                  AppColors.secondary.withValues(alpha: 0.05),
-                                  AppColors.surface(context),
-                                ],
-                              ),
-                              borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20),
-                              ),
-                            ),
-                            child: SafeArea(
-                              child: Padding(
-                                padding: const EdgeInsets.all(20),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    // Welcome Section
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Expanded(
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                l10n.welcome,
-                                                style: theme
-                                                    .textTheme.headlineSmall
-                                                    ?.copyWith(
-                                                  color: AppColors.textPrimary(
-                                                      context),
-                                                  fontWeight: FontWeight.w300,
-                                                ),
-                                              ),
-                                              const Gap(4),
-                                              BlocBuilder<AuthBloc, AuthState>(
-                                                builder: (context, state) {
-                                                  String title = l10n.appTitle;
-                                                  if (state is Authenticated) {
-                                                    title = state.user
-                                                        .displayNameOrEmail;
-                                                  }
-                                                  return Text(
-                                                    title,
-                                                    style: theme.textTheme
-                                                        .headlineMedium
-                                                        ?.copyWith(
-                                                      color: AppColors.primary,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  );
-                                                },
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        // User Avatar
-                                        BlocBuilder<AuthBloc, AuthState>(
-                                          builder: (context, state) {
-                                            if (state is Authenticated) {
-                                              return PopupMenuButton<String>(
-                                                icon: Container(
-                                                  padding:
-                                                      const EdgeInsets.all(8),
-                                                  decoration: BoxDecoration(
-                                                    gradient: AppColors
-                                                        .primaryGradient(
-                                                            context),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20),
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        color: AppColors.primary
-                                                            .withValues(
-                                                                alpha: 0.3),
-                                                        blurRadius: 8,
-                                                        offset:
-                                                            const Offset(0, 2),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  child: Text(
-                                                    state.user.initials,
-                                                    style: const TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 14,
-                                                    ),
-                                                  ),
-                                                ),
-                                                onSelected: (value) {
-                                                  if (value == 'signout') {
-                                                    context
-                                                        .read<AuthBloc>()
-                                                        .add(
-                                                            SignOutRequested());
-                                                  }
-                                                },
-                                                itemBuilder: (context) => [
-                                                  PopupMenuItem(
-                                                    value: 'signout',
-                                                    child: Row(
-                                                      children: [
-                                                        const Icon(Icons.logout,
-                                                            size: 20),
-                                                        const Gap(8),
-                                                        Text(l10n.signOut),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              );
-                                            } else {
-                                              return Container(
-                                                decoration: BoxDecoration(
-                                                  color: AppColors.primary
-                                                      .withValues(alpha: 0.1),
-                                                  borderRadius:
-                                                      BorderRadius.circular(20),
-                                                  border: Border.all(
-                                                    color: AppColors.primary
-                                                        .withValues(alpha: 0.3),
-                                                  ),
-                                                ),
-                                                child: IconButton(
-                                                  icon: const Icon(Icons.login),
-                                                  onPressed: () {
-                                                    NavigationService.toLogin();
-                                                  },
-                                                ),
-                                              );
-                                            }
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    const Gap(16),
-                                    // Quick Stats
-                                    Row(
-                                      children: [
-                                        _isLoading
-                                            ? const ShimmerStatCard()
-                                            : _buildStatCard(
-                                                icon: Icons.music_note,
-                                                value: _hymns.length.toString(),
-                                                label: l10n.hymns,
-                                                context: context,
-                                              ),
-                                        const Gap(12),
-                                        BlocBuilder<FavoritesBloc,
-                                            FavoritesState>(
-                                          builder: (context, favoritesState) {
-                                            final favoritesCount =
-                                                favoritesState
-                                                        is FavoritesLoaded
-                                                    ? favoritesState
-                                                        .favorites.length
-                                                    : 0;
-                                            return _buildStatCard(
-                                              icon: Icons.favorite,
-                                              value: favoritesCount.toString(),
-                                              label: l10n.favorites,
-                                              context: context,
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
+    // UpgradeAlert automatically checks for app updates and shows a dialog
+    // when a newer version is available in the app store
+    return UpgradeAlert(
+      child: Scaffold(
+        backgroundColor: AppColors.background(context),
+        body: Stack(
+          children: [
+            CustomScrollView(
+              controller: _scrollController,
+              slivers: [
+                // Modern App Bar with Hero Section
+                SliverAppBar(
+                  expandedHeight: 200,
+                  floating: false,
+                  pinned: true,
+                  backgroundColor: _showCollapsedAppBar
+                      ? AppColors.surface(context)
+                      : Colors.transparent,
+                  surfaceTintColor: _showCollapsedAppBar
+                      ? AppColors.surface(context)
+                      : Colors.transparent,
+                  elevation: 0,
+                  automaticallyImplyLeading: false,
+                  systemOverlayStyle: SystemUiOverlayStyle(
+                    statusBarColor: Colors.transparent,
+                    statusBarIconBrightness:
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Brightness.light
+                            : Brightness.dark,
+                    statusBarBrightness:
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Brightness.dark
+                            : Brightness.light,
                   ),
-                ),
-              ),
-
-              // Search Section
-              SliverToBoxAdapter(
-                child: AnimatedBuilder(
-                  animation: _searchAnimationController,
-                  builder: (context, child) {
-                    return FadeTransition(
-                      opacity: _searchFadeAnimation,
-                      child: Container(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  title: _showCollapsedAppBar
+                      ? Row(
                           children: [
-                            // Modern Search Bar
                             Container(
+                              padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(28),
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    AppColors.cardBackground(context),
-                                    AppColors.cardBackground(context)
-                                        .withValues(alpha: 0.8),
-                                  ],
-                                ),
-                                border: Border.all(
-                                  color: AppColors.border(context)
-                                      .withValues(alpha: 0.3),
-                                  width: 1,
-                                ),
+                                gradient: AppColors.primaryGradient(context),
+                                borderRadius: BorderRadius.circular(12),
                                 boxShadow: [
                                   BoxShadow(
                                     color: AppColors.primary
-                                        .withValues(alpha: 0.08),
-                                    blurRadius: 20,
-                                    offset: const Offset(0, 8),
-                                  ),
-                                  BoxShadow(
-                                    color: AppColors.textPrimary(context)
-                                        .withValues(alpha: 0.05),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 4),
+                                        .withValues(alpha: 0.3),
+                                    blurRadius: 8,
+                                    offset: const Offset(0, 2),
                                   ),
                                 ],
                               ),
-                              child: TextField(
-                                controller: _searchController,
-                                style: TextStyle(
-                                  color: AppColors.textPrimary(context),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                                decoration: InputDecoration(
-                                  hintText: l10n.searchHymns,
-                                  hintStyle: TextStyle(
-                                    color: AppColors.textHint(context),
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16,
+                              child: Icon(
+                                Icons.music_note_rounded,
+                                color: Colors.white,
+                                size: 20,
+                              ),
+                            ),
+                            const Gap(12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    l10n.appTitle,
+                                    style: theme.textTheme.titleLarge?.copyWith(
+                                      color: AppColors.textPrimary(context),
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                  prefixIcon: Container(
-                                    margin: const EdgeInsets.all(8),
+                                  Text(
+                                    '${_hymns.length} ${l10n.hymns.toLowerCase()}',
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: AppColors.textSecondary(context),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      : null,
+                  actions: _showCollapsedAppBar
+                      ? [
+                          BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, authState) {
+                              if (authState is Authenticated) {
+                                return PopupMenuButton<String>(
+                                  icon: Container(
                                     padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
                                       gradient:
@@ -628,143 +305,487 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ),
                                       ],
                                     ),
-                                    child: Icon(
-                                      Icons.search_rounded,
-                                      color: Colors.white,
-                                      size: 20,
+                                    child: Text(
+                                      authState.user.initials,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                      ),
                                     ),
                                   ),
-                                  suffixIcon: _searchController.text.isNotEmpty
-                                      ? Container(
-                                          margin: const EdgeInsets.all(8),
-                                          decoration: BoxDecoration(
-                                            color: AppColors.textHint(context)
-                                                .withValues(alpha: 0.1),
-                                            borderRadius:
-                                                BorderRadius.circular(20),
-                                          ),
-                                          child: IconButton(
-                                            icon: Icon(
-                                              Icons.clear_rounded,
-                                              color:
-                                                  AppColors.textHint(context),
-                                              size: 20,
+                                  onSelected: (value) {
+                                    if (value == 'signout') {
+                                      context
+                                          .read<AuthBloc>()
+                                          .add(SignOutRequested());
+                                    }
+                                  },
+                                  itemBuilder: (context) => [
+                                    PopupMenuItem(
+                                      value: 'signout',
+                                      child: Row(
+                                        children: [
+                                          const Icon(Icons.logout, size: 20),
+                                          const Gap(8),
+                                          Text(l10n.signOut),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              } else {
+                                return Container(
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primary
+                                        .withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                      color: AppColors.primary
+                                          .withValues(alpha: 0.3),
+                                    ),
+                                  ),
+                                  child: IconButton(
+                                    icon: const Icon(Icons.login),
+                                    onPressed: () {
+                                      NavigationService.toLogin();
+                                    },
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ]
+                      : null,
+                  flexibleSpace: FlexibleSpaceBar(
+                    background: AnimatedBuilder(
+                      animation: _heroAnimationController,
+                      builder: (context, child) {
+                        return FadeTransition(
+                          opacity: _heroFadeAnimation,
+                          child: SlideTransition(
+                            position: _heroSlideAnimation,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    AppColors.primary.withValues(alpha: 0.1),
+                                    AppColors.secondary.withValues(alpha: 0.05),
+                                    AppColors.surface(context),
+                                  ],
+                                ),
+                                borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(20),
+                                ),
+                              ),
+                              child: SafeArea(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      // Welcome Section
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  l10n.welcome,
+                                                  style: theme
+                                                      .textTheme.headlineSmall
+                                                      ?.copyWith(
+                                                    color:
+                                                        AppColors.textPrimary(
+                                                            context),
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                                const Gap(4),
+                                                BlocBuilder<AuthBloc,
+                                                    AuthState>(
+                                                  builder: (context, state) {
+                                                    String title =
+                                                        l10n.appTitle;
+                                                    if (state
+                                                        is Authenticated) {
+                                                      title = state.user
+                                                          .displayNameOrEmail;
+                                                    }
+                                                    return Text(
+                                                      title,
+                                                      style: theme.textTheme
+                                                          .headlineMedium
+                                                          ?.copyWith(
+                                                        color:
+                                                            AppColors.primary,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ],
                                             ),
-                                            onPressed: () {
-                                              _searchController.clear();
+                                          ),
+                                          // User Avatar
+                                          BlocBuilder<AuthBloc, AuthState>(
+                                            builder: (context, state) {
+                                              if (state is Authenticated) {
+                                                return PopupMenuButton<String>(
+                                                  icon: Container(
+                                                    padding:
+                                                        const EdgeInsets.all(8),
+                                                    decoration: BoxDecoration(
+                                                      gradient: AppColors
+                                                          .primaryGradient(
+                                                              context),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                          color: AppColors
+                                                              .primary
+                                                              .withValues(
+                                                                  alpha: 0.3),
+                                                          blurRadius: 8,
+                                                          offset: const Offset(
+                                                              0, 2),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    child: Text(
+                                                      state.user.initials,
+                                                      style: const TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 14,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  onSelected: (value) {
+                                                    if (value == 'signout') {
+                                                      context
+                                                          .read<AuthBloc>()
+                                                          .add(
+                                                              SignOutRequested());
+                                                    }
+                                                  },
+                                                  itemBuilder: (context) => [
+                                                    PopupMenuItem(
+                                                      value: 'signout',
+                                                      child: Row(
+                                                        children: [
+                                                          const Icon(
+                                                              Icons.logout,
+                                                              size: 20),
+                                                          const Gap(8),
+                                                          Text(l10n.signOut),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                );
+                                              } else {
+                                                return Container(
+                                                  decoration: BoxDecoration(
+                                                    color: AppColors.primary
+                                                        .withValues(alpha: 0.1),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    border: Border.all(
+                                                      color: AppColors.primary
+                                                          .withValues(
+                                                              alpha: 0.3),
+                                                    ),
+                                                  ),
+                                                  child: IconButton(
+                                                    icon:
+                                                        const Icon(Icons.login),
+                                                    onPressed: () {
+                                                      NavigationService
+                                                          .toLogin();
+                                                    },
+                                                  ),
+                                                );
+                                              }
                                             },
                                           ),
-                                        )
-                                      : null,
-                                  filled: true,
-                                  fillColor: Colors.transparent,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(28),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(28),
-                                    borderSide: BorderSide.none,
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(28),
-                                    borderSide: BorderSide(
-                                      color: AppColors.primary
-                                          .withValues(alpha: 0.5),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  contentPadding: const EdgeInsets.symmetric(
-                                    horizontal: 24,
-                                    vertical: 20,
+                                        ],
+                                      ),
+                                      const Gap(16),
+                                      // Quick Stats
+                                      Row(
+                                        children: [
+                                          _isLoading
+                                              ? const ShimmerStatCard()
+                                              : _buildStatCard(
+                                                  icon: Icons.music_note,
+                                                  value:
+                                                      _hymns.length.toString(),
+                                                  label: l10n.hymns,
+                                                  context: context,
+                                                ),
+                                          const Gap(12),
+                                          BlocBuilder<FavoritesBloc,
+                                              FavoritesState>(
+                                            builder: (context, favoritesState) {
+                                              final favoritesCount =
+                                                  favoritesState
+                                                          is FavoritesLoaded
+                                                      ? favoritesState
+                                                          .favorites.length
+                                                      : 0;
+                                              return _buildStatCard(
+                                                icon: Icons.favorite,
+                                                value:
+                                                    favoritesCount.toString(),
+                                                label: l10n.favorites,
+                                                context: context,
+                                              );
+                                            },
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
 
-                            const Gap(16),
-
-                            // Results Header
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                if (_searchController.text.isNotEmpty)
-                                  Text(
-                                    l10n.hymnsFound(_filteredHymns.length),
-                                    style:
-                                        theme.textTheme.titleMedium?.copyWith(
-                                      color: AppColors.textSecondary(context),
-                                      fontWeight: FontWeight.w600,
+                // Search Section
+                SliverToBoxAdapter(
+                  child: AnimatedBuilder(
+                    animation: _searchAnimationController,
+                    builder: (context, child) {
+                      return FadeTransition(
+                        opacity: _searchFadeAnimation,
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Modern Search Bar
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(28),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.bottomRight,
+                                    colors: [
+                                      AppColors.cardBackground(context),
+                                      AppColors.cardBackground(context)
+                                          .withValues(alpha: 0.8),
+                                    ],
+                                  ),
+                                  border: Border.all(
+                                    color: AppColors.border(context)
+                                        .withValues(alpha: 0.3),
+                                    width: 1,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: AppColors.primary
+                                          .withValues(alpha: 0.08),
+                                      blurRadius: 20,
+                                      offset: const Offset(0, 8),
+                                    ),
+                                    BoxShadow(
+                                      color: AppColors.textPrimary(context)
+                                          .withValues(alpha: 0.05),
+                                      blurRadius: 10,
+                                      offset: const Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                child: TextField(
+                                  controller: _searchController,
+                                  style: TextStyle(
+                                    color: AppColors.textPrimary(context),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  decoration: InputDecoration(
+                                    hintText: l10n.searchHymns,
+                                    hintStyle: TextStyle(
+                                      color: AppColors.textHint(context),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                    ),
+                                    prefixIcon: Container(
+                                      margin: const EdgeInsets.all(8),
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        gradient:
+                                            AppColors.primaryGradient(context),
+                                        borderRadius: BorderRadius.circular(20),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: AppColors.primary
+                                                .withValues(alpha: 0.3),
+                                            blurRadius: 8,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
+                                      ),
+                                      child: Icon(
+                                        Icons.search_rounded,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                    ),
+                                    suffixIcon: _searchController
+                                            .text.isNotEmpty
+                                        ? Container(
+                                            margin: const EdgeInsets.all(8),
+                                            decoration: BoxDecoration(
+                                              color: AppColors.textHint(context)
+                                                  .withValues(alpha: 0.1),
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                            ),
+                                            child: IconButton(
+                                              icon: Icon(
+                                                Icons.clear_rounded,
+                                                color:
+                                                    AppColors.textHint(context),
+                                                size: 20,
+                                              ),
+                                              onPressed: () {
+                                                _searchController.clear();
+                                              },
+                                            ),
+                                          )
+                                        : null,
+                                    filled: true,
+                                    fillColor: Colors.transparent,
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(28),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(28),
+                                      borderSide: BorderSide.none,
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(28),
+                                      borderSide: BorderSide(
+                                        color: AppColors.primary
+                                            .withValues(alpha: 0.5),
+                                        width: 2,
+                                      ),
+                                    ),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      horizontal: 24,
+                                      vertical: 20,
                                     ),
                                   ),
-                                if (_searchController.text.isNotEmpty)
-                                  TextButton.icon(
-                                    onPressed: () {
-                                      _searchController.clear();
-                                    },
-                                    icon: Icon(
-                                      Icons.clear_all_rounded,
-                                      size: 16,
-                                      color: AppColors.primary,
-                                    ),
-                                    label: Text(
-                                      l10n.clear,
-                                      style: TextStyle(
-                                        color: AppColors.primary,
+                                ),
+                              ),
+
+                              const Gap(16),
+
+                              // Results Header
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  if (_searchController.text.isNotEmpty)
+                                    Text(
+                                      l10n.hymnsFound(_filteredHymns.length),
+                                      style:
+                                          theme.textTheme.titleMedium?.copyWith(
+                                        color: AppColors.textSecondary(context),
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                  ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-
-              // Hymns List
-              _isLoading
-                  ? SliverPadding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                      sliver: SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, index) {
-                            return const ShimmerHymnCard();
-                          },
-                          childCount: 6, // Show 6 shimmer cards
-                        ),
-                      ),
-                    )
-                  : _filteredHymns.isEmpty
-                      ? SliverFillRemaining(
-                          child: _buildEmptyState(l10n, theme),
-                        )
-                      : SliverPadding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
-                          sliver: SliverList(
-                            delegate: SliverChildBuilderDelegate(
-                              (context, index) {
-                                final hymn = _filteredHymns[index];
-                                return Padding(
-                                  padding: const EdgeInsets.only(bottom: 16),
-                                  child: HymnCard(
-                                    hymn: hymn,
-                                    onTap: () => _onHymnTap(hymn),
-                                  ),
-                                );
-                              },
-                              childCount: _filteredHymns.length,
-                            ),
+                                  if (_searchController.text.isNotEmpty)
+                                    TextButton.icon(
+                                      onPressed: () {
+                                        _searchController.clear();
+                                      },
+                                      icon: Icon(
+                                        Icons.clear_all_rounded,
+                                        size: 16,
+                                        color: AppColors.primary,
+                                      ),
+                                      label: Text(
+                                        l10n.clear,
+                                        style: TextStyle(
+                                          color: AppColors.primary,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
-            ],
-          ),
-          // Glass Navigation Bar
-          const GlassNavigationBar(),
-        ],
+                      );
+                    },
+                  ),
+                ),
+
+                // Hymns List
+                _isLoading
+                    ? SliverPadding(
+                        padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                        sliver: SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              return const ShimmerHymnCard();
+                            },
+                            childCount: 6, // Show 6 shimmer cards
+                          ),
+                        ),
+                      )
+                    : _filteredHymns.isEmpty
+                        ? SliverFillRemaining(
+                            child: _buildEmptyState(l10n, theme),
+                          )
+                        : SliverPadding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                            sliver: SliverList(
+                              delegate: SliverChildBuilderDelegate(
+                                (context, index) {
+                                  final hymn = _filteredHymns[index];
+                                  return Padding(
+                                    padding: const EdgeInsets.only(bottom: 16),
+                                    child: HymnCard(
+                                      hymn: hymn,
+                                      onTap: () => _onHymnTap(hymn),
+                                    ),
+                                  );
+                                },
+                                childCount: _filteredHymns.length,
+                              ),
+                            ),
+                          ),
+              ],
+            ),
+            // Glass Navigation Bar
+            const GlassNavigationBar(),
+          ],
+        ),
       ),
     );
   }

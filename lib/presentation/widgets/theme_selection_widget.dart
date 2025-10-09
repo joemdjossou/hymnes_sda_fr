@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
 import '../../core/providers/theme_provider.dart';
 import '../../shared/constants/app_colors.dart';

@@ -101,6 +101,7 @@ class FavoritesLoaded extends FavoritesState {
   final bool isOnline;
   final bool isAuthenticated;
   final bool isSynced;
+  final String? togglingHymnNumber;
 
   const FavoritesLoaded({
     required this.favorites,
@@ -109,6 +110,7 @@ class FavoritesLoaded extends FavoritesState {
     this.isOnline = true,
     this.isAuthenticated = false,
     this.isSynced = true,
+    this.togglingHymnNumber,
   });
 
   @override
@@ -119,6 +121,7 @@ class FavoritesLoaded extends FavoritesState {
         isOnline,
         isAuthenticated,
         isSynced,
+        togglingHymnNumber,
       ];
 
   FavoritesLoaded copyWith({
@@ -128,6 +131,7 @@ class FavoritesLoaded extends FavoritesState {
     bool? isOnline,
     bool? isAuthenticated,
     bool? isSynced,
+    String? togglingHymnNumber,
   }) {
     return FavoritesLoaded(
       favorites: favorites ?? this.favorites,
@@ -136,6 +140,7 @@ class FavoritesLoaded extends FavoritesState {
       isOnline: isOnline ?? this.isOnline,
       isAuthenticated: isAuthenticated ?? this.isAuthenticated,
       isSynced: isSynced ?? this.isSynced,
+      togglingHymnNumber: togglingHymnNumber ?? this.togglingHymnNumber,
     );
   }
 }
@@ -204,6 +209,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
         isOnline: syncStatus['isOnline'] ?? true,
         isAuthenticated: syncStatus['isAuthenticated'] ?? false,
         isSynced: syncStatus['isSynced'] ?? true,
+        togglingHymnNumber: null,
       ));
 
       // Note: Removed automatic background sync to prevent blocking app startup
@@ -224,6 +230,11 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       final hymn = event.hymn;
       final isCurrentlyFavorite =
           currentState.favoriteStatus[hymn.number] ?? false;
+
+      // Emit toggling state to show shimmer loading
+      emit(currentState.copyWith(
+        togglingHymnNumber: hymn.number,
+      ));
 
       if (isCurrentlyFavorite) {
         await _hybridRepository.removeFromFavorites(hymn.number);
@@ -250,6 +261,7 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
           favorites: updatedFavorites,
           favoriteStatus: updatedStatus,
           isSynced: syncStatus['isSynced'] ?? true,
+          togglingHymnNumber: null,
         ));
       } else {
         await _hybridRepository.addToFavorites(hymn);

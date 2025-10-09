@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
 import '../../core/repositories/hymn_repository.dart';
 import '../../features/audio/bloc/audio_bloc.dart';
@@ -11,6 +11,7 @@ import '../../features/hymns/hymn_detail_controller.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/audio_player_widget.dart';
 import '../../shared/widgets/custom_toast.dart';
+import '../../shared/widgets/favorite_button_shimmer.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../widgets/hymn_history_bottom_sheet.dart';
 import '../widgets/hymn_history_widget.dart';
@@ -131,6 +132,18 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
         final isFavorite = state is FavoritesLoaded
             ? state.favoriteStatus[widget.hymnId] ?? false
             : false;
+
+        // Check if this hymn is currently being toggled
+        final isToggling = state is FavoritesLoaded &&
+            state.togglingHymnNumber == widget.hymnId;
+
+        // Show shimmer when toggling
+        if (isToggling) {
+          return const FavoriteButtonShimmer(
+            size: 48,
+            iconSize: 25,
+          );
+        }
 
         return IconButton(
           icon: Container(

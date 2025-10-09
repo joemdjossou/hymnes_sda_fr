@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../core/providers/language_provider.dart';
