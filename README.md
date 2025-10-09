@@ -91,7 +91,7 @@ Before you begin, ensure you have the following installed:
 - **Language**: Dart 3.0.0+
 - **State Management**: BLoC Pattern (flutter_bloc 8.1.3)
 - **Audio**: Just Audio 0.9.36 for MIDI playback
-- **Storage**: Hive 2.2.3 for local data persistence + Firebase Firestore for cloud sync
+- **Storage**: ObjectBox 5.0.0 for local data persistence + Firebase Firestore for cloud sync
 - **Authentication**: Firebase Auth for user management
 - **Analytics**: PostHog for user behavior tracking
 - **Error Tracking**: Sentry for crash reporting

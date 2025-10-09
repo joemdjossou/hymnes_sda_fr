@@ -4,7 +4,7 @@ This document explains the implementation of Firestore integration for user favo
 
 ## Overview
 
-The app now supports storing user favorites both locally (using Hive) and in the cloud (using Firestore). This provides:
+The app now supports storing user favorites both locally (using ObjectBox) and in the cloud (using Firestore). This provides:
 
 - **Offline-first functionality**: Favorites work even without internet connection
 - **Cloud synchronization**: Favorites are synced across devices when users are authenticated
@@ -24,7 +24,7 @@ The app now supports storing user favorites both locally (using Hive) and in the
 
 ```
 User Action → FavoritesBloc → HybridFavoritesRepository → {
-  Local Storage (Hive) ← Always
+  Local Storage (ObjectBox) ← Always
   Firestore ← When authenticated & online
 }
 ```

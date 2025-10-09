@@ -2,13 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 import 'package:hymnes_sda_fr/shared/widgets/custom_toast.dart';
 
 import '../../core/models/hymn.dart';
 import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../constants/app_colors.dart';
+import 'favorite_button_shimmer.dart';
 
 class HymnCard extends StatelessWidget {
   final Hymn hymn;
@@ -29,6 +30,11 @@ class HymnCard extends StatelessWidget {
         final isFavorite = state is FavoritesLoaded
             ? state.favoriteStatus[hymn.number] ?? false
             : false;
+
+        // Check if this hymn is currently being toggled
+        final isToggling =
+            state is FavoritesLoaded && state.togglingHymnNumber == hymn.number;
+
         // Show local data immediately, no loading states for background sync
 
         return Container(
@@ -187,40 +193,46 @@ class HymnCard extends StatelessWidget {
                     Column(
                       children: [
                         // Favorite Button
-                        Container(
-                          decoration: BoxDecoration(
-                            color: isFavorite
-                                ? AppColors.favorite.withValues(alpha: 0.1)
-                                : AppColors.textSecondary(context)
-                                    .withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              context
-                                  .read<FavoritesBloc>()
-                                  .add(ToggleFavorite(hymn));
-                              ToastService.showSuccess(
-                                context,
-                                title: l10n.favorite,
-                                message: context
+                        isToggling
+                            ? const FavoriteButtonShimmer(
+                                size: 48,
+                                iconSize: 20,
+                              )
+                            : Container(
+                                decoration: BoxDecoration(
+                                  color: isFavorite
+                                      ? AppColors.favorite
+                                          .withValues(alpha: 0.1)
+                                      : AppColors.textSecondary(context)
+                                          .withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: IconButton(
+                                  onPressed: () {
+                                    context
                                         .read<FavoritesBloc>()
-                                        .isFavorite(hymn.number)
-                                    ? l10n.favoriteRemoved
-                                    : l10n.favoriteAdded,
-                              );
-                            },
-                            icon: Icon(
-                              isFavorite
-                                  ? Icons.favorite_rounded
-                                  : Icons.favorite_border_rounded,
-                              color: isFavorite
-                                  ? AppColors.favorite
-                                  : AppColors.textSecondary(context),
-                              size: 20,
-                            ),
-                          ),
-                        ),
+                                        .add(ToggleFavorite(hymn));
+                                    ToastService.showSuccess(
+                                      context,
+                                      title: l10n.favorite,
+                                      message: context
+                                              .read<FavoritesBloc>()
+                                              .isFavorite(hymn.number)
+                                          ? l10n.favoriteRemoved
+                                          : l10n.favoriteAdded,
+                                    );
+                                  },
+                                  icon: Icon(
+                                    isFavorite
+                                        ? Icons.favorite_rounded
+                                        : Icons.favorite_border_rounded,
+                                    color: isFavorite
+                                        ? AppColors.favorite
+                                        : AppColors.textSecondary(context),
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
                         const Gap(8),
                       ],
                     ),
