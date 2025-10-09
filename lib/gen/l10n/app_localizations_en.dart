@@ -647,4 +647,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unableToPlayAudio => 'Unable to play audio';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get manageNotificationPreferences => 'Manage notification preferences';
+
+  @override
+  String get testNotification => 'Test Notification';
+
+  @override
+  String get sendTestNotificationDescription => 'Send a test notification to verify functionality';
+
+  @override
+  String get dailyReminder => 'Daily Reminder';
+
+  @override
+  String get scheduleDailyReminderDescription => 'Schedule a daily reminder to explore hymns';
+
+  @override
+  String get hymnOfTheDay => 'Hymn of the Day';
+
+  @override
+  String get getNotifiedAboutFeaturedHymns => 'Get notified about featured hymns';
+
+  @override
+  String get weeklySabbathReminder => 'Weekly Sabbath Reminder';
+
+  @override
+  String get weeklySabbathReminderDescription => 'Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord';
+
+  @override
+  String get sabbathReminderTitle => 'Sabbath Preparation';
+
+  @override
+  String get sabbathReminderBody => 'Tomorrow is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
 }

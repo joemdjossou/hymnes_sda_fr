@@ -200,9 +200,12 @@ class HybridFavoritesRepository implements IFavoriteRepository {
         await _localStorage.removeFromFavorites(hymnNumber);
       }
 
-      // Add or update Firestore favorites to local storage
+      // Add only new Firestore favorites to local storage (skip existing ones)
+      final toAdd = firestoreHymnNumbers.difference(localHymnNumbers);
       for (final favorite in firestoreFavorites) {
-        await _localStorage.addToFavorites(favorite.hymn);
+        if (toAdd.contains(favorite.hymn.number)) {
+          await _localStorage.addToFavorites(favorite.hymn);
+        }
       }
     } catch (e) {
       _logger.e('Error syncing Firestore to local: $e');
@@ -296,9 +299,10 @@ class HybridFavoritesRepository implements IFavoriteRepository {
         }
       }
 
-      // Add new favorites from Firestore
+      // Add only new favorites from Firestore (skip existing ones)
+      final toAdd = firestoreNumbers.difference(localNumbers);
       for (final firestoreFavorite in firestoreFavorites) {
-        if (!localNumbers.contains(firestoreFavorite.hymn.number)) {
+        if (toAdd.contains(firestoreFavorite.hymn.number)) {
           await _localStorage.addToFavorites(firestoreFavorite.hymn);
         }
       }

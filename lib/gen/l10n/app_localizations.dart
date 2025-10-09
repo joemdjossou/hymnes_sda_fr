@@ -1330,6 +1330,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unable to play audio'**
   String get unableToPlayAudio;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @manageNotificationPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage notification preferences'**
+  String get manageNotificationPreferences;
+
+  /// No description provided for @testNotification.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Notification'**
+  String get testNotification;
+
+  /// No description provided for @sendTestNotificationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a test notification to verify functionality'**
+  String get sendTestNotificationDescription;
+
+  /// No description provided for @dailyReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Reminder'**
+  String get dailyReminder;
+
+  /// No description provided for @scheduleDailyReminderDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule a daily reminder to explore hymns'**
+  String get scheduleDailyReminderDescription;
+
+  /// No description provided for @hymnOfTheDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Hymn of the Day'**
+  String get hymnOfTheDay;
+
+  /// No description provided for @getNotifiedAboutFeaturedHymns.
+  ///
+  /// In en, this message translates to:
+  /// **'Get notified about featured hymns'**
+  String get getNotifiedAboutFeaturedHymns;
+
+  /// No description provided for @weeklySabbathReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Sabbath Reminder'**
+  String get weeklySabbathReminder;
+
+  /// No description provided for @weeklySabbathReminderDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord'**
+  String get weeklySabbathReminderDescription;
+
+  /// No description provided for @sabbathReminderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sabbath Preparation'**
+  String get sabbathReminderTitle;
+
+  /// No description provided for @sabbathReminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!'**
+  String get sabbathReminderBody;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

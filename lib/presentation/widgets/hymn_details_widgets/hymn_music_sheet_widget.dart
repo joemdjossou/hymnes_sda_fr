@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
-import '../../core/models/hymn.dart';
-import '../../core/services/music_sheet_service.dart';
-import '../../shared/constants/app_colors.dart';
+import '../../../core/models/hymn.dart';
+import '../../../core/services/music_sheet_service.dart';
+import '../../../shared/constants/app_colors.dart';
 import 'music_sheet_bottom_sheet.dart';
 
 /// Widget responsible for displaying hymn music sheet section

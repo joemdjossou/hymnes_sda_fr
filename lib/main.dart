@@ -4,11 +4,13 @@ import 'package:flutter/services.dart';
 import 'package:hymnes_sda_fr/firebase_options.dart';
 import 'package:hymnes_sda_fr/hymnes.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_configs.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import 'core/services/error_logging_service.dart';
 import 'core/services/favorites_sync_service.dart';
+import 'core/services/notification_service.dart';
 import 'core/services/posthog_service.dart';
 import 'core/services/storage_service.dart';
 import 'core/utils/global_error_handler.dart';
@@ -35,11 +37,15 @@ void main() async {
   // Initialize services
   await StorageService().initialize();
   await FavoritesSyncService().initialize();
-  // Uncomment the line below to clear all data if you encounter type errors
-  // await StorageService().clearAllData();
+  await NotificationService().initialize();
 
   // Track app launch
   await PostHogService().trackAppLaunch();
+
+  // Initialize OneSignal
+  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
+  OneSignal.initialize(AppConfigs.onesignalAppId);
+  OneSignal.Notifications.requestPermission(false);
 
   await SentryFlutter.init(
     (options) {

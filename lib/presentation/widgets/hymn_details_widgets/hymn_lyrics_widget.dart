@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
-import '../../core/models/hymn.dart';
-import '../../shared/constants/app_colors.dart';
-import '../../shared/widgets/custom_toast.dart';
+import '../../../core/models/hymn.dart';
+import '../../../shared/constants/app_colors.dart';
+import '../../../shared/widgets/custom_toast.dart';
 
 /// Widget responsible only for displaying hymn lyrics
 /// Follows Single Responsibility Principle

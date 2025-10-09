@@ -15,7 +15,7 @@ import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/shimmer_loading.dart';
-import '../widgets/glass_navigation_bar.dart';
+import '../widgets/home_widgets/glass_navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
-import '../../core/models/hymn.dart';
-import '../../shared/constants/app_colors.dart';
+import '../../../core/models/hymn.dart';
+import '../../../shared/constants/app_colors.dart';
 
 /// Widget responsible only for displaying hymn history section
 /// Follows Single Responsibility Principle

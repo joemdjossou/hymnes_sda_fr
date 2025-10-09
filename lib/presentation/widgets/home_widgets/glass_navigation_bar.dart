@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 
-import '../../core/navigation/app_routes.dart';
-import '../../shared/constants/app_colors.dart';
+import '../../../core/navigation/app_routes.dart';
+import '../../../shared/constants/app_colors.dart';
 
 class GlassNavigationBar extends StatefulWidget {
   const GlassNavigationBar({super.key});

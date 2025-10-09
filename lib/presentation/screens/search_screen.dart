@@ -9,7 +9,7 @@ import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
 import '../../shared/widgets/shimmer_loading.dart';
-import '../widgets/glass_navigation_bar.dart';
+import '../widgets/home_widgets/glass_navigation_bar.dart';
 import '../widgets/search_widgets/empty_search_state.dart';
 import '../widgets/search_widgets/filter_chips_section.dart';
 import '../widgets/search_widgets/filter_controls.dart';
