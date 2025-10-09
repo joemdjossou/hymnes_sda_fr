@@ -14,22 +14,26 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  intl: any
+
+  # Icons
   cupertino_icons: ^1.0.2
+  # Navigation
   go_router: ^12.1.3
+  # State management
   flutter_bloc: ^8.1.3
+  # Value equality
   equatable: ^2.0.5
+  # Settings storage
   shared_preferences: ^2.2.2
-  showcaseview: ^2.0.3
+  # Icon generator
   flutter_launcher_icons: ^0.13.1
-  uuid: ^4.2.1
-  path_provider: ^2.1.1
-  hive: ^2.2.3
-  hive_flutter: ^1.1.0
-  gap:
-  # Audio playback for online MP3 files
+  # Local storage
+  objectbox: ^5.0.0
+  objectbox_flutter_libs: ^5.0.0
+  # Spacing widget
+  gap: ^3.0.1
+  # Audio playback
   just_audio: ^0.9.36
-  audio_session: ^0.1.18
   # Web view for PDF display
   webview_flutter: ^4.10.0
   http: ^1.1.0
@@ -46,6 +50,8 @@ dependencies:
   logger: ^2.3.0
   # For getting app version info
   package_info_plus: ^4.2.0
+  # For file system access
+  path_provider: ^2.1.2
   # For shimmer loading effects
   shimmer: ^3.0.0
   # Firestore database cloud_firestore
@@ -54,6 +60,8 @@ dependencies:
   posthog_flutter: ^5.0.0
   # tutorial coach mark
   tutorial_coach_mark: ^1.3.1
+  # App update checker
+  upgrader: ^12.1.0
 
 dev_dependencies:
   # sentry
@@ -61,9 +69,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  hive_generator: ^2.0.1
+  objectbox_generator: ^5.0.0
   build_runner: ^2.4.7
-  flutter_gen_runner: ^5.3.1
+  flutter_gen: ^5.12.0
   # Testing dependencies
   bloc_test: ^9.1.5
   mockito: ^5.4.4
@@ -98,7 +106,7 @@ flutter_launcher_icons:
 
 flutter_gen:
   output: lib/gen/
-  line_length: 80
+  # line_length: 80
 
 # sentry
 sentry:
