@@ -27,7 +27,7 @@ class HymnRepository
 
       // Load hymns from the data source
       _hymnsCache = await _loadHymnsFromDataSource();
-      
+
       await _errorLogger.logInfo(
         'HymnRepository',
         'Hymns loaded successfully',
@@ -36,7 +36,7 @@ class HymnRepository
           'fromCache': false,
         },
       );
-      
+
       return _hymnsCache!;
     } catch (e) {
       await _errorLogger.logDatabaseError(

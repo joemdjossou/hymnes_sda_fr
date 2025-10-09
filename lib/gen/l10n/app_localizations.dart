@@ -1400,7 +1400,7 @@ abstract class AppLocalizations {
   /// No description provided for @sabbathReminderBody.
   ///
   /// In en, this message translates to:
-  /// **'Tomorrow is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!'**
+  /// **'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!'**
   String get sabbathReminderBody;
 }
 

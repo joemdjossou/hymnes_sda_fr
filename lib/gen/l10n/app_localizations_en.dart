@@ -682,5 +682,5 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sabbathReminderTitle => 'Sabbath Preparation';
 
   @override
-  String get sabbathReminderBody => 'Tomorrow is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
+  String get sabbathReminderBody => 'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
 }
