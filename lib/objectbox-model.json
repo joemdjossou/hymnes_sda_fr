@@ -1,0 +1,342 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:3138469560795967876",
+      "lastPropertyId": "18:833517039455295431",
+      "name": "FavoriteHymnEntity",
+      "properties": [
+        {
+          "id": "1:4830849972970748531",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6799408939935750000",
+          "name": "hymnNumber",
+          "indexId": "1:3359818646190551248",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:3709092947370818946",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:3637820532607630645",
+          "name": "lyrics",
+          "type": 9
+        },
+        {
+          "id": "5:6429999002671972188",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "6:8558720240121497712",
+          "name": "composer",
+          "type": 9
+        },
+        {
+          "id": "7:2363037763383000622",
+          "name": "style",
+          "type": 9
+        },
+        {
+          "id": "8:8608103576532949537",
+          "name": "sopranoFile",
+          "type": 9
+        },
+        {
+          "id": "9:3813140579152356171",
+          "name": "altoFile",
+          "type": 9
+        },
+        {
+          "id": "10:7904025338569631729",
+          "name": "tenorFile",
+          "type": 9
+        },
+        {
+          "id": "11:8089453253371029949",
+          "name": "bassFile",
+          "type": 9
+        },
+        {
+          "id": "12:5643120116868685200",
+          "name": "countertenorFile",
+          "type": 9
+        },
+        {
+          "id": "13:4245146943177720731",
+          "name": "baritoneFile",
+          "type": 9
+        },
+        {
+          "id": "14:7570118152896970808",
+          "name": "midiFile",
+          "type": 9
+        },
+        {
+          "id": "15:6489735746906872712",
+          "name": "theme",
+          "type": 9
+        },
+        {
+          "id": "16:5887241026793733896",
+          "name": "subtheme",
+          "type": 9
+        },
+        {
+          "id": "17:2801799765141502539",
+          "name": "story",
+          "type": 9
+        },
+        {
+          "id": "18:833517039455295431",
+          "name": "dateAdded",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:1831285798643428989",
+      "lastPropertyId": "17:3550209943813547724",
+      "name": "HymnEntity",
+      "properties": [
+        {
+          "id": "1:3379797592360713458",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:155589985757630984",
+          "name": "number",
+          "indexId": "2:6476402080306534532",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:4352337269411108716",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:4660031001638794902",
+          "name": "lyrics",
+          "type": 9
+        },
+        {
+          "id": "5:511659171110154134",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "6:2804246326545373250",
+          "name": "composer",
+          "type": 9
+        },
+        {
+          "id": "7:1512667199575234447",
+          "name": "style",
+          "type": 9
+        },
+        {
+          "id": "8:8596848487740770866",
+          "name": "sopranoFile",
+          "type": 9
+        },
+        {
+          "id": "9:7316202327705963419",
+          "name": "altoFile",
+          "type": 9
+        },
+        {
+          "id": "10:3004711501831213",
+          "name": "tenorFile",
+          "type": 9
+        },
+        {
+          "id": "11:3381354590135344133",
+          "name": "bassFile",
+          "type": 9
+        },
+        {
+          "id": "12:9150314048986756822",
+          "name": "countertenorFile",
+          "type": 9
+        },
+        {
+          "id": "13:5007055314196776124",
+          "name": "baritoneFile",
+          "type": 9
+        },
+        {
+          "id": "14:7670589772095532616",
+          "name": "midiFile",
+          "type": 9
+        },
+        {
+          "id": "15:5497592787618639502",
+          "name": "theme",
+          "type": 9
+        },
+        {
+          "id": "16:738226283698344490",
+          "name": "subtheme",
+          "type": 9
+        },
+        {
+          "id": "17:3550209943813547724",
+          "name": "story",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:4410930828110042339",
+      "lastPropertyId": "18:6681588041005250049",
+      "name": "RecentlyPlayedEntity",
+      "properties": [
+        {
+          "id": "1:3498767027094937354",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8640884925793582087",
+          "name": "hymnNumber",
+          "indexId": "3:1796979487675812113",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:5940865420129350244",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "4:1813704064045718087",
+          "name": "lyrics",
+          "type": 9
+        },
+        {
+          "id": "5:3566042917966708118",
+          "name": "author",
+          "type": 9
+        },
+        {
+          "id": "6:864365166371747366",
+          "name": "composer",
+          "type": 9
+        },
+        {
+          "id": "7:1431382173048530962",
+          "name": "style",
+          "type": 9
+        },
+        {
+          "id": "8:5764711112483702356",
+          "name": "sopranoFile",
+          "type": 9
+        },
+        {
+          "id": "9:133894045927322165",
+          "name": "altoFile",
+          "type": 9
+        },
+        {
+          "id": "10:3536681949736305487",
+          "name": "tenorFile",
+          "type": 9
+        },
+        {
+          "id": "11:6877621850229195096",
+          "name": "bassFile",
+          "type": 9
+        },
+        {
+          "id": "12:979111854962764088",
+          "name": "countertenorFile",
+          "type": 9
+        },
+        {
+          "id": "13:8913599037741181421",
+          "name": "baritoneFile",
+          "type": 9
+        },
+        {
+          "id": "14:2688003343065801264",
+          "name": "midiFile",
+          "type": 9
+        },
+        {
+          "id": "15:5967986592932381002",
+          "name": "theme",
+          "type": 9
+        },
+        {
+          "id": "16:7236148919665772721",
+          "name": "subtheme",
+          "type": 9
+        },
+        {
+          "id": "17:672623933210139823",
+          "name": "story",
+          "type": 9
+        },
+        {
+          "id": "18:6681588041005250049",
+          "name": "lastPlayed",
+          "type": 10
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:3552587047468815287",
+      "lastPropertyId": "3:1600972510508026027",
+      "name": "SettingEntity",
+      "properties": [
+        {
+          "id": "1:4482717388862095537",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5348269625986260406",
+          "name": "key",
+          "indexId": "4:4379606399076280359",
+          "type": 9,
+          "flags": 2080
+        },
+        {
+          "id": "3:1600972510508026027",
+          "name": "value",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "4:3552587047468815287",
+  "lastIndexId": "4:4379606399076280359",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
