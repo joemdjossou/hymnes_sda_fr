@@ -29,7 +29,7 @@ A beautiful Flutter application for French Adventist hymns with MIDI audio playb
 
 Before you begin, ensure you have the following installed:
 
-- **Flutter SDK**: 3.2.3 or higher
+- **Flutter SDK**: 3.29.2 or higher
 - **Dart SDK**: 3.0.0 or higher
 - **Git**: For cloning the repository
 - **IDE**: Android Studio, VS Code, or IntelliJ with Flutter plugin

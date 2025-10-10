@@ -137,7 +137,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.2.3"
+          flutter-version: "3.29.2"
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
