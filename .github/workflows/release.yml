@@ -1,84 +1,84 @@
 name: Release
 
 on:
-    push:
-        tags:
-            - "v*"
-    workflow_dispatch:
-        inputs:
-            version:
-                description: "Version to release (e.g., v1.0.0)"
-                required: true
-                type: string
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release (e.g., v1.0.0)"
+        required: true
+        type: string
 
 jobs:
-    release:
-        runs-on: ubuntu-latest
+  release:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            - name: Setup Flutter
-              uses: subosito/flutter-action@v2
-              with:
-                  flutter-version: "3.2.3"
-                  channel: "stable"
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.2.3"
+          channel: "stable"
 
-            - name: Install dependencies
-              run: flutter pub get
+      - name: Install dependencies
+        run: flutter pub get
 
-            - name: Generate localization files
-              run: flutter gen-l10n
+      - name: Generate localization files
+        run: flutter gen-l10n
 
-            - name: Run tests
-              run: flutter test
+      - name: Run tests
+        run: flutter test
 
-            - name: Build Android APK
-              run: flutter build apk --release
+      - name: Build Android APK
+        run: flutter build apk --release
 
-            - name: Build Android App Bundle
-              run: flutter build appbundle --release
+      - name: Build Android App Bundle
+        run: flutter build appbundle --release
 
-            - name: Build iOS (macOS only)
-              if: runner.os == 'macOS'
-              run: flutter build ios --release --no-codesign
+      - name: Build iOS (macOS only)
+        if: runner.os == 'macOS'
+        run: flutter build ios --release --no-codesign
 
-            - name: Build Web
-              run: flutter build web --release
+      - name: Build Web
+        run: flutter build web --release
 
-            - name: Create Release
-              uses: actions/create-release@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  tag_name: ${{ github.ref_name }}
-                  release_name: Release ${{ github.ref_name }}
-                  draft: false
-                  prerelease: false
-                  body: |
-                      ## What's Changed
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          body: |
+            ## What's Changed
 
-                      - See commit history for detailed changes
+            - See commit history for detailed changes
 
-                      ## Downloads
+            ## Downloads
 
-                      - Android APK: `app-release.apk`
-                      - Android App Bundle: `app-release.aab`
-                      - Web: Available in the `web/` directory
+            - Android APK: `app-release.apk`
+            - Android App Bundle: `app-release.aab`
+            - Web: Available in the `web/` directory
 
-                      ## Installation
+            ## Installation
 
-                      ### Android
-                      1. Download the APK file
-                      2. Enable "Install from unknown sources" in your device settings
-                      3. Install the APK
+            ### Android
+            1. Download the APK file
+            2. Enable "Install from unknown sources" in your device settings
+            3. Install the APK
 
-                      ### Web
-                      1. Download the web files
-                      2. Deploy to your web server
+            ### Web
+            1. Download the web files
+            2. Deploy to your web server
 
-                      ## Notes
+            ## Notes
 
-                      - Make sure to test the release before deploying to production
-                      - Check all features are working as expected
+            - Make sure to test the release before deploying to production
+            - Check all features are working as expected
