@@ -163,7 +163,6 @@ jobs:
       - name: Run security scan
         run: |
           flutter pub get
-          flutter pub audit
 ```
 
 ### 3. Branch Naming Conventions

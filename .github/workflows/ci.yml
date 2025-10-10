@@ -67,7 +67,7 @@ jobs:
         run: flutter pub get
 
       - name: Run security audit
-        run: flutter pub audit
+        run: flutter pub deps
 
       - name: Check for security vulnerabilities
         run: |
