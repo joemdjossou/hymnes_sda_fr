@@ -7,7 +7,7 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>
-		<string>Hymnes et Louanges Adventiste.</string>
+		<string>Hymnes et Louanges Adventiste</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -28,6 +28,9 @@
 		<true />
 		<key>NSMicrophoneUsageDescription</key>
 		<string>We need access to the microphone for audio playback</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>This app does not use location services. This permission is required by third-party
+			libraries but location data is not accessed or stored.</string>
 		<key>UIBackgroundModes</key>
 		<array>
 			<string>fetch</string>

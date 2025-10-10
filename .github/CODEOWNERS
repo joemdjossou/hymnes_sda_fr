@@ -1,0 +1,47 @@
+# Global owners - these users will be requested for review on any pull request
+* @joemdjossou
+
+# Core functionality - critical parts of the application
+lib/core/ @joemdjossou
+lib/features/ @joemdjossou
+
+# Main application files
+lib/main.dart @joemdjossou
+lib/hymnes.dart @joemdjossou
+
+# Configuration files - require review for any changes
+pubspec.yaml @joemdjossou
+pubspec.lock @joemdjossou
+analysis_options.yaml @joemdjossou
+
+# Android configuration
+android/ @joemdjossou
+android/app/build.gradle @joemdjossou
+android/app/google-services.json @joemdjossou
+
+# iOS configuration
+ios/ @joemdjossou
+ios/Runner/Info.plist @joemdjossou
+
+# Web configuration
+web/ @joemdjossou
+
+# Assets and data
+assets/ @joemdjossou
+assets/data/hymns.json @joemdjossou
+
+# Tests - ensure quality
+test/ @joemdjossou
+
+# Documentation
+README.md @joemdjossou
+*.md @joemdjossou
+
+# GitHub workflows and configuration
+.github/ @joemdjossou
+
+# Security and sensitive files
+android/app/upload-keystore.jks @joemdjossou
+android/key.properties @joemdjossou
+firebase.json @joemdjossou
+firestore.rules @joemdjossou
