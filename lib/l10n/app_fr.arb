@@ -264,8 +264,8 @@
   "theme": "Thème",
   "customizeAppAppearance": "Personnalisez l'apparence de l'application",
   "clearFilters": "Effacer les filtres",
-  "hymn": "hymne",
-  "hymns": "hymnes",
+  "hymn": "Hymne",
+  "hymns": "Hymnes",
   "hymnNotFoundDescription": "La description de l'hymne que vous recherchez n'a pas été trouvée",
   "back": "Retour",
   "favorite": "Favori",
@@ -314,5 +314,6 @@
   "weeklySabbathReminder": "Rappel Hebdomadaire du Sabbat",
   "weeklySabbathReminderDescription": "Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur",
   "sabbathReminderTitle": "Préparation du Sabbat",
-  "sabbathReminderBody": "C'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !"
+  "sabbathReminderBody": "C'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !",
+  "checkEmailInstructions": "Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe."
 }

@@ -70,6 +70,12 @@ dependencies:
   timezone: ^0.9.4
   # OneSignal for push notifications
   onesignal_flutter: ^5.3.4
+  # Home widget
+  home_widget: ^0.8.0
+  # Native splash screen
+  flutter_native_splash: ^2.4.6
+  # Network connectivity
+  connectivity_plus: ^6.0.5
 
 dev_dependencies:
   # sentry
@@ -115,6 +121,38 @@ flutter_launcher_icons:
 flutter_gen:
   output: lib/gen/
   # line_length: 80
+
+# Native splash screen configuration
+flutter_native_splash:
+  # This package generates native code to customize Flutter's default white native splash screen
+  # with background color and splash image.
+  # Customize the parameters below, and run the following command in the terminal:
+  # dart run flutter_native_splash:create
+  # To restore Flutter's default white splash screen, run the following command in the terminal:
+  # dart run flutter_native_splash:remove
+
+  # Background color with gradient effect (using primary colors)
+  color: "#228B22"
+  color_dark: "#006400"
+
+  # App icon for splash screen
+  image: assets/icon/icon.png
+
+  # Android 12+ configuration
+  android_12:
+    image: assets/icon/icon.png
+    color: "#228B22"
+    icon_background_color: "#FFFFFF"
+    color_dark: "#006400"
+    icon_background_color_dark: "#FFFFFF"
+
+  # Full screen mode
+  fullscreen: true
+
+  # Platform specific settings
+  android: true
+  ios: true
+  web: true
 
 # sentry
 sentry:

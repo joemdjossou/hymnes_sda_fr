@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:hymnes_sda_fr/shared/widgets/custom_toast.dart';
 
 import '../../core/models/hymn.dart';
@@ -56,9 +57,10 @@ class HymnCard extends StatelessWidget {
             color: Colors.transparent,
             child: InkWell(
               onTap: onTap,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.mediumBorderRadius),
               child: Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(AppConstants.mediumPadding),
                 child: Row(
                   children: [
                     // Hymn Number with Modern Design
@@ -75,7 +77,8 @@ class HymnCard extends StatelessWidget {
                                 .withValues(alpha: 0.8),
                           ],
                         ),
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.mediumBorderRadius),
                         boxShadow: [
                           BoxShadow(
                             color: AppColors.cardBackground(context)
@@ -136,13 +139,14 @@ class HymnCard extends StatelessWidget {
                             children: [
                               Container(
                                 padding: const EdgeInsets.symmetric(
-                                  horizontal: 8,
+                                  horizontal: AppConstants.smallPadding,
                                   vertical: 2,
                                 ),
                                 decoration: BoxDecoration(
                                   color:
                                       AppColors.primary.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(
+                                      AppConstants.smallBorderRadius),
                                 ),
                                 child: Text(
                                   hymn.style,
@@ -159,13 +163,14 @@ class HymnCard extends StatelessWidget {
                               if (hymn.theme.isNotEmpty)
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
+                                    horizontal: AppConstants.smallPadding,
                                     vertical: 2,
                                   ),
                                   decoration: BoxDecoration(
                                     color: AppColors.secondary
                                         .withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(
+                                        AppConstants.smallBorderRadius),
                                   ),
                                   child: Text(
                                     hymn.theme,
@@ -205,7 +210,8 @@ class HymnCard extends StatelessWidget {
                                           .withValues(alpha: 0.1)
                                       : AppColors.textSecondary(context)
                                           .withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(12),
+                                  borderRadius: BorderRadius.circular(
+                                      AppConstants.borderRadius),
                                 ),
                                 child: IconButton(
                                   onPressed: () {

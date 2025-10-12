@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../shared/constants/app_colors.dart';
 
@@ -69,20 +70,22 @@ class ModernSliverAppBar extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppColors.surface(context),
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(AppConstants.largeBorderRadius),
+                  bottomRight: Radius.circular(AppConstants.largeBorderRadius),
                 ),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AppConstants.defaultPadding,
+                    vertical: AppConstants.smallPadding),
                 child: Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(AppConstants.smallPadding),
                       decoration: BoxDecoration(
                         gradient: AppColors.primaryGradient(context),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius:
+                            BorderRadius.circular(AppConstants.borderRadius),
                         boxShadow: [
                           BoxShadow(
                             color: AppColors.primary.withValues(alpha: 0.3),
@@ -112,7 +115,8 @@ class ModernSliverAppBar extends StatelessWidget {
                           ),
                           if (style != null)
                             Container(
-                              margin: const EdgeInsets.only(top: 4),
+                              margin: const EdgeInsets.only(
+                                  top: AppConstants.smallPadding - 4),
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 8,
                                 vertical: 2,
@@ -172,13 +176,13 @@ class ModernSliverAppBar extends StatelessWidget {
           ],
         ),
         borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
+          bottomLeft: Radius.circular(AppConstants.largeBorderRadius),
+          bottomRight: Radius.circular(AppConstants.largeBorderRadius),
         ),
       ),
       child: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(AppConstants.largePadding),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -202,10 +206,11 @@ class ModernSliverAppBar extends StatelessWidget {
         Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
               decoration: BoxDecoration(
                 gradient: AppColors.primaryGradient(context),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.mediumBorderRadius),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.primary.withValues(alpha: 0.3),
@@ -255,12 +260,13 @@ class ModernSliverAppBar extends StatelessWidget {
               if (style != null)
                 Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 6,
+                    horizontal: AppConstants.defaultPadding - 4,
+                    vertical: AppConstants.smallPadding - 2,
                   ),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                   ),
                   child: Text(
                     style!,
@@ -273,13 +279,14 @@ class ModernSliverAppBar extends StatelessWidget {
               if (composer != null && composer!.isNotEmpty)
                 Container(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 6,
+                    horizontal: AppConstants.defaultPadding - 4,
+                    vertical: AppConstants.smallPadding - 2,
                   ),
                   decoration: BoxDecoration(
                     color:
                         AppColors.textSecondary(context).withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                   ),
                   child: Text(
                     '${l10n.composer}: $composer',

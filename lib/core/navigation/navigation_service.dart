@@ -64,11 +64,6 @@ class NavigationService {
 
   // ========== Specific Navigation Methods ==========
 
-  /// Navigate to splash screen
-  static void toSplash() {
-    go(AppRoutes.splash);
-  }
-
   /// Navigate to onboarding
   static void toOnboarding() {
     go(AppRoutes.onboarding);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/providers/theme_provider.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -14,7 +15,7 @@ class ThemeSelectionWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(AppConstants.largePadding),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -24,7 +25,7 @@ class ThemeSelectionWidget extends StatelessWidget {
             AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppConstants.largeBorderRadius),
         border: Border.all(
           color: AppColors.primary.withValues(alpha: 0.15),
           width: 1,
@@ -48,10 +49,11 @@ class ThemeSelectionWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.mediumBorderRadius),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.primary.withValues(alpha: 0.3),
@@ -109,18 +111,21 @@ class ThemeSelectionWidget extends StatelessWidget {
                     child: Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.mediumBorderRadius),
                         onTap: () {
                           context.read<ThemeBloc>().add(ChangeTheme(themeMode));
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(20),
+                          padding:
+                              const EdgeInsets.all(AppConstants.mediumPadding),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
                                 : AppColors.surface(context)
                                     .withValues(alpha: 0.5),
-                            borderRadius: BorderRadius.circular(16),
+                            borderRadius: BorderRadius.circular(
+                                AppConstants.mediumBorderRadius),
                             border: Border.all(
                               color: isSelected
                                   ? AppColors.primary.withValues(alpha: 0.4)
@@ -177,10 +182,12 @@ class ThemeSelectionWidget extends StatelessWidget {
                               ),
                               if (isSelected)
                                 Container(
-                                  padding: const EdgeInsets.all(4),
+                                  padding: const EdgeInsets.all(
+                                      AppConstants.smallPadding - 4),
                                   decoration: BoxDecoration(
                                     color: AppColors.primary,
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(
+                                        AppConstants.largeBorderRadius),
                                   ),
                                   child: const Icon(
                                     Icons.check,

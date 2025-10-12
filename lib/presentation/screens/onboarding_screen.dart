@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/navigation/navigation_service.dart';
@@ -216,12 +217,13 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                     onTap: _skipOnboarding,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
+                        horizontal: AppConstants.defaultPadding,
+                        vertical: AppConstants.smallPadding,
                       ),
                       decoration: BoxDecoration(
                         color: Colors.white.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.largeBorderRadius),
                         border: Border.all(
                           color: Colors.white.withValues(alpha: 0.3),
                         ),
@@ -274,7 +276,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   Widget _buildPage(OnboardingData data, Size size) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding:
+          const EdgeInsets.symmetric(horizontal: AppConstants.defaultPadding),
       child: Column(
         children: [
           const Spacer(flex: 2),

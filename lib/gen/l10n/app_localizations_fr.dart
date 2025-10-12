@@ -84,7 +84,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get welcome => 'Bienvenue';
 
   @override
-  String get hymns => 'hymnes';
+  String get hymns => 'Hymnes';
 
   @override
   String get search => 'Recherche';
@@ -554,7 +554,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get customizeAppAppearance => 'Personnalisez l\'apparence de l\'application';
 
   @override
-  String get hymn => 'hymne';
+  String get hymn => 'Hymne';
 
   @override
   String get hymnNotFoundDescription => 'La description de l\'hymne que vous recherchez n\'a pas été trouvée';
@@ -683,4 +683,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get sabbathReminderBody => 'C\'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !';
+
+  @override
+  String get checkEmailInstructions => 'Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe.';
 }

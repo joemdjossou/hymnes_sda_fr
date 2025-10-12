@@ -683,4 +683,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sabbathReminderBody => 'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
+
+  @override
+  String get checkEmailInstructions => 'Please check your email and follow the instructions to reset your password.';
 }

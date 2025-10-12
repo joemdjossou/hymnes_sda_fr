@@ -1,21 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
-import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/core/services/home_widget_service.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_colors.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/error_logging_service.dart';
 import '../../core/services/hymn_data_service.dart';
 import '../../core/utils/global_error_handler.dart';
-import '../../features/auth/bloc/auth_bloc.dart';
-import '../../features/favorites/bloc/favorites_bloc.dart';
-import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/shimmer_loading.dart';
+import '../widgets/home_widgets/collapsed_app_bar.dart';
+import '../widgets/home_widgets/empty_state_widget.dart';
 import '../widgets/home_widgets/glass_navigation_bar.dart';
+import '../widgets/home_widgets/hero_section.dart';
+import '../widgets/home_widgets/search_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,6 +50,10 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     _loadHymns();
     _searchController.addListener(_filterHymns);
     _scrollController.addListener(_onScroll);
+    // Initialize home widget service
+    HomeWidgetService.initialize();
+    // Start periodic featured hymn updates
+    _startPeriodicFeaturedHymnUpdate();
   }
 
   void _initializeAnimations() {
@@ -97,6 +104,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         _filteredHymns = hymns;
         _isLoading = false;
       });
+
+      // Update home widget with hymns count and featured hymn
+      await HomeWidgetService.updateHymnsCount(hymns.length);
+
+      // Set a random featured hymn
+      await HomeWidgetService.updateRandomFeaturedHymn(hymns);
 
       await _errorLogger.logInfo(
         'HomeScreen',
@@ -161,6 +174,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
   }
 
+  void _startPeriodicFeaturedHymnUpdate() {
+    // Update featured hymn every 30 minutes
+    Timer.periodic(const Duration(minutes: 30), (timer) {
+      if (mounted && _hymns.isNotEmpty) {
+        HomeWidgetService.updateRandomFeaturedHymn(_hymns);
+      }
+    });
+  }
+
   void _onHymnTap(Hymn hymn) {
     try {
       _errorLogger.logDebug(
@@ -199,11 +221,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-
-    // UpgradeAlert automatically checks for app updates and shows a dialog
-    // when a newer version is available in the app store
     return UpgradeAlert(
       child: Scaffold(
         backgroundColor: AppColors.background(context),
@@ -212,536 +229,44 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             CustomScrollView(
               controller: _scrollController,
               slivers: [
-                // Modern App Bar with Hero Section
-                SliverAppBar(
-                  expandedHeight: 200,
-                  floating: false,
-                  pinned: true,
-                  backgroundColor: _showCollapsedAppBar
-                      ? AppColors.surface(context)
-                      : Colors.transparent,
-                  surfaceTintColor: _showCollapsedAppBar
-                      ? AppColors.surface(context)
-                      : Colors.transparent,
-                  elevation: 0,
-                  automaticallyImplyLeading: false,
-                  systemOverlayStyle: SystemUiOverlayStyle(
-                    statusBarColor: Colors.transparent,
-                    statusBarIconBrightness:
-                        Theme.of(context).brightness == Brightness.dark
-                            ? Brightness.light
-                            : Brightness.dark,
-                    statusBarBrightness:
-                        Theme.of(context).brightness == Brightness.dark
-                            ? Brightness.dark
-                            : Brightness.light,
-                  ),
-                  title: _showCollapsedAppBar
-                      ? Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                gradient: AppColors.primaryGradient(context),
-                                borderRadius: BorderRadius.circular(12),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.primary
-                                        .withValues(alpha: 0.3),
-                                    blurRadius: 8,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                              ),
-                              child: Icon(
-                                Icons.music_note_rounded,
-                                color: Colors.white,
-                                size: 20,
-                              ),
-                            ),
-                            const Gap(12),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    l10n.appTitle,
-                                    style: theme.textTheme.titleLarge?.copyWith(
-                                      color: AppColors.textPrimary(context),
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    '${_hymns.length} ${l10n.hymns.toLowerCase()}',
-                                    style: theme.textTheme.bodySmall?.copyWith(
-                                      color: AppColors.textSecondary(context),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        )
-                      : null,
-                  actions: _showCollapsedAppBar
-                      ? [
-                          BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, authState) {
-                              if (authState is Authenticated) {
-                                return PopupMenuButton<String>(
-                                  icon: Container(
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                      gradient:
-                                          AppColors.primaryGradient(context),
-                                      borderRadius: BorderRadius.circular(20),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: AppColors.primary
-                                              .withValues(alpha: 0.3),
-                                          blurRadius: 8,
-                                          offset: const Offset(0, 2),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Text(
-                                      authState.user.initials,
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ),
-                                  onSelected: (value) {
-                                    if (value == 'signout') {
-                                      context
-                                          .read<AuthBloc>()
-                                          .add(SignOutRequested());
-                                    }
-                                  },
-                                  itemBuilder: (context) => [
-                                    PopupMenuItem(
-                                      value: 'signout',
-                                      child: Row(
-                                        children: [
-                                          const Icon(Icons.logout, size: 20),
-                                          const Gap(8),
-                                          Text(l10n.signOut),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              } else {
-                                return Container(
-                                  decoration: BoxDecoration(
-                                    color: AppColors.primary
-                                        .withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: AppColors.primary
-                                          .withValues(alpha: 0.3),
-                                    ),
-                                  ),
-                                  child: IconButton(
-                                    icon: const Icon(Icons.login),
-                                    onPressed: () {
-                                      NavigationService.toLogin();
-                                    },
-                                  ),
-                                );
-                              }
-                            },
+                // App Bar with Hero Section
+                _showCollapsedAppBar
+                    ? CollapsedAppBar(hymnsCount: _hymns.length)
+                    : SliverAppBar(
+                        expandedHeight: 200,
+                        floating: false,
+                        pinned: true,
+                        backgroundColor: Colors.transparent,
+                        surfaceTintColor: Colors.transparent,
+                        elevation: 0,
+                        automaticallyImplyLeading: false,
+                        systemOverlayStyle: SystemUiOverlayStyle(
+                          statusBarColor: Colors.transparent,
+                          statusBarIconBrightness:
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? Brightness.light
+                                  : Brightness.dark,
+                          statusBarBrightness:
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? Brightness.dark
+                                  : Brightness.light,
+                        ),
+                        flexibleSpace: FlexibleSpaceBar(
+                          background: HeroSection(
+                            fadeAnimation: _heroFadeAnimation,
+                            slideAnimation: _heroSlideAnimation,
+                            hymnsCount: _hymns.length,
+                            isLoading: _isLoading,
                           ),
-                        ]
-                      : null,
-                  flexibleSpace: FlexibleSpaceBar(
-                    background: AnimatedBuilder(
-                      animation: _heroAnimationController,
-                      builder: (context, child) {
-                        return FadeTransition(
-                          opacity: _heroFadeAnimation,
-                          child: SlideTransition(
-                            position: _heroSlideAnimation,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    AppColors.primary.withValues(alpha: 0.1),
-                                    AppColors.secondary.withValues(alpha: 0.05),
-                                    AppColors.surface(context),
-                                  ],
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20),
-                                ),
-                              ),
-                              child: SafeArea(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      // Welcome Section
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  l10n.welcome,
-                                                  style: theme
-                                                      .textTheme.headlineSmall
-                                                      ?.copyWith(
-                                                    color:
-                                                        AppColors.textPrimary(
-                                                            context),
-                                                    fontWeight: FontWeight.w300,
-                                                  ),
-                                                ),
-                                                const Gap(4),
-                                                BlocBuilder<AuthBloc,
-                                                    AuthState>(
-                                                  builder: (context, state) {
-                                                    String title =
-                                                        l10n.appTitle;
-                                                    if (state
-                                                        is Authenticated) {
-                                                      title = state.user
-                                                          .displayNameOrEmail;
-                                                    }
-                                                    return Text(
-                                                      title,
-                                                      style: theme.textTheme
-                                                          .headlineMedium
-                                                          ?.copyWith(
-                                                        color:
-                                                            AppColors.primary,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          // User Avatar
-                                          BlocBuilder<AuthBloc, AuthState>(
-                                            builder: (context, state) {
-                                              if (state is Authenticated) {
-                                                return PopupMenuButton<String>(
-                                                  icon: Container(
-                                                    padding:
-                                                        const EdgeInsets.all(8),
-                                                    decoration: BoxDecoration(
-                                                      gradient: AppColors
-                                                          .primaryGradient(
-                                                              context),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                      boxShadow: [
-                                                        BoxShadow(
-                                                          color: AppColors
-                                                              .primary
-                                                              .withValues(
-                                                                  alpha: 0.3),
-                                                          blurRadius: 8,
-                                                          offset: const Offset(
-                                                              0, 2),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    child: Text(
-                                                      state.user.initials,
-                                                      style: const TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontSize: 14,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  onSelected: (value) {
-                                                    if (value == 'signout') {
-                                                      context
-                                                          .read<AuthBloc>()
-                                                          .add(
-                                                              SignOutRequested());
-                                                    }
-                                                  },
-                                                  itemBuilder: (context) => [
-                                                    PopupMenuItem(
-                                                      value: 'signout',
-                                                      child: Row(
-                                                        children: [
-                                                          const Icon(
-                                                              Icons.logout,
-                                                              size: 20),
-                                                          const Gap(8),
-                                                          Text(l10n.signOut),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                  ],
-                                                );
-                                              } else {
-                                                return Container(
-                                                  decoration: BoxDecoration(
-                                                    color: AppColors.primary
-                                                        .withValues(alpha: 0.1),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20),
-                                                    border: Border.all(
-                                                      color: AppColors.primary
-                                                          .withValues(
-                                                              alpha: 0.3),
-                                                    ),
-                                                  ),
-                                                  child: IconButton(
-                                                    icon:
-                                                        const Icon(Icons.login),
-                                                    onPressed: () {
-                                                      NavigationService
-                                                          .toLogin();
-                                                    },
-                                                  ),
-                                                );
-                                              }
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                      const Gap(16),
-                                      // Quick Stats
-                                      Row(
-                                        children: [
-                                          _isLoading
-                                              ? const ShimmerStatCard()
-                                              : _buildStatCard(
-                                                  icon: Icons.music_note,
-                                                  value:
-                                                      _hymns.length.toString(),
-                                                  label: l10n.hymns,
-                                                  context: context,
-                                                ),
-                                          const Gap(12),
-                                          BlocBuilder<FavoritesBloc,
-                                              FavoritesState>(
-                                            builder: (context, favoritesState) {
-                                              final favoritesCount =
-                                                  favoritesState
-                                                          is FavoritesLoaded
-                                                      ? favoritesState
-                                                          .favorites.length
-                                                      : 0;
-                                              return _buildStatCard(
-                                                icon: Icons.favorite,
-                                                value:
-                                                    favoritesCount.toString(),
-                                                label: l10n.favorites,
-                                                context: context,
-                                              );
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
+                        ),
+                      ),
 
                 // Search Section
                 SliverToBoxAdapter(
-                  child: AnimatedBuilder(
-                    animation: _searchAnimationController,
-                    builder: (context, child) {
-                      return FadeTransition(
-                        opacity: _searchFadeAnimation,
-                        child: Container(
-                          padding: const EdgeInsets.all(20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // Modern Search Bar
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(28),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.bottomRight,
-                                    colors: [
-                                      AppColors.cardBackground(context),
-                                      AppColors.cardBackground(context)
-                                          .withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  border: Border.all(
-                                    color: AppColors.border(context)
-                                        .withValues(alpha: 0.3),
-                                    width: 1,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: AppColors.primary
-                                          .withValues(alpha: 0.08),
-                                      blurRadius: 20,
-                                      offset: const Offset(0, 8),
-                                    ),
-                                    BoxShadow(
-                                      color: AppColors.textPrimary(context)
-                                          .withValues(alpha: 0.05),
-                                      blurRadius: 10,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
-                                ),
-                                child: TextField(
-                                  controller: _searchController,
-                                  style: TextStyle(
-                                    color: AppColors.textPrimary(context),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  decoration: InputDecoration(
-                                    hintText: l10n.searchHymns,
-                                    hintStyle: TextStyle(
-                                      color: AppColors.textHint(context),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 16,
-                                    ),
-                                    prefixIcon: Container(
-                                      margin: const EdgeInsets.all(8),
-                                      padding: const EdgeInsets.all(8),
-                                      decoration: BoxDecoration(
-                                        gradient:
-                                            AppColors.primaryGradient(context),
-                                        borderRadius: BorderRadius.circular(20),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: AppColors.primary
-                                                .withValues(alpha: 0.3),
-                                            blurRadius: 8,
-                                            offset: const Offset(0, 2),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.search_rounded,
-                                        color: Colors.white,
-                                        size: 20,
-                                      ),
-                                    ),
-                                    suffixIcon: _searchController
-                                            .text.isNotEmpty
-                                        ? Container(
-                                            margin: const EdgeInsets.all(8),
-                                            decoration: BoxDecoration(
-                                              color: AppColors.textHint(context)
-                                                  .withValues(alpha: 0.1),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            ),
-                                            child: IconButton(
-                                              icon: Icon(
-                                                Icons.clear_rounded,
-                                                color:
-                                                    AppColors.textHint(context),
-                                                size: 20,
-                                              ),
-                                              onPressed: () {
-                                                _searchController.clear();
-                                              },
-                                            ),
-                                          )
-                                        : null,
-                                    filled: true,
-                                    fillColor: Colors.transparent,
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(28),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(28),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(28),
-                                      borderSide: BorderSide(
-                                        color: AppColors.primary
-                                            .withValues(alpha: 0.5),
-                                        width: 2,
-                                      ),
-                                    ),
-                                    contentPadding: const EdgeInsets.symmetric(
-                                      horizontal: 24,
-                                      vertical: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-
-                              const Gap(16),
-
-                              // Results Header
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  if (_searchController.text.isNotEmpty)
-                                    Text(
-                                      l10n.hymnsFound(_filteredHymns.length),
-                                      style:
-                                          theme.textTheme.titleMedium?.copyWith(
-                                        color: AppColors.textSecondary(context),
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  if (_searchController.text.isNotEmpty)
-                                    TextButton.icon(
-                                      onPressed: () {
-                                        _searchController.clear();
-                                      },
-                                      icon: Icon(
-                                        Icons.clear_all_rounded,
-                                        size: 16,
-                                        color: AppColors.primary,
-                                      ),
-                                      label: Text(
-                                        l10n.clear,
-                                        style: TextStyle(
-                                          color: AppColors.primary,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
+                  child: SearchSection(
+                    searchController: _searchController,
+                    filteredHymnsCount: _filteredHymns.length,
+                    fadeAnimation: _searchFadeAnimation,
                   ),
                 ),
 
@@ -751,16 +276,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
                         sliver: SliverList(
                           delegate: SliverChildBuilderDelegate(
-                            (context, index) {
-                              return const ShimmerHymnCard();
-                            },
-                            childCount: 6, // Show 6 shimmer cards
+                            (context, index) => const ShimmerHymnCard(),
+                            childCount: 6,
                           ),
                         ),
                       )
                     : _filteredHymns.isEmpty
                         ? SliverFillRemaining(
-                            child: _buildEmptyState(l10n, theme),
+                            child: EmptyStateWidget(
+                              searchQuery: _searchController.text,
+                              onClearSearch: () => _searchController.clear(),
+                            ),
                           )
                         : SliverPadding(
                             padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
@@ -769,7 +295,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                 (context, index) {
                                   final hymn = _filteredHymns[index];
                                   return Padding(
-                                    padding: const EdgeInsets.only(bottom: 16),
+                                    padding: const EdgeInsets.only(
+                                        bottom: AppConstants.defaultPadding),
                                     child: HymnCard(
                                       hymn: hymn,
                                       onTap: () => _onHymnTap(hymn),
@@ -782,142 +309,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                           ),
               ],
             ),
-            // Glass Navigation Bar
             const GlassNavigationBar(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildStatCard({
-    required IconData icon,
-    required String value,
-    required String label,
-    required BuildContext context,
-  }) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: AppColors.cardBackground(context),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: AppColors.border(context).withValues(alpha: 0.5),
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.textPrimary(context).withValues(alpha: 0.05),
-              blurRadius: 8,
-              offset: const Offset(0, 2),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Icon(
-                icon,
-                color: AppColors.primary,
-                size: 20,
-              ),
-            ),
-            const Gap(12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    value,
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: AppColors.textPrimary(context),
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                  Text(
-                    label,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textSecondary(context),
-                        ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildEmptyState(AppLocalizations l10n, ThemeData theme) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(40),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(24),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: Icon(
-                _searchController.text.isEmpty
-                    ? Icons.music_note_rounded
-                    : Icons.search_off_rounded,
-                size: 64,
-                color: AppColors.primary.withValues(alpha: 0.6),
-              ),
-            ),
-            const Gap(24),
-            Text(
-              _searchController.text.isEmpty
-                  ? l10n.noHymnsAvailable
-                  : l10n.noHymnsFound,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                color: AppColors.textPrimary(context),
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Gap(8),
-            Text(
-              _searchController.text.isEmpty
-                  ? l10n.noHymnsAvailableAtMoment
-                  : l10n.tryModifyingSearchCriteria,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                color: AppColors.textSecondary(context),
-              ),
-              textAlign: TextAlign.center,
-            ),
-            if (_searchController.text.isNotEmpty) ...[
-              const Gap(24),
-              ElevatedButton.icon(
-                onPressed: () {
-                  _searchController.clear();
-                },
-                icon: const Icon(Icons.refresh_rounded),
-                label: Text(l10n.clear),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 12,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  elevation: 0,
-                ),
-              ),
-            ],
           ],
         ),
       ),

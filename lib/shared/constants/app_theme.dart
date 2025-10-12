@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import 'app_colors.dart';
 
@@ -50,11 +51,11 @@ class AppTheme {
           foregroundColor: Colors.white,
           elevation: 2,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           ),
           padding: const EdgeInsets.symmetric(
-            horizontal: 24,
-            vertical: 12,
+            horizontal: AppConstants.largePadding,
+            vertical: AppConstants.defaultPadding - 4,
           ),
         ),
       ),
@@ -64,7 +65,7 @@ class AppTheme {
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           ),
         ),
       ),
@@ -72,22 +73,22 @@ class AppTheme {
       // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.lightTextHint),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.lightTextHint),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.primary, width: 2),
         ),
         filled: true,
         fillColor: AppColors.lightSurface,
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+          horizontal: AppConstants.defaultPadding,
+          vertical: AppConstants.defaultPadding - 4,
         ),
       ),
 
@@ -235,8 +236,8 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
         ),
         margin: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8,
+          horizontal: AppConstants.defaultPadding,
+          vertical: AppConstants.smallPadding,
         ),
       ),
 
@@ -247,11 +248,11 @@ class AppTheme {
           foregroundColor: Colors.white,
           elevation: 2,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           ),
           padding: const EdgeInsets.symmetric(
-            horizontal: 24,
-            vertical: 12,
+            horizontal: AppConstants.largePadding,
+            vertical: AppConstants.defaultPadding - 4,
           ),
         ),
       ),
@@ -261,7 +262,7 @@ class AppTheme {
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           ),
         ),
       ),
@@ -269,22 +270,22 @@ class AppTheme {
       // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.darkTextHint),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.darkTextHint),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           borderSide: const BorderSide(color: AppColors.primary, width: 2),
         ),
         filled: true,
         fillColor: AppColors.darkSurface,
         contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+          horizontal: AppConstants.defaultPadding,
+          vertical: AppConstants.defaultPadding - 4,
         ),
       ),
 
@@ -390,7 +391,7 @@ class AppTheme {
       popupMenuTheme: PopupMenuThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(
-            8,
+            AppConstants.smallBorderRadius,
           ),
         ),
       ),

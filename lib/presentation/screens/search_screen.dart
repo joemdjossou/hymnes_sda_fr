@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
@@ -196,10 +197,12 @@ class _SearchScreenState extends State<SearchScreen>
                           IconButton(
                             onPressed: _clearFilters,
                             icon: Container(
-                              padding: const EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(
+                                  AppConstants.smallPadding),
                               decoration: BoxDecoration(
                                 color: AppColors.error.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(
+                                    AppConstants.borderRadius),
                               ),
                               child: Icon(
                                 Icons.clear_all_rounded,
@@ -222,13 +225,14 @@ class _SearchScreenState extends State<SearchScreen>
                     return FadeTransition(
                       opacity: _searchFadeAnimation,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: AppConstants.largePadding),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: AppConstants.largePadding),
                               child: Column(
                                 children: [
                                   // Modern Search Bar
@@ -288,7 +292,11 @@ class _SearchScreenState extends State<SearchScreen>
               // Results Section
               _isLoading
                   ? SliverPadding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                      padding: const EdgeInsets.fromLTRB(
+                          AppConstants.largePadding,
+                          0,
+                          AppConstants.largePadding,
+                          100),
                       sliver: SliverList(
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
@@ -305,13 +313,18 @@ class _SearchScreenState extends State<SearchScreen>
                           ),
                         )
                       : SliverPadding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 100),
+                          padding: const EdgeInsets.fromLTRB(
+                              AppConstants.largePadding,
+                              0,
+                              AppConstants.largePadding,
+                              100),
                           sliver: SliverList(
                             delegate: SliverChildBuilderDelegate(
                               (context, index) {
                                 final hymn = _filteredHymns[index];
                                 return Padding(
-                                  padding: const EdgeInsets.only(bottom: 16),
+                                  padding: const EdgeInsets.only(
+                                      bottom: AppConstants.defaultPadding),
                                   child: HymnCard(
                                     hymn: hymn,
                                     onTap: () => _onHymnTap(hymn),

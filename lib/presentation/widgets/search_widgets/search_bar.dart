@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -59,11 +60,12 @@ class CustomSearchBar extends StatelessWidget {
             fontSize: 16,
           ),
           prefixIcon: Container(
-            margin: const EdgeInsets.all(8),
-            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.all(AppConstants.smallPadding),
+            padding: const EdgeInsets.all(AppConstants.smallPadding),
             decoration: BoxDecoration(
               gradient: AppColors.primaryGradient(context),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.largeBorderRadius),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.primary.withValues(alpha: 0.3),
@@ -83,7 +85,8 @@ class CustomSearchBar extends StatelessWidget {
                   margin: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: AppColors.textHint(context).withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.largeBorderRadius),
                   ),
                   child: IconButton(
                     icon: Icon(
@@ -98,23 +101,26 @@ class CustomSearchBar extends StatelessWidget {
           filled: true,
           fillColor: Colors.transparent,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28),
+            borderRadius:
+                BorderRadius.circular(AppConstants.extraLargeBorderRadius),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28),
+            borderRadius:
+                BorderRadius.circular(AppConstants.extraLargeBorderRadius),
             borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(28),
+            borderRadius:
+                BorderRadius.circular(AppConstants.extraLargeBorderRadius),
             borderSide: BorderSide(
               color: AppColors.primary.withValues(alpha: 0.5),
               width: 2,
             ),
           ),
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 24,
-            vertical: 20,
+            horizontal: AppConstants.largePadding,
+            vertical: AppConstants.mediumPadding,
           ),
         ),
       ),

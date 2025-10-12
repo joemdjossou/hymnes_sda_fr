@@ -4,7 +4,6 @@ class AppRoutes {
   AppRoutes._();
 
   // Route paths
-  static const String splash = '/splash';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String signup = '/signup';
@@ -16,7 +15,6 @@ class AppRoutes {
   static const String hymnDetail = 'hymn/:hymnNumber';
 
   // Route names (for named navigation)
-  static const String splashName = 'splash';
   static const String onboardingName = 'onboarding';
   static const String loginName = 'login';
   static const String signupName = 'signup';

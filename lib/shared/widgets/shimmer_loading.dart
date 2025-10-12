@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../constants/app_colors.dart';
@@ -40,7 +41,7 @@ class ShimmerHymnCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(AppConstants.mediumPadding),
         child: Row(
           children: [
             // Hymn Number Shimmer
@@ -155,10 +156,10 @@ class ShimmerStatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppConstants.defaultPadding),
         decoration: BoxDecoration(
           color: AppColors.cardBackground(context),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
           border: Border.all(
             color: AppColors.border(context).withValues(alpha: 0.5),
           ),
@@ -171,7 +172,8 @@ class ShimmerStatCard extends StatelessWidget {
                 height: 36,
                 decoration: BoxDecoration(
                   color: AppColors.textSecondary(context),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.smallBorderRadius),
                 ),
               ),
             ),

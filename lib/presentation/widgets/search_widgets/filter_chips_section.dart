@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/models/hymn.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -106,7 +107,7 @@ class FilterChipsSection extends StatelessWidget {
   }) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppConstants.largeBorderRadius),
         border: Border.all(
           color: value != null ? AppColors.primary : AppColors.border(context),
         ),
@@ -125,9 +126,11 @@ class FilterChipsSection extends StatelessWidget {
             options: options,
             onChanged: onChanged,
           ),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(AppConstants.largeBorderRadius),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppConstants.defaultPadding,
+                vertical: AppConstants.smallPadding),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/navigation/navigation_service.dart';
 import '../../core/utils/error_handler.dart';
@@ -101,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SafeArea(
           bottom: false,
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(AppConstants.largePadding),
             child: Form(
               key: _formKey,
               child: Column(
@@ -197,7 +198,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Expanded(child: Divider(color: theme.dividerColor)),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: AppConstants.defaultPadding),
                         child: Text(
                           l10n.or,
                           style: theme.textTheme.bodySmall?.copyWith(

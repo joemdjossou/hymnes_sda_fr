@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../features/audio/bloc/audio_bloc.dart';
 import '../constants/app_colors.dart';
@@ -118,12 +119,12 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
           final isCurrentHymn = currentHymnNumber == widget.hymnNumber;
 
           return Container(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(AppConstants.defaultPadding),
             decoration: BoxDecoration(
               color: isCurrentHymn
                   ? AppColors.primary.withValues(alpha: 0.1)
                   : AppColors.cardBackground(context),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
               border: Border.all(
                 color: isCurrentHymn
                     ? AppColors.primary
@@ -177,10 +178,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
 
   Widget _buildLoadingIndicator() {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
       decoration: BoxDecoration(
         color: AppColors.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
         border: Border.all(color: AppColors.primary),
       ),
       child: Row(
@@ -191,7 +192,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
               height: 20,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.smallBorderRadius + 2),
               ),
             ),
           ),
@@ -212,10 +214,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
 
   Widget _buildRetryingIndicator(int retryCount) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
       decoration: BoxDecoration(
         color: AppColors.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
         border: Border.all(color: AppColors.primary),
       ),
       child: Row(
@@ -226,7 +228,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
               height: 20,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.smallBorderRadius + 2),
               ),
             ),
           ),
@@ -247,10 +250,10 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
 
   Widget _buildErrorDisplay(String lastError) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
       decoration: BoxDecoration(
         color: AppColors.error.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
         border: Border.all(color: AppColors.error),
       ),
       child: Column(
@@ -295,7 +298,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 8),
+                  padding:
+                      EdgeInsets.symmetric(vertical: AppConstants.smallPadding),
                 ),
               ),
             ),
@@ -577,11 +581,13 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        padding: const EdgeInsets.symmetric(
+            vertical: AppConstants.smallPadding,
+            horizontal: AppConstants.defaultPadding - 4),
         decoration: BoxDecoration(
           color:
               isActive ? AppColors.primary : AppColors.cardBackground(context),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(AppConstants.smallBorderRadius),
           border: Border.all(
             color: isActive ? AppColors.primary : AppColors.border(context),
           ),
@@ -596,7 +602,8 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
                   height: 20,
                   decoration: BoxDecoration(
                     color: isActive ? Colors.white : AppColors.primary,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                        AppConstants.smallBorderRadius + 2),
                   ),
                 ),
               )

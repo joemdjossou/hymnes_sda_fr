@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../shared/constants/app_colors.dart';
@@ -117,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen>
 
               // Settings Content
               SliverPadding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(AppConstants.largePadding),
                 sliver: SliverList(
                   delegate: SliverChildListDelegate([
                     const AccountSectionWidget(),

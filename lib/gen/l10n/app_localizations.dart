@@ -1402,6 +1402,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!'**
   String get sabbathReminderBody;
+
+  /// No description provided for @checkEmailInstructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your email and follow the instructions to reset your password.'**
+  String get checkEmailInstructions;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

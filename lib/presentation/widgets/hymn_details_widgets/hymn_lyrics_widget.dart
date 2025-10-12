@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/models/hymn.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -22,10 +23,10 @@ class HymnLyricsWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(AppConstants.defaultPadding),
       decoration: BoxDecoration(
         color: AppColors.cardBackground(context),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         border: Border.all(color: AppColors.border(context)),
       ),
       child: Column(
@@ -51,10 +52,11 @@ class HymnLyricsWidget extends StatelessWidget {
               GestureDetector(
                 onTap: () => _copyLyrics(context),
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(AppConstants.smallPadding),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.smallBorderRadius),
                   ),
                   child: const Icon(
                     Icons.copy,

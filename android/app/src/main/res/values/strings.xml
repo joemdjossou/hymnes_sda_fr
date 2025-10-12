@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appwidget_text">Hymnes</string>
+    <string name="add_widget">Add Hymnes Widget</string>
+    <string name="app_widget_description">Quick access to your favorite hymns and statistics</string>
+    <string name="hymns_count">Hymns</string>
+    <string name="favorites_count">Favorites</string>
+    <string name="search_action">Search</string>
+    <string name="favorites_action">Favorites</string>
+</resources>

@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import '../../../core/models/hymn.dart';
 import '../../../core/repositories/hybrid_favorites_repository.dart';
 import '../../../core/repositories/i_hymn_repository.dart';
+import '../../../core/services/home_widget_service.dart';
 import '../../../core/services/posthog_service.dart';
 import '../models/favorite_hymn.dart';
 import '../models/favorites_sort_option.dart';
@@ -201,6 +202,9 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
       // Get sync status
       final syncStatus = await _hybridRepository.getSyncStatus();
 
+      // Update home widget with favorites count
+      await HomeWidgetService.updateFavoritesCount(sortedFavorites.length);
+
       // Emit loaded state immediately with local data
       emit(FavoritesLoaded(
         favorites: sortedFavorites,
@@ -256,6 +260,9 @@ class FavoritesBloc extends Bloc<FavoritesEvent, FavoritesState> {
 
         // Get updated sync status
         final syncStatus = await _hybridRepository.getSyncStatus();
+
+        // Update home widget with new favorites count
+        await HomeWidgetService.updateFavoritesCount(updatedFavorites.length);
 
         emit(currentState.copyWith(
           favorites: updatedFavorites,

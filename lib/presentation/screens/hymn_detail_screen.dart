@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/repositories/hymn_repository.dart';
 import '../../features/audio/bloc/audio_bloc.dart';
@@ -147,12 +148,12 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
 
         return IconButton(
           icon: Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(AppConstants.smallPadding),
             decoration: BoxDecoration(
               color: isFavorite
                   ? AppColors.primary.withValues(alpha: 0.1)
                   : AppColors.textSecondary(context).withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
             ),
             child: Icon(
               isFavorite
@@ -219,11 +220,13 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                         showCollapsedAppBar: _showCollapsedAppBar,
                         leading: IconButton(
                           icon: Container(
-                            padding: const EdgeInsets.all(8),
+                            padding:
+                                const EdgeInsets.all(AppConstants.smallPadding),
                             decoration: BoxDecoration(
                               color: AppColors.textSecondary(context)
                                   .withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(
+                                  AppConstants.borderRadius),
                             ),
                             child: Icon(
                               Icons.arrow_back_rounded,
@@ -243,7 +246,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
 
                       // Content Section
                       SliverPadding(
-                        padding: const EdgeInsets.all(20),
+                        padding:
+                            const EdgeInsets.all(AppConstants.largePadding),
                         sliver: SliverList(
                           delegate: SliverChildListDelegate([
                             // Audio Player
@@ -301,7 +305,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                   AppColors.secondary.withValues(alpha: 0.05),
                 ],
               ),
-              borderRadius: BorderRadius.circular(24),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.largeBorderRadius),
             ),
             child: const CircularProgressIndicator(
               color: AppColors.primary,
@@ -325,12 +330,12 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   Widget _buildErrorState(AppLocalizations l10n) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(AppConstants.extraLargePadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(AppConstants.largePadding),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -340,7 +345,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                     AppColors.secondary.withValues(alpha: 0.05),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.largeBorderRadius),
               ),
               child: Icon(
                 Icons.error_outline_rounded,
@@ -378,7 +384,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
                   vertical: 12,
                 ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.borderRadius),
                 ),
               ),
             ),

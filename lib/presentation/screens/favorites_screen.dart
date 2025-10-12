@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:logger/logger.dart';
 
 import '../../core/models/hymn.dart';
@@ -155,7 +156,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                           delegate: SliverChildBuilderDelegate(
                             (context, index) {
                               return const Padding(
-                                padding: EdgeInsets.only(bottom: 16),
+                                padding: EdgeInsets.only(
+                                    bottom: AppConstants.defaultPadding),
                                 child: ShimmerHymnCard(),
                               );
                             },
@@ -180,8 +182,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                                   (context, index) {
                                     final hymn = state.favorites[index];
                                     return Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 16),
+                                      padding: const EdgeInsets.only(
+                                          bottom: AppConstants.defaultPadding),
                                       child: HymnCard(
                                         hymn: hymn,
                                         onTap: () => _onHymnTap(context, hymn),
@@ -220,12 +222,12 @@ class _FavoritesScreenState extends State<FavoritesScreen>
       BuildContext context, AppLocalizations l10n, String message) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(AppConstants.extraLargePadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(AppConstants.largePadding),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -235,7 +237,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                     AppColors.secondary.withValues(alpha: 0.05),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.largeBorderRadius),
               ),
               child: Icon(
                 Icons.error_outline_rounded,
@@ -276,7 +279,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                   vertical: 12,
                 ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.borderRadius),
                 ),
               ),
             ),
@@ -289,12 +293,12 @@ class _FavoritesScreenState extends State<FavoritesScreen>
   Widget _buildEmptyState(BuildContext context, AppLocalizations l10n) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(AppConstants.extraLargePadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(AppConstants.largePadding),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -304,7 +308,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                     AppColors.secondary.withValues(alpha: 0.05),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(20),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.largeBorderRadius),
               ),
               child: Icon(
                 Icons.favorite_border_rounded,
@@ -333,7 +338,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
             Container(
               decoration: BoxDecoration(
                 gradient: AppColors.primaryGradient(context),
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(AppConstants.borderRadius),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.primary.withValues(alpha: 0.3),
@@ -358,7 +363,8 @@ class _FavoritesScreenState extends State<FavoritesScreen>
                     vertical: 12,
                   ),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                   ),
                 ),
               ),

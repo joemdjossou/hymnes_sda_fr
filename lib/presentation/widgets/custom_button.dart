@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../shared/constants/app_colors.dart';
 
@@ -82,7 +83,8 @@ class CustomButton extends StatelessWidget {
           height: height ?? 52,
           decoration: BoxDecoration(
             gradient: AppColors.primaryGradient(context),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             boxShadow: [
               BoxShadow(
                 color: primaryColor.withValues(alpha: 0.3),
@@ -99,12 +101,13 @@ class CustomButton extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.mediumBorderRadius),
               onTap: isLoading ? null : onPressed,
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
+                  horizontal: AppConstants.largeBorderRadius,
+                  vertical: AppConstants.defaultPadding,
                 ),
                 child: buttonChild,
               ),
@@ -118,7 +121,8 @@ class CustomButton extends StatelessWidget {
           height: height ?? 52,
           decoration: BoxDecoration(
             color: primaryColor.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             border: Border.all(
               color: primaryColor.withValues(alpha: 0.3),
               width: 1.5,
@@ -134,12 +138,13 @@ class CustomButton extends StatelessWidget {
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.mediumBorderRadius),
               onTap: isLoading ? null : onPressed,
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
+                  horizontal: AppConstants.defaultPadding,
+                  vertical: AppConstants.defaultPadding,
                 ),
                 child: buttonChild,
               ),
@@ -153,17 +158,19 @@ class CustomButton extends StatelessWidget {
           height: height ?? 52,
           decoration: BoxDecoration(
             color: primaryColor.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
           ),
           child: Material(
             color: Colors.transparent,
             child: InkWell(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.mediumBorderRadius),
               onTap: isLoading ? null : onPressed,
               child: Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
+                  horizontal: AppConstants.defaultPadding,
+                  vertical: AppConstants.defaultPadding,
                 ),
                 child: buttonChild,
               ),

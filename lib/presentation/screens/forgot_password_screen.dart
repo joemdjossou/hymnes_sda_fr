@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/utils/error_handler.dart';
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -85,7 +86,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         ),
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.all(AppConstants.largePadding),
             child: Form(
               key: _formKey,
               child: Column(
@@ -147,10 +148,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ] else ...[
                     // Success State
                     Container(
-                      padding: const EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(AppConstants.largePadding),
                       decoration: BoxDecoration(
                         color: Colors.green.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius:
+                            BorderRadius.circular(AppConstants.borderRadius),
                         border: Border.all(
                           color: Colors.green.withValues(alpha: 0.3),
                         ),
@@ -173,7 +175,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           ),
                           const Gap(8),
                           Text(
-                            'Please check your email and follow the instructions to reset your password.',
+                            l10n.checkEmailInstructions,
                             style: theme.textTheme.bodyMedium?.copyWith(
                               color: theme.textTheme.bodyMedium?.color
                                   ?.withValues(alpha: 0.7),

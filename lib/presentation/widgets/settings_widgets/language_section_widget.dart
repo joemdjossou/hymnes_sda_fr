@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/providers/language_provider.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -14,7 +15,7 @@ class LanguageSectionWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(AppConstants.largePadding),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -48,10 +49,11 @@ class LanguageSectionWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.mediumBorderRadius),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.primary.withValues(alpha: 0.3),
@@ -118,7 +120,8 @@ class LanguageSectionWidget extends StatelessWidget {
                               .add(ChangeLanguage(locale));
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(20),
+                          padding:
+                              const EdgeInsets.all(AppConstants.mediumPadding),
                           decoration: BoxDecoration(
                             color: isSelected
                                 ? AppColors.primary.withValues(alpha: 0.1)
@@ -179,10 +182,12 @@ class LanguageSectionWidget extends StatelessWidget {
                               ),
                               if (isSelected)
                                 Container(
-                                  padding: const EdgeInsets.all(4),
+                                  padding: const EdgeInsets.all(
+                                      AppConstants.smallPadding - 4),
                                   decoration: BoxDecoration(
                                     color: AppColors.primary,
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(
+                                        AppConstants.largeBorderRadius),
                                   ),
                                   child: const Icon(
                                     Icons.check,

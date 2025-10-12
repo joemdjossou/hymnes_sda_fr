@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../shared/constants/app_colors.dart';
 
@@ -40,7 +41,7 @@ class CustomTextField extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -90,29 +91,34 @@ class CustomTextField extends StatelessWidget {
             fontWeight: FontWeight.w400,
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             borderSide: BorderSide(
               color: AppColors.primary.withValues(alpha: 0.5),
               width: 2,
             ),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             borderSide: BorderSide(
               color: theme.colorScheme.error,
               width: 1,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             borderSide: BorderSide(
               color: theme.colorScheme.error,
               width: 2,
@@ -121,8 +127,8 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           fillColor: Colors.transparent,
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 18,
+            horizontal: AppConstants.mediumPadding,
+            vertical: AppConstants.defaultPadding,
           ),
         ),
       ),

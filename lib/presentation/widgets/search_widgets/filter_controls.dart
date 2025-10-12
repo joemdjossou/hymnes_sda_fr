@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -29,15 +30,17 @@ class FilterControls extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: onToggleFilters,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius:
+                BorderRadius.circular(AppConstants.mediumBorderRadius),
             child: Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 12,
+                horizontal: AppConstants.defaultPadding,
+                vertical: AppConstants.defaultPadding - 4,
               ),
               decoration: BoxDecoration(
                 color: AppColors.cardBackground(context),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.mediumBorderRadius),
                 border: Border.all(
                   color: AppColors.border(context).withValues(alpha: 0.3),
                   width: 1,
@@ -93,7 +96,8 @@ class FilterControls extends StatelessWidget {
                     AppColors.error.withValues(alpha: 0.05),
                   ],
                 ),
-                borderRadius: BorderRadius.circular(16),
+                borderRadius:
+                    BorderRadius.circular(AppConstants.mediumBorderRadius),
                 border: Border.all(
                   color: AppColors.error.withValues(alpha: 0.3),
                   width: 1,
@@ -103,11 +107,12 @@ class FilterControls extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: onClearFilters,
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.mediumBorderRadius),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 12,
+                      horizontal: AppConstants.defaultPadding,
+                      vertical: AppConstants.defaultPadding - 4,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

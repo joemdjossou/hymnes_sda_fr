@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/models/hymn.dart';
 import '../../../core/services/music_sheet_service.dart';
@@ -99,16 +100,18 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
         color: Colors.transparent,
         child: InkWell(
           onTap: _availablePdfs?.isNotEmpty == true ? _showMusicSheets : null,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(AppConstants.mediumPadding),
             child: Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(12),
+                  padding:
+                      const EdgeInsets.all(AppConstants.defaultPadding - 4),
                   decoration: BoxDecoration(
                     gradient: AppColors.primaryGradient(context),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                     boxShadow: [
                       BoxShadow(
                         color: AppColors.primary.withValues(alpha: 0.3),
@@ -171,10 +174,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
   Widget _buildTrailingWidget() {
     if (_isLoading) {
       return Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(AppConstants.smallPadding),
         decoration: BoxDecoration(
           color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         ),
         child: Container(
           width: 16,
@@ -187,10 +190,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
       );
     } else if (_hasError) {
       return Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(AppConstants.smallPadding),
         decoration: BoxDecoration(
           color: AppColors.error.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         ),
         child: const Icon(
           Icons.error_outline_rounded,
@@ -200,10 +203,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
       );
     } else if (_availablePdfs?.isNotEmpty == true) {
       return Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(AppConstants.smallPadding),
         decoration: BoxDecoration(
           color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         ),
         child: const Icon(
           Icons.arrow_forward_ios_rounded,
@@ -213,10 +216,10 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
       );
     } else {
       return Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(AppConstants.smallPadding),
         decoration: BoxDecoration(
           color: AppColors.textSecondary(context).withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
         ),
         child: Icon(
           Icons.music_off_rounded,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -19,7 +20,7 @@ class AppInfoSectionWidget extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.all(AppConstants.largePadding),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
@@ -29,7 +30,7 @@ class AppInfoSectionWidget extends StatelessWidget {
             AppColors.cardBackground(context).withValues(alpha: 0.8),
           ],
         ),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppConstants.largeBorderRadius),
         border: Border.all(
           color: AppColors.primary.withValues(alpha: 0.15),
           width: 1,
@@ -53,10 +54,11 @@ class AppInfoSectionWidget extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(12),
+                padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
                 decoration: BoxDecoration(
                   gradient: AppColors.primaryGradient(context),
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius:
+                      BorderRadius.circular(AppConstants.mediumBorderRadius),
                   boxShadow: [
                     BoxShadow(
                       color: AppColors.primary.withValues(alpha: 0.3),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/models/hymn.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -58,7 +59,8 @@ class HymnHistoryBottomSheet extends StatelessWidget {
           // Content
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppConstants.mediumPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -95,14 +97,14 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(AppConstants.mediumPadding),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(AppConstants.defaultPadding - 4),
             decoration: BoxDecoration(
               gradient: AppColors.primaryGradient(context),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
               boxShadow: [
                 BoxShadow(
                   color: AppColors.primary.withValues(alpha: 0.3),
@@ -192,10 +194,11 @@ class HymnHistoryBottomSheet extends StatelessWidget {
               GestureDetector(
                 onTap: () => _copyText(context, copyText),
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(AppConstants.smallPadding),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.smallBorderRadius),
                   ),
                   child: const Icon(
                     Icons.copy,
@@ -215,10 +218,10 @@ class HymnHistoryBottomSheet extends StatelessWidget {
 
   Widget _buildInformationCard(BuildContext context, AppLocalizations l10n) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(AppConstants.mediumPadding),
       decoration: BoxDecoration(
         color: AppColors.cardBackground(context),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
         border: Border.all(
           color: AppColors.border(context).withValues(alpha: 0.5),
         ),
@@ -263,10 +266,10 @@ class HymnHistoryBottomSheet extends StatelessWidget {
         }
       },
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(AppConstants.mediumPadding),
         decoration: BoxDecoration(
           color: AppColors.cardBackground(context),
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
           border: Border.all(
             color: AppColors.border(context).withValues(alpha: 0.5),
           ),
@@ -294,10 +297,12 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      padding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.defaultPadding - 4,
+          vertical: AppConstants.smallPadding),
       decoration: BoxDecoration(
         color: AppColors.primary.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
         border: Border.all(
           color: AppColors.primary.withValues(alpha: 0.2),
           width: 1,

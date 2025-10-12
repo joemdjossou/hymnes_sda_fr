@@ -1,23 +1,28 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hymnes_sda_fr/firebase_options.dart';
 import 'package:hymnes_sda_fr/hymnes.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_configs.dart';
+import 'package:logger/logger.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import 'core/services/connectivity_service.dart';
 import 'core/services/error_logging_service.dart';
 import 'core/services/favorites_sync_service.dart';
+import 'core/services/home_widget_service.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/posthog_service.dart';
 import 'core/services/storage_service.dart';
 import 'core/utils/global_error_handler.dart';
 
 void main() async {
-  // Initialize Sentry binding instead of regular WidgetsFlutterBinding
-  SentryWidgetsFlutterBinding.ensureInitialized();
+  // Preserve the native splash screen during initialization
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -36,8 +41,18 @@ void main() async {
 
   // Initialize services
   await StorageService().initialize();
+
+  // Initialize connectivity service (non-blocking)
+  try {
+    await ConnectivityService().initialize();
+  } catch (e) {
+    Logger().d(
+        'Connectivity service initialization failed, continuing without it: $e');
+  }
+
   await FavoritesSyncService().initialize();
   await NotificationService().initialize();
+  await HomeWidgetService.initialize();
 
   // Track app launch
   await PostHogService().trackAppLaunch();
@@ -67,6 +82,9 @@ void main() async {
       // Initialize error logging system
       await ErrorLoggingService().initialize();
       await GlobalErrorHandler().initialize();
+
+      // Remove the native splash screen before running the app
+      FlutterNativeSplash.remove();
 
       runApp(const HymnesApp());
     },

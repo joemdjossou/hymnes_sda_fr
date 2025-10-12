@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -230,14 +231,14 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
 
   Widget _buildHeader(AppLocalizations l10n) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(AppConstants.mediumPadding),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(AppConstants.defaultPadding - 6),
             decoration: BoxDecoration(
               gradient: AppColors.primaryGradient(context),
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppConstants.borderRadius),
             ),
             child: const Icon(
               Icons.music_note,
@@ -285,10 +286,11 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
 
   Widget _buildTabBar() {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin:
+          const EdgeInsets.symmetric(horizontal: AppConstants.mediumPadding),
       decoration: BoxDecoration(
         color: AppColors.cardBackground(context),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppConstants.borderRadius),
       ),
       child: TabBar(
         controller: _tabController,
@@ -322,7 +324,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
     final currentUrl = widget.pdfUrls[index];
 
     return Container(
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(AppConstants.mediumPadding),
       decoration: BoxDecoration(
         color: AppColors.cardBackground(context),
         borderRadius: BorderRadius.circular(12),
@@ -343,7 +345,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                 color: AppColors.cardBackground(context),
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(AppConstants.mediumPadding),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -353,7 +355,8 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                             width: double.infinity,
                             decoration: BoxDecoration(
                               color: AppColors.textSecondary(context),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(
+                                  AppConstants.borderRadius),
                             ),
                           ),
                         ),
@@ -374,7 +377,7 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
       color: AppColors.cardBackground(context),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(AppConstants.mediumPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -410,8 +413,8 @@ class _MusicSheetBottomSheetState extends State<MusicSheetBottomSheet>
                   backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
-                    vertical: 12,
+                    horizontal: AppConstants.largePadding,
+                    vertical: AppConstants.defaultPadding - 4,
                   ),
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../constants/app_colors.dart';
 
@@ -487,7 +488,8 @@ class _ModernDialogState extends State<ModernDialog>
 
                     // Main content with staggered animations
                     Padding(
-                      padding: const EdgeInsets.all(28),
+                      padding:
+                          const EdgeInsets.all(AppConstants.largePadding + 4),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -834,9 +836,11 @@ class _AnimatedButtonState extends State<_AnimatedButton>
                       elevation: 0,
                       shadowColor: backgroundColor.withValues(alpha: 0.3),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.mediumBorderRadius),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: AppConstants.defaultPadding + 2),
                     ),
                     child: Text(
                       widget.text,
@@ -859,9 +863,11 @@ class _AnimatedButtonState extends State<_AnimatedButton>
                         width: 2,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(
+                            AppConstants.mediumBorderRadius),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: AppConstants.defaultPadding + 2),
                     ),
                     child: Text(
                       widget.text,

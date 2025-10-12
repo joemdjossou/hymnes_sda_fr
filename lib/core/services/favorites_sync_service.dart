@@ -5,6 +5,7 @@ import 'package:logger/logger.dart';
 
 import '../repositories/hybrid_favorites_repository.dart';
 import 'auth_service.dart';
+import 'connectivity_service.dart';
 
 /// Service to handle favorites synchronization with authentication
 class FavoritesSyncService {
@@ -16,9 +17,11 @@ class FavoritesSyncService {
   final AuthService _authService = AuthService();
   final HybridFavoritesRepository _hybridRepository =
       HybridFavoritesRepository();
+  final ConnectivityService _connectivityService = ConnectivityService();
   final Logger _logger = Logger();
 
   StreamSubscription<User?>? _authSubscription;
+  StreamSubscription<bool>? _connectivitySubscription;
   bool _isInitialized = false;
 
   /// Initialize the sync service
@@ -28,15 +31,37 @@ class FavoritesSyncService {
     try {
       await _hybridRepository.initialize();
 
+      // Initialize connectivity service (non-blocking)
+      try {
+        await _connectivityService.initialize();
+      } catch (e) {
+        _logger.w(
+            'Connectivity service initialization failed, continuing without it: $e');
+      }
+
       // Listen to authentication state changes
       _authSubscription =
           _authService.authStateChanges.listen(_onAuthStateChanged);
+
+      // Listen to connectivity changes (only if connectivity service is available)
+      try {
+        _connectivitySubscription =
+            _connectivityService.connectivityStream.listen(
+          _onConnectivityChanged,
+          onError: (error) {
+            _logger.e('Connectivity stream error: $error');
+          },
+        );
+      } catch (e) {
+        _logger.w('Could not listen to connectivity changes: $e');
+      }
 
       _isInitialized = true;
       _logger.d('Favorites sync service initialized');
     } catch (e) {
       _logger.e('Error initializing favorites sync service: $e');
-      rethrow;
+      // Don't rethrow - allow app to continue without sync service
+      _isInitialized = true;
     }
   }
 
@@ -44,7 +69,7 @@ class FavoritesSyncService {
   Future<void> _onAuthStateChanged(User? user) async {
     try {
       if (user != null) {
-        // User signed in - sync favorites only if there are local favorites
+        // User signed in - sync favorites if online
         _logger.d(
             'User signed in, checking if sync is needed for user: ${user.uid}');
         await _syncOnSignIn();
@@ -58,18 +83,40 @@ class FavoritesSyncService {
     }
   }
 
+  /// Handle connectivity changes
+  Future<void> _onConnectivityChanged(bool isOnline) async {
+    try {
+      _logger.d('Connectivity changed: ${isOnline ? 'online' : 'offline'}');
+
+      // Update the hybrid repository's online status
+      _hybridRepository.setOnlineStatus(isOnline);
+
+      // If we're back online and authenticated, trigger sync
+      if (isOnline && isAuthenticated) {
+        _logger.d('Back online and authenticated, triggering sync');
+        await forceSync();
+      }
+    } catch (e) {
+      _logger.e('Error handling connectivity change: $e');
+    }
+  }
+
   /// Sync favorites when user signs in
   Future<void> _syncOnSignIn() async {
     try {
-      // Only sync if there are local favorites to sync
-      final localFavorites = await _hybridRepository.getFavorites();
-      if (localFavorites.isNotEmpty) {
-        _logger.d(
-            'Found ${localFavorites.length} local favorites, syncing to cloud');
+      // Check if we're online before attempting sync
+      final isOnline = _connectivityService.isOnline;
+
+      if (isOnline) {
+        // We're online - perform full bidirectional sync
+        _logger.d('User signed in and online, performing full sync');
         await _hybridRepository.forceSync();
         _logger.d('Favorites synced on sign in');
       } else {
-        _logger.d('No local favorites found, skipping sync on sign in');
+        // We're offline - just log that sync will happen when back online
+        final localFavorites = await _hybridRepository.getFavorites();
+        _logger.d(
+            'User signed in but offline. ${localFavorites.length} local favorites will sync when back online');
       }
     } catch (e) {
       _logger.e('Error syncing favorites on sign in: $e');
@@ -152,6 +199,8 @@ class FavoritesSyncService {
   /// Dispose resources
   void dispose() {
     _authSubscription?.cancel();
+    _connectivitySubscription?.cancel();
+    _connectivityService.dispose();
     _isInitialized = false;
   }
 }

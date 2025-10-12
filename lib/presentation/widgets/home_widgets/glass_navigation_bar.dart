@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../core/navigation/app_routes.dart';
 import '../../../shared/constants/app_colors.dart';
@@ -75,9 +76,13 @@ class _GlassNavigationBarState extends State<GlassNavigationBar>
 
   Widget _buildGlassNavBar(AppLocalizations l10n, int currentIndex) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 16, top: 10),
+      padding: const EdgeInsets.only(
+        bottom: AppConstants.defaultPadding,
+        top: AppConstants.smallPadding,
+      ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(28),
+        borderRadius:
+            BorderRadius.circular(AppConstants.extraLargeBorderRadius),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
@@ -97,7 +102,8 @@ class _GlassNavigationBarState extends State<GlassNavigationBar>
                 color: AppColors.border(context).withValues(alpha: 0.3),
                 width: 1,
               ),
-              borderRadius: BorderRadius.circular(28),
+              borderRadius:
+                  BorderRadius.circular(AppConstants.extraLargeBorderRadius),
               // Subtle shadow for depth
               boxShadow: [
                 BoxShadow(
@@ -108,8 +114,11 @@ class _GlassNavigationBarState extends State<GlassNavigationBar>
               ],
             ),
             child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 10),
+              padding: const EdgeInsets.only(
+                  top: AppConstants.smallPadding,
+                  bottom: AppConstants.smallPadding,
+                  left: AppConstants.defaultPadding - 6,
+                  right: AppConstants.defaultPadding - 6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -166,8 +175,11 @@ class _GlassNavigationBarState extends State<GlassNavigationBar>
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 400),
           curve: Curves.easeInOutCubic,
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 13),
-          margin: const EdgeInsets.symmetric(horizontal: 4),
+          padding: const EdgeInsets.symmetric(
+              horizontal: AppConstants.smallPadding,
+              vertical: AppConstants.mediumPadding - 3),
+          margin: const EdgeInsets.symmetric(
+              horizontal: AppConstants.extraSmallPadding),
           decoration: BoxDecoration(
             gradient: isActive
                 ? LinearGradient(

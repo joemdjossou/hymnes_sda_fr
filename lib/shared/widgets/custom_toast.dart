@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../constants/app_colors.dart';
 
@@ -93,15 +94,15 @@ class _CustomToastState extends State<CustomToast>
                   decoration: BoxDecoration(
                     color: _getAccentColor(isDark),
                     borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(12),
-                      bottomLeft: Radius.circular(12),
+                      topLeft: Radius.circular(AppConstants.borderRadius),
+                      bottomLeft: Radius.circular(AppConstants.borderRadius),
                     ),
                   ),
                 ),
                 // Content
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(AppConstants.defaultPadding),
                     child: Row(
                       children: [
                         // Icon

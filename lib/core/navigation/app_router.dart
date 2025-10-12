@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/auth/bloc/auth_bloc.dart';
@@ -14,7 +15,6 @@ import '../../presentation/screens/onboarding_screen.dart';
 import '../../presentation/screens/search_screen.dart';
 import '../../presentation/screens/settings_screen.dart';
 import '../../presentation/screens/signup_screen.dart';
-import '../../presentation/screens/splash_screen.dart';
 import 'app_routes.dart';
 
 /// Main router configuration for the app
@@ -30,17 +30,10 @@ class AppRouter {
   /// Main router configuration
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: AppRoutes.splash,
+    initialLocation: AppRoutes.home, // Will be redirected by _handleRedirect
     debugLogDiagnostics: true,
     redirect: _handleRedirect,
     routes: [
-      // Splash Screen
-      GoRoute(
-        path: AppRoutes.splash,
-        name: AppRoutes.splashName,
-        builder: (context, state) => const SplashScreen(),
-      ),
-
       // Onboarding Flow
       GoRoute(
         path: AppRoutes.onboarding,
@@ -158,14 +151,10 @@ class AppRouter {
       BuildContext context, GoRouterState state) async {
     final location = state.uri.path;
 
-    // Skip redirect for splash screen
-    if (location == AppRoutes.splash) {
-      return null;
-    }
-
     // Check if onboarding is complete
     final prefs = await SharedPreferences.getInstance();
-    final isOnboardingComplete = prefs.getBool('onboarding_complete') ?? false;
+    final isOnboardingComplete =
+        prefs.getBool(AppConstants.onboardingCompleteKey) ?? false;
 
     // If onboarding is not complete, redirect to onboarding
     if (!isOnboardingComplete && location != AppRoutes.onboarding) {

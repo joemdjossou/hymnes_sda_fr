@@ -1,0 +1,24 @@
+<resources>
+    <!-- Existing colors -->
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+
+    <!-- Hymnes App Colors -->
+    <color name="forest_green">#FF228B22</color>
+    <color name="forest_green_light">#FF32CD32</color>
+    <color name="gold">#FFFFD700</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+    <color name="white_alpha_10">#1AFFFFFF</color>
+
+    <!-- Widget specific colors -->
+    <color name="widget_background_start">#FF228B22</color>
+    <color name="widget_background_end">#FF32CD32</color>
+    <color name="widget_card_background">#33FFFFFF</color>
+    <color name="widget_button_background">#1AFFFFFF</color>
+</resources>

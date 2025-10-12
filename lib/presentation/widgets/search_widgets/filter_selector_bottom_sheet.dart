@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../../shared/constants/app_colors.dart';
 
@@ -50,7 +51,8 @@ class FilterSelectorBottomSheet extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: AppColors.cardBackground(context).withValues(alpha: 0.95),
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+        borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(AppConstants.extraLargeBorderRadius)),
         boxShadow: [
           BoxShadow(
             color: AppColors.textPrimary(context).withValues(alpha: 0.1),
@@ -69,7 +71,7 @@ class FilterSelectorBottomSheet extends StatelessWidget {
         children: [
           // Handle bar
           Container(
-            margin: const EdgeInsets.only(top: 12),
+            margin: const EdgeInsets.only(top: AppConstants.defaultPadding - 4),
             width: 40,
             height: 4,
             decoration: BoxDecoration(
@@ -80,15 +82,21 @@ class FilterSelectorBottomSheet extends StatelessWidget {
 
           // Header
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
+            padding: const EdgeInsets.fromLTRB(
+                AppConstants.largePadding,
+                AppConstants.mediumPadding,
+                AppConstants.largePadding,
+                AppConstants.defaultPadding - 4),
             child: Row(
               children: [
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: AppConstants.defaultPadding - 4,
+                      vertical: AppConstants.smallPadding - 2),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                   ),
                   child: Text(
                     l10n.all(label),
@@ -103,7 +111,8 @@ class FilterSelectorBottomSheet extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     color: AppColors.error.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.borderRadius),
                   ),
                   child: TextButton(
                     onPressed: () {
@@ -112,9 +121,11 @@ class FilterSelectorBottomSheet extends StatelessWidget {
                     },
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 8),
+                          horizontal: AppConstants.defaultPadding,
+                          vertical: AppConstants.smallPadding),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius:
+                            BorderRadius.circular(AppConstants.borderRadius),
                       ),
                     ),
                     child: Row(
@@ -146,7 +157,8 @@ class FilterSelectorBottomSheet extends StatelessWidget {
           Flexible(
             child: ListView.builder(
               shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppConstants.defaultPadding),
               itemCount: options.length,
               itemBuilder: (context, index) {
                 final option = options[index];
@@ -158,15 +170,17 @@ class FilterSelectorBottomSheet extends StatelessWidget {
                     color: isSelected
                         ? AppColors.primary.withValues(alpha: 0.1)
                         : Colors.transparent,
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.mediumBorderRadius),
                     border: isSelected
                         ? Border.all(
                             color: AppColors.primary.withValues(alpha: 0.3))
                         : null,
                   ),
                   child: ListTile(
-                    contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: AppConstants.defaultPadding,
+                        vertical: AppConstants.smallPadding - 4),
                     title: Text(
                       option,
                       style: TextStyle(
@@ -178,10 +192,12 @@ class FilterSelectorBottomSheet extends StatelessWidget {
                     ),
                     trailing: isSelected
                         ? Container(
-                            padding: const EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(
+                                AppConstants.smallPadding - 4),
                             decoration: BoxDecoration(
                               color: AppColors.primary,
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(
+                                  AppConstants.borderRadius),
                             ),
                             child: Icon(
                               Icons.check,
