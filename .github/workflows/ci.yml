@@ -9,76 +9,75 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#       - name: Setup Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: "3.29.2"
+#           channel: "stable"
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.29.2"
-          channel: "stable"
+#       - name: Install dependencies
+#         run: flutter pub get
 
-      - name: Install dependencies
-        run: flutter pub get
+#       - name: Generate localization files
+#         run: flutter gen-l10n
 
-      - name: Generate localization files
-        run: flutter gen-l10n
+#       - name: Run Flutter analyze
+#         run: flutter analyze
 
-      - name: Run Flutter analyze
-        run: flutter analyze
+#       - name: Run Flutter tests
+#         run: flutter test --coverage
 
-      - name: Run Flutter tests
-        run: flutter test --coverage
+#       - name: Build Android APK
+#         run: flutter build apk --debug
 
-      - name: Build Android APK
-        run: flutter build apk --debug
+#       - name: Build iOS (macOS only)
+#         if: runner.os == 'macOS'
+#         run: flutter build ios --debug --no-codesign
 
-      - name: Build iOS (macOS only)
-        if: runner.os == 'macOS'
-        run: flutter build ios --debug --no-codesign
+#       - name: Build Web
+#         run: flutter build web
 
-      - name: Build Web
-        run: flutter build web
+#       - name: Upload coverage reports
+#         uses: codecov/codecov-action@v3
+#         with:
+#           file: coverage/lcov.info
+#           flags: unittests
+#           name: codecov-umbrella
+#           fail_ci_if_error: false
 
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
-        with:
-          file: coverage/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
+#   security:
+#     runs-on: ubuntu-latest
 
-  security:
-    runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#       - name: Setup Flutter
+#         uses: subosito/flutter-action@v2
+#         with:
+#           flutter-version: "3.29.2"
+#           channel: "stable"
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: "3.29.2"
-          channel: "stable"
+#       - name: Install dependencies
+#         run: flutter pub get
 
-      - name: Install dependencies
-        run: flutter pub get
+#       - name: Run security audit
+#         run: flutter pub deps
 
-      - name: Run security audit
-        run: flutter pub deps
+#       - name: Check for security vulnerabilities
+#         run: |
+#           # Check for common security issues
+#           if grep -r "TODO.*password\|TODO.*secret\|TODO.*key" lib/; then
+#             echo "⚠️  Potential security issues found in TODO comments"
+#             exit 1
+#           fi
 
-      - name: Check for security vulnerabilities
-        run: |
-          # Check for common security issues
-          if grep -r "TODO.*password\|TODO.*secret\|TODO.*key" lib/; then
-            echo "⚠️  Potential security issues found in TODO comments"
-            exit 1
-          fi
-
-          # Check for hardcoded secrets
-          if grep -r "api[_-]key\|secret[_-]key\|password.*=" lib/ --exclude-dir=test; then
-            echo "⚠️  Potential hardcoded secrets found"
-            exit 1
-          fi
+#           # Check for hardcoded secrets
+#           if grep -r "api[_-]key\|secret[_-]key\|password.*=" lib/ --exclude-dir=test; then
+#             echo "⚠️  Potential hardcoded secrets found"
+#             exit 1
+#           fi

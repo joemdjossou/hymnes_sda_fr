@@ -79,6 +79,7 @@ struct FeaturedHymn {
 struct HymnesHomeWidgetEntryView : View {
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var family
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         switch family {
@@ -96,280 +97,277 @@ struct HymnesHomeWidgetEntryView : View {
 
 struct SmallWidgetView: View {
     let entry: SimpleEntry
+    @Environment(\.colorScheme) var colorScheme
+    
+    var primaryTextColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+    
+    var secondaryTextColor: Color {
+        colorScheme == .dark ? .white.opacity(0.8) : .black.opacity(0.6)
+    }
+    
+    var accentColor: Color {
+        Color(red: 0.13, green: 0.55, blue: 0.13)
+    }
     
     var body: some View {
-        ZStack {
-            // Background gradient that fills entire widget
-            LinearGradient(
-                colors: [
-                    Color(red: 0.13, green: 0.55, blue: 0.13), // Forest Green
-                    Color(red: 0.20, green: 0.55, blue: 0.20)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            .clipShape(RoundedRectangle(cornerRadius: 16))
+        VStack(spacing: 6) {
+            // App icon and title
+            HStack {
+                Image(systemName: "music.note")
+                    .font(.title3)
+                    .foregroundColor(accentColor)
+                Spacer()
+            }
             
-            VStack(spacing: 6) {
-                // App icon and title
-                HStack {
-                    Image(systemName: "music.note")
-                        .font(.title3)
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                
-                // Featured hymn (if available)
-                if let hymn = entry.featuredHymn {
-                    VStack(alignment: .leading, spacing: 2) {
-                        HStack {
-                            Text("#\(hymn.number)")
-                                .font(.caption2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.yellow)
-                            Spacer()
-                        }
-                        Text(hymn.title)
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                        Text(hymn.lyrics)
+            // Featured hymn (if available)
+            if let hymn = entry.featuredHymn {
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack {
+                        Text("#\(hymn.number)")
                             .font(.caption2)
-                            .foregroundColor(.white.opacity(0.8))
-                            .lineLimit(2)
+                            .fontWeight(.bold)
+                            .foregroundColor(accentColor)
+                        Spacer()
                     }
-                    .padding(8)
-                    .background(
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.white.opacity(0.15))
-                    )
-                } else {
-                    Spacer()
+                    Text(hymn.title)
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(primaryTextColor)
+                        .lineLimit(2)
+                    Text(hymn.lyrics)
+                        .font(.caption2)
+                        .foregroundColor(secondaryTextColor)
+                        .lineLimit(2)
                 }
+                .padding(8)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
+                )
+            } else {
+                Spacer()
+            }
+            
+            Spacer()
+            
+            // Stats
+            HStack {
+                HStack(spacing: 4) {
+                    Image(systemName: "music.note.list")
+                        .font(.caption2)
+                        .foregroundColor(accentColor)
+                    Text("\(entry.hymnsCount)")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(primaryTextColor)
+                }
+                .padding(.horizontal, 6)
+                .padding(.vertical, 4)
+                .background(
+                    RoundedRectangle(cornerRadius: 6)
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
+                )
                 
                 Spacer()
                 
-                // Stats
-                HStack {
-                    HStack(spacing: 4) {
-                        Image(systemName: "music.note.list")
-                            .font(.caption2)
-                            .foregroundColor(.white.opacity(0.8))
-                        Text("\(entry.hymnsCount)")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 4)
-                    .background(
-                        RoundedRectangle(cornerRadius: 6)
-                            .fill(Color.white.opacity(0.1))
-                    )
-                    
-                    Spacer()
-                    
-                    HStack(spacing: 4) {
-                        Image(systemName: "heart.fill")
-                            .font(.caption2)
-                            .foregroundColor(.yellow)
-                        Text("\(entry.favoritesCount)")
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 4)
-                    .background(
-                        RoundedRectangle(cornerRadius: 6)
-                            .fill(Color.white.opacity(0.1))
-                    )
+                HStack(spacing: 4) {
+                    Image(systemName: "heart.fill")
+                        .font(.caption2)
+                        .foregroundColor(accentColor)
+                    Text("\(entry.favoritesCount)")
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .foregroundColor(primaryTextColor)
                 }
+                .padding(.horizontal, 6)
+                .padding(.vertical, 4)
+                .background(
+                    RoundedRectangle(cornerRadius: 6)
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
+                )
             }
-            .padding(12)
         }
+        .padding(12)
     }
 }
 
 struct MediumWidgetView: View {
     let entry: SimpleEntry
+    @Environment(\.colorScheme) var colorScheme
+    
+    var primaryTextColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+    
+    var secondaryTextColor: Color {
+        colorScheme == .dark ? .white.opacity(0.8) : .black.opacity(0.6)
+    }
+    
+    var accentColor: Color {
+        Color(red: 0.13, green: 0.55, blue: 0.13)
+    }
     
     var body: some View {
-        ZStack {
-            // Background gradient that fills entire widget
-            LinearGradient(
-                colors: [
-                    Color(red: 0.13, green: 0.55, blue: 0.13), // Forest Green
-                    Color(red: 0.20, green: 0.55, blue: 0.20)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-            
-            VStack(spacing: 12) {
-                // Header
-                HStack {
-                    Image(systemName: "music.note")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                    Text("Hymnes")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                
-                // Featured hymn or stats
-                if let hymn = entry.featuredHymn {
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text("#\(hymn.number)")
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.yellow)
-                            Spacer()
-                        }
-                        Text(hymn.title)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                        Text(hymn.lyrics)
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.8))
-                            .lineLimit(3)
-                    }
-                    .padding(12)
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .fill(Color.white.opacity(0.15))
-                    )
-                } else {
-                    // Stats fallback
-                    HStack(spacing: 16) {
-                        StatCard(
-                            icon: "music.note.list",
-                            value: "\(entry.hymnsCount)",
-                            label: "Hymns",
-                            color: .white
-                        )
-                        
-                        StatCard(
-                            icon: "heart.fill",
-                            value: "\(entry.favoritesCount)",
-                            label: "Favorites",
-                            color: .yellow
-                        )
-                    }
-                }
-                
+        VStack(spacing: 12) {
+            // Header
+            HStack {
+                Image(systemName: "music.note")
+                    .font(.title2)
+                    .foregroundColor(accentColor)
+                Text("Hymnes")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(primaryTextColor)
                 Spacer()
             }
-            .padding(16)
-        }
-    }
-}
-
-struct LargeWidgetView: View {
-    let entry: SimpleEntry
-    
-    var body: some View {
-        ZStack {
-            // Background gradient that fills entire widget
-            LinearGradient(
-                colors: [
-                    Color(red: 0.13, green: 0.55, blue: 0.13), // Forest Green
-                    Color(red: 0.20, green: 0.55, blue: 0.20)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            .clipShape(RoundedRectangle(cornerRadius: 16))
             
-            VStack(spacing: 16) {
-                // Header
-                HStack {
-                    Image(systemName: "music.note")
-                        .font(.title)
-                        .foregroundColor(.white)
-                    VStack(alignment: .leading) {
-                        Text("Hymnes")
-                            .font(.title2)
+            // Featured hymn or stats
+            if let hymn = entry.featuredHymn {
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        Text("#\(hymn.number)")
+                            .font(.caption)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
-                        Text("French Adventist Hymns")
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.8))
+                            .foregroundColor(accentColor)
+                        Spacer()
                     }
-                    Spacer()
+                    Text(hymn.title)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(primaryTextColor)
+                        .lineLimit(2)
+                    Text(hymn.lyrics)
+                        .font(.caption)
+                        .foregroundColor(secondaryTextColor)
+                        .lineLimit(3)
                 }
-                
-                // Featured hymn section
-                if let hymn = entry.featuredHymn {
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack {
-                            Text("Featured Hymn")
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white.opacity(0.8))
-                            Spacer()
-                            Text("#\(hymn.number)")
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.yellow)
-                        }
-                        
-                        Text(hymn.title)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                        
-                        Text(hymn.lyrics)
-                            .font(.caption)
-                            .foregroundColor(.white.opacity(0.8))
-                            .lineLimit(4)
-                    }
-                    .padding(16)
-                    .background(
-                        RoundedRectangle(cornerRadius: 16)
-                            .fill(Color.white.opacity(0.15))
-                    )
-                }
-                
-                // Stats grid
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
+                )
+            } else {
+                // Stats fallback
                 HStack(spacing: 16) {
                     StatCard(
                         icon: "music.note.list",
                         value: "\(entry.hymnsCount)",
-                        label: "Total Hymns",
-                        color: .white
+                        label: "Hymnes",
+                        color: accentColor
                     )
                     
                     StatCard(
                         icon: "heart.fill",
                         value: "\(entry.favoritesCount)",
-                        label: "Favorites",
-                        color: .yellow
+                        label: "Favoris",
+                        color: accentColor
                     )
                 }
-                
-                // Quick actions
-                HStack(spacing: 12) {
-                    QuickActionButton(icon: "magnifyingglass", label: "Search")
-                    QuickActionButton(icon: "heart", label: "Favorites")
-                    QuickActionButton(icon: "gear", label: "Settings")
+            }
+            
+            Spacer()
+        }
+        .padding(16)
+    }
+}
+
+struct LargeWidgetView: View {
+    let entry: SimpleEntry
+    @Environment(\.colorScheme) var colorScheme
+    
+    var primaryTextColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+    
+    var secondaryTextColor: Color {
+        colorScheme == .dark ? .white.opacity(0.8) : .black.opacity(0.6)
+    }
+    
+    var accentColor: Color {
+        Color(red: 0.13, green: 0.55, blue: 0.13)
+    }
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            // Header
+            HStack {
+                Image(systemName: "music.note")
+                    .font(.title)
+                    .foregroundColor(accentColor)
+                VStack(alignment: .leading) {
+                    Text("Hymnes")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(primaryTextColor)
+                    Text("French Adventist Hymns")
+                        .font(.caption)
+                        .foregroundColor(secondaryTextColor)
                 }
-                
                 Spacer()
             }
-            .padding(16)
+            
+            // Featured hymn section
+            if let hymn = entry.featuredHymn {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Text("Featured Hymn")
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                            .foregroundColor(secondaryTextColor)
+                        Spacer()
+                        Text("#\(hymn.number)")
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .foregroundColor(accentColor)
+                    }
+                    
+                    Text(hymn.title)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(primaryTextColor)
+                        .lineLimit(2)
+                    
+                    Text(hymn.lyrics)
+                        .font(.caption)
+                        .foregroundColor(secondaryTextColor)
+                        .lineLimit(4)
+                }
+                .padding(16)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
+                )
+            }
+            
+            // Stats grid
+            HStack(spacing: 16) {
+                StatCard(
+                    icon: "music.note.list",
+                    value: "\(entry.hymnsCount)",
+                    label: "Total Hymns",
+                    color: accentColor
+                )
+                
+                StatCard(
+                    icon: "heart.fill",
+                    value: "\(entry.favoritesCount)",
+                    label: "Favorites",
+                    color: accentColor
+                )
+            }
+            
+            // Quick actions
+            HStack(spacing: 12) {
+                QuickActionButton(icon: "magnifyingglass", label: "Search")
+                QuickActionButton(icon: "heart", label: "Favorites")
+                QuickActionButton(icon: "gear", label: "Settings")
+            }
+            
+            Spacer()
         }
+        .padding(16)
     }
 }
 
@@ -378,6 +376,15 @@ struct StatCard: View {
     let value: String
     let label: String
     let color: Color
+    @Environment(\.colorScheme) var colorScheme
+    
+    var primaryTextColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+    
+    var secondaryTextColor: Color {
+        colorScheme == .dark ? .white.opacity(0.8) : .black.opacity(0.6)
+    }
     
     var body: some View {
         VStack(spacing: 4) {
@@ -388,17 +395,17 @@ struct StatCard: View {
                 Text(value)
                     .font(.headline)
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(primaryTextColor)
             }
             Text(label)
                 .font(.caption2)
-                .foregroundColor(.white.opacity(0.8))
+                .foregroundColor(secondaryTextColor)
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.15))
+                .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
         )
     }
 }
@@ -406,21 +413,30 @@ struct StatCard: View {
 struct QuickActionButton: View {
     let icon: String
     let label: String
+    @Environment(\.colorScheme) var colorScheme
+    
+    var iconColor: Color {
+        Color(red: 0.13, green: 0.55, blue: 0.13)
+    }
+    
+    var textColor: Color {
+        colorScheme == .dark ? .white.opacity(0.8) : .black.opacity(0.6)
+    }
     
     var body: some View {
         VStack(spacing: 4) {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundColor(.white)
+                .foregroundColor(iconColor)
             Text(label)
                 .font(.caption2)
-                .foregroundColor(.white.opacity(0.8))
+                .foregroundColor(textColor)
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.15))
+                .fill(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05))
         )
     }
 }
@@ -443,8 +459,8 @@ struct HymnesHomeWidget: Widget {
     HymnesHomeWidget()
 } timeline: {
     SimpleEntry(
-        date: .now, 
-        hymnsCount: 150, 
+        date: .now,
+        hymnsCount: 150,
         favoritesCount: 12,
         featuredHymn: FeaturedHymn(
             number: "1",
@@ -458,8 +474,8 @@ struct HymnesHomeWidget: Widget {
     HymnesHomeWidget()
 } timeline: {
     SimpleEntry(
-        date: .now, 
-        hymnsCount: 150, 
+        date: .now,
+        hymnsCount: 150,
         favoritesCount: 12,
         featuredHymn: FeaturedHymn(
             number: "1",
@@ -473,8 +489,8 @@ struct HymnesHomeWidget: Widget {
     HymnesHomeWidget()
 } timeline: {
     SimpleEntry(
-        date: .now, 
-        hymnsCount: 150, 
+        date: .now,
+        hymnsCount: 150,
         favoritesCount: 12,
         featuredHymn: FeaturedHymn(
             number: "1",

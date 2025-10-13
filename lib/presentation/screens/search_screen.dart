@@ -6,6 +6,7 @@ import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/models/hymn.dart';
 import '../../core/services/hymn_data_service.dart';
+import '../../core/utils/text_utils.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/modern_sliver_app_bar.dart';
@@ -124,18 +125,18 @@ class _SearchScreenState extends State<SearchScreen>
   }
 
   void _performSearch() {
-    final query = _searchController.text.toLowerCase();
+    final query = TextUtils.normalizeText(_searchController.text);
     setState(() {
       _filteredHymns = _allHymns.where((hymn) {
         final matchesText = query.isEmpty ||
-            hymn.title.toLowerCase().contains(query) ||
-            hymn.lyrics.toLowerCase().contains(query) ||
-            hymn.author.toLowerCase().contains(query) ||
-            hymn.composer.toLowerCase().contains(query) ||
-            hymn.style.toLowerCase().contains(query) ||
-            hymn.number.contains(query) ||
-            hymn.theme.toLowerCase().contains(query) ||
-            hymn.subtheme.toLowerCase().contains(query);
+            TextUtils.normalizeText(hymn.title).contains(query) ||
+            TextUtils.normalizeText(hymn.lyrics).contains(query) ||
+            TextUtils.normalizeText(hymn.author).contains(query) ||
+            TextUtils.normalizeText(hymn.composer).contains(query) ||
+            TextUtils.normalizeText(hymn.style).contains(query) ||
+            hymn.number.contains(_searchController.text) ||
+            TextUtils.normalizeText(hymn.theme).contains(query) ||
+            TextUtils.normalizeText(hymn.subtheme).contains(query);
 
         final matchesTheme =
             _selectedTheme == null || hymn.theme == _selectedTheme;

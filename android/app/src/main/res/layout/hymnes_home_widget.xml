@@ -3,7 +3,7 @@
     android:id="@+id/widget_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/widget_background"
+    android:background="@drawable/widget_main_background"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -19,8 +19,8 @@
             android:layout_height="32dp"
             android:layout_marginEnd="12dp"
             android:src="@drawable/ic_music_note"
-            android:contentDescription="Music note icon"
-            android:tint="@color/white" />
+            android:contentDescription="Icône note de musique"
+            android:tint="@color/forest_green" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -32,15 +32,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hymnes"
-                android:textColor="@color/white"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="French Adventist Hymns"
-                android:textColor="@color/white_alpha_80"
+                android:text="Hymnes et Louanges Adventiste"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/stats_card_background"
+        android:background="@drawable/adaptive_card_background"
         android:orientation="vertical"
         android:padding="12dp"
         android:layout_marginTop="6dp"
@@ -69,8 +69,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Featured Hymn"
-                android:textColor="@color/white_alpha_80"
+                android:text="Hymne du Jour"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="#1"
-                android:textColor="@color/gold"
+                android:textColor="@color/forest_green"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Vous qui sur la terre !"
-            android:textColor="@color/white"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
             android:textStyle="bold"
             android:maxLines="2"
@@ -104,7 +104,7 @@
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:text="Vous qui sur la terre habitez, Chantez à haute voix, chantez!"
-            android:textColor="@color/white_alpha_80"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="10sp"
             android:maxLines="3"
             android:ellipsize="end" />
@@ -125,7 +125,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/stats_item_background"
+            android:background="@drawable/adaptive_card_background"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp"
@@ -135,8 +135,8 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:src="@drawable/ic_music_list"
-                android:contentDescription="Music list icon"
-                android:tint="@color/white" />
+                android:contentDescription="Icône liste musicale"
+                android:tint="@color/forest_green" />
 
             <TextView
                 android:id="@+id/hymns_count"
@@ -144,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:text="0"
-                android:textColor="@color/white"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -155,7 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/stats_item_background"
+            android:background="@drawable/adaptive_card_background"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="10dp"
@@ -165,8 +165,8 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:src="@drawable/ic_favorite"
-                android:contentDescription="Favorite icon"
-                android:tint="@color/gold" />
+                android:contentDescription="Icône favori"
+                android:tint="@color/forest_green" />
 
             <TextView
                 android:id="@+id/favorites_count"
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:text="0"
-                android:textColor="@color/white"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -194,7 +194,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/action_button_background"
+            android:background="@drawable/adaptive_card_background"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp"
@@ -204,15 +204,15 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:src="@drawable/ic_search"
-                android:contentDescription="Search icon"
-                android:tint="@color/white" />
+                android:contentDescription="Icône recherche"
+                android:tint="@color/forest_green" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Search"
-                android:textColor="@color/white_alpha_80"
+                android:text="Rechercher"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="10sp" />
 
         </LinearLayout>
@@ -222,7 +222,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/action_button_background"
+            android:background="@drawable/adaptive_card_background"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp"
@@ -232,15 +232,15 @@
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:src="@drawable/ic_favorite_outline"
-                android:contentDescription="Favorites icon"
-                android:tint="@color/white" />
+                android:contentDescription="Icône favoris"
+                android:tint="@color/forest_green" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Favorites"
-                android:textColor="@color/white_alpha_80"
+                android:text="Favoris"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="10sp" />
 
         </LinearLayout>

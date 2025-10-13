@@ -12,6 +12,7 @@ import '../../core/models/hymn.dart';
 import '../../core/services/error_logging_service.dart';
 import '../../core/services/hymn_data_service.dart';
 import '../../core/utils/global_error_handler.dart';
+import '../../core/utils/text_utils.dart';
 import '../../shared/widgets/hymn_card.dart';
 import '../../shared/widgets/shimmer_loading.dart';
 import '../widgets/home_widgets/collapsed_app_bar.dart';
@@ -147,18 +148,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   void _filterHymns() {
-    final query = _searchController.text.toLowerCase();
+    final query = TextUtils.normalizeText(_searchController.text);
     setState(() {
       if (query.isEmpty) {
         _filteredHymns = _hymns;
       } else {
         _filteredHymns = _hymns.where((hymn) {
-          return hymn.title.toLowerCase().contains(query) ||
-              hymn.lyrics.toLowerCase().contains(query) ||
-              hymn.author.toLowerCase().contains(query) ||
-              hymn.composer.toLowerCase().contains(query) ||
-              hymn.style.toLowerCase().contains(query) ||
-              hymn.number.contains(query);
+          return TextUtils.normalizeText(hymn.title).contains(query) ||
+              TextUtils.normalizeText(hymn.lyrics).contains(query) ||
+              TextUtils.normalizeText(hymn.author).contains(query) ||
+              TextUtils.normalizeText(hymn.composer).contains(query) ||
+              TextUtils.normalizeText(hymn.style).contains(query) ||
+              hymn.number.contains(_searchController.text);
         }).toList();
       }
     });

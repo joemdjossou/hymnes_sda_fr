@@ -13,9 +13,9 @@
     <!-- Forest Green accent color -->
     <color name="forest_green">#228B22</color>
 
-    <!-- Widget Colors - Light Theme -->
+    <!-- Widget Colors - Dark Theme -->
     <color name="card_background">#0D000000</color> <!-- 5% black opacity -->
-    <color name="widget_background">#FFFFFFFF</color> <!-- White background for widgets -->
+    <color name="widget_background">#FF1E1E1E</color> <!-- Dark background for widgets -->
 
     <!-- Legacy widget colors (if needed) -->
     <color name="white_alpha_80">#CCFFFFFF</color>

@@ -215,3 +215,6 @@ app.*.map.json
 /android/app/release
 
 sentry.properties
+
+# Android C++ build artifacts
+android/app/.cxx/
