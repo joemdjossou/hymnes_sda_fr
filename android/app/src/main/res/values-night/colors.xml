@@ -7,15 +7,16 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
     <!-- Forest Green accent color -->
     <color name="forest_green">#228B22</color>
 
     <!-- Widget Colors - Dark Theme -->
-    <color name="card_background">#0D000000</color> <!-- 5% black opacity -->
+    <color name="card_background">#0DFFFFFF</color> <!-- 5% white opacity -->
     <color name="widget_background">#FF1E1E1E</color> <!-- Dark background for widgets -->
+
+    <!-- Text colors for dark theme -->
+    <color name="black">#FFFFFFFF</color> <!-- White text for dark theme -->
+    <color name="white">#FF000000</color> <!-- Black text for dark theme -->
 
     <!-- Legacy widget colors (if needed) -->
     <color name="white_alpha_80">#CCFFFFFF</color>

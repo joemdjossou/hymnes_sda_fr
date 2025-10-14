@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hymnes"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -40,7 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hymnes et Louanges Adventiste"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/black"
+                android:alpha="0.7"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -70,7 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Hymne du Jour"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/black"
+                android:alpha="0.7"
                 android:textSize="10sp"
                 android:textStyle="bold" />
 
@@ -91,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Vous qui sur la terre !"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold"
             android:maxLines="2"
@@ -104,7 +106,8 @@
             android:layout_weight="1"
             android:layout_marginTop="4dp"
             android:text="Vous qui sur la terre habitez, Chantez à haute voix, chantez!"
-            android:textColor="?android:attr/textColorSecondary"
+            android:textColor="@color/black"
+            android:alpha="0.7"
             android:textSize="10sp"
             android:maxLines="3"
             android:ellipsize="end" />
@@ -144,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:text="0"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -174,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:text="0"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -212,7 +215,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Rechercher"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/black"
+                android:alpha="0.7"
                 android:textSize="10sp" />
 
         </LinearLayout>
@@ -240,7 +244,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Favoris"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/black"
+                android:alpha="0.7"
                 android:textSize="10sp" />
 
         </LinearLayout>

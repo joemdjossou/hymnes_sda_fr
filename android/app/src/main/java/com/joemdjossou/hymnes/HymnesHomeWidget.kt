@@ -23,17 +23,34 @@ class HymnesHomeWidget : AppWidgetProvider() {
         private const val PREF_FEATURED_HYMN_TITLE = "featured_hymn_title"
         private const val PREF_FEATURED_HYMN_LYRICS = "featured_hymn_lyrics"
         
+        // HomeWidget package uses these keys
+        private const val HOME_WIDGET_PREFS = "FlutterSharedPreferences"
+        private const val HOME_WIDGET_PREFIX = "flutter."
+        
         fun updateAppWidget(
             context: Context,
             appWidgetManager: AppWidgetManager,
             appWidgetId: Int
         ) {
-            val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-            val hymnsCount = prefs.getInt(PREF_HYMNS_COUNT, 0)
-            val favoritesCount = prefs.getInt(PREF_FAVORITES_COUNT, 0)
-            val featuredHymnNumber = prefs.getString(PREF_FEATURED_HYMN_NUMBER, null)
-            val featuredHymnTitle = prefs.getString(PREF_FEATURED_HYMN_TITLE, null)
-            val featuredHymnLyrics = prefs.getString(PREF_FEATURED_HYMN_LYRICS, null)
+            // Try to get data from Flutter's SharedPreferences first
+            val homeWidgetPrefs = context.getSharedPreferences(HOME_WIDGET_PREFS, Context.MODE_PRIVATE)
+            val fallbackPrefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            
+            // Get hymns count from Flutter SharedPreferences
+            val hymnsCount = homeWidgetPrefs.getInt("$HOME_WIDGET_PREFIX$PREF_HYMNS_COUNT", 
+                fallbackPrefs.getInt(PREF_HYMNS_COUNT, 0))
+            
+            // Get favorites count from Flutter SharedPreferences
+            val favoritesCount = homeWidgetPrefs.getInt("$HOME_WIDGET_PREFIX$PREF_FAVORITES_COUNT", 
+                fallbackPrefs.getInt(PREF_FAVORITES_COUNT, 0))
+            
+            // Get featured hymn data from Flutter SharedPreferences
+            val featuredHymnNumber = homeWidgetPrefs.getString("$HOME_WIDGET_PREFIX$PREF_FEATURED_HYMN_NUMBER", 
+                fallbackPrefs.getString(PREF_FEATURED_HYMN_NUMBER, null))
+            val featuredHymnTitle = homeWidgetPrefs.getString("$HOME_WIDGET_PREFIX$PREF_FEATURED_HYMN_TITLE", 
+                fallbackPrefs.getString(PREF_FEATURED_HYMN_TITLE, null))
+            val featuredHymnLyrics = homeWidgetPrefs.getString("$HOME_WIDGET_PREFIX$PREF_FEATURED_HYMN_LYRICS", 
+                fallbackPrefs.getString(PREF_FEATURED_HYMN_LYRICS, null))
             
             // Create RemoteViews for different widget sizes
             val views = createWidgetViews(context, hymnsCount, favoritesCount, featuredHymnNumber, featuredHymnTitle, featuredHymnLyrics)
