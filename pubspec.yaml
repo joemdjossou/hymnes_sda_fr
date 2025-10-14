@@ -2,7 +2,7 @@ name: hymnes_sda_fr
 description: "An app for French Seventh-day Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities."
 publish_to: "none"
 
-version: 1.0.0+15
+version: 1.0.0+16
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
