@@ -125,7 +125,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noFavoritesYet => 'No favorites yet';
 
   @override
-  String get addFavoritesDescription => 'Tap the heart icon on your favorite hymns to add them to your favorites.';
+  String get addFavoritesDescription =>
+      'Tap the heart icon on your favorite hymns to add them to your favorites.';
 
   @override
   String get skip => 'Skip';
@@ -143,7 +144,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get discoverSacredMusic => 'Discover Sacred Music';
 
   @override
-  String get welcomeDescription => 'Explore a vast collection of Adventist hymns and songs of praise. Experience worship through beautiful melodies and inspiring lyrics.';
+  String get welcomeDescription =>
+      'Explore a vast collection of Adventist hymns and songs of praise. Experience worship through beautiful melodies and inspiring lyrics.';
 
   @override
   String get searchAndDiscover => 'Search & Discover';
@@ -152,7 +154,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get findYourFavorites => 'Find Your Favorites';
 
   @override
-  String get searchDescription => 'Easily find your favorite hymns by title, author, or lyrics. Our powerful search helps you discover new songs for worship.';
+  String get searchDescription =>
+      'Easily find your favorite hymns by title, author, or lyrics. Our powerful search helps you discover new songs for worship.';
 
   @override
   String get midiPlayback => 'MIDI Playback';
@@ -161,7 +164,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get highQualityAudio => 'High-Quality Audio';
 
   @override
-  String get midiDescription => 'Listen to hymns with crystal-clear MIDI playback. Choose different voice tracks and enjoy the full musical arrangement.';
+  String get midiDescription =>
+      'Listen to hymns with crystal-clear MIDI playback. Choose different voice tracks and enjoy the full musical arrangement.';
 
   @override
   String get favoritesAndHistory => 'Favorites & History';
@@ -170,10 +174,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get personalCollection => 'Personal Collection';
 
   @override
-  String get favoritesDescription => 'Save your favorite hymns and explore their rich history. Learn about the authors and the stories behind each song.';
+  String get favoritesDescription =>
+      'Save your favorite hymns and explore their rich history. Learn about the authors and the stories behind each song.';
 
   @override
-  String hymnStoryTemplate(String title, String author, String composer, String style) {
+  String hymnStoryTemplate(
+      String title, String author, String composer, String style) {
     return 'This beloved hymn \"$title\" was written by $author$composer. The $style style makes it perfect for worship and personal devotion. Its timeless message continues to inspire believers worldwide.';
   }
 
@@ -314,10 +320,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome Back';
 
   @override
-  String get welcomeBackDescription => 'Sign in to save your favorite hymns and access your personal collection.';
+  String get welcomeBackDescription =>
+      'Sign in to save your favorite hymns and access your personal collection.';
 
   @override
-  String get createAccountDescription => 'Create an account to save your favorite hymns and access your personal collection.';
+  String get createAccountDescription =>
+      'Create an account to save your favorite hymns and access your personal collection.';
 
   @override
   String get enterEmail => 'Enter your email';
@@ -364,7 +372,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resetPassword => 'Reset Password';
 
   @override
-  String get resetPasswordDescription => 'Enter your email address and we\'ll send you a link to reset your password.';
+  String get resetPasswordDescription =>
+      'Enter your email address and we\'ll send you a link to reset your password.';
 
   @override
   String get sendResetEmail => 'Send Reset Email';
@@ -376,7 +385,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get accountCreated => 'Account Created';
 
   @override
-  String get accountCreatedDescription => 'Your account has been created successfully. You can now save your favorite hymns.';
+  String get accountCreatedDescription =>
+      'Your account has been created successfully. You can now save your favorite hymns.';
 
   @override
   String get continueToApp => 'Continue to App';
@@ -385,7 +395,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get authenticationRequired => 'Authentication Required';
 
   @override
-  String get authenticationRequiredDescription => 'Please sign in to save hymns to your favorites.';
+  String get authenticationRequiredDescription =>
+      'Please sign in to save hymns to your favorites.';
 
   @override
   String get signInToContinue => 'Sign In to Continue';
@@ -459,22 +470,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signInToSaveFavorites => 'Sign in to save your favorites';
 
   @override
-  String get unexpectedError => 'An unexpected error occurred. Please try again.';
+  String get unexpectedError =>
+      'An unexpected error occurred. Please try again.';
 
   @override
   String get appleSignInFailed => 'Apple Sign In failed. Please try again.';
 
   @override
-  String get invalidAppleResponse => 'Invalid response from Apple. Please try again.';
+  String get invalidAppleResponse =>
+      'Invalid response from Apple. Please try again.';
 
   @override
-  String get appleSignInNotHandled => 'Apple Sign In not handled. Please try again.';
+  String get appleSignInNotHandled =>
+      'Apple Sign In not handled. Please try again.';
 
   @override
-  String get unknownAppleError => 'Unknown error occurred during Apple Sign In.';
+  String get unknownAppleError =>
+      'Unknown error occurred during Apple Sign In.';
 
   @override
-  String get signOutError => 'An error occurred while signing out. Please try again.';
+  String get signOutError =>
+      'An error occurred while signing out. Please try again.';
 
   @override
   String get userNotFound => 'No user found for that email address.';
@@ -495,16 +511,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tooManyRequests => 'Too many attempts. Please try again later.';
 
   @override
-  String get operationNotAllowed => 'Signing in with this method is not allowed.';
+  String get operationNotAllowed =>
+      'Signing in with this method is not allowed.';
 
   @override
   String get invalidCredential => 'The credential is invalid or has expired.';
 
   @override
-  String get accountExistsWithDifferentCredential => 'An account already exists with the same email address but different sign-in credentials.';
+  String get accountExistsWithDifferentCredential =>
+      'An account already exists with the same email address but different sign-in credentials.';
 
   @override
-  String get networkRequestFailed => 'Network error. Please check your internet connection.';
+  String get networkRequestFailed =>
+      'Network error. Please check your internet connection.';
 
   @override
   String get authenticationError => 'An authentication error occurred.';
@@ -611,25 +630,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get somethingWentWrong => 'Something went wrong';
 
   @override
-  String get couldNotProcessRequest => 'We couldn\'t process your request. Please try again later.';
+  String get couldNotProcessRequest =>
+      'We couldn\'t process your request. Please try again later.';
 
   @override
   String get actionRequired => 'Action required';
 
   @override
-  String get checkSettingsBeforeProceeding => 'Please check your settings before proceeding to avoid potential issues.';
+  String get checkSettingsBeforeProceeding =>
+      'Please check your settings before proceeding to avoid potential issues.';
 
   @override
   String get actionCompleted => 'Action completed';
 
   @override
-  String get changesSavedSuccessfully => 'Your changes have been saved successfully.';
+  String get changesSavedSuccessfully =>
+      'Your changes have been saved successfully.';
 
   @override
   String get justSoYouKnow => 'Just so you know';
 
   @override
-  String get loggedInOverHour => 'You\'ve been logged in for over an hour. Don\'t forget to save your progress.';
+  String get loggedInOverHour =>
+      'You\'ve been logged in for over an hour. Don\'t forget to save your progress.';
 
   @override
   String get lyricsCopied => 'Lyrics copied';
@@ -658,32 +681,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get testNotification => 'Test Notification';
 
   @override
-  String get sendTestNotificationDescription => 'Send a test notification to verify functionality';
+  String get sendTestNotificationDescription =>
+      'Send a test notification to verify functionality';
 
   @override
   String get dailyReminder => 'Daily Reminder';
 
   @override
-  String get scheduleDailyReminderDescription => 'Schedule a daily reminder to explore hymns';
+  String get scheduleDailyReminderDescription =>
+      'Schedule a daily reminder to explore hymns';
 
   @override
   String get hymnOfTheDay => 'Hymn of the Day';
 
   @override
-  String get getNotifiedAboutFeaturedHymns => 'Get notified about featured hymns';
+  String get getNotifiedAboutFeaturedHymns =>
+      'Get notified about featured hymns';
 
   @override
   String get weeklySabbathReminder => 'Weekly Sabbath Reminder';
 
   @override
-  String get weeklySabbathReminderDescription => 'Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord';
+  String get weeklySabbathReminderDescription =>
+      'Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord';
 
   @override
   String get sabbathReminderTitle => 'Sabbath Preparation';
 
   @override
-  String get sabbathReminderBody => 'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
+  String get sabbathReminderBody =>
+      'It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!';
 
   @override
-  String get checkEmailInstructions => 'Please check your email and follow the instructions to reset your password.';
+  String get checkEmailInstructions =>
+      'Please check your email and follow the instructions to reset your password.';
 }

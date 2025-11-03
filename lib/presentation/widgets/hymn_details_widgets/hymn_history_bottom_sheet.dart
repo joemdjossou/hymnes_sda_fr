@@ -368,8 +368,8 @@ class HymnHistoryBottomSheet extends StatelessWidget {
     Clipboard.setData(ClipboardData(text: text));
     ToastService.showSuccess(
       context,
-      title: AppLocalizations.of(context)!.success,
-      message: AppLocalizations.of(context)!.storyCopied,
+      title: AppLocalizations.of(context)?.success ?? '',
+      message: AppLocalizations.of(context)?.storyCopied ?? '',
     );
   }
 }

@@ -110,10 +110,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noHymnsFound => 'Aucun cantique trouvé';
 
   @override
-  String get noHymnsAvailableAtMoment => 'Aucun hymne disponible pour le moment';
+  String get noHymnsAvailableAtMoment =>
+      'Aucun hymne disponible pour le moment';
 
   @override
-  String get tryModifyingSearchCriteria => 'Essayez de modifier vos critères de recherche';
+  String get tryModifyingSearchCriteria =>
+      'Essayez de modifier vos critères de recherche';
 
   @override
   String get advancedSearchToBe => 'Recherche avancée - à implémenter';
@@ -125,7 +127,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noFavoritesYet => 'Aucun favori pour le moment';
 
   @override
-  String get addFavoritesDescription => 'Appuyez sur l\'icône cœur sur vos cantiques préférés pour les ajouter à vos favoris.';
+  String get addFavoritesDescription =>
+      'Appuyez sur l\'icône cœur sur vos cantiques préférés pour les ajouter à vos favoris.';
 
   @override
   String get skip => 'Passer';
@@ -143,7 +146,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get discoverSacredMusic => 'Découvrez la Musique Sacrée';
 
   @override
-  String get welcomeDescription => 'Explorez une vaste collection de cantiques adventistes et de chants de louange. Vivez l\'adoration à travers de belles mélodies et des paroles inspirantes.';
+  String get welcomeDescription =>
+      'Explorez une vaste collection de cantiques adventistes et de chants de louange. Vivez l\'adoration à travers de belles mélodies et des paroles inspirantes.';
 
   @override
   String get searchAndDiscover => 'Rechercher et Découvrir';
@@ -152,7 +156,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get findYourFavorites => 'Trouvez Vos Favoris';
 
   @override
-  String get searchDescription => 'Trouvez facilement vos cantiques préférés par titre, auteur ou paroles. Notre recherche puissante vous aide à découvrir de nouveaux chants pour l\'adoration.';
+  String get searchDescription =>
+      'Trouvez facilement vos cantiques préférés par titre, auteur ou paroles. Notre recherche puissante vous aide à découvrir de nouveaux chants pour l\'adoration.';
 
   @override
   String get midiPlayback => 'Lecture MIDI';
@@ -161,7 +166,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get highQualityAudio => 'Audio Haute Qualité';
 
   @override
-  String get midiDescription => 'Écoutez les cantiques avec une lecture MIDI cristalline. Choisissez différentes pistes vocales et profitez de l\'arrangement musical complet.';
+  String get midiDescription =>
+      'Écoutez les cantiques avec une lecture MIDI cristalline. Choisissez différentes pistes vocales et profitez de l\'arrangement musical complet.';
 
   @override
   String get favoritesAndHistory => 'Favoris et Histoire';
@@ -170,10 +176,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get personalCollection => 'Collection Personnelle';
 
   @override
-  String get favoritesDescription => 'Sauvegardez vos cantiques préférés et explorez leur riche histoire. Apprenez sur les auteurs et les histoires derrière chaque chant.';
+  String get favoritesDescription =>
+      'Sauvegardez vos cantiques préférés et explorez leur riche histoire. Apprenez sur les auteurs et les histoires derrière chaque chant.';
 
   @override
-  String hymnStoryTemplate(String title, String author, String composer, String style) {
+  String hymnStoryTemplate(
+      String title, String author, String composer, String style) {
     return 'Ce cantique bien-aimé \"$title\" a été écrit par $author$composer. Le style $style le rend parfait pour l\'adoration et la dévotion personnelle. Son message intemporel continue d\'inspirer les croyants du monde entier.';
   }
 
@@ -234,7 +242,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get checkingAvailability => 'Vérification de la disponibilité...';
 
   @override
-  String get errorCheckingMusicSheets => 'Erreur lors de la vérification des partitions';
+  String get errorCheckingMusicSheets =>
+      'Erreur lors de la vérification des partitions';
 
   @override
   String get noMusicSheetsAvailable => 'Aucune partition disponible';
@@ -252,7 +261,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get pdfLoadingTimeout => 'Délai d\'attente de chargement PDF';
 
   @override
-  String get failedToLoadPdf => 'Échec du chargement du PDF. Appuyez pour ouvrir dans le navigateur.';
+  String get failedToLoadPdf =>
+      'Échec du chargement du PDF. Appuyez pour ouvrir dans le navigateur.';
 
   @override
   String get openInBrowser => 'Ouvrir dans le Navigateur';
@@ -261,7 +271,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get retry => 'Réessayer';
 
   @override
-  String get cannotOpenPdfInBrowser => 'Impossible d\'ouvrir le PDF dans le navigateur';
+  String get cannotOpenPdfInBrowser =>
+      'Impossible d\'ouvrir le PDF dans le navigateur';
 
   @override
   String errorOpeningPdf(String error) {
@@ -314,10 +325,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get welcomeBack => 'Bon retour';
 
   @override
-  String get welcomeBackDescription => 'Connectez-vous pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.';
+  String get welcomeBackDescription =>
+      'Connectez-vous pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.';
 
   @override
-  String get createAccountDescription => 'Créez un compte pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.';
+  String get createAccountDescription =>
+      'Créez un compte pour sauvegarder vos cantiques favoris et accéder à votre collection personnelle.';
 
   @override
   String get enterEmail => 'Entrez votre email';
@@ -329,7 +342,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get enterConfirmPassword => 'Confirmez votre mot de passe';
 
   @override
-  String get passwordTooShort => 'Le mot de passe doit contenir au moins 6 caractères';
+  String get passwordTooShort =>
+      'Le mot de passe doit contenir au moins 6 caractères';
 
   @override
   String get passwordsDoNotMatch => 'Les mots de passe ne correspondent pas';
@@ -364,7 +378,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get resetPassword => 'Réinitialiser le mot de passe';
 
   @override
-  String get resetPasswordDescription => 'Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.';
+  String get resetPasswordDescription =>
+      'Entrez votre adresse email et nous vous enverrons un lien pour réinitialiser votre mot de passe.';
 
   @override
   String get sendResetEmail => 'Envoyer l\'email de réinitialisation';
@@ -376,7 +391,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get accountCreated => 'Compte créé';
 
   @override
-  String get accountCreatedDescription => 'Votre compte a été créé avec succès. Vous pouvez maintenant sauvegarder vos cantiques favoris.';
+  String get accountCreatedDescription =>
+      'Votre compte a été créé avec succès. Vous pouvez maintenant sauvegarder vos cantiques favoris.';
 
   @override
   String get continueToApp => 'Continuer vers l\'application';
@@ -385,7 +401,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get authenticationRequired => 'Authentification requise';
 
   @override
-  String get authenticationRequiredDescription => 'Veuillez vous connecter pour sauvegarder des cantiques dans vos favoris.';
+  String get authenticationRequiredDescription =>
+      'Veuillez vous connecter pour sauvegarder des cantiques dans vos favoris.';
 
   @override
   String get signInToContinue => 'Se connecter pour continuer';
@@ -447,7 +464,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get account => 'Compte';
 
   @override
-  String get signOutConfirmation => 'Êtes-vous sûr de vouloir vous déconnecter ?';
+  String get signOutConfirmation =>
+      'Êtes-vous sûr de vouloir vous déconnecter ?';
 
   @override
   String get or => 'OU';
@@ -456,31 +474,40 @@ class AppLocalizationsFr extends AppLocalizations {
   String get unknownUser => 'Utilisateur Inconnu';
 
   @override
-  String get signInToSaveFavorites => 'Connectez-vous pour sauvegarder vos favoris';
+  String get signInToSaveFavorites =>
+      'Connectez-vous pour sauvegarder vos favoris';
 
   @override
-  String get unexpectedError => 'Une erreur inattendue s\'est produite. Veuillez réessayer.';
+  String get unexpectedError =>
+      'Une erreur inattendue s\'est produite. Veuillez réessayer.';
 
   @override
-  String get appleSignInFailed => 'La connexion Apple a échoué. Veuillez réessayer.';
+  String get appleSignInFailed =>
+      'La connexion Apple a échoué. Veuillez réessayer.';
 
   @override
-  String get invalidAppleResponse => 'Réponse invalide d\'Apple. Veuillez réessayer.';
+  String get invalidAppleResponse =>
+      'Réponse invalide d\'Apple. Veuillez réessayer.';
 
   @override
-  String get appleSignInNotHandled => 'La connexion Apple n\'a pas été gérée. Veuillez réessayer.';
+  String get appleSignInNotHandled =>
+      'La connexion Apple n\'a pas été gérée. Veuillez réessayer.';
 
   @override
-  String get unknownAppleError => 'Une erreur inconnue s\'est produite lors de la connexion Apple.';
+  String get unknownAppleError =>
+      'Une erreur inconnue s\'est produite lors de la connexion Apple.';
 
   @override
-  String get signOutError => 'Une erreur s\'est produite lors de la déconnexion. Veuillez réessayer.';
+  String get signOutError =>
+      'Une erreur s\'est produite lors de la déconnexion. Veuillez réessayer.';
 
   @override
-  String get userNotFound => 'Aucun utilisateur trouvé pour cette adresse e-mail.';
+  String get userNotFound =>
+      'Aucun utilisateur trouvé pour cette adresse e-mail.';
 
   @override
-  String get wrongPassword => 'Mot de passe incorrect fourni pour cet utilisateur.';
+  String get wrongPassword =>
+      'Mot de passe incorrect fourni pour cet utilisateur.';
 
   @override
   String get emailAlreadyInUse => 'Un compte existe déjà pour cet e-mail.';
@@ -492,22 +519,28 @@ class AppLocalizationsFr extends AppLocalizations {
   String get userDisabled => 'Ce compte utilisateur a été désactivé.';
 
   @override
-  String get tooManyRequests => 'Trop de tentatives. Veuillez réessayer plus tard.';
+  String get tooManyRequests =>
+      'Trop de tentatives. Veuillez réessayer plus tard.';
 
   @override
-  String get operationNotAllowed => 'La connexion avec cette méthode n\'est pas autorisée.';
+  String get operationNotAllowed =>
+      'La connexion avec cette méthode n\'est pas autorisée.';
 
   @override
-  String get invalidCredential => 'Les identifiants sont invalides ou ont expiré.';
+  String get invalidCredential =>
+      'Les identifiants sont invalides ou ont expiré.';
 
   @override
-  String get accountExistsWithDifferentCredential => 'Un compte existe déjà avec la même adresse e-mail mais des identifiants de connexion différents.';
+  String get accountExistsWithDifferentCredential =>
+      'Un compte existe déjà avec la même adresse e-mail mais des identifiants de connexion différents.';
 
   @override
-  String get networkRequestFailed => 'Erreur réseau. Veuillez vérifier votre connexion internet.';
+  String get networkRequestFailed =>
+      'Erreur réseau. Veuillez vérifier votre connexion internet.';
 
   @override
-  String get authenticationError => 'Une erreur d\'authentification s\'est produite.';
+  String get authenticationError =>
+      'Une erreur d\'authentification s\'est produite.';
 
   @override
   String get appInfo => 'Informations de l\'application';
@@ -551,13 +584,15 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get customizeAppAppearance => 'Personnalisez l\'apparence de l\'application';
+  String get customizeAppAppearance =>
+      'Personnalisez l\'apparence de l\'application';
 
   @override
   String get hymn => 'Hymne';
 
   @override
-  String get hymnNotFoundDescription => 'La description de l\'hymne que vous recherchez n\'a pas été trouvée';
+  String get hymnNotFoundDescription =>
+      'La description de l\'hymne que vous recherchez n\'a pas été trouvée';
 
   @override
   String get back => 'Retour';
@@ -575,7 +610,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get templateStory => 'Histoire Modèle';
 
   @override
-  String get fullHymnStoryComingSoon => 'L\'histoire complète du cantique arrive bientôt !';
+  String get fullHymnStoryComingSoon =>
+      'L\'histoire complète du cantique arrive bientôt !';
 
   @override
   String get tapForMoreInfo => 'Appuyez pour plus d\'informations';
@@ -611,25 +647,29 @@ class AppLocalizationsFr extends AppLocalizations {
   String get somethingWentWrong => 'Quelque chose s\'est mal passé';
 
   @override
-  String get couldNotProcessRequest => 'Nous n\'avons pas pu traiter votre demande. Veuillez réessayer plus tard.';
+  String get couldNotProcessRequest =>
+      'Nous n\'avons pas pu traiter votre demande. Veuillez réessayer plus tard.';
 
   @override
   String get actionRequired => 'Action requise';
 
   @override
-  String get checkSettingsBeforeProceeding => 'Veuillez vérifier vos paramètres avant de continuer pour éviter les problèmes potentiels.';
+  String get checkSettingsBeforeProceeding =>
+      'Veuillez vérifier vos paramètres avant de continuer pour éviter les problèmes potentiels.';
 
   @override
   String get actionCompleted => 'Action terminée';
 
   @override
-  String get changesSavedSuccessfully => 'Vos modifications ont été sauvegardées avec succès.';
+  String get changesSavedSuccessfully =>
+      'Vos modifications ont été sauvegardées avec succès.';
 
   @override
   String get justSoYouKnow => 'Juste pour votre information';
 
   @override
-  String get loggedInOverHour => 'Vous êtes connecté depuis plus d\'une heure. N\'oubliez pas de sauvegarder vos progrès.';
+  String get loggedInOverHour =>
+      'Vous êtes connecté depuis plus d\'une heure. N\'oubliez pas de sauvegarder vos progrès.';
 
   @override
   String get lyricsCopied => 'Paroles copiées';
@@ -652,38 +692,45 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notifications => 'Notifications';
 
   @override
-  String get manageNotificationPreferences => 'Gérer les préférences de notification';
+  String get manageNotificationPreferences =>
+      'Gérer les préférences de notification';
 
   @override
   String get testNotification => 'Notification de Test';
 
   @override
-  String get sendTestNotificationDescription => 'Envoyer une notification de test pour vérifier le fonctionnement';
+  String get sendTestNotificationDescription =>
+      'Envoyer une notification de test pour vérifier le fonctionnement';
 
   @override
   String get dailyReminder => 'Rappel Quotidien';
 
   @override
-  String get scheduleDailyReminderDescription => 'Programmer un rappel quotidien pour explorer les cantiques';
+  String get scheduleDailyReminderDescription =>
+      'Programmer un rappel quotidien pour explorer les cantiques';
 
   @override
   String get hymnOfTheDay => 'Cantique du Jour';
 
   @override
-  String get getNotifiedAboutFeaturedHymns => 'Être notifié des cantiques en vedette';
+  String get getNotifiedAboutFeaturedHymns =>
+      'Être notifié des cantiques en vedette';
 
   @override
   String get weeklySabbathReminder => 'Rappel Hebdomadaire du Sabbat';
 
   @override
-  String get weeklySabbathReminderDescription => 'Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur';
+  String get weeklySabbathReminderDescription =>
+      'Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur';
 
   @override
   String get sabbathReminderTitle => 'Préparation du Sabbat';
 
   @override
-  String get sabbathReminderBody => 'C\'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !';
+  String get sabbathReminderBody =>
+      'C\'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !';
 
   @override
-  String get checkEmailInstructions => 'Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe.';
+  String get checkEmailInstructions =>
+      'Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe.';
 }
