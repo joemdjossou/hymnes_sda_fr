@@ -24,47 +24,24 @@ class HymnMusicSheetWidget extends StatefulWidget {
 
 class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
   final MusicSheetService _musicSheetService = MusicSheetService();
-  List<String>? _availablePdfs;
-  bool _isLoading = false;
-  bool _hasError = false;
+  late final List<String> _availablePdfs;
 
   @override
   void initState() {
     super.initState();
-    _checkAvailablePdfs();
-  }
-
-  Future<void> _checkAvailablePdfs() async {
-    setState(() {
-      _isLoading = true;
-      _hasError = false;
-    });
-
-    try {
-      final pdfs =
-          await _musicSheetService.getAvailablePdfUrls(widget.hymn.number);
-      if (mounted) {
-        setState(() {
-          _availablePdfs = pdfs;
-          _isLoading = false;
-        });
-      }
-    } catch (e) {
-      if (mounted) {
-        setState(() {
-          _hasError = true;
-          _isLoading = false;
-        });
-      }
-    }
+    // Generate PDF URLs synchronously based on musicsheets count from hymn data
+    _availablePdfs = _musicSheetService.generatePdfUrls(
+      widget.hymn.number,
+      widget.hymn.musicsheets,
+    );
   }
 
   void _showMusicSheets() {
-    if (_availablePdfs != null && _availablePdfs!.isNotEmpty) {
+    if (_availablePdfs.isNotEmpty) {
       // Use in-app webview directly
       MusicSheetBottomSheet.show(
         context,
-        pdfUrls: _availablePdfs!,
+        pdfUrls: _availablePdfs,
         hymnTitle: widget.hymn.title,
         hymnNumber: widget.hymn.number,
       );
@@ -76,8 +53,8 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
 
-    // Don't show the widget if no PDFs are available and not loading
-    if (!_isLoading && (_availablePdfs?.isEmpty ?? true) && !_hasError) {
+    // Don't show the widget if no PDFs are available
+    if (_availablePdfs.isEmpty) {
       return const SizedBox.shrink();
     }
 
@@ -99,7 +76,7 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: _availablePdfs?.isNotEmpty == true ? _showMusicSheets : null,
+          onTap: _availablePdfs.isNotEmpty ? _showMusicSheets : null,
           borderRadius: BorderRadius.circular(AppConstants.mediumBorderRadius),
           child: Padding(
             padding: const EdgeInsets.all(AppConstants.mediumPadding),
@@ -159,49 +136,16 @@ class _HymnMusicSheetWidgetState extends State<HymnMusicSheetWidget> {
   }
 
   String _getSubtitleText(AppLocalizations l10n) {
-    if (_isLoading) {
-      return l10n.checkingAvailability;
-    } else if (_hasError) {
-      return l10n.errorCheckingMusicSheets;
-    } else if (_availablePdfs?.isEmpty ?? true) {
+    if (_availablePdfs.isEmpty) {
       return l10n.noMusicSheetsAvailable;
     } else {
-      final count = _availablePdfs!.length;
+      final count = _availablePdfs.length;
       return count == 1 ? l10n.viewMusicSheet : l10n.viewMusicSheets(count);
     }
   }
 
   Widget _buildTrailingWidget() {
-    if (_isLoading) {
-      return Container(
-        padding: const EdgeInsets.all(AppConstants.smallPadding),
-        decoration: BoxDecoration(
-          color: AppColors.primary.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-        ),
-        child: Container(
-          width: 16,
-          height: 16,
-          child: CircularProgressIndicator(
-            strokeWidth: 2,
-            color: AppColors.primary,
-          ),
-        ),
-      );
-    } else if (_hasError) {
-      return Container(
-        padding: const EdgeInsets.all(AppConstants.smallPadding),
-        decoration: BoxDecoration(
-          color: AppColors.error.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-        ),
-        child: const Icon(
-          Icons.error_outline_rounded,
-          color: AppColors.error,
-          size: 16,
-        ),
-      );
-    } else if (_availablePdfs?.isNotEmpty == true) {
+    if (_availablePdfs.isNotEmpty) {
       return Container(
         padding: const EdgeInsets.all(AppConstants.smallPadding),
         decoration: BoxDecoration(

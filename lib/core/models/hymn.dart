@@ -17,6 +17,7 @@ class Hymn extends Equatable {
   final String theme;
   final String subtheme;
   final String story;
+  final int musicsheets;
 
   const Hymn({
     required this.number,
@@ -35,6 +36,7 @@ class Hymn extends Equatable {
     required this.theme,
     required this.subtheme,
     required this.story,
+    this.musicsheets = 0,
   });
 
   @override
@@ -55,6 +57,7 @@ class Hymn extends Equatable {
         theme,
         subtheme,
         story,
+        musicsheets,
       ];
 
   Hymn copyWith({
@@ -74,6 +77,7 @@ class Hymn extends Equatable {
     String? theme,
     String? subtheme,
     String? story,
+    int? musicsheets,
   }) {
     return Hymn(
       number: number ?? this.number,
@@ -92,6 +96,7 @@ class Hymn extends Equatable {
       theme: theme ?? this.theme,
       subtheme: subtheme ?? this.subtheme,
       story: story ?? this.story,
+      musicsheets: musicsheets ?? this.musicsheets,
     );
   }
 
@@ -113,6 +118,7 @@ class Hymn extends Equatable {
       'theme': theme,
       'subtheme': subtheme,
       'story': story,
+      'musicsheets': musicsheets,
     };
   }
 
@@ -135,6 +141,11 @@ class Hymn extends Equatable {
       theme: json['theme'] ?? '',
       subtheme: json['subtheme'] ?? '',
       story: json['story'] ?? '',
+      musicsheets: json['musicsheets'] is int
+          ? json['musicsheets'] as int
+          : (json['musicsheets'] is String
+              ? int.tryParse(json['musicsheets'] as String) ?? 0
+              : 0),
     );
   }
 }
