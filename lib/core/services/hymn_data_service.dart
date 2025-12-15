@@ -4,15 +4,23 @@ import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 
 import '../models/hymn.dart';
+import '../models/hymns_version_metadata.dart';
+import 'hymns_storage_service.dart';
+import 'posthog_service.dart';
 
 class HymnDataService {
   static final HymnDataService _instance = HymnDataService._internal();
   factory HymnDataService() => _instance;
   HymnDataService._internal();
 
-  List<Hymn>? _hymnsCache;
+  final HymnsStorageService _storage = HymnsStorageService();
+  final Logger _logger = Logger();
 
-  /// Load hymns from JSON file
+  List<Hymn>? _hymnsCache;
+  HymnsSource? _currentSource;
+  bool _versionTracked = false;
+
+  /// Load hymns from best available source (current → previous → assets)
   Future<List<Hymn>> getHymns() async {
     // Return cached data if available
     if (_hymnsCache != null) {
@@ -20,21 +28,46 @@ class HymnDataService {
     }
 
     try {
-      // Load JSON file from assets
-      final String jsonString =
-          await rootBundle.loadString('assets/data/hymns.json');
+      // Initialize storage service if not already initialized
+      if (!_storage.currentFile.existsSync()) {
+        await _storage.initialize();
+      }
 
-      // Parse JSON to List<Map<String, dynamic>>
-      final List<dynamic> jsonList = json.decode(jsonString);
+      // Load from best available source
+      final result = await _storage.loadHymns();
+
+      if (!result.success || result.hymns.isEmpty) {
+        _logger.e('Failed to load hymns: ${result.error}');
+        return [];
+      }
+
+      // Cache the source for debugging
+      _currentSource = result.source;
+      _logger.i('Loaded ${result.hymns.length} hymns from ${result.source}');
 
       // Convert to List<Hymn>
-      _hymnsCache = jsonList.map((json) => Hymn.fromJson(json)).toList();
+      _hymnsCache = result.hymns.map((json) => Hymn.fromJson(json)).toList();
+
+      // Track version usage once per app session
+      await _trackHymnsVersion(result.source);
 
       return _hymnsCache!;
-    } catch (e) {
-      Logger().d('Error loading hymns from JSON: $e');
-      // Return empty list if loading fails
-      return [];
+    } catch (e, stackTrace) {
+      _logger.e('Error loading hymns: $e', error: e, stackTrace: stackTrace);
+
+      // Ultimate fallback: try to load directly from assets
+      try {
+        final String jsonString =
+            await rootBundle.loadString('assets/data/hymns.json');
+        final List<dynamic> jsonList = json.decode(jsonString);
+        _hymnsCache = jsonList.map((json) => Hymn.fromJson(json)).toList();
+        _currentSource = HymnsSource.assets;
+        _logger.i('Loaded ${_hymnsCache!.length} hymns from assets (fallback)');
+        return _hymnsCache!;
+      } catch (fallbackError) {
+        _logger.e('Even fallback to assets failed: $fallbackError');
+        return [];
+      }
     }
   }
 
@@ -69,6 +102,40 @@ class HymnDataService {
   /// Clear cache (useful for testing or when data needs to be refreshed)
   void clearCache() {
     _hymnsCache = null;
+    _currentSource = null;
+  }
+
+  /// Get current hymns source (for debugging)
+  HymnsSource? getCurrentSource() {
+    return _currentSource;
+  }
+
+  /// Force reload hymns (clears cache and reloads)
+  Future<List<Hymn>> forceReload() async {
+    clearCache();
+    return await getHymns();
+  }
+
+  Future<void> _trackHymnsVersion(HymnsSource source) async {
+    if (_versionTracked) return;
+
+    try {
+      final metadata = await HymnsMetadataStorage.load();
+      final version = metadata?.currentVersion ?? _storage.bundledVersion;
+
+      await PostHogService().trackEvent(
+        eventName: 'hymns_version_loaded',
+        properties: {
+          'version': version,
+          'source': source.name,
+          'has_metadata': metadata != null,
+        },
+      );
+
+      _versionTracked = true;
+    } catch (e) {
+      _logger.w('Failed to track hymns version: $e');
+    }
   }
 
   /// Get total number of hymns

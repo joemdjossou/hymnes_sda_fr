@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:audio_session/audio_session.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -37,6 +38,11 @@ class AudioService extends ChangeNotifier {
   StreamSubscription<Duration>? _positionSubscription;
   StreamSubscription<Duration?>? _durationSubscription;
   StreamSubscription<PlayerState>? _playerStateSubscription;
+  AudioSession? _audioSession;
+
+  // Current hymn metadata for notification
+  // ignore: unused_field
+  String? _currentHymnTitle;
 
   // Error logging service
   final ErrorLoggingService _errorLogger = ErrorLoggingService();
@@ -59,6 +65,24 @@ class AudioService extends ChangeNotifier {
     if (_isInitialized) return;
 
     try {
+      // Configure audio session for background playback
+      _audioSession = await AudioSession.instance;
+      await _audioSession!.configure(const AudioSessionConfiguration(
+        avAudioSessionCategory: AVAudioSessionCategory.playback,
+        avAudioSessionCategoryOptions: AVAudioSessionCategoryOptions.none,
+        avAudioSessionMode: AVAudioSessionMode.defaultMode,
+        avAudioSessionRouteSharingPolicy:
+            AVAudioSessionRouteSharingPolicy.defaultPolicy,
+        avAudioSessionSetActiveOptions: AVAudioSessionSetActiveOptions.none,
+        androidAudioAttributes: AndroidAudioAttributes(
+          contentType: AndroidAudioContentType.music,
+          flags: AndroidAudioFlags.none,
+          usage: AndroidAudioUsage.media,
+        ),
+        androidAudioFocusGainType: AndroidAudioFocusGainType.gain,
+        androidWillPauseWhenDucked: false,
+      ));
+
       _audioPlayer = AudioPlayer();
 
       // Listen to position changes
@@ -136,13 +160,16 @@ class AudioService extends ChangeNotifier {
   }
 
   Future<void> playHymn(String hymnNumber,
-      {VoiceType voiceType = VoiceType.allVoices, String? voiceFile}) async {
+      {VoiceType voiceType = VoiceType.allVoices,
+      String? voiceFile,
+      String? hymnTitle}) async {
     if (!_isInitialized) await initialize();
 
     try {
       _state = AudioPlayerState.loading;
       _currentHymnNumber = hymnNumber;
       _currentVoiceType = voiceType;
+      _currentHymnTitle = hymnTitle ?? 'Hymn $hymnNumber';
       _lastError = null;
       _retryCount = 0;
       notifyListeners();
@@ -184,7 +211,16 @@ class AudioService extends ChangeNotifier {
     debugPrint('Attempting to play audio: $mp3Url (Voice: $voiceType)');
 
     try {
+      // Activate audio session for iOS background playback
+      // This is important for iOS to show notification controls
+      if (_audioSession != null) {
+        await _audioSession!.setActive(true);
+        debugPrint('Audio session activated for background playback');
+      }
+
       // Load the MP3 file
+      // Note: just_audio automatically creates notification controls
+      // when audio session is configured for background playback
       await _audioPlayer!.setUrl(mp3Url);
 
       // Start playing
@@ -206,10 +242,12 @@ class AudioService extends ChangeNotifier {
       notifyListeners();
 
       debugPrint('Playing audio: $mp3Url');
-    } catch (e) {
+    } catch (e, stackTrace) {
       debugPrint('Error in _loadAndPlayHymn: $e');
       _state = AudioPlayerState.error;
       _lastError = 'Failed to play audio: $e';
+
+      final bool isNetworkIssue = e is PlayerException;
 
       // Log error to Sentry
       _errorLogger.logAudioError(
@@ -217,12 +255,14 @@ class AudioService extends ChangeNotifier {
         hymnNumber,
         'Failed to load and play hymn',
         error: e,
-        stackTrace: StackTrace.current,
+        stackTrace: stackTrace,
         audioContext: {
           'mp3Url': mp3Url,
           'voiceType': voiceType.toString(),
           'voiceFile': voiceFile,
+          'errorType': e.runtimeType.toString(),
         },
+        isExpected: isNetworkIssue,
       );
 
       notifyListeners();
@@ -231,7 +271,10 @@ class AudioService extends ChangeNotifier {
   }
 
   void _handlePlayError(dynamic error) {
-    if (_retryCount < _maxRetries) {
+    final hymnNumberSnapshot = _currentHymnNumber;
+    final voiceTypeSnapshot = _currentVoiceType;
+
+    if (_retryCount < _maxRetries && hymnNumberSnapshot != null) {
       _retryCount++;
       _state = AudioPlayerState.retrying;
       _lastError =
@@ -242,8 +285,8 @@ class AudioService extends ChangeNotifier {
         'AudioService',
         'Audio playback retry attempt ${_retryCount}/$_maxRetries',
         context: {
-          'hymnNumber': _currentHymnNumber,
-          'voiceType': _currentVoiceType.toString(),
+          'hymnNumber': hymnNumberSnapshot,
+          'voiceType': voiceTypeSnapshot.toString(),
           'retryCount': _retryCount,
           'error': error.toString(),
         },
@@ -251,12 +294,22 @@ class AudioService extends ChangeNotifier {
 
       notifyListeners();
 
-      // Retry after a delay
-      Future.delayed(Duration(seconds: 2 * _retryCount), () {
-        if (_state == AudioPlayerState.retrying) {
-          _loadAndPlayHymn(_currentHymnNumber!, voiceType: _currentVoiceType)
-              .catchError(_handlePlayError);
+      final retryDelaySeconds = 2 * _retryCount;
+
+      // Retry after a delay using the same hymn snapshot, but only if playback
+      // is still in the retrying state and the hymn hasn't changed.
+      Future.delayed(Duration(seconds: retryDelaySeconds), () {
+        if (_state != AudioPlayerState.retrying) {
+          return;
         }
+
+        if (_currentHymnNumber != hymnNumberSnapshot) {
+          // User selected another hymn or stopped playback, so abort retry.
+          return;
+        }
+
+        _loadAndPlayHymn(hymnNumberSnapshot, voiceType: voiceTypeSnapshot)
+            .catchError(_handlePlayError);
       });
     } else {
       _state = AudioPlayerState.error;
@@ -275,6 +328,7 @@ class AudioService extends ChangeNotifier {
           'retryCount': _retryCount,
           'maxRetries': _maxRetries,
         },
+        isExpected: error is PlayerException,
       );
 
       notifyListeners();
@@ -329,6 +383,7 @@ class AudioService extends ChangeNotifier {
         _position = Duration.zero;
         _currentHymnNumber = null;
         _currentVoiceType = VoiceType.allVoices;
+        _currentHymnTitle = null;
         _lastError = null;
         notifyListeners();
         debugPrint('Audio playback stopped');
@@ -411,11 +466,15 @@ class AudioService extends ChangeNotifier {
       _state = AudioPlayerState.stopped;
       _currentHymnNumber = null;
       _currentVoiceType = VoiceType.allVoices;
+      _currentHymnTitle = null;
       _position = Duration.zero;
       _duration = Duration.zero;
       _isPlaying = false;
       _lastError = null;
       _retryCount = 0;
+      // Note: setActive is async, but dispose is sync
+      // The audio session will be cleaned up automatically
+      _audioSession = null;
     } catch (e) {
       debugPrint('Error disposing AudioService: $e');
     }

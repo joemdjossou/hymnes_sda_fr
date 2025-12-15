@@ -65,6 +65,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
   }
 
   void _onScroll() {
+    if (!mounted) return;
     // Show collapsed app bar when scrolled past the hero section (around 80px)
     final shouldShow = _scrollController.offset > 70;
     if (shouldShow != _showCollapsedAppBar) {
@@ -76,6 +77,7 @@ class _FavoritesScreenState extends State<FavoritesScreen>
 
   @override
   void dispose() {
+    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     _heroAnimationController.dispose();
     super.dispose();

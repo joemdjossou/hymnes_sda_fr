@@ -43,4 +43,16 @@ class AppConstants {
   static const String iOSWidgetName = 'HymnesHomeWidget';
   static const String androidWidgetName = 'HymnesHomeWidget';
   static const String dataKey = 'widget_data';
+
+  // App Links
+  static const String appStoreUrl =
+      'https://apps.apple.com/cl/app/hymnes-et-louanges-adventiste/id6753330258';
+  static const String playStoreUrl =
+      'https://play.google.com/store/apps/details?id=com.joemdjossou.hymnes';
+
+  // Review Links
+  static const String androidReviewUrl =
+      'market://details?id=com.joemdjossou.hymnes';
+  static const String iosReviewUrl =
+      'https://apps.apple.com/cl/app/hymnes-et-louanges-adventiste/id6753330258?action=write-review';
 }

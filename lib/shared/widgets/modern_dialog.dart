@@ -184,6 +184,7 @@ class ModernDialog extends StatefulWidget {
     VoidCallback? onClosePressed,
     double? width,
     double? height,
+    bool isDestructive = false,
   }) {
     return showDialog<T>(
       context: context,
@@ -202,6 +203,7 @@ class ModernDialog extends StatefulWidget {
         onClosePressed: onClosePressed,
         width: width,
         height: height,
+        isDestructive: isDestructive,
       ),
     );
   }
@@ -219,6 +221,7 @@ class ModernDialog extends StatefulWidget {
     VoidCallback? onClosePressed,
     double? width,
     double? height,
+    bool isDestructive = false,
   }) {
     return showDialog<T>(
       context: context,
@@ -237,6 +240,7 @@ class ModernDialog extends StatefulWidget {
         onClosePressed: onClosePressed,
         width: width,
         height: height,
+        isDestructive: isDestructive,
       ),
     );
   }

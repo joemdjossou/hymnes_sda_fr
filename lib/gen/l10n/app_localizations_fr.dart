@@ -733,4 +733,94 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get checkEmailInstructions =>
       'Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe.';
+
+  @override
+  String get deleteAccount => 'Supprimer le compte';
+
+  @override
+  String get deleteAccountConfirmation =>
+      'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.';
+
+  @override
+  String get deleteAccountDescription =>
+      'La suppression de votre compte supprimera définitivement :\n\n• Votre compte et vos informations de profil\n• Tous vos favoris sauvegardés\n• Votre historique de cantiques\n\nCette action est permanente et ne peut pas être annulée. Vous serez déconnecté immédiatement.';
+
+  @override
+  String get deleteAccountButton => 'Supprimer mon compte';
+
+  @override
+  String get deleteAccountSuccess => 'Votre compte a été supprimé avec succès.';
+
+  @override
+  String get deleteAccountError =>
+      'Une erreur s\'est produite lors de la suppression de votre compte. Veuillez réessayer.';
+
+  @override
+  String get review => 'Noter';
+
+  @override
+  String get share => 'Partager';
+
+  @override
+  String shareAppMessage(String url) {
+    return 'Découvrez cette application incroyable de Hymnes Adventistes ! 🎵🙏\n\n$url';
+  }
+
+  @override
+  String get feedbackTitle => 'Commentaires et Support';
+
+  @override
+  String get feedbackSubtitle => 'Aidez-nous à améliorer';
+
+  @override
+  String get feedbackHelp =>
+      'Partagez vos pensées, signalez des bugs ou suggérez de nouvelles fonctionnalités pour nous aider à améliorer l\'application pour tous.';
+
+  @override
+  String get sendFeedback => 'Envoyer un Commentaire';
+
+  @override
+  String get feedbackDescription =>
+      'Nous aimerions avoir votre avis ! Vos commentaires nous aident à améliorer l\'application.';
+
+  @override
+  String get feedbackType => 'Type de Commentaire';
+
+  @override
+  String get feedbackGeneral => 'Général';
+
+  @override
+  String get feedbackBug => 'Signaler un Bug';
+
+  @override
+  String get feedbackFeature => 'Demande de Fonctionnalité';
+
+  @override
+  String get feedbackReview => 'Avis';
+
+  @override
+  String get feedbackPlaceholder =>
+      'Partagez vos pensées, signalez un bug ou suggérez une amélioration...';
+
+  @override
+  String get feedbackPrivacyNote =>
+      'Vos commentaires sont envoyés en toute sécurité et nous aident à améliorer l\'application.';
+
+  @override
+  String get feedbackEmptyMessage =>
+      'Veuillez écrire votre commentaire avant de soumettre.';
+
+  @override
+  String get feedbackSuccessMessage =>
+      'Merci pour vos commentaires ! Nous les examinerons bientôt.';
+
+  @override
+  String get feedbackErrorMessage =>
+      'Échec de l\'envoi des commentaires. Veuillez réessayer.';
+
+  @override
+  String get warning => 'Avertissement';
+
+  @override
+  String get submit => 'Soumettre';
 }

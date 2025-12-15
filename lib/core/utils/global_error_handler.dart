@@ -87,8 +87,11 @@ class GlobalErrorHandler {
         stackTrace: details.stack,
         withScope: (scope) {
           scope.setTag('error_type', 'flutter_error');
+          scope.setTag('environment', kDebugMode ? 'debug' : 'production');
         },
       );
+      
+      // Note: Sentry automatically sends events, no need to flush
     } catch (e) {
       debugPrint('Error in _handleFlutterError: $e');
     }
@@ -113,8 +116,11 @@ class GlobalErrorHandler {
         stackTrace: stackTrace,
         withScope: (scope) {
           scope.setTag('error_type', 'zone_error');
+          scope.setTag('environment', kDebugMode ? 'debug' : 'production');
         },
       );
+      
+      // Note: Sentry automatically sends events, no need to flush
     } catch (e) {
       debugPrint('Error in _handleZoneError: $e');
     }
@@ -139,8 +145,11 @@ class GlobalErrorHandler {
         stackTrace: stackTrace,
         withScope: (scope) {
           scope.setTag('error_type', 'isolate_error');
+          scope.setTag('environment', kDebugMode ? 'debug' : 'production');
         },
       );
+      
+      // Note: Sentry automatically sends events, no need to flush
     } catch (e) {
       debugPrint('Error in _handleIsolateError: $e');
     }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../core/navigation/navigation_service.dart';
+import '../../core/providers/language_provider.dart';
+import '../../shared/constants/app_colors.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -167,6 +170,167 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     }
   }
 
+  void _showLanguageSelector() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      builder: (context) => _buildLanguageBottomSheet(),
+    );
+  }
+
+  Widget _buildLanguageBottomSheet() {
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors.cardBackground(context),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(AppConstants.largeBorderRadius),
+          topRight: Radius.circular(AppConstants.largeBorderRadius),
+        ),
+      ),
+      padding: EdgeInsets.only(
+        top: AppConstants.defaultPadding,
+        left: AppConstants.defaultPadding,
+        right: AppConstants.defaultPadding,
+        bottom:
+            MediaQuery.of(context).padding.bottom + AppConstants.defaultPadding,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Handle bar
+          Center(
+            child: Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: AppColors.border(context),
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+          ),
+          const Gap(20),
+
+          // Title
+          Text(
+            AppLocalizations.of(context)!.selectLanguage,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary(context),
+            ),
+          ),
+          const Gap(20),
+
+          // Language options
+          BlocBuilder<LanguageBloc, LanguageState>(
+            builder: (context, state) {
+              final currentLocale = state is LanguageLoaded
+                  ? state.locale
+                  : const Locale('en', 'US');
+
+              return Column(
+                children: [
+                  _buildLanguageOption(
+                    context: context,
+                    locale: const Locale('fr', 'FR'),
+                    flag: '🇫🇷',
+                    languageName: 'Français',
+                    nativeName: 'French',
+                    isSelected: currentLocale.languageCode == 'fr',
+                  ),
+                  const Gap(12),
+                  _buildLanguageOption(
+                    context: context,
+                    locale: const Locale('en', 'US'),
+                    flag: '🇺🇸',
+                    languageName: 'English',
+                    nativeName: 'Anglais',
+                    isSelected: currentLocale.languageCode == 'en',
+                  ),
+                ],
+              );
+            },
+          ),
+          const Gap(20),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLanguageOption({
+    required BuildContext context,
+    required Locale locale,
+    required String flag,
+    required String languageName,
+    required String nativeName,
+    required bool isSelected,
+  }) {
+    return GestureDetector(
+      onTap: () {
+        context.read<LanguageBloc>().add(ChangeLanguage(locale));
+        Navigator.pop(context);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(AppConstants.defaultPadding),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? AppColors.primary.withValues(alpha: 0.1)
+              : AppColors.cardBackground(context),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+          border: Border.all(
+            color: isSelected ? AppColors.primary : AppColors.border(context),
+            width: isSelected ? 2 : 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            // Flag
+            Text(
+              flag,
+              style: const TextStyle(fontSize: 32),
+            ),
+            const Gap(16),
+
+            // Language names
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    languageName,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: isSelected
+                          ? AppColors.primary
+                          : AppColors.textPrimary(context),
+                    ),
+                  ),
+                  Text(
+                    nativeName,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: AppColors.textSecondary(context),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // Checkmark
+            if (isSelected)
+              Icon(
+                Icons.check_circle,
+                color: AppColors.primary,
+                size: 24,
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -257,6 +421,60 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                       ),
                     ),
                   ),
+                ),
+
+                // Language Selector Button
+                BlocBuilder<LanguageBloc, LanguageState>(
+                  builder: (context, state) {
+                    final currentLocale = state is LanguageLoaded
+                        ? state.locale
+                        : const Locale('en', 'US');
+                    final flag =
+                        currentLocale.languageCode == 'fr' ? '🇫🇷' : '🇺🇸';
+                    final code = currentLocale.languageCode.toUpperCase();
+
+                    return GestureDetector(
+                      onTap: _showLanguageSelector,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(
+                              AppConstants.largeBorderRadius),
+                          border: Border.all(
+                            color: Colors.white.withValues(alpha: 0.3),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              flag,
+                              style: const TextStyle(fontSize: 20),
+                            ),
+                            const Gap(6),
+                            Text(
+                              code,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const Gap(4),
+                            const Icon(
+                              Icons.keyboard_arrow_down,
+                              color: Colors.white,
+                              size: 20,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

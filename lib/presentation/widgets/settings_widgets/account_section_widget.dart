@@ -175,6 +175,38 @@ class AccountSectionWidget extends StatelessWidget {
             },
             variant: ButtonVariant.outlined,
           ),
+          const Gap(12),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius:
+                  BorderRadius.circular(AppConstants.mediumBorderRadius),
+              border: Border.all(
+                color: AppColors.error.withValues(alpha: 0.3),
+                width: 1.5,
+              ),
+            ),
+            child: CustomButton(
+              text: l10n.deleteAccount,
+              color: AppColors.error,
+              onPressed: () {
+                ModernDialog.showWarning(
+                  context: context,
+                  title: l10n.deleteAccountConfirmation,
+                  description: l10n.deleteAccountDescription,
+                  primaryButtonText: l10n.deleteAccountButton,
+                  secondaryButtonText: l10n.cancel,
+                  isDestructive: true,
+                  onPrimaryPressed: () async {
+                    NavigationService.pop();
+                    // Delete account
+                    context.read<AuthBloc>().add(DeleteAccountRequested());
+                  },
+                  onSecondaryPressed: () => NavigationService.pop(),
+                );
+              },
+              variant: ButtonVariant.text,
+            ),
+          ),
         ],
       ),
     );

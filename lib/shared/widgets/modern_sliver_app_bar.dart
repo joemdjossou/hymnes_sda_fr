@@ -257,25 +257,26 @@ class ModernSliverAppBar extends StatelessWidget {
             spacing: 12,
             runSpacing: 8,
             children: [
-              if (style != null)
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: AppConstants.defaultPadding - 4,
-                    vertical: AppConstants.smallPadding - 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.primary.withValues(alpha: 0.1),
-                    borderRadius:
-                        BorderRadius.circular(AppConstants.borderRadius),
-                  ),
-                  child: Text(
-                    style!,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
+              (style != null && style!.isNotEmpty)
+                  ? Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppConstants.defaultPadding - 4,
+                        vertical: AppConstants.smallPadding - 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withValues(alpha: 0.1),
+                        borderRadius:
+                            BorderRadius.circular(AppConstants.borderRadius),
+                      ),
+                      child: Text(
+                        style!,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    )
+                  : const Gap(20),
               if (composer != null && composer!.isNotEmpty)
                 Container(
                   padding: const EdgeInsets.symmetric(

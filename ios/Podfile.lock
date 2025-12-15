@@ -1217,15 +1217,29 @@ PODS:
     - FirebaseAuth (~> 12.2.0)
   - Firebase/CoreOnly (12.2.0):
     - FirebaseCore (~> 12.2.0)
+  - Firebase/Database (12.2.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 12.2.0)
   - Firebase/Firestore (12.2.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 12.2.0)
+  - Firebase/Storage (12.2.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 12.2.0)
   - firebase_auth (6.1.0):
     - Firebase/Auth (= 12.2.0)
     - firebase_core
     - Flutter
   - firebase_core (4.1.1):
     - Firebase/CoreOnly (= 12.2.0)
+    - Flutter
+  - firebase_database (12.0.2):
+    - Firebase/Database (= 12.2.0)
+    - firebase_core
+    - Flutter
+  - firebase_storage (13.0.2):
+    - Firebase/Storage (= 12.2.0)
+    - firebase_core
     - Flutter
   - FirebaseAppCheckInterop (12.2.0)
   - FirebaseAuth (12.2.0):
@@ -1246,6 +1260,12 @@ PODS:
     - FirebaseCore (~> 12.2.0)
   - FirebaseCoreInternal (12.2.0):
     - "GoogleUtilities/NSData+zlib (~> 8.1)"
+  - FirebaseDatabase (12.2.0):
+    - FirebaseAppCheckInterop (~> 12.2.0)
+    - FirebaseCore (~> 12.2.0)
+    - FirebaseSharedSwift (~> 12.2.0)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - leveldb-library (~> 1.22)
   - FirebaseFirestore (12.2.0):
     - FirebaseCore (~> 12.2.0)
     - FirebaseCoreExtension (~> 12.2.0)
@@ -1267,6 +1287,13 @@ PODS:
     - leveldb-library (~> 1.22)
     - nanopb (~> 3.30910.0)
   - FirebaseSharedSwift (12.2.0)
+  - FirebaseStorage (12.2.0):
+    - FirebaseAppCheckInterop (~> 12.2.0)
+    - FirebaseAuthInterop (~> 12.2.0)
+    - FirebaseCore (~> 12.2.0)
+    - FirebaseCoreExtension (~> 12.2.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GTMSessionFetcher/Core (< 6.0, >= 3.4)
   - Flutter (1.0.0)
   - flutter_local_notifications (0.0.1):
     - Flutter
@@ -1492,6 +1519,8 @@ PODS:
     - Flutter
     - FlutterMacOS
     - Sentry/HybridSDK (= 8.52.1)
+  - share_plus (0.0.1):
+    - Flutter
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -1509,6 +1538,8 @@ DEPENDENCIES:
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
+  - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
@@ -1525,12 +1556,16 @@ DEPENDENCIES:
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - posthog_flutter (from `.symlinks/plugins/posthog_flutter/ios`)
   - sentry_flutter (from `.symlinks/plugins/sentry_flutter/ios`)
+  - share_plus (from `.symlinks/plugins/share_plus/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/darwin`)
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FirebaseDatabase
+    - FirebaseStorage
   trunk:
     - abseil
     - AppAuth
@@ -1572,6 +1607,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_auth/ios"
   firebase_core:
     :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_database:
+    :path: ".symlinks/plugins/firebase_database/ios"
+  firebase_storage:
+    :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
   flutter_local_notifications:
@@ -1600,6 +1639,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/posthog_flutter/ios"
   sentry_flutter:
     :path: ".symlinks/plugins/sentry_flutter/ios"
+  share_plus:
+    :path: ".symlinks/plugins/share_plus/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   sign_in_with_apple:
@@ -1620,16 +1661,20 @@ SPEC CHECKSUMS:
   Firebase: 26f6f8d460603af3df970ad505b16b15f5e2e9a1
   firebase_auth: 069b05a861a7c2f7a73112dd616a49a40f35ae52
   firebase_core: dfc4bd142bee4bc53a5d482397ca322c2dd3165d
+  firebase_database: 9381b843c7dacbafc6fe07afffa070b26eabb326
+  firebase_storage: 7d98547fc12ce48731db5abab2ed4e6c1c40b68c
   FirebaseAppCheckInterop: a1b2598c64c5a8c42fd6f6a1c3d0938ae4324678
   FirebaseAuth: 059c11702bdb759bb49b6c7ec6ff67abf21f39c4
   FirebaseAuthInterop: 217702acd4cc6baa98ba9d6c054532e0de0b8a16
   FirebaseCore: 311c48a147ad4a0ab7febbaed89e8025c67510cd
   FirebaseCoreExtension: 73af080c22a2f7b44cefa391dc08f7e4ee162cb5
   FirebaseCoreInternal: 56ea29f3dad2894f81b060f706f9d53509b6ed3b
+  FirebaseDatabase: d7f6b8dc187fe7e72db1c1e2b03a7611d8ec2813
   FirebaseFirestore: 2baa1360623e942007726627653d43a5bc618ba8
   FirebaseFirestoreInternal: 6506aef21ac270bf137c34cd7283723d930eddb0
   FirebaseSharedSwift: 52d868d4c269fcb4e4e1310c548435a9c1f46e25
-  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  FirebaseStorage: f1578d57e1fd3683fc05f5d4d7b24b7490b321ac
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_local_notifications: ad39620c743ea4c15127860f4b5641649a988100
   flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
   google_sign_in_ios: b48bb9af78576358a168361173155596c845f0b9
@@ -1657,11 +1702,12 @@ SPEC CHECKSUMS:
   RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
   Sentry: 2cbbe3592f30050c60e916c63c7f5a2fa584005e
   sentry_flutter: 9b1e3e6934cb7040ffb71383c95a35f73523180c
+  share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
   shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
   sign_in_with_apple: c5dcc141574c8c54d5ac99dd2163c0c72ad22418
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
   webview_flutter_wkwebview: 1821ceac936eba6f7984d89a9f3bcb4dea99ebb2
 
-PODFILE CHECKSUM: 566d18a78999f0c04cec0fa3cc04ab3a6de395f2
+PODFILE CHECKSUM: 7576f158ea0050e8d481e4cb6b16070f4c6d45b6
 
 COCOAPODS: 1.16.2

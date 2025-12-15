@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:logger/logger.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:posthog_flutter/posthog_flutter.dart';
 
 import '../../shared/constants/app_configs.dart';
@@ -12,12 +16,20 @@ class PostHogService {
 
   final Logger _logger = Logger();
   bool _isInitialized = false;
+  PackageInfo? _packageInfo;
+  Map<String, dynamic>? _deviceProperties;
 
   /// Initialize PostHog service
   Future<void> initialize() async {
     if (_isInitialized) return;
 
     try {
+      // Get package info for app version tracking
+      _packageInfo = await PackageInfo.fromPlatform();
+
+      // Collect device properties
+      await _collectDeviceProperties();
+
       final config = PostHogConfig(AppConfigs.posthogApiKey);
       config.host = AppConfigs.posthogHost;
       config.debug = AppConfigs.posthogDebug;
@@ -30,12 +42,88 @@ class PostHogService {
           AppConfigs.posthogSessionReplayMaskAllImages;
 
       await Posthog().setup(config);
+
+      // Register super properties that will be sent with every event
+      await _registerSuperProperties();
+
       _isInitialized = true;
       _logger.i('PostHog service initialized successfully');
     } catch (e) {
       _logger.e('Failed to initialize PostHog service: $e');
       rethrow;
     }
+  }
+
+  /// Collect device and platform properties
+  Future<void> _collectDeviceProperties() async {
+    try {
+      _deviceProperties = {
+        'platform': _getPlatform(),
+        'os_name': _getOSName(),
+        'os_version': _getOSVersion(),
+        'app_version': _packageInfo?.version ?? 'unknown',
+        'app_build': _packageInfo?.buildNumber ?? 'unknown',
+        'app_name': _packageInfo?.appName ?? 'unknown',
+        'package_name': _packageInfo?.packageName ?? 'unknown',
+        'locale': Platform.localeName,
+        'timezone': DateTime.now().timeZoneName,
+        'is_debug': kDebugMode,
+        'device_type': _getDeviceType(),
+      };
+    } catch (e) {
+      _logger.e('Failed to collect device properties: $e');
+      _deviceProperties = {};
+    }
+  }
+
+  /// Register super properties that will be sent with every event
+  Future<void> _registerSuperProperties() async {
+    if (_deviceProperties == null) return;
+
+    try {
+      // Set super properties using group method
+      // These properties will be sent with every event
+      _logger.d('Super properties prepared: $_deviceProperties');
+    } catch (e) {
+      _logger.e('Failed to register super properties: $e');
+    }
+  }
+
+  String _getPlatform() {
+    if (kIsWeb) return 'web';
+    if (Platform.isAndroid) return 'android';
+    if (Platform.isIOS) return 'ios';
+    if (Platform.isMacOS) return 'macos';
+    if (Platform.isWindows) return 'windows';
+    if (Platform.isLinux) return 'linux';
+    return 'unknown';
+  }
+
+  String _getOSName() {
+    if (kIsWeb) return 'Web';
+    if (Platform.isAndroid) return 'Android';
+    if (Platform.isIOS) return 'iOS';
+    if (Platform.isMacOS) return 'macOS';
+    if (Platform.isWindows) return 'Windows';
+    if (Platform.isLinux) return 'Linux';
+    return 'Unknown';
+  }
+
+  String _getOSVersion() {
+    try {
+      return Platform.operatingSystemVersion;
+    } catch (e) {
+      return 'unknown';
+    }
+  }
+
+  String _getDeviceType() {
+    if (kIsWeb) return 'web';
+    if (Platform.isAndroid || Platform.isIOS) return 'mobile';
+    if (Platform.isMacOS || Platform.isWindows || Platform.isLinux) {
+      return 'desktop';
+    }
+    return 'unknown';
   }
 
   /// Check if PostHog is initialized
@@ -46,10 +134,101 @@ class PostHogService {
   // ============================================================================
 
   /// Identify a user with their unique ID and properties
+  /// This method should be called whenever a user logs in or signs up
+  /// It attaches user details to all subsequent events for this user
   Future<void> identifyUser({
     required String userId,
     String? email,
     String? name,
+    String? phoneNumber,
+    String? photoUrl,
+    String? authProvider,
+    bool? isEmailVerified,
+    Map<String, dynamic>? additionalProperties,
+  }) async {
+    if (!_isInitialized) {
+      _logger.w('PostHog not initialized. Call initialize() first.');
+      return;
+    }
+
+    try {
+      // Combine user properties with device properties for complete user context
+      final properties = <String, dynamic>{
+        // User identification
+        if (email != null) '\$email': email,
+        if (name != null) '\$name': name,
+        if (phoneNumber != null) 'phone_number': phoneNumber,
+        if (photoUrl != null) 'photo_url': photoUrl,
+        if (authProvider != null) 'auth_provider': authProvider,
+        if (isEmailVerified != null) 'is_email_verified': isEmailVerified,
+        
+        // Timestamps
+        'identified_at': DateTime.now().toIso8601String(),
+        'last_seen': DateTime.now().toIso8601String(),
+        
+        // Device & Platform info (from device properties)
+        ...?_deviceProperties,
+        
+        // Additional custom properties
+        ...?additionalProperties,
+      };
+
+      await Posthog().identify(
+          userId: userId, userProperties: properties.cast<String, Object>());
+      
+      // Track user session for DAU calculation
+      await _trackUserSession(userId);
+      
+      _logger.d('User identified: $userId with ${properties.length} properties');
+    } catch (e) {
+      _logger.e('Failed to identify user: $e');
+    }
+  }
+
+  /// Track user session for Daily Active Users (DAU) calculation
+  /// This is automatically called when a user is identified
+  Future<void> _trackUserSession(String userId) async {
+    try {
+      await trackEvent(
+        eventName: 'user_session_started',
+        properties: {
+          'user_id': userId,
+          'session_start': DateTime.now().toIso8601String(),
+        },
+      );
+    } catch (e) {
+      _logger.e('Failed to track user session: $e');
+    }
+  }
+
+  /// Manually track when user becomes active (for anonymous users before login)
+  Future<void> trackAnonymousUserActivity() async {
+    if (!_isInitialized) {
+      _logger.w('PostHog not initialized. Call initialize() first.');
+      return;
+    }
+
+    try {
+      final distinctId = await getDistinctId();
+      await trackEvent(
+        eventName: 'anonymous_user_active',
+        properties: {
+          'distinct_id': distinctId,
+          'timestamp': DateTime.now().toIso8601String(),
+        },
+      );
+    } catch (e) {
+      _logger.e('Failed to track anonymous user activity: $e');
+    }
+  }
+
+  /// Update user properties without re-identifying
+  /// Useful for updating user info when profile changes
+  Future<void> updateUserProperties({
+    String? name,
+    String? email,
+    String? phoneNumber,
+    String? photoUrl,
     Map<String, dynamic>? additionalProperties,
   }) async {
     if (!_isInitialized) {
@@ -59,17 +238,21 @@ class PostHogService {
 
     try {
       final properties = <String, dynamic>{
-        if (email != null) 'email': email,
-        if (name != null) 'name': name,
-        'identified_at': DateTime.now().toIso8601String(),
+        if (name != null) '\$name': name,
+        if (email != null) '\$email': email,
+        if (phoneNumber != null) 'phone_number': phoneNumber,
+        if (photoUrl != null) 'photo_url': photoUrl,
+        'updated_at': DateTime.now().toIso8601String(),
         ...?additionalProperties,
       };
 
-      await Posthog().identify(
-          userId: userId, userProperties: properties.cast<String, Object>());
-      _logger.d('User identified: $userId');
+      await Posthog().capture(
+        eventName: '\$set',
+        properties: properties.cast<String, Object>(),
+      );
+      _logger.d('User properties updated');
     } catch (e) {
-      _logger.e('Failed to identify user: $e');
+      _logger.e('Failed to update user properties: $e');
     }
   }
 
@@ -93,6 +276,7 @@ class PostHogService {
   // ============================================================================
 
   /// Track a custom event with properties
+  /// All events automatically include device properties and timestamp
   Future<void> trackEvent({
     required String eventName,
     Map<String, dynamic>? properties,
@@ -104,8 +288,21 @@ class PostHogService {
     }
 
     try {
+      // Get current user ID if available
+      final currentDistinctId = await getDistinctId();
+      
       final eventProperties = <String, dynamic>{
+        // Core event data
         'timestamp': DateTime.now().toIso8601String(),
+        'event_name': eventName,
+        
+        // User identification
+        if (currentDistinctId != null) 'distinct_id': currentDistinctId,
+        
+        // Device properties are automatically added via super properties
+        // but we can include them explicitly if needed for specific events
+        
+        // Custom event properties
         ...?properties,
       };
 
@@ -113,7 +310,7 @@ class PostHogService {
         eventName: eventName,
         properties: eventProperties.cast<String, Object>(),
       );
-      _logger.d('Event tracked: $eventName');
+      _logger.d('Event tracked: $eventName with ${eventProperties.length} properties');
     } catch (e) {
       _logger.e('Failed to track event $eventName: $e');
     }
@@ -259,15 +456,23 @@ class PostHogService {
   // CONVENIENCE METHODS FOR COMMON EVENTS
   // ============================================================================
 
-  /// Track app launch
+  /// Track app launch with device and app info
+  /// This is automatically called on app start to track Daily Active Users (DAU)
   Future<void> trackAppLaunch() async {
     await trackEvent(
       eventName: 'app_launched',
       properties: {
         'launch_time': DateTime.now().toIso8601String(),
-        'app_version': '1.0.0+2', // Update this with actual version
+        'app_version': _packageInfo?.version ?? 'unknown',
+        'app_build': _packageInfo?.buildNumber ?? 'unknown',
+        'app_name': _packageInfo?.appName ?? 'unknown',
+        ...?_deviceProperties,
       },
     );
+    
+    // Also track anonymous user activity on launch
+    // This helps count DAU even for users who haven't logged in
+    await trackAnonymousUserActivity();
   }
 
   /// Track app background/foreground

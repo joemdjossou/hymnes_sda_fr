@@ -715,4 +715,95 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get checkEmailInstructions =>
       'Please check your email and follow the instructions to reset your password.';
+
+  @override
+  String get deleteAccount => 'Delete Account';
+
+  @override
+  String get deleteAccountConfirmation =>
+      'Are you sure you want to delete your account? This action cannot be undone.';
+
+  @override
+  String get deleteAccountDescription =>
+      'Deleting your account will permanently remove:\n\n• Your account and profile information\n• All your saved favorites\n• Your hymn history\n\nThis action is permanent and cannot be reversed. You will be signed out immediately.';
+
+  @override
+  String get deleteAccountButton => 'Delete My Account';
+
+  @override
+  String get deleteAccountSuccess =>
+      'Your account has been deleted successfully.';
+
+  @override
+  String get deleteAccountError =>
+      'An error occurred while deleting your account. Please try again.';
+
+  @override
+  String get review => 'Review';
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String shareAppMessage(String url) {
+    return 'Check out this amazing Adventist Hymns app! 🎵🙏\n\n$url';
+  }
+
+  @override
+  String get feedbackTitle => 'Feedback & Support';
+
+  @override
+  String get feedbackSubtitle => 'Help us improve';
+
+  @override
+  String get feedbackHelp =>
+      'Share your thoughts, report bugs, or suggest new features to help us make the app better for everyone.';
+
+  @override
+  String get sendFeedback => 'Send Feedback';
+
+  @override
+  String get feedbackDescription =>
+      'We\'d love to hear from you! Your feedback helps us improve the app.';
+
+  @override
+  String get feedbackType => 'Feedback Type';
+
+  @override
+  String get feedbackGeneral => 'General';
+
+  @override
+  String get feedbackBug => 'Bug Report';
+
+  @override
+  String get feedbackFeature => 'Feature Request';
+
+  @override
+  String get feedbackReview => 'Review';
+
+  @override
+  String get feedbackPlaceholder =>
+      'Share your thoughts, report a bug, or suggest an improvement...';
+
+  @override
+  String get feedbackPrivacyNote =>
+      'Your feedback is sent securely and helps us improve the app.';
+
+  @override
+  String get feedbackEmptyMessage =>
+      'Please write your feedback before submitting.';
+
+  @override
+  String get feedbackSuccessMessage =>
+      'Thank you for your feedback! We\'ll review it soon.';
+
+  @override
+  String get feedbackErrorMessage =>
+      'Failed to send feedback. Please try again.';
+
+  @override
+  String get warning => 'Warning';
+
+  @override
+  String get submit => 'Submit';
 }

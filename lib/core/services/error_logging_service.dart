@@ -51,29 +51,65 @@ class ErrorLoggingService {
         _logger.e('[$source] $message', error: error, stackTrace: stackTrace);
       }
 
-      // Capture the event with Sentry
-      await Sentry.captureEvent(
-        SentryEvent(
-          message: SentryMessage(message),
-          level: level,
-          logger: source,
-          tags: {
-            'source': source,
-            'platform': defaultTargetPlatform.name,
-          },
-          user: userId != null ? SentryUser(id: userId) : null,
-          exceptions: error != null
-              ? [
-                  SentryException(
-                    type: error.runtimeType.toString(),
-                    value: error.toString(),
-                  ),
-                ]
-              : null,
-        ),
-      );
+      // Prepare tags with environment information
+      final tags = <String, String>{
+        'source': source,
+        'platform': defaultTargetPlatform.name,
+        'environment': kDebugMode ? 'debug' : 'production',
+      };
+
+      // Prepare context data
+      final extra = <String, dynamic>{
+        if (context != null) ...context,
+      };
+
+      // Capture the event with Sentry (works in both debug and production)
+      // Use captureException if we have both error and stackTrace for better stack trace handling
+      final eventId = error != null && stackTrace != null
+          ? await Sentry.captureException(
+              error,
+              stackTrace: stackTrace,
+              withScope: (scope) {
+                scope.setTag('source', source);
+                scope.setTag('platform', defaultTargetPlatform.name);
+                scope.setTag(
+                    'environment', kDebugMode ? 'debug' : 'production');
+                scope.setContexts('custom', extra);
+                if (userId != null) {
+                  scope.setUser(SentryUser(id: userId));
+                }
+              },
+            )
+          : await Sentry.captureEvent(
+              SentryEvent(
+                message: SentryMessage(message),
+                level: level,
+                logger: source,
+                tags: tags,
+                user: userId != null ? SentryUser(id: userId) : null,
+                exceptions: error != null
+                    ? [
+                        SentryException(
+                          type: error.runtimeType.toString(),
+                          value: error.toString(),
+                        ),
+                      ]
+                    : null,
+              ),
+            );
+
+      // Log success in debug mode
+      if (kDebugMode) {
+        _logger.d('Error logged to Sentry with event ID: $eventId');
+      }
     } catch (e) {
-      _logger.e('Failed to log error to Sentry: $e');
+      // Always log Sentry errors, even in production (to console if possible)
+      if (kDebugMode) {
+        _logger.e('Failed to log error to Sentry: $e');
+      } else {
+        // In production, try to log to console as fallback
+        debugPrint('Failed to log error to Sentry: $e');
+      }
     }
   }
 
@@ -249,10 +285,12 @@ class ErrorLoggingService {
     StackTrace? stackTrace,
     Map<String, dynamic>? audioContext,
     String? userId,
+    bool isExpected = false,
   }) async {
     final context = {
       'hymnNumber': hymnNumber,
       'audioContext': audioContext,
+      'expected': isExpected,
     };
 
     await logError(
@@ -262,6 +300,7 @@ class ErrorLoggingService {
       stackTrace: stackTrace,
       context: context,
       userId: userId,
+      level: isExpected ? SentryLevel.warning : SentryLevel.error,
     );
   }
 

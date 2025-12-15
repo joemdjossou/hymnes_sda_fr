@@ -166,6 +166,8 @@ class UserReloaded extends AuthState {
   List<Object> get props => [user];
 }
 
+class AccountDeleted extends AuthState {}
+
 // BLoC
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthService _authService;
@@ -228,15 +230,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (credential?.user != null) {
         final user = UserModel.fromFirebaseUser(credential!.user!);
 
-        // Track PostHog event
+        // Track PostHog event with comprehensive user details
         await _posthog.identifyUser(
           userId: user.uid,
           email: user.email,
           name: user.displayName,
+          phoneNumber: user.phoneNumber,
+          photoUrl: user.photoURL,
+          authProvider: 'email',
+          isEmailVerified: user.isEmailVerified,
         );
         await _posthog.trackAuthEvent(
           eventType: 'login',
           method: 'email',
+          additionalProperties: {
+            'has_display_name': user.displayName != null,
+            'has_phone_number': user.phoneNumber != null,
+            'has_photo': user.photoURL != null,
+            'is_email_verified': user.isEmailVerified,
+          },
         );
 
         emit(Authenticated(user));
@@ -263,7 +275,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       );
 
       if (credential?.user != null) {
-        emit(Authenticated(UserModel.fromFirebaseUser(credential!.user!)));
+        final user = UserModel.fromFirebaseUser(credential!.user!);
+
+        // Track PostHog event for sign up
+        await _posthog.identifyUser(
+          userId: user.uid,
+          email: user.email,
+          name: user.displayName,
+          phoneNumber: user.phoneNumber,
+          authProvider: 'email',
+          isEmailVerified: user.isEmailVerified,
+        );
+        await _posthog.trackAuthEvent(
+          eventType: 'signup',
+          method: 'email',
+          additionalProperties: {
+            'has_phone_number': event.phoneNumber != null,
+            'has_name': event.firstName != null || event.lastName != null,
+          },
+        );
+
+        emit(Authenticated(user));
       } else {
         emit(const AuthError('Sign up failed'));
       }
@@ -281,7 +313,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final credential = await _authService.signInWithGoogle();
 
       if (credential?.user != null) {
-        emit(Authenticated(UserModel.fromFirebaseUser(credential!.user!)));
+        final user = UserModel.fromFirebaseUser(credential!.user!);
+
+        // Track PostHog event for Google sign-in
+        await _posthog.identifyUser(
+          userId: user.uid,
+          email: user.email,
+          name: user.displayName,
+          photoUrl: user.photoURL,
+          authProvider: 'google',
+          isEmailVerified: user.isEmailVerified,
+        );
+        await _posthog.trackAuthEvent(
+          eventType: 'login',
+          method: 'google',
+          additionalProperties: {
+            'has_photo': user.photoURL != null,
+          },
+        );
+
+        emit(Authenticated(user));
       } else {
         emit(Unauthenticated()); // User cancelled
       }
@@ -299,7 +350,26 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       final credential = await _authService.signInWithApple();
 
       if (credential?.user != null) {
-        emit(Authenticated(UserModel.fromFirebaseUser(credential!.user!)));
+        final user = UserModel.fromFirebaseUser(credential!.user!);
+
+        // Track PostHog event for Apple sign-in
+        await _posthog.identifyUser(
+          userId: user.uid,
+          email: user.email,
+          name: user.displayName,
+          photoUrl: user.photoURL,
+          authProvider: 'apple',
+          isEmailVerified: user.isEmailVerified,
+        );
+        await _posthog.trackAuthEvent(
+          eventType: 'login',
+          method: 'apple',
+          additionalProperties: {
+            'has_photo': user.photoURL != null,
+          },
+        );
+
+        emit(Authenticated(user));
       } else {
         emit(Unauthenticated()); // User cancelled
       }
@@ -346,6 +416,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     try {
       await _authService.deleteAccount();
+      emit(AccountDeleted());
+      // Also emit Unauthenticated after a brief delay to ensure UI updates
+      await Future.delayed(const Duration(milliseconds: 100));
       emit(Unauthenticated());
     } catch (e) {
       emit(AuthError(e.toString()));
@@ -369,7 +442,27 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _authService.reloadUser();
       final user = _authService.currentUser;
       if (user != null) {
-        emit(ProfileUpdated(UserModel.fromFirebaseUser(user)));
+        final userModel = UserModel.fromFirebaseUser(user);
+
+        // Update user properties in PostHog
+        await _posthog.updateUserProperties(
+          name: userModel.displayName,
+          email: userModel.email,
+          phoneNumber: userModel.phoneNumber,
+          photoUrl: userModel.photoURL,
+        );
+
+        // Track profile update event
+        await _posthog.trackAuthEvent(
+          eventType: 'profile_updated',
+          additionalProperties: {
+            'updated_name': event.firstName != null || event.lastName != null,
+            'updated_phone': event.phoneNumber != null,
+            'updated_photo': event.photoURL != null,
+          },
+        );
+
+        emit(ProfileUpdated(userModel));
       } else {
         emit(const AuthError('Failed to update profile'));
       }

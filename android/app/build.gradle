@@ -78,7 +78,7 @@ android {
 sentry {
     // Basic Sentry configuration
     org.set("joemdjossou")
-    projectName.set("flutter")
+    projectName.set("hymnes")
     autoUpload = false
     uploadNativeSymbols = false
     // Disable features that can cause circular dependencies

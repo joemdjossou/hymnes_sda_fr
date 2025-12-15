@@ -1412,6 +1412,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please check your email and follow the instructions to reset your password.'**
   String get checkEmailInstructions;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccount;
+
+  /// No description provided for @deleteAccountConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete your account? This action cannot be undone.'**
+  String get deleteAccountConfirmation;
+
+  /// No description provided for @deleteAccountDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting your account will permanently remove:\n\n• Your account and profile information\n• All your saved favorites\n• Your hymn history\n\nThis action is permanent and cannot be reversed. You will be signed out immediately.'**
+  String get deleteAccountDescription;
+
+  /// No description provided for @deleteAccountButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete My Account'**
+  String get deleteAccountButton;
+
+  /// No description provided for @deleteAccountSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account has been deleted successfully.'**
+  String get deleteAccountSuccess;
+
+  /// No description provided for @deleteAccountError.
+  ///
+  /// In en, this message translates to:
+  /// **'An error occurred while deleting your account. Please try again.'**
+  String get deleteAccountError;
+
+  /// No description provided for @review.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get review;
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+
+  /// No description provided for @shareAppMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Check out this amazing Adventist Hymns app! 🎵🙏\n\n{url}'**
+  String shareAppMessage(String url);
+
+  /// No description provided for @feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback & Support'**
+  String get feedbackTitle;
+
+  /// No description provided for @feedbackSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us improve'**
+  String get feedbackSubtitle;
+
+  /// No description provided for @feedbackHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your thoughts, report bugs, or suggest new features to help us make the app better for everyone.'**
+  String get feedbackHelp;
+
+  /// No description provided for @sendFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback'**
+  String get sendFeedback;
+
+  /// No description provided for @feedbackDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'d love to hear from you! Your feedback helps us improve the app.'**
+  String get feedbackDescription;
+
+  /// No description provided for @feedbackType.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback Type'**
+  String get feedbackType;
+
+  /// No description provided for @feedbackGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get feedbackGeneral;
+
+  /// No description provided for @feedbackBug.
+  ///
+  /// In en, this message translates to:
+  /// **'Bug Report'**
+  String get feedbackBug;
+
+  /// No description provided for @feedbackFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Feature Request'**
+  String get feedbackFeature;
+
+  /// No description provided for @feedbackReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get feedbackReview;
+
+  /// No description provided for @feedbackPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your thoughts, report a bug, or suggest an improvement...'**
+  String get feedbackPlaceholder;
+
+  /// No description provided for @feedbackPrivacyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your feedback is sent securely and helps us improve the app.'**
+  String get feedbackPrivacyNote;
+
+  /// No description provided for @feedbackEmptyMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please write your feedback before submitting.'**
+  String get feedbackEmptyMessage;
+
+  /// No description provided for @feedbackSuccessMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for your feedback! We\'ll review it soon.'**
+  String get feedbackSuccessMessage;
+
+  /// No description provided for @feedbackErrorMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to send feedback. Please try again.'**
+  String get feedbackErrorMessage;
+
+  /// No description provided for @warning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning'**
+  String get warning;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
 }
 
 class _AppLocalizationsDelegate

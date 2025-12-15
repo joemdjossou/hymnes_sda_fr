@@ -315,5 +315,38 @@
   "weeklySabbathReminderDescription": "Get reminded every Friday at 6:00 PM to prepare for the Sabbath and sing praises to the Lord",
   "sabbathReminderTitle": "Sabbath Preparation",
   "sabbathReminderBody": "It is the Sabbath! Take time to prepare your heart and sing praises to the Lord. Blessed Sabbath!",
-  "checkEmailInstructions": "Please check your email and follow the instructions to reset your password."
+  "checkEmailInstructions": "Please check your email and follow the instructions to reset your password.",
+  "deleteAccount": "Delete Account",
+  "deleteAccountConfirmation": "Are you sure you want to delete your account? This action cannot be undone.",
+  "deleteAccountDescription": "Deleting your account will permanently remove:\n\n• Your account and profile information\n• All your saved favorites\n• Your hymn history\n\nThis action is permanent and cannot be reversed. You will be signed out immediately.",
+  "deleteAccountButton": "Delete My Account",
+  "deleteAccountSuccess": "Your account has been deleted successfully.",
+  "deleteAccountError": "An error occurred while deleting your account. Please try again.",
+  "review": "Review",
+  "share": "Share",
+  "shareAppMessage": "Check out this amazing Adventist Hymns app! 🎵🙏\n\n{url}",
+  "@shareAppMessage": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackTitle": "Feedback & Support",
+  "feedbackSubtitle": "Help us improve",
+  "feedbackHelp": "Share your thoughts, report bugs, or suggest new features to help us make the app better for everyone.",
+  "sendFeedback": "Send Feedback",
+  "feedbackDescription": "We'd love to hear from you! Your feedback helps us improve the app.",
+  "feedbackType": "Feedback Type",
+  "feedbackGeneral": "General",
+  "feedbackBug": "Bug Report",
+  "feedbackFeature": "Feature Request",
+  "feedbackReview": "Review",
+  "feedbackPlaceholder": "Share your thoughts, report a bug, or suggest an improvement...",
+  "feedbackPrivacyNote": "Your feedback is sent securely and helps us improve the app.",
+  "feedbackEmptyMessage": "Please write your feedback before submitting.",
+  "feedbackSuccessMessage": "Thank you for your feedback! We'll review it soon.",
+  "feedbackErrorMessage": "Failed to send feedback. Please try again.",
+  "warning": "Warning",
+  "submit": "Submit"
 }

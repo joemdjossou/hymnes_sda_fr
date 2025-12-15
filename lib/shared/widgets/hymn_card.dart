@@ -137,55 +137,58 @@ class HymnCard extends StatelessWidget {
                             spacing: 8,
                             runSpacing: 4,
                             children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: AppConstants.smallPadding,
-                                  vertical: 2,
-                                ),
-                                decoration: BoxDecoration(
-                                  color:
-                                      AppColors.primary.withValues(alpha: 0.1),
-                                  borderRadius: BorderRadius.circular(
-                                      AppConstants.smallBorderRadius),
-                                ),
-                                child: Text(
-                                  hymn.style,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
-                                        color: AppColors.primary,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 11,
+                              (hymn.style.isNotEmpty)
+                                  ? Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: AppConstants.smallPadding,
+                                        vertical: 2,
                                       ),
-                                ),
-                              ),
-                              if (hymn.theme.isNotEmpty)
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: AppConstants.smallPadding,
-                                    vertical: 2,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: AppColors.secondary
-                                        .withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(
-                                        AppConstants.smallBorderRadius),
-                                  ),
-                                  child: Text(
-                                    hymn.theme,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall
-                                        ?.copyWith(
-                                          color: AppColors.secondaryDark,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 11,
-                                        ),
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.primary
+                                            .withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(
+                                            AppConstants.smallBorderRadius),
+                                      ),
+                                      child: Text(
+                                        hymn.style,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.copyWith(
+                                              color: AppColors.primary,
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 11,
+                                            ),
+                                      ),
+                                    )
+                                  : const SizedBox.shrink(),
+                              (hymn.theme.isNotEmpty)
+                                  ? Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: AppConstants.smallPadding,
+                                        vertical: 2,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.secondary
+                                            .withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(
+                                            AppConstants.smallBorderRadius),
+                                      ),
+                                      child: Text(
+                                        hymn.theme,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.copyWith(
+                                              color: AppColors.secondaryDark,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 11,
+                                            ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    )
+                                  : const SizedBox.shrink(),
                             ],
                           ),
                         ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:hymnes_sda_fr/core/services/lyrics_font_size_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
@@ -10,13 +11,44 @@ import '../../../shared/widgets/custom_toast.dart';
 
 /// Widget responsible only for displaying hymn lyrics
 /// Follows Single Responsibility Principle
-class HymnLyricsWidget extends StatelessWidget {
+class HymnLyricsWidget extends StatefulWidget {
   final Hymn hymn;
 
   const HymnLyricsWidget({
     super.key,
     required this.hymn,
   });
+
+  @override
+  State<HymnLyricsWidget> createState() => _HymnLyricsWidgetState();
+}
+
+class _HymnLyricsWidgetState extends State<HymnLyricsWidget> {
+  static const double _minFontSize = 12.0;
+  static const double _maxFontSize = 24.0;
+  static const double _fontSizeStep = 2.0;
+
+  final LyricsFontSizeService _fontSizeService = LyricsFontSizeService();
+  double _fontSize = LyricsFontSizeService.defaultFontSize;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFontSize();
+  }
+
+  Future<void> _loadFontSize() async {
+    final savedFontSize = await _fontSizeService.getFontSize();
+    if (mounted) {
+      setState(() {
+        _fontSize = savedFontSize;
+      });
+    }
+  }
+
+  Future<void> _saveFontSize(double fontSize) async {
+    await _fontSizeService.setFontSize(fontSize);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +81,73 @@ class HymnLyricsWidget extends StatelessWidget {
                 ),
               ),
               const Spacer(),
+              // Decrease font size button
+              GestureDetector(
+                onTap: _fontSize > _minFontSize
+                    ? () {
+                        final newFontSize = (_fontSize - _fontSizeStep)
+                            .clamp(_minFontSize, _maxFontSize);
+                        setState(() {
+                          _fontSize = newFontSize;
+                        });
+                        _saveFontSize(newFontSize);
+                      }
+                    : null,
+                child: Container(
+                  padding: const EdgeInsets.all(AppConstants.smallPadding),
+                  decoration: BoxDecoration(
+                    color: _fontSize > _minFontSize
+                        ? AppColors.primary.withValues(alpha: 0.1)
+                        : AppColors.textSecondary(context)
+                            .withValues(alpha: 0.05),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.smallBorderRadius),
+                  ),
+                  child: Icon(
+                    Icons.text_decrease_rounded,
+                    color: _fontSize > _minFontSize
+                        ? AppColors.primary
+                        : AppColors.textSecondary(context)
+                            .withValues(alpha: 0.5),
+                    size: 18,
+                  ),
+                ),
+              ),
+              const Gap(8),
+              // Increase font size button
+              GestureDetector(
+                onTap: _fontSize < _maxFontSize
+                    ? () {
+                        final newFontSize = (_fontSize + _fontSizeStep)
+                            .clamp(_minFontSize, _maxFontSize);
+                        setState(() {
+                          _fontSize = newFontSize;
+                        });
+                        _saveFontSize(newFontSize);
+                      }
+                    : null,
+                child: Container(
+                  padding: const EdgeInsets.all(AppConstants.smallPadding),
+                  decoration: BoxDecoration(
+                    color: _fontSize < _maxFontSize
+                        ? AppColors.primary.withValues(alpha: 0.1)
+                        : AppColors.textSecondary(context)
+                            .withValues(alpha: 0.05),
+                    borderRadius:
+                        BorderRadius.circular(AppConstants.smallBorderRadius),
+                  ),
+                  child: Icon(
+                    Icons.text_increase_rounded,
+                    color: _fontSize < _maxFontSize
+                        ? AppColors.primary
+                        : AppColors.textSecondary(context)
+                            .withValues(alpha: 0.5),
+                    size: 18,
+                  ),
+                ),
+              ),
+              const Gap(8),
+              // Copy button
               GestureDetector(
                 onTap: () => _copyLyrics(context),
                 child: Container(
@@ -70,11 +169,11 @@ class HymnLyricsWidget extends StatelessWidget {
           const Gap(16),
           Center(
             child: SelectableText(
-              hymn.lyrics,
+              widget.hymn.lyrics,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: AppColors.textPrimary(context),
-                fontSize: 16,
+                fontSize: _fontSize,
                 height: 1.6,
               ),
               showCursor: true,
@@ -89,7 +188,7 @@ class HymnLyricsWidget extends StatelessWidget {
   }
 
   void _copyLyrics(BuildContext context) {
-    Clipboard.setData(ClipboardData(text: hymn.lyrics));
+    Clipboard.setData(ClipboardData(text: widget.hymn.lyrics));
     ToastService.showSuccess(
       context,
       title: AppLocalizations.of(context)!.success,

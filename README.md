@@ -1,18 +1,21 @@
 # 🎵 Hymnes & Louanges
 
-A beautiful Flutter application for French Adventist hymns with MIDI audio playback, featuring clean architecture and elegant design.
+A beautiful Flutter application for French Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities. Features offline-first architecture, background audio playback, and automatic hymn synchronization.
 
 ## ✨ Features
 
 - **🔍 Advanced Search / Recherche Avancée**: Search hymns by number, title, author, or lyrics / Recherchez vos hymnes par numéro, titre, auteur ou paroles
 - **💾 Smart Storage / Sauvegarde Intelligente**: Save hymns locally or in the cloud with automatic sync / Sauvegardez vos hymnes en local ou dans le cloud avec synchronisation automatique
+- **🔄 Automatic Hymns Sync / Synchronisation Automatique**: Offline-first hymns sync with Firebase. Updates automatically in the background with rollback safety / Synchronisation hors ligne avec Firebase. Mises à jour automatiques en arrière-plan avec sécurité de restauration
 - **🎯 Theme Filtering / Filtrage par Thème**: Filter hymns by theme or sub-theme for easy navigation / Filtrez les hymnes par thème ou sous-thème pour une navigation facile
 - **🌓 Dark/Light Mode / Mode Sombre/Clair**: Choose between light and dark mode according to your preferences / Choisissez entre mode clair et mode sombre selon vos préférences
-- **🌍 Multilingual / Multilingue**: Select app language (French or English) / Sélectionnez la langue de l'application (Français ou Anglais)
-- **🎵 Complete Audio / Audio Complet**: Listen to complete music or each voice separately: soprano, alto, tenor, bass / Écoutez la musique complète ou chaque voix séparément : soprano, alto, ténor, basse
+- **🌍 Multilingual / Multilingue**: Automatic language detection on first launch. Select app language (French or English) / Détection automatique de la langue au premier lancement. Sélectionnez la langue de l'application (Français ou Anglais)
+- **🎵 Complete Audio / Audio Complet**: Listen to complete music or each voice separately: soprano, alto, tenor, bass, countertenor, baritone / Écoutez la musique complète ou chaque voix séparément : soprano, alto, ténor, basse, contreténor, baryton
+- **🎧 Background Audio / Audio en Arrière-plan**: Music continues playing in the background with lock screen and notification controls / La musique continue de jouer en arrière-plan avec contrôles sur l'écran de verrouillage et les notifications
 - **📜 Musical Scores / Partitions Musicales**: View the musical score for each hymn / Visualisez la partition musicale pour chaque hymne
 - **📚 Hymn History / Histoire des Hymnes**: Discover the history of certain hymns / Découvrez l'histoire de certains hymnes
-- **⭐ Favorites / Favoris**: Mark your favorite hymns for quick access / Marquez vos hymnes préférés pour un accès rapide
+- **⭐ Favorites / Favoris**: Mark your favorite hymns for quick access. Syncs across devices when signed in / Marquez vos hymnes préférés pour un accès rapide. Synchronisation entre appareils lors de la connexion
+- **💬 Feedback System / Système de Commentaires**: Submit feedback, report bugs, or suggest improvements directly from the app / Soumettez des commentaires, signalez des bugs ou suggérez des améliorations directement depuis l'application
 - **📱 Modern Interface / Interface Moderne**: Elegant and responsive design with Material Design 3 / Design élégant et responsive avec Material Design 3
 - **🎨 Elegant Theme / Thème Élégant**: Forest Green, Gold, and White color palette / Palette de couleurs Forest Green, Gold et White
 
@@ -90,14 +93,18 @@ Before you begin, ensure you have the following installed:
 - **Framework**: Flutter 3.2.3+
 - **Language**: Dart 3.0.0+
 - **State Management**: BLoC Pattern (flutter_bloc 8.1.3)
-- **Audio**: Just Audio 0.9.36 for MIDI playback
-- **Storage**: ObjectBox 5.0.0 for local data persistence + Firebase Firestore for cloud sync
-- **Authentication**: Firebase Auth for user management
-- **Analytics**: PostHog for user behavior tracking
-- **Error Tracking**: Sentry for crash reporting
+- **Audio**: Just Audio 0.9.36 + Audio Session for background playback
+- **Storage**:
+  - ObjectBox 5.0.0 for local data persistence
+  - Firebase Firestore for favorites cloud sync
+  - Firebase Realtime Database for hymns metadata
+  - Firebase Storage for hymns JSON files
+- **Authentication**: Firebase Auth (Email, Google, Apple Sign-In)
+- **Analytics**: PostHog for user behavior tracking and DAU monitoring
+- **Error Tracking**: Sentry for crash reporting and user feedback
 - **Navigation**: Go Router 12.1.3
-- **Internationalization**: Built-in Flutter i18n
-- **Architecture**: Clean Architecture with Repository Pattern
+- **Internationalization**: Built-in Flutter i18n with automatic language detection
+- **Architecture**: Clean Architecture with Repository Pattern and SOLID principles
 
 ## 📦 Key Dependencies
 
@@ -105,16 +112,21 @@ Before you begin, ensure you have the following installed:
 dependencies:
   flutter_bloc: ^8.1.3 # State management
   just_audio: ^0.9.36 # Audio playback
-  hive_flutter: ^1.1.0 # Local storage
-  firebase_core: ^2.24.2 # Firebase core
-  cloud_firestore: ^4.13.6 # Cloud database
-  firebase_auth: ^4.15.3 # Authentication
-  posthog_flutter: ^3.0.0 # Analytics
-  sentry_flutter: ^7.13.2 # Error tracking
+  audio_session: ^0.1.19 # Background audio support
+  objectbox: ^5.0.0 # Local database
+  firebase_core: ^4.1.1 # Firebase core
+  firebase_auth: ^6.1.0 # Authentication
+  firebase_database: ^12.0.2 # Realtime Database for hymns metadata
+  firebase_storage: ^13.0.0 # Storage for hymns JSON files
+  cloud_firestore: ^6.0.2 # Cloud database for favorites
+  posthog_flutter: ^5.0.0 # Analytics and user tracking
+  sentry_flutter: ^9.6.0 # Error tracking and feedback
   shared_preferences: ^2.2.2 # Settings storage
   equatable: ^2.0.5 # Value equality
   gap: ^3.0.1 # Spacing widget
   package_info_plus: ^4.2.0 # App info
+  connectivity_plus: ^6.0.5 # Network connectivity
+  go_router: ^12.1.3 # Navigation
 ```
 
 ## 🏗️ Project Structure
@@ -145,30 +157,41 @@ lib/
 
 ## 🎵 Audio Features
 
-### MIDI Playback
+### MP3 Playback
 
-- **All Voices**: Play complete MIDI arrangements
-- **Individual Voices**: Soprano, Alto, Tenor, Bass
-- **Playback Controls**: Play, pause, stop, seek
+- **All Voices**: Play complete MP3 arrangements from online sources
+- **Individual Voices**: Soprano, Alto, Tenor, Bass, Countertenor, Baritone
+- **Playback Controls**: Play, pause, stop, seek, loop toggle
+- **Background Playback**: Music continues playing when app is in background
+- **Notification Controls**: Control playback from lock screen and notification panel
 - **Volume Control**: Adjustable audio levels
+- **Auto-retry**: Automatic retry on connection failures
 
-### Audio Files
+### Audio Sources
 
-MIDI files should be placed in `assets/midi/` with the naming convention:
-
-- `h001.mid` for Hymn 1
-- `h002.mid` for Hymn 2
-- etc.
+- **All Voices**: Streamed from `troisanges.org`
+- **Individual Voices**: Hosted on GitHub Pages
 
 ## ☁️ Cloud Synchronization
+
+### Hymns Sync
+
+- **Offline-First**: Hymns are stored locally for instant access
+- **Automatic Updates**: Background sync checks for new hymn versions every 24 hours
+- **Multi-Layer Validation**: 5-layer validation ensures data integrity
+- **Automatic Rollback**: Failed updates automatically revert to previous working version
+- **Version Blacklisting**: Problematic versions are automatically blacklisted
+- **Manual Control**: Check for updates, revert, or reset from Settings
+- **Silent Updates**: Updates happen in background without interrupting user
 
 ### Favorites Sync
 
 - **Offline-First**: Favorites are stored locally for instant access
 - **Optional Authentication**: Use the app without signing in - all features work offline
 - **Cloud Backup**: Automatic sync with Firebase Firestore when authenticated
-- **Smart Sync**: Only syncs when user adds/removes favorites or logs in
+- **Smart Sync**: Bidirectional sync with conflict resolution based on timestamps
 - **Cross-Device**: Access your favorites on any device when signed in
+- **Pending Operations**: Operations queued when offline, synced when back online
 - **Privacy**: Local favorites remain available even when offline
 
 ### Authentication
@@ -176,7 +199,7 @@ MIDI files should be placed in `assets/midi/` with the naming convention:
 - **Optional Sign-In**: Authentication is completely optional
 - **Full App Access**: All features work without signing in
 - **Firebase Auth**: Secure user authentication when desired
-- **Multiple Providers**: Email/password and social login options
+- **Multiple Providers**: Email/password, Google Sign-In, and Apple Sign-In
 - **Session Management**: Automatic session handling
 - **Privacy**: User data is encrypted and secure
 
@@ -184,8 +207,11 @@ MIDI files should be placed in `assets/midi/` with the naming convention:
 
 The app supports French and English:
 
-- **French**: Default language
-- **English**: Available through settings
+- **Automatic Detection**: Detects device language on first launch
+- **French**: Default if device is set to French
+- **English**: Default if device is set to English or any other language
+- **Manual Selection**: Language selector available in onboarding and settings
+- **Persistent**: Language preference is saved and remembered
 - **Adding Languages**: Add new `.arb` files in `lib/l10n/`
 
 ## 🧪 Development
@@ -244,22 +270,27 @@ The app uses **BLoC Pattern** consistently:
 
 ### Available BLoCs
 
-- **LanguageBloc**: Language selection and persistence
-- **MidiBloc**: MIDI playback control
-- **AudioBloc**: Audio playback management
-- **HymnsBloc**: Hymn data and search management
+- **LanguageBloc**: Language selection and persistence with auto-detection
+- **AudioBloc**: Audio playback management with background support
+- **AuthBloc**: User authentication and session management
+- **FavoritesBloc**: Favorites management with cloud sync
+- **ThemeBloc**: Theme selection (light/dark mode)
 
 ### Usage Example
 
 ```dart
 // Dispatch events
-context.read<MidiBloc>().add(PlayMidi('h001'));
+context.read<AudioBloc>().add(PlayAudio(
+  '001',
+  voiceType: VoiceType.allVoices,
+  hymnTitle: 'Hymn Title',
+));
 
 // Listen to state
-BlocBuilder<MidiBloc, MidiState>(
+BlocBuilder<AudioBloc, AudioState>(
   builder: (context, state) {
-    if (state is MidiLoaded && state.isPlaying) {
-      return Text('Playing: ${state.currentMidiFile}');
+    if (state is AudioLoaded && state.isPlaying) {
+      return Text('Playing: ${state.currentHymnNumber}');
     }
     return Text('Stopped');
   },
@@ -293,9 +324,10 @@ BlocBuilder<MidiBloc, MidiState>(
    ```
 
 4. **Audio not playing**
-   - Ensure MIDI files are in `assets/midi/` directory
-   - Check that assets are declared in `pubspec.yaml`
+   - Check internet connection (MP3 files are streamed)
    - Verify device audio is not muted
+   - Check audio permissions in device settings
+   - For background playback, ensure app has audio background mode enabled
 
 ### Platform-Specific Issues
 
@@ -318,10 +350,12 @@ BlocBuilder<MidiBloc, MidiState>(
 
 ### Optimization Tips
 
-- MIDI files are loaded on-demand
+- Audio files are streamed on-demand
+- Hymns data cached locally with ObjectBox for instant access
 - Images and assets are cached automatically
 - BLoC pattern ensures efficient state updates
-- Local storage with Hive for fast data access
+- Offline-first architecture minimizes network usage
+- Background sync happens during idle time
 
 ## 🤝 Contributing
 
@@ -343,11 +377,25 @@ BlocBuilder<MidiBloc, MidiState>(
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` folder:
+
+- **[Documentation Index](docs/README.md)**: Overview of all documentation
+- **[Hymns Sync System](docs/hymns-sync/)**: Firebase setup and sync implementation
+- **[User Tracking](docs/tracking/)**: PostHog integration and analytics
+- **[Feedback System](docs/feedback/)**: User feedback collection
+- **[Localization](docs/localization/)**: Language detection and selection
+- **[Development Guides](docs/development/)**: Branch protection, SOLID principles, release guides
+
 ## 🙏 Acknowledgments
 
 - **Flutter Team**: For the amazing framework
 - **BLoC Library**: For excellent state management
-- **Just Audio**: For reliable audio playback
+- **Just Audio**: For reliable audio playback with background support
+- **Firebase**: For cloud services and real-time sync
+- **PostHog**: For user analytics and tracking
+- **Sentry**: For error tracking and monitoring
 - **Material Design**: For design guidelines
 - **Adventist Hymnal**: For the hymn content
 
@@ -367,6 +415,19 @@ If this project helps you, please consider:
 - 🐛 **Reporting** bugs you find
 - 💡 **Suggesting** new features
 - 🤝 **Contributing** to the codebase
+
+---
+
+## 📱 Current Version
+
+**v1.1.2+30** - Latest features:
+
+- ✅ Background audio playback with notification controls
+- ✅ Automatic hymns synchronization
+- ✅ Enhanced user tracking and analytics
+- ✅ User feedback system
+- ✅ Automatic language detection
+- ✅ Improved favorites sync
 
 ---
 

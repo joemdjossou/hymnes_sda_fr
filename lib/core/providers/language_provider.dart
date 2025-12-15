@@ -62,10 +62,22 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
   ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final languageCode = prefs.getString(_languageKey) ?? 'en';
+      final savedLanguageCode = prefs.getString(_languageKey);
 
+      // If language is not saved, detect system language on first launch
+      if (savedLanguageCode == null) {
+        final systemLocale = _getSystemLocale();
+        final detectedLocale = _detectSupportedLocale(systemLocale);
+
+        // Save the detected language for future launches
+        await prefs.setString(_languageKey, detectedLocale.languageCode);
+        emit(LanguageLoaded(detectedLocale));
+        return;
+      }
+
+      // Use saved language preference
       final locale = supportedLocales.firstWhere(
-        (locale) => locale.languageCode == languageCode,
+        (locale) => locale.languageCode == savedLanguageCode,
         orElse: () => const Locale('en', 'US'),
       );
 
@@ -73,6 +85,38 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
     } catch (e) {
       emit(const LanguageLoaded(Locale('en', 'US')));
     }
+  }
+
+  /// Get the system locale from the device
+  Locale _getSystemLocale() {
+    try {
+      // Get the system locale from WidgetsBinding
+      final systemLocales = WidgetsBinding.instance.platformDispatcher.locales;
+      if (systemLocales.isNotEmpty) {
+        return systemLocales.first;
+      }
+    } catch (e) {
+      // If error, return English as fallback
+    }
+    return const Locale('en', 'US');
+  }
+
+  /// Detect if the system locale is supported, otherwise fallback to English
+  Locale _detectSupportedLocale(Locale systemLocale) {
+    final languageCode = systemLocale.languageCode.toLowerCase();
+
+    // Check if the system language is French
+    if (languageCode == 'fr') {
+      return const Locale('fr', 'FR');
+    }
+
+    // Check if the system language is English
+    if (languageCode == 'en') {
+      return const Locale('en', 'US');
+    }
+
+    // For any other language, fallback to English
+    return const Locale('en', 'US');
   }
 
   Future<void> _onChangeLanguage(

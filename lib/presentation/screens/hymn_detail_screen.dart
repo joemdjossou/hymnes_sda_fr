@@ -1,11 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:hymnes_sda_fr/core/navigation/navigation_service.dart';
 import 'package:hymnes_sda_fr/gen/l10n/app_localizations.dart';
+import 'package:hymnes_sda_fr/presentation/widgets/hymn_details_widgets/hymn_navigation_bar.dart';
 import 'package:hymnes_sda_fr/shared/constants/app_constants.dart';
 
 import '../../core/repositories/hymn_repository.dart';
+import '../../core/services/posthog_service.dart';
+import '../../core/utils/hymn_navigation_helper.dart';
+import '../../core/utils/scroll_behavior_manager.dart';
 import '../../features/audio/bloc/audio_bloc.dart';
 import '../../features/favorites/bloc/favorites_bloc.dart';
 import '../../features/hymns/hymn_detail_controller.dart';
@@ -18,6 +24,7 @@ import '../widgets/hymn_details_widgets/hymn_history_bottom_sheet.dart';
 import '../widgets/hymn_details_widgets/hymn_history_widget.dart';
 import '../widgets/hymn_details_widgets/hymn_lyrics_widget.dart';
 import '../widgets/hymn_details_widgets/hymn_music_sheet_widget.dart';
+import '../widgets/hymn_details_widgets/hymn_search_bottom_sheet.dart';
 
 class HymnDetailScreen extends StatefulWidget {
   final String hymnId;
@@ -36,7 +43,12 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   late final HymnDetailController _controller;
   final ScrollController _scrollController = ScrollController();
   bool _showCollapsedAppBar = false;
+  bool _showBottomNavBar = true;
   AudioBloc? _audioBloc; // Store reference to AudioBloc
+
+  late final ScrollBehaviorManager _scrollBehaviorManager;
+  late final HymnNavigationHelper _hymnNavigationHelper;
+  final PostHogService _posthog = PostHogService();
 
   late AnimationController _heroAnimationController;
   late Animation<double> _heroFadeAnimation;
@@ -46,7 +58,6 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   void initState() {
     super.initState();
     _initializeAnimations();
-    _scrollController.addListener(_onScroll);
 
     // Dependency injection following Dependency Inversion Principle
     final repository = HymnRepository();
@@ -56,6 +67,31 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
     );
     _controller.addListener(_onControllerChanged);
     _controller.loadHymn(widget.hymnId);
+
+    // Initialize scroll behavior manager
+    _scrollBehaviorManager = ScrollBehaviorManager(
+      onCollapsedAppBarChanged: (shouldShow) {
+        if (!mounted) return;
+        if (shouldShow != _showCollapsedAppBar) {
+          setState(() {
+            _showCollapsedAppBar = shouldShow;
+          });
+        }
+      },
+      onBottomNavBarVisibilityChanged: (shouldShow) {
+        if (!mounted) return;
+        if (shouldShow != _showBottomNavBar) {
+          setState(() {
+            _showBottomNavBar = shouldShow;
+          });
+        }
+      },
+    );
+
+    // Initialize hymn navigation helper
+    _hymnNavigationHelper = HymnNavigationHelper(repository);
+
+    _scrollController.addListener(_onScroll);
   }
 
   @override
@@ -91,21 +127,18 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   }
 
   void _onScroll() {
-    // Show collapsed app bar when scrolled past the hero section (around 100px)
-    final shouldShow = _scrollController.offset > 150;
-    if (shouldShow != _showCollapsedAppBar) {
-      setState(() {
-        _showCollapsedAppBar = shouldShow;
-      });
-    }
+    if (!_scrollController.hasClients) return;
+    _scrollBehaviorManager.handleScroll(_scrollController.offset);
   }
 
   @override
   void dispose() {
     _controller.removeListener(_onControllerChanged);
     _controller.dispose();
+    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     _heroAnimationController.dispose();
+    _scrollBehaviorManager.dispose();
 
     // Stop audio when leaving the page - use stored reference to avoid context issues
     if (_controller.hymn != null && _audioBloc != null) {
@@ -116,7 +149,8 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
   }
 
   void _onControllerChanged() {
-    if (_controller.error != null && mounted) {
+    if (!mounted) return;
+    if (_controller.error != null) {
       final l10n = AppLocalizations.of(context)!;
       ToastService.showError(
         context,
@@ -125,6 +159,97 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
       );
     }
     setState(() {}); // Trigger rebuild when controller state changes
+  }
+
+  /// Get the previous hymn number
+  Future<String?> _getPreviousHymnNumber() async {
+    return await _hymnNavigationHelper.getPreviousHymnNumber(widget.hymnId);
+  }
+
+  /// Get the next hymn number
+  Future<String?> _getNextHymnNumber() async {
+    return await _hymnNavigationHelper.getNextHymnNumber(widget.hymnId);
+  }
+
+  /// Handle horizontal swipe gesture
+  void _handleHorizontalSwipe(DragEndDetails details) {
+    // Only handle swipes if the scroll view is at the top (not scrolled)
+    // This prevents conflicts with vertical scrolling
+    if (_scrollController.hasClients && _scrollController.offset > 50) {
+      return; // Don't handle swipe if user is scrolling vertically
+    }
+
+    final velocity = details.primaryVelocity ?? 0;
+    const swipeThreshold = 300.0; // Minimum velocity to trigger navigation
+
+    // Check if horizontal velocity is significant enough
+    if (velocity.abs() < swipeThreshold) {
+      return; // Swipe not strong enough
+    }
+
+    if (velocity > 0) {
+      // Swipe right - go to previous hymn
+      _navigateToPreviousHymn();
+    } else {
+      // Swipe left - go to next hymn
+      _navigateToNextHymn();
+    }
+  }
+
+  /// Navigate to previous hymn
+  Future<void> _navigateToPreviousHymn() async {
+    final previousHymnNumber = await _getPreviousHymnNumber();
+    if (previousHymnNumber != null && mounted) {
+      // Stop audio before navigating
+      if (_audioBloc != null) {
+        _audioBloc!.add(StopAudio());
+      }
+      // Use pushReplacement so back button returns to the original screen (home/search/etc)
+      NavigationService.pushReplacement('/hymn/$previousHymnNumber');
+    }
+  }
+
+  /// Navigate to next hymn
+  Future<void> _navigateToNextHymn() async {
+    final nextHymnNumber = await _getNextHymnNumber();
+    if (nextHymnNumber != null && mounted) {
+      // Stop audio before navigating
+      if (_audioBloc != null) {
+        _audioBloc!.add(StopAudio());
+      }
+      // Use pushReplacement so back button returns to the original screen (home/search/etc)
+      NavigationService.pushReplacement('/hymn/$nextHymnNumber');
+    }
+  }
+
+  Widget _buildSearchButton(BuildContext context) {
+    return IconButton(
+      icon: Container(
+        padding: const EdgeInsets.all(AppConstants.smallPadding),
+        decoration: BoxDecoration(
+          color: AppColors.textSecondary(context).withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(AppConstants.borderRadius),
+        ),
+        child: Icon(
+          Icons.search_rounded,
+          color: AppColors.textSecondary(context),
+          size: 25,
+        ),
+      ),
+      onPressed: () {
+        // Track search button click
+        _posthog.trackSearchEvent(
+          eventType: 'button_clicked',
+          searchType: 'hymn_detail',
+          additionalProperties: {
+            'screen': 'hymn_detail_screen',
+            'current_hymn_number': _controller.hymn?.number ?? '',
+            'current_hymn_title': _controller.hymn?.title ?? '',
+          },
+        );
+        HymnSearchBottomSheet.show(context);
+      },
+    );
   }
 
   Widget _buildFavoriteButton(BuildContext context, AppLocalizations l10n) {
@@ -198,93 +323,140 @@ class _HymnDetailScreenState extends State<HymnDetailScreen>
       },
       child: Scaffold(
         backgroundColor: AppColors.background(context),
-        body: _controller.isLoading
-            ? _buildLoadingState(l10n)
-            : _controller.hymn == null
-                ? _buildErrorState(l10n)
-                : CustomScrollView(
-                    controller: _scrollController,
-                    slivers: [
-                      // Modern App Bar
-                      ModernSliverAppBar(
-                        title: l10n.hymnTitleWithNumber(
-                          _controller.hymn!.number,
-                          _controller.hymn!.title,
-                        ),
-                        subtitle: _controller.hymn!.author,
-                        style: _controller.hymn!.style,
-                        author: _controller.hymn!.author,
-                        composer: _controller.hymn!.composer,
-                        icon: Icons.music_note_rounded,
-                        expandedHeight: 210,
-                        showCollapsedAppBar: _showCollapsedAppBar,
-                        leading: IconButton(
-                          icon: Container(
-                            padding:
-                                const EdgeInsets.all(AppConstants.smallPadding),
-                            decoration: BoxDecoration(
-                              color: AppColors.textSecondary(context)
-                                  .withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(
-                                  AppConstants.borderRadius),
-                            ),
-                            child: Icon(
-                              Icons.arrow_back_rounded,
-                              color: AppColors.textSecondary(context),
-                              size: 25,
-                            ),
-                          ),
-                          onPressed: () => NavigationService.pop(),
-                        ),
-                        actions: [
-                          _buildFavoriteButton(context, l10n),
-                        ],
-                        animationController: _heroAnimationController,
-                        fadeAnimation: _heroFadeAnimation,
-                        slideAnimation: _heroSlideAnimation,
-                      ),
+        bottomNavigationBar: _controller.hymn != null && _showBottomNavBar
+            ? AnimatedSlide(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+                offset: _showBottomNavBar ? Offset.zero : const Offset(0, 1),
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 300),
+                  opacity: _showBottomNavBar ? 1.0 : 0.0,
+                  child: HymnNavigationBar(
+                    currentHymnId: _controller.hymn!.number,
+                    onHymnTap: (hymnNumber) async {
+                      // Determine if it's previous or next hymn
+                      final currentHymnNum =
+                          int.tryParse(_controller.hymn!.number) ?? 0;
+                      final targetHymnNum = int.tryParse(hymnNumber) ?? 0;
+                      final isPrevious = targetHymnNum < currentHymnNum;
+                      final buttonType = isPrevious ? 'previous' : 'next';
 
-                      // Content Section
-                      SliverPadding(
-                        padding:
-                            const EdgeInsets.all(AppConstants.largePadding),
-                        sliver: SliverList(
-                          delegate: SliverChildListDelegate([
-                            // Audio Player
-                            AudioPlayerWidget(
-                              hymnNumber: _controller.hymn?.number ?? '',
-                              hymnTitle: _controller.hymn?.title ?? '',
-                              sopranoFile: _controller.hymn?.sopranoFile,
-                              altoFile: _controller.hymn?.altoFile,
-                              tenorFile: _controller.hymn?.tenorFile,
-                              bassFile: _controller.hymn?.bassFile,
-                              countertenorFile:
-                                  _controller.hymn?.countertenorFile,
-                              baritoneFile: _controller.hymn?.baritoneFile,
-                            ),
+                      // Track navigation button click
+                      await _posthog.trackHymnEvent(
+                        eventType: 'navigation_button_clicked',
+                        hymnNumber: hymnNumber,
+                        hymnTitle: _controller.hymn?.title,
+                        additionalProperties: {
+                          'button_type': buttonType,
+                          'current_hymn_number': _controller.hymn!.number,
+                          'target_hymn_number': hymnNumber,
+                          'screen': 'hymn_detail_screen',
+                        },
+                      );
 
-                            const Gap(24),
-
-                            // Lyrics - using extracted widget
-                            HymnLyricsWidget(hymn: _controller.hymn!),
-                            const Gap(24),
-
-                            // Music Sheet - new widget following SOLID principles
-                            HymnMusicSheetWidget(hymn: _controller.hymn!),
-                            const Gap(24),
-
-                            // Hymn history - using extracted widget
-                            HymnHistoryWidget(
-                              hymn: _controller.hymn!,
-                              onTap: () => HymnHistoryBottomSheet.show(
-                                  context, _controller.hymn!),
-                            ),
-                            const Gap(100),
-                          ]),
-                        ),
-                      ),
-                    ],
+                      // Stop audio before navigating
+                      if (_audioBloc != null) {
+                        _audioBloc!.add(StopAudio());
+                      }
+                      // Use pushReplacement to maintain navigation history
+                      NavigationService.pushReplacement('/hymn/$hymnNumber');
+                    },
                   ),
+                ),
+              )
+            : null,
+        body: GestureDetector(
+          onHorizontalDragEnd: _handleHorizontalSwipe,
+          behavior: HitTestBehavior.translucent,
+          child: _controller.isLoading
+              ? _buildLoadingState(l10n)
+              : _controller.hymn == null
+                  ? _buildErrorState(l10n)
+                  : CustomScrollView(
+                      controller: _scrollController,
+                      slivers: [
+                        // Modern App Bar
+                        ModernSliverAppBar(
+                          title: l10n.hymnTitleWithNumber(
+                            _controller.hymn!.number,
+                            _controller.hymn!.title,
+                          ),
+                          subtitle: _controller.hymn!.author,
+                          style: _controller.hymn!.style,
+                          author: _controller.hymn!.author,
+                          composer: _controller.hymn!.composer,
+                          icon: Icons.music_note_rounded,
+                          expandedHeight: 210,
+                          showCollapsedAppBar: _showCollapsedAppBar,
+                          leading: IconButton(
+                            icon: Container(
+                              padding: const EdgeInsets.all(
+                                  AppConstants.smallPadding),
+                              decoration: BoxDecoration(
+                                color: AppColors.textSecondary(context)
+                                    .withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(
+                                    AppConstants.borderRadius),
+                              ),
+                              child: Icon(
+                                Icons.arrow_back_rounded,
+                                color: AppColors.textSecondary(context),
+                                size: 25,
+                              ),
+                            ),
+                            onPressed: () => NavigationService.back(),
+                          ),
+                          actions: [
+                            _buildSearchButton(context),
+                            _buildFavoriteButton(context, l10n),
+                          ],
+                          animationController: _heroAnimationController,
+                          fadeAnimation: _heroFadeAnimation,
+                          slideAnimation: _heroSlideAnimation,
+                        ),
+
+                        // Content Section
+                        SliverPadding(
+                          padding:
+                              const EdgeInsets.all(AppConstants.largePadding),
+                          sliver: SliverList(
+                            delegate: SliverChildListDelegate([
+                              // Audio Player
+                              AudioPlayerWidget(
+                                hymnNumber: _controller.hymn?.number ?? '',
+                                hymnTitle: _controller.hymn?.title ?? '',
+                                sopranoFile: _controller.hymn?.sopranoFile,
+                                altoFile: _controller.hymn?.altoFile,
+                                tenorFile: _controller.hymn?.tenorFile,
+                                bassFile: _controller.hymn?.bassFile,
+                                countertenorFile:
+                                    _controller.hymn?.countertenorFile,
+                                baritoneFile: _controller.hymn?.baritoneFile,
+                              ),
+
+                              const Gap(24),
+
+                              // Lyrics - using extracted widget
+                              HymnLyricsWidget(hymn: _controller.hymn!),
+                              const Gap(24),
+
+                              // Music Sheet - new widget following SOLID principles
+                              HymnMusicSheetWidget(hymn: _controller.hymn!),
+                              const Gap(24),
+
+                              // Hymn history - using extracted widget
+                              HymnHistoryWidget(
+                                hymn: _controller.hymn!,
+                                onTap: () => HymnHistoryBottomSheet.show(
+                                    context, _controller.hymn!),
+                              ),
+                              const Gap(100),
+                            ]),
+                          ),
+                        ),
+                      ],
+                    ),
+        ),
       ),
     );
   }

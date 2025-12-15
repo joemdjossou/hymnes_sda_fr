@@ -13,6 +13,7 @@ enum ButtonVariant {
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
+  final Color? color;
   final bool isLoading;
   final ButtonVariant variant;
   final IconData? icon;
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    this.color,
     this.isLoading = false,
     this.variant = ButtonVariant.filled,
     this.icon,
@@ -49,7 +51,9 @@ class CustomButton extends StatelessWidget {
             child: CircularProgressIndicator(
               strokeWidth: 2,
               valueColor: AlwaysStoppedAnimation<Color>(
-                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
+                variant == ButtonVariant.filled
+                    ? (color ?? onPrimaryColor)
+                    : (color ?? primaryColor),
               ),
             ),
           ),
@@ -58,16 +62,18 @@ class CustomButton extends StatelessWidget {
           Icon(
             icon,
             size: 20,
-            color:
-                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
+            color: variant == ButtonVariant.filled
+                ? (color ?? onPrimaryColor)
+                : (color ?? primaryColor),
           ),
           const Gap(8),
         ],
         Text(
           text,
           style: theme.textTheme.labelLarge?.copyWith(
-            color:
-                variant == ButtonVariant.filled ? onPrimaryColor : primaryColor,
+            color: variant == ButtonVariant.filled
+                ? (color ?? onPrimaryColor)
+                : (color ?? primaryColor),
             fontWeight: FontWeight.w600,
             fontFamily: 'Raleway',
             letterSpacing: 0.5,
@@ -87,12 +93,14 @@ class CustomButton extends StatelessWidget {
                 BorderRadius.circular(AppConstants.mediumBorderRadius),
             boxShadow: [
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.3),
+                color: color?.withValues(alpha: 0.3) ??
+                    primaryColor.withValues(alpha: 0.3),
                 blurRadius: 12,
                 offset: const Offset(0, 6),
               ),
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.1),
+                color: color?.withValues(alpha: 0.1) ??
+                    primaryColor.withValues(alpha: 0.1),
                 blurRadius: 4,
                 offset: const Offset(0, 2),
               ),
@@ -120,16 +128,19 @@ class CustomButton extends StatelessWidget {
           width: width,
           height: height ?? 52,
           decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.05),
+            color: color?.withValues(alpha: 0.05) ??
+                (color ?? primaryColor).withValues(alpha: 0.05),
             borderRadius:
                 BorderRadius.circular(AppConstants.mediumBorderRadius),
             border: Border.all(
-              color: primaryColor.withValues(alpha: 0.3),
+              color: color?.withValues(alpha: 0.3) ??
+                  primaryColor.withValues(alpha: 0.3),
               width: 1.5,
             ),
             boxShadow: [
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.1),
+                color: color?.withValues(alpha: 0.1) ??
+                    primaryColor.withValues(alpha: 0.1),
                 blurRadius: 8,
                 offset: const Offset(0, 4),
               ),
@@ -157,7 +168,8 @@ class CustomButton extends StatelessWidget {
           width: width,
           height: height ?? 52,
           decoration: BoxDecoration(
-            color: primaryColor.withValues(alpha: 0.05),
+            color: color?.withValues(alpha: 0.05) ??
+                (color ?? primaryColor).withValues(alpha: 0.05),
             borderRadius:
                 BorderRadius.circular(AppConstants.mediumBorderRadius),
           ),

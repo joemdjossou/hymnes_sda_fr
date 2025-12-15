@@ -28,12 +28,13 @@ class PlayAudio extends AudioEvent {
   final String hymnNumber;
   final VoiceType voiceType;
   final String? voiceFile;
+  final String? hymnTitle;
 
   const PlayAudio(this.hymnNumber,
-      {this.voiceType = VoiceType.allVoices, this.voiceFile});
+      {this.voiceType = VoiceType.allVoices, this.voiceFile, this.hymnTitle});
 
   @override
-  List<Object?> get props => [hymnNumber, voiceType, voiceFile];
+  List<Object?> get props => [hymnNumber, voiceType, voiceFile, hymnTitle];
 }
 
 class PauseAudio extends AudioEvent {}
@@ -280,7 +281,9 @@ class AudioBloc extends Bloc<AudioEvent, AudioState> {
       if (_isDisposed) return;
 
       await _audioService.playHymn(event.hymnNumber,
-          voiceType: event.voiceType, voiceFile: event.voiceFile);
+          voiceType: event.voiceType,
+          voiceFile: event.voiceFile,
+          hymnTitle: event.hymnTitle);
 
       // Track PostHog event
       await _posthog.trackAudioEvent(

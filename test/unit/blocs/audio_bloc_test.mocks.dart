@@ -126,9 +126,10 @@ class MockAudioService extends _i1.Mock implements _i2.AudioService {
 
   @override
   _i4.Future<void> playHymn(
-    String? hymnNumber, {
-    _i3.VoiceType? voiceType = _i3.VoiceType.allVoices,
+    String hymnNumber, {
+    String? hymnTitle,
     String? voiceFile,
+    _i3.VoiceType voiceType = _i3.VoiceType.allVoices,
   }) =>
       (super.noSuchMethod(
         Invocation.method(

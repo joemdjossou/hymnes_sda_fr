@@ -43,6 +43,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   // Error logging service
   final ErrorLoggingService _errorLogger = ErrorLoggingService();
+  
+  // Timer for periodic featured hymn updates
+  Timer? _featuredHymnUpdateTimer;
 
   @override
   void initState() {
@@ -100,11 +103,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   Future<void> _loadHymns() async {
     try {
       final hymns = await HymnDataService().getHymns();
-      setState(() {
-        _hymns = hymns;
-        _filteredHymns = hymns;
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _hymns = hymns;
+          _filteredHymns = hymns;
+          _isLoading = false;
+        });
+      }
 
       // Update home widget with hymns count and featured hymn
       await HomeWidgetService.updateHymnsCount(hymns.length);
@@ -120,9 +125,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         },
       );
     } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
 
       await _errorLogger.logUIError(
         'HomeScreen',
@@ -166,6 +173,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 
   void _onScroll() {
+    if (!mounted) return;
     // Show collapsed app bar when scrolled past the hero section (around 120px)
     final shouldShow = _scrollController.offset > 150;
     if (shouldShow != _showCollapsedAppBar) {
@@ -177,9 +185,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   void _startPeriodicFeaturedHymnUpdate() {
     // Update featured hymn every 30 minutes
-    Timer.periodic(const Duration(minutes: 30), (timer) {
+    _featuredHymnUpdateTimer = Timer.periodic(const Duration(minutes: 30), (timer) {
       if (mounted && _hymns.isNotEmpty) {
         HomeWidgetService.updateRandomFeaturedHymn(_hymns);
+      } else {
+        // Cancel timer if widget is no longer mounted
+        timer.cancel();
       }
     });
   }
@@ -319,7 +330,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 
   @override
   void dispose() {
+    _featuredHymnUpdateTimer?.cancel();
+    _featuredHymnUpdateTimer = null;
+    _searchController.removeListener(_filterHymns);
     _searchController.dispose();
+    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     _heroAnimationController.dispose();
     _searchAnimationController.dispose();

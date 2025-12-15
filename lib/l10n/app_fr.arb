@@ -315,5 +315,38 @@
   "weeklySabbathReminderDescription": "Recevez un rappel chaque vendredi à 18h00 pour préparer le Sabbat et chanter des louanges au Seigneur",
   "sabbathReminderTitle": "Préparation du Sabbat",
   "sabbathReminderBody": "C'est le Sabbat ! Prenez le temps de préparer votre cœur et de chanter des louanges au Seigneur. Sabbat béni !",
-  "checkEmailInstructions": "Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe."
+  "checkEmailInstructions": "Veuillez vérifier votre email et suivre les instructions pour réinitialiser votre mot de passe.",
+  "deleteAccount": "Supprimer le compte",
+  "deleteAccountConfirmation": "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.",
+  "deleteAccountDescription": "La suppression de votre compte supprimera définitivement :\n\n• Votre compte et vos informations de profil\n• Tous vos favoris sauvegardés\n• Votre historique de cantiques\n\nCette action est permanente et ne peut pas être annulée. Vous serez déconnecté immédiatement.",
+  "deleteAccountButton": "Supprimer mon compte",
+  "deleteAccountSuccess": "Votre compte a été supprimé avec succès.",
+  "deleteAccountError": "Une erreur s'est produite lors de la suppression de votre compte. Veuillez réessayer.",
+  "review": "Noter",
+  "share": "Partager",
+  "shareAppMessage": "Découvrez cette application incroyable de Hymnes Adventistes ! 🎵🙏\n\n{url}",
+  "@shareAppMessage": {
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackTitle": "Commentaires et Support",
+  "feedbackSubtitle": "Aidez-nous à améliorer",
+  "feedbackHelp": "Partagez vos pensées, signalez des bugs ou suggérez de nouvelles fonctionnalités pour nous aider à améliorer l'application pour tous.",
+  "sendFeedback": "Envoyer un Commentaire",
+  "feedbackDescription": "Nous aimerions avoir votre avis ! Vos commentaires nous aident à améliorer l'application.",
+  "feedbackType": "Type de Commentaire",
+  "feedbackGeneral": "Général",
+  "feedbackBug": "Signaler un Bug",
+  "feedbackFeature": "Demande de Fonctionnalité",
+  "feedbackReview": "Avis",
+  "feedbackPlaceholder": "Partagez vos pensées, signalez un bug ou suggérez une amélioration...",
+  "feedbackPrivacyNote": "Vos commentaires sont envoyés en toute sécurité et nous aident à améliorer l'application.",
+  "feedbackEmptyMessage": "Veuillez écrire votre commentaire avant de soumettre.",
+  "feedbackSuccessMessage": "Merci pour vos commentaires ! Nous les examinerons bientôt.",
+  "feedbackErrorMessage": "Échec de l'envoi des commentaires. Veuillez réessayer.",
+  "warning": "Avertissement",
+  "submit": "Soumettre"
 }

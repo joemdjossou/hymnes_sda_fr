@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -156,16 +157,33 @@ class NotificationService {
       iOS: iOSNotificationDetails,
     );
 
-    await _flutterLocalNotificationsPlugin.zonedSchedule(
-      id,
-      title,
-      body,
-      TZDateTime.from(scheduledDate, local),
-      notificationDetails,
-      payload: payload,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-    );
+    final scheduledDateTime = TZDateTime.from(scheduledDate, local);
+
+    Future<void> schedule(AndroidScheduleMode mode) {
+      return _flutterLocalNotificationsPlugin.zonedSchedule(
+        id,
+        title,
+        body,
+        scheduledDateTime,
+        notificationDetails,
+        payload: payload,
+        androidScheduleMode: mode,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
+      );
+    }
+
+    try {
+      await schedule(AndroidScheduleMode.exactAllowWhileIdle);
+    } on PlatformException catch (e) {
+      if (e.code == 'exact_alarms_not_permitted') {
+        debugPrint(
+            'Exact alarms not permitted on this device. Falling back to inexact scheduling.');
+        await schedule(AndroidScheduleMode.inexactAllowWhileIdle);
+      } else {
+        rethrow;
+      }
+    }
   }
 
   /// Cancel a specific notification

@@ -74,6 +74,12 @@ class AppColors {
         : lightCardBackground;
   }
 
+  static Color bottomNavigationBarBackground(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.dark
+        ? darkCardBackground
+        : lightSurface;
+  }
+
   static Color surface(BuildContext context) {
     return Theme.of(context).brightness == Brightness.dark
         ? darkSurface

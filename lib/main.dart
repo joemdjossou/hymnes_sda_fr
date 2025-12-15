@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -14,6 +15,7 @@ import 'core/services/connectivity_service.dart';
 import 'core/services/error_logging_service.dart';
 import 'core/services/favorites_sync_service.dart';
 import 'core/services/home_widget_service.dart';
+import 'core/services/hymns_sync_service.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/posthog_service.dart';
 import 'core/services/storage_service.dart';
@@ -54,8 +56,36 @@ void main() async {
   await NotificationService().initialize();
   await HomeWidgetService.initialize();
 
+  // Initialize hymns sync service
+  try {
+    await HymnsSyncService().initialize();
+  } catch (e) {
+    Logger().e('Hymns sync service initialization failed: $e');
+  }
+
   // Track app launch
   await PostHogService().trackAppLaunch();
+
+  // Schedule background hymns update check (with delay to not block app launch)
+  Future.delayed(const Duration(seconds: 5), () async {
+    try {
+      final syncResult = await HymnsSyncService().checkForUpdates();
+      Logger().i('Background hymns sync: $syncResult');
+
+      // Track sync result
+      if (syncResult.success) {
+        await PostHogService().trackEvent(
+          eventName: 'hymns_updated',
+          properties: {
+            'from_version': syncResult.oldVersion,
+            'to_version': syncResult.newVersion,
+          },
+        );
+      }
+    } catch (e) {
+      Logger().e('Background hymns sync failed: $e');
+    }
+  });
 
   // Initialize OneSignal
   OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
@@ -69,6 +99,14 @@ void main() async {
       // https://docs.sentry.io/platforms/dart/guides/flutter/data-management/data-collected/
       options.sendDefaultPii = true;
       options.enableLogs = true;
+
+      // Set environment based on build mode
+      options.environment = kDebugMode ? 'debug' : 'production';
+
+      // Enable Sentry in all modes (not just debug)
+      options.debug =
+          false; // Set to false to avoid verbose logging in production
+
       // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
       options.tracesSampleRate = 1.0;
       // The sampling rate for profiling is relative to tracesSampleRate
@@ -77,6 +115,9 @@ void main() async {
       options.replay.sessionSampleRate = 0.1;
       options.replay.onErrorSampleRate = 1.0;
       options.privacy.unmask<WebViewWidget>();
+
+      // Ensure events are sent even in release mode (beforeSend is optional)
+      // By default, Sentry sends all events in both debug and production
     },
     appRunner: () async {
       // Initialize error logging system

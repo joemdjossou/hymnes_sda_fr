@@ -2,7 +2,7 @@ name: hymnes_sda_fr
 description: "An app for French Seventh-day Adventist hymns with audio playback, lyrics display, and music sheet viewing capabilities."
 publish_to: "none"
 
-version: 1.0.0+21
+version: 1.1.2+31
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
@@ -34,14 +34,22 @@ dependencies:
   gap: ^3.0.1
   # Audio playback
   just_audio: ^0.9.36
+  # Audio session for background playback and notification controls
+  audio_session: ^0.1.19
   # Web view for PDF display
   webview_flutter: ^4.10.0
   http: ^1.1.0
   url_launcher: ^6.2.2
+  # For sharing content
+  share_plus: ^10.1.2
   # For firebase authentication
   firebase_auth: ^6.1.0
   # For firebase core
   firebase_core: ^4.1.1
+  # For firebase realtime database
+  firebase_database: ^12.0.2
+  # For firebase storage (compatible with firebase_core 4.x)
+  firebase_storage: ^13.0.0
   # For Google Sign-In
   google_sign_in: ^6.2.0
   # For Apple Sign-In
@@ -156,5 +164,5 @@ flutter_native_splash:
 sentry:
   upload_debug_symbols: true
   upload_source_maps: true
-  project: flutter
+  project: hymnes
   org: joemdjossou

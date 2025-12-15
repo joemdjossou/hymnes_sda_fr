@@ -89,6 +89,7 @@ class _SearchScreenState extends State<SearchScreen>
   }
 
   void _onScroll() {
+    if (!mounted) return;
     // Show collapsed app bar when scrolled past the search section (around 100px)
     final shouldShow = _scrollController.offset > 70;
     if (shouldShow != _showCollapsedAppBar) {
@@ -100,7 +101,9 @@ class _SearchScreenState extends State<SearchScreen>
 
   @override
   void dispose() {
+    _searchController.removeListener(_performSearch);
     _searchController.dispose();
+    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     _searchAnimationController.dispose();
     _filterAnimationController.dispose();
@@ -110,16 +113,20 @@ class _SearchScreenState extends State<SearchScreen>
   Future<void> _loadHymns() async {
     try {
       final hymns = await _hymnDataService.getHymns();
-      setState(() {
-        _allHymns = hymns;
-        _filteredHymns = hymns;
-        _themes = hymns.map((h) => h.theme).toSet().toList()..sort();
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _allHymns = hymns;
+          _filteredHymns = hymns;
+          _themes = hymns.map((h) => h.theme).toSet().toList()..sort();
+          _isLoading = false;
+        });
+      }
     } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
       debugPrint('Error loading hymns: $e');
     }
   }

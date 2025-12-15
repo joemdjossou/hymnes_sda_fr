@@ -490,6 +490,7 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
       context.read<AudioBloc>().add(PlayAudio(
             widget.hymnNumber,
             voiceType: VoiceType.allVoices,
+            hymnTitle: widget.hymnTitle,
           ));
     } catch (e) {
       debugPrint('Error accessing AudioBloc for play all voices: $e');
@@ -500,7 +501,9 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     if (!mounted) return;
     try {
       context.read<AudioBloc>().add(PlayAudio(widget.hymnNumber,
-          voiceType: voiceType, voiceFile: voiceFile));
+          voiceType: voiceType,
+          voiceFile: voiceFile,
+          hymnTitle: widget.hymnTitle));
     } catch (e) {
       debugPrint('Error accessing AudioBloc for voice play: $e');
     }

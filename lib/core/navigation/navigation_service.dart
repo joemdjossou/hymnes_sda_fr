@@ -42,6 +42,24 @@ class NavigationService {
     );
   }
 
+  /// Push a new route and replace the current route
+  static void pushReplacement(String route) {
+    GoRouter.of(AppRouter.rootNavigatorKey.currentContext!)
+        .pushReplacement(route);
+  }
+
+  /// Push a named route and replace the current route
+  static void pushReplacementNamed(String name,
+      {Map<String, String>? pathParameters,
+      Map<String, dynamic>? queryParameters}) {
+    GoRouter.of(AppRouter.rootNavigatorKey.currentContext!)
+        .pushReplacementNamed(
+      name,
+      pathParameters: pathParameters ?? {},
+      queryParameters: queryParameters ?? {},
+    );
+  }
+
   /// Pop the current route
   static void pop([dynamic result]) {
     GoRouter.of(AppRouter.rootNavigatorKey.currentContext!).pop(result);
