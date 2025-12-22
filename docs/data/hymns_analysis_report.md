@@ -1,0 +1,1546 @@
+# Hymns Analysis Report
+
+## Hymns Missing Author
+
+**Total: 552 hymns**
+
+- **#36**: Trois fois saint Jéhovah!
+- **#37**: Peuples, chantez un saint cantique
+- **#38**: Abandonne ta vie
+- **#39**: Oui, ton amour
+- **#40**: C'est de toi, Père saint
+- **#41**: Gloire à toi, Dieu puissant!
+- **#42**: À toi la gloire!
+- **#43**: Je veux chanter
+- **#44**: Ô Dieu! dans ses jours
+- **#45**: Oh! qu'il m'est doux
+- **#46**: Oui, je veux te bénir
+- **#47**: Que ton fidèle amour
+- **#48**: Tu m'as aimé, Seigneur!
+- **#49**: Entendez-vous
+- **#50**: Chantons, chantons sans cesse
+- **#51**: Hosanna!
+- **#52**: Lorsque le ciel retentit
+- **#53**: Faisons éclater notre joie
+- **#54**: Ô charité suprême!
+- **#55**: Ô merveilleuse histoire
+- **#56**: Oh! que ne pouvons-nous
+- **#57**: Divin Sauveur
+- **#58**: De la divinité
+- **#59**: Saint envoyé du Père
+- **#60**: J'ai quitté le ciel pour toi
+- **#61**: Entonnons un saint cantique
+- **#62**: Ma richesse, ma gloire
+- **#63**: Ô bonne nouvelle!
+- **#64**: J'ai suivi Jésus
+- **#65**: Ô Fils de Dieu!
+- **#66**: Adorable mystère
+- **#67**: Je t'ai suivi sur le Calvaire
+- **#68**: Pour moi pécheur
+- **#69**: Sous ton voile d'ignominie
+- **#70**: Pour qui la mort
+- **#71**: Ô Christ! j'ai vu ton agonie
+- **#72**: Pour nous Christ meurt
+- **#73**: Rédempteur adorable
+- **#74**: Sur cette terre
+- **#75**: Portant sa croix
+- **#76**: Un regard sur ta croix sanglante
+- **#77**: Il est là-bas, plus haut
+- **#78**: Roi couvert de blessures
+- **#79**: À celui qui nous a sauvés
+- **#80**: Christ est ressuscité!
+- **#81**: À toi la gloire
+- **#82**: Le Sauveur est ressuscité
+- **#83**: Venez, chrétiens
+- **#84**: Ô cieux! unissez-vous
+- **#85**: Jésus, Agneau de Dieu!
+- **#86**: Ah! si ton sang
+- **#87**: Qu'elle est douce
+- **#88**: Ô Seigneur!
+- **#89**: Oui, pour son peuple
+- **#90**: Tu m'as lavé de mon péché
+- **#91**: Tout mon bonheur, Christ
+- **#92**: Comme un phare sur la plage
+- **#93**: Je la connais, cette joie
+- **#94**: Seigneur Jésus!
+- **#95**: Je ne sais pourquoi
+- **#96**: Je suis scellé pour la gloire
+- **#97**: Jésus est notre ami suprême
+- **#98**: Jésus, ô nom qui surpasse
+- **#108**: Il va venir, le Seigneur
+- **#109**: Il vient, il vient
+- **#110**: Levons-nous, frères
+- **#111**: Il va bientôt venir!
+- **#118**: Prends courage, chrétien
+- **#119**: Seigneur Jésus tes élus
+- **#120**: Tenons nos lampes prêtes
+- **#121**: Écoutez le chant joyeux
+- **#122**: Esprit du Dieu vivant
+- **#123**: Descends, Esprit du Dieu vivant
+- **#124**: Réponds à ma prière
+- **#125**: Ô Saint-Esprit
+- **#126**: Don du ciel
+- **#127**: Saint-Esprit
+- **#128**: Comme une terre altérée
+- **#129**: Esprit très saint
+- **#130**: Nous t'adorons, Dieu vivant
+- **#131**: Rends-toi maître de nos âmes
+- **#132**: La Parole du Seigneur
+- **#133**: C'est dans ta Parole
+- **#134**: Livre saint
+- **#135**: Livre sacré, lumière étincelante
+- **#136**: Pour triompher dans les combats
+- **#137**: Ta gloire, ô notre Dieu
+- **#138**: Ta Parole, Seigneur
+- **#139**: Oh! Que ton joug est facile!
+- **#140**: Ô Seigneur
+- **#141**: Ô Dieu de vérité!
+- **#142**: L'Église est étrangère
+- **#143**: C'est moi qui vous console
+- **#144**: Sur ton Église universelle
+- **#145**: Toi qui dans la nuit
+- **#146**: Mon âme, en doux transports
+- **#147**: Aimer!
+- **#148**: Ah! Qu'il est beau de voir
+- **#149**: Fraternité céleste et sainte
+- **#150**: Il est en Jésus-Christ
+- **#151**: Nous t'adorons
+- **#152**: Tu nous aimes, Seigneur
+- **#153**: Que nos chants et nos prières
+- **#154**: L'amour de Jésus-Christ
+- **#155**: Ta voix, Jésus
+- **#156**: Ô Seigneur! ô Sauveur!
+- **#157**: Bénissons Dieu
+- **#158**: Devant le Seigneur
+- **#159**: Frères, approchons-nous
+- **#160**: Marcher en ta présence
+- **#161**: Immortel Roi des cieux
+- **#162**: Nous sommes au Seigneur
+- **#163**: Silence! Silence!
+- **#164**: Jour de repos
+- **#165**: La semaine a fui
+- **#166**: Le jour a fui
+- **#167**: Monarque souverain
+- **#168**: Peuple chrétien, c'est le jour
+- **#169**: Joyeusement, nous saluons
+- **#170**: Repos si doux
+- **#171**: Quel bonheur, quand faisant trêve
+- **#172**: Sur la terre se lève ..
+- **#173**: Notre labeur est accompli
+- **#174**: Ton jour, Seigneur!
+- **#175**: L'astre à l'horizon descend
+- **#176**: Avec zèle à ton école
+- **#177**: Mon âme en silence
+- **#178**: Ô Maître suprême!
+- **#179**: Ô chère école du sabbat
+- **#180**: À tes pieds, ô divin Maître!
+- **#181**: Repose ton âme
+- **#182**: Parle, parle Seigneur
+- **#183**: Daigne en cette heure
+- **#184**: Divin Sauveur
+- **#185**: Jésus te confie
+- **#186**: Moment si doux de la prière
+- **#187**: Ô Dieu! toute ma prière
+- **#188**: Seigneur! du sein de la poussière
+- **#189**: Quand le ciel devient menaçant
+- **#190**: Toi qui disposes
+- **#191**: Quelle est douce la prière
+- **#192**: Seigneur, ce que je réclame
+- **#193**: Souvent Seigneur!
+- **#194**: Au sortir de ton sanctuaire
+- **#195**: Demeure par ta grâce
+- **#196**: Ô Seigneur! Bénis la parole
+- **#197**: Reste avec nous, Seigneur
+- **#198**: Que l'Éternel nous bénisse
+- **#199**: Que la grâce de notre Seigneur
+- **#200**: Dans le vaste champ
+- **#201**: La voix de Christ nous appelle
+- **#202**: Passez jusques à nous!
+- **#203**: Frères, chantons
+- **#204**: Des pays de l'aurores
+- **#205**: Oui, la moisson du monde
+- **#206**: Lève-toi, vaillante armée
+- **#207**: Qu'ils sont beaux
+- **#208**: Sermons dès que brille l'aurore
+- **#209**: Soleil de justice
+- **#210**: Seigneur Jésus!
+- **#213**: Cloches, sonnez l'Évangile
+- **#214**: Chantons la victoire
+- **#215**: Entends-tu le chant joyeux?
+- **#216**: Seigneur, ton ange vole
+- **#217**: Réjouis-toi, chrétien
+- **#218**: Tel que je suis
+- **#219**: Contemplez, ô chrétiens!
+- **#220**: Je viens, Seigneur
+- **#221**: De ce monde
+- **#222**: Mort avec Christ
+- **#223**: Seigneur Jésus
+- **#224**: Tel que je suis sans rien à moi
+- **#225**: Viens à la croix
+- **#226**: Céleste voix, tu nous convies
+- **#227**: Agneau, victime expiatoire
+- **#228**: À ta Cène bénie
+- **#229**: Je viens, Seigneur, à ta table bénie
+- **#230**: Roi des rois, victime sainte
+- **#231**: Tu m'appelles, Seigneur
+- **#232**: Bientôt le Seigneur va venir!
+- **#233**: C'est encor temps
+- **#234**: Jésus frappe à la porte
+- **#235**: Arrête, ô pécheur!
+- **#236**: Entends-tu? Jésus t'appelle
+- **#237**: Pour toi, j'ai donné ma vie
+- **#238**: Regarde, âme angoissée
+- **#239**: Lorsque devant l'Agneau
+- **#240**: Nous voguons ver un beau rivage
+- **#241**: Viens, âme perdue
+- **#242**: Le Maître est là qui t'appelle
+- **#243**: Ô vous qui n'avez pas la paix
+- **#244**: Où cherchez-vous le bonheur?
+- **#245**: Veux-tu partager la gloire
+- **#246**: Passant, si tard que veux-tu?
+- **#247**: Reviens à ton Père
+- **#248**: Par ce chemin solitaire
+- **#249**: Pécheur, je voudrais te guérir
+- **#250**: Possèdes-tu, pauvre pécheur
+- **#251**: Pour nous, la vie est un voyage
+- **#252**: Viens à Jésus
+- **#253**: Reviens!
+- **#254**: Une bonne nouvelle
+- **#255**: Si vous saviez
+- **#256**: Toi dont l'âme est tourmentée
+- **#257**: Venez au Sauveur
+- **#258**: Viens à Jésus, quand la souffrance
+- **#259**: Viens au Père
+- **#260**: Voici Jésus, notre Sauveur
+- **#261**: Nous allons tout joyeux
+- **#262**: À ton appel sur les flots
+- **#263**: Aujourd'hui tu m'appelles
+- **#264**: Chantez, anges du Ciel!
+- **#265**: Dans ma misère
+- **#266**: Ô Seigneur
+- **#267**: Seigneur, tu donnes ta grâce
+- **#268**: Jésus, par ton sang précieux
+- **#269**: Ô Fils de Dieu, mon Sauveur
+- **#270**: J'ai trouvé la voie
+- **#271**: Miséricorde insondable
+- **#272**: Ô jour heureux
+- **#273**: Seigneur! je n'ai rien
+- **#274**: Source féconde
+- **#275**: J'avais fui la bergerie
+- **#276**: Bien loin de toi, mon Père
+- **#277**: J'ai longtemps erré
+- **#278**: Me voici devant ta face
+- **#279**: Ô honte! ô mémoire cruelle!
+- **#280**: Père, je viens à toi
+- **#281**: Plongé dans un bourbier
+- **#282**: Roc séculaire
+- **#283**: Sans attendre
+- **#284**: Seigneur, attire
+- **#285**: C'est toi, Jésus
+- **#286**: Il est un nom si beau
+- **#287**: Exaltons notre divin Maître
+- **#288**: En quelque lieu
+- **#289**: Roi des anges
+- **#290**: Dans les cieux
+- **#291**: Je connais un guide
+- **#292**: Jésus, mon espérance
+- **#293**: Ô mon Sauveur
+- **#294**: Doué du langage des anges
+- **#295**: Je dois voyager
+- **#296**: Quel autre au Ciel
+- **#297**: T'aimer, Jésus, te connaître
+- **#298**: Frères, marchons!
+- **#299**: Jour après jour
+- **#300**: Vaillants soldats
+- **#301**: La foi
+- **#302**: Le Dieu saint
+- **#303**: Que suis-je sur la terre?
+- **#304**: Brillante Étoile
+- **#305**: Ami, pourquoi tant de bonheur
+- **#306**: Comme un fleuve immense
+- **#307**: En toi, Seigneur
+- **#308**: Éternel Dieu, mon Sauveur
+- **#309**: La croix que Dieu me donne
+- **#310**: Mon bonheur vient de toi
+- **#311**: J'ai soif de paix
+- **#312**: Quand je passe
+- **#313**: Mon Dieu, nos coeurs
+- **#314**: Quand le ciel s'ouvre
+- **#315**: Sauveur toujours fidèle
+- **#316**: Mon coeur joyeux
+- **#317**: Oh! quel repos quand le mal
+- **#318**: Plus le mal est pressant
+- **#319**: Près de Jésus
+- **#320**: Quel ami fidèle et tendre!
+- **#321**: Quel repos céleste
+- **#322**: Seul Refuge de mon âme
+- **#323**: Source de tous les biens
+- **#324**: Sur toi je me repose
+- **#325**: À Jésus je m'abandonne
+- **#326**: Ah! donne à mon âme
+- **#327**: Grandis en moi, Seigneur
+- **#328**: Je me tiendrai tout près
+- **#329**: Ah! que je ne sois pas
+- **#330**: À toi, mon Dieu, je m'abandonne
+- **#331**: Aussi longtemps qu'étranger
+- **#332**: Je suis à toi
+- **#333**: Seigneur, sanctifie
+- **#334**: C'est mon joyeux service
+- **#335**: Le cri de mon âme
+- **#336**: Jésus-Christ est ma sagesse
+- **#337**: Je veux, pécheur
+- **#338**: Les gains, les honneurs
+- **#339**: Mon Sauveur
+- **#340**: Viens, mon âme
+- **#341**: Ô mon Sauveur!
+- **#342**: Qu'il fait bon à ton service
+- **#343**: Toujours avec Jésus!
+- **#344**: À moi, les coeurs braves!
+- **#345**: Plus que vainqueurs!
+- **#346**: À de nouveaux combats
+- **#347**: Debout, sainte cohorte
+- **#348**: Dès que l'aube dépose
+- **#349**: Dès que l'aube dépose
+- **#350**: Seigneur! dirige tous mes pas
+- **#351**: Debout! soldat du Christ
+- **#352**: Jusqu'à la mort!
+- **#353**: Le temps est court
+- **#354**: Le signal de la victoire
+- **#355**: L'heure du départ
+- **#356**: Mon Dieu! quelle guerre cruelle!
+- **#357**: Poursuivons notre course
+- **#358**: C'est un rempart
+- **#359**: J'ai soif de ta présence
+- **#360**: Dieu tout-puissant
+- **#361**: Dans l'abîme de misères
+- **#362**: Quand mon coeur en sa détresse
+- **#363**: Sur toi, Sauveur
+- **#364**: Voici venir l'orage
+- **#365**: Trop souvent je murmure
+- **#366**: Veil au matin
+- **#367**: Dans le désert
+- **#368**: Mon Dieu, plus près de toi
+- **#369**: En ce triste monde
+- **#370**: Il est un roc séculaire
+- **#371**: Il est une source
+- **#372**: Invoque-moi!
+- **#373**: Jésus est celui qui nous aime
+- **#374**: Le ciel était voilé
+- **#375**: Maître, entends-tu la tempête?
+- **#376**: Le vent soufflait
+- **#377**: Mon âme est dans la détresse
+- **#378**: Ô Jésus, mon Sauveur
+- **#379**: Ô jour béni!
+- **#380**: Ô toi, mon allégresse
+- **#381**: Où trouver une retraite
+- **#382**: Oui, selon ta promesse
+- **#383**: Quel grand secours!
+- **#384**: Viens, âme qui pleures
+- **#385**: Quand sur la sombre route
+- **#386**: Qui me relève
+- **#387**: Si je trouve grande ma croix
+- **#388**: Une nacelle en silence
+- **#389**: Céleste Canaan
+- **#390**: Au Ciel est la maison du Père
+- **#391**: Avec allégresse!
+- **#392**: De Canaan quand verrons-nous
+- **#393**: Vers le Ciel
+- **#394**: Contempler mon Dieu
+- **#395**: Encor quelques jours sur la terre
+- **#396**: Sainte Sion
+- **#397**: Étranger sur la terre
+- **#398**: J'ai vu dans une apothéose
+- **#399**: Je connais un pays
+- **#401**: La nuit aura bientôt disparu
+- **#402**: L'aube naît, sourit et passe
+- **#403**: Marchons, frères, bon courage
+- **#405**: Monts et coteaux reverdissent
+- **#406**: Nous attendons le Sauveur glorieux!
+- **#407**: Pèlerin sur cette terre
+- **#408**: Plus haut que les hautes cimes
+- **#409**: Pour moi Chrétien
+- **#410**: Qui sont ces gens
+- **#411**: Que ta lumière
+- **#412**: Dès le matin, Seigneur
+- **#413**: Ô mon Dieu! je cherche ta face
+- **#414**: Pour moi l'aurore
+- **#415**: Une voix dans mon coeur
+- **#416**: Je viens, Seigneur
+- **#417**: J'aime l'heure où sur la terre
+- **#418**: Le soleil vers son déclin
+- **#419**: La nuit répand ses voiles
+- **#420**: Déjà l'étoile s'allume aux cieux
+- **#421**: Ô notre Dieu
+- **#422**: Ainsi que d'une lyre
+- **#423**: Au seuil de chaque année
+- **#424**: Nos fugitives années
+- **#425**: Ô Dieu, que cette année
+- **#426**: Ô Seigneur, Éternel!
+- **#427**: C'est de toi, Dieu puissant
+- **#428**: Père saint, dont la clémence
+- **#429**: Sur ces époux, Père éternel
+- **#430**: Sur ces époux, Seigneur
+- **#431**: Qu'elle est douce, l'harmonie!
+- **#432**: On est bien à la maison
+- **#433**: Ô toi qui t'es donné
+- **#434**: Quel bonheur d'être en famille
+- **#435**: Qu'il fait bon
+- **#436**: Travailleur, voici le soir
+- **#437**: Cloches, sonnez!
+- **#438**: 
+- **#439**: Ô Pasteur éternel
+- **#440**: Un nouveau combattant
+- **#441**: À toi, Seigneur, en ce jour
+- **#442**: Ô jour heureux!
+- **#443**: Dans ce grand jour
+- **#444**: Toi dont les cieux des cieux
+- **#445**: C'est l'heure, amis
+- **#446**: Jésus soit avec vous
+- **#447**: Reverra-t-il cette terre chérie?
+- **#448**: Elle n'est plus
+- **#449**: Nous mourrons, mais pour renaître
+- **#450**: Douleur profonde
+- **#451**: Plus haut que l'azur des cieux
+- **#452**: Pourquoi reprendre
+- **#453**: Plus de pleurs
+- **#454**: Malheureuse famille
+- **#455**: Gémissant sous l'esclavage
+- **#456**: La route est glissante
+- **#457**: Pauvre buveur!
+- **#458**: Père, ô bon père
+- **#459**: Venez captifs
+- **#460**: Ah! sous ton rire
+- **#461**: Aux jours d'angoisse
+- **#462**: Dès le printemps de la vie
+- **#463**: Dans la joie et l'allégresse
+- **#464**: Entends l'écho de la voix
+- **#465**: Es-tu lassé
+- **#466**: Laisse ta folie
+- **#467**: Regarde au chemin du Calvaire
+- **#468**: Maintes fois
+- **#469**: Mot que l'on aime entendre
+- **#470**: Pourquoi la tristesse
+- **#471**: Oh! viens à moi!
+- **#472**: Sur le seuil
+- **#473**: Oh! qui soutiendra
+- **#474**: Pendant les jours de ta jeunesse
+- **#475**: Pourquoi donc attendre?
+- **#476**: Quand tu sondes ta misère
+- **#477**: Que devient mon enfant
+- **#478**: Toi, qui dans la carrière
+- **#479**: Viens, viens à Jésus
+- **#480**: Voici, je me tiens à la porte
+- **#481**: À toi ma vie!
+- **#482**: Au combat de la vie
+- **#483**: À toi mon Dieu, je me donne
+- **#484**: Il faut que mon coeur chante!
+- **#485**: Ce que Jésus-Christ
+- **#486**: Des paroles de charmes
+- **#487**: Choisir Jésus
+- **#488**: Comme un enfant
+- **#489**: Entre tes mains j'abandonne
+- **#490**: Entendez-vous l'appel
+- **#491**: Je m'approche de toi
+- **#492**: En ce monde de tristesse
+- **#493**: Mon coeur te cherche
+- **#494**: Jésus, doux Maître
+- **#495**: La voix du Seigneur m'appelle
+- **#496**: J'entends ta douce voix
+- **#497**: Je suis à toi
+- **#498**: Jeunesse ardente
+- **#499**: Mon coeur tressaille à ta voix
+- **#500**: Jésus, je te suivrai partout
+- **#501**: Lève-toi, lève toi
+- **#502**: Oui, Jésus, c'est vers toi
+- **#503**: Ô toi qui donnes la vie
+- **#504**: Oh! quel beau jour
+- **#505**: Tout joyeux
+- **#506**: Prends ma vie
+- **#507**: Sans Jésus, je ne peux vivre
+- **#508**: Seigneur, mon âme
+- **#509**: Sois ma lumière
+- **#510**: Tiens dans ta main
+- **#511**: Toujours ta divine présence
+- **#512**: Voir mon Sauveur face à face
+- **#513**: En Jésus, je demeure
+- **#514**: C'est Jésus, quand je chancelle
+- **#515**: C'est à l'ombre de tes ailes
+- **#516**: Quand sur ma tête
+- **#517**: Je chanterai ton grand amour
+- **#518**: Je l'ai trouvé!
+- **#519**: Joie au Ciel!
+- **#520**: Le nom de Jésus
+- **#521**: Mortels, voulez-vous savoir
+- **#522**: Ne crains riens!
+- **#523**: Oui, tout est bien
+- **#524**: Pour toi qu'un tourment oppresse
+- **#525**: Pour la céleste cité
+- **#526**: Quand écrasé
+- **#527**: Quand le vol de la tempête
+- **#528**: Toute chaîne est enlevée
+- **#529**: Debout pour la sainte guerre!
+- **#530**: Debout! volontaire!
+- **#531**: Écoutez l'appel du Berger
+- **#532**: Entends-tu l'appel du Maître?
+- **#533**: La voix de tes sentinelles
+- **#534**: Messagers du grand Roi
+- **#535**: Seigneur, que la terre entière
+- **#536**: Sentinelle vigilante
+- **#537**: Revêts tes armes, volontaire!
+- **#538**: Travaillons et luttons!
+- **#539**: Travaillons tous
+- **#540**: Lorsque Dieu nous appelle
+- **#541**: Volontaires, au combat!
+- **#542**: À toi nos transports d'allégresse
+- **#543**: Amis, chantons
+- **#545**: Dans l'ombre et le silence
+- **#546**: Il faut cueillir les fleurs
+- **#547**: Le jour paraît
+- **#548**: Le laboureur
+- **#550**: J'aime du soir
+- **#551**: Jésus! Jésus!
+- **#554**: As-tu compté
+- **#555**: Cherchons dès l'enfance
+- **#562**: J'aime à penser
+- **#564**: Le Seigneur Jésus
+- **#565**: Le Seigneur m'aime
+- **#567**: David n'avait rien que sa fronde
+- **#570**: La bande joyeuse
+- **#571**: Mon Sauveur, je voudrais être
+- **#572**: Nul enfant n'est trop petit
+- **#576**: Pour chanter les louanges
+- **#578**: Seigneur que faut-il que je fasse?
+- **#586**: Oh! que ta main paternelle
+- **#587**: L'ombre étend ses voiles
+- **#588**: Si du nid tombe l'oisillon
+- **#589**: L'ombre descend de la colline
+- **#590**: Réveillez-vous fleurettes
+- **#592**: Connais-tu cette cité?
+- **#593**: Dans le jardin
+- **#594**: Au séjour des bienheureux
+- **#595**: Entends la voix du Sauveur
+- **#596**: Flots mugissants
+- **#597**: Le fils de Dieu
+- **#598**: Il faisait nuit
+- **#599**: Meurs, ô Jésus
+- **#600**: Le ciel pâli à l'orient
+- **#602**: Tu payas mon salut
+- **#604**: Je m'approche de toi
+- **#605**: Louez l'Éternel en tous lieux
+- **#607**: Jésus m'entend
+- **#610**: Je veux pécheur
+- **#612**: Dieu, mon péché me désole
+- **#613**: Le Colporteur Vaudois
+- **#616**: Nuit sans espoir
+- **#618**: Christ est mon rocher
+- **#619**: Chrétiens, voici le Rédempteur!
+- **#620**: Vous qui pleurez, venez
+- **#621**: Christ va venir
+- **#622**: Confiance
+- **#623**: Enfants de lumière
+- **#624**: Merci, Seigneur
+- **#626**: Voyez, voyez quel amour
+- **#630**: Jérusalem, cité de Dieu
+- **#632**: Ô notre Père
+- **#633**: Sur tes murs
+- **#634**: À Celui qui sied sur le trône
+- **#636**: Qu'il est beau, mon pays!
+- **#638**: Je veux répondre, ô Dieu!
+- **#640**: Au sein de la nuit
+- **#642**: Gloire au grand Dieu!
+- **#643**: Ce jour est au Seigneur!
+- **#645**: Je te suivrai
+- **#648**: Levons-nous
+- **#649**: Suivons
+- **#650**: Il est là-bas
+- **#651**: Saint des saints
+- **#652**: Quand la nuit étend son voile
+- **#654**: Nuit bénie
+
+---
+
+## Hymns Missing Composer
+
+**Total: 485 hymns**
+
+- **#9**: Tu fus toujours, Seigneur
+- **#36**: Trois fois saint Jéhovah!
+- **#37**: Peuples, chantez un saint cantique
+- **#38**: Abandonne ta vie
+- **#39**: Oui, ton amour
+- **#40**: C'est de toi, Père saint
+- **#41**: Gloire à toi, Dieu puissant!
+- **#42**: À toi la gloire!
+- **#43**: Je veux chanter
+- **#44**: Ô Dieu! dans ses jours
+- **#45**: Oh! qu'il m'est doux
+- **#46**: Oui, je veux te bénir
+- **#47**: Que ton fidèle amour
+- **#48**: Tu m'as aimé, Seigneur!
+- **#49**: Entendez-vous
+- **#50**: Chantons, chantons sans cesse
+- **#51**: Hosanna!
+- **#52**: Lorsque le ciel retentit
+- **#53**: Faisons éclater notre joie
+- **#54**: Ô charité suprême!
+- **#55**: Ô merveilleuse histoire
+- **#56**: Oh! que ne pouvons-nous
+- **#57**: Divin Sauveur
+- **#58**: De la divinité
+- **#59**: Saint envoyé du Père
+- **#60**: J'ai quitté le ciel pour toi
+- **#61**: Entonnons un saint cantique
+- **#62**: Ma richesse, ma gloire
+- **#63**: Ô bonne nouvelle!
+- **#64**: J'ai suivi Jésus
+- **#65**: Ô Fils de Dieu!
+- **#66**: Adorable mystère
+- **#67**: Je t'ai suivi sur le Calvaire
+- **#68**: Pour moi pécheur
+- **#69**: Sous ton voile d'ignominie
+- **#70**: Pour qui la mort
+- **#71**: Ô Christ! j'ai vu ton agonie
+- **#72**: Pour nous Christ meurt
+- **#73**: Rédempteur adorable
+- **#74**: Sur cette terre
+- **#75**: Portant sa croix
+- **#76**: Un regard sur ta croix sanglante
+- **#77**: Il est là-bas, plus haut
+- **#78**: Roi couvert de blessures
+- **#79**: À celui qui nous a sauvés
+- **#80**: Christ est ressuscité!
+- **#81**: À toi la gloire
+- **#82**: Le Sauveur est ressuscité
+- **#83**: Venez, chrétiens
+- **#84**: Ô cieux! unissez-vous
+- **#85**: Jésus, Agneau de Dieu!
+- **#86**: Ah! si ton sang
+- **#87**: Qu'elle est douce
+- **#88**: Ô Seigneur!
+- **#89**: Oui, pour son peuple
+- **#90**: Tu m'as lavé de mon péché
+- **#91**: Tout mon bonheur, Christ
+- **#92**: Comme un phare sur la plage
+- **#93**: Je la connais, cette joie
+- **#94**: Seigneur Jésus!
+- **#95**: Je ne sais pourquoi
+- **#96**: Je suis scellé pour la gloire
+- **#97**: Jésus est notre ami suprême
+- **#98**: Jésus, ô nom qui surpasse
+- **#110**: Levons-nous, frères
+- **#111**: Il va bientôt venir!
+- **#118**: Prends courage, chrétien
+- **#119**: Seigneur Jésus tes élus
+- **#120**: Tenons nos lampes prêtes
+- **#121**: Écoutez le chant joyeux
+- **#122**: Esprit du Dieu vivant
+- **#123**: Descends, Esprit du Dieu vivant
+- **#124**: Réponds à ma prière
+- **#125**: Ô Saint-Esprit
+- **#126**: Don du ciel
+- **#127**: Saint-Esprit
+- **#128**: Comme une terre altérée
+- **#129**: Esprit très saint
+- **#130**: Nous t'adorons, Dieu vivant
+- **#131**: Rends-toi maître de nos âmes
+- **#132**: La Parole du Seigneur
+- **#133**: C'est dans ta Parole
+- **#134**: Livre saint
+- **#135**: Livre sacré, lumière étincelante
+- **#136**: Pour triompher dans les combats
+- **#137**: Ta gloire, ô notre Dieu
+- **#138**: Ta Parole, Seigneur
+- **#139**: Oh! Que ton joug est facile!
+- **#140**: Ô Seigneur
+- **#141**: Ô Dieu de vérité!
+- **#142**: L'Église est étrangère
+- **#143**: C'est moi qui vous console
+- **#144**: Sur ton Église universelle
+- **#145**: Toi qui dans la nuit
+- **#146**: Mon âme, en doux transports
+- **#147**: Aimer!
+- **#148**: Ah! Qu'il est beau de voir
+- **#149**: Fraternité céleste et sainte
+- **#150**: Il est en Jésus-Christ
+- **#151**: Nous t'adorons
+- **#152**: Tu nous aimes, Seigneur
+- **#153**: Que nos chants et nos prières
+- **#154**: L'amour de Jésus-Christ
+- **#155**: Ta voix, Jésus
+- **#156**: Ô Seigneur! ô Sauveur!
+- **#157**: Bénissons Dieu
+- **#158**: Devant le Seigneur
+- **#159**: Frères, approchons-nous
+- **#160**: Marcher en ta présence
+- **#161**: Immortel Roi des cieux
+- **#162**: Nous sommes au Seigneur
+- **#163**: Silence! Silence!
+- **#164**: Jour de repos
+- **#165**: La semaine a fui
+- **#166**: Le jour a fui
+- **#167**: Monarque souverain
+- **#168**: Peuple chrétien, c'est le jour
+- **#169**: Joyeusement, nous saluons
+- **#170**: Repos si doux
+- **#171**: Quel bonheur, quand faisant trêve
+- **#172**: Sur la terre se lève ..
+- **#173**: Notre labeur est accompli
+- **#174**: Ton jour, Seigneur!
+- **#175**: L'astre à l'horizon descend
+- **#176**: Avec zèle à ton école
+- **#177**: Mon âme en silence
+- **#178**: Ô Maître suprême!
+- **#179**: Ô chère école du sabbat
+- **#180**: À tes pieds, ô divin Maître!
+- **#181**: Repose ton âme
+- **#182**: Parle, parle Seigneur
+- **#183**: Daigne en cette heure
+- **#184**: Divin Sauveur
+- **#185**: Jésus te confie
+- **#186**: Moment si doux de la prière
+- **#187**: Ô Dieu! toute ma prière
+- **#188**: Seigneur! du sein de la poussière
+- **#189**: Quand le ciel devient menaçant
+- **#190**: Toi qui disposes
+- **#191**: Quelle est douce la prière
+- **#192**: Seigneur, ce que je réclame
+- **#193**: Souvent Seigneur!
+- **#194**: Au sortir de ton sanctuaire
+- **#195**: Demeure par ta grâce
+- **#196**: Ô Seigneur! Bénis la parole
+- **#197**: Reste avec nous, Seigneur
+- **#198**: Que l'Éternel nous bénisse
+- **#199**: Que la grâce de notre Seigneur
+- **#200**: Dans le vaste champ
+- **#201**: La voix de Christ nous appelle
+- **#202**: Passez jusques à nous!
+- **#203**: Frères, chantons
+- **#204**: Des pays de l'aurores
+- **#205**: Oui, la moisson du monde
+- **#206**: Lève-toi, vaillante armée
+- **#207**: Qu'ils sont beaux
+- **#208**: Sermons dès que brille l'aurore
+- **#209**: Soleil de justice
+- **#213**: Cloches, sonnez l'Évangile
+- **#214**: Chantons la victoire
+- **#215**: Entends-tu le chant joyeux?
+- **#216**: Seigneur, ton ange vole
+- **#217**: Réjouis-toi, chrétien
+- **#218**: Tel que je suis
+- **#219**: Contemplez, ô chrétiens!
+- **#220**: Je viens, Seigneur
+- **#221**: De ce monde
+- **#222**: Mort avec Christ
+- **#223**: Seigneur Jésus
+- **#224**: Tel que je suis sans rien à moi
+- **#225**: Viens à la croix
+- **#226**: Céleste voix, tu nous convies
+- **#227**: Agneau, victime expiatoire
+- **#228**: À ta Cène bénie
+- **#229**: Je viens, Seigneur, à ta table bénie
+- **#230**: Roi des rois, victime sainte
+- **#231**: Tu m'appelles, Seigneur
+- **#232**: Bientôt le Seigneur va venir!
+- **#233**: C'est encor temps
+- **#234**: Jésus frappe à la porte
+- **#235**: Arrête, ô pécheur!
+- **#236**: Entends-tu? Jésus t'appelle
+- **#237**: Pour toi, j'ai donné ma vie
+- **#238**: Regarde, âme angoissée
+- **#239**: Lorsque devant l'Agneau
+- **#240**: Nous voguons ver un beau rivage
+- **#241**: Viens, âme perdue
+- **#242**: Le Maître est là qui t'appelle
+- **#243**: Ô vous qui n'avez pas la paix
+- **#244**: Où cherchez-vous le bonheur?
+- **#245**: Veux-tu partager la gloire
+- **#246**: Passant, si tard que veux-tu?
+- **#247**: Reviens à ton Père
+- **#248**: Par ce chemin solitaire
+- **#249**: Pécheur, je voudrais te guérir
+- **#250**: Possèdes-tu, pauvre pécheur
+- **#251**: Pour nous, la vie est un voyage
+- **#252**: Viens à Jésus
+- **#253**: Reviens!
+- **#254**: Une bonne nouvelle
+- **#255**: Si vous saviez
+- **#256**: Toi dont l'âme est tourmentée
+- **#257**: Venez au Sauveur
+- **#258**: Viens à Jésus, quand la souffrance
+- **#259**: Viens au Père
+- **#260**: Voici Jésus, notre Sauveur
+- **#261**: Nous allons tout joyeux
+- **#262**: À ton appel sur les flots
+- **#263**: Aujourd'hui tu m'appelles
+- **#264**: Chantez, anges du Ciel!
+- **#265**: Dans ma misère
+- **#266**: Ô Seigneur
+- **#267**: Seigneur, tu donnes ta grâce
+- **#268**: Jésus, par ton sang précieux
+- **#269**: Ô Fils de Dieu, mon Sauveur
+- **#270**: J'ai trouvé la voie
+- **#271**: Miséricorde insondable
+- **#272**: Ô jour heureux
+- **#273**: Seigneur! je n'ai rien
+- **#274**: Source féconde
+- **#275**: J'avais fui la bergerie
+- **#276**: Bien loin de toi, mon Père
+- **#277**: J'ai longtemps erré
+- **#278**: Me voici devant ta face
+- **#279**: Ô honte! ô mémoire cruelle!
+- **#280**: Père, je viens à toi
+- **#281**: Plongé dans un bourbier
+- **#282**: Roc séculaire
+- **#283**: Sans attendre
+- **#284**: Seigneur, attire
+- **#285**: C'est toi, Jésus
+- **#286**: Il est un nom si beau
+- **#287**: Exaltons notre divin Maître
+- **#288**: En quelque lieu
+- **#289**: Roi des anges
+- **#290**: Dans les cieux
+- **#291**: Je connais un guide
+- **#292**: Jésus, mon espérance
+- **#293**: Ô mon Sauveur
+- **#294**: Doué du langage des anges
+- **#295**: Je dois voyager
+- **#296**: Quel autre au Ciel
+- **#297**: T'aimer, Jésus, te connaître
+- **#298**: Frères, marchons!
+- **#299**: Jour après jour
+- **#300**: Vaillants soldats
+- **#301**: La foi
+- **#302**: Le Dieu saint
+- **#303**: Que suis-je sur la terre?
+- **#304**: Brillante Étoile
+- **#305**: Ami, pourquoi tant de bonheur
+- **#306**: Comme un fleuve immense
+- **#307**: En toi, Seigneur
+- **#308**: Éternel Dieu, mon Sauveur
+- **#309**: La croix que Dieu me donne
+- **#310**: Mon bonheur vient de toi
+- **#311**: J'ai soif de paix
+- **#312**: Quand je passe
+- **#313**: Mon Dieu, nos coeurs
+- **#314**: Quand le ciel s'ouvre
+- **#315**: Sauveur toujours fidèle
+- **#316**: Mon coeur joyeux
+- **#317**: Oh! quel repos quand le mal
+- **#318**: Plus le mal est pressant
+- **#319**: Près de Jésus
+- **#320**: Quel ami fidèle et tendre!
+- **#321**: Quel repos céleste
+- **#322**: Seul Refuge de mon âme
+- **#323**: Source de tous les biens
+- **#324**: Sur toi je me repose
+- **#325**: À Jésus je m'abandonne
+- **#326**: Ah! donne à mon âme
+- **#327**: Grandis en moi, Seigneur
+- **#328**: Je me tiendrai tout près
+- **#329**: Ah! que je ne sois pas
+- **#330**: À toi, mon Dieu, je m'abandonne
+- **#331**: Aussi longtemps qu'étranger
+- **#332**: Je suis à toi
+- **#333**: Seigneur, sanctifie
+- **#334**: C'est mon joyeux service
+- **#335**: Le cri de mon âme
+- **#336**: Jésus-Christ est ma sagesse
+- **#337**: Je veux, pécheur
+- **#338**: Les gains, les honneurs
+- **#339**: Mon Sauveur
+- **#340**: Viens, mon âme
+- **#341**: Ô mon Sauveur!
+- **#342**: Qu'il fait bon à ton service
+- **#343**: Toujours avec Jésus!
+- **#344**: À moi, les coeurs braves!
+- **#345**: Plus que vainqueurs!
+- **#346**: À de nouveaux combats
+- **#347**: Debout, sainte cohorte
+- **#348**: Dès que l'aube dépose
+- **#349**: Dès que l'aube dépose
+- **#350**: Seigneur! dirige tous mes pas
+- **#351**: Debout! soldat du Christ
+- **#352**: Jusqu'à la mort!
+- **#353**: Le temps est court
+- **#354**: Le signal de la victoire
+- **#355**: L'heure du départ
+- **#356**: Mon Dieu! quelle guerre cruelle!
+- **#357**: Poursuivons notre course
+- **#358**: C'est un rempart
+- **#359**: J'ai soif de ta présence
+- **#360**: Dieu tout-puissant
+- **#361**: Dans l'abîme de misères
+- **#362**: Quand mon coeur en sa détresse
+- **#363**: Sur toi, Sauveur
+- **#364**: Voici venir l'orage
+- **#365**: Trop souvent je murmure
+- **#366**: Veil au matin
+- **#367**: Dans le désert
+- **#368**: Mon Dieu, plus près de toi
+- **#369**: En ce triste monde
+- **#370**: Il est un roc séculaire
+- **#371**: Il est une source
+- **#372**: Invoque-moi!
+- **#373**: Jésus est celui qui nous aime
+- **#374**: Le ciel était voilé
+- **#375**: Maître, entends-tu la tempête?
+- **#376**: Le vent soufflait
+- **#377**: Mon âme est dans la détresse
+- **#378**: Ô Jésus, mon Sauveur
+- **#379**: Ô jour béni!
+- **#380**: Ô toi, mon allégresse
+- **#381**: Où trouver une retraite
+- **#382**: Oui, selon ta promesse
+- **#383**: Quel grand secours!
+- **#384**: Viens, âme qui pleures
+- **#385**: Quand sur la sombre route
+- **#386**: Qui me relève
+- **#387**: Si je trouve grande ma croix
+- **#388**: Une nacelle en silence
+- **#389**: Céleste Canaan
+- **#390**: Au Ciel est la maison du Père
+- **#391**: Avec allégresse!
+- **#392**: De Canaan quand verrons-nous
+- **#393**: Vers le Ciel
+- **#394**: Contempler mon Dieu
+- **#395**: Encor quelques jours sur la terre
+- **#396**: Sainte Sion
+- **#397**: Étranger sur la terre
+- **#398**: J'ai vu dans une apothéose
+- **#399**: Je connais un pays
+- **#406**: Nous attendons le Sauveur glorieux!
+- **#407**: Pèlerin sur cette terre
+- **#408**: Plus haut que les hautes cimes
+- **#409**: Pour moi Chrétien
+- **#410**: Qui sont ces gens
+- **#411**: Que ta lumière
+- **#412**: Dès le matin, Seigneur
+- **#413**: Ô mon Dieu! je cherche ta face
+- **#414**: Pour moi l'aurore
+- **#415**: Une voix dans mon coeur
+- **#416**: Je viens, Seigneur
+- **#417**: J'aime l'heure où sur la terre
+- **#418**: Le soleil vers son déclin
+- **#419**: La nuit répand ses voiles
+- **#420**: Déjà l'étoile s'allume aux cieux
+- **#421**: Ô notre Dieu
+- **#422**: Ainsi que d'une lyre
+- **#423**: Au seuil de chaque année
+- **#424**: Nos fugitives années
+- **#425**: Ô Dieu, que cette année
+- **#426**: Ô Seigneur, Éternel!
+- **#427**: C'est de toi, Dieu puissant
+- **#428**: Père saint, dont la clémence
+- **#429**: Sur ces époux, Père éternel
+- **#430**: Sur ces époux, Seigneur
+- **#431**: Qu'elle est douce, l'harmonie!
+- **#432**: On est bien à la maison
+- **#433**: Ô toi qui t'es donné
+- **#434**: Quel bonheur d'être en famille
+- **#435**: Qu'il fait bon
+- **#436**: Travailleur, voici le soir
+- **#437**: Cloches, sonnez!
+- **#438**: 
+- **#439**: Ô Pasteur éternel
+- **#440**: Un nouveau combattant
+- **#441**: À toi, Seigneur, en ce jour
+- **#442**: Ô jour heureux!
+- **#443**: Dans ce grand jour
+- **#444**: Toi dont les cieux des cieux
+- **#445**: C'est l'heure, amis
+- **#446**: Jésus soit avec vous
+- **#447**: Reverra-t-il cette terre chérie?
+- **#448**: Elle n'est plus
+- **#449**: Nous mourrons, mais pour renaître
+- **#450**: Douleur profonde
+- **#451**: Plus haut que l'azur des cieux
+- **#452**: Pourquoi reprendre
+- **#453**: Plus de pleurs
+- **#454**: Malheureuse famille
+- **#455**: Gémissant sous l'esclavage
+- **#456**: La route est glissante
+- **#457**: Pauvre buveur!
+- **#458**: Père, ô bon père
+- **#459**: Venez captifs
+- **#460**: Ah! sous ton rire
+- **#461**: Aux jours d'angoisse
+- **#462**: Dès le printemps de la vie
+- **#463**: Dans la joie et l'allégresse
+- **#464**: Entends l'écho de la voix
+- **#465**: Es-tu lassé
+- **#466**: Laisse ta folie
+- **#467**: Regarde au chemin du Calvaire
+- **#468**: Maintes fois
+- **#469**: Mot que l'on aime entendre
+- **#470**: Pourquoi la tristesse
+- **#471**: Oh! viens à moi!
+- **#472**: Sur le seuil
+- **#473**: Oh! qui soutiendra
+- **#474**: Pendant les jours de ta jeunesse
+- **#475**: Pourquoi donc attendre?
+- **#476**: Quand tu sondes ta misère
+- **#477**: Que devient mon enfant
+- **#478**: Toi, qui dans la carrière
+- **#479**: Viens, viens à Jésus
+- **#480**: Voici, je me tiens à la porte
+- **#481**: À toi ma vie!
+- **#482**: Au combat de la vie
+- **#483**: À toi mon Dieu, je me donne
+- **#484**: Il faut que mon coeur chante!
+- **#485**: Ce que Jésus-Christ
+- **#486**: Des paroles de charmes
+- **#487**: Choisir Jésus
+- **#488**: Comme un enfant
+- **#489**: Entre tes mains j'abandonne
+- **#490**: Entendez-vous l'appel
+- **#491**: Je m'approche de toi
+- **#492**: En ce monde de tristesse
+- **#493**: Mon coeur te cherche
+- **#494**: Jésus, doux Maître
+- **#495**: La voix du Seigneur m'appelle
+- **#496**: J'entends ta douce voix
+- **#497**: Je suis à toi
+- **#498**: Jeunesse ardente
+- **#499**: Mon coeur tressaille à ta voix
+- **#500**: Jésus, je te suivrai partout
+- **#501**: Lève-toi, lève toi
+- **#502**: Oui, Jésus, c'est vers toi
+- **#503**: Ô toi qui donnes la vie
+- **#504**: Oh! quel beau jour
+- **#505**: Tout joyeux
+- **#506**: Prends ma vie
+- **#507**: Sans Jésus, je ne peux vivre
+- **#508**: Seigneur, mon âme
+- **#509**: Sois ma lumière
+- **#510**: Tiens dans ta main
+- **#511**: Toujours ta divine présence
+- **#512**: Voir mon Sauveur face à face
+- **#513**: En Jésus, je demeure
+- **#514**: C'est Jésus, quand je chancelle
+- **#515**: C'est à l'ombre de tes ailes
+- **#516**: Quand sur ma tête
+- **#517**: Je chanterai ton grand amour
+- **#518**: Je l'ai trouvé!
+- **#519**: Joie au Ciel!
+- **#520**: Le nom de Jésus
+- **#521**: Mortels, voulez-vous savoir
+- **#522**: Ne crains riens!
+- **#523**: Oui, tout est bien
+- **#524**: Pour toi qu'un tourment oppresse
+- **#525**: Pour la céleste cité
+- **#526**: Quand écrasé
+- **#527**: Quand le vol de la tempête
+- **#528**: Toute chaîne est enlevée
+- **#529**: Debout pour la sainte guerre!
+- **#530**: Debout! volontaire!
+- **#531**: Écoutez l'appel du Berger
+- **#532**: Entends-tu l'appel du Maître?
+- **#533**: La voix de tes sentinelles
+- **#534**: Messagers du grand Roi
+- **#535**: Seigneur, que la terre entière
+- **#536**: Sentinelle vigilante
+- **#537**: Revêts tes armes, volontaire!
+- **#538**: Travaillons et luttons!
+- **#539**: Travaillons tous
+- **#540**: Lorsque Dieu nous appelle
+- **#541**: Volontaires, au combat!
+- **#542**: À toi nos transports d'allégresse
+- **#564**: Le Seigneur Jésus
+- **#586**: Oh! que ta main paternelle
+- **#654**: Nuit bénie
+
+---
+
+## Hymns Missing Style
+
+**Total: 489 hymns**
+
+- **#17**: Il a parlé, ce Dieu
+- **#36**: Trois fois saint Jéhovah!
+- **#37**: Peuples, chantez un saint cantique
+- **#38**: Abandonne ta vie
+- **#39**: Oui, ton amour
+- **#40**: C'est de toi, Père saint
+- **#41**: Gloire à toi, Dieu puissant!
+- **#42**: À toi la gloire!
+- **#43**: Je veux chanter
+- **#44**: Ô Dieu! dans ses jours
+- **#45**: Oh! qu'il m'est doux
+- **#46**: Oui, je veux te bénir
+- **#47**: Que ton fidèle amour
+- **#48**: Tu m'as aimé, Seigneur!
+- **#49**: Entendez-vous
+- **#50**: Chantons, chantons sans cesse
+- **#51**: Hosanna!
+- **#52**: Lorsque le ciel retentit
+- **#53**: Faisons éclater notre joie
+- **#54**: Ô charité suprême!
+- **#55**: Ô merveilleuse histoire
+- **#56**: Oh! que ne pouvons-nous
+- **#57**: Divin Sauveur
+- **#58**: De la divinité
+- **#59**: Saint envoyé du Père
+- **#60**: J'ai quitté le ciel pour toi
+- **#61**: Entonnons un saint cantique
+- **#62**: Ma richesse, ma gloire
+- **#63**: Ô bonne nouvelle!
+- **#64**: J'ai suivi Jésus
+- **#65**: Ô Fils de Dieu!
+- **#66**: Adorable mystère
+- **#67**: Je t'ai suivi sur le Calvaire
+- **#68**: Pour moi pécheur
+- **#69**: Sous ton voile d'ignominie
+- **#70**: Pour qui la mort
+- **#71**: Ô Christ! j'ai vu ton agonie
+- **#72**: Pour nous Christ meurt
+- **#73**: Rédempteur adorable
+- **#74**: Sur cette terre
+- **#75**: Portant sa croix
+- **#76**: Un regard sur ta croix sanglante
+- **#77**: Il est là-bas, plus haut
+- **#78**: Roi couvert de blessures
+- **#79**: À celui qui nous a sauvés
+- **#80**: Christ est ressuscité!
+- **#81**: À toi la gloire
+- **#82**: Le Sauveur est ressuscité
+- **#83**: Venez, chrétiens
+- **#84**: Ô cieux! unissez-vous
+- **#85**: Jésus, Agneau de Dieu!
+- **#86**: Ah! si ton sang
+- **#87**: Qu'elle est douce
+- **#88**: Ô Seigneur!
+- **#89**: Oui, pour son peuple
+- **#90**: Tu m'as lavé de mon péché
+- **#91**: Tout mon bonheur, Christ
+- **#92**: Comme un phare sur la plage
+- **#93**: Je la connais, cette joie
+- **#94**: Seigneur Jésus!
+- **#95**: Je ne sais pourquoi
+- **#96**: Je suis scellé pour la gloire
+- **#97**: Jésus est notre ami suprême
+- **#98**: Jésus, ô nom qui surpasse
+- **#110**: Levons-nous, frères
+- **#111**: Il va bientôt venir!
+- **#118**: Prends courage, chrétien
+- **#119**: Seigneur Jésus tes élus
+- **#120**: Tenons nos lampes prêtes
+- **#121**: Écoutez le chant joyeux
+- **#122**: Esprit du Dieu vivant
+- **#123**: Descends, Esprit du Dieu vivant
+- **#124**: Réponds à ma prière
+- **#125**: Ô Saint-Esprit
+- **#126**: Don du ciel
+- **#127**: Saint-Esprit
+- **#128**: Comme une terre altérée
+- **#129**: Esprit très saint
+- **#130**: Nous t'adorons, Dieu vivant
+- **#131**: Rends-toi maître de nos âmes
+- **#132**: La Parole du Seigneur
+- **#133**: C'est dans ta Parole
+- **#134**: Livre saint
+- **#135**: Livre sacré, lumière étincelante
+- **#136**: Pour triompher dans les combats
+- **#137**: Ta gloire, ô notre Dieu
+- **#138**: Ta Parole, Seigneur
+- **#139**: Oh! Que ton joug est facile!
+- **#140**: Ô Seigneur
+- **#141**: Ô Dieu de vérité!
+- **#142**: L'Église est étrangère
+- **#143**: C'est moi qui vous console
+- **#144**: Sur ton Église universelle
+- **#145**: Toi qui dans la nuit
+- **#146**: Mon âme, en doux transports
+- **#147**: Aimer!
+- **#148**: Ah! Qu'il est beau de voir
+- **#149**: Fraternité céleste et sainte
+- **#150**: Il est en Jésus-Christ
+- **#151**: Nous t'adorons
+- **#152**: Tu nous aimes, Seigneur
+- **#153**: Que nos chants et nos prières
+- **#154**: L'amour de Jésus-Christ
+- **#155**: Ta voix, Jésus
+- **#156**: Ô Seigneur! ô Sauveur!
+- **#157**: Bénissons Dieu
+- **#158**: Devant le Seigneur
+- **#159**: Frères, approchons-nous
+- **#160**: Marcher en ta présence
+- **#161**: Immortel Roi des cieux
+- **#162**: Nous sommes au Seigneur
+- **#163**: Silence! Silence!
+- **#164**: Jour de repos
+- **#165**: La semaine a fui
+- **#166**: Le jour a fui
+- **#167**: Monarque souverain
+- **#168**: Peuple chrétien, c'est le jour
+- **#169**: Joyeusement, nous saluons
+- **#170**: Repos si doux
+- **#171**: Quel bonheur, quand faisant trêve
+- **#172**: Sur la terre se lève ..
+- **#173**: Notre labeur est accompli
+- **#174**: Ton jour, Seigneur!
+- **#175**: L'astre à l'horizon descend
+- **#176**: Avec zèle à ton école
+- **#177**: Mon âme en silence
+- **#178**: Ô Maître suprême!
+- **#179**: Ô chère école du sabbat
+- **#180**: À tes pieds, ô divin Maître!
+- **#181**: Repose ton âme
+- **#182**: Parle, parle Seigneur
+- **#183**: Daigne en cette heure
+- **#184**: Divin Sauveur
+- **#185**: Jésus te confie
+- **#186**: Moment si doux de la prière
+- **#187**: Ô Dieu! toute ma prière
+- **#188**: Seigneur! du sein de la poussière
+- **#189**: Quand le ciel devient menaçant
+- **#190**: Toi qui disposes
+- **#191**: Quelle est douce la prière
+- **#192**: Seigneur, ce que je réclame
+- **#193**: Souvent Seigneur!
+- **#194**: Au sortir de ton sanctuaire
+- **#195**: Demeure par ta grâce
+- **#196**: Ô Seigneur! Bénis la parole
+- **#197**: Reste avec nous, Seigneur
+- **#198**: Que l'Éternel nous bénisse
+- **#199**: Que la grâce de notre Seigneur
+- **#200**: Dans le vaste champ
+- **#201**: La voix de Christ nous appelle
+- **#202**: Passez jusques à nous!
+- **#203**: Frères, chantons
+- **#204**: Des pays de l'aurores
+- **#205**: Oui, la moisson du monde
+- **#206**: Lève-toi, vaillante armée
+- **#207**: Qu'ils sont beaux
+- **#208**: Sermons dès que brille l'aurore
+- **#209**: Soleil de justice
+- **#213**: Cloches, sonnez l'Évangile
+- **#214**: Chantons la victoire
+- **#215**: Entends-tu le chant joyeux?
+- **#216**: Seigneur, ton ange vole
+- **#217**: Réjouis-toi, chrétien
+- **#218**: Tel que je suis
+- **#219**: Contemplez, ô chrétiens!
+- **#220**: Je viens, Seigneur
+- **#221**: De ce monde
+- **#222**: Mort avec Christ
+- **#223**: Seigneur Jésus
+- **#224**: Tel que je suis sans rien à moi
+- **#225**: Viens à la croix
+- **#226**: Céleste voix, tu nous convies
+- **#227**: Agneau, victime expiatoire
+- **#228**: À ta Cène bénie
+- **#229**: Je viens, Seigneur, à ta table bénie
+- **#230**: Roi des rois, victime sainte
+- **#231**: Tu m'appelles, Seigneur
+- **#232**: Bientôt le Seigneur va venir!
+- **#233**: C'est encor temps
+- **#234**: Jésus frappe à la porte
+- **#235**: Arrête, ô pécheur!
+- **#236**: Entends-tu? Jésus t'appelle
+- **#237**: Pour toi, j'ai donné ma vie
+- **#238**: Regarde, âme angoissée
+- **#239**: Lorsque devant l'Agneau
+- **#240**: Nous voguons ver un beau rivage
+- **#241**: Viens, âme perdue
+- **#242**: Le Maître est là qui t'appelle
+- **#243**: Ô vous qui n'avez pas la paix
+- **#244**: Où cherchez-vous le bonheur?
+- **#245**: Veux-tu partager la gloire
+- **#246**: Passant, si tard que veux-tu?
+- **#247**: Reviens à ton Père
+- **#248**: Par ce chemin solitaire
+- **#249**: Pécheur, je voudrais te guérir
+- **#250**: Possèdes-tu, pauvre pécheur
+- **#251**: Pour nous, la vie est un voyage
+- **#252**: Viens à Jésus
+- **#253**: Reviens!
+- **#254**: Une bonne nouvelle
+- **#255**: Si vous saviez
+- **#256**: Toi dont l'âme est tourmentée
+- **#257**: Venez au Sauveur
+- **#258**: Viens à Jésus, quand la souffrance
+- **#259**: Viens au Père
+- **#260**: Voici Jésus, notre Sauveur
+- **#261**: Nous allons tout joyeux
+- **#262**: À ton appel sur les flots
+- **#263**: Aujourd'hui tu m'appelles
+- **#264**: Chantez, anges du Ciel!
+- **#265**: Dans ma misère
+- **#266**: Ô Seigneur
+- **#267**: Seigneur, tu donnes ta grâce
+- **#268**: Jésus, par ton sang précieux
+- **#269**: Ô Fils de Dieu, mon Sauveur
+- **#270**: J'ai trouvé la voie
+- **#271**: Miséricorde insondable
+- **#272**: Ô jour heureux
+- **#273**: Seigneur! je n'ai rien
+- **#274**: Source féconde
+- **#275**: J'avais fui la bergerie
+- **#276**: Bien loin de toi, mon Père
+- **#277**: J'ai longtemps erré
+- **#278**: Me voici devant ta face
+- **#279**: Ô honte! ô mémoire cruelle!
+- **#280**: Père, je viens à toi
+- **#281**: Plongé dans un bourbier
+- **#282**: Roc séculaire
+- **#283**: Sans attendre
+- **#284**: Seigneur, attire
+- **#285**: C'est toi, Jésus
+- **#286**: Il est un nom si beau
+- **#287**: Exaltons notre divin Maître
+- **#288**: En quelque lieu
+- **#289**: Roi des anges
+- **#290**: Dans les cieux
+- **#291**: Je connais un guide
+- **#292**: Jésus, mon espérance
+- **#293**: Ô mon Sauveur
+- **#294**: Doué du langage des anges
+- **#295**: Je dois voyager
+- **#296**: Quel autre au Ciel
+- **#297**: T'aimer, Jésus, te connaître
+- **#298**: Frères, marchons!
+- **#299**: Jour après jour
+- **#300**: Vaillants soldats
+- **#301**: La foi
+- **#302**: Le Dieu saint
+- **#303**: Que suis-je sur la terre?
+- **#304**: Brillante Étoile
+- **#305**: Ami, pourquoi tant de bonheur
+- **#306**: Comme un fleuve immense
+- **#307**: En toi, Seigneur
+- **#308**: Éternel Dieu, mon Sauveur
+- **#309**: La croix que Dieu me donne
+- **#310**: Mon bonheur vient de toi
+- **#311**: J'ai soif de paix
+- **#312**: Quand je passe
+- **#313**: Mon Dieu, nos coeurs
+- **#314**: Quand le ciel s'ouvre
+- **#315**: Sauveur toujours fidèle
+- **#316**: Mon coeur joyeux
+- **#317**: Oh! quel repos quand le mal
+- **#318**: Plus le mal est pressant
+- **#319**: Près de Jésus
+- **#320**: Quel ami fidèle et tendre!
+- **#321**: Quel repos céleste
+- **#322**: Seul Refuge de mon âme
+- **#323**: Source de tous les biens
+- **#324**: Sur toi je me repose
+- **#325**: À Jésus je m'abandonne
+- **#326**: Ah! donne à mon âme
+- **#327**: Grandis en moi, Seigneur
+- **#328**: Je me tiendrai tout près
+- **#329**: Ah! que je ne sois pas
+- **#330**: À toi, mon Dieu, je m'abandonne
+- **#331**: Aussi longtemps qu'étranger
+- **#332**: Je suis à toi
+- **#333**: Seigneur, sanctifie
+- **#334**: C'est mon joyeux service
+- **#335**: Le cri de mon âme
+- **#336**: Jésus-Christ est ma sagesse
+- **#337**: Je veux, pécheur
+- **#338**: Les gains, les honneurs
+- **#339**: Mon Sauveur
+- **#340**: Viens, mon âme
+- **#341**: Ô mon Sauveur!
+- **#342**: Qu'il fait bon à ton service
+- **#343**: Toujours avec Jésus!
+- **#344**: À moi, les coeurs braves!
+- **#345**: Plus que vainqueurs!
+- **#346**: À de nouveaux combats
+- **#347**: Debout, sainte cohorte
+- **#348**: Dès que l'aube dépose
+- **#349**: Dès que l'aube dépose
+- **#350**: Seigneur! dirige tous mes pas
+- **#351**: Debout! soldat du Christ
+- **#352**: Jusqu'à la mort!
+- **#353**: Le temps est court
+- **#354**: Le signal de la victoire
+- **#355**: L'heure du départ
+- **#356**: Mon Dieu! quelle guerre cruelle!
+- **#357**: Poursuivons notre course
+- **#358**: C'est un rempart
+- **#359**: J'ai soif de ta présence
+- **#360**: Dieu tout-puissant
+- **#361**: Dans l'abîme de misères
+- **#362**: Quand mon coeur en sa détresse
+- **#363**: Sur toi, Sauveur
+- **#364**: Voici venir l'orage
+- **#365**: Trop souvent je murmure
+- **#366**: Veil au matin
+- **#367**: Dans le désert
+- **#368**: Mon Dieu, plus près de toi
+- **#369**: En ce triste monde
+- **#370**: Il est un roc séculaire
+- **#371**: Il est une source
+- **#372**: Invoque-moi!
+- **#373**: Jésus est celui qui nous aime
+- **#374**: Le ciel était voilé
+- **#375**: Maître, entends-tu la tempête?
+- **#376**: Le vent soufflait
+- **#377**: Mon âme est dans la détresse
+- **#378**: Ô Jésus, mon Sauveur
+- **#379**: Ô jour béni!
+- **#380**: Ô toi, mon allégresse
+- **#381**: Où trouver une retraite
+- **#382**: Oui, selon ta promesse
+- **#383**: Quel grand secours!
+- **#384**: Viens, âme qui pleures
+- **#385**: Quand sur la sombre route
+- **#386**: Qui me relève
+- **#387**: Si je trouve grande ma croix
+- **#388**: Une nacelle en silence
+- **#389**: Céleste Canaan
+- **#390**: Au Ciel est la maison du Père
+- **#391**: Avec allégresse!
+- **#392**: De Canaan quand verrons-nous
+- **#393**: Vers le Ciel
+- **#394**: Contempler mon Dieu
+- **#395**: Encor quelques jours sur la terre
+- **#396**: Sainte Sion
+- **#397**: Étranger sur la terre
+- **#398**: J'ai vu dans une apothéose
+- **#399**: Je connais un pays
+- **#406**: Nous attendons le Sauveur glorieux!
+- **#407**: Pèlerin sur cette terre
+- **#408**: Plus haut que les hautes cimes
+- **#409**: Pour moi Chrétien
+- **#410**: Qui sont ces gens
+- **#411**: Que ta lumière
+- **#412**: Dès le matin, Seigneur
+- **#413**: Ô mon Dieu! je cherche ta face
+- **#414**: Pour moi l'aurore
+- **#415**: Une voix dans mon coeur
+- **#416**: Je viens, Seigneur
+- **#417**: J'aime l'heure où sur la terre
+- **#418**: Le soleil vers son déclin
+- **#419**: La nuit répand ses voiles
+- **#420**: Déjà l'étoile s'allume aux cieux
+- **#421**: Ô notre Dieu
+- **#422**: Ainsi que d'une lyre
+- **#423**: Au seuil de chaque année
+- **#424**: Nos fugitives années
+- **#425**: Ô Dieu, que cette année
+- **#426**: Ô Seigneur, Éternel!
+- **#427**: C'est de toi, Dieu puissant
+- **#428**: Père saint, dont la clémence
+- **#429**: Sur ces époux, Père éternel
+- **#430**: Sur ces époux, Seigneur
+- **#431**: Qu'elle est douce, l'harmonie!
+- **#432**: On est bien à la maison
+- **#433**: Ô toi qui t'es donné
+- **#434**: Quel bonheur d'être en famille
+- **#435**: Qu'il fait bon
+- **#436**: Travailleur, voici le soir
+- **#437**: Cloches, sonnez!
+- **#438**: 
+- **#439**: Ô Pasteur éternel
+- **#440**: Un nouveau combattant
+- **#441**: À toi, Seigneur, en ce jour
+- **#442**: Ô jour heureux!
+- **#443**: Dans ce grand jour
+- **#444**: Toi dont les cieux des cieux
+- **#445**: C'est l'heure, amis
+- **#446**: Jésus soit avec vous
+- **#447**: Reverra-t-il cette terre chérie?
+- **#448**: Elle n'est plus
+- **#449**: Nous mourrons, mais pour renaître
+- **#450**: Douleur profonde
+- **#451**: Plus haut que l'azur des cieux
+- **#452**: Pourquoi reprendre
+- **#453**: Plus de pleurs
+- **#454**: Malheureuse famille
+- **#455**: Gémissant sous l'esclavage
+- **#456**: La route est glissante
+- **#457**: Pauvre buveur!
+- **#458**: Père, ô bon père
+- **#459**: Venez captifs
+- **#460**: Ah! sous ton rire
+- **#461**: Aux jours d'angoisse
+- **#462**: Dès le printemps de la vie
+- **#463**: Dans la joie et l'allégresse
+- **#464**: Entends l'écho de la voix
+- **#465**: Es-tu lassé
+- **#466**: Laisse ta folie
+- **#467**: Regarde au chemin du Calvaire
+- **#468**: Maintes fois
+- **#469**: Mot que l'on aime entendre
+- **#470**: Pourquoi la tristesse
+- **#471**: Oh! viens à moi!
+- **#472**: Sur le seuil
+- **#473**: Oh! qui soutiendra
+- **#474**: Pendant les jours de ta jeunesse
+- **#475**: Pourquoi donc attendre?
+- **#476**: Quand tu sondes ta misère
+- **#477**: Que devient mon enfant
+- **#478**: Toi, qui dans la carrière
+- **#479**: Viens, viens à Jésus
+- **#480**: Voici, je me tiens à la porte
+- **#481**: À toi ma vie!
+- **#482**: Au combat de la vie
+- **#483**: À toi mon Dieu, je me donne
+- **#484**: Il faut que mon coeur chante!
+- **#485**: Ce que Jésus-Christ
+- **#486**: Des paroles de charmes
+- **#487**: Choisir Jésus
+- **#488**: Comme un enfant
+- **#489**: Entre tes mains j'abandonne
+- **#490**: Entendez-vous l'appel
+- **#491**: Je m'approche de toi
+- **#492**: En ce monde de tristesse
+- **#493**: Mon coeur te cherche
+- **#494**: Jésus, doux Maître
+- **#495**: La voix du Seigneur m'appelle
+- **#496**: J'entends ta douce voix
+- **#497**: Je suis à toi
+- **#498**: Jeunesse ardente
+- **#499**: Mon coeur tressaille à ta voix
+- **#500**: Jésus, je te suivrai partout
+- **#501**: Lève-toi, lève toi
+- **#502**: Oui, Jésus, c'est vers toi
+- **#503**: Ô toi qui donnes la vie
+- **#504**: Oh! quel beau jour
+- **#505**: Tout joyeux
+- **#506**: Prends ma vie
+- **#507**: Sans Jésus, je ne peux vivre
+- **#508**: Seigneur, mon âme
+- **#509**: Sois ma lumière
+- **#510**: Tiens dans ta main
+- **#511**: Toujours ta divine présence
+- **#512**: Voir mon Sauveur face à face
+- **#513**: En Jésus, je demeure
+- **#514**: C'est Jésus, quand je chancelle
+- **#515**: C'est à l'ombre de tes ailes
+- **#516**: Quand sur ma tête
+- **#517**: Je chanterai ton grand amour
+- **#518**: Je l'ai trouvé!
+- **#519**: Joie au Ciel!
+- **#520**: Le nom de Jésus
+- **#521**: Mortels, voulez-vous savoir
+- **#522**: Ne crains riens!
+- **#523**: Oui, tout est bien
+- **#524**: Pour toi qu'un tourment oppresse
+- **#525**: Pour la céleste cité
+- **#526**: Quand écrasé
+- **#527**: Quand le vol de la tempête
+- **#528**: Toute chaîne est enlevée
+- **#529**: Debout pour la sainte guerre!
+- **#530**: Debout! volontaire!
+- **#531**: Écoutez l'appel du Berger
+- **#532**: Entends-tu l'appel du Maître?
+- **#533**: La voix de tes sentinelles
+- **#534**: Messagers du grand Roi
+- **#535**: Seigneur, que la terre entière
+- **#536**: Sentinelle vigilante
+- **#537**: Revêts tes armes, volontaire!
+- **#538**: Travaillons et luttons!
+- **#539**: Travaillons tous
+- **#540**: Lorsque Dieu nous appelle
+- **#541**: Volontaires, au combat!
+- **#542**: À toi nos transports d'allégresse
+- **#586**: Oh! que ta main paternelle
+- **#608**: On frappe
+- **#620**: Vous qui pleurez, venez
+- **#625**: Les cieux en choeur
+- **#645**: Je te suivrai
+- **#647**: Le Seigneur nous appelle
+- **#650**: Il est là-bas
